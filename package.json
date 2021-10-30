@@ -36,6 +36,7 @@
     "core-js": "^2.6.1",
     "gulp-util": "^3.0.8",
     "hammerjs": "latest",
+    "ng": "0.0.0",
     "nodemailer": "^5.1.1",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.3.3",

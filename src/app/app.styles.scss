@@ -1,5 +1,10 @@
 // @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.divider{
+  border-top-width: 7px ! important;
+  border-top-style: dashed;
+}
+
 .viewWrapper{
   width: 100%;
   max-width: 1600px;

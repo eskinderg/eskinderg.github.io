@@ -30,10 +30,10 @@
       "As confirmed by my portfolio, content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications.",
       "I follow OAUTH, REST and SOLID software engineering principles.",
       "I use Agile, 12-Factor App and Block-Element-Modifier methodologies.",
-      "By using the best practices above, I produce a clean code that is easy to maintain and debug.",
+      "Using the best practices, I produce a clean code that is easy to maintain and debug.",
       "I have been passionate with web development since childhood and continue learning the latest technological advancements."
     ],
-    "button": "ካሪኩለምሺቴ",
+    "button": "ካሪኩለም ሺቴ",
     "pdf": "Adobe Acrobat Version (pdf)",
     "word": "Word Document Version (docx)"
   },
@@ -290,7 +290,7 @@
           ]
         }
       ],
-      "used":["C#", "MSSQL","ASP.Net","ASP.NET MVC","LINQ","Entity Framework","Photoshop", "PHP","HTML5", "CSS3", "Angular","JavaScript", "jQuery"]
+      "used":["C#", "MSSQL","ASP.Net","LINQ","Entity Framework","PHP","HTML5","CSS3","JavaScript", "jQuery"]
       }
     ]
   },

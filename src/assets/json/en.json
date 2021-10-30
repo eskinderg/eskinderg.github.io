@@ -1,44 +1,41 @@
 {
   "menu" : [
     {
-      "name": "ABOUT ME",
+      "name": "About Me",
       "link": "about"
     },{
-    "name": "TECHNOLOGIES",
+    "name": "Technologies",
     "link": "technologies"
     },{
-    "name": "ACCOMPLISHMENTS",
+    "name": "Accomplishments",
     "link": "accomplishments"
     },{
-    "name": "EXPERIENCE",
+    "name": "Experience",
     "link": "experience"
     },{
-    "name": "EDUCATION",
+    "name": "Education",
     "link": "education"
     },{
-    "name": "CONTACT ME",
+    "name": "Contact Me",
     "link": "contact"
     }
   ],
   "video" : {
     "title": "Eskinder G. Gezahagne",
-    "subtitle": "Front End Developer ( Web / Front-End )"
+    "subtitle": "Front-End Web Developer"
   },
   "about" : {
-    "title": "ABOUT ME",
+    "title": "About Me",
     "content": [
-      "As confirmed by my portfolio, content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications.",
-      "I follow OAUTH, REST and SOLID software engineering principles.",
-      "I use Agile, 12-Factor App and Block-Element-Modifier methodologies.",
-      "By using the best practices above, I produce a clean code that is easy to maintain and debug.",
-      "I have been passionate with web development since childhood and continue learning the latest technological advancements."
+      "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practices to produce a clean code that is easy to debug and maintain.",
+      "I have a passion for web development and continue to learn the latest technological advancements."
     ],
-    "button": "CV / Resume",
-    "pdf": "Adobe Acrobat Version (pdf)",
-    "word": "Word Document Version (docx)"
+    "button": "Curriculum Vitae",
+    "pdf": "Adobe Acrobat (pdf)",
+    "word": "Word Document (docx)"
   },
   "technologies" : {
-    "title": "TECHNOLOGIES",
+    "title": "Technologies",
     "content": "",
     "masteries": [
       {
@@ -149,24 +146,24 @@
     "button": "Load more"
   },
   "accomplishments" : {
-    "title": "ACCOMPLISHMENTS",
+    "title": "Accomplishments",
     "content": [
       {
         "title": "2013-2014",
-        "paragraph": "Developed websites using WordPress, OpenCart and other opensource technologies"
+        "paragraph": "Developed different websites using WordPress, OpenCart and other Open-Source platforms"
       },{
       "title": "2016",
-      "paragraph": "Participated on OAuth implementation for user roles and permissions using JWT (JSON Web Token)"
+      "paragraph": "Participated in an OAuth implementation for users role and permission using JWT (JSON Web Token)"
       }
     ]
   },
   "experience" : {
-    "title": "EXPERIENCE",
+    "title": "Experience",
     "content": [
       {
-        "title":"Freelance Web Developer (Front-End Developer)",
-        "subtitle":"Front-End (Angular), Elance",
-        "year":"Sept 2018 - PRESENT",
+        "title":"Freelance Web Developer (Full Stack)",
+        "subtitle":"Elance",
+        "year":"Sept 2018 - Present",
         "intro": [
           "Freelance"
         ],
@@ -188,8 +185,8 @@
         ],
         "used":["Angular" ,"Typescript" ,"JQuery" ,"Java Script","Bootstrap" ,"Node JS" ,"HTML5" ,"Sass" ]
       },{
-      "title":"Web Developer (Front End)",
-      "subtitle":"Front End, Nuaxis.",
+      "title":"Web Developer (Front-End)",
+      "subtitle":"Front-End, Nuaxis.",
       "year":"Aug 2016 - Jul 2018",
       "intro": [
         "Nuaxis"
@@ -197,15 +194,15 @@
       "elements":[
         {
           "type":"list",
-          "header":"Key Responsibilities include but not limited to:",
+          "header":"Key Responsibilities include, but not limited to:",
           "list": [
             "Created programs as per user / design requirements using AngularJS",
             "Collaborated with cross-functional teams (DEV, UX/UI & BA) to define, design, and deliver creative digital solutions",
             "Set up Front-End development environment (Angular)",
-            "Utilized, automated unit and integration tests for application lifecycle",
+            "Utilized automated unit and integration tests for application life cycle",
             "Executed Agile Development techniques",
             "Utilized industry best practices to create effective business solutions for clients",
-            "Participated and contributed towards senior-level technology discussions",
+            "Participated towards senior-level technology discussions",
             "Created HTML forms using section 508 US web standards",
             "Used Git flow techniques for feature branching, merging and continuous integration",
             "Implemented google analytics using angularitics",
@@ -215,9 +212,9 @@
             "Produced reports and statistical information for managers using code climate, and mocha testing framework",
             "Used bootstrap CSS to create, modify and update web layouts",
             "Created angular 1.5 components, directives and filters",
-            "Used Node JS schema validator for backend validation",
-            "Utilized automated integration tests for application lifecycle",
-            "Performed unit and integration test for frontend and backend systems using AngularJS and NodeJS"
+            "Used Node JS schema validator for back-end validation",
+            "Utilized automated integration tests for application life cycle",
+            "Performed unit and integration test for front-end and back-end systems using AngularJS and NodeJS"
           ]
         }
       ],
@@ -231,15 +228,14 @@
       "elements":[
         {
           "type":"list",
-          "header":"Key Responsibilities include but not limited to:",
+          "header":"Key Responsibilities include, but not limited to:",
           "list": [
-            "E commerce development using Agile methodologies",
+            "E-Commerce development using Agile methodologies",
             "Full Stack web development using ASP .Net MVC, C#, Angularjs and MSSQL.",
-            "Provided support for web applications and strategic migration planning for internal web application.",
+            "Provided support for internal web application in facilitation of web application migration.",
             "Integrated Asp MVC with Ektron system",
             "Provided architectural patterns for intranet systems.",
-            "Wrote Front-end, Back-end Unit Tests for re factoring existing code and for continuous integration deployment process.",
-            "Provided statistical information for senior managers"
+            "Wrote Front-end and Back-end Unit Tests for code refactoring and continuous deployment process."
           ]
         }
       ],
@@ -247,19 +243,19 @@
       },{
       "title":"Web Developer & Designer",
       "subtitle":"Full-Stack Software Developer & Designer",
-      "year":"JAN 2015 - NOV 2015",
+      "year":"Jan 2015 - Nov 2015",
       "intro": [
         ""
       ],
       "elements" : [
         {
           "type":"list",
-          "header":"Key Responsibilities include but not limited to:",
+          "header":"Key Responsibilities include, but not limited to:",
           "list": [
             "Created websites using open source technologies.",
-            "Developed and implemented mobile device responsive UI designs and back-end analytics tracking",
-            "Maintained website for most up-to date technology, software, and information",
-            "Customized, Implemented custom WordPress themes and plugins."
+            "Developed and Implemented responsive User-Interface and back-end analytic tracking system",
+            "Provided support for different websites ",
+            "Customized and Implemented WordPress themes and plugins."
           ]
         }
       ],
@@ -267,14 +263,14 @@
       },{
       "title":"Web Developer (Full Stack Developer)",
       "subtitle":"Addis Ababa University, Ethiopia",
-      "year":"SEP 2013 - JAN 2015",
+      "year":"Sep 2013 - Jan 2015",
       "intro": [
         ""
       ],
       "elements" : [
         {
           "type":"list",
-          "header":"Key Responsibilities include but not limited to:",
+          "header":"Key Responsibilities include, but not limited to:",
           "list": [
             "Designed visual layout of websites.",
             "Created Stored Procedures using MSSQL.",
@@ -286,12 +282,12 @@
           ]
         }
       ],
-      "used":["C#", "MSSQL","ASP.Net","ASP.NET MVC","LINQ","Entity Framework","Photoshop", "PHP","HTML5", "CSS3", "Angular","JavaScript", "jQuery"]
+      "used":["C#", "MSSQL","ASP.Net","LINQ","Entity Framework","PHP","HTML5","CSS3","JavaScript", "jQuery"]
       }
     ]
   },
   "education": {
-    "title": "EDUCATION \\ TRAININGS",
+    "title": "Education \\ Trainings",
     "content": [
       {
         "title": "B.Sc in Computer Science & Information Technology",

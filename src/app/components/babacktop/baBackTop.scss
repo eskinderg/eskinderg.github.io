@@ -1,6 +1,5 @@
 @import '~@angular/material/theming';
 
-
 @mixin ba-back-theme($theme) {
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);

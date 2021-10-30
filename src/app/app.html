@@ -1,10 +1,11 @@
-<app-langselect style="float:right; z-index:10000; position:absolute; right:0;"></app-langselect>
+<app-langselect style="float:right; z-index:10000; position:absolute; right:0;">
+</app-langselect>
 
 <div [ngClass]="{'show':portfolio.loading}" class="loading-screen" >
-  <div class="loading-text"></div>
-  <div class="progress">
-    <div class="indeterminate"></div>
-  </div>
+    <div class="loading-text"></div>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
 </div>
 
 <div [ngClass]="selectedTheme">
@@ -21,17 +22,34 @@
 
   <div id="parentDiv" class="viewWrapper" scrollSpy [spiedTags]="spieTags"
     (sectionChange)="onSectionChange($event)" >
+
     <app-outline [(currentSection)]="activeSection"></app-outline>
+
     <app-section-video id="video"></app-section-video>
+
     <app-section-about id="about"></app-section-about>
+
+    <mat-divider class="divider"></mat-divider>
+
     <app-section-expertin id="technologies"></app-section-expertin>
-    <!-- <section-projects></section-projects> -->
+
+    <mat-divider class="divider"></mat-divider>
+
     <app-section-accomplishments id="accomplishments"></app-section-accomplishments>
+
+    <mat-divider class="divider"></mat-divider>
+
     <app-section-experience id="experience"></app-section-experience>
+
+    <mat-divider class="divider"></mat-divider>
+
     <app-section-education-conferences id="education"></app-section-education-conferences>
+
     <app-section-contact id="contact"></app-section-contact>
+
   </div>
 
   <app-back-top position="200"></app-back-top>
+
 </div>
 

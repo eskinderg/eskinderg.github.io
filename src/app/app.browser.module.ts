@@ -27,6 +27,7 @@ import {
   MatMenuModule,
   MatButtonToggleModule,
   MatTooltipModule,
+  MatDividerModule
 } from '@angular/material';
 import { SpeedDialFabComponent }from './components/speeddial/speed-dial-fab.component';
 import { ScrollSpyDirective    }from './providers/scroll-spy-directive';
@@ -64,7 +65,7 @@ export function setupLanguageFactory( service: LanguageService): Function {
       BrowserAnimationsModule,
       HttpClientModule,
       BaBackTopModule,
-      MatButtonModule, MatMenuModule, MatSelectModule, MatIconModule, MatSlideToggleModule, MatButtonToggleModule, MatTooltipModule,
+      MatButtonModule, MatMenuModule, MatSelectModule, MatIconModule, MatSlideToggleModule, MatButtonToggleModule, MatTooltipModule, MatDividerModule,
       // RouterModule.forRoot( Routing ),
       MenuModule, VideoModule, OutlineModule,
       AboutModule, ExpertinModule, ContactModule, AccomplishmentsModule, EducationConferencesModule, ExperienceModule, ProjectsModule,

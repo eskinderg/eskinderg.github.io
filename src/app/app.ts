@@ -32,7 +32,12 @@ export class AppComponent implements OnInit {
   speedDialFabColumnDirection   = 'column';
   speedDialFabPositionClassName = 'speed-dial-container-top';
 
-  constructor(public portfolio: Shared, public ref: ChangeDetectorRef, public language: LanguageService , public meta: Meta) {
+  constructor(
+    public portfolio: Shared,
+    public ref: ChangeDetectorRef,
+    public language: LanguageService,
+    public meta: Meta
+  ) {
     this.meta.addTags([
       {name: 'og:title', content: 'Eskinder | Profile'},
       {name: 'og:description', content: 'Hello, my name is Eskinder Gezahagne. I am a Web Developer ( Web / FE - Angular ) and this is my portfolio page. As confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'},
@@ -44,27 +49,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-        // this.route.data.subscribe(({ esk }) => {
-        //   console.log(esk);
-        // });
-    // console.log(this.route.snapshot.data['esk']);
+
     this.selectedTheme = localStorage.getItem('theme');
-    this.selectedLang = localStorage.getItem('language');
-
-    // this.portfolio.getButtons().subscribe(
-    //   buttons => {
-    //     this.speedDialFabButtons = buttons;
-    //   }
-    // );
-
-    // this.portfolio.getLangList().then(()=> {
-    //   console.log(this.portfolio.langList);
-    // })
-
-    // this.language.use('en').then(() => {
-    //   console.log(this.language.text);
-    //   console.log(this.language.text['about']);
-    // });
+    this.selectedLang  = localStorage.getItem('language');
 
     if (!this.portfolio.texts) {
       this.portfolio.getTexts(this.selectedLang).subscribe(
@@ -86,7 +73,6 @@ export class AppComponent implements OnInit {
         err => console.error(err)
       );
     }
-
   }
 
   btn_click(lang:string) {
