@@ -37,7 +37,7 @@
     "gulp-util": "^3.0.8",
     "hammerjs": "latest",
     "ng": "0.0.0",
-    "nodemailer": "^5.1.1",
+    "nodemailer": "^6.6.1",
     "rxjs": "^6.2.2",
     "rxjs-compat": "^6.3.3",
     "ts-loader": "^5.3.3",
