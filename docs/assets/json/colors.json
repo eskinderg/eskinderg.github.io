@@ -1,0 +1,68 @@
+{
+  "colors" : [
+    {
+      "theme": "dark-theme",
+      "icon": "timeline",
+      "tooltip": "Dark"
+    },
+    {
+      "theme": "red-theme",
+      "icon": "view_headline",
+      "tooltip": "Red"
+    },
+    {
+      "theme": "green-theme",
+      "tooltip": "Green"
+    },
+    {
+      "theme": "blue-theme",
+      "icon": "lightbulb_outline",
+      "tooltip": "Blue"
+    },
+    {
+      "theme": "orange-theme",
+      "icon": "lightbulb_outline",
+      "tooltip": "Orange"
+    },
+    {
+      "theme": "yellow-theme",
+      "icon": "lock",
+      "tooltip": "Yellow"
+    },
+    {
+      "theme": "pink-theme",
+      "icon": "lock",
+      "tooltip": "Pink"
+    },
+    {
+      "theme": "deeppurple-theme",
+      "icon": "lock",
+      "tooltip": "Deep Purple"
+    },
+    {
+      "theme": "indigo-theme",
+      "icon": "lock",
+      "tooltip": "indigo"
+    },
+    {
+      "theme": "lightblue-theme",
+      "icon": "lock",
+      "tooltip": "Light Blue"
+    },
+    {
+      "theme": "cyan-theme",
+      "icon": "lock",
+      "tooltip": "Cyan"
+    },
+    {
+      "theme": "brown-theme",
+      "icon": "lock",
+      "tooltip": "Brown"
+    },
+    {
+      "theme": "bluegrey-theme",
+      "icon": "lock",
+      "tooltip": "Blue Grey"
+    }
+  ]
+}
