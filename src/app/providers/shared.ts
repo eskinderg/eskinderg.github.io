@@ -44,12 +44,12 @@ export class Shared {
   }
 
   getLangList() {
-    const langPath = 'portfolio/assets/json/lang.json';
+    const langPath = 'assets/json/lang.json';
     return this.http.get<[]>(langPath);
   }
 
   getColorList() {
-    const colorPath = 'portfolio/assets/json/colors.json';
+    const colorPath = 'assets/json/colors.json';
     return this.http.get<[]>(colorPath);
   }
 
@@ -72,10 +72,10 @@ export class Shared {
 
   getTexts(lang?: string) {
     if(!isDevMode()) {
-      this.langPath = `/assets/json/${lang || 'en'}.min.json`;
+      this.langPath = `assets/json/${lang || 'en'}.min.json`;
     }
     else {
-      this.langPath = `/assets/json/${lang || 'en'}.json`;
+      this.langPath = `assets/json/${lang || 'en'}.json`;
     }
     return this.http.get<{}>(this.langPath);
 
