@@ -43,8 +43,8 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://eskinderg.github.io/portfolio/assets/css/fonts.css": "f6ff346d2af03d20d61bdb9a840f276a3c0f48ff",
-    "https://eskinderg.github.io/portfolio/assets/doc/Resume.docx": "ccf1b49b50e99690260a924aa54c91675fc945e7",
+    "https://eskinderg.github.io/portfolio/assets/css/fonts.css": "76be2155f4906dca6dcf56ef6109b95a52083db1",
+    "https://eskinderg.github.io/portfolio/assets/doc/Resume.docx": "60f66784a6d0dcfd2f57600faee3d1104d3c790a",
     "https://eskinderg.github.io/portfolio/assets/fonts/MaterialIcons-Regular.ttf": "fc05de31234e0090f7ddc28ce1b23af4026cb1da",
     "https://eskinderg.github.io/portfolio/assets/fonts/OpenSans-Bold.ttf": "8387d4f8e061c264dc3aebebe6068b66e45d7c6f",
     "https://eskinderg.github.io/portfolio/assets/fonts/OpenSans-Regular.ttf": "513966e260bb7610d47b2329dba194143831893e",
@@ -55,13 +55,13 @@
     "https://eskinderg.github.io/portfolio/assets/img/social-min.png": "14350a895c48ba6f60ae2b8c33c64537cb203af0",
     "https://eskinderg.github.io/portfolio/assets/img/webpack_90x90.png": "770a487324b92dd2b995639b4f648be1fa2b37e3",
     "https://eskinderg.github.io/portfolio/assets/js/loadcss.js": "e3f85562b77d70e04125d6a46a1399b4219fda88",
-    "https://eskinderg.github.io/portfolio/assets/json/am.json": "3a9c92e2832911dd91099fe17e2c1aea94be0abc",
+    "https://eskinderg.github.io/portfolio/assets/json/am.json": "a03943fa722675559a3258d427796db450c45cd0",
     "https://eskinderg.github.io/portfolio/assets/json/colors.json": "60a9a992bdaf0a786333ba25f6ca1a6c5587edaf",
-    "https://eskinderg.github.io/portfolio/assets/json/en.json": "f979d89de9436b734de816f5216d04a1ed8c228e",
+    "https://eskinderg.github.io/portfolio/assets/json/en.json": "b5d5803069166bec6ec917983d6823b3c90330ae",
     "https://eskinderg.github.io/portfolio/assets/json/lang.json": "f05536bb66b6eb743ffb1d181d89142200b8b859",
-    "https://eskinderg.github.io/portfolio/assets/pdf/Resume.pdf": "bc0aba3d47020f3d7ca6aa7bbc51e427784bf7f2",
+    "https://eskinderg.github.io/portfolio/assets/pdf/Resume.pdf": "b809d92fc5a11e7ca8a3c8481058a923b46de383",
     "https://eskinderg.github.io/portfolio/favicon.ico": "690a2ff6a06e20469c54c790cf8513a2ede0eace",
-    "https://eskinderg.github.io/portfolio/index.html": "f207bc85281573a4c2c81792efc3cc5bdedc622a"
+    "https://eskinderg.github.io/portfolio/index.html": "2c48b37c91f499407adb84730662e0fb40265d11"
   },
   "navigationUrls": [
     {

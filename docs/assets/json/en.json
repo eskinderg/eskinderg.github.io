@@ -21,7 +21,7 @@
     }
   ],
   "video" : {
-    "title": "Eskinder G. Gezahagne",
+    "title": "Eskinder Getahun",
     "subtitle": "Front-End Web Developer"
   },
   "about" : {
@@ -313,11 +313,11 @@
       "NAME","EMAIL","MESSAGE"
     ],
     "mail":"eskinderget@gmail.com",
-    "phone":"XXXXXXXXXXXX",
+    "phone":"+251-911-184987",
     "button":"Send message"
   },
   "footer": {
-    "content": "2018 \u00A9"
+    "content": "2022 \u00A9"
   },
   "social": {
     "github": "https://github.com/eskinderg",

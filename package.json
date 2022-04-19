@@ -12,7 +12,7 @@
     "ssr:build-prod": "npm run build:client-prod",
     "ssr": "npm run ssr:build && node dist/server.js",
     "lang": "gulp minify",
-    "build:client-prod": "ng build --prod --stats-json && ng build --prod --stats-json && npm run lang",
+    "build:client-prod": "ng build --prod --stats-json --base-href https://eskinderg.github.io/portfolio/ && npm run lang",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors",
     "bundle-report-browser": "webpack-bundle-analyzer dist/stats.json",
     "bundle-report-server": "webpack-bundle-analyzer dist/server/stats.json"

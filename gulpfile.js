@@ -12,5 +12,5 @@ gulp.task('minify', function () {
   return gulp.src(['src/assets/json/*.json'])
     .pipe(jsonminify())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/assets/json/'));
+    .pipe(gulp.dest('docs/assets/json/'));
 });
