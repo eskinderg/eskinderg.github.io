@@ -44,12 +44,12 @@ export class Shared {
   }
 
   getLangList() {
-    const langPath = '/assets/json/lang.json';
+    const langPath = 'portfolio/assets/json/lang.json';
     return this.http.get<[]>(langPath);
   }
 
   getColorList() {
-    const colorPath = '/assets/json/colors.json';
+    const colorPath = 'portfolio/assets/json/colors.json';
     return this.http.get<[]>(colorPath);
   }
 

@@ -9,7 +9,7 @@ export class LanguageService {
 
   use(lang: string): Promise<{}> {
     return new Promise<{}>((resolve, reject) => {
-      const langPath = `/assets/json/${lang || 'en'}.json`;
+      const langPath = `portfolio/assets/json/${lang || 'en'}.json`;
       // const langPath = '/assets/json/texts_en.json';
       this.http.get<{}>(langPath).subscribe(
         translation => {
