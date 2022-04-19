@@ -69,7 +69,7 @@ export function setupLanguageFactory( service: LanguageService): Function {
       // RouterModule.forRoot( Routing ),
       MenuModule, VideoModule, OutlineModule,
       AboutModule, ExpertinModule, ContactModule, AccomplishmentsModule, EducationConferencesModule, ExperienceModule, ProjectsModule,
-      ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
+      ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production})
     ],
     exports :[
       TranslatePipe
