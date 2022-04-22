@@ -1,8 +1,8 @@
-<button mat-button [matMenuTriggerFor]="menu" class="langmenu">
+<button matTooltip="Change Language" [matTooltipPosition]="'before'" mat-button [matMenuTriggerFor]="menu" class="langmenu">
     <img src="https://www.countryflagicons.com/FLAT/32/{{selectedLangugage}}.png">
 </button>
 <!-- <img src="https://www.countryflagicons.com/FLAT/32/{{selectedLangugage}}.png"> -->
-<mat-menu #menu="matMenu">
+<mat-menu  #menu="matMenu">
     <button mat-menu-item (click)="changeLanguage(lang.code)" *ngFor="let lang of languages">
         <img src="https://www.countryflagicons.com/FLAT/16/{{lang.CountryCode}}.png"> {{lang.title}}
     </button>
