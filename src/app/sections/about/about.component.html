@@ -15,7 +15,7 @@
       <a (click)="onPdfDownload()" href="assets/pdf/Resume.pdf" target="_blank">
         <button mat-menu-item><mat-icon>picture_as_pdf</mat-icon>&nbsp;{{(portfolio.texts)?.about.pdf}}</button>
       </a>
-      <a href="assets/doc/Resume.docx">
+      <a (click)="onDocxDownload()" href="assets/doc/Resume.docx">
         <button mat-menu-item><mat-icon>insert_drive_file</mat-icon>&nbsp;{{(portfolio.texts)?.about.word}}</button>
       </a>
     </mat-menu>
