@@ -1,4 +1,5 @@
-import {ViewChild, AfterViewInit, Component, OnInit, ElementRef } from '@angular/core';
+import { ViewChild, AfterViewInit, Component, OnInit, ElementRef } from '@angular/core';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
@@ -6,17 +7,21 @@ import { LanguageService } from 'src/app/providers/language.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit, AfterViewInit{
+export class AboutComponent implements OnInit, AfterViewInit {
 
   @ViewChild('about') aboutSection: ElementRef;
 
-  constructor(public portfolio: LanguageService) { }
+  constructor(public portfolio: LanguageService, public googleAnalyticsService: GoogleAnalyticsService) { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit() {
     this.portfolio.sections['about'] = this.aboutSection;
+  }
+
+  onPdfDownload() {
+    this.googleAnalyticsService.eventEmitter("download_pdf", "about", "download", "click", 10)
   }
 
 }

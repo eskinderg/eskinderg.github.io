@@ -19,6 +19,7 @@ import { BaBackTopModule } from './components/babacktop/babacktop.module';
 import { SpeedDialFabModule } from './components/speeddial/speed-dial-fab.module';
 import { OutlineModule } from './components/outline/outline.module';
 import { LangSelectModule } from './components/langselect/langselect.module';
+import { GoogleAnalyticsService } from './providers/google-analytics.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,7 @@ import { LangSelectModule } from './components/langselect/langselect.module';
     OutlineModule,
     LangSelectModule
   ],
-  providers: [LanguageService],
+  providers: [LanguageService, GoogleAnalyticsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,7 +12,7 @@
       <mat-icon>save</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <a href="assets/pdf/Resume.pdf" target="_blank">
+      <a (click)="onPdfDownload()" href="assets/pdf/Resume.pdf" target="_blank">
         <button mat-menu-item><mat-icon>picture_as_pdf</mat-icon>&nbsp;{{(portfolio.texts)?.about.pdf}}</button>
       </a>
       <a href="assets/doc/Resume.docx">
