@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { LanguageService } from './providers/language.service';
 import { SpeedDialFabPosition } from './components/speeddial/speed-dial-fab.component';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -29,10 +30,19 @@ export class AppComponent {
     'APP-CONTACT'
   ];
 
-  constructor(public languageService: LanguageService, public ref: ChangeDetectorRef) {
+  constructor(public languageService: LanguageService, public ref: ChangeDetectorRef, public meta: Meta) {
 
     this.selectedTheme = localStorage.getItem("theme");
     this.selectedLang = localStorage.getItem('language');
+
+    this.meta.addTags([
+      {name: 'og:title', content: 'Eskinder | Profile'},
+      {name: 'og:description', content: 'Hello, my name is Eskinder Getahun. I am a Web Developer ( Web / FE - Angular ) and this is my portfolio page. As confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'},
+      {name: 'og:image', content: 'assets/img/social-min.png'},
+      {name: 'author', content: 'Eskinder'},
+      {name: 'keywords', content: 'Angular, Web, Frontend, Developer, Portfolio, Eskinder, Getahun'},
+      {name: 'description', content: 'Hello, my name is Eskinder Getahun. I am a Web Developer ( Web / FE - Angular ) and this is my portfolio page. I combine my knowledge and experience in order to develop professional web applications.'}
+    ]);
 
     if (!this.languageService.texts) {
       this.languageService.getTexts(this.selectedLang).subscribe(
