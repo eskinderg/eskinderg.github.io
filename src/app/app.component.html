@@ -1,0 +1,52 @@
+<app-langselect style="float:right; z-index:10000; position:absolute; right:0;">
+</app-langselect>
+
+<div [ngClass]="{'show':languageService.loading}" class="loading-screen" >
+  <div class="loading-text"></div>
+  <div class="progress">
+    <div class="indeterminate"></div>
+  </div>
+</div>
+
+<div [ngClass]="selectedTheme">
+  <speed-dial-fab
+    class="speed-dial-container"
+    [ngClass]="speedDialFabPosition"
+    [reverse-column-direction]="speedDialFabPosition===SpeedDialFabPosition.Bottom"
+    (fabClick)="onSpeedDialFabClicked($event)"
+    [buttons]="speedDialFabButtons">
+  </speed-dial-fab>
+
+  <app-menu></app-menu>
+
+  <div id="parentDiv" class="viewWrapper" scrollSpy [spiedTags]="spieTags" (sectionChange)="onSectionChange($event)">
+
+    <app-outline [currentSection]="activeSection"></app-outline>
+
+    <app-intro id="intro"></app-intro>
+
+    <app-about id="about"></app-about>
+
+    <mat-divider class="divider"></mat-divider>
+
+    <app-expert-in id="technologies"></app-expert-in>
+
+    <mat-divider class="divider"></mat-divider>
+
+    <app-accomplishments id="accomplishments"></app-accomplishments>
+
+    <mat-divider class="divider"></mat-divider>
+
+    <app-experience id="experience"></app-experience>
+
+    <mat-divider class="divider"></mat-divider>
+
+    <app-education-conferences id="education"></app-education-conferences>
+
+    <app-contact id="contact"></app-contact>
+
+  </div>
+
+  <app-back-top [position]="200"></app-back-top>
+
+</div>

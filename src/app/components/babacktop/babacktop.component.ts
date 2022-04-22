@@ -1,5 +1,5 @@
 import { Component, ViewChild, HostListener, Input, ElementRef, AfterViewInit } from '@angular/core';
-import { MatMenuTrigger } from '@angular/material';
+// import { MatMenuTrigger } from '@angular/material';
 import * as jQuery from 'jquery';
 
 @Component({

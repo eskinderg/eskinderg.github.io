@@ -44,3 +44,5 @@ Thumbs.db
 **/*.swa
 **/*.vim
 *.vim
+
+.angular/cache

@@ -1,6 +1,6 @@
-import { Component, OnInit, ElementRef, Input      }from '@angular/core';
-import { Shared                                    }from '../../providers/shared';
-import {style, state, animate, transition, trigger }from '@angular/animations';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { style, state, animate, transition, trigger } from '@angular/animations';
+import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
   selector: 'app-outline',
@@ -11,7 +11,7 @@ export class OutlineComponent implements OnInit {
 
   @Input() currentSection = 'section1';
 
-  constructor(public portfolio: Shared) { }
+  constructor(public portfolio: LanguageService) { }
 
   ngOnInit() { }
 

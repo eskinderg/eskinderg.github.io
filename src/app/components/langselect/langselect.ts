@@ -1,5 +1,5 @@
 import { Component, Input }from '@angular/core';
-import { Shared           }from '../../providers/shared';
+import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
   selector: 'app-langselect',
@@ -11,7 +11,7 @@ export class LangSelectComponent {
   public languages: any;
   public selectedLangugage: any;
 
-  constructor(public portfolio: Shared) {
+  constructor(public portfolio: LanguageService) {
     this.portfolio.getLangList().subscribe(lang => {
       this.languages = lang;
     })

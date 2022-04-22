@@ -1,12 +1,15 @@
-import { NgModule                                             }from '@angular/core';
-import { CommonModule                                         }from '@angular/common';
-import { MenuComponent                                        }from './menu';
-import { MatIconModule, MatButtonModule, MatSlideToggleModule }from '@angular/material';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MenuComponent } from './menu.component';
 
 @NgModule({
-  imports: [ CommonModule, MatButtonModule, MatIconModule, MatSlideToggleModule ],
-  declarations: [ MenuComponent ],
-  exports:      [ MenuComponent ]
+  declarations: [MenuComponent],
+  imports: [
+    CommonModule, MatButtonModule, MatIconModule, MatSlideToggleModule
+  ],
+  exports: [MenuComponent]
 })
-
-export class MenuModule {}
+export class MenuModule { }

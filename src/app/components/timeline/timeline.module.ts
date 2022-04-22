@@ -1,11 +1,14 @@
-import { NgModule                      }from '@angular/core';
-import { CommonModule                  }from '@angular/common';
-import { TimelineComponent             }from './timeline';
-import { FlexLayoutModule              }from '@angular/flex-layout';
-import { MatIconModule, MatChipsModule }from '@angular/material';
-import { MatDividerModule              }from '@angular/material/divider';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatDividerModule } from '@angular/material/divider';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import { TimelineComponent } from './timeline.component';
+
 
 @NgModule({
+  declarations: [TimelineComponent],
   imports: [
     CommonModule,
     MatDividerModule,
@@ -13,8 +16,6 @@ import { MatDividerModule              }from '@angular/material/divider';
     MatIconModule,
     MatChipsModule
   ],
-  declarations: [ TimelineComponent ],
-  exports:      [ TimelineComponent ]
+  exports: [TimelineComponent]
 })
-
-export class TimelineModule {}
+export class TimelineModule { }

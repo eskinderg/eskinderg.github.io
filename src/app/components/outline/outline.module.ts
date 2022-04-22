@@ -1,7 +1,10 @@
 import { NgModule                                             }from '@angular/core';
 import { CommonModule                                         }from '@angular/common';
-import { MatIconModule, MatButtonModule, MatSlideToggleModule }from '@angular/material';
 import { OutlineComponent                                     }from './outline';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ScrollSpyDirective } from 'src/app/providers/scroll-spy-directive';
 
 @NgModule({
   imports: [
@@ -10,8 +13,8 @@ import { OutlineComponent                                     }from './outline';
     MatIconModule,
     MatSlideToggleModule
   ],
-  declarations: [ OutlineComponent ],
-  exports:      [ OutlineComponent ]
+  declarations: [ OutlineComponent, ScrollSpyDirective ],
+  exports:      [ OutlineComponent, ScrollSpyDirective ]
 })
 
 export class OutlineModule {}

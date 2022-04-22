@@ -1,14 +1,14 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccomplishmentsComponent } from './accomplishments';
+import { AccomplishmentsComponent } from './accomplishments.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { TitleModule } from '../../components/index';
+import { TitleModule } from 'src/app/components/title/title.module';
+
+
 
 @NgModule({
-  imports: [ CommonModule, FlexLayoutModule, TitleModule ],
-  declarations: [ AccomplishmentsComponent ],
-  exports:      [ AccomplishmentsComponent ]
+  declarations: [AccomplishmentsComponent],
+  imports: [CommonModule, FlexLayoutModule, TitleModule],
+  exports: [AccomplishmentsComponent]
 })
-
-export class AccomplishmentsModule {}
+export class AccomplishmentsModule { }

@@ -1,0 +1,28 @@
+.education,.education .title{
+  text-align: left;
+}
+.conferences,.conferences .title{
+  text-align: right;
+}
+
+.bg-git, .bg-google, .bg-gulp, .bg-html, .bg-illustrator,
+.bg-javascript, .bg-jquery, .bg-karma, .bg-mongo, .bg-mysql,
+.bg-photoshop, .bg-php, .bg-typescript, .bg-webpack, .bg-sass, .bg-angular
+{
+  display: inline-block;
+  background: url('../../../assets/img/expertin-min.png') no-repeat;
+  overflow: hidden;
+  text-indent: -9999px;
+  text-align: left;
+}
+
+.logo{
+  width: 90px;
+  height: 90px;
+}
+
+.bg-angular {
+  background-position: -0px -0px;
+  width: 90px;
+  height: 90px;
+}

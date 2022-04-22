@@ -1,38 +1,35 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Eskinder | Portfolio</title>
-        <base href="/">
-        <link href="./favicon.ico" rel="icon" type="image/x-icon" >
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    </head>
-        <body>
-            <noscript>
-                <p>Please enable JavaScript</p>
-            </noscript>
-            <script>
-            WebFontConfig = {
-                custom: {
-                    families: ['Open Sans:n4,n7'],
-                    urls: ['assets/css/fonts.css']
-                }
-            };
-            </script>
-            <script type='text/javascript' src='assets/js/loadcss.js'></script>
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <base href="/">
+    <link href="./favicon.ico" rel="icon" type="image/x-icon" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  </head>
+  <body>
 
-            <app-main>
-              <div class="loading-screen show" >
-                <div class="loading-text"></div>
-                <div class="progress">
-                  <div class="indeterminate"></div>
-                </div>
-              </div>
-            </app-main>
+    <script>
+      WebFontConfig = {
+        custom: {
+          families: ['Open Sans:n4,n7'],
+          urls: ['assets/css/fonts.css']
+        }
+      };
+    </script>
+    <script type='text/javascript' src='assets/js/loadcss.js'></script>
+    <app-root>
 
-            <script>
-            </script>
-
-        </body>
+      <div class="loading-screen show" >
+        <div class="loading-text"></div>
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+      </div>
+    </app-root>
+  </body>
 </html>

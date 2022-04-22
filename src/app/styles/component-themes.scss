@@ -1,14 +1,16 @@
-@import 'src/app/sections/video/video.scss';
-@import 'src/app/sections/about/about.scss';
-@import 'src/app/components/title/title.scss';
+@import 'src/app/app.component.scss';
+@import 'src/app/sections/intro/intro.component.scss';
+@import 'src/app/sections/about/about.component.scss';
+@import 'src/app/components/title/title.component.scss';
+@import 'src/app/components/menu/menu.component.scss';
+@import 'src/app/components/timeline/timeline.component.scss';
 @import 'src/app/components/babacktop/baBackTop.scss';
-@import 'src/app/components/menu/menu.scss';
-@import 'src/app/components/timeline/timeline.scss';
-@import 'src/app/app.styles.scss';
 @import 'src/app/components/outline/outline.scss';
+@import 'src/app/components/langselect/langselect.scss';
 
 @mixin component-themes($theme) {
-  @include video-theme($theme);
+  @include lang-theme($theme);
+  @include intro-theme($theme);
   @include about-theme($theme);
   @include title-theme($theme);
   @include ba-back-theme($theme);

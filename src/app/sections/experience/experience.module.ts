@@ -1,14 +1,16 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { ExperienceComponent } from './experience';
-import { TimelineModule, TitleModule } from '../../components/index';
+import { TimelineModule } from 'src/app/components/timeline/timeline.module';
+import { TitleModule } from 'src/app/components/title/title.module';
+import { ExperienceComponent } from './experience.component';
 
 @NgModule({
-  imports: [ CommonModule, TimelineModule, TitleModule ],
-  declarations: [ ExperienceComponent ],
-  exports:      [ ExperienceComponent ]
+  declarations: [ExperienceComponent],
+  imports: [
+    CommonModule,
+    TimelineModule,
+    TitleModule
+  ],
+  exports: [ExperienceComponent]
 })
-
-export class ExperienceModule {}
+export class ExperienceModule { }

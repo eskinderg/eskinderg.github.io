@@ -1,8 +1,17 @@
-.langmenu {
-  // color:white;
-}
+@import '~@angular/material/theming';
 
-img {
+@mixin lang-theme($theme) {
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  $background-color: mat-color($background, background);
+
+  .langmenu {
+    background: 0 0;
+    border:none;
+  }
+
+  // img {
   // margin: -2px;
   // padding-right:6px;
+  // }
 }

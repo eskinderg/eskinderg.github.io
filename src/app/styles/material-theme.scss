@@ -94,7 +94,6 @@ $theme:   mat-light-theme($primary, $accent, $warn);
   @include component-themes($dark-theme);
 }
 
-
 .lightblue-theme {
   $dark-primary: mat-palette($mat-red);
   $dark-accent:  mat-palette($mat-light-blue, A400, A100, A700);
