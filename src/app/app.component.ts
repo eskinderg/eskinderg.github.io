@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { LanguageService } from './providers/language.service';
 import { SpeedDialFabPosition } from './components/speeddial/speed-dial-fab.component';
 import { Meta } from '@angular/platform-browser';
@@ -6,7 +6,8 @@ import { Meta } from '@angular/platform-browser';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
 
