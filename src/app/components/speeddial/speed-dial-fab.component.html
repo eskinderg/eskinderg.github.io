@@ -6,7 +6,7 @@
   <button mat-fab class="fab-toggler"
                   (click)="onToggleFab()">
     <!-- <i class="fa-color-lens material-icons" [@fabToggler]="{value: fabTogglerState}">color_lens</i> -->
-    <img class="fa-color-lens" src="../assets/img/color-lens.png" [@fabToggler]="{value: fabTogglerState}" />
+    <img class="fa-color-lens" src="assets/img/color-lens.png" [@fabToggler]="{value: fabTogglerState}" />
   </button>
   <div [className]="reverseColumnDirection?'column-reverse':'column'" [@speedDialStagger]="buttons.length">
     <button *ngFor="let btn of buttons"
