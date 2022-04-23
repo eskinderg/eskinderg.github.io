@@ -9,14 +9,14 @@
     <p *ngFor="let paragraph of (portfolio.texts)?.about.content" [innerHTML]="paragraph" ></p>
     <button class="menu" mat-raised-button [ngStyle.sm]="{'width':'100%'}" [ngStyle.xs]="{'width':'100%'}" [matMenuTriggerFor]="menu">
       {{(portfolio.texts)?.about.button}}
-      <mat-icon>save</mat-icon>
+      <img src="assets/img/download.png" style="position: inherit;" [width]="30" />
     </button>
     <mat-menu #menu="matMenu">
       <a (click)="onPdfDownload()" href="assets/pdf/Resume.pdf" target="_blank">
-        <button mat-menu-item><mat-icon>picture_as_pdf</mat-icon>&nbsp;{{(portfolio.texts)?.about.pdf}}</button>
+        <button mat-menu-item><img class="menu-options" src="assets/img/pdf.png" [width]="30" />&nbsp; <span>{{(portfolio.texts)?.about.pdf}}</span></button>
       </a>
       <a (click)="onDocxDownload()" href="assets/doc/Resume.docx">
-        <button mat-menu-item><mat-icon>insert_drive_file</mat-icon>&nbsp;{{(portfolio.texts)?.about.word}}</button>
+        <button mat-menu-item><img class="menu-options" src="assets/img/docx.png" [width]="30" />&nbsp; <span> {{(portfolio.texts)?.about.word}} </span> </button>
       </a>
     </mat-menu>
 

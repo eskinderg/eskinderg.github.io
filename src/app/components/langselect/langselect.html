@@ -4,7 +4,7 @@
 <!-- <img src="https://www.countryflagicons.com/FLAT/32/{{selectedLangugage}}.png"> -->
 <mat-menu  #menu="matMenu" [xPosition]="'before'">
     <button class="lang-button" mat-menu-item (click)="changeLanguage(lang.code)" *ngFor="let lang of languages">
-        <img class="lang-select-icon small-icons" src="assets/svg/{{lang.code}}.svg">
+        <img class="lang-select-icon small-icons" src="assets/svg/{{lang.code}}.svg"> &nbsp;
         <span class="lang-selection">{{lang.title}}</span>
     </button>
 </mat-menu>

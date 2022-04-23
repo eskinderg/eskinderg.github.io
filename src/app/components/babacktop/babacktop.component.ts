@@ -7,7 +7,7 @@ import * as jQuery from 'jquery';
   styleUrls: ['./baBackTop.scss'],
   template: `
     <i #baBackTop class="ba-back-top" title="Back to Top">
-      <mat-icon>arrow_upward</mat-icon>
+      <img src="assets/img/arrow-top.png" [width]="40" style="margin-top:6px;" />
     </i>
   `
 })
