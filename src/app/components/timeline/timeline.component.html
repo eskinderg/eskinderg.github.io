@@ -18,7 +18,8 @@
   <div fxFlexOrder="2" fxFlex="10" class="middle" fxHide.sm fxHide.xs>
     <div class="line top"></div>
     <div class="line bottom">
-      <mat-icon class="midIcon">adjust</mat-icon>
+      <!-- <mat-icon class="midIcon">adjust</mat-icon> -->
+      <img src="assets/img/adjust.png" class="midIcon" />
     </div>
   </div>
   <div [fxFlexOrder]="((index % 2) == 0)?3:1" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="45" fxFlex.sm="100" fxFlex.xs="100" [ngClass]="{'right':(index % 2) == 0,'left':(index % 2) == 1}">
