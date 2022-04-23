@@ -61,4 +61,10 @@
   .chip {
     background-color: mat-color($accent) !important;
   }
+
+  .adjust {
+    // fill: mat-color($accent, lighter);
+    fill: lightgrey;
+
+  }
 }
