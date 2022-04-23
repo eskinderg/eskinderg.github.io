@@ -16,7 +16,7 @@ export class LangSelectComponent {
       this.languages = lang;
     })
 
-    this.selectedLangugage = this.translate(localStorage.getItem('language') || "en");
+    this.selectedLangugage = localStorage.getItem('language') || "en";
   }
 
   changeLanguage(lang:string) {
@@ -24,7 +24,7 @@ export class LangSelectComponent {
       data => {
         this.portfolio.texts = data;
         localStorage.setItem('language',lang);
-        this.selectedLangugage = this.translate(lang);
+        this.selectedLangugage = lang;
       },
       err => console.error(err)
     );

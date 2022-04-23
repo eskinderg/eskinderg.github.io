@@ -1,10 +1,11 @@
 <button matTooltip="Change Language" [matTooltipPosition]="'before'" mat-button [matMenuTriggerFor]="menu" class="langmenu">
-    <img src="https://www.countryflagicons.com/FLAT/32/{{selectedLangugage}}.png">
+    <img class="lang-select-icon" src="assets/svg/{{selectedLangugage}}.svg">
 </button>
 <!-- <img src="https://www.countryflagicons.com/FLAT/32/{{selectedLangugage}}.png"> -->
-<mat-menu  #menu="matMenu">
-    <button mat-menu-item (click)="changeLanguage(lang.code)" *ngFor="let lang of languages">
-        <img src="https://www.countryflagicons.com/FLAT/16/{{lang.CountryCode}}.png"> {{lang.title}}
+<mat-menu  #menu="matMenu" [xPosition]="'before'">
+    <button class="lang-button" mat-menu-item (click)="changeLanguage(lang.code)" *ngFor="let lang of languages">
+        <img class="lang-select-icon small-icons" src="assets/svg/{{lang.code}}.svg">
+        <span class="lang-selection">{{lang.title}}</span>
     </button>
 </mat-menu>
 

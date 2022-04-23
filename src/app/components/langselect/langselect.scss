@@ -11,8 +11,28 @@
     cursor: pointer;
   }
 
-  // img {
-  // margin: -2px;
-  // padding-right:6px;
-  // }
+  .lang-select-icon {
+    width:40px;
+    // background-color: mat-color($accent);
+    background: 0 0;
+  }
+
+  .lang-selection {
+    float:right;
+    position: absolute;
+    top: 0px;
+  }
+
+  .small-icons {
+    width:30px;
+  }
+
+  .lang-button {
+    padding-top:8px ! important;
+  }
+
+}
+
+:host {
+  margin-right: 0.5em;
 }
