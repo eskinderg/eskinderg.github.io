@@ -3,6 +3,10 @@
   // border-top-style: dashed;
 }
 
+.mat-divider {
+    border-top-color: rgba(255, 255, 255, 0.12) ! important;
+}
+
 .viewWrapper{
   width: 100%;
   max-width: 1600px;
