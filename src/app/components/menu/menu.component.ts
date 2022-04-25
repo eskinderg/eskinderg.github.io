@@ -55,7 +55,7 @@ export class MenuComponent implements OnInit {
   }
 
   scrollTo(element) {
-    console.log(element);
+    // console.log(element);
     this.visible = false;
     const section = this.portfolio.sections[element];
     // console.log(section);
