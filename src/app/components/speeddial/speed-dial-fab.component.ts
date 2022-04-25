@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output }from '@angular/core';
+import { Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
 import { speedDialFabAnimations }from './speed-dial-fab.animations';
 
 export interface FabButton {
@@ -27,6 +27,7 @@ export class SpeedDialFabComponent {
 
   buttons = [];
   fabTogglerState = 'inactive';
+  public atTop = true;
 
   constructor() {}
 
@@ -47,6 +48,15 @@ export class SpeedDialFabComponent {
   public onClickFab(btn: {icon: string}) {
     this.hideItems();
     this.fabClick.emit(btn);
+  }
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event) {
+    const scrollTop = event.srcElement.documentElement.scrollTop;
+    if (scrollTop === 0) {
+      this.atTop = true;
+    } else {
+      this.atTop = false;
+    }
   }
 }
 

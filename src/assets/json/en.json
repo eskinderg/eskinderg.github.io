@@ -30,7 +30,7 @@
       "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practices to produce a clean code that is easy to debug and maintain.",
       "I have a passion for web development and continue to learn the latest technological advancements."
     ],
-    "button": "Curriculum Vitae",
+    "button": "Download CV",
     "pdf": "Adobe Acrobat (pdf)",
     "word": "Word Document (docx)"
   },
@@ -320,6 +320,7 @@
   },
   "social": {
     "github": "https://github.com/eskinderg",
+    "stackoverflow": "https://stackoverflow.com/users/2876957/eskinder",
     "linkedin": "https://www.linkedin.com/in/eskinderg"
   }
 }

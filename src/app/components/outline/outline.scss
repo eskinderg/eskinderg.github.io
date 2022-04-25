@@ -93,7 +93,7 @@
   padding: 6px 10px;
   border-radius: 5px;
   cursor:pointer;
-  font-size:10px;
+  font-size:14px;
   font-weight: 600;
   text-align: left;
 }
@@ -177,7 +177,7 @@
 
 /* ================ Timeline Media Queries ================ */
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 1000px) {
 
   .timeline {
     width: 100%;
@@ -275,9 +275,6 @@
 
 }
 
-
-
-
 @mixin outline-theme($theme) {
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);
@@ -308,7 +305,7 @@
     transition: all 0.5s ease;
     // transition: box-sizing 1s ease;
     color:#FFF;
-    font-size: 15px !important;
+    font-size: 20px !important;
     background: mat-color($accent) !important;
   }
 
@@ -321,21 +318,21 @@
     z-index: 5;
   }
 
-.direction-l .flag:before {
-  position: absolute;
-  top: 50%;
-  right: -40px;
-  content: ' ';
-  display: block;
-  width: 12px;
-  height: 12px;
-  margin-top: -10px;
-  background: #fff;
-  // background-color: mat-color($accent);
-  border-radius: 10px;
-  border: 4px solid mat-color($accent) !important;
-  z-index: 10;
-}
+  .direction-l .flag:before {
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    content: ' ';
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin-top: -10px;
+    background: #fff;
+    // background-color: mat-color($accent);
+    border-radius: 10px;
+    border: 4px solid mat-color($accent) !important;
+    z-index: 10;
+  }
 
   .chip {
     // background-color:  !important;

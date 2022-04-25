@@ -2,10 +2,16 @@
   width: 27px;
 }
 
+.default{
+  box-shadow: none ! important;
+}
+
 .fab-container {
   position: fixed;
   z-index: 100;
   display: flex;
+  top: 5%;
+  left: 5%;
 
   flex-direction: row;
   -webkit-box-orient: horizontal;

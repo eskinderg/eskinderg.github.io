@@ -4,6 +4,7 @@
 </div>
 <div class='fab-container' [style.flexDirection]="reverseColumnDirection?'column-reverse':'row'">
   <button mat-fab class="fab-toggler"
+                  [ngClass]="{'default':atTop}"
                   (click)="onToggleFab()">
     <!-- <i class="fa-color-lens material-icons" [@fabToggler]="{value: fabTogglerState}">color_lens</i> -->
     <img class="fa-color-lens" src="assets/img/color-lens.png" [@fabToggler]="{value: fabTogglerState}" />
