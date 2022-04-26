@@ -6,9 +6,7 @@ import * as jQuery from 'jquery';
   selector: 'app-back-top',
   styleUrls: ['./baBackTop.scss'],
   template: `
-    <i #baBackTop class="ba-back-top" title="Back to Top">
-      <img src="assets/img/arrow-top.png" [width]="40" style="margin-top:6px;" />
-    </i>
+    <i #baBackTop class="ba-back-top" title="Back to Top"></i>
   `
 })
 export class BaBackTopComponent implements AfterViewInit {
