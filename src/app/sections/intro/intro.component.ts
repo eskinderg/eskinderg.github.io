@@ -8,12 +8,12 @@ import { LanguageService } from 'src/app/providers/language.service';
 })
 export class IntroComponent implements AfterViewInit {
 
-  @ViewChild('intro') videoSection: ElementRef;
+  @ViewChild('intro') introSection: ElementRef;
 
   constructor(public portfolio: LanguageService) { }
 
   ngAfterViewInit() {
-    this.portfolio.sections['intro'] = this.videoSection;
+    this.portfolio.sections['intro'] = this.introSection;
   }
 
 }

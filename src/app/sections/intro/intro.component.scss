@@ -9,7 +9,7 @@
 //   width: 100vw;
 //   height: calc(100vh - 150px);
 // }
-.titleVideo{
+.titleIntro{
   position: absolute;
   top: 40%;
   left: 10%;
@@ -40,7 +40,7 @@
   $background: map-get($theme, background);
   // $background-color: mat-color($background, card);
 
-  .video {
+  .intro {
     // @include mat-elevation(2);
     background-color: mat-color($accent);
     position: relative;

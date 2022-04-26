@@ -20,7 +20,7 @@
     "link": "contact"
     }
   ],
-  "video" : {
+  "intro" : {
     "title": "እስክንድር ጌታሁን",
     "subtitle": "Front End Developer ( Web / Front-End )"
   },
@@ -137,7 +137,6 @@
       "img": "bg-tapitright"
       },{
       "title": "Help!!!",
-      "subtitle": "2011",
       "subtitle": "2011",
       "img": "bg-help"
       },{

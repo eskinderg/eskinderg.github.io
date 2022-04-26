@@ -12,16 +12,16 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 @include component-themes($theme);
 
 // dark theme
-.dark-theme {
-  $dark-primary: mat-palette($mat-grey);
-  $dark-accent:  mat-palette($mat-grey, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  // $foreground: map-get($dark-theme, foreground);
+// .dark-theme {
+//   $dark-primary: mat-palette($mat-grey);
+//   $dark-accent:  mat-palette($mat-grey, A400, A100, A700);
+//   $dark-warn:    mat-palette($mat-red);
+//   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+//   // $foreground: map-get($dark-theme, foreground);
 
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
+//   @include angular-material-theme($dark-theme);
+//   @include component-themes($dark-theme);
+// }
 
 .red-theme {
   $dark-primary: mat-palette($mat-red);
@@ -59,14 +59,15 @@ $theme:   mat-light-theme($primary, $accent, $warn);
   @include component-themes($dark-theme);
 }
 
-.yellow-theme {
-  $dark-primary: mat-palette($mat-red);
-  $dark-accent:  mat-palette($mat-yellow, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
+// .yellow-theme {
+//   $dark-primary: mat-palette($mat-red);
+//   $dark-accent:  mat-palette($mat-yellow, A400, A100, A700);
+//   $dark-warn:    mat-palette($mat-red);
+//   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+//   @include angular-material-theme($dark-theme);
+//   @include component-themes($dark-theme);
+// }
+
 .pink-theme {
   $dark-primary: mat-palette($mat-red);
   $dark-accent:  mat-palette($mat-pink, A400, A100, A700);
@@ -103,14 +104,14 @@ $theme:   mat-light-theme($primary, $accent, $warn);
   @include component-themes($dark-theme);
 }
 
-.cyan-theme {
-  $dark-primary: mat-palette($mat-red);
-  $dark-accent:  mat-palette($mat-cyan, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
+// .cyan-theme {
+//   $dark-primary: mat-palette($mat-red);
+//   $dark-accent:  mat-palette($mat-cyan, A400, A100, A700);
+//   $dark-warn:    mat-palette($mat-red);
+//   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+//   @include angular-material-theme($dark-theme);
+//   @include component-themes($dark-theme);
+// }
 
 .brown-theme {
   $dark-primary: mat-palette($mat-red);

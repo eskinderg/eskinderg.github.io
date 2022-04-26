@@ -1,11 +1,6 @@
 {
   "colors" : [
     {
-      "theme": "dark-theme",
-      "icon": "timeline",
-      "tooltip": "Dark"
-    },
-    {
       "theme": "red-theme",
       "icon": "view_headline",
       "tooltip": "Red"
@@ -23,11 +18,6 @@
       "theme": "orange-theme",
       "icon": "lightbulb_outline",
       "tooltip": "Orange"
-    },
-    {
-      "theme": "yellow-theme",
-      "icon": "lock",
-      "tooltip": "Yellow"
     },
     {
       "theme": "pink-theme",
@@ -48,11 +38,6 @@
       "theme": "lightblue-theme",
       "icon": "lock",
       "tooltip": "Light Blue"
-    },
-    {
-      "theme": "cyan-theme",
-      "icon": "lock",
-      "tooltip": "Cyan"
     },
     {
       "theme": "brown-theme",
