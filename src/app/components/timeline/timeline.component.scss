@@ -47,7 +47,8 @@
 }
 .chip{
   margin: 4px!important;
-  color:#FFFFFF;
+  // color:#FFFFFF;
+  background: none ! important;
 }
 .gapTop{
   padding-top: 15px;
@@ -59,7 +60,9 @@
   $background-color: mat-color($background, card);
 
   .chip {
-    background-color: mat-color($accent) !important;
+    // background-color: mat-color($accent) !important;
+    border: 1px solid mat-color($accent) !important;
+    color: mat-color($accent) ! important;
   }
 
   .adjust {
