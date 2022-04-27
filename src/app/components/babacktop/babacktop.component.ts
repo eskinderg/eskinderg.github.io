@@ -7,28 +7,30 @@ import * as jQuery from 'jquery';
   styleUrls: ['./baBackTop.scss'],
   template: `
   <i #baBackTop class="ba-back-top" title="Back to Top">
-  <svg id="svg" width="30"  viewBox="0, 0, 400,274.0467404674047">
-    <g id="svgg"><path id="path0" d="M196.630 0.991 C 190.393 2.082,195.940 -3.194,96.330 96.372 C 8.613 184.050,3.900 188.848,2.456 191.959 C -0.251 197.786,0.031 204.905,3.179 210.241 C 5.257 213.764,62.282 270.285,65.245 271.759 C 68.773 273.514,73.438 274.255,76.915 273.612 C 83.796 272.340,79.804 276.006,142.558 213.337 L 200.246 155.729 257.934 213.337 C 320.688 276.006,316.696 272.340,323.577 273.612 C 327.054 274.255,331.719 273.514,335.247 271.759 C 338.210 270.285,395.235 213.764,397.313 210.241 C 400.357 205.082,400.718 197.981,398.227 192.254 C 396.868 189.129,218.542 9.510,211.916 4.592 C 207.655 1.429,201.892 0.072,196.630 0.991 " stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path></g>
-  </svg>
-  </i>
+    <svg id="svg-backTo-top" width="30" viewBox="0 0 307.054 307.054">
+      <path style="fill:#FFFFFF" d="M302.445,205.788L164.63,67.959c-6.136-6.13-16.074-6.13-22.203,0L4.597,205.788c-6.129,6.132-6.129,16.069,0,22.201
+      l11.101,11.101c6.129,6.136,16.076,6.136,22.209,0l115.62-115.626L269.151,239.09c6.128,6.136,16.07,6.136,22.201,0
+      l11.101-11.101C308.589,221.85,308.589,211.92,302.445,205.788z"/>
+    </svg>
+    </i>
   `
 })
 export class BaBackTopComponent implements AfterViewInit {
 
-  @Input() position  = 400;
+  @Input() position = 400;
   @Input() showSpeed = 500;
   @Input() moveSpeed = 700;
 
   @ViewChild('baBackTop') _selector: ElementRef;
   // @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
 
-  ngAfterViewInit (): void {
+  ngAfterViewInit(): void {
     this._onWindowScroll();
   }
 
   @HostListener('click')
   _onClick(): boolean {
-    jQuery('html, body').animate({scrollTop: 0}, {duration: this.moveSpeed});
+    jQuery('html, body').animate({ scrollTop: 0 }, { duration: this.moveSpeed });
     return false;
   }
 
