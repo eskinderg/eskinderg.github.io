@@ -92,7 +92,8 @@ button.mat-raised-button{
 
 @font-face {
   font-family: 'Raleway';
-  src: url(../assets/fonts/Raleway-Regular.ttf)
+  src: url(../assets/fonts/Raleway-Regular.ttf);
+  font-display: swap;
 }
 
 body{
