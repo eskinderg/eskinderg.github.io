@@ -169,9 +169,7 @@
         "title":"Freelance Web Developer (Front End Developer)",
         "subtitle":"Front End (Angular), Elance",
         "year":"Sept 2018 - PRESENT",
-        "intro": [
-          "Freelance"
-        ],
+        "intro": "Freelance",
         "elements":[
           {
             "type":"list",
@@ -194,9 +192,7 @@
       "title":"Web Developer (Front End)",
       "subtitle":"Front End, Nuaxis.",
       "year":"Aug 2016 - Jul 2018",
-      "intro": [
-        "Nuaxis"
-      ],
+      "intro": "Nuaxis",
       "elements":[
         {
           "type":"list",
@@ -228,9 +224,7 @@
       },{
       "title":"Software Engineer II",
       "year":"Nov 2015 - Aug 2016",
-      "intro": [
-        "Bloomberg BNA"
-      ],
+      "intro": "Bloomberg BNA",
       "elements":[
         {
           "type":"list",
@@ -251,9 +245,7 @@
       "title":"Web Developer & Designer",
       "subtitle":"Full-Stack Software Developer & Designer",
       "year":"JAN 2015 - NOV 2015",
-      "intro": [
-        ""
-      ],
+      "intro": "",
       "elements" : [
         {
           "type":"list",
@@ -271,9 +263,7 @@
       "title":"Web Developer (Full Stack Developer)",
       "subtitle":"Addis Ababa University, Ethiopia",
       "year":"SEP 2013 - JAN 2015",
-      "intro": [
-        ""
-      ],
+      "intro": "",
       "elements" : [
         {
           "type":"list",
