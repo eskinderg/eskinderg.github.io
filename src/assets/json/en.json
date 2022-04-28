@@ -281,12 +281,12 @@
       {
         "title": "B.Sc in Computer Science & Information Technology",
         "subtitle": "Arba Minch University, Arba Minch, Ethiopia",
-        "img": "bg-angular",
+        "img": "bg-graduation",
         "year": "2004 - 2008"
       },{
       "title": "Microsoft Certified C# Specialist",
       "subtitle": "Microsoft",
-      "img": "bg-angular",
+      "img": "bg-microsoft",
       "year": "2016"
       }
     ]

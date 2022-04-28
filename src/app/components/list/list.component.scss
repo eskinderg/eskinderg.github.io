@@ -7,7 +7,8 @@
 
 .bg-git, .bg-google, .bg-gulp, .bg-html, .bg-illustrator,
 .bg-javascript, .bg-jquery, .bg-karma, .bg-mongo, .bg-mysql,
-.bg-photoshop, .bg-php, .bg-typescript, .bg-webpack, .bg-sass, .bg-angular
+.bg-photoshop, .bg-php, .bg-typescript, .bg-webpack, .bg-sass, .bg-angular, .bg-microsoft,
+.bg-graduation
 {
   display: inline-block;
   background: url('../../../assets/img/expertin-min.png') no-repeat;
@@ -19,10 +20,18 @@
 .logo{
   width: 90px;
   height: 90px;
+  float:left;
+  margin-right: 15px;
 }
 
-.bg-angular {
-  background-position: -0px -0px;
+.bg-microsoft {
+  background-position: -0px -450px;
+  width: 90px;
+  height: 90px;
+}
+
+.bg-graduation {
+  background-position: -90px -450px;
   width: 90px;
   height: 90px;
 }
