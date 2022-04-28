@@ -61,8 +61,13 @@
 
   .chip {
     // background-color: mat-color($accent) !important;
-    border: 1px solid mat-color($accent) !important;
+    border: 2px solid mat-color($accent) !important;
     color: mat-color($accent) ! important;
+    font-weight: bold;
+  }
+
+  .mainTitle {
+    color: mat-color($accent);
   }
 
   .adjust {
