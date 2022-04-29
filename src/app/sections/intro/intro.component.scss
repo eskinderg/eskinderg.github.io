@@ -42,6 +42,7 @@
 
   .intro {
     // @include mat-elevation(2);
+    transition: background-color 1s ease;
     background-color: mat-color($accent);
     position: relative;
     //   background-color: #4280F7;
@@ -67,6 +68,7 @@
   }
 
   .fill {
+    transition: fill 1s ease;
     fill: mat-color($accent);
   }
 

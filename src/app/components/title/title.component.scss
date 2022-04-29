@@ -12,6 +12,7 @@
 
   .title{
     // @include mat-elevation(2);
+    transition: color 1s ease;
     color: mat-color($accent);
     display: inline-block;
     text-align: left;

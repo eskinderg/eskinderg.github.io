@@ -61,12 +61,14 @@
 
   .chip {
     // background-color: mat-color($accent) !important;
+    transition: all 1s ease;
     border: 2px solid mat-color($accent) !important;
     color: mat-color($accent) ! important;
     font-weight: bold;
   }
 
   .mainTitle {
+    transition: color 1s ease;
     color: mat-color($accent);
   }
 
