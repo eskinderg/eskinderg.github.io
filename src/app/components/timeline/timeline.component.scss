@@ -77,6 +77,15 @@
   padding-top: 15px;
 }
 
+
+.left .gapTop .mat-chip-list-wrapper{
+  justify-content: flex-end;
+}
+.right .chipsAlign .mat-chip-list-wrapper{
+  justify-content: flex-end;
+}
+
+
 @mixin timeline-theme($theme) {
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);
@@ -99,5 +108,27 @@
     // fill: mat-color($accent, lighter);
     fill: rgba(238,239,240,1);
 
+  }
+}
+
+@media screen and (max-width: 950px) {
+
+  .left,.left .mainTitle{
+    text-align: left;
+  }
+
+  .left .gapTop .mat-chip-list-wrapper{
+    justify-content: flex-start;
+  }
+  .right .chipsAlign .mat-chip-list-wrapper{
+    justify-content: flex-start;
+  }
+
+  .rExperienceList:before {
+    display:none;
+  }
+
+  .lExperienceList:after {
+    display:none;
   }
 }
