@@ -36,7 +36,7 @@ export class OutlineComponent implements OnInit {
   @HostListener('window:scroll')
   _onWindowScroll(): void {
     const el = this._selector.nativeElement;
-    window.scrollY > window.innerHeight - 150 ? jQuery(el).fadeIn(500) : jQuery(el).fadeOut(500);
+    window.scrollY > window.innerHeight - 150 ? jQuery(el).fadeIn(500) : jQuery(el).fadeOut(200);
   }
 
 }

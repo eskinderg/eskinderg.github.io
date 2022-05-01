@@ -1,6 +1,8 @@
 @import 'src/app/app.component.scss';
 @import 'src/app/sections/intro/intro.component.scss';
 @import 'src/app/sections/about/about.component.scss';
+@import 'src/app/components/mastery/mastery.component.scss';
+@import 'src/app/sections/accomplishments/accomplishments.component.scss';
 @import 'src/app/components/title/title.component.scss';
 @import 'src/app/components/menu/menu.component.scss';
 @import 'src/app/components/timeline/timeline.component.scss';
@@ -12,6 +14,8 @@
   @include lang-theme($theme);
   @include intro-theme($theme);
   @include about-theme($theme);
+  @include mastery-theme($theme);
+  @include accomplishments-theme($theme);
   @include title-theme($theme);
   @include ba-back-theme($theme);
   @include menu-theme($theme);

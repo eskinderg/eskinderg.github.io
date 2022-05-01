@@ -297,7 +297,7 @@
     ]
   },
   "contact": {
-    "intro": "You can contact me using my e-mail for website development projects.",
+    "intro": "You can contact me using my E-Mail or Phone for any website development projects.",
     "input": [
       "NAME","EMAIL","MESSAGE"
     ],

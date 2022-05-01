@@ -1,3 +1,16 @@
+@import '~@angular/material/theming';
+
+@mixin mastery-theme($theme) {
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+
+  .subtitle {
+    color: mat-color($accent, 700);
+    font-weight:bold ! important;
+  }
+
+}
+
 .mastery{
   width: 90px;
   height: 120px;
@@ -8,7 +21,7 @@
   height: 90px;
 }
 .mastery .subtitle{
-  font-size: 14px;
+  font-size: 15px;
 }
 
 /* ExpertIn images sprite */
@@ -25,6 +38,7 @@
   overflow: hidden;
   text-indent: -9999px;
   text-align: left;
+  filter: grayscale(50%);
 }
 
 .bg-angular {
