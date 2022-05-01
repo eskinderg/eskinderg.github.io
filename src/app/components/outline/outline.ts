@@ -21,13 +21,14 @@ export class OutlineComponent implements OnInit {
     this.currentSection = sectionId;
   }
 
-  scrollTo(element) {
+  scrollTo(element: any) {
     const section = this.portfolio.sections[element];
     section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   // onHover(link) {
   // this.hovered = link;
   // }
+
   onMouseOut() {
     // this.hovered = '';
   }
@@ -35,7 +36,7 @@ export class OutlineComponent implements OnInit {
   @HostListener('window:scroll')
   _onWindowScroll(): void {
     const el = this._selector.nativeElement;
-    window.scrollY > window.innerHeight - 150 ? jQuery(el).fadeIn(500) : jQuery(el).fadeOut(1000);
+    window.scrollY > window.innerHeight - 150 ? jQuery(el).fadeIn(500) : jQuery(el).fadeOut(500);
   }
 
 }
