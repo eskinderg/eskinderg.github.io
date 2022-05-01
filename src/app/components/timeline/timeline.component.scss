@@ -1,6 +1,29 @@
 @import '~@angular/material/theming';
 
+.lExperienceList:after {
+  content: " ";
+  border: 1px solid #eeeff0;
+  background: #eeeff0;
+  position: absolute;
+  margin-left: 10%;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.rExperienceList:before {
+  content: " ";
+  border: 1px solid #eeeff0;
+  background: #eeeff0;
+  position: absolute;
+  margin-left: -12%;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+
 .experienceList{
+  position:relative;
   color: #585858;
   font-size: 13px;
   margin-top: 15px;
