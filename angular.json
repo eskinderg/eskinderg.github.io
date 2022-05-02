@@ -28,8 +28,7 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.png",
-              "src/assets",
-              "src/sitemap.xml"
+              "src/assets"
             ],
             "styles": [
               "src/app/app.component.scss",
