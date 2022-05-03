@@ -23,15 +23,20 @@
     padding: 64px 10%;
     box-sizing: border-box;
   }
-  .titleAbout{
-    margin-top: 32px;
+  .profile-picture{
     box-sizing: border-box;
-    text-align: left;
+    // border:3px solid mat-color($accent);
+    // border-radius:100%;
+    // text-align: left;
+  }
+
+  .about-title {
+    margin-bottom:24px;
   }
 
   .content{
-    margin-top: 70px;
-    padding: 0 0 24px 24px;
+    // margin-top: 70px;
+    padding: 24px;
     box-sizing: border-box;
   }
   .content p:first-child{
@@ -45,14 +50,19 @@
     background-color: mat-color($accent);
   }
   .profile{
+    transition: filter 0.25s ease;
     background-image: url('../../../assets/img/expertin-min.webp');
     background-position: -236px -500px;
     filter: grayscale(100%);
     border-radius:100%;
     background-repeat: no-repeat;
-    width: 100%;
+    width: 320px;
     height: 320px;
     max-width: 320px;
+  }
+
+  .profile:hover {
+    filter: grayscale(0%);
   }
 }
 
