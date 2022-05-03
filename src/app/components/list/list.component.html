@@ -1,6 +1,10 @@
 <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center" class="education" *ngIf="type == 'education'">
 
-  <div fxFlex="40" fxFlex.sm="100" fxFlex.xs="100">
+  <div  fxHide.sm fxHide.xs >
+    <div class="education-logo" [ngClass]="item.img" alt="education logo"></div>
+  </div>
+
+  <div  fxFlex.sm="100" fxFlex.xs="100">
     <div class="h3 title">
       {{ item.title }}
     </div>
@@ -20,9 +24,6 @@
     </div>
   </div>
 
-  <div fxFlex="20" fxHide.sm fxHide.xs >
-    <div class="education-logo" [ngClass]="item.img" alt="education logo"></div>
-  </div>
 
 </div>
 

@@ -284,7 +284,7 @@
     ]
   },
   "education": {
-    "title": "ትምህርትና \\ ስልጠናዎች",
+    "title": "ትምህርትና \/ ስልጠናዎች",
     "content": [
       {
         "title": "B.Sc in Computer Science & Information Technology",
@@ -292,10 +292,15 @@
         "img": "bg-graduation",
         "year": "2004 - 2008"
       },{
+      "title": "Microsoft Certified Professional",
+      "subtitle": "Microsoft",
+      "img": "bg-microsoft",
+      "year": "2014"
+      },{
       "title": "Microsoft Certified C# Specialist",
       "subtitle": "Microsoft",
       "img": "bg-microsoft",
-      "year": "2016"
+      "year": "2014"
       }
     ]
   },
