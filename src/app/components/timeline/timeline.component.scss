@@ -90,7 +90,7 @@ $text-color: #585858;
   padding-top: 20px;
 }
 .middle .line{
-  background-color: #e7e7e7;
+  // background-color: #e7e7e7;
   width: 3px;
   height: 100%;
   overflow: auto;
@@ -152,6 +152,10 @@ $text-color: #585858;
     border: 1px solid #d4d4d4 ! important;
     color: $text-color ! important;
     // font-weight: bold;
+  }
+
+  .middle .line{
+    background-color: mat-color($accent, lighter);
   }
 
   .mainTitle {
