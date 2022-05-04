@@ -66,7 +66,7 @@
 
   .fill {
     transition: fill 1s ease;
-    fill: mat-color($accent);
+    fill: mat-color($accent) ! important;
   }
 
 }
