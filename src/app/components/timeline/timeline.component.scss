@@ -90,7 +90,7 @@ $text-color: #585858;
   padding-top: 20px;
 }
 .middle .line{
-  background-color: rgba(238,239,240,1);
+  background-color: #e7e7e7;
   width: 3px;
   height: 100%;
   overflow: auto;
@@ -161,10 +161,13 @@ $text-color: #585858;
 
   .adjust {
     // fill: mat-color($accent, lighter);
-    fill: mat-color($accent);
+    // fill: mat-color($accent);
+    fill:none;
+    stroke: mat-color($accent);
     // fill: rgba(238,239,240,1);
-
+    stroke-width: 14px;
   }
+
 }
 
 @media screen and (max-width: 950px) {
