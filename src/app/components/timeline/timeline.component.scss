@@ -31,7 +31,7 @@ $text-color: #585858;
   position:relative;
   color: #585858;
   font-size: 13px;
-  margin-top: 15px;
+  margin: 35px 0px 35px 0;
   line-height: 19px;
 }
 
@@ -182,6 +182,13 @@ $text-color: #585858;
     justify-content: flex-start;
   }
 
+  .leftFlexLayout {
+    justify-content: flex-start;
+  }
+
+  .experienceList{
+    margin: 15px 0px 15px 0;
+  }
 
   .lExperienceList:after, .rExperienceList:before,
   .leftItemFlexLayout:after, .rightItemFlexLayout:before {
