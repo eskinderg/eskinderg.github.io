@@ -36,7 +36,7 @@ $text-color: #585858;
 }
 
 .experienceListItem {
-  border: 1px solid #d4d4d4;
+  border: 1px solid #E9E9EC;
   padding: 15px;
   width:fit-content;
   border-radius: 7px;
@@ -46,7 +46,7 @@ $text-color: #585858;
   justify-content: flex-end;
 
   .leftItemFlexLayout{
-    box-shadow: -3px 5px 5px -3px lightgrey;
+    box-shadow: -3px 4px 3px -3px lightgrey;
   }
 }
 
@@ -54,7 +54,7 @@ $text-color: #585858;
   justify-content: flex-start;
 
   .rightItemFlexLayout{
-    box-shadow: 3px 5px 5px -3px lightgrey;
+    box-shadow: 3px 4px 3px -3px lightgrey;
   }
 }
 
