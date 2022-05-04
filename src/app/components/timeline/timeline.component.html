@@ -2,7 +2,7 @@
   <div [fxFlexOrder]="reverse ? 1: 3" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="48" [fxFlex.sm]="100" [fxFlex.xs]="100" [ngClass]="{'left':reverse,'right':!reverse}">
     <div class="mainTitle h3 link colorBlue">{{ job.title }}</div>
     <div class="subtitle h4">{{ job.subtitle }}</div>
-    <div fxHide fxShow.sm fxShow.xs class="mainTitle h4 year">{{ job.year }}</div>
+    <div fxHide fxShow.sm fxShow.xs class="mainTitle h4 year">{{job.year }}</div>
     <div class="paragraph">{{ job.intro }}</div>
     <!-- <div *ngFor="let paragraph of job.intro" class="paragraph">{{ paragraph }}</div> -->
     <div *ngFor="let list of job.elements">
@@ -31,7 +31,7 @@
     </div>
   </div>
   <div [fxFlexOrder]="reverse ? 3 : 1" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="48" fxFlex.sm="100" fxFlex.xs="100" [ngClass]="{'right': reverse,'left': !reverse}">
-    <div fxHide.sm fxHide.xs class="mainTitle h4 year gapTop">{{ job.year }}</div>
+    <div fxHide.sm fxHide.xs class="mainTitle h4 year gapTop"><app-title title="{{job.year}}" [lineWidth]="150"></app-title></div>
     <div class="used" [ngClass.sm]="['chipsAlign']" [ngClass.xs]="['chipsAlign']" [ngClass.md]="['gapTop']" [ngClass.lg]="['gapTop']" [ngClass.xl]="['gapTop']">
       <mat-chip-list>
         <mat-chip *ngFor="let technology of job.used" class="chip">{{ technology }}</mat-chip>
