@@ -7,8 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TimelineComponent implements OnInit {
 
-  @Input() job;
-  @Input() index;
+  @Input() job: any;
+  @Input() index: any;
+  @Input() reverse: boolean;
 
   constructor() { }
 

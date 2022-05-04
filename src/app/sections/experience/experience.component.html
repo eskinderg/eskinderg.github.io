@@ -9,6 +9,6 @@
     </div>
 
     <div>
-        <app-timeline [job]="job" [index]="i" *ngFor="let job of (portfolio.texts)?.experience.content;let i = index"></app-timeline>
+        <app-timeline [job]="job" [index]="i" [reverse]="(i % 2) == 0" *ngFor="let job of (portfolio.texts)?.experience.content;let i = index"></app-timeline>
     </div>
 </div>

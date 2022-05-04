@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" >
-  <div [fxFlexOrder]="((index % 2) == 0)?1:3" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="45" [fxFlex.sm]="100" [fxFlex.xs]="100" [ngClass]="{'left':(index % 2) == 0,'right':(index % 2) == 1}">
+  <div [fxFlexOrder]="reverse ? 1: 3" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="45" [fxFlex.sm]="100" [fxFlex.xs]="100" [ngClass]="{'left':reverse,'right':!reverse}">
     <div class="mainTitle h3 link colorBlue">{{ job.title }}</div>
     <div class="subtitle h4">{{ job.subtitle }}</div>
     <div fxHide fxShow.sm fxShow.xs class="mainTitle h4 year">{{ job.year }}</div>
@@ -7,7 +7,11 @@
     <!-- <div *ngFor="let paragraph of job.intro" class="paragraph">{{ paragraph }}</div> -->
     <div *ngFor="let list of job.elements">
       <h5 style="margin: 10px 0px 10px 0;">{{list.header}}</h5>
-      <div class="experienceList" [ngClass]="{'lExperienceList':(index % 2) == 0,'rExperienceList':(index % 2) == 1}" *ngFor="let l of list.list">  {{l}} </div>
+      <div class="experienceList" [ngClass]="{'lExperienceList': reverse,'rExperienceList': !reverse}" *ngFor="let l of list.list">
+        <div class="experienceListItem">
+          {{l}}
+        </div>
+      </div>
     </div>
     <!-- {{job.elements | json}} -->
     <!-- <hr> -->
@@ -26,7 +30,7 @@
 
     </div>
   </div>
-  <div [fxFlexOrder]="((index % 2) == 0)?3:1" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="45" fxFlex.sm="100" fxFlex.xs="100" [ngClass]="{'right':(index % 2) == 0,'left':(index % 2) == 1}">
+  <div [fxFlexOrder]="reverse ? 3 : 1" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="45" fxFlex.sm="100" fxFlex.xs="100" [ngClass]="{'right': reverse,'left': !reverse}">
     <div fxHide.sm fxHide.xs class="mainTitle h4 year gapTop">{{ job.year }}</div>
     <div class="used" [ngClass.sm]="['chipsAlign']" [ngClass.xs]="['chipsAlign']" [ngClass.md]="['gapTop']" [ngClass.lg]="['gapTop']" [ngClass.xl]="['gapTop']">
       <mat-chip-list>
