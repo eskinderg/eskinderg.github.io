@@ -161,7 +161,8 @@ $text-color: #585858;
 
   .adjust {
     // fill: mat-color($accent, lighter);
-    fill: rgba(238,239,240,1);
+    fill: mat-color($accent);
+    // fill: rgba(238,239,240,1);
 
   }
 }
