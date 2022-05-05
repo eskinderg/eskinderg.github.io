@@ -1,7 +1,7 @@
 <div [ngClass.sm]="['small']" [ngClass.xs]="['small']" #accomplishments class="accomplishments">
 
     <div class="h2 center">
-        <app-title title="{{(portfolio.texts)?.accomplishments.title}}" [stylish]="true" [lineWidth]="400" color="#f286b6" [inverse]="true"></app-title>
+        <app-title title="{{(portfolio.texts)?.accomplishments.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true" [lineWidth]="400" color="#f286b6" [inverse]="true"></app-title>
     </div>
 
     <div class="accomplishment one">

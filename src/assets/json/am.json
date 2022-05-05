@@ -1,4 +1,11 @@
 {
+  "font": {
+    "body": "Raleway",
+    "title": "Hiwua",
+    "intro": "Hiwua",
+    "outline": "Hiwua",
+    "menu": "Hiwua"
+  },
   "menu" : [
     {
       "name": "ስለ እኔ",
@@ -27,11 +34,8 @@
   "about" : {
     "title": "ስለ እኔ",
     "content": [
-      "As confirmed by my portfolio, content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications.",
-      "I follow OAUTH, REST and SOLID software engineering principles.",
-      "I use Agile, 12-Factor App and Block-Element-Modifier methodologies.",
-      "Using the best practices, I produce a clean code that is easy to maintain and debug.",
-      "I have been passionate with web development since childhood and continue learning the latest technological advancements."
+      "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practices to produce a clean code that is easy to debug and maintain.",
+      "I have a passion for web development and continue to learn the latest technological advancements."
     ],
     "button": "ካሪኩለም ሺቴ",
     "pdf": "Adobe Acrobat Version (pdf)",

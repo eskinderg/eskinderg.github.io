@@ -1,4 +1,11 @@
 {
+  "font": {
+    "body": "Raleway",
+    "title": "Monoton",
+    "intro": "Raleway",
+    "outline": "Raleway",
+    "menu": "Raleway"
+  },
   "menu" : [
     {
       "name": "About Me",

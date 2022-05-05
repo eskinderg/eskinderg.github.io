@@ -32,7 +32,7 @@
     <li *ngFor="let item of (portfolio.texts)?.menu">
       <div class="direction-l" >
         <div class="flag-wrapper" >
-          <span (click)="scrollTo(item.link)"
+          <span (click)="scrollTo(item.link)" [style.font-family]="portfolio.texts['font'].outline"
             class="flag"
             [ngClass]="{ active : item.link==currentSection}"
             >
