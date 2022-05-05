@@ -37,7 +37,7 @@ $text-color: #585858;
 
 .experienceListItem {
   border: 1px solid #E9E9EC;
-  padding: 15px;
+  padding: 8px;
   width:fit-content;
   border-radius: 7px;
 }
@@ -173,12 +173,12 @@ $text-color: #585858;
   }
 
   .adjust {
-    // fill: mat-color($accent, lighter);
+    fill: mat-color($accent, lighter);
     // fill: mat-color($accent);
-    fill:none;
-    stroke: mat-color($accent);
+    // fill:none;
+    // stroke: mat-color($accent);
     // fill: rgba(238,239,240,1);
-    stroke-width: 14px;
+    // stroke-width: 14px;
   }
 
 }
