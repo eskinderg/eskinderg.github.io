@@ -72,7 +72,7 @@
     </div>
 
     <div class="right" fxFlex="60" fxFlex.sm="100" fxFlex.xs="100" [ngStyle.sm]="{'padding': '0 5%'}" [ngStyle.xs]="{'padding': '0 5%'}">
-        <div class="contactIntro">{{(portfolio.texts)?.contact.intro}}</div>
+        <div class="contactIntro" [style.font-family]="portfolio.texts?.font.content">{{(portfolio.texts)?.contact.intro}}</div>
 
         <br/>
 
@@ -110,7 +110,7 @@
 
 <div class="footer">
     <div class="horizontal-line">
-        <div class="copyrights colorWhite" [ngStyle.xs]="{'font-size.px': 14}" [ngStyle.sm]="{'font-size.px': 14}">
+        <div class="copyrights colorWhite" [style.font-family]="portfolio.texts?.font.content" [ngStyle.xs]="{'font-size.px': 14}" [ngStyle.sm]="{'font-size.px': 14}">
             {{(portfolio.texts)?.footer.content}}
         </div>
     </div>

@@ -4,7 +4,8 @@
     "title": "Hiwua",
     "intro": "Hiwua",
     "outline": "Hiwua",
-    "menu": "Hiwua"
+    "menu": "Hiwua",
+    "content": "Hiwua"
   },
   "menu" : [
     {
@@ -323,7 +324,7 @@
     "button":"Send message"
   },
   "footer": {
-    "content": "፪፩፪ \u00A9"
+    "content": "\u00A9 ፳፻፲፬"
   },
   "social": {
     "github": "https://github.com/eskinderg",
