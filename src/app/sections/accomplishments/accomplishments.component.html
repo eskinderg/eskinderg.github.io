@@ -12,7 +12,7 @@
     <app-title title="{{(portfolio.texts)?.accomplishments.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true" [lineWidth]="250" color="#f286b6" [inverse]="true"></app-title>
 </div>
 
-<div [ngClass.sm]="['small']" fxLayoutAlign="center center" [ngClass.xs]="['small']" #accomplishments class="accomplishments">
+<div [ngClass.sm]="['small']" fxLayoutAlign="center center" fxLayout="row wrap" [ngClass.xs]="['small']" #accomplishments class="accomplishments">
 
     <div class="accomplishment one">
         <div class="h3 subtitle">
