@@ -36,4 +36,10 @@
   height: 111px;
   width: 100%;
 }
+
+.lang-select-icon {
+  width:30px;
+  height:30px;
+  background: 0 0;
+}
 /*==================================================== */
