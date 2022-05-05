@@ -4,11 +4,11 @@ $text-color: #585858;
 
 .lExperienceList:after {
   content: " ";
-  border: 1px solid #eeeff0;
-  background: #eeeff0;
+  // border: 1px solid #eeeff0;
+  // background: #eeeff0;
   position: absolute;
   // margin-left: 10%;
-  right: -5%;
+  right: -5.5%;
   width: 10px;
   height: 10px;
   border-radius: 10px;
@@ -17,10 +17,10 @@ $text-color: #585858;
 
 .rExperienceList:before {
   content: " ";
-  border: 1px solid #eeeff0;
-  background: #eeeff0;
+  // border: 1px solid #eeeff0;
+  // background: #eeeff0;
   position: absolute;
-  margin-left: -5%;
+  margin-left: -5.5%;
   width: 10px;
   height: 10px;
   border-radius: 10px;
@@ -146,6 +146,15 @@ $text-color: #585858;
   $background: map-get($theme, background);
   $background-color: mat-color($background, card);
 
+  .lExperienceList:after {
+    border: 3px solid #ffffff;
+    background: mat-color($accent, lighter);
+  }
+
+  .rExperienceList:before {
+    border: 3px solid #ffffff;
+    background: mat-color($accent, lighter);
+  }
   .chip {
     // background-color: mat-color($accent) !important;
     transition: all 1s ease;
