@@ -14,11 +14,7 @@
 }
 
 @font-face {
-  font-family: 'Hiwua';
-  src: url(../../assets/fonts/Hiwua.woff2);
+  font-family: 'wookianos';
+  src: url(../../assets/fonts/wookianos.woff2);
   font-display: swap;
-}
-
-.wf-opensans-n4-active.wf-opensans-n7-active body{
-  font-family: 'Raleway', sans-serif;
 }
