@@ -177,10 +177,11 @@
             "type":"list",
             "header":"Key Responsibilities include, but not limited to:",
             "list": [
+              "Provided support for different websites ",
               "Created Single Page Applications by using web technologies like HTML5, SASS, Typescript, Angular2 and Bootstrap.",
               "Created and used Reducers that received Actions to modify the store State.",
               "Created custom NPM modules.",
-              "Developed administrative UI Components using Angular2, Typescript and Webpack",
+              "Developed administrative UI Components using Angular2+, Typescript and Webpack",
               "Used Bootstrap for Responsive Web design.",
               "Optimized Front-End assets for speed and performance",
               "Used Middleware, Redux-Promise in an application to retrieve data from Back-End RESTFUL service.",
@@ -201,12 +202,11 @@
           "list": [
             "Created programs as per user / design requirements using AngularJS",
             "Collaborated with cross-functional teams (DEV, UX/UI & BA) to define, design, and deliver creative digital solutions",
-            "Set up Front-End development environment (Angular)",
             "Utilized automated unit and integration tests for application life cycle",
             "Executed Agile Development techniques",
             "Utilized industry best practices to create effective business solutions for clients",
             "Participated towards senior-level technology discussions",
-            "Created HTML forms using section 508 US web standards",
+            "Created web forms using bootstrap.",
             "Used Git flow techniques for feature branching, merging and continuous integration",
             "Implemented google analytics using angularitics",
             "Participated on OAuth implementation for user’s role and permissions using JWT (JSON web token)",
@@ -235,6 +235,7 @@
             "Full Stack web development using ASP .Net MVC, C#, Angularjs and MSSQL.",
             "Provided support for internal web application in facilitation of web application migration.",
             "Integrated Asp MVC with Ektron system",
+            "Designed modern architectural patterns for new and legacy systems.",
             "Provided architectural patterns for intranet systems.",
             "Wrote Front-end and Back-end Unit Tests for code refactoring and continuous deployment process."
           ]
@@ -251,10 +252,11 @@
           "type":"list",
           "header":"Key Responsibilities include, but not limited to:",
           "list": [
-            "Created websites using open source technologies.",
+            "Full Stack development using LAMP stack.",
+            "Maintained website for most up-to date technology, software, and information",
             "Developed and Implemented responsive User-Interface and back-end analytic tracking system",
-            "Provided support for different websites ",
-            "Customized and Implemented WordPress themes and plugins."
+            "Customized, Implemented WordPress themes and plugins.",
+            "Provided support for different websites "
           ]
         }
       ],

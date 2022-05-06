@@ -180,6 +180,7 @@
             "type":"list",
             "header":"Key Responsibilities include but not limited to:",
             "list": [
+              "Provided support for different websites ",
               "Created SPA, user interactive (UI) web pages using web technologies like HTML5, SASS, Typescript, Angular2 and Bootstrap.",
               "Created and used Reducers that received Actions to modify the store State.",
               "Created Action dispatch to deploy Actions to add Dynamic Functionalities",
@@ -205,12 +206,11 @@
           "list": [
             "Created programs as per user / design requirements using AngularJS",
             "Collaborated with cross-functional teams (DEV, UX/UI & BA) to define, design, and deliver creative digital solutions",
-            "Setting up the Front-End development environment (Angular) and processes ( Team of 2 Developers at beginning, with plan to add 3 more later on )",
             "Utilized, automated unit tests and integration tests for application lifecycle",
             "Executed Agile Developmental techniques",
             "Utilized industry best practices to create effective business solutions for clients",
             "Participated and contributed towards senior-level technology discussions",
-            "Created HTML forms using section 508 US web standards",
+            "Created web forms using bootstrap.",
             "Used Git flow techniques for feature branching, merging and continuous integration",
             "Implemented google analytics using angularitics",
             "Participated on OAuth implementation for user’s role and permissions using JWT (JSON web token)",
@@ -256,10 +256,11 @@
           "type":"list",
           "header":"Key Responsibilities include but not limited to:",
           "list": [
-            "Created websites using open source technologies.",
-            "Developed and implemented mobile device responsive UI designs and back-end analytics tracking",
+            "Full Stack development using LAMP stack.",
             "Maintained website for most up-to date technology, software, and information",
-            "Customized, Implemented custom WordPress themes and plugins."
+            "Developed and implemented mobile device responsive UI designs and back-end analytics tracking",
+            "Customized, Implemented WordPress themes and plugins.",
+            "Provided support for different websites "
           ]
         }
       ],
