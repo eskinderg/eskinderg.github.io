@@ -68,16 +68,21 @@
         <br/>
 
         <div class="contactIntro">
-            <mat-card-title><img src="assets/img/mail.webp" alt="Mail" [width]=30 [height]=25 style="margin-right:10px; top:3px; position:relative;" /></mat-card-title>
-            <a class="title h3 link colorBlue" [ngStyle]="{'text-decoration-line': 'none'}" href="mailto:{{(portfolio.texts)?.contact.mail}}?Subject=Hello" target="_top">{{ (portfolio.texts)?.contact.mail }}</a>
+            <a class="title h3 link colorBlue" [ngStyle]="{'text-decoration-line': 'none'}" href="mailto:{{(portfolio.texts)?.contact.mail}}?Subject=Hello" target="_top">
+                <mat-card-title><img src="assets/img/mail.webp" alt="Mail" [width]=30 [height]=25 style="margin-right:10px; top:3px; position:relative;" /></mat-card-title>
+                {{ (portfolio.texts)?.contact.mail }}
+            </a>
             <br/>
             <br/>
+
             <mat-divider> </mat-divider>
 
             <br/>
             <mat-card-title></mat-card-title>
-            <img src="assets/img/phone.webp" alt="Phone" [width]=30 [height]=30 style="margin-right:10px; top:6px; position:relative;" />
-            <a class="phone" href="tel:{{(portfolio.texts)?.contact.phone}}">{{(portfolio.texts)?.contact.phone}}</a>
+            <a class="phone" href="tel:{{(portfolio.texts)?.contact.phone}}">
+                <img src="assets/img/phone.webp" alt="Phone" [width]=30 [height]=30 style="margin-right:10px; top:6px; position:relative;" />
+                {{(portfolio.texts)?.contact.phone}}
+            </a>
         </div>
         <!-- <div class="inputs"> -->
         <!--   <form class="contact-form"> -->
