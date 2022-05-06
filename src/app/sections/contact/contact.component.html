@@ -76,7 +76,8 @@
 
             <br/>
             <mat-card-title></mat-card-title>
-            <img src="assets/img/phone.webp" alt="Phone" [width]=30 [height]=30 style="margin-right:10px; top:6px; position:relative;" />   {{(portfolio.texts)?.contact.phone}}
+            <img src="assets/img/phone.webp" alt="Phone" [width]=30 [height]=30 style="margin-right:10px; top:6px; position:relative;" />
+            <a class="phone" href="tel:{{(portfolio.texts)?.contact.phone}}">{{(portfolio.texts)?.contact.phone}}</a>
         </div>
         <!-- <div class="inputs"> -->
         <!--   <form class="contact-form"> -->
