@@ -65,9 +65,9 @@
     width: 100%;
   }
 
-  .fill {
+  .separatorPath {
     transition: fill 1s ease;
-    fill: mat-color($accent) ! important;
+    fill: mat-color($accent);
   }
 
 }

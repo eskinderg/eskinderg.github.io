@@ -8,11 +8,20 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ContactComponent } from './contact.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SeparatorModule } from 'src/app/components/separator/separator.module';
 
 @NgModule({
   declarations: [ContactComponent],
   imports: [
-    CommonModule, FormsModule, MatIconModule, MatDividerModule, MatCardModule, MatInputModule, MatButtonModule, FlexLayoutModule
+    CommonModule,
+    FormsModule,
+    MatIconModule,
+    MatDividerModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    SeparatorModule
   ],
   exports: [ContactComponent]
 })
