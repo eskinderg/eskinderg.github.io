@@ -10,7 +10,7 @@
       <p *ngFor="let paragraph of (portfolio.texts)?.about.content" [innerHTML]="paragraph" ></p>
       <button class="menu" mat-raised-button [style.font-family]="portfolio.texts?.font.menu" [ngStyle.sm]="{'width':'100%'}" [ngStyle.xs]="{'width':'100%'}" [matMenuTriggerFor]="menu">
         {{(portfolio.texts)?.about.button}}
-        <img src="assets/img/download.webp" style="position: inherit;" [width]="30" [height]="22" />
+        <img src="assets/img/download.webp" style="position: inherit;" [width]="30" [height]="22" alt="Download File" />
       </button>
       <mat-menu #menu="matMenu">
         <a (click)="onPdfDownload()" href="assets/pdf/Resume.pdf" target="_blank">
