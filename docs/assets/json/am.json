@@ -47,64 +47,64 @@
     "content": "",
     "masteries": [
       {
-        "title": "Angular",
+        "title": "",
         "img": "bg-angular"
       },{
-      "title": "TypeScript",
+      "title": "",
       "img": "bg-typescript"
       },{
-      "title": "Javascript",
+      "title": "",
       "img": "bg-javascript"
       },{
-      "title": "jQuery",
+      "title": "",
       "img": "bg-jquery"
       },{
-      "title": "CSS3",
+      "title": "",
       "img": "bg-css"
       },{
-      "title": "Git",
+      "title": "",
       "img": "bg-git"
       },{
-      "title": "Gulp",
+      "title": "",
       "img": "bg-gulp"
       },{
-      "title": "Karma",
+      "title": "",
       "img": "bg-karma"
       },{
-      "title": "Facebook SDK",
+      "title": "",
       "img": "bg-facebook"
       },{
-      "title": "Google API",
+      "title": "",
       "img": "bg-google"
       },{
-      "title": "Bootstrap",
+      "title": "",
       "img": "bg-bootstrap"
       },{
-      "title": "Node JS",
+      "title": "",
       "img": "bg-foundation"
       },{
-      "title": "HTML5",
+      "title": "",
       "img": "bg-html"
       },{
-      "title": "PHP",
+      "title": "",
       "img": "bg-php"
       },{
-      "title": "C#",
+      "title": "",
       "img": "bg-mongo"
       },{
-      "title": "MySQL",
+      "title": "",
       "img": "bg-mysql"
       },{
-      "title": "Photoshop",
+      "title": "",
       "img": "bg-photoshop"
       },{
-      "title": "MS SQL",
+      "title": "",
       "img": "bg-illustrator"
       },{
-      "title": "Webpack",
+      "title": "",
       "img": "bg-webpack"
       },{
-      "title": "Sass",
+      "title": "",
       "img": "bg-sass"
       }
     ]
@@ -156,10 +156,10 @@
     "title": "ፍፃሜዎች",
     "content": [
       {
-        "title": "2013-2014",
+        "title": "2005-2006 ዓ.ም",
         "paragraph": "Developed websites using WordPress, OpenCart and other opensource technologies"
       },{
-      "title": "2016",
+      "title": "2008 ዓ.ም",
       "paragraph": "Participated on OAuth implementation for user roles and permissions using JWT (JSON web token)"
       },{
       "title": "2008",
@@ -173,7 +173,7 @@
       {
         "title":"Freelance Web Developer (Front End Developer)",
         "subtitle":"Front End (Angular), Elance",
-        "year":"Sept 2018 - PRESENT",
+        "year":"ነሐሴ 2010 - አሁን",
         "intro": "Freelance",
         "elements":[
           {
@@ -197,7 +197,7 @@
       },{
       "title":"Web Developer (Front End)",
       "subtitle":"Front End, Nuaxis.",
-      "year":"Aug 2016 - Jul 2018",
+      "year":"ሐምሌ 2008 - ሰኔ 2010",
       "intro": "Nuaxis",
       "elements":[
         {
@@ -228,7 +228,7 @@
       "used":["Angular" ,"Typescript" ,"Javascript" ,"jQuery" ,"HTML5" ,"Sass" ,"Bootstrap", "Google API", "Gulp","OAuth","NodeJS","Postgres SQL","Git"]
       },{
       "title":"Software Engineer II",
-      "year":"Nov 2015 - Aug 2016",
+      "year":"ጥቅምት 2008 - ሐምሌ 2008",
       "intro": "Bloomberg BNA",
       "elements":[
         {
@@ -249,7 +249,7 @@
       },{
       "title":"Web Developer & Designer",
       "subtitle":"Full-Stack Software Developer & Designer",
-      "year":"JAN 2015 - NOV 2015",
+      "year":"ታኅሣሥ 2007 - ጥቅምት2008",
       "intro": "",
       "elements" : [
         {
@@ -268,7 +268,7 @@
       },{
       "title":"Web Developer (Full Stack Developer)",
       "subtitle":"Addis Ababa University, Ethiopia",
-      "year":"SEP 2013 - JAN 2015",
+      "year":"ነሐሴ 2005 - ታኅሣሥ 2007",
       "intro": "",
       "elements" : [
         {
@@ -296,17 +296,17 @@
         "title": "B.Sc in Computer Science & Information Technology",
         "subtitle": "አርባ ምንጭ  ዩኒሸርስቲ, አርባ ምንጭ, ኢትዮጵያ",
         "img": "bg-graduation",
-        "year": "2004 - 2008"
+        "year": "1996 - 2000 ዓ.ም"
       },{
       "title": "Microsoft Certified Professional",
       "subtitle": "Microsoft",
       "img": "bg-microsoft",
-      "year": "2014"
+      "year": "2006 ዓ.ም"
       },{
       "title": "Microsoft Certified C# Specialist",
       "subtitle": "Microsoft",
       "img": "bg-microsoft",
-      "year": "2014"
+      "year": "2006 ዓ.ም"
       }
     ]
   },

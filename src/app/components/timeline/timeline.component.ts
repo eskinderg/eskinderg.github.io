@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
   selector: 'app-timeline',
@@ -11,7 +12,7 @@ export class TimelineComponent implements OnInit {
   @Input() index: any;
   @Input() reverse: boolean;
 
-  constructor() { }
+  constructor(public portfolio: LanguageService) { }
 
   ngOnInit(): void {
   }
