@@ -9,17 +9,17 @@
 </div>
 
 <div [ngClass]="selectedTheme">
-  <speed-dial-fab
+  <app-speed-dial-fab
     class="speed-dial-container"
     [ngClass]="speedDialFabPosition"
-    [reverse-column-direction]="speedDialFabPosition===SpeedDialFabPosition.Bottom"
+    [reverseColumnDirection]="speedDialFabPosition===SpeedDialFabPosition.Bottom"
     (fabClick)="onSpeedDialFabClicked($event)"
-    [buttons]="speedDialFabButtons">
-  </speed-dial-fab>
+    [fabButtons]="speedDialFabButtons">
+  </app-speed-dial-fab>
 
   <app-menu></app-menu>
 
-  <div id="parentDiv" class="viewWrapper" scrollSpy [spiedTags]="spieTags" (sectionChange)="onSectionChange($event)">
+  <div id="parentDiv" class="viewWrapper" appScrollSpy [spiedTags]="spieTags" (sectionChange)="onSectionChange($event)">
 
     <app-outline [currentSection]="activeSection"></app-outline>
 

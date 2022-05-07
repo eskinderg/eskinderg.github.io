@@ -14,16 +14,16 @@ export enum SpeedDialFabPosition {
 }
 
 @Component({
-  selector: 'speed-dial-fab',
+  selector: 'app-speed-dial-fab',
   templateUrl: './speed-dial-fab.component.html',
   styleUrls: ['./speed-dial-fab.component.scss'],
   animations: speedDialFabAnimations
 })
 export class SpeedDialFabComponent {
 
-  @Input("reverse-column-direction") reverseColumnDirection: boolean = false;
-  @Input("buttons") fabButtons: FabButton[];
-  @Output('fabClick') fabClick = new EventEmitter();
+  @Input() reverseColumnDirection: boolean = false;
+  @Input() fabButtons: FabButton[];
+  @Output() fabClick = new EventEmitter();
 
   buttons = [];
   fabTogglerState = 'inactive';

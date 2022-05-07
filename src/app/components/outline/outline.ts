@@ -1,4 +1,4 @@
-import { HostListener, ViewChild, Component, OnInit, ElementRef, Input } from '@angular/core';
+import { HostListener, ViewChild, Component, ElementRef, Input } from '@angular/core';
 // import { style, state, animate, transition, trigger } from '@angular/animations';
 import { LanguageService } from 'src/app/providers/language.service';
 import * as jQuery from 'jquery';
@@ -8,14 +8,12 @@ import * as jQuery from 'jquery';
   templateUrl: './outline.html',
   styleUrls: ['./outline.scss']
 })
-export class OutlineComponent implements OnInit {
+export class OutlineComponent {
 
   @Input() currentSection = 'section1';
   @ViewChild('outline') _selector: ElementRef;
 
   constructor(public portfolio: LanguageService) { }
-
-  ngOnInit() { }
 
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;

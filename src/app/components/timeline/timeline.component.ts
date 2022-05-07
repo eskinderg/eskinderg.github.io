@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
@@ -6,15 +6,12 @@ import { LanguageService } from 'src/app/providers/language.service';
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss']
 })
-export class TimelineComponent implements OnInit {
+export class TimelineComponent {
 
   @Input() job: any;
   @Input() index: any;
   @Input() reverse: boolean;
 
   constructor(public portfolio: LanguageService) { }
-
-  ngOnInit(): void {
-  }
 
 }

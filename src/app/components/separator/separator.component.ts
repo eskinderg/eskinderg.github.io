@@ -1,19 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-separator',
   templateUrl: './separator.component.html',
   styleUrls: ['./separator.component.scss']
 })
-export class SeparatorComponent implements OnInit {
+export class SeparatorComponent {
 
   @Input() fillColor: string = '';
   @Input() backgroundColor: string = '';
   @Input() Inverted: boolean = false;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

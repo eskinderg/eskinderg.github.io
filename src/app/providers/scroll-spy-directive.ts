@@ -1,7 +1,7 @@
 import { Directive, Input, EventEmitter, Output, ElementRef, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[scrollSpy]'
+  selector: '[appScrollSpy]'
 })
 export class ScrollSpyDirective {
 
