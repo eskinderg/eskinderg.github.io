@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LanguageService } from 'src/app/providers/language.service';
 
 import { ExperienceComponent } from './experience.component';
 
@@ -8,9 +10,11 @@ describe('ExperienceComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExperienceComponent ]
+      declarations: [ExperienceComponent],
+      providers: [LanguageService],
+      imports: [HttpClientModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

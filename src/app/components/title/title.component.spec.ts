@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LanguageService } from 'src/app/providers/language.service';
 
 import { TitleComponent } from './title.component';
 
@@ -8,9 +10,11 @@ describe('TitleComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TitleComponent ]
+      declarations: [TitleComponent],
+      providers: [LanguageService],
+      imports: [BrowserAnimationsModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

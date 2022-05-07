@@ -1,11 +1,11 @@
 <div fxLayout="row wrap" fxLayoutAlign="start stretch" >
   <div [fxFlexOrder]="reverse ? 1: 3" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="48" [fxFlex.sm]="100" [fxFlex.xs]="100" [ngClass]="{'left':reverse,'right':!reverse}">
-    <div class="mainTitle h3 link colorBlue">{{ job.title }}</div>
-    <div class="subtitle h4">{{ job.subtitle }}</div>
-    <div fxHide fxShow.sm fxShow.xs class="mainTitle h4 year">{{job.year }}</div>
-    <div class="paragraph">{{ job.intro }}</div>
+    <div class="mainTitle h3 link colorBlue">{{ job?.title }}</div>
+    <div class="subtitle h4">{{ job?.subtitle }}</div>
+    <div fxHide fxShow.sm fxShow.xs class="mainTitle h4 year">{{job?.year }}</div>
+    <div class="paragraph">{{ job?.intro }}</div>
     <!-- <div *ngFor="let paragraph of job.intro" class="paragraph">{{ paragraph }}</div> -->
-    <div *ngFor="let list of job.elements">
+    <div *ngFor="let list of job?.elements">
       <h5 style="margin: 10px 0px 10px 0;">{{list.header}}</h5>
       <div fxLayout="row wrap" class="experienceList" [ngClass]="{'lExperienceList leftFlexLayout': reverse,'rExperienceList rightFlexLayout': !reverse}" *ngFor="let l of list.list">
         <div class="experienceListItem" [ngClass]="{'leftItemFlexLayout': reverse, 'rightItemFlexLayout': ! reverse}">
@@ -32,10 +32,10 @@
   </div>
   <div [fxFlexOrder]="reverse ? 3 : 1" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="48" fxFlex.sm="100" fxFlex.xs="100" [ngClass]="{'right': reverse,'left': !reverse}">
     <div fxHide.sm fxHide.xs class="mainTitle h4 year gapTop">
-      <app-title title="{{job.year}}" [lineWidth]="150" fontFamily="{{portfolio.texts?.font.content}}"> </app-title></div>
+      <app-title title="{{job?.year}}" [lineWidth]="150" fontFamily="{{portfolio.texts?.font.content}}"> </app-title></div>
     <div class="used" [ngClass.sm]="['chipsAlign']" [ngClass.xs]="['chipsAlign']" [ngClass.md]="['gapTop']" [ngClass.lg]="['gapTop']" [ngClass.xl]="['gapTop']">
       <mat-chip-list>
-        <mat-chip *ngFor="let technology of job.used" class="chip">{{ technology }}</mat-chip>
+        <mat-chip *ngFor="let technology of job?.used" class="chip">{{ technology }}</mat-chip>
       </mat-chip-list>
     </div>
   </div>

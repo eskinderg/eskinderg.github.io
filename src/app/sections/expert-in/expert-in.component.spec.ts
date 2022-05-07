@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LanguageService } from 'src/app/providers/language.service';
 
 import { ExpertInComponent } from './expert-in.component';
 
@@ -8,9 +10,11 @@ describe('ExpertInComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ExpertInComponent ]
+      declarations: [ExpertInComponent],
+      providers: [LanguageService],
+      imports: [HttpClientModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

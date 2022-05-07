@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LanguageService } from 'src/app/providers/language.service';
 
 import { AccomplishmentsComponent } from './accomplishments.component';
 
@@ -8,9 +10,11 @@ describe('AccomplishmentsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AccomplishmentsComponent ]
+      declarations: [AccomplishmentsComponent],
+      providers: [LanguageService],
+      imports: [HttpClientModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

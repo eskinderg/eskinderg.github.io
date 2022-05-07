@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LanguageService } from 'src/app/providers/language.service';
 
 import { EducationConferencesComponent } from './education-conferences.component';
 
@@ -8,9 +10,11 @@ describe('EducationConferencesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EducationConferencesComponent ]
+      declarations: [EducationConferencesComponent],
+      providers: [LanguageService],
+      imports: [HttpClientModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
