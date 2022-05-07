@@ -1,6 +1,7 @@
 @import '~@angular/material/theming';
 
 @mixin ba-back-theme($theme) {
+  $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);
   $background-color: mat-color($background, card);
@@ -23,7 +24,7 @@
     font-size: 45px;
     text-align: center;
     opacity: 0.3;
-    background-color: mat-color($accent);
+    background-color: mat-color($primary);
     border-radius: 50%;
     line-height: 40px;
     &:hover {

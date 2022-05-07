@@ -1,11 +1,12 @@
 @import '~@angular/material/theming';
 
 @mixin mastery-theme($theme) {
+  $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);
 
   .subtitle {
-    color: mat-color($accent, 700);
+    color: mat-color($primary, 700);
     font-weight:bold ! important;
   }
 

@@ -1,11 +1,12 @@
 @import '~@angular/material/theming';
 
 @mixin accomplishments-theme($theme) {
+  $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);
 
   .circle-ornament {
-    fill: mat-color($accent, lighter);
+    fill: mat-color($primary, lighter);
   }
 
 }

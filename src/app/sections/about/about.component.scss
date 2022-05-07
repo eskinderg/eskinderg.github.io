@@ -1,13 +1,14 @@
 @import '~@angular/material/theming';
 
 @mixin about-theme($theme) {
+  $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);
   // $background-color: mat-color($background, card);
 
   .menu {
     // @include mat-elevation(2);
-    background-color: mat-color($accent);
+    background-color: mat-color($primary);
   }
 
   p {
@@ -47,7 +48,7 @@
   }
   .content button{
     // margin-top: 24px;
-    background-color: mat-color($accent);
+    background-color: mat-color($primary);
   }
   .profile{
     transition: filter 0.25s ease;

@@ -25,14 +25,15 @@
 }
 
 @mixin intro-theme($theme) {
-  $accent: map-get($theme, accent);
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, primary);
   $background: map-get($theme, background);
   // $background-color: mat-color($background, card);
 
   .intro {
     // @include mat-elevation(2);
     transition: background-color 1s ease;
-    background-color: mat-color($accent);
+    background-color: mat-color($primary);
     position: relative;
     overflow: visible;
     width:100% ! important;
@@ -43,7 +44,7 @@
 
   .separatorPath {
     transition: fill 1s ease;
-    fill: mat-color($accent);
+    fill: mat-color($primary);
   }
 
 }

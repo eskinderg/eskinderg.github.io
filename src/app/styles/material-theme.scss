@@ -3,7 +3,7 @@
 
 @include mat-core();
 
-$primary: mat-palette($mat-green);
+$primary: mat-palette($mat-blue, A200, A100, A400);
 $accent:  mat-palette($mat-blue, A200, A100, A400);
 $warn:    mat-palette($mat-red);
 $theme:   mat-light-theme($primary, $accent, $warn);
@@ -42,7 +42,7 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 }
 
 .blue-theme {
-  $dark-primary: mat-palette($mat-red);
+  $dark-primary: mat-palette($mat-blue, A200, A100, A400);
   $dark-accent:  mat-palette($mat-blue, A400, A100, A700);
   $dark-warn:    mat-palette($mat-red);
   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
@@ -51,7 +51,7 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 }
 
 .orange-theme {
-  $dark-primary: mat-palette($mat-red);
+  $dark-primary: mat-palette($mat-orange);
   $dark-accent:  mat-palette($mat-orange, A400, A100, A700);
   $dark-warn:    mat-palette($mat-red);
   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
@@ -78,7 +78,7 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 }
 
 .deeppurple-theme {
-  $dark-primary: mat-palette($mat-red);
+  $dark-primary: mat-palette($mat-deep-purple);
   $dark-accent:  mat-palette($mat-deep-purple, A400, A100, A700);
   $dark-warn:    mat-palette($mat-red);
   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
@@ -87,7 +87,7 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 }
 
 .indigo-theme {
-  $dark-primary: mat-palette($mat-red);
+  $dark-primary: mat-palette($mat-indigo);
   $dark-accent:  mat-palette($mat-indigo, A400, A100, A700);
   $dark-warn:    mat-palette($mat-red);
   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
@@ -95,8 +95,17 @@ $theme:   mat-light-theme($primary, $accent, $warn);
   @include component-themes($dark-theme);
 }
 
+.teal-theme {
+  $dark-primary: mat-palette($mat-teal);
+  $dark-accent:  mat-palette($mat-teal, A400, A100, A700);
+  $dark-warn:    mat-palette($mat-red);
+  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  @include angular-material-theme($dark-theme);
+  @include component-themes($dark-theme);
+}
+
 .lightblue-theme {
-  $dark-primary: mat-palette($mat-red);
+  $dark-primary: mat-palette($mat-light-blue);
   $dark-accent:  mat-palette($mat-light-blue, A400, A100, A700);
   $dark-warn:    mat-palette($mat-red);
   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
@@ -104,17 +113,17 @@ $theme:   mat-light-theme($primary, $accent, $warn);
   @include component-themes($dark-theme);
 }
 
-// .cyan-theme {
-//   $dark-primary: mat-palette($mat-red);
-//   $dark-accent:  mat-palette($mat-cyan, A400, A100, A700);
-//   $dark-warn:    mat-palette($mat-red);
-//   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-//   @include angular-material-theme($dark-theme);
-//   @include component-themes($dark-theme);
-// }
+.cyan-theme {
+  $dark-primary: mat-palette($mat-cyan);
+  $dark-accent:  mat-palette($mat-cyan, A400, A100, A700);
+  $dark-warn:    mat-palette($mat-red);
+  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  @include angular-material-theme($dark-theme);
+  @include component-themes($dark-theme);
+}
 
 .brown-theme {
-  $dark-primary: mat-palette($mat-red);
+  $dark-primary: mat-palette($mat-brown);
   $dark-accent:  mat-palette($mat-brown, A400, A100, A700);
   $dark-warn:    mat-palette($mat-red);
   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
@@ -123,7 +132,7 @@ $theme:   mat-light-theme($primary, $accent, $warn);
 }
 
 .bluegrey-theme {
-  $dark-primary: mat-palette($mat-red);
+  $dark-primary: mat-palette($mat-blue-grey);
   $dark-accent:  mat-palette($mat-blue-grey, A400, A100, A700);
   $dark-warn:    mat-palette($mat-red);
   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);

@@ -20,6 +20,16 @@
       "tooltip": "Orange"
     },
     {
+      "theme": "teal-theme",
+      "icon": "lightbulb_outline",
+      "tooltip": "Teal"
+    },
+    {
+      "theme": "cyan-theme",
+      "icon": "lightbulb_outline",
+      "tooltip": "Cayan"
+    },
+    {
       "theme": "pink-theme",
       "icon": "lock",
       "tooltip": "Pink"

@@ -142,18 +142,19 @@ $text-color: #585858;
 }
 
 @mixin timeline-theme($theme) {
+  $primary: map-get($theme, primary);
   $accent: map-get($theme, accent);
   $background: map-get($theme, background);
   $background-color: mat-color($background, card);
 
   .lExperienceList:after {
     border: 3px solid #ffffff;
-    background: mat-color($accent, lighter);
+    background: mat-color($primary, lighter);
   }
 
   .rExperienceList:before {
     border: 3px solid #ffffff;
-    background: mat-color($accent, lighter);
+    background: mat-color($primary, lighter);
   }
   .chip {
     // background-color: mat-color($accent) !important;
@@ -164,16 +165,16 @@ $text-color: #585858;
   }
 
   .middle .line{
-    background-color: mat-color($accent, lighter);
+    background-color: mat-color($primary, lighter);
   }
 
   .mainTitle {
     transition: color 1s ease;
-    color: mat-color($accent);
+    color: mat-color($primary);
   }
 
   .adjust {
-    fill: mat-color($accent, lighter);
+    fill: mat-color($primary, lighter);
     // fill: mat-color($accent);
     // fill:none;
     // stroke: mat-color($accent);
