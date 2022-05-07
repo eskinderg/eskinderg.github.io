@@ -8,7 +8,7 @@
     "build-prod": "ng build --base-href https://eskinderg.github.io/ && npm run lang",
     "lang": "gulp minify",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --browsers=ChromeHeadless --watch=false --code-coverage"
   },
   "private": true,
   "dependencies": {
