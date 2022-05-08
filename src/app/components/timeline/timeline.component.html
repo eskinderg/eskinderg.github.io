@@ -33,10 +33,12 @@
   <div [fxFlexOrder]="reverse ? 3 : 1" fxFlexOrder.sm="-1" fxFlexOrder.xs="-1" fxFlex="48" fxFlex.sm="100" fxFlex.xs="100" [ngClass]="{'right': reverse,'left': !reverse}">
     <div fxHide.sm fxHide.xs class="mainTitle h4 year gapTop">
       <app-title title="{{job?.year}}" [lineWidth]="150" fontFamily="{{portfolio.texts?.font.content}}"> </app-title></div>
-    <div class="used" [ngClass.sm]="['chipsAlign']" [ngClass.xs]="['chipsAlign']" [ngClass.md]="['gapTop']" [ngClass.lg]="['gapTop']" [ngClass.xl]="['gapTop']">
-      <mat-chip-list>
-        <mat-chip *ngFor="let technology of job?.used" class="chip">{{ technology }}</mat-chip>
-      </mat-chip-list>
+    <div fxHide.sm fxHide.xs>
+      <div class="used" [ngClass.sm]="['chipsAlign']" [ngClass.xs]="['chipsAlign']" [ngClass.md]="['gapTop']" [ngClass.lg]="['gapTop']" [ngClass.xl]="['gapTop']">
+        <mat-chip-list>
+          <mat-chip *ngFor="let technology of job?.used" class="chip">{{ technology }}</mat-chip>
+        </mat-chip-list>
+      </div>
     </div>
   </div>
 </div>
