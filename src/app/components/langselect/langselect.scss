@@ -1,0 +1,38 @@
+@import '~@angular/material/theming';
+
+@mixin lang-theme($theme) {
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  $background-color: mat-color($background, background);
+
+  .langmenu {
+    background: 0 0;
+    border:none;
+    cursor: pointer;
+  }
+
+  .lang-select-icon {
+    width:30px;
+    height:30px;
+    // background-color: mat-color($accent);
+    background: 0 0;
+  }
+
+  .lang-selection {
+    position: relative;
+    top: -8px;
+  }
+
+  .small-icons {
+    width:30px;
+  }
+
+  .lang-button {
+    padding-top:8px ! important;
+  }
+
+}
+
+:host {
+  margin-right: 0.5em;
+}

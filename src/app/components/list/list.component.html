@@ -1,0 +1,29 @@
+<div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center" class="education" *ngIf="type === 'education'">
+
+  <div  fxHide.sm fxHide.xs >
+    <div class="education-logo" [ngClass]="item.img" alt="education logo"></div>
+  </div>
+
+  <div  fxFlex.sm="100" fxFlex.xs="100">
+    <div class="h3 title">
+      {{ item.title }}
+    </div>
+    <div class="education-subtitle">
+      {{ item.subtitle }}
+    </div>
+    <div class="year">
+      {{ item.year }}
+    </div>
+  </div>
+  <div class="conferences" *ngIf="type === 'conference'">
+    <div class="h3 title">
+      {{ item.year }}
+    </div>
+    <div *ngFor="let conference of item.list" class="conference">
+      {{ conference }}
+    </div>
+  </div>
+
+
+</div>
+

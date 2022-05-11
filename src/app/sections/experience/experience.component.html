@@ -1,0 +1,14 @@
+<div #experience class="experience">
+
+    <!-- <pre> -->
+  <!--   {{ portfolio.texts.experience.content | json }} -->
+  <!-- </pre> -->
+
+    <div class="h2 center">
+        <app-title title="{{(portfolio.texts)?.experience.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true" [lineWidth]="260" ></app-title>
+    </div>
+
+    <div>
+        <app-timeline [job]="job" [index]="i" [reverse]="(i % 2) === 0" *ngFor="let job of (portfolio.texts)?.experience.content;let i = index"></app-timeline>
+    </div>
+</div>

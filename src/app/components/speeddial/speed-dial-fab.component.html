@@ -1,0 +1,30 @@
+<div id="fab-dismiss"
+     *ngIf="fabTogglerState==='active'"
+     (click)="onToggleFab()">
+</div>
+<div class='fab-container' [style.flexDirection]="reverseColumnDirection?'column-reverse':'row'">
+
+  <button mat-fab class="fab-toggler"
+                  color="primary"
+                  matTooltip="Change Theme Color" [matTooltipPosition]="'below'"
+                  [ngClass]="{'default':atTop}"
+                  (click)="onToggleFab()">
+    <!-- <i class="fa-color-lens material-icons" [@fabToggler]="{value: fabTogglerState}">color_lens</i> -->
+    <!-- <img class="fa-color-lens" src="assets/img/color-lens.png" [@fabToggler]="{value: fabTogglerState}" /> -->
+    <svg class="fa-color-lens" [@fabToggler]="{value: fabTogglerState}"  style="fill:none" viewBox="0 0 1024 1024" >
+      <path style="stroke:white; stroke-width:40px" d="M512 128C299.946667 128 128 299.946667 128 512s171.946667 384 384 384c35.413333 0 64-28.586667 64-64 0-16.64-6.186667-31.573333-16.64-42.88-10.026667-11.306667-16-26.026667-16-42.453333 0-35.413333 28.586667-64 64-64H682.666667c117.76 0 213.333333-95.573333 213.333333-213.333334 0-188.586667-171.946667-341.333333-384-341.333333zM277.333333 512c-35.413333 0-64-28.586667-64-64s28.586667-64 64-64 64 28.586667 64 64-28.586667 64-64 64z m128-170.666667c-35.413333 0-64-28.586667-64-64s28.586667-64 64-64 64 28.586667 64 64-28.586667 64-64 64z m213.333334 0c-35.413333 0-64-28.586667-64-64s28.586667-64 64-64 64 28.586667 64 64-28.586667 64-64 64z m128 170.666667c-35.413333 0-64-28.586667-64-64s28.586667-64 64-64 64 28.586667 64 64-28.586667 64-64 64z"  />
+    </svg>
+
+  </button>
+
+  <div [className]="reverseColumnDirection?'column-reverse':'column'" [@speedDialStagger]="buttons.length">
+    <button *ngFor="let btn of buttons"
+      mat-mini-fab
+      matTooltip="{{btn.tooltip}}"
+      class="fab-secondary"
+      color="secondary"
+      [ngClass]="btn.theme"
+      (click)="onClickFab(btn)">
+    </button>
+  </div>
+</div>

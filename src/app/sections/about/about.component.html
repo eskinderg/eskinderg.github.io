@@ -1,0 +1,27 @@
+<div #about class="about"  >
+  <div class="h2 about-title" >
+    <app-title title="{{(portfolio.texts)?.about.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true"[lineWidth]="250" ></app-title>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutAlign.sm="center center" fxLayoutAlign.xs="center center">
+    <div class="profile-picture">
+      <div class="profile"></div>
+    </div>
+    <div class="content" fxFlex="55" fxFlex.sm="100" fxFlex.xs="100" [ngStyle.xs]="{'padding':'24px 0 0 0'}" [ngStyle.sm]="{'padding':'24px 0 0 0'}">
+      <p *ngFor="let paragraph of (portfolio.texts)?.about.content" [innerHTML]="paragraph" ></p>
+      <button class="menu" mat-raised-button [style.font-family]="portfolio.texts?.font.menu" [ngStyle.sm]="{'width':'100%'}" [ngStyle.xs]="{'width':'100%'}" [matMenuTriggerFor]="menu">
+        {{(portfolio.texts)?.about.button}}
+        <img src="assets/img/download.webp" style="position: inherit;" [width]="30" [height]="22" alt="Download File" />
+      </button>
+      <mat-menu #menu>
+        <a (click)="onPdfDownload()" href="assets/pdf/Resume.pdf" target="_blank">
+          <button mat-menu-item><img class="menu-options" src="assets/img/pdf.webp" [width]="30" />&nbsp; <span>{{(portfolio.texts)?.about.pdf}}</span></button>
+        </a>
+        <a (click)="onDocxDownload()" href="assets/doc/Resume.docx">
+          <button mat-menu-item><img class="menu-options" src="assets/img/docx.webp" [width]="30" />&nbsp; <span> {{(portfolio.texts)?.about.word}} </span> </button>
+        </a>
+      </mat-menu>
+
+    </div>
+  </div>
+</div>
+

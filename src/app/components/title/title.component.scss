@@ -1,0 +1,27 @@
+@import '~@angular/material/theming';
+
+.title .line{
+  margin-top: 8px;
+  position: absolute;
+}
+
+@mixin title-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $background: map-get($theme, background);
+  // $background-color: mat-color($background, card);
+
+  .title{
+    // @include mat-elevation(2);
+    transition: color 1s ease;
+    color: mat-color($primary);
+    display: inline-block;
+    text-align: left;
+  }
+
+  .styleishTitle {
+    font-weight:100;
+    font-size: 55px;
+  }
+
+}
