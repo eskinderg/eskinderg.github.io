@@ -1,0 +1,45 @@
+
+/*======================Initial load============================== */
+.titleIntro{
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  margin: 0;
+  line-height: 1;
+  max-width: 80%;
+}
+.subtitle.h2{
+  margin-top: 8px;
+  font-weight: normal;
+  color: rgba(255,255,255,0.5);
+}
+
+.links{
+  margin-top: 64px;
+}
+.links a{
+  margin: 8px;
+  text-decoration: none;
+}
+
+.intro {
+  transition: background-color 1s ease;
+  position: relative;
+  overflow: visible;
+  height: 100vh;
+  width: 100vw;
+  height: calc(100vh - 150px);
+}
+
+.divider1{
+  background-color: #FFFFFF;
+  height: 111px;
+  width: 100%;
+}
+
+.lang-select-icon {
+  width:30px;
+  height:30px;
+  background: 0 0;
+}
+/*==================================================== */
