@@ -2,7 +2,7 @@
      *ngIf="fabTogglerState==='active'"
      (click)="onToggleFab()">
 </div>
-<div class='fab-container' [style.flexDirection]="reverseColumnDirection?'column-reverse':'row'">
+<div class='fab-container' fxLayout.xs="column" >
 
   <button mat-fab class="fab-toggler"
                   color="primary"
@@ -17,7 +17,7 @@
 
   </button>
 
-  <div [className]="reverseColumnDirection?'column-reverse':'column'" [ngClass.sm]="['dropdown']" [ngClass.xs]="['dropdown']"[@speedDialStagger]="buttons.length">
+  <div class="column" [ngClass.xs]="['dropdown']" [@speedDialStagger]="buttons.length">
     <button *ngFor="let btn of buttons"
       mat-mini-fab
       matTooltip="{{btn.tooltip}}"
