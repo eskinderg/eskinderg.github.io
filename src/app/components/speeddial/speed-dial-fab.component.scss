@@ -22,13 +22,16 @@
 
   > div.column {
     display: flex;
-    //flex-direction: column;
+    // flex-direction: column;
     align-items: center;
     margin-top: 5px;
+  }
 
-    button {
-      // margin-top: 17px;
-    }
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
   }
 
   > div.column-reverse {
