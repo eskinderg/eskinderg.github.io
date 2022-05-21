@@ -24,11 +24,13 @@
     padding: 64px 10%;
     box-sizing: border-box;
   }
+
   .profile-picture{
     box-sizing: border-box;
-    // border:3px solid mat-color($accent);
-    // border-radius:100%;
-    // text-align: left;
+
+    .profile {
+      border:3px solid mat-color($primary)
+    }
   }
 
   .about-title {

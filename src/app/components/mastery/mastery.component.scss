@@ -32,7 +32,8 @@
 .bg-angular, .bg-bootstrap, .bg-css, .bg-facebook, .bg-foundation,
 .bg-git, .bg-google, .bg-gulp, .bg-html, .bg-illustrator,
 .bg-javascript, .bg-jquery, .bg-karma, .bg-mongo, .bg-mysql,
-.bg-photoshop, .bg-php, .bg-typescript, .bg-webpack, .bg-sass, .bg-netcore
+.bg-photoshop, .bg-php, .bg-typescript, .bg-webpack, .bg-sass,
+.bg-netcore, .bg-angularmat
 {
   display: inline-block;
   background: url('../../../assets/img/expertin-min.webp') no-repeat;
@@ -44,6 +45,12 @@
 
 .bg-netcore {
   background-position: -0px -543px;
+  width: 90px;
+  height: 90px;
+}
+
+.bg-angularmat {
+  background-position: -100px -543px;
   width: 90px;
   height: 90px;
 }

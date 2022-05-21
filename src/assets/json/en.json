@@ -83,6 +83,9 @@
       "title": "Bootstrap",
       "img": "bg-bootstrap"
       },{
+      "title": "Angular Material",
+      "img": "bg-angularmat"
+      },{
       "title": "Node JS",
       "img": "bg-foundation"
       },{
