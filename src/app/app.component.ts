@@ -55,24 +55,24 @@ export class AppComponent {
     ]);
 
     if (!this.languageService.texts) {
-      this.languageService.getTexts(this.selectedLang).subscribe(
-        data => {
+      this.languageService.getTexts(this.selectedLang).subscribe({
+        next: data => {
           this.languageService.texts = data;
           this.ref.detectChanges();
         },
-        err => console.error(err)
-      );
+        error: err => console.error(err)
+      });
     }
 
     if (!this.languageService.colors) {
-      this.languageService.getColorList().subscribe(
-        (data: any) => {
+      this.languageService.getColorList().subscribe({
+        next: data => {
           this.languageService.colors = data["colors"]
           this.speedDialFabButtons = this.languageService.colors;
           this.ref.detectChanges();
         },
-        err => console.error(err)
-      );
+        error: err => console.error(err)
+      });
     }
   }
 
