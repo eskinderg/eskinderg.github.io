@@ -20,14 +20,14 @@ export class LangSelectComponent {
   }
 
   changeLanguage(lang:string) {
-    this.portfolio.getTexts(lang).subscribe(
-      data => {
+    this.portfolio.getTexts(lang).subscribe({
+      next: data=> {
         this.portfolio.texts = data;
         localStorage.setItem('language',lang);
         this.selectedLangugage = lang;
       },
-      err => console.error(err)
-    );
+      error: err => console.error(err)
+    });
   }
 
   translate (lang:string):any {
