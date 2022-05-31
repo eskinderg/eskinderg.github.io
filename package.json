@@ -4,8 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build-prod": "ng build --base-href https://eskinderg.github.io/ && npm run lang",
+    "build": "ng build --base-href https://eskinderg.github.io/ && npm run lang",
     "lang": "gulp minify",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --browsers=ChromeHeadless --watch=false --code-coverage",
