@@ -149,12 +149,14 @@ $text-color: #585858;
 
   .lExperienceList:after {
     border: 3px solid #ffffff;
-    background: mat-color($primary, lighter);
+    // background: mat-color($primary, lighter);
+    background: #eee;
   }
 
   .rExperienceList:before {
     border: 3px solid #ffffff;
-    background: mat-color($primary, lighter);
+    // background: mat-color($primary, lighter);
+    background: #eee;
   }
   .chip {
     // background-color: mat-color($accent) !important;
@@ -165,7 +167,8 @@ $text-color: #585858;
   }
 
   .middle .line{
-    background-color: mat-color($primary, lighter);
+    // background-color: mat-color($primary, lighter);
+    background-color: #eee;
   }
 
   .mainTitle {
@@ -174,11 +177,11 @@ $text-color: #585858;
   }
 
   .adjust {
-    fill: mat-color($primary, lighter);
+    // fill: mat-color($primary, lighter);
     // fill: mat-color($accent);
     // fill:none;
     // stroke: mat-color($accent);
-    // fill: rgba(238,239,240,1);
+    fill: #ddd;
     // stroke-width: 14px;
   }
 
