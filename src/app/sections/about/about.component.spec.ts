@@ -1,4 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
@@ -13,7 +14,8 @@ describe('AboutComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AboutComponent],
       providers: [LanguageService, GoogleAnalyticsService],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   });

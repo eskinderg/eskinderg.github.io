@@ -1,4 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
 
@@ -12,7 +13,8 @@ describe('ExpertInComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ExpertInComponent],
       providers: [LanguageService],
-      imports: [HttpClientModule]
+      imports: [HttpClientModule],
+      schemas: [NO_ERRORS_SCHEMA]
     })
       .compileComponents();
   });
