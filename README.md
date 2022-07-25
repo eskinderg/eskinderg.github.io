@@ -1,3 +1,4 @@
+[![CI](https://github.com/eskinderg/eskinderg.github.io/actions/workflows/CI.yml/badge.svg)](https://github.com/eskinderg/eskinderg.github.io/actions/workflows/CI.yml)
 ## How to Run locally
 <p>Run</p>
 
