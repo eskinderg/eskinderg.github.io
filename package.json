@@ -22,7 +22,7 @@
     "@angular/language-service": "^14.1.0",
     "@angular/material": "^14.1.0",
     "@angular/platform-browser": "^14.1.0",
-    "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.1.0",
     "gulp": "^4.0.2",
     "gulp-jsonminify": "^1.1.0",
