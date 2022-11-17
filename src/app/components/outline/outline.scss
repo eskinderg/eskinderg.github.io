@@ -297,8 +297,8 @@
   }
   .active:before  {
     transition: all 0.5s ease;
-    background-color: lighten($outline-theme, 10%) !important;
-    border: 4px solid lighten($outline_theme, 10%) !important;
+    background-color: $outline_theme !important;
+    border: 4px solid $outline_theme !important;
     opacity: 1 ! important;
   }
 
@@ -318,7 +318,7 @@
     // opacity: 1;
   }
 
-  .timeline:before {
+  // .timeline:before {
 
     // background: rgb(80,80,80) !important;
     // background: mat-color($accent) !important;
@@ -326,7 +326,7 @@
     // display:none;
     // opacity:0.5;
     // z-index: 5;
-  }
+  // }
 
   .direction-l .flag:before {
     // display:none;
