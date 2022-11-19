@@ -9,26 +9,52 @@ export class LanguageService {
   public colors: any;
   public loading = false;
   public sections = {};
-  public langList: any;
   public menuVisible = false;
-  private langPath: any;
+  private langList: any;
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(public http: HttpClient) {
-    // this.http.get<{}>('/assets/json/lang.json').subscribe(
-    //   lang => {
-    //     this.langList = lang
-    //   })
 
-    // this.getTexts().subscribe(
-    //   data => {
-    //     this.texts = data;
-    //     // this.speedDialFabButtons = this.portfolio.texts.colors;
-    //     // this.ref.detectChanges();
-    //   },
-    //   err => console.error(err)
-    // )
+    this.Language = localStorage.getItem('language') || "en";
+
+    const langPath = 'assets/json/lang.json';
+
+    this.http.get<[]>(langPath).subscribe(lang => {
+      this.langList = lang;
+    })
+
+  }
+
+  set Language(lang: any) {
+    localStorage.setItem('language', lang)
+    this.setLanguage(lang);
+  }
+
+  get Language() {
+    return localStorage.getItem('language') || "en";
+  }
+
+  get LanguageList() {
+    return this.langList;
+  }
+
+  private setLanguage(lang: any) {
+    this.http.get<{}>(this.getLangPath(lang)).subscribe({
+      next: data => {
+        this.texts = data;
+      },
+      error: err => console.error(err)
+    });
+  }
+
+  private getLangPath(lang: any): string {
+    if (!isDevMode()) {
+      return `assets/json/${lang || 'en'}.min.json`;
+    }
+    else {
+      return `assets/json/${lang || 'en'}.json`;
+    }
   }
 
   toggleMenu(value?: any) {
@@ -42,42 +68,9 @@ export class LanguageService {
     this.menu.emit(this.menuVisible);
   }
 
-  getLangList() {
-    const langPath = 'assets/json/lang.json';
-    return this.http.get<[]>(langPath);
-  }
-
   getColorList() {
     const colorPath = 'assets/json/colors.json';
     return this.http.get<[]>(colorPath);
-  }
-
-  // getLangList(): Promise<{}> {
-  //   return new Promise<{}>((resolve, reject) => {
-  //     const langPath = '/assets/json/lang.json';
-  //     // const langPath = '/assets/json/texts_en.json';
-  //     this.http.get<{}>(langPath).subscribe(
-  //       langs => {
-  //         this.langList = Object.assign({}, langs || []);
-  //         resolve(this.langList);
-  //       },
-  //       error => {
-  //         this.langList = {};
-  //         resolve(this.langList);
-  //       }
-  //     );
-  //   });
-  // }
-
-  getTexts(lang?: string) {
-    if (!isDevMode()) {
-      this.langPath = `assets/json/${lang || 'en'}.min.json`;
-    }
-    else {
-      this.langPath = `assets/json/${lang || 'en'}.json`;
-    }
-    return this.http.get<{}>(this.langPath);
-
   }
 
 }

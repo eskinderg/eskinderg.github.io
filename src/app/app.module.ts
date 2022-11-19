@@ -20,6 +20,7 @@ import { SpeedDialFabModule } from './components/speeddial/speed-dial-fab.module
 import { OutlineModule } from './components/outline/outline.module';
 import { LangSelectModule } from './components/langselect/langselect.module';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
+import { ThemeService } from './providers/theme.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { GoogleAnalyticsService } from './providers/google-analytics.service';
     OutlineModule,
     LangSelectModule
   ],
-  providers: [LanguageService, GoogleAnalyticsService],
+  providers: [ LanguageService, ThemeService, GoogleAnalyticsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

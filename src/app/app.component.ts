@@ -13,7 +13,6 @@ export class AppComponent {
   public activeSection       : string;
   public speedDialFabButtons : any;
   public selectedTheme       : string;
-  public selectedLang        : string;
 
   SpeedDialFabPosition          = SpeedDialFabPosition;
   speedDialFabPosition          = SpeedDialFabPosition.Top;
@@ -33,7 +32,6 @@ export class AppComponent {
   constructor(public languageService: LanguageService, public ref: ChangeDetectorRef, public meta: Meta) {
 
     this.selectedTheme = localStorage.getItem("theme");
-    this.selectedLang  = localStorage.getItem('language');
 
     this.meta.addTags([
       { name     : 'og:title',       content: 'Eskinder | Profile' },
@@ -53,16 +51,6 @@ export class AppComponent {
       { itemprop : 'description',    content: 'Hi, my name is Eskinder Getahun. I am a Web Developer ( Web / FE - Angular ) and this is my portfolio page. As confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.' },
       { itemprop : 'image',          content: 'assets/img/social-min.png' }
     ]);
-
-    if (!this.languageService.texts) {
-      this.languageService.getTexts(this.selectedLang).subscribe({
-        next: data => {
-          this.languageService.texts = data;
-          this.ref.detectChanges();
-        },
-        error: err => console.error(err)
-      });
-    }
 
     if (!this.languageService.colors) {
       this.languageService.getColorList().subscribe({
