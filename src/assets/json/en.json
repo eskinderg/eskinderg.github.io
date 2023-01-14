@@ -48,70 +48,92 @@
     "masteries": [
       {
         "title": "Angular",
-        "img": "bg-angular"
+        "img": "bg-angular",
+        "link": "https://angular.io"
       },{
       "title": "TypeScript",
-      "img": "bg-typescript"
+      "img": "bg-typescript",
+      "link": "https://www.typescriptlang.org"
       },{
       "title": "Javascript",
-      "img": "bg-javascript"
+      "img": "bg-javascript",
+      "link": "https://www.javascript.com"
       },{
       "title": "jQuery",
-      "img": "bg-jquery"
+      "img": "bg-jquery",
+      "link": "https://www.jquery.com"
       },{
       "title": "CSS3",
-      "img": "bg-css"
+      "img": "bg-css",
+      "link": "https://www.w3schools.com/css/"
       },{
       "title": ".net core",
-      "img": "bg-netcore"
+      "img": "bg-netcore",
+      "link": "https://dotnet.microsoft.com"
       },{
       "title": "Git",
-      "img": "bg-git"
+      "img": "bg-git",
+      "link": "https://git-scm.com"
       },{
       "title": "Gulp",
-      "img": "bg-gulp"
+      "img": "bg-gulp",
+      "link": "https://gulpjs.com"
       },{
       "title": "Karma",
-      "img": "bg-karma"
+      "img": "bg-karma",
+      "link": "https://karma-runner.github.io"
       },{
       "title": "Facebook SDK",
-      "img": "bg-facebook"
+      "img": "bg-facebook",
+      "link": "https://developers.facebook.com/"
       },{
       "title": "Google API",
-      "img": "bg-google"
+      "img": "bg-google",
+      "link": "https://developers.google.com"
       },{
       "title": "Bootstrap",
-      "img": "bg-bootstrap"
+      "img": "bg-bootstrap",
+      "link": "https://getbootstrap.com"
       },{
       "title": "Angular Material",
-      "img": "bg-angularmat"
+      "img": "bg-angularmat",
+      "link": "https://material.angular.io/"
       },{
       "title": "Node JS",
-      "img": "bg-foundation"
+      "img": "bg-foundation",
+      "link": "https://nodejs.org/"
       },{
       "title": "HTML5",
-      "img": "bg-html"
+      "img": "bg-html",
+      "link": "https://www.w3schools.com/html/"
       },{
       "title": "PHP",
-      "img": "bg-php"
+      "img": "bg-php",
+      "link": "https://www.php.net/"
       },{
       "title": "C#",
-      "img": "bg-mongo"
+      "img": "bg-mongo",
+      "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
       },{
       "title": "MySQL",
-      "img": "bg-mysql"
+      "img": "bg-mysql",
+      "link": "https://www.mysql.com/"
       },{
       "title": "Photoshop",
-      "img": "bg-photoshop"
+      "img": "bg-photoshop",
+      "link": "https://www.adobe.com/products/photoshop.html"
       },{
       "title": "MS SQL",
-      "img": "bg-illustrator"
+      "img": "bg-illustrator",
+      "link": "https://learn.microsoft.com/en-us/sql/"
       },{
       "title": "Webpack",
-      "img": "bg-webpack"
+      "img": "bg-webpack",
+      "link": "https://webpack.js.org/"
       },{
       "title": "Sass",
-      "img": "bg-sass"
+      "img": "bg-sass",
+      "link": "https://sass-lang.com/"
       }
     ]
   },
@@ -326,9 +348,7 @@
     "phone":"+251-911-184987",
     "button":"Send message"
   },
-  "footer": {
-    "content": "\u00A9 2022"
-  },
+  "footer": { },
   "social": {
     "github": "https://github.com/eskinderg",
     "stackoverflow": "https://stackoverflow.com/users/2876957/eskinder",

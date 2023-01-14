@@ -13,14 +13,22 @@
 }
 
 .mastery{
+  transition: all 0.35s;
   width: 90px;
   height: 120px;
   margin: 8px;
 }
+
+.mastery *:hover{
+  transition: all 0.35s;
+  filter: grayscale(0%);
+}
+
 .logo{
   width: 90px;
   height: 90px;
 }
+
 .mastery .subtitle{
   font-size: 15px;
 }
@@ -40,7 +48,7 @@
   overflow: hidden;
   text-indent: -9999px;
   text-align: left;
-  filter: grayscale(50%);
+  filter: grayscale(65%);
 }
 
 .bg-netcore {

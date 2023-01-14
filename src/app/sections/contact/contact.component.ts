@@ -1,4 +1,4 @@
-import {ViewChild, ElementRef, Component,  AfterViewInit } from '@angular/core';
+import { ViewChild, ElementRef, Component, AfterViewInit } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
@@ -9,9 +9,9 @@ import { LanguageService } from 'src/app/providers/language.service';
 export class ContactComponent implements AfterViewInit {
 
   public message = {
-    name : '',
-    email : '',
-    message : ''
+    name: '',
+    email: '',
+    message: ''
   };
 
   @ViewChild('contact') contactSection: ElementRef;
@@ -20,6 +20,15 @@ export class ContactComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.portfolio.sections['contact'] = this.contactSection;
+  }
+
+  public get Copyright(): string {
+    if ((this.portfolio.texts)?.footer.content) {
+      return (this.portfolio.texts)?.footer.content
+    }
+    else {
+      return new Date().getFullYear().toString();
+    }
   }
 
 }
