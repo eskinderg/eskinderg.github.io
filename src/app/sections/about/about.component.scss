@@ -1,14 +1,16 @@
-@import '~@angular/material/theming';
+@use 'sass:map';
+@use '@angular/material' as mat;
 
-@mixin about-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $background: map-get($theme, background);
+@mixin theme($theme) {
+  $color-config     : mat.get-color-config($theme);
+  $primary          : map.get($color-config, 'primary');
+  $accent           : map.get($color-config, 'accent');
+  $background       : map.get($color-config, 'background');
   // $background-color: mat-color($background, card);
 
   .menu {
     // @include mat-elevation(2);
-    background-color: mat-color($primary);
+    background-color: mat.get-color-from-palette($primary);
   }
 
   p {
@@ -29,7 +31,7 @@
     box-sizing: border-box;
 
     .profile {
-      border:3px solid mat-color($primary)
+      border:3px solid mat.get-color-from-palette($primary)
     }
   }
 
@@ -50,7 +52,7 @@
   }
   .content button{
     // margin-top: 24px;
-    background-color: mat-color($primary);
+    background-color: mat.get-color-from-palette($primary);
   }
   .profile{
     transition: filter 0.25s ease;
@@ -74,11 +76,9 @@
   top:8px;
 }
 
-
 @media screen and (max-width: 950px) {
   p {
     text-align: left;
   }
-
 
 }

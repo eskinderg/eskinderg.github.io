@@ -1,0 +1,21 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+// from project
+
+@use 'src/app/styles/component-themes' as components;
+
+@include mat.core(); // Mixin that renders all of the core styles that are not theme-dependent.
+
+$lightblue-theme: mat.define-dark-theme((
+  color: (
+    primary: mat.define-palette(mat.$light-blue-palette),
+    accent: mat.define-palette(mat.$light-blue-palette, A400, A100, A700),
+    background: mat.define-palette(mat.$light-blue-palette),
+    background-color: mat.define-palette(mat.$light-blue-palette),
+),
+));
+
+@include mat.core-theme($lightblue-theme);
+@include mat.all-component-themes($lightblue-theme);
+@include components.theme($lightblue-theme);

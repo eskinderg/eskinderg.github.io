@@ -32,7 +32,72 @@
             ],
             "styles": [
               "src/app/app.component.scss",
-              "src/styles.scss"
+              "src/styles.scss",
+              {
+                "input": "src/app/styles/custom-themes/red.scss",
+                "bundleName": "red",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/green.scss",
+                "bundleName": "green",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/blue.scss",
+                "bundleName": "blue",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/orange.scss",
+                "bundleName": "orange",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/yellow.scss",
+                "bundleName": "yellow",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/pink.scss",
+                "bundleName": "pink",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/teal.scss",
+                "bundleName": "teal",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/deeppurple.scss",
+                "bundleName": "deeppurple",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/indigo.scss",
+                "bundleName": "indigo",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/lightblue.scss",
+                "bundleName": "lightblue",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/cyan.scss",
+                "bundleName": "cyan",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/brown.scss",
+                "bundleName": "brown",
+                "inject": false
+              },
+              {
+                "input": "src/app/styles/custom-themes/bluegrey.scss",
+                "bundleName": "bluegrey",
+                "inject": false
+              }
             ],
             "scripts": []
           },

@@ -21,8 +21,10 @@ export class ThemeService {
     const colorPath = 'assets/json/colors.json';
 
     this.http.get<[]>(colorPath).subscribe(colors => {
-      this.colorList=colors['colors']
+      this.colorList = colors['colors']
     })
+
+    this.setStyle('theme', 'blue.css');
 
   }
 
@@ -38,9 +40,36 @@ export class ThemeService {
     return this.colorList;
   }
 
-  // private getColorList() {
-  //   const colorPath = 'assets/json/colors.json';
-  //   return this.http.get<[]>(colorPath);
-  // }
+  setStyle(key: string, href: string): void {
+    this.getLinkElementForKey(key).setAttribute('href', href);
+  }
+
+  removeStyle(key: string): void {
+    const existingLinkElement = this.getExistingLinkElementByKey(key);
+    if (existingLinkElement) {
+      document.head.removeChild(existingLinkElement);
+    }
+  }
+
+  getLinkElementForKey(key: string): Element {
+    return this.getExistingLinkElementByKey(key) || this.createLinkElementWithKey(key);
+  }
+
+  getExistingLinkElementByKey(key: string): Element {
+    return document.head.querySelector(`link[rel="stylesheet"].${this.getClassNameForKey(key)}`) as Element;
+  }
+
+  createLinkElementWithKey(key: string): Element {
+    const linkEl = document.createElement('link');
+    linkEl.setAttribute('rel', 'stylesheet');
+    linkEl.setAttribute('type', 'text/css')
+    linkEl.classList.add(this.getClassNameForKey(key));
+    document.head.appendChild(linkEl);
+    return linkEl;
+  }
+
+  getClassNameForKey(key: string): string {
+    return `style-manager-${key}`;
+  }
 
 }

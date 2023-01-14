@@ -1,4 +1,5 @@
-@import '~@angular/material/theming';
+@use 'sass:map';
+@use '@angular/material' as mat;
 
 $text-color: #585858;
 
@@ -141,11 +142,12 @@ $text-color: #585858;
   justify-content: flex-end;
 }
 
-@mixin timeline-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $background: map-get($theme, background);
-  $background-color: mat-color($background, card);
+@mixin theme($theme) {
+  $color-config     : mat.get-color-config($theme);
+  $primary          : map.get($color-config, 'primary');
+  $accent           : map.get($color-config, 'accent');
+  $background       : map.get($color-config, 'background');
+  $background-color : map.get($color-config, 'background-color');
 
   .lExperienceList:after {
     border: 3px solid #ffffff;
@@ -164,6 +166,8 @@ $text-color: #585858;
     border: 1px solid #d4d4d4 ! important;
     color: $text-color ! important;
     // font-weight: bold;
+    font-size: 14px ! important;
+    font-weight: 500 ! important;
   }
 
   .middle .line{
@@ -173,7 +177,7 @@ $text-color: #585858;
 
   .mainTitle {
     transition: color 1s ease;
-    color: mat-color($primary);
+    color: mat.get-color-from-palette($primary);
   }
 
   .adjust {

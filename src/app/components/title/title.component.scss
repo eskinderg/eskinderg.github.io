@@ -1,20 +1,22 @@
-@import '~@angular/material/theming';
+@use 'sass:map';
+@use '@angular/material' as mat;
 
 .title .line{
   margin-top: 8px;
   position: absolute;
 }
 
-@mixin title-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $background: map-get($theme, background);
+@mixin theme($theme) {
+  $color-config     : mat.get-color-config($theme);
+  $primary          : map.get($color-config, 'primary');
+  $accent           : map.get($color-config, 'accent');
+  $background       : map.get($color-config, 'background');
   // $background-color: mat-color($background, card);
 
   .title{
     // @include mat-elevation(2);
     transition: color 1s ease;
-    color: mat-color($primary);
+    color: mat.get-color-from-palette($primary);
     display: inline-block;
     text-align: left;
   }

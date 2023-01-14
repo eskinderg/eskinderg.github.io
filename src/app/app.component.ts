@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { LanguageService } from './providers/language.service';
 import { SpeedDialFabPosition } from './components/speeddial/speed-dial-fab.component';
 import { Meta } from '@angular/platform-browser';
+import { ThemeService } from './providers/theme.service';
 
 @Component({
   selector    : 'app-root',
@@ -29,9 +30,7 @@ export class AppComponent {
     'APP-CONTACT'
   ];
 
-  constructor(public languageService: LanguageService, public ref: ChangeDetectorRef, public meta: Meta) {
-
-    this.selectedTheme = localStorage.getItem("theme");
+  constructor(public languageService: LanguageService, public ref: ChangeDetectorRef, public meta: Meta, public themeService: ThemeService) {
 
     this.meta.addTags([
       { name     : 'og:title',       content: 'Eskinder | Profile' },
@@ -67,6 +66,7 @@ export class AppComponent {
   onSpeedDialFabClicked(btn: { icon: string, theme: string }) {
     this.selectedTheme = btn.theme;
     localStorage.setItem('theme', btn.theme);
+    this.themeService.setStyle('theme', btn.theme + '.css');
   }
 
   onSectionChange(sectionId: string) {

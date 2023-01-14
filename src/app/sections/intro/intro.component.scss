@@ -1,4 +1,5 @@
-@import '~@angular/material/theming';
+@use 'sass:map';
+@use '@angular/material' as mat;
 
 .titleIntro{
   position: absolute;
@@ -24,16 +25,18 @@
   text-decoration: none;
 }
 
-@mixin intro-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, primary);
-  $background: map-get($theme, background);
+@mixin theme($theme) {
+
+  $color-config     : mat.get-color-config($theme);
+  $primary          : map.get($color-config, 'primary');
+  $accent           : map.get($color-config, 'accent');
+  $background       : map.get($color-config, 'background');
   // $background-color: mat-color($background, card);
 
   .intro {
     // @include mat-elevation(2);
     transition: background-color 1s ease;
-    background-color: mat-color($primary);
+    background-color: mat.get-color-from-palette($primary);
     position: relative;
     overflow: visible;
     width:100% ! important;
@@ -44,7 +47,7 @@
 
   .separatorPath {
     transition: fill 1s ease;
-    fill: mat-color($primary);
+    fill: mat.get-color-from-palette($primary);
   }
 
 }

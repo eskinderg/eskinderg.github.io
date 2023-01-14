@@ -1,141 +1,38 @@
-@import '~@angular/material/theming';
-@import 'src/app/styles/component-themes.scss';
+@use '@angular/material' as mat;
 
-@include mat-core();
+@use 'src/app/styles/component-themes' as components;
 
-$primary: mat-palette($mat-blue, A200, A100, A400);
-$accent:  mat-palette($mat-blue, A200, A100, A400);
-$warn:    mat-palette($mat-red);
-$theme:   mat-light-theme($primary, $accent, $warn);
+// @include mat.core();
+// // Define a dark theme
+// $dark-theme: mat.define-dark-theme((
+//   color: (
+//     primary: mat.define-palette(mat.$pink-palette),
+//     accent: mat.define-palette(mat.$blue-grey-palette),
+//     background: mat.define-palette(mat.$pink-palette),
+//     background-color: mat.define-palette(mat.$pink-palette),
+// ),
+// ));
 
-@include angular-material-theme($theme);
-@include component-themes($theme);
+// // Define a light theme
+// $light-theme: mat.define-light-theme((
+//   color: (
+//     primary: mat.define-palette(mat.$indigo-palette),
+//     accent: mat.define-palette(mat.$pink-palette),
+//     background: mat.define-palette(mat.$indigo-palette),
+//     background-color: mat.define-palette(mat.$indigo-palette),
+//   ),
+// ));
 
-// dark theme
-// .dark-theme {
-//   $dark-primary: mat-palette($mat-grey);
-//   $dark-accent:  mat-palette($mat-grey, A400, A100, A700);
-//   $dark-warn:    mat-palette($mat-red);
-//   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-//   // $foreground: map-get($dark-theme, foreground);
+// // Apply the dark theme by default
+// @include mat.core-theme($dark-theme);
 
-//   @include angular-material-theme($dark-theme);
-//   @include component-themes($dark-theme);
-// }
+// // Apply the light theme only when the user prefers light themes.
+// // @media (prefers-color-scheme: light) {
+// //   // Use the `-color` mixins to only apply color styles without reapplying the same
+// //   // typography and density styles.
+// //   @include mat.core-color($light-theme);
+// //   @include mat.button-color($light-theme);
+// // }
 
-.red-theme {
-  $dark-primary: mat-palette($mat-red);
-  $dark-accent:  mat-palette($mat-red, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.green-theme {
-  $dark-primary: mat-palette($mat-green);
-  $dark-accent:  mat-palette($mat-green, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.blue-theme {
-  $dark-primary: mat-palette($mat-blue, A200, A100, A400);
-  $dark-accent:  mat-palette($mat-blue, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.orange-theme {
-  $dark-primary: mat-palette($mat-orange);
-  $dark-accent:  mat-palette($mat-orange, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-// .yellow-theme {
-//   $dark-primary: mat-palette($mat-red);
-//   $dark-accent:  mat-palette($mat-yellow, A400, A100, A700);
-//   $dark-warn:    mat-palette($mat-red);
-//   $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-//   @include angular-material-theme($dark-theme);
-//   @include component-themes($dark-theme);
-// }
-
-.pink-theme {
-  $dark-primary: mat-palette($mat-pink);
-  $dark-accent:  mat-palette($mat-pink, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.deeppurple-theme {
-  $dark-primary: mat-palette($mat-deep-purple);
-  $dark-accent:  mat-palette($mat-deep-purple, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.indigo-theme {
-  $dark-primary: mat-palette($mat-indigo);
-  $dark-accent:  mat-palette($mat-indigo, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.teal-theme {
-  $dark-primary: mat-palette($mat-teal);
-  $dark-accent:  mat-palette($mat-teal, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.lightblue-theme {
-  $dark-primary: mat-palette($mat-light-blue);
-  $dark-accent:  mat-palette($mat-light-blue, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.cyan-theme {
-  $dark-primary: mat-palette($mat-cyan);
-  $dark-accent:  mat-palette($mat-cyan, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.brown-theme {
-  $dark-primary: mat-palette($mat-brown);
-  $dark-accent:  mat-palette($mat-brown, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
-
-.bluegrey-theme {
-  $dark-primary: mat-palette($mat-blue-grey);
-  $dark-accent:  mat-palette($mat-blue-grey, A400, A100, A700);
-  $dark-warn:    mat-palette($mat-red);
-  $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-  @include angular-material-theme($dark-theme);
-  @include component-themes($dark-theme);
-}
+// @include mat.all-component-themes($dark-theme);
+// @include components.theme($dark-theme);

@@ -1,25 +1,27 @@
-@import 'src/app/app.component.scss';
-@import 'src/app/sections/intro/intro.component.scss';
-@import 'src/app/sections/about/about.component.scss';
-@import 'src/app/components/mastery/mastery.component.scss';
-@import 'src/app/sections/accomplishments/accomplishments.component.scss';
-@import 'src/app/components/title/title.component.scss';
-@import 'src/app/components/menu/menu.component.scss';
-@import 'src/app/components/timeline/timeline.component.scss';
-@import 'src/app/components/babacktop/baBackTop.scss';
-@import 'src/app/components/outline/outline.scss';
-@import 'src/app/components/langselect/langselect.scss';
+@use 'src/app/app.component' as app;
+@use 'src/app/sections/intro/intro.component' as intro;
+@use 'src/app/sections/about/about.component' as about;
+@use 'src/app/components/mastery/mastery.component' as mastery;
+@use 'src/app/sections/accomplishments/accomplishments.component' as accomplishments;
+@use 'src/app/components/title/title.component' as title;
+@use 'src/app/components/menu/menu.component' as menu;
+@use 'src/app/components/timeline/timeline.component' as timeline;
+@use 'src/app/components/babacktop/baBackTop' as babacktop;
+@use 'src/app/components/outline/outline' as outline;
+@use 'src/app/components/langselect/langselect' as langselect;
+@use 'src/app/components/speeddial/speed-dial-fab.component' as speeddial;
 
-@mixin component-themes($theme) {
-  @include lang-theme($theme);
-  @include intro-theme($theme);
-  @include about-theme($theme);
-  @include mastery-theme($theme);
-  @include accomplishments-theme($theme);
-  @include title-theme($theme);
-  @include ba-back-theme($theme);
-  @include menu-theme($theme);
-  @include timeline-theme($theme);
-  @include outline-theme($theme);
-  @include app-theme($theme);
+@mixin theme($theme){
+  @include app.theme($theme);
+  @include intro.theme($theme);
+  @include about.theme($theme);
+  @include mastery.theme($theme);
+  @include accomplishments.theme($theme);
+  @include title.theme($theme);
+  @include menu.theme($theme);
+  @include timeline.theme($theme);
+  @include babacktop.theme($theme);
+  @include outline.theme($theme);
+  @include langselect.theme($theme);
+  @include speeddial.theme($theme);
 }

@@ -1,12 +1,15 @@
-@import '~@angular/material/theming';
+@use 'sass:map';
+@use '@angular/material' as mat;
 
-@mixin accomplishments-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  $background: map-get($theme, background);
+@mixin theme($theme) {
+
+  $color-config     : mat.get-color-config($theme);
+  $primary          : map.get($color-config, 'primary');
+  $accent           : map.get($color-config, 'accent');
+  $background       : map.get($color-config, 'background');
 
   .circle-ornament {
-    fill: mat-color($primary, lighter);
+    fill: mat.get-color-from-palette($primary);
   }
 
 }
