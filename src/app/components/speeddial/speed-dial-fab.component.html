@@ -2,7 +2,7 @@
      *ngIf="fabTogglerState==='active'"
      (click)="onToggleFab()">
 </div>
-<div class='fab-container' fxLayout.xs="column" >
+<div class='fab-container flex items-center flex-col sm:flex-row' >
 
   <button mat-fab class="fab-toggler main-button"
                   color="primary"
@@ -17,7 +17,7 @@
 
   </button>
 
-  <div class="column" [ngClass.xs]="['dropdown']" [@speedDialStagger]="buttons.length">
+  <div class="flex flex-col sm:flex-row" [@speedDialStagger]="buttons.length">
     <button *ngFor="let btn of buttons"
       mat-mini-fab
       matTooltip="{{btn.tooltip}}"
