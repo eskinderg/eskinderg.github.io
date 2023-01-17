@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatLegacyChipsModule as MatChipsModule } from '@angular/material/legacy-chips';
 import { TimelineComponent } from './timeline.component';
 import { TitleModule } from '../title/title.module';
@@ -11,7 +10,6 @@ import { TitleModule } from '../title/title.module';
   imports: [
     CommonModule,
     MatDividerModule,
-    FlexLayoutModule,
     MatChipsModule,
     TitleModule
   ],
