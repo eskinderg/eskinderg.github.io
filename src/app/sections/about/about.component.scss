@@ -29,6 +29,9 @@
 
   .profile-picture{
     box-sizing: border-box;
+    width: 320px;
+    height: 320px;
+    max-width: 320px;
 
     .profile {
       border:3px solid mat.get-color-from-palette($primary)
@@ -39,9 +42,13 @@
     margin-bottom:24px;
   }
 
+  button.mat-menu-item  {
+    display: flex;
+  }
+
   .content{
     // margin-top: 70px;
-    padding: 60px;
+    // padding: 60px;
     box-sizing: border-box;
   }
   .content p:first-child{
