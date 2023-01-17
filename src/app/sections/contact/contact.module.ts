@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatLegacyCardModule as MatCardModule } from '@angular/material/legacy-card';
 import { ContactComponent } from './contact.component';
-import { FlexLayoutModule } from '@angular/flex-layout';
 import { SeparatorModule } from 'src/app/components/separator/separator.module';
 
 @NgModule({
@@ -12,7 +11,6 @@ import { SeparatorModule } from 'src/app/components/separator/separator.module';
     CommonModule,
     MatDividerModule,
     MatCardModule,
-    FlexLayoutModule,
     SeparatorModule
   ],
   exports: [ContactComponent]
