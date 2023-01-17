@@ -5,6 +5,7 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { LanguageService } from './providers/language.service';
+import { ThemeService } from './providers/theme.service';
 
 describe('AppComponent', () => {
 
@@ -21,7 +22,8 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [
-        LanguageService
+        LanguageService,
+        ThemeService
       ],
       schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
