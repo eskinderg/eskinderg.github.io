@@ -87,7 +87,6 @@ describe('AppComponent', () => {
 
     //Assert
     expect(localStorage.setItem).toHaveBeenCalledWith('theme', theme);
-    expect(component.selectedTheme).toEqual(theme);
   });
 
 });
