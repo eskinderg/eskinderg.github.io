@@ -1,5 +1,6 @@
 import { ViewChild, ElementRef, Component, AfterViewInit } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -14,11 +15,14 @@ export class ContactComponent implements AfterViewInit {
     message: ''
   };
 
+  public currentAppVersion: string;
+
   @ViewChild('contact') contactSection: ElementRef;
 
   constructor(public portfolio: LanguageService) { }
 
   ngAfterViewInit() {
+    this.currentAppVersion = environment.appVersion;
     this.portfolio.sections['contact'] = this.contactSection;
   }
 
