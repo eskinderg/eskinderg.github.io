@@ -38,9 +38,10 @@ export class ThemeService {
   }
 
   private checkPreviousConvention() {
-    if(localStorage.getItem('theme').includes("-theme")) {
-      localStorage.setItem('theme', localStorage.getItem('theme').replace('-theme', ''))
-
+    if(localStorage.getItem('theme')){
+      if(localStorage.getItem('theme').includes("-theme")) {
+        localStorage.setItem('theme', localStorage.getItem('theme').replace('-theme', ''))
+      }
     }
   }
 
