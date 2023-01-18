@@ -1,4 +1,4 @@
-import { ViewChild, ElementRef, Component, AfterViewInit } from '@angular/core';
+import { ViewChild, ElementRef, Component, AfterViewInit, OnInit } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { environment } from 'src/environments/environment';
 
@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements AfterViewInit {
+export class ContactComponent implements AfterViewInit, OnInit {
 
   public message = {
     name: '',
@@ -21,8 +21,11 @@ export class ContactComponent implements AfterViewInit {
 
   constructor(public portfolio: LanguageService) { }
 
-  ngAfterViewInit() {
+  ngOnInit(){
     this.currentAppVersion = environment.appVersion;
+  }
+
+  ngAfterViewInit() {
     this.portfolio.sections['contact'] = this.contactSection;
   }
 
