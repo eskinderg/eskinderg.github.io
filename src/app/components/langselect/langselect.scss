@@ -8,8 +8,16 @@
   $background       : map.get($color-config, 'background');
   $background-color : map.get($color-config, 'background-color');
 
+  .lang-menu-wrapper {
+    margin: 0.5em;
+  }
+
+  .lang-menu-dropdown {
+    background-color: white;
+  }
+
   .langmenu {
-    background: 0 0;
+    // background: 0 0;
     border:none;
     cursor: pointer;
   }
@@ -17,8 +25,6 @@
   .lang-select-icon {
     width:35px;
     height:35px;
-    // background-color: mat-color($accent);
-    background: 0 0;
   }
 
   .lang-selection {
@@ -36,6 +42,3 @@
 
 }
 
-:host {
-  margin: 0.5em;
-}

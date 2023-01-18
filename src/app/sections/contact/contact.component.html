@@ -62,14 +62,14 @@
         </svg>
     </div>
 
-    <div class="right flex-[1_1_60%] md:flex-[1_1_100%]">
+    <div class="right-contact-item flex-[1_1_60%] md:flex-[1_1_100%]">
     <!-- <div class="right flex-[1_1_60%] md:flex-[1_1_100%]" [ngStyle.sm]="{'padding': '0 5%'}" [ngStyle.xs]="{'padding': '0 5%'}"> -->
         <div class="contactIntro" [style.font-family]="portfolio.texts?.font.content">{{(portfolio.texts)?.contact.intro}}</div>
 
         <br/>
 
         <div class="contactIntro">
-            <a class="title h3 link colorBlue" [ngStyle]="{'text-decoration-line': 'none'}" href="mailto:{{(portfolio.texts)?.contact.mail}}?Subject=Hello" target="_top">
+            <a class="contact-title h3 link colorBlue" [ngStyle]="{'text-decoration-line': 'none'}" href="mailto:{{(portfolio.texts)?.contact.mail}}?Subject=Hello" target="_top">
                 <mat-card-title><img src="assets/img/mail.webp" alt="Mail" [width]=30 [height]=25 style="margin-right:10px; top:3px; position:relative;" /></mat-card-title>
                 {{ (portfolio.texts)?.contact.mail }}
             </a>

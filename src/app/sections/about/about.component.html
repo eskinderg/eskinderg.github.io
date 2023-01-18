@@ -2,18 +2,18 @@
   <div class="h2 about-title" >
     <app-title title="{{(portfolio.texts)?.about.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true"[lineWidth]="250" ></app-title>
   </div>
-  <div class="flex items-center flex-col md:flex-row ">
+  <div class="flex items-center flex-col lg:flex-row ">
     <div class="profile-picture ">
       <div class="profile"></div>
     </div>
-    <div class="w-[5%] h-[5%] ">&nbsp;</div>
-    <div class="content lg:w-[55%] md:w-[100%] md:pt-6" >
+    <div class="w-[5%] h-[5%]">&nbsp;</div>
+    <div class="content w-[100%] lg:w-[55%]  md:pt-6" >
       <p *ngFor="let paragraph of (portfolio.texts)?.about.content" [innerHTML]="paragraph" ></p>
-      <button class="menu" mat-raised-button [style.font-family]="portfolio.texts?.font.menu" [matMenuTriggerFor]="menu">
+      <button class="w-[100%] lg:w-[40%]" mat-raised-button [style.font-family]="portfolio.texts?.font.menu" [matMenuTriggerFor]="menu">
         {{(portfolio.texts)?.about.button}}
         <img src="assets/img/download.webp" style="position: inherit;" [width]="30" [height]="22" alt="Download File" />
       </button>
-      <mat-menu #menu >
+      <mat-menu class="download-dropdown-menu" #menu >
         <a (click)="onPdfDownload()" href="assets/pdf/Resume.pdf" target="_blank">
           <button mat-menu-item><img class="menu-options" src="assets/img/pdf.webp" [width]="30" />&nbsp; <span>{{(portfolio.texts)?.about.pdf}}</span></button>
         </a>

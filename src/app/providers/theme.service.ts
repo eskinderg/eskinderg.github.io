@@ -6,33 +6,25 @@ import { HttpClient } from '@angular/common/http';
 export class ThemeService {
 
   private colorList: any;
+  private defaultTheme: string = "blue";
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(public http: HttpClient) {
-    // this.getColorList().subscribe({
-    //   next: data => {
-    //     this.colorList = data["colors"]
-    //     console.log(data)
-    //   },
-    //   error: err => console.error(err)
-    // });
 
     const colorPath = 'assets/json/colors.json';
 
     this.http.get<[]>(colorPath).subscribe(colors => {
       this.colorList = colors['colors']
     })
-
-    this.setStyle('theme', 'blue.css');
-
   }
 
-  get Theme() {
-    return localStorage.getItem('theme');
+  public get Theme(): string {
+    return localStorage.getItem('theme') ?? this.defaultTheme ;
   }
 
-  set Theme(theme: any) {
+  public set Theme(theme: string) {
+    this.setStyle('theme', `${theme}.css`);
     localStorage.setItem('theme', theme);
   }
 
@@ -40,22 +32,19 @@ export class ThemeService {
     return this.colorList;
   }
 
+  public LoadTheme(): void {
+    this.Theme = this.Theme;
+  }
+
   setStyle(key: string, href: string): void {
     this.getLinkElementForKey(key).setAttribute('href', href);
   }
 
-  removeStyle(key: string): void {
-    const existingLinkElement = this.getExistingLinkElementByKey(key);
-    if (existingLinkElement) {
-      document.head.removeChild(existingLinkElement);
-    }
-  }
-
-  getLinkElementForKey(key: string): Element {
+  private getLinkElementForKey(key: string): Element {
     return this.getExistingLinkElementByKey(key) || this.createLinkElementWithKey(key);
   }
 
-  getExistingLinkElementByKey(key: string): Element {
+  private getExistingLinkElementByKey(key: string): Element {
     return document.head.querySelector(`link[rel="stylesheet"].${this.getClassNameForKey(key)}`) as Element;
   }
 
@@ -68,7 +57,7 @@ export class ThemeService {
     return linkEl;
   }
 
-  getClassNameForKey(key: string): string {
+  private getClassNameForKey(key: string): string {
     return `style-manager-${key}`;
   }
 

@@ -13,7 +13,6 @@ export class AppComponent {
 
   public activeSection       : string;
   public speedDialFabButtons : any;
-  public selectedTheme       : string;
 
   SpeedDialFabPosition          = SpeedDialFabPosition;
   speedDialFabPosition          = SpeedDialFabPosition.Top;
@@ -64,9 +63,7 @@ export class AppComponent {
   }
 
   onSpeedDialFabClicked(btn: { icon: string, theme: string }) {
-    this.selectedTheme = btn.theme;
-    localStorage.setItem('theme', btn.theme);
-    this.themeService.setStyle('theme', btn.theme + '.css');
+    this.themeService.Theme = btn.theme;
   }
 
   onSectionChange(sectionId: string) {

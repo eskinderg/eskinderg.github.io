@@ -10,6 +10,7 @@
 @use 'src/app/components/outline/outline' as outline;
 @use 'src/app/components/langselect/langselect' as langselect;
 @use 'src/app/components/speeddial/speed-dial-fab.component' as speeddial;
+@use 'src/app/sections/contact/contact.component' as contact;
 
 @mixin theme($theme){
   @include app.theme($theme);
@@ -24,4 +25,5 @@
   @include outline.theme($theme);
   @include langselect.theme($theme);
   @include speeddial.theme($theme);
+  @include contact.theme($theme);
 }

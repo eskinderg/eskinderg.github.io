@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +21,7 @@ import { OutlineModule } from './components/outline/outline.module';
 import { LangSelectModule } from './components/langselect/langselect.module';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
 import { ThemeService } from './providers/theme.service';
+import { initializeApp } from './app.initializer';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,17 @@ import { ThemeService } from './providers/theme.service';
     OutlineModule,
     LangSelectModule
   ],
-  providers: [ LanguageService, ThemeService, GoogleAnalyticsService ],
+  providers: [
+    LanguageService,
+    ThemeService,
+    GoogleAnalyticsService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeApp,
+      deps: [ThemeService],
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
