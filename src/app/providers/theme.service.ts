@@ -33,7 +33,15 @@ export class ThemeService {
   }
 
   public LoadTheme(): void {
+    this.checkPreviousConvention();
     this.Theme = this.Theme;
+  }
+
+  private checkPreviousConvention() {
+    if(localStorage.getItem('theme').includes("-theme")) {
+      localStorage.setItem('theme', localStorage.getItem('theme').replace('-theme', ''))
+
+    }
   }
 
   setStyle(key: string, href: string): void {
