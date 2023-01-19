@@ -5,6 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "prebuild": "npm --no-git-tag-version version patch",
+    "push-major": "npm version major && git push"
+    "preversion": "npm test",
+    "version": "npm run build && git add .",
+    "postversion": "git push && git push --tags"
     "build": "ng build --base-href https://eskinderg.github.io/ && npm run lang",
     "lang": "gulp minify",
     "watch": "ng build --watch --configuration development",
