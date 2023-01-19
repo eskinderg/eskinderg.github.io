@@ -10,6 +10,11 @@
 
   $text-color: #585858;
 
+  .subTitle {
+    margin-top: 8px;
+    color: #ffffff80;
+  }
+
   .lExperienceList:after {
     content: " ";
     // border: 1px solid #eeeff0;
@@ -205,7 +210,7 @@
     color: mat.get-color-from-palette($primary);
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
 
     .left,
     .left .mainTitle {
