@@ -1,4 +1,5 @@
 import { Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
+import { ThemeService } from 'src/app/providers/theme.service';
 import { speedDialFabAnimations }from './speed-dial-fab.animations';
 
 export interface FabButton {
@@ -25,15 +26,15 @@ export class SpeedDialFabComponent {
   @Input() fabButtons: FabButton[];
   @Output() fabClick = new EventEmitter();
 
-  buttons = [];
-  fabTogglerState = 'inactive';
+  public buttons = [];
+  public fabTogglerState = 'inactive';
   public atTop = true;
 
-  constructor() {}
+  constructor(public themeService: ThemeService) { }
 
   private showItems() {
     this.fabTogglerState = 'active';
-    this.buttons = this.fabButtons;
+    this.buttons = this.themeService.Colors;
   }
 
   private hideItems() {

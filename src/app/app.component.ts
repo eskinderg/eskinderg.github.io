@@ -31,19 +31,7 @@ export class AppComponent {
   ];
 
   constructor(public languageService: LanguageService, public ref: ChangeDetectorRef, public meta: Meta, public themeService: ThemeService) {
-
     this.meta.addTags(appMeta);
-
-    if (!this.languageService.colors) {
-      this.languageService.getColorList().subscribe({
-        next: data => {
-          this.languageService.colors = data["colors"]
-          this.speedDialFabButtons    = this.languageService.colors;
-          this.ref.detectChanges();
-        },
-        error: err => console.error(err)
-      });
-    }
   }
 
   onSpeedDialFabClicked(btn: { icon: string, theme: string }) {
