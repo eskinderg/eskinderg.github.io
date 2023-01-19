@@ -7,14 +7,29 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-
-    runs-on: [ windows-latest, ubuntu-latest ]
-
+  Build-on-Ubuntu-latest:
+    name: Ubuntu Build
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: ['12','14','16']
-
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node }}
+    #- run: npm ci
+    - run: npm install
+    - run: npm run build
+    - run: npm run lint
+    - run: npm run test
+  Build-on-windows-latest:
+    name: Windows Build
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: ['12','14','16']
     steps:
     - uses: actions/checkout@v3
     - name: Setup node
