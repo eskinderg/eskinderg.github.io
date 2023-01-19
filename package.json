@@ -8,7 +8,7 @@
     "push-minor": "npm version minor && git push",
     "push-patch": "npm version patch && git push",
     "preversion": "npm test",
-    "version": "npm run build && git add .",
+    "version": "npm run lint && npm run build && git add .",
     "postversion": "git push && git push --tags",
     "build": "ng build --base-href https://eskinderg.github.io/ && npm run lang",
     "lang": "gulp minify",
