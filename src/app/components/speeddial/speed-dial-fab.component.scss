@@ -14,12 +14,21 @@
     right: 0px;
   }
 
-  .default{
-    box-shadow: none ! important;
+  .colorBtn {
+    box-shadow: 1px 1px 9px -2px black;
+    border-radius: 100%;
   }
 
+  .colorBtnNoBoxShadow {
+    box-shadow:none ! important;
+  }
+
+  .miniColorBtn {
+    box-shadow: 1px 1px 9px -2px black ! important;
+  }
   .main-button {
     background-color: mat.get-color-from-palette($primary);
+    box-shadow: 1px 1px 9px -2px black;
   }
 
   .fab-container {

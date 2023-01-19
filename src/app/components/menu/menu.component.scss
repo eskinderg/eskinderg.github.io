@@ -8,6 +8,7 @@
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
   $background-color : map.get($color-config, 'background-color');
+
   .MenuButton{
     display: block;
     position: fixed ! important;
@@ -24,11 +25,17 @@
 
     transition: all 0.35s;
   }
+
   .MenuButton.default{
     background-color: transparent;
     color: #FFFFFF;
-    box-shadow: none;
   }
+
+  .menuBtnShadow{
+    box-shadow: 1px 1px 10px -2px black;
+  }
+
+
   .MenuButton.default .icon{
     fill:#ffffff;
   }
