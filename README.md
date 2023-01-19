@@ -3,11 +3,11 @@
 <p>Run</p>
 
 ```
-git clone https://github.com/eskinderg/portfolio.git
+git clone https://github.com/eskinderg/eskinderg.github.io.git
 ```
 
 ```
-cd portfolio
+cd eskinderg.github.io
 ```
 
 ```
