@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "push-major": "npm version major && git push",
+    "push-minor": "npm version minor && git push",
+    "push-patch": "npm version patch && git push",
     "preversion": "npm test",
     "version": "npm run build && git add .",
     "postversion": "git push && git push --tags",
