@@ -7,9 +7,9 @@
       <div class="profile"></div>
     </div>
     <div class="w-[5%] h-[5%]">&nbsp;</div>
-    <div class="content w-[100%] lg:w-[55%]  md:pt-6" >
-      <p *ngFor="let paragraph of (portfolio.texts)?.about.content" [innerHTML]="paragraph" ></p>
-      <button class="w-[100%] lg:w-[40%]" mat-raised-button [style.font-family]="portfolio.texts?.font.menu" [matMenuTriggerFor]="menu">
+    <div class="content w-[100%] lg:w-[55%]" >
+      <p class="leading-7 text-lg text-center lg:text-left" *ngFor="let paragraph of (portfolio.texts)?.about.content" [innerHTML]="paragraph" ></p>
+      <button class="btn-download w-[100%] lg:w-[40%]" mat-raised-button [style.font-family]="portfolio.texts?.font.menu" [matMenuTriggerFor]="menu">
         {{(portfolio.texts)?.about.button}}
         <img src="assets/img/download.webp" style="position: inherit;" [width]="30" [height]="22" alt="Download File" />
       </button>

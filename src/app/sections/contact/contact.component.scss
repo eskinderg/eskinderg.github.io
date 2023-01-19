@@ -13,9 +13,9 @@
   .contact{
     background-color: #263038;
     width: 100%;
-    overflow: auto;
     box-sizing: border-box;
     position: relative;
+    padding: 5% 0%;
   }
   .envelope{
     margin: 0 0 0 -140px;
@@ -23,14 +23,7 @@
   .contactIntro{
     box-sizing: border-box;
     width: 100%;
-    font-size: 25px;
     font-family: sans-serif;
-  }
-  .left{
-    // overflow: hidden;
-  }
-  .right-contact-item{
-    padding: 0 10% 0 5%;
   }
   .inputs{
     float: right;
@@ -46,11 +39,13 @@
     margin-top: 24px;
   }
   .horizontal-line{
-    width: 100%;
-    padding: 0 10%;
-    box-sizing: border-box;
-    position: absolute;
-    margin-top:80px;
+    background-color: #263038;
+    padding: 5%;
+    // width: 100%;
+    // padding: 0 10%;
+    // box-sizing: border-box;
+    // position: absolute;
+    // margin-top:80px;
   }
   .logo{
     float: left;
@@ -68,7 +63,7 @@
   }
 
   .contact-title {
-    font-size: 30px;
+    // font-size: 30px;
     font-weight:100;
   }
 
