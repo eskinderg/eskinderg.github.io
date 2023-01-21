@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, ViewChild, HostListener, Input, ElementRef, AfterViewInit } from '@angular/core';
-// import { MatMenuTrigger } from '@angular/material';
 import * as jQuery from 'jquery';
 
 @Component({
+  standalone: true,
   selector: 'app-back-top',
   styleUrls: ['./baBackTop.scss'],
   template: `
@@ -13,7 +14,8 @@ import * as jQuery from 'jquery';
       l11.101-11.101C308.589,221.85,308.589,211.92,302.445,205.788z"/>
     </svg>
     </i>
-  `
+  `,
+  imports: [CommonModule]
 })
 export class BaBackTopComponent implements AfterViewInit {
 

@@ -1,11 +1,22 @@
+import { CommonModule } from '@angular/common';
 import { ViewChild, AfterViewInit, Component, ElementRef } from '@angular/core';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyMenuModule } from '@angular/material/legacy-menu';
+import { TitleComponent } from 'src/app/components/title/title.component';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
+  standalone: true,
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
+  imports: [
+    CommonModule,
+    TitleComponent,
+    MatLegacyButtonModule,
+    MatLegacyMenuModule
+  ]
 })
 export class AboutComponent implements AfterViewInit {
 

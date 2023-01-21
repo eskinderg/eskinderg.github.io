@@ -1,12 +1,15 @@
 import { HostListener, ViewChild, Component, ElementRef, Input } from '@angular/core';
-// import { style, state, animate, transition, trigger } from '@angular/animations';
 import { LanguageService } from 'src/app/providers/language.service';
 import * as jQuery from 'jquery';
+import { CommonModule } from '@angular/common';
+// import { style, state, animate, transition, trigger } from '@angular/animations';
 
 @Component({
+  standalone: true,
   selector: 'app-outline',
   templateUrl: './outline.html',
-  styleUrls: ['./outline.scss']
+  styleUrls: ['./outline.scss'],
+  imports: [CommonModule ]
 })
 export class OutlineComponent {
 

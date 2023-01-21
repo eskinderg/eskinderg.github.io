@@ -1,9 +1,11 @@
 import { animate, style, transition, trigger, keyframes } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID, Inject } from '@angular/core';
 
 @Component({
+  standalone: true,
+  imports: [CommonModule],
   selector: 'app-title',
   templateUrl: 'title.component.html',
   styleUrls: ['title.component.scss'],

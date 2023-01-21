@@ -1,4 +1,7 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatLegacyTooltipModule } from '@angular/material/legacy-tooltip';
 import { ThemeService } from 'src/app/providers/theme.service';
 import { speedDialFabAnimations }from './speed-dial-fab.animations';
 
@@ -15,10 +18,16 @@ export enum SpeedDialFabPosition {
 }
 
 @Component({
+  standalone: true,
   selector: 'app-speed-dial-fab',
   templateUrl: './speed-dial-fab.component.html',
   styleUrls: ['./speed-dial-fab.component.scss'],
-  animations: speedDialFabAnimations
+  animations: speedDialFabAnimations,
+  imports: [
+    CommonModule,
+    MatLegacyButtonModule,
+    MatLegacyTooltipModule
+  ]
 })
 export class SpeedDialFabComponent {
 
