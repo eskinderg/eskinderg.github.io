@@ -7,8 +7,10 @@ describe('MasteryComponent', () => {
   let fixture: ComponentFixture<MasteryComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ MasteryComponent ]
+    await TestBed.overrideComponent(MasteryComponent, {
+      set:{
+
+      }
     })
     .compileComponents();
   });

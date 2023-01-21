@@ -10,11 +10,12 @@ describe('ExpertInComponent', () => {
   let fixture: ComponentFixture<ExpertInComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ExpertInComponent],
-      providers: [LanguageService],
-      imports: [HttpClientModule],
-      schemas: [NO_ERRORS_SCHEMA]
+    await TestBed.overrideComponent(ExpertInComponent, {
+      set: {
+        providers: [LanguageService],
+        imports: [HttpClientModule],
+        schemas: [NO_ERRORS_SCHEMA]
+      }
     })
       .compileComponents();
   });

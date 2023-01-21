@@ -10,11 +10,12 @@ describe('ExperienceComponent', () => {
   let fixture: ComponentFixture<ExperienceComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ExperienceComponent],
-      providers: [LanguageService],
-      imports: [HttpClientModule],
-      schemas: [NO_ERRORS_SCHEMA]
+    await TestBed.overrideComponent(ExperienceComponent, {
+      set: {
+        providers: [LanguageService],
+        imports: [HttpClientModule],
+        schemas: [NO_ERRORS_SCHEMA]
+      }
     })
       .compileComponents();
   });

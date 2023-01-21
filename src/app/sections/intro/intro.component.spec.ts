@@ -10,11 +10,12 @@ describe('IntroComponent', () => {
   let fixture: ComponentFixture<IntroComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [IntroComponent],
-      providers: [LanguageService],
-      imports: [HttpClientModule],
-      schemas: [NO_ERRORS_SCHEMA]
+    await TestBed.overrideComponent(IntroComponent, {
+      set: {
+        providers: [LanguageService],
+        imports: [HttpClientModule],
+        schemas: [NO_ERRORS_SCHEMA]
+      }
     })
       .compileComponents();
   });

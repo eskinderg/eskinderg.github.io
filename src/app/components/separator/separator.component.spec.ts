@@ -7,8 +7,10 @@ describe('SeparatorComponent', () => {
   let fixture: ComponentFixture<SeparatorComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SeparatorComponent ]
+    await TestBed.overrideComponent(SeparatorComponent, {
+      set: {
+
+      }
     })
     .compileComponents();
   });

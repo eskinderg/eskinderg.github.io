@@ -10,11 +10,12 @@ describe('AccomplishmentsComponent', () => {
   let fixture: ComponentFixture<AccomplishmentsComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AccomplishmentsComponent],
-      providers: [LanguageService],
-      imports: [HttpClientModule],
-      schemas: [NO_ERRORS_SCHEMA]
+    await TestBed.overrideComponent(AccomplishmentsComponent, {
+      set: {
+        providers: [LanguageService],
+        imports: [HttpClientModule],
+        schemas: [NO_ERRORS_SCHEMA]
+      }
     })
       .compileComponents();
   });

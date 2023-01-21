@@ -10,11 +10,12 @@ describe('EducationConferencesComponent', () => {
   let fixture: ComponentFixture<EducationConferencesComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [EducationConferencesComponent],
-      providers: [LanguageService],
-      imports: [HttpClientModule],
-      schemas: [NO_ERRORS_SCHEMA]
+    await TestBed.overrideComponent(EducationConferencesComponent, {
+      set: {
+        providers: [LanguageService],
+        imports: [HttpClientModule ],
+        schemas: [NO_ERRORS_SCHEMA]
+      }
     })
       .compileComponents();
   });

@@ -10,11 +10,12 @@ describe('ContactComponent', () => {
   let fixture: ComponentFixture<ContactComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ContactComponent],
-      providers: [LanguageService],
-      imports: [HttpClientModule],
-      schemas: [NO_ERRORS_SCHEMA]
+    await TestBed.overrideComponent(ContactComponent, {
+      set: {
+        providers: [LanguageService],
+        imports: [HttpClientModule],
+        schemas: [NO_ERRORS_SCHEMA]
+      }
     })
       .compileComponents();
   });

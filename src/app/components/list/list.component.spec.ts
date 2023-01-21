@@ -7,8 +7,9 @@ describe('ListComponent', () => {
   let fixture: ComponentFixture<ListComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ListComponent ]
+    await TestBed.overrideComponent(ListComponent, {
+      set: {
+      }
     })
     .compileComponents();
   });

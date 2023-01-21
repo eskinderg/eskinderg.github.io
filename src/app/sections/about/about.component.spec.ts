@@ -11,11 +11,12 @@ describe('AboutComponent', () => {
   let fixture: ComponentFixture<AboutComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AboutComponent],
-      providers: [LanguageService, GoogleAnalyticsService],
-      imports: [HttpClientModule],
-      schemas: [NO_ERRORS_SCHEMA]
+    await TestBed.overrideComponent(AboutComponent, {
+      set: {
+        providers: [LanguageService, GoogleAnalyticsService],
+        imports: [HttpClientModule, AboutComponent],
+        schemas: [NO_ERRORS_SCHEMA]
+      }
     })
       .compileComponents();
   });
