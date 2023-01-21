@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component }from '@angular/core';
-import { MatLegacyMenuModule } from '@angular/material/legacy-menu';
-import { MatLegacyTooltipModule } from '@angular/material/legacy-tooltip';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { LanguageService } from 'src/app/providers/language.service';
   styleUrls: ['./langselect.scss'],
   imports: [
     CommonModule,
-    MatLegacyMenuModule,
-    MatLegacyTooltipModule
+    MatMenuModule,
+    MatTooltipModule
   ]
 })
 export class LangSelectComponent {

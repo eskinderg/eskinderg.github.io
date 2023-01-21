@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
-import { MatLegacyButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyTooltipModule } from '@angular/material/legacy-tooltip';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { ThemeService } from 'src/app/providers/theme.service';
 import { speedDialFabAnimations }from './speed-dial-fab.animations';
 
@@ -25,8 +25,8 @@ export enum SpeedDialFabPosition {
   animations: speedDialFabAnimations,
   imports: [
     CommonModule,
-    MatLegacyButtonModule,
-    MatLegacyTooltipModule
+    MatButtonModule,
+    MatTooltipModule
   ]
 })
 export class SpeedDialFabComponent {

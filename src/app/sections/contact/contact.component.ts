@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ViewChild, ElementRef, Component, AfterViewInit, OnInit } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatLegacyCardModule } from '@angular/material/legacy-card';
+import { MatCardModule } from '@angular/material/card';
 import { SeparatorComponent } from 'src/app/components/separator/separator.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { environment } from 'src/environments/environment';
@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./contact.component.scss'],
   imports: [
     CommonModule,
-    MatLegacyCardModule,
+    MatCardModule,
     MatDividerModule,
     SeparatorComponent
   ]

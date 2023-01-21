@@ -186,6 +186,10 @@
     font-size: 14px ! important;
     font-weight: 500 ! important;
   }
+  /* Material color override*/
+  .mdc-evolution-chip__text-label {
+    color: $text-color ! important;
+  }
 
   .middle .line {
     // background-color: mat-color($primary, lighter);

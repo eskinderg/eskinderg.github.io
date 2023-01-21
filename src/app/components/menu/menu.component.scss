@@ -31,10 +31,9 @@
     color: #FFFFFF;
   }
 
-  .menuBtnShadow{
-    box-shadow: 1px 1px 10px -2px black;
+  .menuBtnNoShadow{
+    box-shadow: none ! important;
   }
-
 
   .MenuButton.default .icon{
     fill:#ffffff;

@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { style, animate, transition, trigger } from '@angular/animations';
 import { LanguageService } from 'src/app/providers/language.service';
 import { CommonModule } from '@angular/common';
-import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   standalone: true,
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
-  imports: [CommonModule,MatLegacyButtonModule],
+  imports: [CommonModule,MatButtonModule],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [   // :enter is alias to 'void => *'

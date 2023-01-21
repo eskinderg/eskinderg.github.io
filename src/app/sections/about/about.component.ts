@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ViewChild, AfterViewInit, Component, ElementRef } from '@angular/core';
-import { MatLegacyButtonModule } from '@angular/material/legacy-button';
-import { MatLegacyMenuModule } from '@angular/material/legacy-menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
 import { TitleComponent } from 'src/app/components/title/title.component';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
@@ -14,8 +14,8 @@ import { LanguageService } from 'src/app/providers/language.service';
   imports: [
     CommonModule,
     TitleComponent,
-    MatLegacyButtonModule,
-    MatLegacyMenuModule
+    MatButtonModule,
+    MatMenuModule
   ]
 })
 export class AboutComponent implements AfterViewInit {

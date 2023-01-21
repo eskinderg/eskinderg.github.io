@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatLegacyChipsModule } from '@angular/material/legacy-chips';
 import { LanguageService } from 'src/app/providers/language.service';
 import { TitleComponent } from '../title/title.component';
+import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
   standalone: true,
@@ -13,7 +13,7 @@ import { TitleComponent } from '../title/title.component';
   imports: [
     CommonModule,
     MatDividerModule,
-    MatLegacyChipsModule,
+    MatChipsModule,
     TitleComponent
   ]
 })
