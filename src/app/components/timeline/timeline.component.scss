@@ -136,11 +136,6 @@
     text-align: left;
   }
 
-  .left,
-  .right {
-    padding-top: 20px;
-  }
-
   .mainTitle.link {
     cursor: pointer;
     // margin-bottom: 8px;
@@ -214,7 +209,7 @@
     color: mat.get-color-from-palette($primary);
   }
 
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1279px) {
 
     .left,
     .left .mainTitle {
