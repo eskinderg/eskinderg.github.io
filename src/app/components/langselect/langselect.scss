@@ -1,6 +1,10 @@
 @use 'sass:map';
 @use '@angular/material' as mat;
 
+.mdc-list-item__primary-text {
+  color: black ! important; /*Material Override*/
+}
+
 @mixin theme($theme) {
 
   $color-config     : mat.get-color-config($theme);

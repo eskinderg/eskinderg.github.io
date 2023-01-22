@@ -30,9 +30,7 @@
       <app-title title="{{job?.year}}" [lineWidth]="150" fontFamily="{{portfolio.texts?.font.content}}"> </app-title></div>
     <div class="hidden lg:block">
       <div class="used lg:py-4" >
-        <mat-chip-set aria-label="technologies">
-          <mat-chip *ngFor="let technology of job?.used" class="chip">{{ technology }}</mat-chip>
-        </mat-chip-set>
+        <mat-chip *ngFor="let technology of job?.used" class="chip">{{ technology }}</mat-chip>
       </div>
     </div>
   </div>
