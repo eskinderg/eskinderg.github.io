@@ -184,6 +184,9 @@
   mat-tooltip-component { /*Material Override*/
     font-size: 15px ! important;
   }
+  .mdc-tooltip__surface {
+    background-color: black ! important;
+  }
 
   @-webkit-keyframes indeterminate {
     0% {
