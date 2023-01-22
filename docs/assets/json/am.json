@@ -7,27 +7,30 @@
     "menu": "wookianos",
     "content": "wookianos"
   },
-  "menu" : [
-    {
-      "name": "ስለ እኔ",
-      "link": "about"
-    },{
-    "name": "ቴክኖሎጂዎች",
-    "link": "technologies"
-    },{
-    "name": "ፍፃሜዎች",
-    "link": "accomplishments"
-    },{
-    "name": "የስራ ልምድ",
-    "link": "experience"
-    },{
-    "name": "ትምህርት \/ ስልጠናዎች",
-    "link": "education"
-    },{
-    "name": "አድራሻ",
-    "link": "contact"
-    }
-  ],
+  "menu" : {
+    "tooltip" : "ዋና ማዉጫ",
+    "list" : [
+      {
+        "name": "ስለ እኔ",
+        "link": "about"
+      },{
+        "name": "ቴክኖሎጂዎች",
+        "link": "technologies"
+      },{
+        "name": "ፍፃሜዎች",
+        "link": "accomplishments"
+      },{
+        "name": "የሥራ ልምድ",
+        "link": "experience"
+      },{
+        "name": "ትምህርትና \/ ስልጠናዎች",
+        "link": "education"
+      },{
+        "name": "አድራሻ",
+        "link": "contact"
+      }
+    ]
+  },
   "intro" : {
     "title": "እስክንድር ጌታሁን",
     "subtitle": "Full-Stack Developer"
@@ -38,7 +41,10 @@
       "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practices to produce a clean code that is easy to debug and maintain.",
       "I have a passion for web development and continue to learn the latest technological advancements."
     ],
-    "button": "ካሪኩለም ሺቴ",
+    "button": {
+      "title": "ካሪኩለም ሺቴ",
+      "tooltip": "ካሪኩለም ሺቴ አዉርድ"
+    },
     "pdf": "Adobe Acrobat Version (pdf)",
     "word": "Word Document Version (docx)"
   },
@@ -196,7 +202,7 @@
     ]
   },
   "experience" : {
-    "title": "የስራ ልምድ",
+    "title": "የሥራ ልምድ",
     "content": [
       {
         "title":"Freelance Web Developer (Front End Developer)",
@@ -344,7 +350,7 @@
     ]
   },
   "contact": {
-    "intro": "ጥያቄ ካላችሁ ከዚህ በታች በሚገኘዉ ስልክ ቁጥር ወይም ኢሜሌ አግኙኝ",
+    "intro": "ጥያቄ ካላችሁ ከዚህ በታች በሚገኘዉ ስልክ ቁጥር ወይም የኢሜል አድራሻ ያግኙኝ።",
     "input": [
       "NAME","EMAIL","MESSAGE"
     ],
@@ -360,5 +366,20 @@
     "stackoverflow": "https://stackoverflow.com/users/2876957/eskinder",
     "linkedin": "https://www.linkedin.com/in/eskinderg"
   },
-  "languageSelect": "ቋንቋ ምረጥ"
+  "languageSelect": "ቋንቋ ምረጥ",
+  "colorSelectTooltip": "የዌብሳይቱን ቀለም ቀይር",
+  "colors": {
+    "red":"ቀይ",
+    "green": "አረንጓዴ",
+    "blue": "ሰማያዊ",
+    "orange": "ብርቱካናማ",
+    "teal": "ቲል",
+    "cyan": "ሳያን",
+    "pink": "ፒንክ",
+    "deeppurple": "ፐርፕል",
+    "indigo": "ኢንዲጎ",
+    "lightblue": "ፈዛዛ ሰማያዊ",
+    "brown": "ቡኒ",
+    "bluegrey": "ግራጫ"
+  }
 }
