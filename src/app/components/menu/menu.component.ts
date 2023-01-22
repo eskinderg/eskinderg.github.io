@@ -3,13 +3,18 @@ import { style, animate, transition, trigger } from '@angular/animations';
 import { LanguageService } from 'src/app/providers/language.service';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   standalone: true,
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
-  imports: [CommonModule,MatButtonModule],
+  imports: [
+    CommonModule,
+    MatButtonModule,
+    MatTooltipModule
+  ],
   animations: [
     trigger('fadeInOut', [
       transition(':enter', [   // :enter is alias to 'void => *'

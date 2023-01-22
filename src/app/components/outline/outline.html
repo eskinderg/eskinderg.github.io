@@ -26,7 +26,7 @@
 <div #outline id="outline"><ul class="timeline hidden lg:block ">
 
     <!-- Item 1 -->
-    <li *ngFor="let item of (portfolio.texts)?.menu">
+    <li *ngFor="let item of (portfolio.texts)?.menu.list">
       <div class="direction-l" >
         <div class="flag-wrapper" >
           <span (click)="scrollTo(item.link)" [style.font-family]="portfolio.texts['font'].outline"

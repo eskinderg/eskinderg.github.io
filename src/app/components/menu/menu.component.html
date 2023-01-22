@@ -1,5 +1,5 @@
-<button color="primary" mat-fab aria-label="Menu Button" class="MenuButton" (click)="toggleMenu()" (window:scroll)="onScroll($event)" [ngClass]="{'menuBtnNoShadow':(atTop || visible),'animated':visible}">
-    <svg width="30" height="30">
+<button [matTooltip]="(portfolio.texts)?.menu.tooltip" color="primary" mat-fab aria-label="Menu Button" class="MenuButton" (click)="toggleMenu()" (window:scroll)="onScroll($event)" [ngClass]="{'menuBtnNoShadow':(atTop || visible),'animated':visible}">
+    <svg width="40" height="40" style="padding: 9px 0px 0px 5px;">
         <g>
         <g transform="matrix(0.76190476,0,0,0.76190476,-145.85034,-295.47324)">
         <g transform="matrix(1.25,0,0,1.25,203.92857,410.30863)">
@@ -18,7 +18,7 @@
 
 <div class="MenuFullscreen" *ngIf="visible" [@fadeInOut]>
     <nav>
-        <div class="wrapper" *ngFor="let item of (portfolio.texts)?.menu">
+        <div class="wrapper" *ngFor="let item of (portfolio.texts)?.menu.list">
             <a class="link" [ngClass]="{'unhovered':( hovered && hovered!==item.link )}" [style.font-family]="portfolio.texts?.font.menu" (mousemove)="onHover(item.link)" (mouseout)="onMouseOut()" (click)="scrollTo(item.link)" class="h2">{{ item.name }}</a>
         </div>
     </nav>

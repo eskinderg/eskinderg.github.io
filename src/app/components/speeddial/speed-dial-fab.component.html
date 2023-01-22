@@ -7,7 +7,7 @@
   <button mat-fab class="fab-toggler main-button"
                   aria-label="Color Chooser"
                   color="primary"
-                  matTooltip="Change Theme Color" [matTooltipPosition]="'below'"
+                  matTooltip="{{ (portfolio.texts)?.colorSelectTooltip }}" [matTooltipPosition]="'below'"
                   [ngClass]="{'colorBtnNoBoxShadow':(atTop && (fabTogglerState!=='active'))}"
                   (click)="onToggleFab()">
     <!-- <i class="fa-color-lens material-icons" [@fabToggler]="{value: fabTogglerState}">color_lens</i> -->
@@ -21,7 +21,7 @@
   <div class="flex flex-col sm:flex-row" [@speedDialStagger]="buttons?.length">
     <button *ngFor="let btn of buttons"
       mat-mini-fab
-      matTooltip="{{btn.tooltip}}"
+      matTooltip="{{ portfolio.translateColor(btn.theme) }}"
       class="mat-mini-fab miniColorBtn"
       [ngClass]="btn.theme"
       (click)="onClickFab(btn)">

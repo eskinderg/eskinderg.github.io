@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 import { speedDialFabAnimations }from './speed-dial-fab.animations';
 
@@ -39,7 +40,7 @@ export class SpeedDialFabComponent {
   public fabTogglerState = 'inactive';
   public atTop = true;
 
-  constructor(public themeService: ThemeService) { }
+  constructor(public themeService: ThemeService, public portfolio: LanguageService) { }
 
   private showItems() {
     this.fabTogglerState = 'active';
