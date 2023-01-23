@@ -10,7 +10,7 @@
 $indigo-theme: mat.define-dark-theme((
   color: (
     primary: mat.define-palette(mat.$indigo-palette),
-    accent: mat.define-palette(mat.$blue-grey-palette, A400, A100, A700),
+    accent: mat.define-palette(mat.$indigo-palette, A400, A100, A700),
     background: mat.define-palette(mat.$indigo-palette),
     background-color: mat.define-palette(mat.$indigo-palette),
 ),

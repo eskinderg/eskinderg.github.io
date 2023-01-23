@@ -10,9 +10,9 @@
 $red-theme: mat.define-dark-theme((
   color: (
     primary: mat.define-palette(mat.$red-palette),
-    accent: mat.define-palette(mat.$blue-grey-palette, A400, A100, A700),
-    background: mat.define-palette(mat.$pink-palette),
-    background-color: mat.define-palette(mat.$pink-palette),
+    accent: mat.define-palette(mat.$red-palette, A400, A100, A700),
+    background: mat.define-palette(mat.$red-palette),
+    background-color: mat.define-palette(mat.$red-palette),
 ),
 ));
 

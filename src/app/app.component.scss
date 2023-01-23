@@ -185,7 +185,8 @@
     font-size: 15px ! important;
   }
   .mdc-tooltip__surface {
-    background-color: black ! important;
+    background-color: mat.get-color-from-palette($primary, 'darker') ! important;
+    color: white ! important;
   }
 
   @-webkit-keyframes indeterminate {
