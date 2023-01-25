@@ -1,5 +1,5 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Meta } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -55,7 +55,7 @@ import { SpeedDialFabComponent } from './components/speeddial/speed-dial-fab.com
     {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
-      deps: [ThemeService],
+      deps: [ThemeService, Meta],
       multi: true
     },
   ],
