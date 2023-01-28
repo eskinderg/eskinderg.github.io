@@ -1,12 +1,12 @@
-
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ThemeService {
 
-  private colorList: any;
-  private defaultTheme: string = "blue";
+  private colorList             : any;
+  private defaultTheme          : string = "blue";
+  public static DarkModeDefault : boolean = false;
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
@@ -19,12 +19,25 @@ export class ThemeService {
     })
   }
 
+  public get DarkMode(): boolean {
+    return localStorage.getItem('darkmode') === 'true' || ThemeService.DarkModeDefault
+  }
+
+  public set DarkMode(value: boolean) {
+    localStorage.setItem('darkmode', value.toString());
+  }
+
+  public ToggleDarkMode(): boolean {
+    this.DarkMode = !this.DarkMode;
+    // this.LoadTheme(this.DarkMode);
+    return this.DarkMode;
+  }
+
   public get Theme(): string {
-    return localStorage.getItem('theme') ?? this.defaultTheme ;
+    return localStorage.getItem('theme') ?? this.defaultTheme;
   }
 
   public set Theme(theme: string) {
-    this.setStyle('theme', `${theme}.css`);
     localStorage.setItem('theme', theme);
   }
 
@@ -33,13 +46,44 @@ export class ThemeService {
   }
 
   public LoadTheme(): void {
+
     this.checkPreviousConvention();
-    this.Theme = this.Theme;
+
+    if (this.DarkMode) {
+      this.LoadDarkMode();
+    } else {
+      this.SetTheme(this.Theme, false)
+    }
+  }
+
+  public SetTheme(theme: string, isDarkMode: boolean) {
+
+    if (isDarkMode) {
+      this.setStyle('theme', `${theme}.css`);
+    } else {
+      this.setStyle('theme', `${theme}.css`);
+      this.Theme = theme;
+    }
+
+    this.DarkMode = isDarkMode;
+  }
+
+  private LoadDarkMode() {
+    this.SetTheme('dark', true);
+  }
+
+  public get DarkModeBackground1(): string {
+    return '#1c2128';
+  }
+
+  public get DarkModeBackground2(): string {
+    return '#22272e';
   }
 
   private checkPreviousConvention() {
-    if(localStorage.getItem('theme')){
-      if(localStorage.getItem('theme').includes("-theme")) {
+
+    if (localStorage.getItem('theme')) {
+      if (localStorage.getItem('theme').includes("-theme")) {
         localStorage.setItem('theme', localStorage.getItem('theme').replace('-theme', ''))
       }
     }

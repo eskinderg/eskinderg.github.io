@@ -18,10 +18,10 @@
     max-width: 80%;
   }
 
-  .subtitle.h2 {
+  .introSubTitle {
     margin-top: 8px;
-    font-weight: normal;
-    color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    color: mat.get-color-from-palette($primary, 400);
   }
 
   .icon_links {

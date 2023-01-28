@@ -3,7 +3,7 @@
   <!-- <div class="h2 titleExpertin" fxFlex="100" [ngStyle.sm]="{'text-align': 'center','padding':0}" [ngStyle.xs]="{'text-align': 'center','padding':0}"> -->
     <app-title title="{{(portfolio.texts)?.technologies.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true" [lineWidth]="250" [inverse]="true"></app-title>
   </div>
-  <div class="content flex-[1_1_100%] lg:flex-[1_1_70%]">
+  <div class="expertInContent flex-[1_1_100%] lg:flex-[1_1_70%]">
     <div class="flex flex-row flex-wrap justify-center lg:justify-start">
       <app-mastery [item]="mastery" *ngFor="let mastery of (portfolio.texts)?.technologies.masteries"></app-mastery>
     </div>

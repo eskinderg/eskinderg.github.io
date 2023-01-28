@@ -1,14 +1,14 @@
 <div class="flex flex-wrap lg:flex-nowrap  pt-0 pb-[5%] lg:pb-[0%]">
   <div class="order-1" [ngClass]="{'left lg:order-1':reverse,'right lg:order-3':!reverse}" class="flex-[1_1_100%] lg:flex-[1_1_48%]">
-    <div class="mainTitle h3 link colorBlue">{{ job?.title }}</div>
+    <div class="mainTitle h3 link">{{ job?.title }}</div>
     <div class="subtitle h4">{{ job?.subtitle }}</div>
-    <div class="lg:hidden mainTitle h4 year">{{job?.year }}</div>
-    <div class="paragraph">{{ job?.intro }}</div>
+    <div class="content mainTitle h4 year lg:hidden ">{{job?.year }}</div>
+    <div class="timelineParagraph">{{ job?.intro }}</div>
     <!-- <div *ngFor="let paragraph of job.intro" class="paragraph">{{ paragraph }}</div> -->
     <div *ngFor="let list of job?.elements">
-      <h5 class="text-lg" style="margin: 10px 0px 10px 0;">{{list.header}}</h5>
+      <h5 class="content text-lg" style="margin: 10px 0px 10px 0;">{{list.header}}</h5>
       <div class="flex flex-row flex-wrap experienceList" [ngClass]="{'lExperienceList leftFlexLayout': reverse,'rExperienceList rightFlexLayout': !reverse}" *ngFor="let l of list.list">
-        <div class="experienceListItem grow lg:grow-0" [ngClass]="{'leftItemFlexLayout': reverse, 'rightItemFlexLayout': ! reverse}">
+        <div class="content experienceListItem grow lg:grow-0" [ngClass]="{'leftItemFlexLayout': reverse, 'rightItemFlexLayout': ! reverse}">
           {{l}}
         </div>
       </div>
@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="order-3" [ngClass]="{'right lg:order-3': reverse,'left lg:order-1': !reverse}" class="flex-[1_1_100%] lg:flex-[1_1_48%]">
-    <div class="mainTitle h4 year gapTop hidden lg:block">
+    <div class="content mainTitle h4 year gapTop hidden lg:block">
       <app-title title="{{job?.year}}" [lineWidth]="150" fontFamily="{{portfolio.texts?.font.content}}"> </app-title></div>
     <div class="">
       <div class="used lg:py-4" >

@@ -1,6 +1,6 @@
-<app-separator [fillColor]="'#eee'" [backgroundColor]="'#FFFFFF'"></app-separator>
+<app-separator [fillColor]="themeService.DarkMode ? themeService.DarkModeBackground1: '#eee'" [backgroundColor]="themeService.DarkMode ? themeService.DarkModeBackground2: '#FFFFFF'"></app-separator>
 
-<div class="educationConferencesWrapper px-[5%] sm:px-[10%] flex flex-row flex-wrap">
+<div [style.background-color]="themeService.DarkMode ? themeService.DarkModeBackground1: '#eee'" class="educationConferencesWrapper px-[5%] sm:px-[10%] flex flex-row flex-wrap">
   <div #education  class="education">
 
     <div class="educationSVG" >

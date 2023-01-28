@@ -7,8 +7,7 @@
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
 
-  .subtitle {
-    color: mat.get-color-from-palette($primary);
+  .masterySubtitle {
     font-weight:bold ! important;
   }
 
@@ -31,7 +30,7 @@
   height: 90px;
 }
 
-.mastery .subtitle{
+.mastery .masterySubtitle{
   font-size: 15px;
 }
 
