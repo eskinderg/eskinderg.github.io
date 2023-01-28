@@ -22,10 +22,11 @@
 
 .mastery *:hover{
   transition: all 0.35s;
-  filter: grayscale(0%);
+  // filter: grayscale(0%);
 }
 
 .logo{
+  mix-blend-mode:multiply;
   width: 90px;
   height: 90px;
 }
