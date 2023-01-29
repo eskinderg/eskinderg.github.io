@@ -1,4 +1,7 @@
-<app-separator [backgroundColor]="'#eee'" [fillColor]="'#263038'"></app-separator>
+<app-separator
+  [backgroundColor]="themeService.DarkMode ? themeService.DarkModeBackground1: '#eee'"
+  [fillColor]="'#263038'">
+</app-separator>
 
 <div #contact class="contact colorWhite px-[5%] md:px-[10%] flex flex-col md:flex-row flex-[1_1_100%] md:flex-[1_1_90%] items-center text-center">
   <div class="left hidden lg:block">

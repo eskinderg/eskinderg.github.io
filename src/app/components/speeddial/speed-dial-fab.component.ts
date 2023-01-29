@@ -2,9 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSlideToggleChange, MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 import { speedDialFabAnimations }from './speed-dial-fab.animations';
+import { FormsModule } from '@angular/forms';
 
 export interface FabButton {
   icon: string,
@@ -27,6 +29,9 @@ export enum SpeedDialFabPosition {
   imports: [
     CommonModule,
     MatButtonModule,
+    MatTooltipModule,
+    MatSlideToggleModule,
+    FormsModule,
     MatTooltipModule
   ]
 })
@@ -60,6 +65,16 @@ export class SpeedDialFabComponent {
     this.hideItems();
     this.fabClick.emit(btn);
   }
+
+  public onToggleChange(event: MatSlideToggleChange) {
+    // this.themeService.DarkMode = event.checked;
+    if(event.checked) {
+      this.themeService.SetTheme('dark', true)
+    }else {
+      this.themeService.SetTheme(this.themeService.Theme, false)
+    }
+  }
+
   @HostListener('window:scroll', ['$event'])
   onScroll(event) {
     const scrollTop = event.srcElement.documentElement.scrollTop;

@@ -2,6 +2,7 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SeparatorComponent } from 'src/app/components/separator/separator.component';
 import { LanguageService } from 'src/app/providers/language.service';
+import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   standalone: true,
@@ -14,7 +15,7 @@ export class IntroComponent implements AfterViewInit {
 
   @ViewChild('intro') introSection: ElementRef;
 
-  constructor(public portfolio: LanguageService) { }
+  constructor(public portfolio: LanguageService, public themeService: ThemeService) { }
 
   ngAfterViewInit() {
     this.portfolio.sections['intro'] = this.introSection;

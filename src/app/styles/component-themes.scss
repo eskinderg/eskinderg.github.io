@@ -1,6 +1,7 @@
 @use 'src/app/app.component' as app;
 @use 'src/app/sections/intro/intro.component' as intro;
 @use 'src/app/sections/about/about.component' as about;
+@use 'src/app/sections/expert-in/expert-in.component' as expertIn;
 @use 'src/app/components/mastery/mastery.component' as mastery;
 @use 'src/app/sections/accomplishments/accomplishments.component' as accomplishments;
 @use 'src/app/components/title/title.component' as title;
@@ -26,4 +27,5 @@
   @include langselect.theme($theme);
   @include speeddial.theme($theme);
   @include contact.theme($theme);
+  @include expertIn.theme($theme);
 }

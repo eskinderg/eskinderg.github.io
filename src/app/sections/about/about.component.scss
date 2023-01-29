@@ -8,7 +8,8 @@
   $background       : map.get($color-config, 'background');
 
   .about{
-    background-color: #FFFFFF;
+    transition: background-color 1s ease;
+    background-color: mat.get-color-from-palette($primary, 'darker-contrast');
     width: 100%;
     height: 100%;
     padding: 0% 10%;
@@ -53,14 +54,17 @@
     color: black ! important;
   }
 
-  .content{
+  .introContent{
     box-sizing: border-box;
   }
-  .content p:first-child{
+
+  .introContent p:first-child{
     margin-top: 0;
   }
-  .content p{
+  .introContent p{
     margin: 16px 0;
+    color: mat.get-color-from-palette($primary, 700);
+    filter: grayscale(1);
   }
 
   .profile{

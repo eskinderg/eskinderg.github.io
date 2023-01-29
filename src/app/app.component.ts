@@ -35,7 +35,7 @@ export class AppComponent {
   ) { }
 
   onSpeedDialFabClicked(btn: { icon: string, theme: string }) {
-    this.themeService.Theme = btn.theme;
+    this.themeService.SetTheme(btn.theme, false)
   }
 
   onSectionChange(sectionId: string) {
