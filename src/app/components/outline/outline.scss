@@ -91,7 +91,7 @@
 .flag {
   position: relative;
   display: inline;
-  background: whitesmoke;
+  background: #d1d1d1;
   padding: 6px 10px;
   border-radius: 5px;
   cursor:pointer;
@@ -292,7 +292,7 @@
   }
 
   .flag:after {
-    border-left-color:#ffffff !important;
+    border-left-color:#d1d1d1 !important;
     // box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
 
   }
@@ -313,7 +313,7 @@
     // transition: background-color 1s ease;
     transition: all 0.5s ease;
     // transition: box-sizing 1s ease;
-    color:#FFF;
+    color:#a7a7a7;
     font-size: 20px !important;
     background: mat.get-color-from-palette($primary) !important;
     // opacity: 1;

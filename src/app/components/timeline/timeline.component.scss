@@ -171,7 +171,8 @@
   }
 
   .rExperienceList:before {
-    border: 3px solid rgba(mat.get-color-from-palette($primary, 400),0.2);
+    // border: 3px solid rgba(mat.get-color-from-palette($primary, 400),0.2);
+    background: rgba(mat.get-color-from-palette($primary, 400),0.2);
     // background: mat-color($primary, lighter);
     // background: rgba(mat.get-color-from-palette($primary, 400),0.3);
   }

@@ -10,6 +10,7 @@
   .expertin{
     padding-top:5%;
     padding-bottom:5%;
+    transition: background-color 1s ease;
     background-color: mat.get-color-from-palette($primary, 'darker-contrast');
     width: 100%;
     overflow: auto;

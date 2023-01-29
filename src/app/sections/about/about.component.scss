@@ -8,6 +8,7 @@
   $background       : map.get($color-config, 'background');
 
   .about{
+    transition: background-color 1s ease;
     background-color: mat.get-color-from-palette($primary, 'darker-contrast');
     width: 100%;
     height: 100%;

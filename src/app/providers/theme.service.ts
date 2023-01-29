@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 export class ThemeService {
 
   private colorList             : any;
-  private defaultTheme          : string = "blue";
+  private defaultTheme          : string = "indigo";
   public static DarkModeDefault : boolean = false;
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();

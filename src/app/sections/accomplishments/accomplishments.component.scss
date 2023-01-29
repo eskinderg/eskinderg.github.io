@@ -9,6 +9,7 @@
   $background       : map.get($color-config, 'background');
 
   .circle-ornament {
+    transition: fill 1s ease;
     fill: mat.get-color-from-palette($primary);
   }
 
@@ -18,6 +19,7 @@
     background-color: #FFFFFF;
   }
   .accomp-background {
+    transition: background-color 1s ease;
     padding: 3% 10%;
   }
 
