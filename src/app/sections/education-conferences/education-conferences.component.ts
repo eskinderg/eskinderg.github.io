@@ -4,6 +4,7 @@ import { ListComponent } from 'src/app/components/list/list.component';
 import { SeparatorComponent } from 'src/app/components/separator/separator.component';
 import { TitleComponent } from 'src/app/components/title/title.component';
 import { LanguageService } from 'src/app/providers/language.service';
+import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   standalone: true,
@@ -22,7 +23,7 @@ export class EducationConferencesComponent implements AfterViewInit {
   @ViewChild('education') educationSection: ElementRef;
   @ViewChild('conferences') conferencesSection: ElementRef;
 
-  constructor(public portfolio: LanguageService) { }
+  constructor(public portfolio: LanguageService, public themeService: ThemeService) { }
 
   ngAfterViewInit() {
     this.portfolio.sections['education'] = this.educationSection;

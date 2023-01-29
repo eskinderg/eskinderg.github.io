@@ -23,6 +23,11 @@
     // border-top-style: dashed;
   }
 
+  .content {
+    color: mat.get-color-from-palette($primary, 700);
+    filter: grayscale(1);
+  }
+
   .mat-divider {
     border-top-color: rgba(255, 255, 255, 0.12) ! important;
   }
@@ -106,7 +111,8 @@
     font-family: 'Raleway';
     // background-color: #eee;
     // background-color: mat.get-color-from-palette($primary) !important;
-    color: rgb(78, 93, 107);
+    // color: rgb(78, 93, 107);
+    // color: mat.get-color-from-palette($primary,A900);
     box-sizing: border-box;
   }
 

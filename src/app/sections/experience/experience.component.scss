@@ -1,9 +1,10 @@
 .experience{
-  background-color: #FFFFFF;
+  // background-color: #FFFFFF;
   padding-top: 0px;
   padding-bottom: 0px;
   box-sizing: border-box;
   overflow: hidden;
+  transition: background-color 1s ease;
 }
 .experience .h2{
   margin: 5% 0% 5% 0%;

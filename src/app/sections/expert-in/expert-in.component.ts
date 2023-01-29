@@ -3,6 +3,7 @@ import { ViewChild, ElementRef, AfterViewInit, Component } from '@angular/core';
 import { MasteryComponent } from 'src/app/components/mastery/mastery.component';
 import { TitleComponent } from 'src/app/components/title/title.component';
 import { LanguageService } from 'src/app/providers/language.service';
+import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   standalone: true,
@@ -19,7 +20,7 @@ export class ExpertInComponent implements AfterViewInit {
 
   @ViewChild('technologies') expertinSection: ElementRef;
 
-  constructor(public portfolio: LanguageService) { }
+  constructor(public portfolio: LanguageService, public themeService: ThemeService) { }
 
   ngAfterViewInit() {
     this.portfolio.sections['technologies'] = this.expertinSection;
