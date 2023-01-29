@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
+import { ThemeService } from 'src/app/providers/theme.service';
 
 import { ContactComponent } from './contact.component';
 
@@ -12,7 +13,7 @@ describe('ContactComponent', () => {
   beforeEach(async () => {
     await TestBed.overrideComponent(ContactComponent, {
       set: {
-        providers: [LanguageService],
+        providers: [LanguageService, ThemeService],
         imports: [HttpClientModule],
         schemas: [NO_ERRORS_SCHEMA]
       }

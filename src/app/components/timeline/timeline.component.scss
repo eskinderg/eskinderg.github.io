@@ -10,9 +10,13 @@
 
   $text-color: #585858;
 
+  .timelineParagraph {
+    color: mat.get-color-from-palette($primary, 400);
+  }
+
   .subTitle {
     margin-top: 8px;
-    color: #ffffff80;
+    color: mat.get-color-from-palette($primary, 700);
   }
 
   .lExperienceList:after {
@@ -21,9 +25,9 @@
     // background: #eeeff0;
     position: absolute;
     // margin-left: 10%;
-    right: -5.5%;
-    width: 17px;
-    height: 17px;
+    right: -4.9%;
+    width: 10px;
+    height: 10px;
     border-radius: 10px;
     top: 40%;
   }
@@ -33,9 +37,9 @@
     // border: 1px solid #eeeff0;
     // background: #eeeff0;
     position: absolute;
-    margin-left: -5.5%;
-    width: 17px;
-    height: 17px;
+    margin-left: -4.9%;
+    width: 10px;
+    height: 10px;
     border-radius: 10px;
     top: 44%;
   }
@@ -49,7 +53,7 @@
   }
 
   .experienceListItem {
-    border: 1px solid #E9E9EC;
+    border: 1px solid rgba(mat.get-color-from-palette($primary, 400),0.3);
     padding: 8px;
     width: fit-content;
     border-radius: 7px;
@@ -59,7 +63,7 @@
     justify-content: flex-end;
 
     .leftItemFlexLayout {
-      box-shadow: -3px 4px 3px -3px lightgrey;
+      box-shadow: -3px 4px 3px -3px rgba(mat.get-color-from-palette($primary, 400),0.3);
     }
   }
 
@@ -67,7 +71,7 @@
     justify-content: flex-start;
 
     .rightItemFlexLayout {
-      box-shadow: 3px 4px 3px -3px lightgrey;
+      box-shadow: 3px 4px 3px -3px rgba(mat.get-color-from-palette($primary, 400),0.3);
     }
   }
 
@@ -80,7 +84,7 @@
     width: 0;
     margin-top: -8px;
     border: solid transparent;
-    border-left-color: #ececec;
+    border-left-color: rgba(mat.get-color-from-palette($primary, 400),0.3);
     border-width: 10px;
     pointer-events: none;
   }
@@ -94,7 +98,7 @@
     width: 0;
     margin-top: -8px;
     border: solid transparent;
-    border-right-color: #eeeeee;
+    border-right-color: rgba(mat.get-color-from-palette($primary, 400),0.3);
     border-width: 10px;
     pointer-events: none;
   }
@@ -161,39 +165,48 @@
   }
 
   .lExperienceList:after {
-    border: 3px solid #ffffff;
+    // border: 3px solid rgba(mat.get-color-from-palette($primary, 400),0.2);
     // background: mat-color($primary, lighter);
-    background: #eee;
+    background: rgba(mat.get-color-from-palette($primary, 400),0.2);
   }
 
   .rExperienceList:before {
-    border: 3px solid #ffffff;
+    // border: 3px solid rgba(mat.get-color-from-palette($primary, 400),0.2);
+    background: rgba(mat.get-color-from-palette($primary, 400),0.2);
     // background: mat-color($primary, lighter);
-    background: #eee;
+    // background: rgba(mat.get-color-from-palette($primary, 400),0.3);
   }
 
   .chip {
     // background-color: mat-color($accent) !important;
     transition: all 1s ease;
-    border: 1px solid #d4d4d4 ! important;
-    color: $text-color ! important;
+    border: 1px solid rgba(mat.get-color-from-palette($primary, 400),0.9) ! important;
+    // border: none ! important;
     // font-weight: bold;
     font-size: 14px ! important;
     font-weight: 500 ! important;
+
+    *::before {
+      border-color: none ! important;
+      border:none ! important;
+    }
   }
   /* Material color override*/
   .mdc-evolution-chip__text-label {
-    color: $text-color ! important;
+    color: rgba(mat.get-color-from-palette($primary, 400), 1) ! important;
   }
 
   .middle .line {
     // background-color: mat-color($primary, lighter);
-    background-color: #eee;
+    // background-color: #eee;
+    background-color: rgba(mat.get-color-from-palette($primary, 400),0.1);
+    // filter: grayscale(1);
+    // opacity: 0.1;
   }
 
   .mainTitle {
     transition: color 1s ease;
-    color: mat.get-color-from-palette($primary);
+    color: mat.get-color-from-palette($primary, 400);
   }
 
   .adjust {
@@ -201,12 +214,11 @@
     // fill: mat-color($accent);
     // fill:none;
     // stroke: mat-color($accent);
-    fill: #ddd;
+    // fill: #ddd;
+    fill: rgba(mat.get-color-from-palette($primary, 400),0.3);
+    // filter: grayscale(1);
+    // opacity: 0.3;
     // stroke-width: 14px;
-  }
-
-  .colorBlue {
-    color: mat.get-color-from-palette($primary);
   }
 
   @media screen and (max-width: 1279px) {

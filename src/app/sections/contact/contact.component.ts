@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { SeparatorComponent } from 'src/app/components/separator/separator.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { environment } from 'src/environments/environment';
+import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   standalone: true,
@@ -30,7 +31,7 @@ export class ContactComponent implements AfterViewInit, OnInit {
 
   @ViewChild('contact') contactSection: ElementRef;
 
-  constructor(public portfolio: LanguageService) { }
+  constructor(public portfolio: LanguageService, public themeService: ThemeService) { }
 
   ngOnInit() {
     this.currentAppVersion = environment.appVersion;

@@ -26,5 +26,6 @@
       [ngClass]="btn.theme"
       (click)="onClickFab(btn)">
     </button>
+    <mat-slide-toggle *ngIf="fabTogglerState==='active'" matTooltip="Dark Mode" class="z-10 p0 sm:py-1 sm:pl-2.5 " color="primary" [checked]="themeService.DarkMode" (change)="onToggleChange($event)" ></mat-slide-toggle>
   </div>
 </div>

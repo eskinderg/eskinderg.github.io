@@ -1,24 +1,35 @@
-.expertin{
-  padding-top:5%;
-  padding-bottom:5%;
-  background-color: #FFFFFF;
-  width: 100%;
-  overflow: auto;
-}
-.titleExpertin{
-  // padding-left: 70%;
-  text-align:center;
-}
-.expertinSVG{
-  margin-top: 32px;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-.content{
-  margin-top: 5%;
-  // padding: 24px 10%;
-  box-sizing: border-box;
-}
-.content button{
-  margin-top: 24px;
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin theme($theme) {
+  $color-config     : mat.get-color-config($theme);
+  $primary          : map.get($color-config, 'primary');
+  $accent           : map.get($color-config, 'accent');
+  $background       : map.get($color-config, 'background');
+
+  .expertin{
+    padding-top:5%;
+    padding-bottom:5%;
+    transition: background-color 1s ease;
+    background-color: mat.get-color-from-palette($primary, 'darker-contrast');
+    width: 100%;
+    overflow: auto;
+  }
+  .titleExpertin{
+    // padding-left: 70%;
+    text-align:center;
+  }
+  .expertinSVG{
+    margin-top: 32px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .expertInContent{
+    margin-top: 5%;
+    // padding: 24px 10%;
+    box-sizing: border-box;
+  }
+  .expertInContent button{
+    margin-top: 24px;
+  }
 }
