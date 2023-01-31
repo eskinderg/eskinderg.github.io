@@ -140,6 +140,10 @@
       "title": "Sass",
       "img": "bg-sass",
       "link": "https://sass-lang.com/"
+      },{
+      "title": "Tailwind CSS",
+      "img": "bg-tailwind",
+      "link": "https://tailwindcss.com/"
       }
     ]
   },
