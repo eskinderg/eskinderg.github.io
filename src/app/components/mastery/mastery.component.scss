@@ -46,7 +46,7 @@
   .bg-git, .bg-google, .bg-gulp, .bg-html, .bg-illustrator,
   .bg-javascript, .bg-jquery, .bg-karma, .bg-mongo, .bg-mysql,
   .bg-photoshop, .bg-php, .bg-typescript, .bg-webpack, .bg-sass,
-  .bg-netcore, .bg-angularmat
+  .bg-netcore, .bg-angularmat, .bg-tailwind
   {
     display: inline-block;
     background: url('../../../assets/img/expertin-min.webp') no-repeat;
@@ -165,6 +165,11 @@
   }
   .bg-sass {
     background-position: -270px -360px;
+    width: 90px;
+    height: 90px;
+  }
+  .bg-tailwind {
+    background-position: -370px 0px;
     width: 90px;
     height: 90px;
   }
