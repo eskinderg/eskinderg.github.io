@@ -5,11 +5,14 @@ import { catchError, map, Observable, of } from 'rxjs';
 @Injectable()
 export class ThemeService {
 
-  private colorList             : any;
-  private defaultTheme          : string = "indigo";
-  public static DarkModeDefault : boolean = false;
+  private colorList: any;
+
+  private defaultTheme: string = "indigo";
+
+  public static DarkModeDefault: boolean = false;
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
+
   @Output() themeChange: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(public http: HttpClient) { }
@@ -24,7 +27,6 @@ export class ThemeService {
 
   public ToggleDarkMode(): boolean {
     this.DarkMode = !this.DarkMode;
-    // this.LoadTheme(this.DarkMode);
     return this.DarkMode;
   }
 
@@ -62,7 +64,7 @@ export class ThemeService {
         this.colorList = colors['colors']
         return true
       }),
-      catchError ((error) => {
+      catchError((error) => {
         console.error(error)
         return of(false)
       }))
@@ -71,15 +73,14 @@ export class ThemeService {
 
   public SetTheme(theme: string, isDarkMode: boolean) {
 
-    if (isDarkMode) {
-      this.setStyle('theme', `${theme}.css`);
-    } else {
-      this.setStyle('theme', `${theme}.css`);
+    if (!isDarkMode) {
       this.Theme = theme;
     }
 
+    this.setStyle('theme', `${theme}.css`);
     this.DarkMode = isDarkMode;
     this.themeChange.emit();
+
   }
 
   private LoadDarkMode() {
@@ -95,7 +96,6 @@ export class ThemeService {
   }
 
   private checkPreviousConvention() {
-
     if (localStorage.getItem('theme')) {
       if (localStorage.getItem('theme').includes("-theme")) {
         localStorage.setItem('theme', localStorage.getItem('theme').replace('-theme', ''))

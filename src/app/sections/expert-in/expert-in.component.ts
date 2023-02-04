@@ -23,10 +23,10 @@ export class ExpertInComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('technologies') expertinSection: ElementRef;
 
   constructor(
-    public override portfolio: LanguageService,
-    public override themeService: ThemeService,
-    public override ref: ChangeDetectorRef
-  ) { super(portfolio, themeService, ref)}
+    public lang: LanguageService,
+    public theme: ThemeService,
+    public changeRef: ChangeDetectorRef
+  ) { super(lang, theme, changeRef)}
 
   ngAfterViewInit() {
     this.portfolio.sections['technologies'] = this.expertinSection;

@@ -28,12 +28,12 @@ export class AboutComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('about') aboutSection: ElementRef;
 
   constructor(
-    public override portfolio: LanguageService,
-    public override themeService: ThemeService,
-    public override ref: ChangeDetectorRef,
+    public lang: LanguageService,
+    public theme: ThemeService,
+    public changeRef: ChangeDetectorRef,
     public googleAnalyticsService: GoogleAnalyticsService
   ) {
-    super(portfolio, themeService, ref)
+    super(lang, theme, changeRef)
   }
 
   ngAfterViewInit() {

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatSlideToggleChange, MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -33,7 +33,8 @@ export enum SpeedDialFabPosition {
     MatSlideToggleModule,
     FormsModule,
     MatTooltipModule
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpeedDialFabComponent {
 
@@ -67,7 +68,7 @@ export class SpeedDialFabComponent {
   }
 
   public onToggleChange(event: MatSlideToggleChange) {
-    // this.themeService.DarkMode = event.checked;
+    this.hideItems();
     if(event.checked) {
       this.themeService.SetTheme('dark', true)
     }else {

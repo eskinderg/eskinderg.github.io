@@ -34,10 +34,10 @@ export class ContactComponent extends BaseComponent implements AfterViewInit, On
   @ViewChild('contact') contactSection: ElementRef;
 
   constructor(
-    public override portfolio: LanguageService,
-    public override themeService: ThemeService,
-    public override ref: ChangeDetectorRef
-  ) { super(portfolio, themeService, ref) }
+    public lang: LanguageService,
+    public theme: ThemeService,
+    public changeRef: ChangeDetectorRef
+  ) { super(lang, theme, changeRef) }
 
   ngOnInit() {
     this.currentAppVersion = environment.appVersion;

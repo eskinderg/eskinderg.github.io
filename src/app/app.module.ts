@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
 import { ThemeService } from './providers/theme.service';
-import { appMetaProvider, appProvider, languageListProvider, languageProvider } from './app.initializer';
 import { IntroComponent } from './sections/intro/intro.component';
 import { AboutComponent } from './sections/about/about.component';
 import { ExpertInComponent } from './sections/expert-in/expert-in.component';
@@ -23,6 +22,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { OutlineComponent } from './components/outline/outline';
 import { ScrollSpyDirective } from './providers/scroll-spy-directive';
 import { SpeedDialFabComponent } from './components/speeddial/speed-dial-fab.component';
+import { AppInit } from './app.initializer';
 
 @NgModule({
   declarations: [
@@ -52,10 +52,7 @@ import { SpeedDialFabComponent } from './components/speeddial/speed-dial-fab.com
     LanguageService,
     ThemeService,
     GoogleAnalyticsService,
-    appProvider,
-    languageListProvider,
-    languageProvider,
-    appMetaProvider
+    AppInit
   ],
   bootstrap: [AppComponent]
 })

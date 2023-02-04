@@ -1,9 +1,34 @@
 import { APP_INITIALIZER, FactoryProvider } from "@angular/core";
 import { Meta } from "@angular/platform-browser";
 import { LanguageService } from "./providers/language.service";
-// import { resolve } from "path";
 import { appMeta } from "./app.meta";
 import { ThemeService } from "./providers/theme.service"
+
+export const AppInit: FactoryProvider[] = [
+  {
+    provide: APP_INITIALIZER,
+    useFactory: initializeApp,
+    deps: [ThemeService, Meta],
+    multi: true
+  },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: initializeUserLanguage,
+    deps: [LanguageService],
+    multi: true
+  },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: initializeLanguageList,
+    deps: [LanguageService],
+    multi: true
+  }, {
+    provide: APP_INITIALIZER,
+    useFactory: initializeAppMeta,
+    deps: [Meta],
+    multi: true
+  }
+]
 
 function initializeApp(themeService: ThemeService): () => Promise<void> {
   return () =>
@@ -39,32 +64,4 @@ function initializeAppMeta(meta: Meta): () => Promise<void> {
       meta.addTags(appMeta)
       resolve()
     })
-}
-
-export const appProvider: FactoryProvider = {
-  provide: APP_INITIALIZER,
-  useFactory: initializeApp,
-  deps: [ThemeService, Meta],
-  multi: true
-}
-
-export const languageProvider: FactoryProvider = {
-  provide: APP_INITIALIZER,
-  useFactory: initializeUserLanguage,
-  deps: [LanguageService],
-  multi: true
-}
-
-export const languageListProvider: FactoryProvider = {
-  provide: APP_INITIALIZER,
-  useFactory: initializeLanguageList,
-  deps: [LanguageService],
-  multi: true
-}
-
-export const appMetaProvider: FactoryProvider = {
-  provide: APP_INITIALIZER,
-  useFactory: initializeAppMeta,
-  deps: [Meta],
-  multi: true
 }

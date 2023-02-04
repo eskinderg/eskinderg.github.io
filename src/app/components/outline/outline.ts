@@ -11,7 +11,7 @@ import { ThemeService } from 'src/app/providers/theme.service';
   selector: 'app-outline',
   templateUrl: './outline.html',
   styleUrls: ['./outline.scss'],
-  imports: [CommonModule ],
+  imports: [CommonModule],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OutlineComponent extends BaseComponent {
@@ -20,10 +20,10 @@ export class OutlineComponent extends BaseComponent {
   @ViewChild('outline') _selector: ElementRef;
 
   constructor(
-    public override portfolio: LanguageService,
-    public override themeService: ThemeService,
-    public override ref: ChangeDetectorRef
-  ) { super(portfolio, themeService , ref)}
+    public lang: LanguageService,
+    public theme: ThemeService,
+    public changeRef: ChangeDetectorRef
+  ) { super(lang, theme, changeRef) }
 
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;

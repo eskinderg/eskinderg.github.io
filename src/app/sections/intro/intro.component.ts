@@ -18,11 +18,11 @@ export class IntroComponent extends BaseComponent implements AfterViewInit {
   @ViewChild('intro') introSection: ElementRef;
 
   constructor(
-    public override portfolio: LanguageService,
-    public override themeService: ThemeService,
-    public override ref: ChangeDetectorRef
+    public lang: LanguageService,
+    public theme: ThemeService,
+    public changeRef: ChangeDetectorRef
   ) {
-    super(portfolio, themeService, ref)
+    super(lang, theme, changeRef)
   }
 
   ngAfterViewInit() {

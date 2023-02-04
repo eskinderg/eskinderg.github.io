@@ -23,10 +23,10 @@ export class AccomplishmentsComponent extends BaseComponent implements AfterView
   @ViewChild('accomplishments') accomplishmentsSection: ElementRef;
 
   constructor(
-    public override portfolio: LanguageService,
-    public override themeService: ThemeService,
-    public override ref: ChangeDetectorRef
-  ) { super(portfolio, themeService, ref) }
+    public lang: LanguageService,
+    public theme: ThemeService,
+    public changeRef: ChangeDetectorRef
+  ) { super(lang, theme, changeRef) }
 
   ngAfterViewInit() {
     this.portfolio.sections['accomplishments'] = this.accomplishmentsSection;

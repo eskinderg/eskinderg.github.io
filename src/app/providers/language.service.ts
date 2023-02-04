@@ -14,6 +14,7 @@ export class LanguageService {
   private langList: any;
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
+
   @Output() languageChange: EventEmitter<{}> = new EventEmitter<{}>();
 
   constructor(public http: HttpClient) { }
@@ -40,7 +41,7 @@ export class LanguageService {
         this.languageChange.emit(data);
         return true
       }),
-      catchError ((error) => {
+      catchError((error) => {
         console.error(error)
         return of(false)
       }));
@@ -87,7 +88,7 @@ export class LanguageService {
         this.langList = lang
         return true
       }),
-      catchError ((error) => {
+      catchError((error) => {
         console.error(error)
         return of(false)
       }));

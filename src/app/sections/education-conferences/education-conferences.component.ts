@@ -26,10 +26,10 @@ export class EducationConferencesComponent extends BaseComponent implements Afte
   @ViewChild('conferences') conferencesSection: ElementRef;
 
   constructor(
-    public override portfolio: LanguageService,
-    public override themeService: ThemeService,
-    public override ref: ChangeDetectorRef
-  ) { super(portfolio, themeService, ref)}
+    public lang: LanguageService,
+    public theme: ThemeService,
+    public changeRef: ChangeDetectorRef
+  ) { super(lang, theme, changeRef)}
 
   ngAfterViewInit() {
     this.portfolio.sections['education'] = this.educationSection;
