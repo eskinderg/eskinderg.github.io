@@ -1,6 +1,7 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
+import { Observable, map, catchError, of } from 'rxjs';
 
 @Injectable()
 export class LanguageService {
@@ -13,22 +14,15 @@ export class LanguageService {
   private langList: any;
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
+  @Output() languageChange: EventEmitter<{}> = new EventEmitter<{}>();
 
-  constructor(public http: HttpClient) {
-
-    this.Language = localStorage.getItem('language') || "en";
-
-    const langPath = 'assets/json/lang.json';
-
-    this.http.get<[]>(langPath).subscribe(lang => {
-      this.langList = lang;
-    })
-
-  }
+  constructor(public http: HttpClient) { }
 
   set Language(lang: any) {
     localStorage.setItem('language', lang)
-    this.setLanguage(lang);
+    new Promise((resolve) => {
+      this.setLanguage(lang).subscribe(() => { resolve(true) })
+    })
   }
 
   get Language() {
@@ -39,13 +33,17 @@ export class LanguageService {
     return this.langList;
   }
 
-  private setLanguage(lang: any) {
-    this.http.get<{}>(this.getLangPath(lang)).subscribe({
-      next: data => {
+  public setLanguage(lang: any): Observable<boolean> {
+    return this.http.get(this.getLangPath(lang)).pipe(
+      map((data) => {
         this.texts = data;
-      },
-      error: err => console.error(err)
-    });
+        this.languageChange.emit(data);
+        return true
+      }),
+      catchError ((error) => {
+        console.error(error)
+        return of(false)
+      }));
   }
 
   private getLangPath(lang: any): string {
@@ -78,6 +76,21 @@ export class LanguageService {
   getColorList() {
     const colorPath = 'assets/json/colors.json';
     return this.http.get<[]>(colorPath);
+  }
+
+  public loadLanguages(): Observable<boolean> {
+
+    const langPath = 'assets/json/lang.json';
+
+    return this.http.get(langPath).pipe(
+      map((lang) => {
+        this.langList = lang
+        return true
+      }),
+      catchError ((error) => {
+        console.error(error)
+        return of(false)
+      }));
   }
 
 }

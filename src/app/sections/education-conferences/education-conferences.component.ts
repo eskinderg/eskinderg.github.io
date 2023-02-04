@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ElementRef, ViewChild, Component, AfterViewInit } from '@angular/core';
+import { ElementRef, ViewChild, Component, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { BaseComponent } from 'src/app/components/base.component';
 import { ListComponent } from 'src/app/components/list/list.component';
 import { SeparatorComponent } from 'src/app/components/separator/separator.component';
 import { TitleComponent } from 'src/app/components/title/title.component';
@@ -16,14 +17,19 @@ import { ThemeService } from 'src/app/providers/theme.service';
     ListComponent,
     TitleComponent,
     SeparatorComponent
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EducationConferencesComponent implements AfterViewInit {
+export class EducationConferencesComponent extends BaseComponent implements AfterViewInit {
 
   @ViewChild('education') educationSection: ElementRef;
   @ViewChild('conferences') conferencesSection: ElementRef;
 
-  constructor(public portfolio: LanguageService, public themeService: ThemeService) { }
+  constructor(
+    public override portfolio: LanguageService,
+    public override themeService: ThemeService,
+    public override ref: ChangeDetectorRef
+  ) { super(portfolio, themeService, ref)}
 
   ngAfterViewInit() {
     this.portfolio.sections['education'] = this.educationSection;

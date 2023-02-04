@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
 import { ThemeService } from './providers/theme.service';
-import { appProvider } from './app.initializer';
+import { appMetaProvider, appProvider, languageListProvider, languageProvider } from './app.initializer';
 import { IntroComponent } from './sections/intro/intro.component';
 import { AboutComponent } from './sections/about/about.component';
 import { ExpertInComponent } from './sections/expert-in/expert-in.component';
@@ -52,7 +52,10 @@ import { SpeedDialFabComponent } from './components/speeddial/speed-dial-fab.com
     LanguageService,
     ThemeService,
     GoogleAnalyticsService,
-    appProvider
+    appProvider,
+    languageListProvider,
+    languageProvider,
+    appMetaProvider
   ],
   bootstrap: [AppComponent]
 })

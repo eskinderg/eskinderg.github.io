@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { ViewChild, ElementRef, AfterViewInit, Component } from '@angular/core';
+import { ViewChild, ElementRef, AfterViewInit, Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { BaseComponent } from 'src/app/components/base.component';
 import { MasteryComponent } from 'src/app/components/mastery/mastery.component';
 import { TitleComponent } from 'src/app/components/title/title.component';
 import { LanguageService } from 'src/app/providers/language.service';
@@ -14,13 +15,18 @@ import { ThemeService } from 'src/app/providers/theme.service';
     CommonModule,
     MasteryComponent,
     TitleComponent
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExpertInComponent implements AfterViewInit {
+export class ExpertInComponent extends BaseComponent implements AfterViewInit {
 
   @ViewChild('technologies') expertinSection: ElementRef;
 
-  constructor(public portfolio: LanguageService, public themeService: ThemeService) { }
+  constructor(
+    public override portfolio: LanguageService,
+    public override themeService: ThemeService,
+    public override ref: ChangeDetectorRef
+  ) { super(portfolio, themeService, ref)}
 
   ngAfterViewInit() {
     this.portfolio.sections['technologies'] = this.expertinSection;

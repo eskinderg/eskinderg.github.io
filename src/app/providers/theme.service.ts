@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { catchError, map, Observable, of } from 'rxjs';
 
 @Injectable()
 export class ThemeService {
@@ -9,15 +10,9 @@ export class ThemeService {
   public static DarkModeDefault : boolean = false;
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
+  @Output() themeChange: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(public http: HttpClient) {
-
-    const colorPath = 'assets/json/colors.json';
-
-    this.http.get<[]>(colorPath).subscribe(colors => {
-      this.colorList = colors['colors']
-    })
-  }
+  constructor(public http: HttpClient) { }
 
   public get DarkMode(): boolean {
     return localStorage.getItem('darkmode') === 'true' || ThemeService.DarkModeDefault
@@ -45,7 +40,7 @@ export class ThemeService {
     return this.colorList;
   }
 
-  public LoadTheme(): void {
+  private setUserPreferenceTheme(): void {
 
     this.checkPreviousConvention();
 
@@ -54,6 +49,24 @@ export class ThemeService {
     } else {
       this.SetTheme(this.Theme, false)
     }
+  }
+
+  public LoadTheme(): Observable<boolean> {
+
+    this.setUserPreferenceTheme()
+
+    const colorPath = 'assets/json/colors.json';
+
+    return this.http.get(colorPath).pipe(
+      map((colors) => {
+        this.colorList = colors['colors']
+        return true
+      }),
+      catchError ((error) => {
+        console.error(error)
+        return of(false)
+      }))
+
   }
 
   public SetTheme(theme: string, isDarkMode: boolean) {
@@ -66,6 +79,7 @@ export class ThemeService {
     }
 
     this.DarkMode = isDarkMode;
+    this.themeChange.emit();
   }
 
   private LoadDarkMode() {

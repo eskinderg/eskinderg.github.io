@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { ViewChild, AfterViewInit, Component, ElementRef } from '@angular/core';
+import { ViewChild, AfterViewInit, Component, ElementRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { BaseComponent } from 'src/app/components/base.component';
 import { TitleComponent } from 'src/app/components/title/title.component';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
+import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   standalone: true,
@@ -18,13 +20,21 @@ import { LanguageService } from 'src/app/providers/language.service';
     MatButtonModule,
     MatMenuModule,
     MatTooltipModule
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutComponent implements AfterViewInit {
+export class AboutComponent extends BaseComponent implements AfterViewInit {
 
   @ViewChild('about') aboutSection: ElementRef;
 
-  constructor(public portfolio: LanguageService, public googleAnalyticsService: GoogleAnalyticsService) { }
+  constructor(
+    public override portfolio: LanguageService,
+    public override themeService: ThemeService,
+    public override ref: ChangeDetectorRef,
+    public googleAnalyticsService: GoogleAnalyticsService
+  ) {
+    super(portfolio, themeService, ref)
+  }
 
   ngAfterViewInit() {
     this.portfolio.sections['about'] = this.aboutSection;

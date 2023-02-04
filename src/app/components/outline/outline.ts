@@ -1,7 +1,9 @@
-import { HostListener, ViewChild, Component, ElementRef, Input } from '@angular/core';
+import { HostListener, ViewChild, Component, ElementRef, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import * as jQuery from 'jquery';
 import { CommonModule } from '@angular/common';
+import { BaseComponent } from '../base.component';
+import { ThemeService } from 'src/app/providers/theme.service';
 // import { style, state, animate, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -9,14 +11,19 @@ import { CommonModule } from '@angular/common';
   selector: 'app-outline',
   templateUrl: './outline.html',
   styleUrls: ['./outline.scss'],
-  imports: [CommonModule ]
+  imports: [CommonModule ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OutlineComponent {
+export class OutlineComponent extends BaseComponent {
 
   @Input() currentSection = 'section1';
   @ViewChild('outline') _selector: ElementRef;
 
-  constructor(public portfolio: LanguageService) { }
+  constructor(
+    public override portfolio: LanguageService,
+    public override themeService: ThemeService,
+    public override ref: ChangeDetectorRef
+  ) { super(portfolio, themeService , ref)}
 
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;
@@ -25,13 +32,6 @@ export class OutlineComponent {
   scrollTo(element: any) {
     const section = this.portfolio.sections[element];
     section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-  // onHover(link) {
-  // this.hovered = link;
-  // }
-
-  onMouseOut() {
-    // this.hovered = '';
   }
 
   @HostListener('window:scroll')

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { BaseComponent } from 'src/app/components/base.component';
 import { TimelineComponent } from 'src/app/components/timeline/timeline.component';
 import { TitleComponent } from 'src/app/components/title/title.component';
 import { LanguageService } from 'src/app/providers/language.service';
@@ -14,13 +15,18 @@ import { ThemeService } from 'src/app/providers/theme.service';
     CommonModule,
     TimelineComponent,
     TitleComponent,
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExperienceComponent implements AfterViewInit {
+export class ExperienceComponent extends BaseComponent implements AfterViewInit {
 
   @ViewChild('experience') experienceSection: ElementRef;
 
-  constructor(public portfolio: LanguageService, public themeService: ThemeService) { }
+  constructor(
+    public override portfolio: LanguageService,
+    public override themeService: ThemeService,
+    public override ref: ChangeDetectorRef
+  ) { super(portfolio, themeService, ref)}
 
   ngAfterViewInit() {
     this.portfolio.sections['experience'] = this.experienceSection;

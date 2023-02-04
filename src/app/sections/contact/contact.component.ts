@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { ViewChild, ElementRef, Component, AfterViewInit, OnInit } from '@angular/core';
+import { ViewChild, ElementRef, Component, AfterViewInit, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { SeparatorComponent } from 'src/app/components/separator/separator.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { environment } from 'src/environments/environment';
 import { ThemeService } from 'src/app/providers/theme.service';
+import { BaseComponent } from 'src/app/components/base.component';
 
 @Component({
   standalone: true,
@@ -17,9 +18,10 @@ import { ThemeService } from 'src/app/providers/theme.service';
     MatCardModule,
     MatDividerModule,
     SeparatorComponent
-  ]
+  ],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactComponent implements AfterViewInit, OnInit {
+export class ContactComponent extends BaseComponent implements AfterViewInit, OnInit {
 
   public message = {
     name: '',
@@ -31,7 +33,11 @@ export class ContactComponent implements AfterViewInit, OnInit {
 
   @ViewChild('contact') contactSection: ElementRef;
 
-  constructor(public portfolio: LanguageService, public themeService: ThemeService) { }
+  constructor(
+    public override portfolio: LanguageService,
+    public override themeService: ThemeService,
+    public override ref: ChangeDetectorRef
+  ) { super(portfolio, themeService, ref) }
 
   ngOnInit() {
     this.currentAppVersion = environment.appVersion;
