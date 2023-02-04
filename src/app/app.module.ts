@@ -1,5 +1,5 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { BrowserModule, Meta } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatDividerModule } from '@angular/material/divider';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
 import { ThemeService } from './providers/theme.service';
-import { initializeApp } from './app.initializer';
+import { appProvider } from './app.initializer';
 import { IntroComponent } from './sections/intro/intro.component';
 import { AboutComponent } from './sections/about/about.component';
 import { ExpertInComponent } from './sections/expert-in/expert-in.component';
@@ -52,12 +52,7 @@ import { SpeedDialFabComponent } from './components/speeddial/speed-dial-fab.com
     LanguageService,
     ThemeService,
     GoogleAnalyticsService,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeApp,
-      deps: [ThemeService, Meta],
-      multi: true
-    },
+    appProvider
   ],
   bootstrap: [AppComponent]
 })
