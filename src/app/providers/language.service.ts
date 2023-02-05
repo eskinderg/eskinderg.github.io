@@ -20,9 +20,12 @@ export class LanguageService {
   constructor(public http: HttpClient) { }
 
   set Language(lang: any) {
-    localStorage.setItem('language', lang)
-    new Promise((resolve) => {
-      this.setLanguage(lang).subscribe(() => { resolve(true) })
+    this.setLanguage(lang).subscribe({
+      next: res => {
+        if (res) {
+          localStorage.setItem('language', lang)
+        }
+      }
     })
   }
 

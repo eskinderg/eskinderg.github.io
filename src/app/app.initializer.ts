@@ -1,23 +1,22 @@
-import { APP_INITIALIZER, FactoryProvider } from "@angular/core";
+import { APP_INITIALIZER, Provider } from "@angular/core";
 import { Meta } from "@angular/platform-browser";
 import { LanguageService } from "./providers/language.service";
 import { appMeta } from "./app.meta";
 import { ThemeService } from "./providers/theme.service"
+import { Observable } from "rxjs";
 
-export const AppInit: FactoryProvider[] = [
+export const AppInit: Provider[] = [
   {
     provide: APP_INITIALIZER,
     useFactory: initializeApp,
     deps: [ThemeService, Meta],
     multi: true
-  },
-  {
+  }, {
     provide: APP_INITIALIZER,
     useFactory: initializeUserLanguage,
     deps: [LanguageService],
     multi: true
-  },
-  {
+  }, {
     provide: APP_INITIALIZER,
     useFactory: initializeLanguageList,
     deps: [LanguageService],
@@ -30,38 +29,18 @@ export const AppInit: FactoryProvider[] = [
   }
 ]
 
-function initializeApp(themeService: ThemeService): () => Promise<void> {
-  return () =>
-    new Promise((resolve) => {
-      themeService.LoadTheme().subscribe(() => {
-        resolve()
-      })
-    })
+function initializeApp(themeService: ThemeService): () => Observable<boolean> {
+  return () => themeService.LoadTheme()
 }
 
-function initializeUserLanguage(languageService: LanguageService): () => Promise<void> {
-  return () =>
-    new Promise((resolve) => {
-      languageService.setLanguage(languageService.Language).subscribe(() => {
-        resolve()
-      })
-    })
+function initializeUserLanguage(languageService: LanguageService): () => Observable<boolean> {
+  return () => languageService.setLanguage(languageService.Language)
 }
 
-function initializeLanguageList(languageService: LanguageService): () => Promise<void> {
-  return () =>
-    new Promise((resolve) => {
-      languageService.loadLanguages().subscribe(() => {
-        resolve()
-      })
-    })
+function initializeLanguageList(languageService: LanguageService): () => Observable<boolean> {
+  return () => languageService.loadLanguages();
 }
 
-function initializeAppMeta(meta: Meta): () => Promise<void> {
-  return () =>
-    new Promise((resolve) => {
-
-      meta.addTags(appMeta)
-      resolve()
-    })
+function initializeAppMeta(meta: Meta): () => HTMLMetaElement[] {
+  return () => meta.addTags(appMeta)
 }
