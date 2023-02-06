@@ -9,7 +9,7 @@ export const AppInit: Provider[] = [
   {
     provide: APP_INITIALIZER,
     useFactory: initializeApp,
-    deps: [ThemeService, Meta],
+    deps: [ThemeService],
     multi: true
   }, {
     provide: APP_INITIALIZER,
