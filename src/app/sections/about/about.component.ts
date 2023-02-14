@@ -41,11 +41,23 @@ export class AboutComponent extends BaseComponent implements AfterViewInit {
   }
 
   onPdfDownload() {
-    this.googleAnalyticsService.eventEmitter("download_pdf", "about", "download", "click", 10)
+    this.googleAnalyticsService.eventEmitter(
+      "download_pdf",
+      "about",
+      "download",
+      "click",
+      10
+    )
   }
 
   onDocxDownload() {
-    this.googleAnalyticsService.eventEmitter("download_docx", "about", "download", "click", 10)
+    this.googleAnalyticsService.eventEmitter(
+      "download_docx",
+      "about",
+      "download",
+      "click",
+      10
+    )
   }
 
 }
