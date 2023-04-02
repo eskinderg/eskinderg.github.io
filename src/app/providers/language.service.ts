@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
-import { Observable, map, catchError, of } from 'rxjs';
+import { Observable, map, catchError, of, throwError } from 'rxjs';
 
 @Injectable()
 export class LanguageService {
@@ -21,11 +21,7 @@ export class LanguageService {
 
   set Language(lang: any) {
     this.setLanguage(lang).subscribe({
-      next: res => {
-        if (res) {
-          localStorage.setItem('language', lang)
-        }
-      }
+      next: () => localStorage.setItem('language', lang)
     })
   }
 
@@ -44,9 +40,9 @@ export class LanguageService {
         this.languageChange.emit(data);
         return true
       }),
-      catchError((error) => {
-        console.error(error)
-        return of(false)
+      catchError((httpError: HttpErrorResponse) => {
+        alert(`Unable to set language\n${httpError.message}`)
+        return throwError(() => httpError)
       }));
   }
 
