@@ -24,6 +24,9 @@
     padding: 2% 0% ! important;
     color: white;
     background-color: mat.get-color-from-palette($primary) ! important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .profile-picture{
@@ -41,21 +44,13 @@
     margin-bottom:24px;
   }
 
-  .download-dropdown-menu .mdc-list-item__primary-text { /*Material override*/
+  .download-dropdown-menu .mat-mdc-menu-item-text  { /*Material override*/
     display: flex;
     align-items: baseline;
   }
 
   .mat-mdc-menu-panel.mat-mdc-menu-panel { /*Material Override*/
     max-width: none ! important;
-  }
-
-  .download-dropdown-menu {
-    background-color: white;
-  }
-
-  .download-dropdown-menu span {
-    color: black ! important;
   }
 
   .introContent{
