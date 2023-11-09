@@ -38,7 +38,7 @@
   "about" : {
     "title": "About Me",
     "content": [
-      "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practices to produce a clean code that is easy to debug and maintain.",
+      "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practice to produce a clean code that is easy to debug and maintain.",
       "I have a passion for web development and continue to learn the latest technological advancements."
     ],
     "button": {
