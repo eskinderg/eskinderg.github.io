@@ -5,7 +5,7 @@
   </div>
   <div class="expertInContent flex-[1_1_100%] lg:flex-[1_1_70%]">
     <div class="flex flex-row flex-wrap justify-center lg:justify-start">
-      <app-mastery [item]="mastery" *ngFor="let mastery of (portfolio.texts)?.technologies.masteries"></app-mastery>
+      <app-technology [item]="mastery" *ngFor="let mastery of (portfolio.texts)?.technologies.masteries"></app-technology>
     </div>
   </div>
   <div class="expertinSVG flex-[1_1_30%] hidden lg:block">

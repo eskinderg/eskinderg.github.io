@@ -1,28 +1,26 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
+import { ExpertInSectionComponent } from './expert-in.component';
+import { ComponentsModule } from 'src/app/components/app/components.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ExpertInComponent } from './expert-in.component';
-
-describe('ExpertInComponent', () => {
-  let component: ExpertInComponent;
-  let fixture: ComponentFixture<ExpertInComponent>;
+describe('ExpertInSectionComponent', () => {
+  let component: ExpertInSectionComponent;
+  let fixture: ComponentFixture<ExpertInSectionComponent>;
 
   beforeEach(async () => {
-    await TestBed.overrideComponent(ExpertInComponent, {
-      set: {
-        providers: [LanguageService, ThemeService],
-        imports: [HttpClientModule],
-        schemas: [NO_ERRORS_SCHEMA]
-      }
+    await TestBed.configureTestingModule({
+      declarations: [ExpertInSectionComponent],
+      providers: [LanguageService, ThemeService],
+      imports: [HttpClientModule, ComponentsModule, BrowserAnimationsModule]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExpertInComponent);
+    fixture = TestBed.createComponent(ExpertInSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

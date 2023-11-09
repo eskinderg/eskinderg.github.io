@@ -1,17 +1,17 @@
 @use 'src/app/app.component' as app;
-@use 'src/app/sections/intro/intro.component' as intro;
+@use 'src/app/components/app/technology/technology.component' as mastery;
+@use 'src/app/components/app/timeline/timeline.component' as timeline;
+@use 'src/app/components/app/title/title.component' as title;
+@use 'src/app/components/main/babacktop/baBackTop' as babacktop;
+@use 'src/app/components/main/langselect/langselect' as langselect;
+@use 'src/app/components/main/menu/menu.component' as menu;
+@use 'src/app/components/main/outline/outline' as outline;
+@use 'src/app/components/main/speeddial/speed-dial-fab.component' as speeddial;
 @use 'src/app/sections/about/about.component' as about;
-@use 'src/app/sections/expert-in/expert-in.component' as expertIn;
-@use 'src/app/components/mastery/mastery.component' as mastery;
 @use 'src/app/sections/accomplishments/accomplishments.component' as accomplishments;
-@use 'src/app/components/title/title.component' as title;
-@use 'src/app/components/menu/menu.component' as menu;
-@use 'src/app/components/timeline/timeline.component' as timeline;
-@use 'src/app/components/babacktop/baBackTop' as babacktop;
-@use 'src/app/components/outline/outline' as outline;
-@use 'src/app/components/langselect/langselect' as langselect;
-@use 'src/app/components/speeddial/speed-dial-fab.component' as speeddial;
 @use 'src/app/sections/contact/contact.component' as contact;
+@use 'src/app/sections/expert-in/expert-in.component' as expertIn;
+@use 'src/app/sections/intro/intro.component' as intro;
 
 @mixin theme($theme){
   @include app.theme($theme);

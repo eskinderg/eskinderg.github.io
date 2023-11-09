@@ -1,25 +1,24 @@
-import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
-import { ContactSectionComponent } from './contact.component';
-import { ComponentsModule } from 'src/app/components/app/components.module';
+import { TitleComponent } from './title.component';
 
-describe('ContactSectionComponent', () => {
-  let component: ContactSectionComponent;
-  let fixture: ComponentFixture<ContactSectionComponent>;
+describe('TitleComponent', () => {
+  let component: TitleComponent;
+  let fixture: ComponentFixture<TitleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ContactSectionComponent],
+      declarations: [TitleComponent],
       providers: [LanguageService, ThemeService],
-      imports: [HttpClientModule, ComponentsModule]
+      imports: [BrowserAnimationsModule]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactSectionComponent);
+    fixture = TestBed.createComponent(TitleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

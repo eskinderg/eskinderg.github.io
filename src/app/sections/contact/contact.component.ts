@@ -1,27 +1,16 @@
-import { CommonModule } from '@angular/common';
 import { ViewChild, ElementRef, Component, AfterViewInit, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatCardModule } from '@angular/material/card';
-import { SeparatorComponent } from 'src/app/components/separator/separator.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { environment } from 'src/environments/environment';
 import { ThemeService } from 'src/app/providers/theme.service';
-import { BaseComponent } from 'src/app/components/base.component';
+import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
-  standalone: true,
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatDividerModule,
-    SeparatorComponent
-  ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactComponent extends BaseComponent implements AfterViewInit, OnInit {
+export class ContactSectionComponent extends BaseComponent implements AfterViewInit, OnInit {
 
   public message = {
     name: '',

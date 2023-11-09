@@ -46,3 +46,4 @@ Thumbs.db
 *.vim
 
 .angular/cache
+/documentation

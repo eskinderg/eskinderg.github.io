@@ -1,11 +1,15 @@
 import { HttpClientModule } from '@angular/common/http';
-import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { LanguageService } from './providers/language.service';
 import { ThemeService } from './providers/theme.service';
+import { FrontModule } from './components/main/front.module';
+import { SectionsModule } from './sections/sections.module';
+import { GoogleAnalyticsService } from './providers/google-analytics.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
 
@@ -15,17 +19,20 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
+        BrowserAnimationsModule,
         RouterTestingModule,
-        HttpClientModule
+        HttpClientModule,
+        SectionsModule,
+        FrontModule
       ],
       declarations: [
         AppComponent
       ],
       providers: [
         LanguageService,
-        ThemeService
-      ],
-      schemas: [NO_ERRORS_SCHEMA]
+        ThemeService,
+        GoogleAnalyticsService
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);

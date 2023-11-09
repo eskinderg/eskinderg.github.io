@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LanguageService } from './providers/language.service';
-import { SpeedDialFabPosition } from './components/speeddial/speed-dial-fab.component';
+import { SpeedDialFabPosition } from './components/main/speeddial/speed-dial-fab.component';
 import { ThemeService } from './providers/theme.service';
 
 @Component({

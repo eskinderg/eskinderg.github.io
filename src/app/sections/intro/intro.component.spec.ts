@@ -1,28 +1,26 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentsModule } from 'src/app/components/app/components.module';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 
-import { IntroComponent } from './intro.component';
+import { IntroSectionComponent } from './intro.component';
 
-describe('IntroComponent', () => {
-  let component: IntroComponent;
-  let fixture: ComponentFixture<IntroComponent>;
+describe('IntroSectionComponent', () => {
+  let component: IntroSectionComponent;
+  let fixture: ComponentFixture<IntroSectionComponent>;
 
   beforeEach(async () => {
-    await TestBed.overrideComponent(IntroComponent, {
-      set: {
-        providers: [LanguageService, ThemeService],
-        imports: [HttpClientModule],
-        schemas: [NO_ERRORS_SCHEMA]
-      }
+    await TestBed.configureTestingModule({
+      declarations: [IntroSectionComponent],
+      providers: [LanguageService, ThemeService],
+      imports: [HttpClientModule, ComponentsModule]
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IntroComponent);
+    fixture = TestBed.createComponent(IntroSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

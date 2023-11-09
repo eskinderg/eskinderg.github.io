@@ -1,28 +1,26 @@
 import { HttpClientModule } from '@angular/common/http';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
+import { AccomplishmentsSectionComponent } from './accomplishments.component';
+import { ComponentsModule } from 'src/app/components/app/components.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AccomplishmentsComponent } from './accomplishments.component';
-
-describe('AccomplishmentsComponent', () => {
-  let component: AccomplishmentsComponent;
-  let fixture: ComponentFixture<AccomplishmentsComponent>;
+describe('AccomplishmentsSectionComponent', () => {
+  let component: AccomplishmentsSectionComponent;
+  let fixture: ComponentFixture<AccomplishmentsSectionComponent>;
 
   beforeEach(async () => {
-    await TestBed.overrideComponent(AccomplishmentsComponent, {
-      set: {
-        providers: [LanguageService, ThemeService],
-        imports: [HttpClientModule],
-        schemas: [NO_ERRORS_SCHEMA]
-      }
+    await TestBed.configureTestingModule({
+      declarations: [AccomplishmentsSectionComponent],
+      providers: [LanguageService, ThemeService],
+      imports: [HttpClientModule, ComponentsModule, BrowserAnimationsModule],
     })
       .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AccomplishmentsComponent);
+    fixture = TestBed.createComponent(AccomplishmentsSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
