@@ -27,7 +27,6 @@ describe('AboutSectionComponent', () => {
   });
 
   it('should create', () => {
-    console.log(component.lang.texts)
     expect(component).toBeTruthy();
   });
 });
