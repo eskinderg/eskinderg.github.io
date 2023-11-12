@@ -4,6 +4,8 @@
   </div>
 
   <div>
-    <app-timeline [job]="job" [index]="i" [reverse]="(i % 2) === 0" *ngFor="let job of (portfolio.texts)?.experience.content;let i = index"></app-timeline>
+    @for (job of (portfolio.texts)?.experience.content; track job; let i = $index) {
+  <app-timeline [job]="job" [index]="i" [reverse]="(i % 2) === 0"></app-timeline>
+}
   </div>
 </div>

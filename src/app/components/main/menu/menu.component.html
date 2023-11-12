@@ -16,10 +16,14 @@
     </svg>
 </button>
 
-<div class="MenuFullscreen" *ngIf="visible" [@fadeInOut]>
+@if (visible) {
+<div class="MenuFullscreen" [@fadeInOut]>
     <nav>
-        <div class="wrapper" *ngFor="let item of (portfolio.texts)?.menu.list">
+        @for (item of (portfolio.texts)?.menu.list; track item) {
+  <div class="wrapper">
             <a class="link" [ngClass]="{'unhovered':( hovered && hovered!==item.link )}" [style.font-family]="portfolio.texts?.font.menu" (mousemove)="onHover(item.link)" (mouseout)="onMouseOut()" (click)="scrollTo(item.link)" class="h2">{{ item.name }}</a>
         </div>
+}
     </nav>
 </div>
+}

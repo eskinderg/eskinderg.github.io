@@ -1,7 +1,9 @@
+@if (fabTogglerState==='active') {
 <div id="fab-dismiss"
-     *ngIf="fabTogglerState==='active'"
+    
      (click)="onToggleFab()">
 </div>
+}
 <div class='fab-container flex items-center flex-col sm:flex-row' >
 
   <button mat-fab class="fab-toggler main-button"
@@ -19,13 +21,17 @@
   </button>
 
   <div class="flex flex-col sm:flex-row" [@speedDialStagger]="buttons?.length">
-    <button *ngFor="let btn of buttons"
+    @for (btn of buttons; track btn) {
+  <button
       mat-mini-fab
       matTooltip="{{ portfolio.translateColor(btn.theme) }}"
       class="mat-mini-fab miniColorBtn"
       [ngClass]="btn.theme"
       (click)="onClickFab(btn)">
     </button>
-    <mat-slide-toggle *ngIf="fabTogglerState==='active'" matTooltip="Dark Mode" class="z-10 p0 sm:py-1 sm:pl-2.5 " color="primary" [checked]="themeService.DarkMode" (change)="onToggleChange($event)" ></mat-slide-toggle>
+}
+    @if (fabTogglerState==='active') {
+<mat-slide-toggle matTooltip="Dark Mode" class="z-10 p0 sm:py-1 sm:pl-2.5 " color="primary" [checked]="themeService.DarkMode" (change)="onToggleChange($event)" ></mat-slide-toggle>
+}
   </div>
 </div>

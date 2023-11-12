@@ -3,8 +3,10 @@
     <img class="lang-select-icon" src="assets/img/language.webp" alt="Language Selector" >
   </button>
   <mat-menu class="lang-menu-dropdown"  #menu="matMenu" [xPosition]="'before'">
-    <button class="lang-button" mat-menu-item (click)="changeLanguage(lang.code)" *ngFor="let lang of portfolio.LanguageList">
+    @for (lang of portfolio.LanguageList; track lang) {
+  <button class="lang-button" mat-menu-item (click)="changeLanguage(lang.code)">
       <span class="lang-selection" [style.font-family]="lang.font">{{lang.title}}</span>
     </button>
+}
   </mat-menu>
 </div>

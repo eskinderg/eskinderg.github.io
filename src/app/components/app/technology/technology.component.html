@@ -1,10 +1,13 @@
 <div class="mastery">
-  <a *ngIf="item?.link; else no_link" [href]="item?.link" target="_blank">
+  @if (item?.link) {
+<a [href]="item?.link" target="_blank">
     <div class="logoMastery" [ngClass]="item?.img" alt=""> </div>
     <div class="bold center masterySubtitle">{{ (item)?.title }}</div>
   </a>
-  <ng-template #no_link>
+} @else {
+
     <div class="logoMastery" [ngClass]="item?.img" alt=""> </div>
     <div class="bold center masterySubtitle">{{ (item)?.title }}</div>
-  </ng-template>
-</div>
+  
+}
+  </div>

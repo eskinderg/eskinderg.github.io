@@ -26,7 +26,8 @@
 <div #outline id="outline"><ul class="timeline hidden lg:block ">
 
     <!-- Item 1 -->
-    <li *ngFor="let item of (portfolio.texts)?.menu.list">
+    @for (item of (portfolio.texts)?.menu.list; track item) {
+  <li>
       <div class="direction-l" >
         <div class="flag-wrapper" >
           <span (click)="scrollTo(item.link)" [style.font-family]="portfolio.texts['font'].outline"
@@ -38,4 +39,5 @@
         </div>
       </div>
     </li>
+}
   </ul></div>

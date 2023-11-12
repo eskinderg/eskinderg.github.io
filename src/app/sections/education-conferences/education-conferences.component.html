@@ -16,8 +16,10 @@
       <app-title title="{{(portfolio.texts)?.education.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true" [lineWidth]="250" [inverse]="true"></app-title>
     </div>
 
-    <div class="educationItem" *ngFor="let education of (portfolio.texts)?.education.content">
+    @for (education of (portfolio.texts)?.education.content; track education) {
+  <div class="educationItem">
       <app-list [item]="education" type="education" ></app-list>
     </div>
+}
   </div>
 </div>

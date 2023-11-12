@@ -1,4 +1,5 @@
-<div class="flex flex-row education" *ngIf="type === 'education'">
+@if (type === 'education') {
+<div class="flex flex-row education">
   <div class="mr-5 hidden lg:block" >
     <div class="education-logo" [ngClass]="item.img" alt="education logo"></div>
   </div>
@@ -15,14 +16,19 @@
     </div>
   </div>
 
-  <div class="conferences" *ngIf="type === 'conference'">
+  @if (type === 'conference') {
+<div class="conferences">
     <div class="h3 title">
       {{ item.year }}
     </div>
-    <div *ngFor="let conference of item.list" class="conference">
+    @for (conference of item.list; track conference) {
+  <div class="conference">
       {{ conference }}
     </div>
+}
   </div>
+}
 
 </div>
+}
 

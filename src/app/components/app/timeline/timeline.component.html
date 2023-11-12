@@ -5,14 +5,18 @@
     <div class="content mainTitle h4 year lg:hidden ">{{job?.year }}</div>
     <div class="timelineParagraph">{{ job?.intro }}</div>
     <!-- <div *ngFor="let paragraph of job.intro" class="paragraph">{{ paragraph }}</div> -->
-    <div *ngFor="let list of job?.elements">
+    @for (list of job?.elements; track list) {
+  <div>
       <h5 class="content text-lg" style="margin: 10px 0px 10px 0;">{{list.header}}</h5>
-      <div class="flex flex-row flex-wrap experienceList" [ngClass]="{'lExperienceList leftFlexLayout': reverse,'rExperienceList rightFlexLayout': !reverse}" *ngFor="let l of list.list">
+      @for (l of list.list; track l) {
+  <div class="flex flex-row flex-wrap experienceList" [ngClass]="{'lExperienceList leftFlexLayout': reverse,'rExperienceList rightFlexLayout': !reverse}">
         <div class="content experienceListItem grow lg:grow-0" [ngClass]="{'leftItemFlexLayout': reverse, 'rightItemFlexLayout': ! reverse}">
           {{l}}
         </div>
       </div>
+}
     </div>
+}
   </div>
   <div class="middle order-2 hidden lg:block lg:flex-[1_1_4%]">
     <div class="line top"></div>
@@ -30,7 +34,9 @@
       <app-title title="{{job?.year}}" [lineWidth]="150" fontFamily="{{portfolio.texts?.font.content}}"> </app-title></div>
     <div class="">
       <div class="used lg:py-4" >
-        <mat-chip *ngFor="let technology of job?.used" class="chip">{{ technology }}</mat-chip>
+        @for (technology of job?.used; track technology) {
+  <mat-chip class="chip">{{ technology }}</mat-chip>
+}
       </div>
     </div>
   </div>
