@@ -1,9 +1,7 @@
 import { HostListener, ViewChild, Component, ElementRef, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
-import * as jQuery from 'jquery';
 import { BaseComponent } from '../../../sections/base.component';
 import { ThemeService } from 'src/app/providers/theme.service';
-// import { style, state, animate, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-outline',
@@ -33,8 +31,7 @@ export class OutlineComponent extends BaseComponent {
 
   @HostListener('window:scroll')
   _onWindowScroll(): void {
-    const el = this._selector.nativeElement;
-    window.scrollY > window.innerHeight - 150 ? jQuery(el).fadeIn(500) : jQuery(el).fadeOut(200);
+    this._selector.nativeElement.style.display = window.scrollY > window.innerHeight - 150 ? 'block' : 'none'
   }
 
 }
