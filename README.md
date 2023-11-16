@@ -1,8 +1,6 @@
 [![CI](https://github.com/eskinderg/eskinderg.github.io/actions/workflows/CI.yml/badge.svg)](https://github.com/eskinderg/eskinderg.github.io/actions/workflows/CI.yml)
 ## How to run locally
 
-Make sure to have nodejs installed on you system preferably >=v18.13
-
 ```
 git clone https://github.com/eskinderg/eskinderg.github.io.git
 ```
