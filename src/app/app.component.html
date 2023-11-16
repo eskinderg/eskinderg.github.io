@@ -1,12 +1,6 @@
-<app-langselect style="float:right; z-index:1; position:absolute; right:0;">
-</app-langselect>
+<app-langselect style="float:right; z-index:1; position:absolute; right:0;"></app-langselect>
 
-<div [ngClass]="{'show':languageService.loading}" class="loading-screen" >
-  <div class="loading-text"></div>
-  <div class="progress">
-    <div class="indeterminate"></div>
-  </div>
-</div>
+<app-loader [Loading]="languageService.loading"></app-loader>
 
 <div>
   <app-speed-dial-fab

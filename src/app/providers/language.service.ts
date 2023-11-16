@@ -8,7 +8,7 @@ export class LanguageService {
 
   public texts: any;
   public colors: any;
-  public loading = false;
+  public loading = true;
   public sections = {};
   public menuVisible = false;
   private langList: any;

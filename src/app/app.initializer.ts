@@ -4,9 +4,15 @@ import { LanguageService } from "./providers/language.service";
 import { appMeta } from "./app.meta";
 import { ThemeService } from "./providers/theme.service"
 import { Observable } from "rxjs";
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { LoaderInterceptor } from "./providers/loading.interceptor";
 
 export const AppInit: Provider[] = [
   {
+    provide: HTTP_INTERCEPTORS,
+    useClass: LoaderInterceptor,
+    multi: true
+  }, {
     provide: APP_INITIALIZER,
     useFactory: initializeApp,
     deps: [ThemeService],
