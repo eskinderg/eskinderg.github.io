@@ -6,6 +6,7 @@ import { OutlineComponent } from './outline/outline';
 import { SpeedDialFabComponent } from './speeddial/speed-dial-fab.component';
 import { MatModule } from 'src/app/module/material.module';
 import { ScrollSpyDirective } from 'src/app/providers/scroll-spy-directive';
+import { LoaderComponent } from './loader/loader';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { ScrollSpyDirective } from 'src/app/providers/scroll-spy-directive';
     BaBackTopComponent,
     OutlineComponent,
     SpeedDialFabComponent,
-    ScrollSpyDirective
+    ScrollSpyDirective,
+    LoaderComponent
   ],
   exports: [
     LangSelectComponent,
@@ -25,7 +27,8 @@ import { ScrollSpyDirective } from 'src/app/providers/scroll-spy-directive';
     BaBackTopComponent,
     OutlineComponent,
     SpeedDialFabComponent,
-    ScrollSpyDirective
+    ScrollSpyDirective,
+    LoaderComponent
   ]
 })
 export class FrontModule { }
