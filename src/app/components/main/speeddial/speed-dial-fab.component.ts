@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, Output }from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, Input }from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
@@ -27,7 +27,6 @@ export class SpeedDialFabComponent {
 
   @Input() reverseColumnDirection: boolean = false;
   @Input() fabButtons: FabButton[];
-  @Output() fabClick = new EventEmitter();
 
   public buttons = [];
   public fabTogglerState = 'inactive';
@@ -49,9 +48,9 @@ export class SpeedDialFabComponent {
     this.buttons.length ? this.hideItems() : this.showItems();
   }
 
-  public onClickFab(btn: {icon: string}) {
+  public onClickFab(btn: {icon: string, theme: string}) {
     this.hideItems();
-    this.fabClick.emit(btn);
+    this.themeService.SetTheme(btn.theme, false)
   }
 
   public onToggleChange(event: MatSlideToggleChange) {

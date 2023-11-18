@@ -68,34 +68,6 @@ describe('AppComponent', () => {
     const intro = findComponent(fixture, 'app-intro');
     expect(intro).toBeTruthy();
   });
-
-  it('Should trigger theme change', () => {
-
-    //Arrange
-    spyOn(component, 'onSpeedDialFabClicked');
-    const color = { 'theme': 'red', 'icon': null };
-    const speedDial = findComponent(fixture, 'app-speed-dial-fab');
-
-    //Act
-    speedDial.triggerEventHandler('fabClick', color);
-
-    //Assert
-    expect(component.onSpeedDialFabClicked).toHaveBeenCalledWith({ 'theme': 'red', 'icon': null });
-  });
-
-  it('Should set app theme and set localStorage', () => {
-
-    //Arrange
-    const theme = "red";
-    spyOn(localStorage, 'setItem');
-
-    //Act
-    component.onSpeedDialFabClicked({ 'theme': theme, 'icon': null });
-
-    //Assert
-    expect(localStorage.setItem).toHaveBeenCalledWith('theme', theme);
-  });
-
 });
 
 export function findComponent<T>(

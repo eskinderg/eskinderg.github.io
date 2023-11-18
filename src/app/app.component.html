@@ -2,37 +2,28 @@
 
 <app-loader [Loading]="languageService.loading"></app-loader>
 
-<div>
-  <app-speed-dial-fab
-    class="speed-dial-container"
-    [ngClass]="speedDialFabPosition"
-    [reverseColumnDirection]="speedDialFabPosition===SpeedDialFabPosition.Bottom"
-    (fabClick)="onSpeedDialFabClicked($event)"
-    [fabButtons]="speedDialFabButtons">
-  </app-speed-dial-fab>
+<app-speed-dial-fab> </app-speed-dial-fab>
 
-  <app-menu></app-menu>
+<app-menu></app-menu>
 
-  <div id="parentDiv" class="viewWrapper" appScrollSpy [spiedTags]="spieTags" (sectionChange)="onSectionChange($event)">
+<app-outline [currentSection]="activeSection"></app-outline>
 
-    <app-outline [currentSection]="activeSection"></app-outline>
+<div id="parentDiv" class="viewWrapper" appScrollSpy (sectionChange)="onSectionChange($event)">
 
-    <app-intro id="intro"></app-intro>
+  <app-intro id="intro"></app-intro>
 
-    <app-about id="about"></app-about>
+  <app-about id="about"></app-about>
 
-    <app-expert-in id="technologies"></app-expert-in>
+  <app-expert-in id="technologies"></app-expert-in>
 
-    <app-accomplishments id="accomplishments"></app-accomplishments>
+  <app-accomplishments id="accomplishments"></app-accomplishments>
 
-    <app-experience id="experience"></app-experience>
+  <app-experience id="experience"></app-experience>
 
-    <app-education-conferences id="education"></app-education-conferences>
+  <app-education-conferences id="education"></app-education-conferences>
 
-    <app-contact id="contact"></app-contact>
-
-  </div>
-
-  <app-back-top [position]="200"></app-back-top>
+  <app-contact id="contact"></app-contact>
 
 </div>
+
+<app-back-top [position]="200"></app-back-top>

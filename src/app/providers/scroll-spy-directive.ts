@@ -1,20 +1,28 @@
-import { Directive, Input, EventEmitter, Output, ElementRef, HostListener } from '@angular/core';
+import { Directive, Input, ElementRef, HostListener, Output, EventEmitter } from '@angular/core';
 
 @Directive({
   selector: '[appScrollSpy]'
 })
 export class ScrollSpyDirective {
 
-  @Input() public spiedTags = [];
+  @Input() public spiedTags = [
+    'APP-INTRO',
+    'APP-ABOUT',
+    'APP-EXPERT-IN',
+    'APP-ACCOMPLISHMENTS',
+    'APP-EXPERIENCE',
+    'APP-EDUCATION-CONFERENCES',
+    'APP-CONTACT'
+  ];;
 
-  @Output() public sectionChange = new EventEmitter<string>();
+  @Output() public sectionChange: EventEmitter<string> = new EventEmitter<string>();
 
-  private currentSection: string;
+  public currentSection: string;
 
   constructor(private _el: ElementRef) { }
 
   @HostListener('window:scroll', ['$event'])
-  onScroll(event: any) {
+  onScroll(_event: any) {
 
     let currentSection: string;
     const children = this._el.nativeElement.children;
