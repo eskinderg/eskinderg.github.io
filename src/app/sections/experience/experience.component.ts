@@ -1,7 +1,5 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   selector: 'app-experience',
@@ -9,18 +7,8 @@ import { ThemeService } from 'src/app/providers/theme.service';
   styleUrls: ['./experience.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExperienceSectionComponent extends BaseComponent implements AfterViewInit {
+export class ExperienceSectionComponent extends BaseComponent {
 
-  @ViewChild('experience') experienceSection: ElementRef;
-
-  constructor(
-    public lang: LanguageService,
-    public theme: ThemeService,
-    public changeRef: ChangeDetectorRef
-  ) { super(lang, theme, changeRef)}
-
-  ngAfterViewInit() {
-    this.portfolio.sections['experience'] = this.experienceSection;
-  }
+  @ViewChild('experience') override section: ElementRef;
 
 }

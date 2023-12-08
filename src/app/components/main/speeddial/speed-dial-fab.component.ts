@@ -32,7 +32,7 @@ export class SpeedDialFabComponent {
   public fabTogglerState = 'inactive';
   public atTop = true;
 
-  constructor(public themeService: ThemeService, public portfolio: LanguageService) { }
+  constructor(public themeService: ThemeService, public lang: LanguageService) { }
 
   private showItems() {
     this.fabTogglerState = 'active';

@@ -13,6 +13,6 @@ export class TimelineComponent {
   @Input() index: any;
   @Input() reverse: boolean;
 
-  constructor(public portfolio: LanguageService) { }
+  constructor(public lang: LanguageService) { }
 
 }

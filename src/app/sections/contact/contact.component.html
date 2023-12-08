@@ -67,14 +67,14 @@
 
   <div class="right-contact-item flex-[1_1_60%]">
     <!-- <div class="right flex-[1_1_60%] md:flex-[1_1_100%]" [ngStyle.sm]="{'padding': '0 5%'}" [ngStyle.xs]="{'padding': '0 5%'}"> -->
-    <div class="contactIntro text-xl md:text-2xl" [style.font-family]="portfolio.texts?.font.content">{{(portfolio.texts)?.contact.intro}}</div>
+    <div class="contactIntro text-xl md:text-2xl" [style.font-family]="lang.texts?.font.content">{{(lang.texts)?.contact.intro}}</div>
 
     <br/>
 
     <div class="contactIntro">
-      <a class="contact-title link colorBlue text-xl md:text-2xl" [ngStyle]="{'text-decoration-line': 'none'}" href="mailto:{{(portfolio.texts)?.contact.mail}}?Subject=Hello" target="_top">
+      <a class="contact-title link colorBlue text-xl md:text-2xl" [ngStyle]="{'text-decoration-line': 'none'}" href="mailto:{{(lang.texts)?.contact.mail}}?Subject=Hello" target="_top">
         <mat-card-title><img src="assets/img/mail.webp" alt="Mail" [width]=30 [height]=25 style="margin-right:10px; top:3px; position:relative;" /></mat-card-title>
-        {{ (portfolio.texts)?.contact.mail }}
+        {{ (lang.texts)?.contact.mail }}
       </a>
       <br/>
       <br/>
@@ -83,27 +83,27 @@
 
       <br/>
       <mat-card-title></mat-card-title>
-      <a class="phone" href="tel:{{(portfolio.texts)?.contact.phone}}">
+      <a class="phone" href="tel:{{(lang.texts)?.contact.phone}}">
         <img src="assets/img/phone.webp" alt="Phone" [width]=30 [height]=30 style="margin-right:10px;position:relative;" />
-        {{(portfolio.texts)?.contact.phone}}
+        {{(lang.texts)?.contact.phone}}
       </a>
     </div>
     <!-- <div class="inputs"> -->
     <!--   <form class="contact-form"> -->
-    <!--     <div>{{(portfolio.texts)?.contact.input[0]}}</div> -->
+    <!--     <div>{{(lang.texts)?.contact.input[0]}}</div> -->
     <!--     <mat-form-field class="input"> -->
     <!--       <input name="name" [(ngModel)]="message.name" matInput value=""> -->
     <!--     </mat-form-field> -->
-    <!--     <div>{{(portfolio.texts)?.contact.input[1]}}</div> -->
+    <!--     <div>{{(lang.texts)?.contact.input[1]}}</div> -->
     <!--     <mat-form-field class="input"> -->
     <!--       <input name="email" [(ngModel)]="message.email" matInput value=""> -->
     <!--     </mat-form-field> -->
-    <!--     <div>{{(portfolio.texts)?.contact.input[2]}}</div> -->
+    <!--     <div>{{(lang.texts)?.contact.input[2]}}</div> -->
     <!--     <mat-form-field class="input"> -->
     <!--       <textarea name="message" [(ngModel)]="message.message" matInput placeholder=""></textarea> -->
     <!--     </mat-form-field> -->
 
-    <!--     <button (click)="send()" class="message" mat-raised-button [ngStyle.sm]="{'width': '100%'}" [ngStyle.xs]="{'width': '100%'}">{{(portfolio.texts)?.contact.button}}</button> -->
+    <!--     <button (click)="send()" class="message" mat-raised-button [ngStyle.sm]="{'width': '100%'}" [ngStyle.xs]="{'width': '100%'}">{{(lang.texts)?.contact.button}}</button> -->
     <!--   </form> -->
     <!-- </div> -->
   </div>
@@ -114,7 +114,7 @@
 </div>
 
 <div class="horizontal-line">
-  <div class="copyrights colorWhite text-sm lg:text-xl" [style.font-family]="portfolio.texts?.font.content">
+  <div class="copyrights colorWhite text-sm lg:text-xl" [style.font-family]="lang.texts?.font.content">
     v{{ currentAppVersion }} <br>
       &copy; {{ Copyright }} <br>
     <br>

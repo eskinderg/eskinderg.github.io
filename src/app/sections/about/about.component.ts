@@ -1,8 +1,5 @@
-import { ViewChild, AfterViewInit, Component, ElementRef, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { ViewChild, Component, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
-import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   selector: 'app-about',
@@ -10,22 +7,9 @@ import { ThemeService } from 'src/app/providers/theme.service';
   styleUrls: ['./about.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutSectionComponent extends BaseComponent implements AfterViewInit {
+export class AboutSectionComponent extends BaseComponent {
 
-  @ViewChild('about') aboutSection: ElementRef;
-
-  constructor(
-    public lang: LanguageService,
-    public theme: ThemeService,
-    public changeRef: ChangeDetectorRef,
-    public googleAnalyticsService: GoogleAnalyticsService
-  ) {
-    super(lang, theme, changeRef)
-  }
-
-  ngAfterViewInit() {
-    this.portfolio.sections['about'] = this.aboutSection;
-  }
+  @ViewChild('about') override section: ElementRef;
 
   onPdfDownload() {
     this.googleAnalyticsService.eventEmitter(

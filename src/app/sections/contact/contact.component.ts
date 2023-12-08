@@ -1,7 +1,5 @@
-import { ViewChild, ElementRef, Component, AfterViewInit, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
-import { LanguageService } from 'src/app/providers/language.service';
+import { ViewChild, ElementRef, Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { ThemeService } from 'src/app/providers/theme.service';
 import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
@@ -10,7 +8,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactSectionComponent extends BaseComponent implements AfterViewInit, OnInit {
+export class ContactSectionComponent extends BaseComponent implements  OnInit {
 
   public message = {
     name: '',
@@ -20,25 +18,15 @@ export class ContactSectionComponent extends BaseComponent implements AfterViewI
 
   public currentAppVersion: string;
 
-  @ViewChild('contact') contactSection: ElementRef;
-
-  constructor(
-    public lang: LanguageService,
-    public theme: ThemeService,
-    public changeRef: ChangeDetectorRef
-  ) { super(lang, theme, changeRef) }
+  @ViewChild('contact') override section: ElementRef;
 
   ngOnInit() {
     this.currentAppVersion = environment.appVersion;
   }
 
-  ngAfterViewInit() {
-    this.portfolio.sections['contact'] = this.contactSection;
-  }
-
   public get Copyright(): string {
-    if ((this.portfolio.texts)?.footer.content) {
-      return (this.portfolio.texts)?.footer.content
+    if ((this.lang.texts)?.footer.content) {
+      return (this.lang.texts)?.footer.content
     }
     else {
       return new Date().getFullYear().toString();

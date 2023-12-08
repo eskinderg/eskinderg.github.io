@@ -10,11 +10,11 @@ export class LangSelectComponent {
 
   public languages: any;
 
-  constructor(public portfolio: LanguageService) {
+  constructor(public lang: LanguageService) {
   }
 
   changeLanguage(lang:string) {
-    this.portfolio.Language = lang;
+    this.lang.Language = lang;
   }
 
 }

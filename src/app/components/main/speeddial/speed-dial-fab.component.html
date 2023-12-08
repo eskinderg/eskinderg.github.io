@@ -1,6 +1,6 @@
 @if (fabTogglerState==='active') {
 <div id="fab-dismiss"
-    
+
      (click)="onToggleFab()">
 </div>
 }
@@ -9,7 +9,7 @@
   <button mat-fab class="fab-toggler main-button"
                   aria-label="Color Chooser"
                   color="primary"
-                  matTooltip="{{ (portfolio.texts)?.colorSelectTooltip }}" [matTooltipPosition]="'below'"
+                  matTooltip="{{ (lang.texts)?.colorSelectTooltip }}" [matTooltipPosition]="'below'"
                   [ngClass]="{'colorBtnNoBoxShadow':(atTop && (fabTogglerState!=='active'))}"
                   (click)="onToggleFab()">
     <!-- <i class="fa-color-lens material-icons" [@fabToggler]="{value: fabTogglerState}">color_lens</i> -->
@@ -24,7 +24,7 @@
     @for (btn of buttons; track btn) {
   <button
       mat-mini-fab
-      matTooltip="{{ portfolio.translateColor(btn.theme) }}"
+      matTooltip="{{ lang.translateColor(btn.theme) }}"
       class="mat-mini-fab miniColorBtn"
       [ngClass]="btn.theme"
       (click)="onClickFab(btn)">

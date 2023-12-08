@@ -1,10 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ComponentsModule } from 'src/app/components/app/components.module';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 
 import { IntroSectionComponent } from './intro.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('IntroSectionComponent', () => {
   let component: IntroSectionComponent;
@@ -14,7 +14,7 @@ describe('IntroSectionComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [IntroSectionComponent],
       providers: [LanguageService, ThemeService],
-      imports: [HttpClientModule, ComponentsModule]
+      imports: [HttpClientModule, AppModule]
     })
       .compileComponents();
   });
