@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { LanguageService } from './providers/language.service';
-import { ThemeService } from './providers/theme.service';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +11,7 @@ export class AppComponent {
 
   public activeSection: string;
 
-  constructor(
-    public languageService: LanguageService,
-    public themeService: ThemeService
-  ) { }
+  constructor(public lang: LanguageService) { }
 
   onSectionChange(sectionId: string) {
     this.activeSection = sectionId;
