@@ -1,7 +1,5 @@
-import { ViewChild, ElementRef, AfterViewInit, Component, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { ViewChild, ElementRef, Component, ChangeDetectionStrategy } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   selector: 'app-expert-in',
@@ -9,18 +7,8 @@ import { ThemeService } from 'src/app/providers/theme.service';
   styleUrls: ['./expert-in.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ExpertInSectionComponent extends BaseComponent implements AfterViewInit {
+export class ExpertInSectionComponent extends BaseComponent {
 
-  @ViewChild('technologies') expertinSection: ElementRef;
-
-  constructor(
-    public lang: LanguageService,
-    public theme: ThemeService,
-    public changeRef: ChangeDetectorRef
-  ) { super(lang, theme, changeRef)}
-
-  ngAfterViewInit() {
-    this.portfolio.sections['technologies'] = this.expertinSection;
-  }
+  @ViewChild('expertin') override section: ElementRef;
 
 }

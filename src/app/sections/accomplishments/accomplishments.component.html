@@ -1,16 +1,16 @@
 <app-separator [fillColor]="themeService.DarkMode ? themeService.DarkModeBackground1: '#eee'" [backgroundColor]="themeService.DarkMode ? themeService.DarkModeBackground2: '#FFFFFF'"></app-separator>
 
 <div #accomplishments [style.background-color]="themeService.DarkMode ? themeService.DarkModeBackground1: '#eee'" class="h2 center accomp-background">
-  <app-title title="{{(portfolio.texts)?.accomplishments.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true" [lineWidth]="250" color="#f286b6" [inverse]="true"></app-title>
+  <app-title title="{{(lang.texts)?.accomplishments.title}}" fontFamily="{{lang.texts?.font.title}}" [stylish]="true" [lineWidth]="250" color="#f286b6" [inverse]="true"></app-title>
 </div>
 
 <div [style.background-color]="themeService.DarkMode ? themeService.DarkModeBackground1: '#eee'" class="accomplishments  px-[5%] md:px-[10%] flex items-center flex-col xl:flex-row">
 
   <div class="accomplishment self-start xl:text-right">
     <div class="h3 subtitle">
-      <app-title title="{{(portfolio.texts)?.accomplishments.content[0].title}}" [lineWidth]="98" color="#d7d7d7"></app-title>
+      <app-title title="{{(lang.texts)?.accomplishments.content[0].title}}" [lineWidth]="98" color="#d7d7d7"></app-title>
     </div>
-    <div class="content">{{(portfolio.texts)?.accomplishments.content[0].paragraph}}</div>
+    <div class="content">{{(lang.texts)?.accomplishments.content[0].paragraph}}</div>
   </div>
   <div class="accomplishmentIcon hidden xl:block">
     <svg width="540" height="560">
@@ -74,16 +74,10 @@
   </div>
   <div class="accomplishment self-baseline xl:self-center">
     <div class="h3 subtitle">
-      <app-title title="{{(portfolio.texts)?.accomplishments.content[1].title}}" [lineWidth]="45" color="#d7d7d7" [inverse]="true"></app-title>
+      <app-title title="{{(lang.texts)?.accomplishments.content[1].title}}" [lineWidth]="45" color="#d7d7d7" [inverse]="true"></app-title>
     </div>
-    <div class="content">{{(portfolio.texts)?.accomplishments.content[1].paragraph}}</div>
+    <div class="content">{{(lang.texts)?.accomplishments.content[1].paragraph}}</div>
   </div>
-  <!-- <div class="accomplishment three"> -->
-  <!--     <div class="h3 subtitle"> -->
-  <!--         <app-component-title title="{{(portfolio.texts)?.accomplishments.content[2].title}}" lineWidth="45" color="#d7d7d7"></app-component-title> -->
-  <!--     </div> -->
-  <!--     <div class="content">{{(portfolio.texts)?.accomplishments.content[2].paragraph}}</div> -->
-  <!-- </div> -->
 
 </div>
 

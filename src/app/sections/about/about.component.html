@@ -1,6 +1,6 @@
-<div #about class="about"  >
+<div #about class="about sm:!pt-5 md:!pt-10 lg:!pt-16">
   <div class="h2 about-title text-center lg:text-left" >
-    <app-title title="{{(portfolio.texts)?.about.title}}" fontFamily="{{portfolio.texts?.font.title}}" [stylish]="true"[lineWidth]="250" ></app-title>
+    <app-title title="{{(lang.texts)?.about.title}}" fontFamily="{{lang.texts?.font.title}}" [stylish]="true"[lineWidth]="250" ></app-title>
   </div>
   <div class="flex items-center flex-col lg:flex-row ">
     <div class="profile-picture ">
@@ -8,19 +8,19 @@
     </div>
     <div class="w-[5%] h-[5%]">&nbsp;</div>
     <div class="introContent w-[100%] lg:w-[55%]" >
-      @for (paragraph of (portfolio.texts)?.about.content; track paragraph) {
+      @for (paragraph of (lang.texts)?.about.content; track paragraph) {
         <p class="leading-7 text-lg text-center lg:text-left" [innerHTML]="paragraph" ></p>
       }
-      <button matTooltip="{{ (portfolio.texts)?.about.button.tooltip }}" class="btn-download w-[100%] lg:w-[40%]" [style.font-family]="portfolio.texts?.font.menu" [matMenuTriggerFor]="menu">
-        <span> {{(portfolio.texts)?.about.button.title}} </span> &nbsp; &nbsp;
+      <button matTooltip="{{ (lang.texts)?.about.button.tooltip }}" class="btn-download w-[100%] lg:w-[40%]" [style.font-family]="lang.texts?.font.menu" [matMenuTriggerFor]="menu">
+        <span> {{(lang.texts)?.about.button.title}} </span> &nbsp; &nbsp;
         <img src="assets/img/download.webp" style="position: inherit;" [width]="30" [height]="22" alt="Download File" />
       </button>
       <mat-menu class="download-dropdown-menu" #menu >
         <a (click)="onPdfDownload()" href="assets/pdf/Eskinder-CV.pdf" target="_blank">
-          <button mat-menu-item><img class="menu-options" src="assets/img/pdf.webp" [width]="30" />&nbsp; <span>{{(portfolio.texts)?.about.pdf}}</span></button>
+          <button mat-menu-item><img class="menu-options" src="assets/img/pdf.webp" [width]="30" />&nbsp; <span>{{(lang.texts)?.about.pdf}}</span></button>
         </a>
         <a class="flex flex-row" (click)="onDocxDownload()" href="assets/doc/Eskinder-CV.docx">
-          <button mat-menu-item><img class="menu-options" src="assets/img/docx.webp" [width]="30" />&nbsp; <span> {{(portfolio.texts)?.about.word}} </span> </button>
+          <button mat-menu-item><img class="menu-options" src="assets/img/docx.webp" [width]="30" />&nbsp; <span> {{(lang.texts)?.about.word}} </span> </button>
         </a>
       </mat-menu>
 

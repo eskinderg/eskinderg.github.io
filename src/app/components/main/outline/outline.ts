@@ -1,6 +1,5 @@
-import { HostListener, ViewChild, Component, ElementRef, Input, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { HostListener, ViewChild, Component, ElementRef, Input, ChangeDetectionStrategy } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
-import { BaseComponent } from '../../../sections/base.component';
 import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
@@ -9,23 +8,22 @@ import { ThemeService } from 'src/app/providers/theme.service';
   styleUrls: ['./outline.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OutlineComponent extends BaseComponent {
+export class OutlineComponent {
 
-  @Input() currentSection = 'section1';
+  @Input() currentSection = '';
   @ViewChild('outline') _selector: ElementRef;
 
   constructor(
     public lang: LanguageService,
     public theme: ThemeService,
-    public changeRef: ChangeDetectorRef
-  ) { super(lang, theme, changeRef) }
+  ) { }
 
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;
   }
 
   scrollTo(element: any) {
-    const section = this.portfolio.sections[element];
+    const section = this.lang.sections[element];
     section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
