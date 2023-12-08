@@ -1,7 +1,5 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/providers/theme.service';
 
 @Component({
   selector: 'app-intro',
@@ -9,20 +7,8 @@ import { ThemeService } from 'src/app/providers/theme.service';
   styleUrls: ['./intro.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class IntroSectionComponent extends BaseComponent implements AfterViewInit {
+export class IntroSectionComponent extends BaseComponent {
 
-  @ViewChild('intro') introSection: ElementRef;
-
-  constructor(
-    public lang: LanguageService,
-    public theme: ThemeService,
-    public changeRef: ChangeDetectorRef
-  ) {
-    super(lang, theme, changeRef)
-  }
-
-  ngAfterViewInit() {
-    this.portfolio.sections['intro'] = this.introSection;
-  }
+  @ViewChild('intro') override section: ElementRef;
 
 }

@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 import { ExpertInSectionComponent } from './expert-in.component';
-import { ComponentsModule } from 'src/app/components/app/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppModule } from 'src/app/app.module';
 
 describe('ExpertInSectionComponent', () => {
   let component: ExpertInSectionComponent;
@@ -14,7 +14,7 @@ describe('ExpertInSectionComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ExpertInSectionComponent],
       providers: [LanguageService, ThemeService],
-      imports: [HttpClientModule, ComponentsModule, BrowserAnimationsModule]
+      imports: [HttpClientModule, AppModule, BrowserAnimationsModule]
     })
       .compileComponents();
   });

@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 import { ContactSectionComponent } from './contact.component';
-import { ComponentsModule } from 'src/app/components/app/components.module';
+import { AppModule } from 'src/app/app.module';
 
 describe('ContactSectionComponent', () => {
   let component: ContactSectionComponent;
@@ -13,7 +13,7 @@ describe('ContactSectionComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ContactSectionComponent],
       providers: [LanguageService, ThemeService],
-      imports: [HttpClientModule, ComponentsModule]
+      imports: [HttpClientModule, AppModule]
     })
       .compileComponents();
   });

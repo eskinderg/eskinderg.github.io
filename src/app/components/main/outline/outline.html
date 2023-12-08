@@ -1,7 +1,7 @@
 <!-- <div id="outline"> -->
 
 <!--   <1!-- <h1>{{currentSection}}</h1> --1> -->
-<!--   <1!-- <div class="wrapper" *ngFor="let item of (portfolio.texts)?.menu"> --1> -->
+<!--   <1!-- <div class="wrapper" *ngFor="let item of (lang.texts)?.menu"> --1> -->
 <!--   <1!--   <span class="subtitle" (mousemove)="onHover(item.link)" (mouseout)="onMouseOut()" (click)="scrollTo(item.link)">{{ item.name }}</span> --1> -->
 <!--   <1!-- </div> --1> -->
 
@@ -26,11 +26,11 @@
 <div #outline id="outline"><ul class="timeline hidden lg:block ">
 
     <!-- Item 1 -->
-    @for (item of (portfolio.texts)?.menu.list; track item) {
+    @for (item of (lang.texts)?.menu.list; track item) {
   <li>
       <div class="direction-l" >
         <div class="flag-wrapper" >
-          <span (click)="scrollTo(item.link)" [style.font-family]="portfolio.texts['font'].outline"
+          <span (click)="scrollTo(item.link)" [style.font-family]="lang.texts['font'].outline"
             class="flag"
             [ngClass]="{ active : item.link===currentSection}"
             >
