@@ -1,10 +1,16 @@
 {
   "font": {
     "body": "Raleway",
-    "title": "Monoton",
+    "title": {
+      "fontFamily": "Monoton",
+      "fontWeight": 400
+    },
     "intro": "Raleway",
-    "outline": "Raleway",
     "menu": "Raleway",
+    "outlineMenu": {
+      "fontFamily": "Raleway",
+      "fontWeight": 600
+    },
     "content": "Raleway"
   },
   "menu" :{

@@ -13,7 +13,7 @@
     </div>
 
     <div class="educationTitle">
-      <app-title title="{{(lang.texts)?.education.title}}" fontFamily="{{lang.texts?.font.title}}" [stylish]="true" [lineWidth]="250" [inverse]="true"></app-title>
+      <app-title title="{{(lang.texts)?.education.title}}" fontWeight="{{(lang.texts)?.font.title.fontWeight}}" fontFamily="{{lang.texts?.font.title.fontFamily}}" [stylish]="true" [lineWidth]="250" [inverse]="true"></app-title>
     </div>
 
     @for (education of (lang.texts)?.education.content; track education) {

@@ -1,5 +1,5 @@
 <div class="title">
-  <div #titleText [style.font-family]="fontFamily" [ngClass]=" stylish ? 'text-4xl xs:text-5xl sm:text-6xl md:text-6xl font-thin': 'text-base'">{{title}}</div>
+  <div #titleText [style.font-family]="fontFamily" [style.font-weight]="fontWeight" [ngClass]=" stylish ? 'text-4xl xs:text-5xl sm:text-6xl md:text-6xl font-thin': 'text-base md:text-2xl'">{{title}}</div>
   <svg class="line" height="6" [attr.width]="lineWidth">
     <g [@lineAnimation]="data" (@lineAnimation.done)="onEnd()">
       <path [attr.fill]="color" d="M 0,2 C 0,0.66666663 0.66666663,0 2,0 h 37 c 1.333332,0 2,0.66666663 2,2 0,1.3333335 -0.666668,2 -2,2 H 2 C 0.66666663,4 0,3.3333335 0,2 Z" style="fill-opacity:1;fill-rule:nonzero;stroke:none"/>

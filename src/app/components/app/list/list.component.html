@@ -4,7 +4,7 @@
     <div class="education-logo" [ngClass]="item.img" alt="education logo"></div>
   </div>
 
-  <div>
+  <div [style.font-family]="(lang.texts)?.font.content" >
     <div class="h3 title">
       {{ item.title }}
     </div>

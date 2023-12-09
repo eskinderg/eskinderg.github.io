@@ -30,7 +30,7 @@
   <li>
       <div class="direction-l" >
         <div class="flag-wrapper" >
-          <span (click)="scrollTo(item.link)" [style.font-family]="lang.texts['font'].outline"
+          <span (click)="scrollTo(item.link)" [style.font-family]="lang.texts['font'].outlineMenu.fontFamily" [style.font-weight]="lang.texts['font'].outlineMenu.fontWeight"
             class="flag"
             [ngClass]="{ active : item.link===currentSection}"
             >

@@ -34,6 +34,8 @@ export class TitleComponent implements OnInit {
   @Input() lineWidth        = 0;
   @Input() color            = '#abe074';
   @Input() fontFamily       = '';
+  @Input() fontWeight       = '400';
+  @Input() fontSize         = '400';
   @Input() stylish: boolean = false;
   @Input() inverse          = false;
 

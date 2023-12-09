@@ -1,10 +1,16 @@
 {
   "font": {
     "body": "Raleway",
-    "title": "wookianos",
+    "title": {
+      "fontFamily": "wookianos",
+      "fontWeight": 500
+    },
     "intro": "wookianos",
-    "outline": "wookianos",
     "menu": "wookianos",
+    "outlineMenu": {
+      "fontFamily": "wookianos",
+      "fontWeight": 600
+    },
     "content": "wookianos"
   },
   "menu" : {

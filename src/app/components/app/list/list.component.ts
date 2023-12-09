@@ -1,4 +1,5 @@
 import { Input, Component, ChangeDetectionStrategy } from '@angular/core';
+import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
   selector: 'app-list',
@@ -11,6 +12,6 @@ export class ListComponent {
   @Input() item: any;
   @Input() type: any;
 
-  constructor() { }
+  constructor(public lang: LanguageService) { }
 
 }
