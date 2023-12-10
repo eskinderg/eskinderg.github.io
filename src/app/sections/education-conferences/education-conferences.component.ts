@@ -1,4 +1,4 @@
-import { ElementRef, ViewChild, Component, ChangeDetectionStrategy } from '@angular/core';
+import { ElementRef, ViewChild, Component, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
@@ -7,8 +7,12 @@ import { BaseComponent } from 'src/app/sections/base.component';
   styleUrls: ['./education-conferences.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class EducationConferencesSectionComponent extends BaseComponent {
+export class EducationConferencesSectionComponent extends BaseComponent implements AfterViewInit {
 
-  @ViewChild('education') override section: ElementRef;
+  @ViewChild('education') section: ElementRef;
+
+  ngAfterViewInit(): void {
+    this.lang.sections['education'] = this.section;
+  }
 
 }

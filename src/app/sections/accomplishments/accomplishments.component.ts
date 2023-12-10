@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, ViewChild, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
@@ -7,8 +7,12 @@ import { BaseComponent } from 'src/app/sections/base.component';
   styleUrls: ['./accomplishments.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AccomplishmentsSectionComponent extends BaseComponent {
+export class AccomplishmentsSectionComponent extends BaseComponent implements AfterViewInit {
 
-  @ViewChild('accomplishments') override section: ElementRef;
+  @ViewChild('accomplishments') section: ElementRef;
+
+  ngAfterViewInit(): void {
+    this.lang.sections['accomplishments'] = this.section;
+  }
 
 }

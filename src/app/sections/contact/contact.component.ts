@@ -1,4 +1,4 @@
-import { ViewChild, ElementRef, Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ViewChild, ElementRef, Component, OnInit, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BaseComponent } from 'src/app/sections/base.component';
 
@@ -8,7 +8,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactSectionComponent extends BaseComponent implements  OnInit {
+export class ContactSectionComponent extends BaseComponent implements OnInit, AfterViewInit {
 
   public message = {
     name: '',
@@ -18,7 +18,11 @@ export class ContactSectionComponent extends BaseComponent implements  OnInit {
 
   public currentAppVersion: string;
 
-  @ViewChild('contact') override section: ElementRef;
+  @ViewChild('contact') section: ElementRef;
+
+  ngAfterViewInit(): void {
+    this.lang.sections['contact'] = this.section;
+  }
 
   ngOnInit() {
     this.currentAppVersion = environment.appVersion;

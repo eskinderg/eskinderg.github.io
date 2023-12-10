@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { LanguageService } from '../providers/language.service';
 import { ThemeService } from '../providers/theme.service';
 import { GoogleAnalyticsService } from '../providers/google-analytics.service';
@@ -8,9 +8,7 @@ import { GoogleAnalyticsService } from '../providers/google-analytics.service';
   template: '',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BaseComponent implements AfterViewInit {
-
-  @ViewChild(BaseComponent) section: ElementRef;
+export class BaseComponent {
 
   constructor(
     public lang: LanguageService,
@@ -25,17 +23,6 @@ export class BaseComponent implements AfterViewInit {
     this.themeService.themeChange.subscribe(() => {
       this.ref.detectChanges();
     })
-  }
-
-  ngAfterViewInit(): void {
-
-    const ele = this.constructor.name
-      .replace('SectionComponent', '')
-      .replace('Component', '')
-      .replace('Conferences', '')
-      .toLowerCase();
-
-    this.lang.sections[ele] = this.section;
   }
 
 }

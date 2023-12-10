@@ -1,4 +1,4 @@
-import { ViewChild, Component, ElementRef, ChangeDetectionStrategy } from '@angular/core';
+import { ViewChild, Component, ElementRef, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
@@ -7,9 +7,13 @@ import { BaseComponent } from 'src/app/sections/base.component';
   styleUrls: ['./about.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AboutSectionComponent extends BaseComponent {
+export class AboutSectionComponent extends BaseComponent implements AfterViewInit {
 
-  @ViewChild('about') override section: ElementRef;
+  @ViewChild('about') section: ElementRef;
+
+  ngAfterViewInit(): void {
+    this.lang.sections['about'] = this.section;
+  }
 
   onPdfDownload() {
     this.googleAnalyticsService.eventEmitter(
