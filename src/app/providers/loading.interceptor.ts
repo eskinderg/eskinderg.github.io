@@ -12,7 +12,9 @@ export class LoaderInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.lang.loading = true;
     return next.handle(req).pipe(
-      finalize(() => this.lang.loading = false)
+      finalize(() => {
+        this.lang.loading = false;
+      })
     );
   }
 
