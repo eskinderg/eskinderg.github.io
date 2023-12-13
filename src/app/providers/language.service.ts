@@ -26,7 +26,7 @@ export class LanguageService {
   }
 
   get Language() {
-    return localStorage.getItem('language') || "en";
+    return localStorage.getItem('language') || navigator.language;
   }
 
   get LanguageList() {
@@ -41,6 +41,9 @@ export class LanguageService {
         return true
       }),
       catchError((httpError: HttpErrorResponse) => {
+        if (httpError.status === 404) {
+          return this.setLanguage('en')
+        }
         alert(`Unable to set language\n${httpError.message}`)
         return throwError(() => httpError)
       }));
@@ -48,10 +51,10 @@ export class LanguageService {
 
   private getLangPath(lang: any): string {
     if (!isDevMode()) {
-      return `assets/json/${lang || 'en'}.min.json`;
+      return `assets/json/lang/${lang || 'en'}.min.json`;
     }
     else {
-      return `assets/json/${lang || 'en'}.json`;
+      return `assets/json/lang/${lang || 'en'}.json`;
     }
   }
 
