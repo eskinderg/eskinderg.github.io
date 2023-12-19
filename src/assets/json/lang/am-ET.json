@@ -23,7 +23,7 @@
         "name": "ቴክኖሎጂዎች",
         "link": "expertin"
       },{
-        "name": "ፍፃሜዎች",
+        "name": "ሥኬቶች",
         "link": "accomplishments"
       },{
         "name": "የሥራ ልምድ",
@@ -197,7 +197,7 @@
     "button": "Load more"
   },
   "accomplishments" : {
-    "title": "ፍፃሜዎች",
+    "title": "ሥኬቶች",
     "content": [
       {
         "title": "2005-2006 ዓ.ም",
