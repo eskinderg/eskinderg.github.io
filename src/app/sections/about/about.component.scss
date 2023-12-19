@@ -31,9 +31,6 @@
 
   .profile-picture{
     box-sizing: border-box;
-    width: 320px;
-    height: 320px;
-    max-width: 320px;
 
     .profile {
       border:3px solid mat.get-color-from-palette($primary)
@@ -69,13 +66,13 @@
   .profile{
     transition: filter 2.5s ease;
     background-image: url('../../../assets/img/expertin-min.webp');
-    background-position: -43px -674px;
+    // background-position: -43px -674px;
+    background-position: 10% 85%;
+    background-size: 230%;
     filter: grayscale(100%);
     border-radius:100%;
     background-repeat: no-repeat;
-    width: 320px;
-    height: 320px;
-    max-width: 320px;
+    aspect-ratio: 1/1;
   }
 
   .profile:hover {
