@@ -5,6 +5,11 @@
   color: black ! important; /*Material Override*/
 }
 
+.mdc-button {
+  padding:0px ! important;
+  min-width: auto ! important;
+}
+
 @mixin theme($theme) {
 
   $color-config     : mat.get-color-config($theme);
@@ -12,9 +17,9 @@
   $background       : map.get($color-config, 'background');
   $background-color : map.get($color-config, 'background-color');
 
-  .lang-menu-wrapper {
-    margin: 0.5em;
-  }
+  // .lang-menu-wrapper {
+  //   margin: 0.5em;
+  // }
 
   .lang-menu-dropdown {
     background-color: white;
