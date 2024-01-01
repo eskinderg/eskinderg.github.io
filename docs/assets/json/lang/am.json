@@ -2,159 +2,159 @@
   "font": {
     "body": "Raleway",
     "title": {
-      "fontFamily": "Monoton",
-      "fontWeight": 400
+      "fontFamily": "wookianos",
+      "fontWeight": 500
     },
-    "intro": "Raleway",
-    "menu": "Raleway",
+    "intro": "wookianos",
+    "menu": "wookianos",
     "outlineMenu": {
-      "fontFamily": "Raleway",
+      "fontFamily": "wookianos",
       "fontWeight": 600
     },
-    "content": "Raleway"
+    "content": "wookianos"
   },
-  "menu" :{
-    "tooltip": "Main Menu",
-    "list": [
+  "menu" : {
+    "tooltip" : "ዋና ማዉጫ",
+    "list" : [
       {
-        "name": "About Me",
+        "name": "ስለ እኔ",
         "link": "about"
       },{
-        "name": "Technologies",
+        "name": "ቴክኖሎጂዎች",
         "link": "expertin"
       },{
-        "name": "Accomplishments",
+        "name": "ሥኬቶች",
         "link": "accomplishments"
       },{
-        "name": "Experience",
+        "name": "የሥራ ልምድ",
         "link": "experience"
       },{
-        "name": "Education",
+        "name": "ትምህርትና \/ ስልጠናዎች",
         "link": "education"
       },{
-        "name": "Contact Me",
+        "name": "አድራሻ",
         "link": "contact"
       }
     ]
   },
   "intro" : {
-    "title": "Eskinder Getahun",
+    "title": "እስክንድር ጌታሁን",
     "subtitle": "Full-Stack Developer"
   },
   "about" : {
-    "title": "About Me",
+    "title": "ስለ እኔ",
     "content": [
-      "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practice to produce a clean code that is easy to debug and maintain.",
+      "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practices to produce a clean code that is easy to debug and maintain.",
       "I have a passion for web development and continue to learn the latest technological advancements."
     ],
     "button": {
-      "title": "Download CV",
-      "tooltip": "Download CV"
+      "title": "ካሪኩለም ሺቴ",
+      "tooltip": "ካሪኩለም ሺቴ አዉርድ"
     },
-    "pdf": "Adobe Acrobat (pdf)",
-    "word": "Word Document (docx)"
+    "pdf": "Adobe Acrobat Version (pdf)",
+    "word": "Word Document Version (docx)"
   },
   "technologies" : {
-    "title": "Technologies",
+    "title": "ቴክኖሎጂዎች",
     "content": "",
     "masteries": [
       {
-        "title": "Angular",
+        "title": "",
         "img": "bg-angular",
         "link": "https://angular.io"
       },{
-      "title": "TypeScript",
+      "title": "",
       "img": "bg-typescript",
       "link": "https://www.typescriptlang.org"
       },{
-      "title": "Javascript",
+      "title": "",
       "img": "bg-javascript",
       "link": "https://www.javascript.com"
       },{
-      "title": "jQuery",
+      "title": "",
       "img": "bg-jquery",
       "link": "https://www.jquery.com"
       },{
-      "title": "CSS3",
+      "title": "",
       "img": "bg-css",
       "link": "https://www.w3schools.com/css/"
       },{
-      "title": ".net core",
+      "title": "",
       "img": "bg-netcore",
       "link": "https://dotnet.microsoft.com"
       },{
-      "title": "Git",
+      "title": "",
       "img": "bg-git",
       "link": "https://git-scm.com"
       },{
-      "title": "Gulp",
+      "title": "",
       "img": "bg-gulp",
       "link": "https://gulpjs.com"
       },{
-      "title": "Karma",
+      "title": "",
       "img": "bg-karma",
       "link": "https://karma-runner.github.io"
       },{
-      "title": "Facebook SDK",
+      "title": "",
       "img": "bg-facebook",
       "link": "https://developers.facebook.com/"
       },{
-      "title": "Google API",
+      "title": "",
       "img": "bg-google",
       "link": "https://developers.google.com"
       },{
-      "title": "Bootstrap",
+      "title": "",
       "img": "bg-bootstrap",
       "link": "https://getbootstrap.com"
       },{
-      "title": "Angular Material",
+      "title": "",
       "img": "bg-angularmat",
       "link": "https://material.angular.io/"
       },{
-      "title": "Node JS",
+      "title": "",
       "img": "bg-foundation",
       "link": "https://nodejs.org/"
       },{
-      "title": "HTML5",
+      "title": "",
       "img": "bg-html",
       "link": "https://www.w3schools.com/html/"
       },{
-      "title": "PHP",
+      "title": "",
       "img": "bg-php",
       "link": "https://www.php.net/"
       },{
-      "title": "C#",
+      "title": "",
       "img": "bg-mongo",
       "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
       },{
-      "title": "MySQL",
+      "title": "",
       "img": "bg-mysql",
       "link": "https://www.mysql.com/"
       },{
-      "title": "Photoshop",
+      "title": "",
       "img": "bg-photoshop",
       "link": "https://www.adobe.com/products/photoshop.html"
       },{
-      "title": "MS SQL",
+      "title": "",
       "img": "bg-illustrator",
       "link": "https://learn.microsoft.com/en-us/sql/"
       },{
-      "title": "Webpack",
+      "title": "",
       "img": "bg-webpack",
       "link": "https://webpack.js.org/"
       },{
-      "title": "Sass",
+      "title": "",
       "img": "bg-sass",
       "link": "https://sass-lang.com/"
       },{
-      "title": "Tailwind CSS",
+      "title": "",
       "img": "bg-tailwind",
       "link": "https://tailwindcss.com/"
       }
     ]
   },
   "projects" : {
-    "title": "PROJECTS",
+    "title": "ስራዎች",
     "projects": [
       {
         "title": "Or-co.gr",
@@ -197,59 +197,63 @@
     "button": "Load more"
   },
   "accomplishments" : {
-    "title": "Accomplishments",
+    "title": "ሥኬቶች",
     "content": [
       {
-        "title": "2013-2014",
-        "paragraph": "Developed different websites using WordPress, OpenCart and other Open-Source platforms"
+        "title": "2005-2006 ዓ.ም",
+        "paragraph": "Developed websites using WordPress, OpenCart and other opensource technologies"
       },{
-      "title": "2016",
-      "paragraph": "Participated in an OAuth implementation for users role and permission using JWT (JSON Web Token)"
+      "title": "2008 ዓ.ም",
+      "paragraph": "Participated on OAuth implementation for user roles and permissions using JWT (JSON web token)"
+      },{
+      "title": "2008",
+      "paragraph": "Presented my thesis on a new data compression algorithm in the 2nd Panhellenic Conference of Computer Science in Samos called “Eureka”, which was acknowledged for its efficiency."
       }
     ]
   },
   "experience" : {
-    "title": "Experience",
+    "title": "የሥራ ልምድ",
     "content": [
       {
-        "title":"Freelance Web Developer (Full Stack)",
-        "subtitle":"Elance",
-        "year":"Sept 2018 - Present",
+        "title":"Freelance Web Developer (Front End Developer)",
+        "subtitle":"Front End (Angular), Elance",
+        "year":"ነሐሴ 2010 - አሁን",
         "intro": "Freelance",
         "elements":[
           {
             "type":"list",
-            "header":"Key responsibilities include, but not limited to:",
+            "header":"Key responsibilities include but not limited to:",
             "list": [
               "Provided support for different websites ",
-              "Created Single Page Applications by using web technologies like HTML5, SASS, Typescript, Angular2 and Bootstrap.",
+              "Created SPA, user interactive (UI) web pages using web technologies like HTML5, SASS, Typescript, Angular2 and Bootstrap.",
               "Created and used Reducers that received Actions to modify the store State.",
+              "Created Action dispatch to deploy Actions to add Dynamic Functionalities",
               "Created custom NPM modules.",
-              "Developed administrative UI Components using Angular2+, Typescript and Webpack",
+              "Developed administrative UI Components using Angular2, Typescript and Webpack",
               "Used Bootstrap for Responsive Web design.",
-              "Optimized Front-End assets for speed and performance",
-              "Used Middleware, Redux-Promise in an application to retrieve data from Back-End RESTFUL service.",
+              "Optimized Front End assets for speed and performance",
+              "Used Middleware, Redux-Promise in application to retrieve data from Back-End and to also perform RESTFUL services.",
               "Created custom Angular Components including Breadcrumbs, Reactive Forms, Form Validators, Tabbed Components and Toggle Buttons."
             ]
           }
         ],
         "used":["Angular" ,"Typescript" ,"JQuery" ,"Java Script","Bootstrap" ,"Node JS" ,"HTML5" ,"Sass" ]
       },{
-      "title":"Web Developer (Front-End)",
-      "subtitle":"Front-End, Nuaxis.",
-      "year":"Aug 2016 - Jul 2018",
+      "title":"Web Developer (Front End)",
+      "subtitle":"Front End, Nuaxis.",
+      "year":"ሐምሌ 2008 - ሰኔ 2010",
       "intro": "Nuaxis",
       "elements":[
         {
           "type":"list",
-          "header":"Key responsibilities include, but not limited to:",
+          "header":"Key responsibilities include but not limited to:",
           "list": [
             "Created programs as per user / design requirements using AngularJS",
             "Collaborated with cross-functional teams (DEV, UX/UI & BA) to define, design, and deliver creative digital solutions",
-            "Utilized automated unit and integration tests for application life cycle",
-            "Executed Agile Development techniques",
+            "Utilized, automated unit tests and integration tests for application lifecycle",
+            "Executed Agile Developmental techniques",
             "Utilized industry best practices to create effective business solutions for clients",
-            "Participated towards senior-level technology discussions",
+            "Participated and contributed towards senior-level technology discussions",
             "Created web forms using bootstrap.",
             "Used Git flow techniques for feature branching, merging and continuous integration",
             "Implemented google analytics using angularitics",
@@ -259,29 +263,29 @@
             "Produced reports and statistical information for managers using code climate, and mocha testing framework",
             "Used bootstrap CSS to create, modify and update web layouts",
             "Created angular 1.5 components, directives and filters",
-            "Used Node JS schema validator for back-end validation",
-            "Utilized automated integration tests for application life cycle",
-            "Performed unit and integration test for front-end and back-end systems using AngularJS and NodeJS"
+            "Used Node JS schema validator for backend validation",
+            "Utilized, automated unit tests and integration tests for application lifecycle",
+            "Performed unit and integration test for frontend and backend systems using AngularJS and NodeJS"
           ]
         }
       ],
       "used":["Angular" ,"Typescript" ,"Javascript" ,"jQuery" ,"HTML5" ,"Sass" ,"Bootstrap", "Google API", "Gulp","OAuth","NodeJS","Postgres SQL","Git"]
       },{
       "title":"Software Engineer II",
-      "year":"Nov 2015 - Aug 2016",
+      "year":"ጥቅምት 2008 - ሐምሌ 2008",
       "intro": "Bloomberg BNA",
       "elements":[
         {
           "type":"list",
-          "header":"Key responsibilities include, but not limited to:",
+          "header":"Key responsibilities include but not limited to:",
           "list": [
-            "E-Commerce development using Agile methodologies",
+            "E commerce development using Agile methodologies",
             "Full Stack web development using ASP .Net MVC, C#, Angularjs and MSSQL.",
-            "Provided support for internal web application in facilitation of web application migration.",
+            "Provided support for legacy applications and strategic migration planning for internal legacy web application.",
             "Integrated Asp MVC with Ektron system",
             "Designed modern architectural patterns for new and legacy systems.",
-            "Provided architectural patterns for intranet systems.",
-            "Wrote Front-end and Back-end Unit Tests for code refactoring and continuous deployment process."
+            "Wrote Front-end, Back-end Unit Tests that for re factoring existing code and for continuous integration deployment process.",
+            "Provided statistical information for senior managers"
           ]
         }
       ],
@@ -289,16 +293,16 @@
       },{
       "title":"Web Developer & Designer",
       "subtitle":"Full-Stack Software Developer & Designer",
-      "year":"Jan 2015 - Nov 2015",
+      "year":"ታኅሣሥ 2007 - ጥቅምት2008",
       "intro": "",
       "elements" : [
         {
           "type":"list",
-          "header":"Key responsibilities include, but not limited to:",
+          "header":"Key responsibilities include but not limited to:",
           "list": [
             "Full Stack development using LAMP stack.",
             "Maintained website for most up-to date technology, software, and information",
-            "Developed and Implemented responsive User-Interface and back-end analytic tracking system",
+            "Developed and implemented mobile device responsive UI designs and back-end analytics tracking",
             "Customized, Implemented WordPress themes and plugins.",
             "Provided support for different websites "
           ]
@@ -308,17 +312,17 @@
       },{
       "title":"Web Developer (Full Stack Developer)",
       "subtitle":"Addis Ababa University, Ethiopia",
-      "year":"Sep 2013 - Jan 2015",
+      "year":"ነሐሴ 2005 - ታኅሣሥ 2007",
       "intro": "",
       "elements" : [
         {
           "type":"list",
-          "header":"Key responsibilities include, but not limited to:",
+          "header":"Key responsibilities include but not limited to:",
           "list": [
             "Designed visual layout of websites.",
             "Created Stored Procedures using MSSQL.",
-            "Tested website before it goes live and identify problems.",
-            "Advised users on the functionality of website.",
+            "Tested a website before it goes live and identify problems.",
+            "Advised users on the functionality of the website.",
             "Changed code of an existing website using MVC, C#, Entity Framework and LINQ technologies.",
             "Optimized web assets for optimal speed and performance",
             "Produced reports and statistical information for senior managers"
@@ -330,23 +334,23 @@
     ]
   },
   "education": {
-    "title": "Education \/ Trainings",
+    "title": "ትምህርትና \/ ስልጠናዎች",
     "content": [
       {
         "title": "B.Sc in Computer Science & Information Technology",
-        "subtitle": "Arba Minch University, Arba Minch, Ethiopia",
+        "subtitle": "አርባ ምንጭ  ዩኒሸርስቲ, አርባ ምንጭ, ኢትዮጵያ",
         "img": "bg-graduation",
-        "year": "2004 - 2008"
+        "year": "1996 - 2000 ዓ.ም"
       },{
       "title": "Microsoft Certified Professional",
       "subtitle": "Microsoft",
       "img": "bg-microsoft",
-      "year": "2014"
+      "year": "2006 ዓ.ም"
       },{
       "title": "Microsoft Certified C# Specialist",
       "subtitle": "Microsoft",
       "img": "bg-microsoft",
-      "year": "2014"
+      "year": "2006 ዓ.ም"
       }
     ]
   },
@@ -356,7 +360,7 @@
     ]
   },
   "contact": {
-    "intro": "You can contact me using my E-Mail or Phone for any website development projects.",
+    "intro": "ጥያቄ ካላችሁ ከዚህ በታች በሚገኘዉ ስልክ ቁጥር ወይም የኢሜል አድራሻ ያግኙኝ።",
     "input": [
       "NAME","EMAIL","MESSAGE"
     ],
@@ -364,12 +368,28 @@
     "phone":"+251-911-184987",
     "button":"Send message"
   },
-  "footer": { },
+  "footer": {
+    "content": "፳፻፲፮"
+  },
   "social": {
     "github": "https://github.com/eskinderg",
     "stackoverflow": "https://stackoverflow.com/users/2876957/eskinder",
     "linkedin": "https://www.linkedin.com/in/eskinderg"
   },
-  "languageSelect": "Change Language",
-  "colorSelectTooltip": "Change Theme Color"
+  "languageSelect": "ቋንቋ ምረጥ",
+  "colorSelectTooltip": "የዌብሳይቱን ቀለም ቀይር",
+  "colors": {
+    "red":"ቀይ",
+    "green": "አረንጓዴ",
+    "blue": "ሰማያዊ",
+    "orange": "ብርቱካናማ",
+    "teal": "ቲል",
+    "cyan": "ሳያን",
+    "pink": "ፒንክ",
+    "deeppurple": "ፐርፕል",
+    "indigo": "ኢንዲጎ",
+    "lightblue": "ፈዛዛ ሰማያዊ",
+    "brown": "ቡኒ",
+    "bluegrey": "ግራጫ"
+  }
 }
