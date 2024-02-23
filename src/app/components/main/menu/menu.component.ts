@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
   constructor(public lang: LanguageService) {}
 
   ngOnInit() {
-    this.lang.menu.subscribe(value => {
+    this.lang.menu.subscribe((value) => {
       this.visible = value;
     });
   }

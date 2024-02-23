@@ -34,7 +34,7 @@ export class LanguageService {
 
   public setLanguage(lang: any): Observable<boolean> {
     return this.http.get(this.getLangPath(lang)).pipe(
-      map(data => {
+      map((data) => {
         this.texts = data;
         this.languageChange.emit(data);
         return true;
@@ -82,11 +82,11 @@ export class LanguageService {
     const langPath = 'assets/json/lang.json';
 
     return this.http.get(langPath).pipe(
-      map(lang => {
+      map((lang) => {
         this.langList = lang;
         return true;
       }),
-      catchError(error => {
+      catchError((error) => {
         console.error(error);
         return of(false);
       })

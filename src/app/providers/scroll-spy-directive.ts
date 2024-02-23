@@ -29,7 +29,7 @@ export class ScrollSpyDirective {
 
     for (let i = 0; i < children.length; i++) {
       const element = children[i];
-      if (this.spiedTags.some(spiedTag => spiedTag === element.tagName)) {
+      if (this.spiedTags.some((spiedTag) => spiedTag === element.tagName)) {
         if (element.offsetTop - parentOffset - 400 <= scrollTop) {
           currentSection = element.id;
         }

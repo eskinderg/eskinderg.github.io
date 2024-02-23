@@ -57,11 +57,11 @@ export class ThemeService {
     const colorPath = 'assets/json/colors.json';
 
     return this.http.get(colorPath).pipe(
-      map(colors => {
+      map((colors) => {
         this.colorList = colors['colors'];
         return true;
       }),
-      catchError(error => {
+      catchError((error) => {
         console.error(error);
         return of(false);
       })
