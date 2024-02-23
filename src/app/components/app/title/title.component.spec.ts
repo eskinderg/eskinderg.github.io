@@ -13,8 +13,7 @@ describe('TitleComponent', () => {
       declarations: [TitleComponent],
       providers: [LanguageService, ThemeService],
       imports: [BrowserAnimationsModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -15,8 +15,7 @@ describe('EducationConferencesSectionComponent', () => {
       declarations: [EducationConferencesSectionComponent],
       providers: [LanguageService, ThemeService],
       imports: [HttpClientModule, AppModule, BrowserAnimationsModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

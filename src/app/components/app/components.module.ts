@@ -7,16 +7,8 @@ import { TitleComponent } from './title/title.component';
 import { MatModule } from '../../module/material.module';
 
 @NgModule({
-  imports: [
-    MatModule
-  ],
-  declarations: [
-    TitleComponent,
-    ListComponent,
-    TimelineComponent,
-    TechnologyComponent,
-    SeparatorComponent
-  ],
+  imports: [MatModule],
+  declarations: [TitleComponent, ListComponent, TimelineComponent, TechnologyComponent, SeparatorComponent],
   exports: [
     TitleComponent,
     ListComponent,
@@ -26,4 +18,4 @@ import { MatModule } from '../../module/material.module';
     MatModule
   ]
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

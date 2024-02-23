@@ -14,8 +14,7 @@ describe('ContactSectionComponent', () => {
       declarations: [ContactSectionComponent],
       providers: [LanguageService, ThemeService],
       imports: [HttpClientModule, AppModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

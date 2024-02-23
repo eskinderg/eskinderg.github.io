@@ -9,9 +9,7 @@ import { ScrollSpyDirective } from 'src/app/providers/scroll-spy-directive';
 import { LoaderComponent } from './loader/loader';
 
 @NgModule({
-  imports: [
-    MatModule
-  ],
+  imports: [MatModule],
   declarations: [
     LangSelectComponent,
     MenuComponent,
@@ -31,4 +29,4 @@ import { LoaderComponent } from './loader/loader';
     LoaderComponent
   ]
 })
-export class FrontModule { }
+export class FrontModule {}

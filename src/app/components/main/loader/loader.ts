@@ -7,9 +7,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoaderComponent {
-
   @Input() Loading: boolean = false;
 
-  constructor() { }
-
+  constructor() {}
 }

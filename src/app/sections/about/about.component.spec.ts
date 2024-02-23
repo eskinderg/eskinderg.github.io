@@ -16,8 +16,7 @@ describe('AboutSectionComponent', () => {
       declarations: [AboutSectionComponent],
       providers: [LanguageService, GoogleAnalyticsService, ThemeService],
       imports: [HttpClientModule, ComponentsModule, BrowserAnimationsModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

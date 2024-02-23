@@ -1,19 +1,19 @@
-import { ChangeDetectionStrategy, Component, HostListener, Input }from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, Input } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
-import { speedDialFabAnimations }from './speed-dial-fab.animations';
+import { speedDialFabAnimations } from './speed-dial-fab.animations';
 
 export interface FabButton {
-  icon: string,
-  tooltip: string
+  icon: string;
+  tooltip: string;
 }
 
 export enum SpeedDialFabPosition {
-    Top    = 'top',
-    Bottom = 'bottom',
-    Left   = 'left',
-    Right  = 'right'
+  Top = 'top',
+  Bottom = 'bottom',
+  Left = 'left',
+  Right = 'right'
 }
 
 @Component({
@@ -24,7 +24,6 @@ export enum SpeedDialFabPosition {
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SpeedDialFabComponent {
-
   @Input() reverseColumnDirection: boolean = false;
   @Input() fabButtons: FabButton[];
 
@@ -32,7 +31,10 @@ export class SpeedDialFabComponent {
   public fabTogglerState = 'inactive';
   public atTop = true;
 
-  constructor(public themeService: ThemeService, public lang: LanguageService) { }
+  constructor(
+    public themeService: ThemeService,
+    public lang: LanguageService
+  ) {}
 
   private showItems() {
     this.fabTogglerState = 'active';
@@ -48,17 +50,17 @@ export class SpeedDialFabComponent {
     this.buttons.length ? this.hideItems() : this.showItems();
   }
 
-  public onClickFab(btn: {icon: string, theme: string}) {
+  public onClickFab(btn: { icon: string; theme: string }) {
     this.hideItems();
-    this.themeService.SetTheme(btn.theme, false)
+    this.themeService.SetTheme(btn.theme, false);
   }
 
   public onToggleChange(event: MatSlideToggleChange) {
     this.hideItems();
-    if(event.checked) {
-      this.themeService.SetTheme('dark', true)
-    }else {
-      this.themeService.SetTheme(this.themeService.Theme, false)
+    if (event.checked) {
+      this.themeService.SetTheme('dark', true);
+    } else {
+      this.themeService.SetTheme(this.themeService.Theme, false);
     }
   }
 
@@ -72,4 +74,3 @@ export class SpeedDialFabComponent {
     }
   }
 }
-

@@ -15,8 +15,7 @@ describe('IntroSectionComponent', () => {
       declarations: [IntroSectionComponent],
       providers: [LanguageService, ThemeService],
       imports: [HttpClientModule, AppModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

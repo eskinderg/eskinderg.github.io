@@ -1,10 +1,10 @@
 @if (type === 'education') {
 <div class="flex flex-row education">
-  <div class="mr-5 hidden lg:block" >
+  <div class="mr-5 hidden lg:block">
     <div class="education-logo" [ngClass]="item.img" alt="education logo"></div>
   </div>
 
-  <div [style.font-family]="(lang.texts)?.font.content" >
+  <div [style.font-family]="lang.texts?.font.content">
     <div class="h3 title">
       {{ item.title }}
     </div>
@@ -17,18 +17,16 @@
   </div>
 
   @if (type === 'conference') {
-<div class="conferences">
+  <div class="conferences">
     <div class="h3 title">
       {{ item.year }}
     </div>
     @for (conference of item.list; track conference) {
-  <div class="conference">
+    <div class="conference">
       {{ conference }}
     </div>
-}
+    }
   </div>
-}
-
+  }
 </div>
 }
-

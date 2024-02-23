@@ -7,9 +7,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TechnologyComponent {
-
   @Input() item: any;
 
-  constructor() { }
-
+  constructor() {}
 }

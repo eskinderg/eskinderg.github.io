@@ -1,4 +1,11 @@
-import { ViewChild, ElementRef, Component, OnInit, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
+import {
+  ViewChild,
+  ElementRef,
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  AfterViewInit
+} from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BaseComponent } from 'src/app/sections/base.component';
 
@@ -9,7 +16,6 @@ import { BaseComponent } from 'src/app/sections/base.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactSectionComponent extends BaseComponent implements OnInit, AfterViewInit {
-
   public message = {
     name: '',
     email: '',
@@ -29,12 +35,10 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
   }
 
   public get Copyright(): string {
-    if ((this.lang.texts)?.footer.content) {
-      return (this.lang.texts)?.footer.content
-    }
-    else {
+    if (this.lang.texts?.footer.content) {
+      return this.lang.texts?.footer.content;
+    } else {
       return new Date().getFullYear().toString();
     }
   }
-
 }

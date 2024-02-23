@@ -9,9 +9,7 @@ import { ExpertInSectionComponent } from './expert-in/expert-in.component';
 import { IntroSectionComponent } from './intro/intro.component';
 
 @NgModule({
-  imports: [
-    ComponentsModule
-  ],
+  imports: [ComponentsModule],
   declarations: [
     IntroSectionComponent,
     ExperienceSectionComponent,
@@ -29,6 +27,6 @@ import { IntroSectionComponent } from './intro/intro.component';
     AccomplishmentsSectionComponent,
     ContactSectionComponent,
     ExpertInSectionComponent
-  ],
+  ]
 })
-export class SectionsModule { }
+export class SectionsModule {}

@@ -1,4 +1,11 @@
-import { HostListener, ViewChild, Component, ElementRef, Input, ChangeDetectionStrategy } from '@angular/core';
+import {
+  HostListener,
+  ViewChild,
+  Component,
+  ElementRef,
+  Input,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 
@@ -9,14 +16,13 @@ import { ThemeService } from 'src/app/providers/theme.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OutlineComponent {
-
   @Input() currentSection = '';
   @ViewChild('outline') _selector: ElementRef;
 
   constructor(
     public lang: LanguageService,
-    public theme: ThemeService,
-  ) { }
+    public theme: ThemeService
+  ) {}
 
   onSectionChange(sectionId: string) {
     this.currentSection = sectionId;
@@ -29,7 +35,6 @@ export class OutlineComponent {
 
   @HostListener('window:scroll')
   _onWindowScroll(): void {
-    this._selector.nativeElement.style.display = window.scrollY > window.innerHeight - 150 ? 'block' : 'none'
+    this._selector.nativeElement.style.display = window.scrollY > window.innerHeight - 150 ? 'block' : 'none';
   }
-
 }

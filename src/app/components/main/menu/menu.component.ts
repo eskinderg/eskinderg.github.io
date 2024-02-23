@@ -8,11 +8,13 @@ import { LanguageService } from 'src/app/providers/language.service';
   styleUrls: ['./menu.component.scss'],
   animations: [
     trigger('fadeInOut', [
-      transition(':enter', [   // :enter is alias to 'void => *'
+      transition(':enter', [
+        // :enter is alias to 'void => *'
         style({ opacity: 0 }),
         animate(350, style({ opacity: 1 }))
       ]),
-      transition(':leave', [   // :leave is alias to '* => void'
+      transition(':leave', [
+        // :leave is alias to '* => void'
         animate(350, style({ opacity: 0 }))
       ])
     ])
@@ -23,9 +25,7 @@ export class MenuComponent implements OnInit {
   public visible: boolean;
   public atTop = true;
 
-  constructor(public lang: LanguageService) {
-
-  }
+  constructor(public lang: LanguageService) {}
 
   ngOnInit() {
     this.lang.menu.subscribe(value => {
@@ -61,5 +61,4 @@ export class MenuComponent implements OnInit {
     // console.log(section);
     section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-
 }

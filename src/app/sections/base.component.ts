@@ -9,7 +9,6 @@ import { GoogleAnalyticsService } from '../providers/google-analytics.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaseComponent {
-
   constructor(
     public lang: LanguageService,
     public themeService: ThemeService,
@@ -18,11 +17,10 @@ export class BaseComponent {
   ) {
     this.lang.languageChange.subscribe(() => {
       this.ref.detectChanges();
-    })
+    });
 
     this.themeService.themeChange.subscribe(() => {
       this.ref.detectChanges();
-    })
+    });
   }
-
 }

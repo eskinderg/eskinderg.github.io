@@ -1,4 +1,4 @@
-<app-langselect style="float:right; z-index:1; position:absolute; right:0;"></app-langselect>
+<app-langselect style="float: right; z-index: 1; position: absolute; right: 0"></app-langselect>
 
 <app-loader [Loading]="lang.loading"></app-loader>
 
@@ -9,7 +9,6 @@
 <app-outline [currentSection]="activeSection"></app-outline>
 
 <div id="parentDiv" class="viewWrapper" appScrollSpy (sectionChange)="onSectionChange($event)">
-
   <app-intro id="intro"></app-intro>
 
   <app-about id="about"></app-about>
@@ -23,7 +22,6 @@
   <app-education-conferences id="education"></app-education-conferences>
 
   <app-contact id="contact"></app-contact>
-
 </div>
 
 <app-back-top [position]="200"></app-back-top>

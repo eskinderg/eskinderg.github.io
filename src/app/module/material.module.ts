@@ -30,4 +30,4 @@ import { CommonModule } from '@angular/common';
     MatSlideToggleModule
   ]
 })
-export class MatModule { }
+export class MatModule {}

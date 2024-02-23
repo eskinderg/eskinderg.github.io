@@ -8,11 +8,9 @@ import { BaseComponent } from 'src/app/sections/base.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ExpertInSectionComponent extends BaseComponent implements AfterViewInit {
-
   @ViewChild('expertin') section: ElementRef;
 
   ngAfterViewInit(): void {
     this.lang.sections['expertin'] = this.section;
   }
-
 }

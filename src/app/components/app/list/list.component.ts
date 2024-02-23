@@ -8,10 +8,8 @@ import { LanguageService } from 'src/app/providers/language.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent {
-
   @Input() item: any;
   @Input() type: any;
 
-  constructor(public lang: LanguageService) { }
-
+  constructor(public lang: LanguageService) {}
 }

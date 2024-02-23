@@ -4,10 +4,9 @@ import { catchError, map, Observable, of } from 'rxjs';
 
 @Injectable()
 export class ThemeService {
-
   private colorList: any;
 
-  private defaultTheme: string = "indigo";
+  private defaultTheme: string = 'indigo';
 
   public static DarkModeDefault: boolean = false;
 
@@ -15,10 +14,10 @@ export class ThemeService {
 
   @Output() themeChange: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {}
 
   public get DarkMode(): boolean {
-    return localStorage.getItem('darkmode') === 'true' || ThemeService.DarkModeDefault
+    return localStorage.getItem('darkmode') === 'true' || ThemeService.DarkModeDefault;
   }
 
   public set DarkMode(value: boolean) {
@@ -43,36 +42,33 @@ export class ThemeService {
   }
 
   private setUserPreferenceTheme(): void {
-
     this.checkPreviousConvention();
 
     if (this.DarkMode) {
       this.LoadDarkMode();
     } else {
-      this.SetTheme(this.Theme, false)
+      this.SetTheme(this.Theme, false);
     }
   }
 
   public LoadTheme(): Observable<boolean> {
-
-    this.setUserPreferenceTheme()
+    this.setUserPreferenceTheme();
 
     const colorPath = 'assets/json/colors.json';
 
     return this.http.get(colorPath).pipe(
-      map((colors) => {
-        this.colorList = colors['colors']
-        return true
+      map(colors => {
+        this.colorList = colors['colors'];
+        return true;
       }),
-      catchError((error) => {
-        console.error(error)
-        return of(false)
-      }))
-
+      catchError(error => {
+        console.error(error);
+        return of(false);
+      })
+    );
   }
 
   public SetTheme(theme: string, isDarkMode: boolean) {
-
     if (!isDarkMode) {
       this.Theme = theme;
     }
@@ -80,7 +76,6 @@ export class ThemeService {
     this.setStyle('theme', `${theme}.css`);
     this.DarkMode = isDarkMode;
     this.themeChange.emit();
-
   }
 
   private LoadDarkMode() {
@@ -97,8 +92,8 @@ export class ThemeService {
 
   private checkPreviousConvention() {
     if (localStorage.getItem('theme')) {
-      if (localStorage.getItem('theme').includes("-theme")) {
-        localStorage.setItem('theme', localStorage.getItem('theme').replace('-theme', ''))
+      if (localStorage.getItem('theme').includes('-theme')) {
+        localStorage.setItem('theme', localStorage.getItem('theme').replace('-theme', ''));
       }
     }
   }
@@ -118,7 +113,7 @@ export class ThemeService {
   createLinkElementWithKey(key: string): Element {
     const linkEl = document.createElement('link');
     linkEl.setAttribute('rel', 'stylesheet');
-    linkEl.setAttribute('type', 'text/css')
+    linkEl.setAttribute('type', 'text/css');
     linkEl.classList.add(this.getClassNameForKey(key));
     document.head.appendChild(linkEl);
     return linkEl;
@@ -127,5 +122,4 @@ export class ThemeService {
   private getClassNameForKey(key: string): string {
     return `style-manager-${key}`;
   }
-
 }

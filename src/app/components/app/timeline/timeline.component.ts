@@ -8,11 +8,9 @@ import { LanguageService } from 'src/app/providers/language.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TimelineComponent {
-
   @Input() job: any;
   @Input() index: any;
   @Input() reverse: boolean;
 
-  constructor(public lang: LanguageService) { }
-
+  constructor(public lang: LanguageService) {}
 }

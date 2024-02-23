@@ -8,7 +8,6 @@ import { BaseComponent } from 'src/app/sections/base.component';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutSectionComponent extends BaseComponent implements AfterViewInit {
-
   @ViewChild('about') section: ElementRef;
 
   ngAfterViewInit(): void {
@@ -16,23 +15,10 @@ export class AboutSectionComponent extends BaseComponent implements AfterViewIni
   }
 
   onPdfDownload() {
-    this.googleAnalyticsService.eventEmitter(
-      "download_pdf",
-      "about",
-      "download",
-      "click",
-      10
-    )
+    this.googleAnalyticsService.eventEmitter('download_pdf', 'about', 'download', 'click', 10);
   }
 
   onDocxDownload() {
-    this.googleAnalyticsService.eventEmitter(
-      "download_docx",
-      "about",
-      "download",
-      "click",
-      10
-    )
+    this.googleAnalyticsService.eventEmitter('download_docx', 'about', 'download', 'click', 10);
   }
-
 }

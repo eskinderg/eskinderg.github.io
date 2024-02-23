@@ -14,9 +14,8 @@ describe('AccomplishmentsSectionComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AccomplishmentsSectionComponent],
       providers: [LanguageService, ThemeService],
-      imports: [HttpClientModule, AppModule, BrowserAnimationsModule],
-    })
-      .compileComponents();
+      imports: [HttpClientModule, AppModule, BrowserAnimationsModule]
+    }).compileComponents();
   });
 
   beforeEach(() => {

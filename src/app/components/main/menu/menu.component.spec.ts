@@ -14,8 +14,7 @@ describe('MenuComponent', () => {
       declarations: [MenuComponent],
       providers: [LanguageService],
       imports: [HttpClientModule, MatTooltipModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

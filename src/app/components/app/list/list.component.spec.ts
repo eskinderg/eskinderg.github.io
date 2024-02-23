@@ -15,8 +15,7 @@ describe('ListComponent', () => {
       declarations: [ListComponent],
       providers: [LanguageService],
       imports: [HttpClientModule, ComponentsModule, BrowserAnimationsModule]
-    })
-      .compileComponents();
+    }).compileComponents();
   });
 
   beforeEach(() => {

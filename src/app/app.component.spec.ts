@@ -12,27 +12,14 @@ import { GoogleAnalyticsService } from './providers/google-analytics.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('AppComponent', () => {
-
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        BrowserAnimationsModule,
-        RouterTestingModule,
-        HttpClientModule,
-        SectionsModule,
-        FrontModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-      providers: [
-        LanguageService,
-        ThemeService,
-        GoogleAnalyticsService
-      ]
+      imports: [BrowserAnimationsModule, RouterTestingModule, HttpClientModule, SectionsModule, FrontModule],
+      declarations: [AppComponent],
+      providers: [LanguageService, ThemeService, GoogleAnalyticsService]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
@@ -70,9 +57,6 @@ describe('AppComponent', () => {
   });
 });
 
-export function findComponent<T>(
-  fixture: ComponentFixture<T>,
-  selector: string,
-): DebugElement {
+export function findComponent<T>(fixture: ComponentFixture<T>, selector: string): DebugElement {
   return fixture.debugElement.query(By.css(selector));
 }

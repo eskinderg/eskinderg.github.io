@@ -1,11 +1,19 @@
-<div #experience [style.background-color]="themeService.DarkMode ? themeService.DarkModeBackground2: '#FFFFFF'" class="experience px-[5%] md:px-[10%]">
+<div
+  #experience
+  [style.background-color]="themeService.DarkMode ? themeService.DarkModeBackground2 : '#FFFFFF'"
+  class="experience px-[5%] md:px-[10%]">
   <div class="h2 center">
-    <app-title title="{{(lang.texts)?.experience.title}}" fontWeight="{{(lang.texts)?.font.title.fontWeight}}" fontFamily="{{lang.texts?.font.title.fontFamily}}" [stylish]="true" [lineWidth]="260" ></app-title>
+    <app-title
+      title="{{ lang.texts?.experience.title }}"
+      fontWeight="{{ lang.texts?.font.title.fontWeight }}"
+      fontFamily="{{ lang.texts?.font.title.fontFamily }}"
+      [stylish]="true"
+      [lineWidth]="260"></app-title>
   </div>
 
   <div>
     @for (job of (lang.texts)?.experience.content; track job; let i = $index) {
-      <app-timeline [job]="job" [index]="i" [reverse]="(i % 2) === 0"></app-timeline>
+    <app-timeline [job]="job" [index]="i" [reverse]="i % 2 === 0"></app-timeline>
     }
   </div>
 </div>

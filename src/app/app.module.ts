@@ -13,9 +13,7 @@ import { SectionsModule } from './sections/sections.module';
 import { FrontModule } from './components/main/front.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -24,12 +22,7 @@ import { FrontModule } from './components/main/front.module';
     SectionsModule,
     FrontModule
   ],
-  providers: [
-    LanguageService,
-    ThemeService,
-    GoogleAnalyticsService,
-    AppInit
-  ],
+  providers: [LanguageService, ThemeService, GoogleAnalyticsService, AppInit],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

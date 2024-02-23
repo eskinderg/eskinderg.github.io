@@ -4,7 +4,6 @@ import { Directive, Input, ElementRef, HostListener, Output, EventEmitter } from
   selector: '[appScrollSpy]'
 })
 export class ScrollSpyDirective {
-
   @Input() public spiedTags = [
     'APP-INTRO',
     'APP-ABOUT',
@@ -13,17 +12,16 @@ export class ScrollSpyDirective {
     'APP-EXPERIENCE',
     'APP-EDUCATION-CONFERENCES',
     'APP-CONTACT'
-  ];;
+  ];
 
   @Output() public sectionChange: EventEmitter<string> = new EventEmitter<string>();
 
   public currentSection: string;
 
-  constructor(private _el: ElementRef) { }
+  constructor(private _el: ElementRef) {}
 
   @HostListener('window:scroll', ['$event'])
-  onScroll(_event: any) {
-
+  onScroll() {
     let currentSection: string;
     const children = this._el.nativeElement.children;
     const scrollTop = document.documentElement.scrollTop;
@@ -32,7 +30,7 @@ export class ScrollSpyDirective {
     for (let i = 0; i < children.length; i++) {
       const element = children[i];
       if (this.spiedTags.some(spiedTag => spiedTag === element.tagName)) {
-        if ((element.offsetTop - parentOffset - 400) <= scrollTop) {
+        if (element.offsetTop - parentOffset - 400 <= scrollTop) {
           currentSection = element.id;
         }
       }

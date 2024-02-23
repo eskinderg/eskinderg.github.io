@@ -13,9 +13,8 @@ describe('TimelineComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [TimelineComponent, TitleComponent],
       providers: [LanguageService],
-      imports: [HttpClientModule, BrowserAnimationsModule],
-    })
-      .compileComponents();
+      imports: [HttpClientModule, BrowserAnimationsModule]
+    }).compileComponents();
   });
 
   beforeEach(() => {
