@@ -1,6 +1,6 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, Observable, of } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 @Injectable()
 export class ThemeService {
@@ -51,7 +51,7 @@ export class ThemeService {
     }
   }
 
-  public LoadTheme(): Observable<boolean> {
+  public LoadTheme(): Observable<any> {
     this.setUserPreferenceTheme();
 
     const colorPath = 'assets/json/colors.json';
@@ -59,11 +59,10 @@ export class ThemeService {
     return this.http.get(colorPath).pipe(
       map((colors) => {
         this.colorList = colors['colors'];
-        return true;
       }),
       catchError((error) => {
         console.error(error);
-        return of(false);
+        return throwError(() => error);
       })
     );
   }

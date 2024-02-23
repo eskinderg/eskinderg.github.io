@@ -39,15 +39,15 @@ export const AppInit: Provider[] = [
   }
 ];
 
-function initializeApp(themeService: ThemeService): () => Observable<boolean> {
+function initializeApp(themeService: ThemeService): () => Observable<any> {
   return () => themeService.LoadTheme();
 }
 
-function initializeUserLanguage(languageService: LanguageService): () => Observable<boolean> {
+function initializeUserLanguage(languageService: LanguageService): () => Observable<any> {
   return () => languageService.setLanguage(languageService.Language);
 }
 
-function initializeLanguageList(languageService: LanguageService): () => Observable<boolean> {
+function initializeLanguageList(languageService: LanguageService): () => Observable<any> {
   return () => languageService.loadLanguages();
 }
 

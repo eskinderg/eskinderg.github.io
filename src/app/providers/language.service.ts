@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
-import { Observable, map, catchError, of, throwError } from 'rxjs';
+import { Observable, map, catchError, throwError } from 'rxjs';
 
 @Injectable()
 export class LanguageService {
@@ -32,12 +32,11 @@ export class LanguageService {
     return this.langList;
   }
 
-  public setLanguage(lang: any): Observable<boolean> {
+  public setLanguage(lang: any): Observable<any> {
     return this.http.get(this.getLangPath(lang)).pipe(
       map((data) => {
         this.texts = data;
         this.languageChange.emit(data);
-        return true;
       }),
       catchError((httpError: HttpErrorResponse) => {
         if (httpError.status === 404) {
@@ -78,17 +77,12 @@ export class LanguageService {
     return this.http.get<[]>(colorPath);
   }
 
-  public loadLanguages(): Observable<boolean> {
+  public loadLanguages(): Observable<any> {
     const langPath = 'assets/json/lang.json';
 
     return this.http.get(langPath).pipe(
       map((lang) => {
         this.langList = lang;
-        return true;
-      }),
-      catchError((error) => {
-        console.error(error);
-        return of(false);
       })
     );
   }
