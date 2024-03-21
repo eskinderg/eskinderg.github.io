@@ -28,7 +28,7 @@
     "@angular/material": "^17.0.0",
     "@angular/platform-browser": "^17.0.1",
     "@angular/platform-browser-dynamic": "^17.0.1",
-    "@angular/router": "^17.0.1",
+    "@angular/router": "^17.3.1",
     "gulp": "^4.0.2",
     "gulp-jsonminify": "^1.1.0",
     "gulp-rename": "^2.0.0",
