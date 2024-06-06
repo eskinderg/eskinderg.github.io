@@ -102,8 +102,8 @@
 
   <div class="right-contact-item flex-[1_1_60%]">
     <!-- <div class="right flex-[1_1_60%] md:flex-[1_1_100%]" [ngStyle.sm]="{'padding': '0 5%'}" [ngStyle.xs]="{'padding': '0 5%'}"> -->
-    <div class="contactIntro text-xl md:text-2xl" [style.font-family]="lang.texts?.font.content">
-      {{ lang.texts?.contact.intro }}
+    <div class="contactIntro text-xl md:text-2xl" [style.font-family]="lang.texts.font.content">
+      {{ lang.texts.contact.intro }}
     </div>
 
     <br />
@@ -112,7 +112,7 @@
       <a
         class="contact-title link colorBlue text-xl md:text-2xl"
         [ngStyle]="{ 'text-decoration-line': 'none' }"
-        href="mailto:{{ lang.texts?.contact.mail }}?Subject=Hello"
+        href="mailto:{{ lang.texts.contact.mail }}?Subject=Hello"
         target="_top">
         <mat-card-title
           ><img
@@ -122,7 +122,7 @@
             [height]="25"
             style="margin-right: 10px; top: 3px; position: relative"
         /></mat-card-title>
-        {{ lang.texts?.contact.mail }}
+        {{ lang.texts.contact.mail }}
       </a>
       <br />
       <br />
@@ -131,14 +131,14 @@
 
       <br />
       <mat-card-title></mat-card-title>
-      <a class="phone" href="tel:{{ lang.texts?.contact.phone }}">
+      <a class="phone" href="tel:{{ lang.texts.contact.phone }}">
         <img
           src="assets/img/phone.webp"
           alt="Phone"
           [width]="30"
           [height]="30"
           style="margin-right: 10px; position: relative" />
-        {{ lang.texts?.contact.phone }}
+        {{ lang.texts.contact.phone }}
       </a>
     </div>
     <!-- <div class="inputs"> -->
@@ -165,7 +165,7 @@
 </div>
 
 <div class="horizontal-line">
-  <div class="copyrights colorWhite text-sm lg:text-xl" [style.font-family]="lang.texts?.font.content">
+  <div class="copyrights colorWhite text-sm lg:text-xl" [style.font-family]="lang.texts.font.content">
     v{{ currentAppVersion }} <br />
     &copy; {{ Copyright }} <br />
     <br />

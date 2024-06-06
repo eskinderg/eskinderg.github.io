@@ -57,12 +57,12 @@ export class LanguageService {
   }
 
   public translateColor(color: string): string {
-    return this.texts?.colors && this.texts?.colors[`${color.toLowerCase()}`]
-      ? this.texts?.colors[`${color.toLowerCase()}`]
+    return this.texts.colors && this.texts.colors[`${color.toLowerCase()}`]
+      ? this.texts.colors[`${color.toLowerCase()}`]
       : color;
   }
 
-  toggleMenu(value?: any) {
+  toggleMenu(value: any) {
     if (value || value === false) {
       this.menuVisible = value;
     } else {

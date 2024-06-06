@@ -1,9 +1,9 @@
 <div #about class="about sm:!pt-5 md:!pt-10 lg:!pt-16">
   <div class="h2 about-title text-center lg:text-left">
     <app-title
-      title="{{ lang.texts?.about.title }}"
-      fontWeight="{{ lang.texts?.font.title.fontWeight }}"
-      fontFamily="{{ lang.texts?.font.title.fontFamily }}"
+      title="{{ lang.texts.about.title }}"
+      fontWeight="{{ lang.texts.font.title.fontWeight }}"
+      fontFamily="{{ lang.texts.font.title.fontFamily }}"
       [stylish]="true"
       [lineWidth]="250"></app-title>
   </div>
@@ -17,11 +17,11 @@
       <p class="leading-7 text-lg text-center lg:text-left" [innerHTML]="paragraph"></p>
       }
       <button
-        matTooltip="{{ lang.texts?.about.button.tooltip }}"
+        matTooltip="{{ lang.texts.about.button.tooltip }}"
         class="btn-download w-[100%] lg:w-[40%]"
-        [style.font-family]="lang.texts?.font.menu"
+        [style.font-family]="lang.texts.font.menu"
         [matMenuTriggerFor]="menu">
-        <span> {{ lang.texts?.about.button.title }} </span> &nbsp; &nbsp;
+        <span> {{ lang.texts.about.button.title }} </span> &nbsp; &nbsp;
         <img
           src="assets/img/download.webp"
           style="position: inherit"
@@ -33,13 +33,13 @@
         <a (click)="onPdfDownload()" href="assets/pdf/Eskinder-CV.pdf" target="_blank">
           <button mat-menu-item>
             <img class="menu-options" src="assets/img/pdf.webp" [width]="30" />&nbsp;
-            <span>{{ lang.texts?.about.pdf }}</span>
+            <span>{{ lang.texts.about.pdf }}</span>
           </button>
         </a>
         <a class="flex flex-row" (click)="onDocxDownload()" href="assets/doc/Eskinder-CV.docx">
           <button mat-menu-item>
             <img class="menu-options" src="assets/img/docx.webp" [width]="30" />&nbsp;
-            <span> {{ lang.texts?.about.word }} </span>
+            <span> {{ lang.texts.about.word }} </span>
           </button>
         </a>
       </mat-menu>

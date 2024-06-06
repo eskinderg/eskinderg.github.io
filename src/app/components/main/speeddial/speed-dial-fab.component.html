@@ -7,7 +7,7 @@
     class="fab-toggler main-button"
     aria-label="Color Chooser"
     color="primary"
-    matTooltip="{{ lang.texts?.colorSelectTooltip }}"
+    matTooltip="{{ lang.texts.colorSelectTooltip }}"
     [matTooltipPosition]="'below'"
     [ngClass]="{ colorBtnNoBoxShadow: atTop && fabTogglerState !== 'active' }"
     (click)="onToggleFab()">
@@ -24,7 +24,7 @@
     </svg>
   </button>
 
-  <div class="flex flex-col sm:flex-row" [@speedDialStagger]="buttons?.length">
+  <div class="flex flex-col sm:flex-row" [@speedDialStagger]="buttons.length">
     @for (btn of buttons; track btn) {
     <button
       mat-mini-fab

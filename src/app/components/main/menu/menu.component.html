@@ -1,5 +1,5 @@
 <button
-  [matTooltip]="lang.texts?.menu.tooltip"
+  [matTooltip]="lang.texts.menu.tooltip"
   color="primary"
   mat-fab
   aria-label="Menu Button"
@@ -41,7 +41,7 @@
       <a
         class="link"
         [ngClass]="{ unhovered: hovered && hovered !== item.link }"
-        [style.font-family]="lang.texts?.font.menu"
+        [style.font-family]="lang.texts.font.menu"
         (mousemove)="onHover(item.link)"
         (mouseout)="onMouseOut()"
         (click)="scrollTo(item.link)"

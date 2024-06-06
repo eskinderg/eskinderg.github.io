@@ -35,8 +35,8 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
   }
 
   public get Copyright(): string {
-    if (this.lang.texts?.footer.content) {
-      return this.lang.texts?.footer.content;
+    if (this.lang.texts.footer.content) {
+      return this.lang.texts.footer.content;
     } else {
       return new Date().getFullYear().toString();
     }
