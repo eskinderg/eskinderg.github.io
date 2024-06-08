@@ -11,7 +11,6 @@ describe('IntroSectionComponent', () => {
   let component: IntroSectionComponent;
   let fixture: ComponentFixture<IntroSectionComponent>;
 
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [IntroSectionComponent],

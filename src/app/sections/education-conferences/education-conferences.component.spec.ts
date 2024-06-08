@@ -14,10 +14,13 @@ describe('EducationConferencesSectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [EducationConferencesSectionComponent],
-      providers: [{
+      providers: [
+        {
           provide: LanguageService,
           useClass: LanguageServiceMock
-        }, ThemeService],
+        },
+        ThemeService
+      ],
       imports: [HttpClientModule, AppModule, BrowserAnimationsModule]
     }).compileComponents();
   });
