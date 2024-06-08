@@ -35,12 +35,15 @@ describe('IntroSectionComponent', () => {
 
   it('Should have the intro title rendere name', () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.intro>.titleIntro>.introTitle').textContent).toContain('Eskinder Getahun');
+    expect(compiled.querySelector('.intro>.titleIntro>.introTitle').textContent).toContain(
+      'Eskinder Getahun'
+    );
   });
 
   it('Should render intro subtitle', () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.intro>.titleIntro>.introSubTitle').textContent).toContain('Full-Stack Develope');
+    expect(compiled.querySelector('.intro>.titleIntro>.introSubTitle').textContent).toContain(
+      'Full-Stack Develope'
+    );
   });
-
 });
