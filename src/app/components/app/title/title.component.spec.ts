@@ -26,10 +26,16 @@ describe('TitleComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TitleComponent);
     component = fixture.componentInstance;
+    component.title = 'title';
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Should render title', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.title>.main-heading-title').textContent).toContain('title');
   });
 });

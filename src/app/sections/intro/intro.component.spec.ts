@@ -26,13 +26,21 @@ describe('IntroSectionComponent', () => {
 
     fixture = TestBed.createComponent(IntroSectionComponent);
     component = fixture.componentInstance;
-  });
-
-  beforeEach(() => {
     fixture.detectChanges();
   });
 
-  it('should create IntroSectionComponent', () => {
-    expect(component).toBeTruthy();
+  it('Should create IntroSectionComponent', () => {
+    expect(component).toBeDefined();
   });
+
+  it('Should have the intro title rendere name', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.intro>.titleIntro>.introTitle').textContent).toContain('Eskinder Getahun');
+  });
+
+  it('Should render intro subtitle', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.intro>.titleIntro>.introSubTitle').textContent).toContain('Full-Stack Develope');
+  });
+
 });
