@@ -12,7 +12,7 @@
   </div>
 
   <div>
-    @for (job of (lang.texts)?.experience.content; track job; let i = $index) {
+    @for (job of (lang.texts).experience.content; track job; let i = $index) {
     <app-timeline [job]="job" [index]="i" [reverse]="i % 2 === 0"></app-timeline>
     }
   </div>

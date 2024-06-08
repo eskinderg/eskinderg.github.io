@@ -10,6 +10,7 @@ import { FrontModule } from './components/main/front.module';
 import { SectionsModule } from './sections/sections.module';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LanguageServiceMock } from './language/language.mock';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -19,7 +20,14 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [BrowserAnimationsModule, RouterTestingModule, HttpClientModule, SectionsModule, FrontModule],
       declarations: [AppComponent],
-      providers: [LanguageService, ThemeService, GoogleAnalyticsService]
+      providers: [
+        {
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        },
+        ThemeService,
+        GoogleAnalyticsService
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);

@@ -4,6 +4,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from 'src/app/providers/language.service';
 
 import { MenuComponent } from './menu.component';
+import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('MenuComponent', () => {
   let component: MenuComponent;
@@ -12,7 +13,12 @@ describe('MenuComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [MenuComponent],
-      providers: [LanguageService],
+      providers: [
+        {
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        }
+      ],
       imports: [HttpClientModule, MatTooltipModule]
     }).compileComponents();
   });

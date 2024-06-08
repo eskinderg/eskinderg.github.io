@@ -4,6 +4,7 @@ import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 import { ContactSectionComponent } from './contact.component';
 import { AppModule } from 'src/app/app.module';
+import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('ContactSectionComponent', () => {
   let component: ContactSectionComponent;
@@ -12,7 +13,13 @@ describe('ContactSectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ContactSectionComponent],
-      providers: [LanguageService, ThemeService],
+      providers: [
+        {
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        },
+        ThemeService
+      ],
       imports: [HttpClientModule, AppModule]
     }).compileComponents();
   });

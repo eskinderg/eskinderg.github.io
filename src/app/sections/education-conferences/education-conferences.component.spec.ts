@@ -5,6 +5,7 @@ import { ThemeService } from 'src/app/providers/theme.service';
 import { EducationConferencesSectionComponent } from './education-conferences.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppModule } from 'src/app/app.module';
+import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('EducationConferencesSectionComponent', () => {
   let component: EducationConferencesSectionComponent;
@@ -13,7 +14,10 @@ describe('EducationConferencesSectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [EducationConferencesSectionComponent],
-      providers: [LanguageService, ThemeService],
+      providers: [{
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        }, ThemeService],
       imports: [HttpClientModule, AppModule, BrowserAnimationsModule]
     }).compileComponents();
   });

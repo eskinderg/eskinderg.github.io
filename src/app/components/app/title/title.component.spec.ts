@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
 import { TitleComponent } from './title.component';
+import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('TitleComponent', () => {
   let component: TitleComponent;
@@ -11,7 +12,13 @@ describe('TitleComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [TitleComponent],
-      providers: [LanguageService, ThemeService],
+      providers: [
+        {
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        },
+        ThemeService
+      ],
       imports: [BrowserAnimationsModule]
     }).compileComponents();
   });

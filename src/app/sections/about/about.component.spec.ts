@@ -6,6 +6,7 @@ import { ThemeService } from 'src/app/providers/theme.service';
 import { AboutSectionComponent } from './about.component';
 import { ComponentsModule } from 'src/app/components/app/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('AboutSectionComponent', () => {
   let component: AboutSectionComponent;
@@ -14,7 +15,14 @@ describe('AboutSectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AboutSectionComponent],
-      providers: [LanguageService, GoogleAnalyticsService, ThemeService],
+      providers: [
+        {
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        },
+        GoogleAnalyticsService,
+        ThemeService
+      ],
       imports: [HttpClientModule, ComponentsModule, BrowserAnimationsModule]
     }).compileComponents();
   });

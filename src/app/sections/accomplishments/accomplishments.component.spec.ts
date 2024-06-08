@@ -5,6 +5,7 @@ import { ThemeService } from 'src/app/providers/theme.service';
 import { AccomplishmentsSectionComponent } from './accomplishments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppModule } from 'src/app/app.module';
+import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('AccomplishmentsSectionComponent', () => {
   let component: AccomplishmentsSectionComponent;
@@ -13,7 +14,13 @@ describe('AccomplishmentsSectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AccomplishmentsSectionComponent],
-      providers: [LanguageService, ThemeService],
+      providers: [
+        {
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        },
+        ThemeService
+      ],
       imports: [HttpClientModule, AppModule, BrowserAnimationsModule]
     }).compileComponents();
   });

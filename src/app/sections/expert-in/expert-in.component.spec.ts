@@ -5,6 +5,7 @@ import { ThemeService } from 'src/app/providers/theme.service';
 import { ExpertInSectionComponent } from './expert-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppModule } from 'src/app/app.module';
+import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('ExpertInSectionComponent', () => {
   let component: ExpertInSectionComponent;
@@ -13,7 +14,13 @@ describe('ExpertInSectionComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ExpertInSectionComponent],
-      providers: [LanguageService, ThemeService],
+      providers: [
+        {
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        },
+        ThemeService
+      ],
       imports: [HttpClientModule, AppModule, BrowserAnimationsModule]
     }).compileComponents();
   });

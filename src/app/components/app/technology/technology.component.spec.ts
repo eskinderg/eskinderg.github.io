@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TechnologyComponent } from './technology.component';
+import { LanguageService } from 'src/app/providers/language.service';
+import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('TechnologyComponent', () => {
   let component: TechnologyComponent;
@@ -8,13 +10,24 @@ describe('TechnologyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TechnologyComponent]
+      declarations: [TechnologyComponent],
+      providers: [
+        {
+          provide: LanguageService,
+          useClass: LanguageServiceMock
+        }
+      ]
     }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TechnologyComponent);
     component = fixture.componentInstance;
+    component.item = {
+      title: 'Angular',
+      img: 'bg-angular',
+      link: 'https://angular.io'
+    };
     fixture.detectChanges();
   });
 
