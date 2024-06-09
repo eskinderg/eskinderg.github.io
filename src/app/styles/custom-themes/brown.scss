@@ -7,12 +7,12 @@
 
 @include mat.core(); // Mixin that renders all of the core styles that are not theme-dependent.
 
-$brown-theme: mat.define-dark-theme((
+$brown-theme: mat.m2-define-dark-theme((
   color: (
-    primary: mat.define-palette(mat.$brown-palette),
-    accent: mat.define-palette(mat.$brown-palette, A400, A100, A700),
-    background: mat.define-palette(mat.$brown-palette),
-    background-color: mat.define-palette(mat.$brown-palette),
+    primary: mat.m2-define-palette(mat.$m2-brown-palette),
+    accent: mat.m2-define-palette(mat.$m2-brown-palette, A400, A100, A700),
+    background: mat.m2-define-palette(mat.$m2-brown-palette),
+    background-color: mat.m2-define-palette(mat.$m2-brown-palette),
 ),
 ));
 

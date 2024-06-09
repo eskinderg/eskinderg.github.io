@@ -7,7 +7,7 @@
 }
 
 @mixin theme($theme) {
-  $color-config     : mat.get-color-config($theme);
+  $color-config     : mat.m2-get-color-config($theme);
   $primary          : map.get($color-config, 'primary');
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
@@ -16,7 +16,7 @@
   .title{
     // @include mat-elevation(2);
     transition: color 1s ease;
-    color: mat.get-color-from-palette($primary, 700);
+    color: mat.m2-get-color-from-palette($primary, 700);
     display: inline-block;
     text-align: left;
   }

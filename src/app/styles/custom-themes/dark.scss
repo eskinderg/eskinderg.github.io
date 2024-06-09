@@ -32,17 +32,17 @@ $dark-palette: (
   )
 );
 
-$primary: mat.define-palette($dark-palette, 200);
-$accent: mat.define-palette($dark-palette, 100);
-$warn: mat.define-palette($dark-palette, 300);
+$primary: mat.m2-define-palette($dark-palette, 200);
+$accent: mat.m2-define-palette($dark-palette, 100);
+$warn: mat.m2-define-palette($dark-palette, 300);
 
-$dark-theme: mat.define-dark-theme((
+$dark-theme: mat.m2-define-dark-theme((
   color: (
     primary: $primary,
     accent: $accent,
     warn: $warn,
-    background: mat.define-palette(mat.$indigo-palette),
-    background-color: mat.define-palette(mat.$indigo-palette),
+    background: mat.m2-define-palette(mat.$m2-indigo-palette),
+    background-color: mat.m2-define-palette(mat.$m2-indigo-palette),
 ),
 ));
 

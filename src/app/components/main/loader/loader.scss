@@ -3,7 +3,7 @@
 
 @mixin theme($theme) {
 
-  $color-config     : mat.get-color-config($theme);
+  $color-config     : mat.m2-get-color-config($theme);
   $primary          : map.get($color-config, 'primary');
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');

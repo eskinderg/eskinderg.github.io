@@ -3,7 +3,7 @@
 
 @mixin theme($theme){
 
-  $color-config     : mat.get-color-config($theme);
+  $color-config     : mat.m2-get-color-config($theme);
   $primary          : map.get($color-config, 'primary');
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
@@ -27,7 +27,7 @@
     font-size: 45px;
     text-align: center;
     opacity: 0.3;
-    background-color: mat.get-color-from-palette($primary);
+    background-color: mat.m2-get-color-from-palette($primary);
     border-radius: 50%;
     line-height: 40px;
     &:hover {

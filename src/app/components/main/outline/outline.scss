@@ -279,7 +279,7 @@
 }
 
 @mixin theme($theme) {
-  $color-config     : mat.get-color-config($theme);
+  $color-config     : mat.m2-get-color-config($theme);
   $primary          : map.get($color-config, 'primary');
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
@@ -298,24 +298,24 @@
   }
   .active:before  {
     transition: all 0.5s ease;
-    background-color: mat.get-color-from-palette($primary) !important;
-    border: 4px solid mat.get-color-from-palette($primary) !important;
+    background-color: mat.m2-get-color-from-palette($primary) !important;
+    border: 4px solid mat.m2-get-color-from-palette($primary) !important;
     opacity: 1 ! important;
   }
 
   .active:after {
     transition: all 0.5s ease;
-    border-left-color: mat.get-color-from-palette($primary) !important;
+    border-left-color: mat.m2-get-color-from-palette($primary) !important;
   }
 
   .active {
-    // transition: font-size 0.3s; /* transition is set to 'font-size 12s' */
+    // transition: font-size 0.3s; __<<ngM2ThemingMigrationEscapedComment2>>__
     // transition: background-color 1s ease;
     transition: all 0.5s ease;
     // transition: box-sizing 1s ease;
     color:#a7a7a7;
     font-size: 20px !important;
-    background: mat.get-color-from-palette($primary) !important;
+    background: mat.m2-get-color-from-palette($primary) !important;
     // opacity: 1;
   }
 

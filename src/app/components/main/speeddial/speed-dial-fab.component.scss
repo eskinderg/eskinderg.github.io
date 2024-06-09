@@ -3,7 +3,7 @@
 
 @mixin theme($theme) {
 
-  $color-config     : mat.get-color-config($theme);
+  $color-config     : mat.m2-get-color-config($theme);
   $primary          : map.get($color-config, 'primary');
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
@@ -27,7 +27,7 @@
     box-shadow: 1px 1px 9px -2px black ! important;
   }
   .main-button {
-    background-color: mat.get-color-from-palette($primary);
+    background-color: mat.m2-get-color-from-palette($primary);
     box-shadow: 1px 1px 9px -2px black;
   }
 

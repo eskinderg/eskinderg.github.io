@@ -3,7 +3,7 @@
 
 @mixin theme($theme) {
 
-  $color-config : mat.get-color-config($theme);
+  $color-config : mat.m2-get-color-config($theme);
   $primary : map.get($color-config, 'primary');
   $accent : map.get($color-config, 'accent');
   $background : map.get($color-config, 'background');
@@ -38,7 +38,7 @@
   .intro {
     // @include mat-elevation(2);
     transition: background-color 1s ease;
-    background-color: mat.get-color-from-palette($primary);
+    background-color: mat.m2-get-color-from-palette($primary);
     position: relative;
     overflow: visible;
     width: 100% ! important;
@@ -49,7 +49,7 @@
 
   .separatorPath {
     transition: fill 1s ease;
-    fill: mat.get-color-from-palette($primary);
+    fill: mat.m2-get-color-from-palette($primary);
   }
 
 }

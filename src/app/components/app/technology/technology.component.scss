@@ -2,7 +2,7 @@
 @use '@angular/material' as mat;
 
 @mixin theme($theme){
-  $color-config     : mat.get-color-config($theme);
+  $color-config     : mat.m2-get-color-config($theme);
   $primary          : map.get($color-config, 'primary');
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
@@ -20,7 +20,7 @@
 
   .mastery a, .mastery a:visited{
     display: block;
-    color: mat.get-color-from-palette($primary, 400);
+    color: mat.m2-get-color-from-palette($primary, 400);
     height: 100%;
     width:100%;
   }
@@ -34,7 +34,7 @@
     // mix-blend-mode:multiply;
     width: 100%;
     height:100%;
-    outline: 1px solid mat.get-color-from-palette($primary, 100, 0.3);
+    outline: 1px solid mat.m2-get-color-from-palette($primary, 100, 0.3);
     border-radius: 50%;
   }
 

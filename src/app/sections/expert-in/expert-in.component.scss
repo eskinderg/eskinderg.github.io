@@ -2,7 +2,7 @@
 @use '@angular/material' as mat;
 
 @mixin theme($theme) {
-  $color-config     : mat.get-color-config($theme);
+  $color-config     : mat.m2-get-color-config($theme);
   $primary          : map.get($color-config, 'primary');
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
@@ -38,7 +38,7 @@
     padding-top:5%;
     padding-bottom:5%;
     transition: background-color 1s ease;
-    background-color: mat.get-color-from-palette($primary, 'darker-contrast');
+    background-color: mat.m2-get-color-from-palette($primary, 'darker-contrast');
     width: 100%;
   }
   .titleExpertin{

@@ -3,7 +3,7 @@
 
 @mixin theme($theme) {
 
-  $color-config     : mat.get-color-config($theme);
+  $color-config     : mat.m2-get-color-config($theme);
   $primary          : map.get($color-config, 'primary');
   $accent           : map.get($color-config, 'accent');
   $background       : map.get($color-config, 'background');
@@ -19,7 +19,7 @@
     font-size: 0;
     padding: 3px 0 0 0;
     z-index: 1000;
-    background-color: mat.get-color-from-palette($primary);
+    background-color: mat.m2-get-color-from-palette($primary);
     color: #000000;
     fill: #FFFFFF;
 
@@ -118,7 +118,7 @@
   }
 
   .MenuFullscreen {
-    background-color: mat.get-color-from-palette($primary) !important;
+    background-color: mat.m2-get-color-from-palette($primary) !important;
   }
   .icon{
     // background-color: mat-color($accent);

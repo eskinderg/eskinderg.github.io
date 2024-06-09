@@ -7,12 +7,12 @@
 
 @include mat.core(); // Mixin that renders all of the core styles that are not theme-dependent.
 
-$pink-theme: mat.define-dark-theme((
+$pink-theme: mat.m2-define-dark-theme((
   color: (
-    primary: mat.define-palette(mat.$pink-palette),
-    accent: mat.define-palette(mat.$pink-palette, A400, A100, A700),
-    background: mat.define-palette(mat.$pink-palette),
-    background-color: mat.define-palette(mat.$pink-palette),
+    primary: mat.m2-define-palette(mat.$m2-pink-palette),
+    accent: mat.m2-define-palette(mat.$m2-pink-palette, A400, A100, A700),
+    background: mat.m2-define-palette(mat.$m2-pink-palette),
+    background-color: mat.m2-define-palette(mat.$m2-pink-palette),
 ),
 ));
 

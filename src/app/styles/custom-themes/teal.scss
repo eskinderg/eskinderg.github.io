@@ -7,12 +7,12 @@
 
 @include mat.core(); // Mixin that renders all of the core styles that are not theme-dependent.
 
-$teal-theme: mat.define-dark-theme((
+$teal-theme: mat.m2-define-dark-theme((
   color: (
-    primary: mat.define-palette(mat.$teal-palette),
-    accent: mat.define-palette(mat.$teal-palette, A400, A100, A700),
-    background: mat.define-palette(mat.$teal-palette),
-    background-color: mat.define-palette(mat.$teal-palette),
+    primary: mat.m2-define-palette(mat.$m2-teal-palette),
+    accent: mat.m2-define-palette(mat.$m2-teal-palette, A400, A100, A700),
+    background: mat.m2-define-palette(mat.$m2-teal-palette),
+    background-color: mat.m2-define-palette(mat.$m2-teal-palette),
 ),
 ));
 
