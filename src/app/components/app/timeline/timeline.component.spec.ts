@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
 import { TimelineComponent } from './timeline.component';
@@ -13,15 +13,16 @@ describe('TimelineComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TimelineComponent, TitleComponent],
-      providers: [
+    declarations: [TimelineComponent, TitleComponent],
+    imports: [MatModule, BrowserAnimationsModule],
+    providers: [
         {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
-        }
-      ],
-      imports: [MatModule, HttpClientModule, BrowserAnimationsModule]
-    }).compileComponents();
+            provide: LanguageService,
+            useClass: LanguageServiceMock
+        },
+        provideHttpClient(withInterceptorsFromDi())
+    ]
+}).compileComponents();
   });
 
   beforeEach(() => {

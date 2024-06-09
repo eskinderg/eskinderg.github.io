@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { LanguageService } from 'src/app/providers/language.service';
@@ -12,15 +12,16 @@ describe('MenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MenuComponent],
-      providers: [
+    declarations: [MenuComponent],
+    imports: [MatTooltipModule],
+    providers: [
         {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
-        }
-      ],
-      imports: [HttpClientModule, MatTooltipModule]
-    }).compileComponents();
+            provide: LanguageService,
+            useClass: LanguageServiceMock
+        },
+        provideHttpClient(withInterceptorsFromDi())
+    ]
+}).compileComponents();
   });
 
   beforeEach(() => {

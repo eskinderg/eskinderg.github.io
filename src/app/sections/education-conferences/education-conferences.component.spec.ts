@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/providers/theme.service';
@@ -13,16 +13,17 @@ describe('EducationConferencesSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EducationConferencesSectionComponent],
-      providers: [
+    declarations: [EducationConferencesSectionComponent],
+    imports: [AppModule, BrowserAnimationsModule],
+    providers: [
         {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
+            provide: LanguageService,
+            useClass: LanguageServiceMock
         },
-        ThemeService
-      ],
-      imports: [HttpClientModule, AppModule, BrowserAnimationsModule]
-    }).compileComponents();
+        ThemeService,
+        provideHttpClient(withInterceptorsFromDi())
+    ]
+}).compileComponents();
   });
 
   beforeEach(() => {

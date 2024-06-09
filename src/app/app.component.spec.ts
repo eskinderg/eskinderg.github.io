@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -18,17 +18,18 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule, RouterTestingModule, HttpClientModule, SectionsModule, FrontModule],
-      declarations: [AppComponent],
-      providers: [
+    declarations: [AppComponent],
+    imports: [BrowserAnimationsModule, RouterTestingModule, SectionsModule, FrontModule],
+    providers: [
         {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
+            provide: LanguageService,
+            useClass: LanguageServiceMock
         },
         ThemeService,
-        GoogleAnalyticsService
-      ]
-    }).compileComponents();
+        GoogleAnalyticsService,
+        provideHttpClient(withInterceptorsFromDi())
+    ]
+}).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;

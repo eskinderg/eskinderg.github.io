@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
@@ -14,17 +14,18 @@ describe('AboutSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AboutSectionComponent],
-      providers: [
+    declarations: [AboutSectionComponent],
+    imports: [ComponentsModule, BrowserAnimationsModule],
+    providers: [
         {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
+            provide: LanguageService,
+            useClass: LanguageServiceMock
         },
         GoogleAnalyticsService,
-        ThemeService
-      ],
-      imports: [HttpClientModule, ComponentsModule, BrowserAnimationsModule]
-    }).compileComponents();
+        ThemeService,
+        provideHttpClient(withInterceptorsFromDi())
+    ]
+}).compileComponents();
   });
 
   beforeEach(() => {

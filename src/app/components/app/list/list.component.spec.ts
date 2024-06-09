@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListComponent } from './list.component';
 import { LanguageService } from 'src/app/providers/language.service';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ComponentsModule } from '../components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -12,10 +12,10 @@ describe('ListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ListComponent],
-      providers: [LanguageService],
-      imports: [HttpClientModule, ComponentsModule, BrowserAnimationsModule]
-    }).compileComponents();
+    declarations: [ListComponent],
+    imports: [ComponentsModule, BrowserAnimationsModule],
+    providers: [LanguageService, provideHttpClient(withInterceptorsFromDi())]
+}).compileComponents();
   });
 
   beforeEach(() => {
