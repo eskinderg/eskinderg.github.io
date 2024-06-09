@@ -13,17 +13,17 @@ describe('ExpertInSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [ExpertInSectionComponent],
-    imports: [AppModule, BrowserAnimationsModule],
-    providers: [
+      declarations: [ExpertInSectionComponent],
+      imports: [AppModule, BrowserAnimationsModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         ThemeService,
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -12,16 +12,16 @@ describe('MenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [MenuComponent],
-    imports: [MatTooltipModule],
-    providers: [
+      declarations: [MenuComponent],
+      imports: [MatTooltipModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

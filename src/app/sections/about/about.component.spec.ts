@@ -14,18 +14,18 @@ describe('AboutSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [AboutSectionComponent],
-    imports: [ComponentsModule, BrowserAnimationsModule],
-    providers: [
+      declarations: [AboutSectionComponent],
+      imports: [ComponentsModule, BrowserAnimationsModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         GoogleAnalyticsService,
         ThemeService,
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

@@ -13,17 +13,17 @@ describe('EducationConferencesSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [EducationConferencesSectionComponent],
-    imports: [AppModule, BrowserAnimationsModule],
-    providers: [
+      declarations: [EducationConferencesSectionComponent],
+      imports: [AppModule, BrowserAnimationsModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         ThemeService,
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

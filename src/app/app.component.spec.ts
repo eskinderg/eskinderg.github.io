@@ -18,18 +18,18 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [AppComponent],
-    imports: [BrowserAnimationsModule, RouterTestingModule, SectionsModule, FrontModule],
-    providers: [
+      declarations: [AppComponent],
+      imports: [BrowserAnimationsModule, RouterTestingModule, SectionsModule, FrontModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         ThemeService,
         GoogleAnalyticsService,
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;

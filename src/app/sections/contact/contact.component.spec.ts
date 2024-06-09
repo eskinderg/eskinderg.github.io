@@ -12,17 +12,17 @@ describe('ContactSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [ContactSectionComponent],
-    imports: [AppModule],
-    providers: [
+      declarations: [ContactSectionComponent],
+      imports: [AppModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         ThemeService,
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

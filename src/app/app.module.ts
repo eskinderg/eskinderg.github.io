@@ -12,12 +12,18 @@ import { AppInit } from './app.initializer';
 import { LanguageModule } from './language/language.modue';
 import { ThemeModule } from './theme/theme.module';
 
-@NgModule({ declarations: [AppComponent],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        ThemeModule,
-        LanguageModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        SectionsModule,
-        FrontModule], providers: [ThemeService, GoogleAnalyticsService, AppInit, provideHttpClient(withInterceptorsFromDi())] })
+@NgModule({
+  declarations: [AppComponent],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    ThemeModule,
+    LanguageModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SectionsModule,
+    FrontModule
+  ],
+  providers: [ThemeService, GoogleAnalyticsService, AppInit, provideHttpClient(withInterceptorsFromDi())]
+})
 export class AppModule {}

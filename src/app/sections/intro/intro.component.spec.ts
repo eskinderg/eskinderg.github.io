@@ -13,17 +13,17 @@ describe('IntroSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [IntroSectionComponent],
-    imports: [AppModule],
-    providers: [
+      declarations: [IntroSectionComponent],
+      imports: [AppModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         ThemeService,
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
 
     fixture = TestBed.createComponent(IntroSectionComponent);
     component = fixture.componentInstance;

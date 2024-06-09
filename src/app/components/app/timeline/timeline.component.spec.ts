@@ -13,16 +13,16 @@ describe('TimelineComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [TimelineComponent, TitleComponent],
-    imports: [MatModule, BrowserAnimationsModule],
-    providers: [
+      declarations: [TimelineComponent, TitleComponent],
+      imports: [MatModule, BrowserAnimationsModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

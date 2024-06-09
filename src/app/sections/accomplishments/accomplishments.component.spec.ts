@@ -13,17 +13,17 @@ describe('AccomplishmentsSectionComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [AccomplishmentsSectionComponent],
-    imports: [AppModule, BrowserAnimationsModule],
-    providers: [
+      declarations: [AccomplishmentsSectionComponent],
+      imports: [AppModule, BrowserAnimationsModule],
+      providers: [
         {
-            provide: LanguageService,
-            useClass: LanguageServiceMock
+          provide: LanguageService,
+          useClass: LanguageServiceMock
         },
         ThemeService,
         provideHttpClient(withInterceptorsFromDi())
-    ]
-}).compileComponents();
+      ]
+    }).compileComponents();
   });
 
   beforeEach(() => {

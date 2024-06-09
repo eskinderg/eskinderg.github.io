@@ -12,10 +12,10 @@ describe('ListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-    declarations: [ListComponent],
-    imports: [ComponentsModule, BrowserAnimationsModule],
-    providers: [LanguageService, provideHttpClient(withInterceptorsFromDi())]
-}).compileComponents();
+      declarations: [ListComponent],
+      imports: [ComponentsModule, BrowserAnimationsModule],
+      providers: [LanguageService, provideHttpClient(withInterceptorsFromDi())]
+    }).compileComponents();
   });
 
   beforeEach(() => {
