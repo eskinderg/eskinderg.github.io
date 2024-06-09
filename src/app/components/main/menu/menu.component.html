@@ -34,22 +34,22 @@
 </button>
 
 @if (visible) {
-<div class="MenuFullscreen" [@fadeInOut]>
-  <nav>
-    @for (item of (lang.texts)?.menu.list; track item) {
-    <div class="wrapper">
-      <a
-        class="link"
-        [ngClass]="{ unhovered: hovered && hovered !== item.link }"
-        [style.font-family]="lang.texts.font.menu"
-        (mousemove)="onHover(item.link)"
-        (mouseout)="onMouseOut()"
-        (click)="scrollTo(item.link)"
-        class="h2"
-        >{{ item.name }}</a
-      >
-    </div>
-    }
-  </nav>
-</div>
+  <div class="MenuFullscreen" [@fadeInOut]>
+    <nav>
+      @for (item of lang.texts?.menu.list; track item) {
+        <div class="wrapper">
+          <a
+            class="link"
+            [ngClass]="{ unhovered: hovered && hovered !== item.link }"
+            [style.font-family]="lang.texts.font.menu"
+            (mousemove)="onHover(item.link)"
+            (mouseout)="onMouseOut()"
+            (click)="scrollTo(item.link)"
+            class="h2"
+            >{{ item.name }}</a
+          >
+        </div>
+      }
+    </nav>
+  </div>
 }
