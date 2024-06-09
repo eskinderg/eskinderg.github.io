@@ -9,6 +9,8 @@ export class LanguageServiceMock {
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
+  @Output() languageChange: EventEmitter<object> = new EventEmitter<object>();
+
   public texts: any = {
     font: {
       body: 'Raleway',
@@ -463,7 +465,7 @@ export class LanguageServiceMock {
     languageSelect: 'Change Language',
     colorSelectTooltip: 'Change Theme Color'
   };
-  @Output() languageChange: EventEmitter<object> = new EventEmitter<object>();
+
   loadLanguages(): any {
     return null;
   }
