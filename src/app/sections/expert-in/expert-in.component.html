@@ -12,8 +12,8 @@
   <div class="expertInContent flex-[1_1_100%] lg:flex-[1_1_70%]">
     <div
       class="grid justify-center grid-cols-[repeat(auto-fill,25%)] xs:grid-cols-[repeat(auto-fill,20%)] sm:grid-cols-[repeat(auto-fill,15%)] md:grid-cols-[repeat(auto-fill,15%)] lg:grid-cols-[repeat(auto-fill,15%)]">
-      @for (mastery of (lang.texts)?.technologies.masteries; track mastery) {
-      <app-technology class="tech-list" [item]="mastery"></app-technology>
+      @for (mastery of lang.texts?.technologies.masteries; track mastery) {
+        <app-technology class="tech-list" [item]="mastery"></app-technology>
       }
     </div>
   </div>

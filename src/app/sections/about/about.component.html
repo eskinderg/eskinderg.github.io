@@ -13,8 +13,8 @@
     </div>
     <!-- <div class="w-[5%] h-[5%]">&nbsp;</div> -->
     <div class="introContent flex-[1_1_80%]">
-      @for (paragraph of (lang.texts)?.about.content; track paragraph) {
-      <p class="leading-7 text-lg text-center lg:text-left" [innerHTML]="paragraph"></p>
+      @for (paragraph of lang.texts?.about.content; track paragraph) {
+        <p class="leading-7 text-lg text-center lg:text-left" [innerHTML]="paragraph"></p>
       }
       <button
         matTooltip="{{ lang.texts.about.button.tooltip }}"

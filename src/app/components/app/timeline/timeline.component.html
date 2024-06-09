@@ -9,23 +9,23 @@
     <div class="timelineParagraph">{{ job.intro }}</div>
     <!-- <div *ngFor="let paragraph of job.intro" class="paragraph">{{ paragraph }}</div> -->
     @for (list of job.elements; track list) {
-    <div>
-      <h5 class="content text-lg" style="margin: 10px 0px 10px 0">{{ list.header }}</h5>
-      @for (l of list.list; track l) {
-      <div
-        class="flex flex-row flex-wrap experienceList"
-        [ngClass]="{
-          'lExperienceList leftFlexLayout': reverse,
-          'rExperienceList rightFlexLayout': !reverse
-        }">
-        <div
-          class="content experienceListItem grow lg:grow-0"
-          [ngClass]="{ leftItemFlexLayout: reverse, rightItemFlexLayout: !reverse }">
-          {{ l }}
-        </div>
+      <div>
+        <h5 class="content text-lg" style="margin: 10px 0px 10px 0">{{ list.header }}</h5>
+        @for (l of list.list; track l) {
+          <div
+            class="flex flex-row flex-wrap experienceList"
+            [ngClass]="{
+              'lExperienceList leftFlexLayout': reverse,
+              'rExperienceList rightFlexLayout': !reverse
+            }">
+            <div
+              class="content experienceListItem grow lg:grow-0"
+              [ngClass]="{ leftItemFlexLayout: reverse, rightItemFlexLayout: !reverse }">
+              {{ l }}
+            </div>
+          </div>
+        }
       </div>
-      }
-    </div>
     }
   </div>
   <div class="middle order-2 hidden lg:block lg:flex-[1_1_4%]">
@@ -60,7 +60,7 @@
     <div class="">
       <div class="used lg:py-4">
         @for (technology of job.used; track technology) {
-        <mat-chip class="chip">{{ technology }}</mat-chip>
+          <mat-chip class="chip">{{ technology }}</mat-chip>
         }
       </div>
     </div>

@@ -36,10 +36,10 @@
         [inverse]="true"></app-title>
     </div>
 
-    @for (education of (lang.texts)?.education.content; track education) {
-    <div class="educationItem">
-      <app-list [item]="education" type="education"></app-list>
-    </div>
+    @for (education of lang.texts?.education.content; track education) {
+      <div class="educationItem">
+        <app-list [item]="education" type="education"></app-list>
+      </div>
     }
   </div>
 </div>
