@@ -67,16 +67,20 @@
     "tailwindcss": "^3.4.0",
     "typescript": "~5.4.5"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "src/**/*.{js,ts,scss,md,html,json}": [
+    "“*.+(js|jsx|ts|tsx)”": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{html,css,less,ejs}": [
       "prettier --write",
       "git add"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "ng lint && lint-staged",
-      "pre-push": "ng build --prod"
-    }
   }
 }
