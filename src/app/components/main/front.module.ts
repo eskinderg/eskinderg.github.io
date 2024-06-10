@@ -5,7 +5,6 @@ import { BaBackTopComponent } from './babacktop/babacktop.component';
 import { OutlineComponent } from './outline/outline';
 import { SpeedDialFabComponent } from './speeddial/speed-dial-fab.component';
 import { MatModule } from 'src/app/module/material.module';
-import { ScrollSpyDirective } from 'src/app/providers/scroll-spy-directive';
 import { LoaderComponent } from './loader/loader';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { LoaderComponent } from './loader/loader';
     BaBackTopComponent,
     OutlineComponent,
     SpeedDialFabComponent,
-    ScrollSpyDirective,
     LoaderComponent
   ],
   exports: [
@@ -25,7 +23,6 @@ import { LoaderComponent } from './loader/loader';
     BaBackTopComponent,
     OutlineComponent,
     SpeedDialFabComponent,
-    ScrollSpyDirective,
     LoaderComponent
   ]
 })
