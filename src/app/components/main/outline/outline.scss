@@ -5,10 +5,11 @@
   // border: 1px solid green;
   // width:800px;
   // height:200px;
-  position:fixed;
-  display:none;
-  right:-300px;
-  top:15%;
+  // pointer-events: none;
+  position: sticky;
+  display: none;
+  top: 15%;
+  left: calc(100% - 21em);
   // top:70px;
   // opacity: 0.6;
   z-index:96;
@@ -28,10 +29,10 @@
 
 .timeline {
   position: relative;
-  width: 660px;
+  // width: 660px;
   margin: 0 auto;
   margin-top: 20px;
-  padding: 1em 0;
+  padding: 1em 3em;
   list-style-type: none;
 }
 
@@ -91,7 +92,7 @@
 .flag {
   position: relative;
   display: inline;
-  background: #d1d1d1;
+  // background: #d1d1d1;
   padding: 6px 10px;
   border-radius: 5px;
   cursor:pointer;
@@ -313,7 +314,8 @@
     // transition: background-color 1s ease;
     transition: all 0.5s ease;
     // transition: box-sizing 1s ease;
-    color:#a7a7a7;
+    // color:#a7a7a7;
+    color: white;
     font-size: 20px !important;
     background: mat.m2-get-color-from-palette($primary) !important;
     // opacity: 1;
