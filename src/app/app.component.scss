@@ -33,10 +33,11 @@
   }
 
   .viewWrapper {
+    position: relative;
     width: 100%;
     max-width: 100%;
     min-width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     margin: 0 auto;
     // box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
   }
@@ -299,4 +300,41 @@
   .speed-dial-container.bottom {
     bottom: 15px;
   }
+
+    #mainWrapper {
+      position: fixed;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 100%;
+      width: 100%;
+      /* For Mozilla fire fox */
+      // scrollbar-color: mat.m2-get-color-from-palette($primary, 800) lightgray;
+      // scrollbar-width: auto;
+    }
+
+    *::-webkit-scrollbar {
+      background: mat.m2-get-color-from-palette($primary, 200);;
+      width: 0.85rem;
+    }
+
+    *::-webkit-scrollbar-button {
+      position: absolute;
+      display:none;
+    }
+
+    *::-webkit-scrollbar-thumb {
+      background: mat.m2-get-color-from-palette($primary, 800) !important;
+      // border-radius: 0.5rem;
+    }
+
+    *::-webkit-scrollbar-thumb:hover {
+      background: mat.m2-get-color-from-palette($primary, 700);;
+    }
+
+    *::-webkit-scrollbar-track {
+      // background: transparent;
+      background: lightgray;
+
+    }
+
 }
