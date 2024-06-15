@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { LanguageService } from '../providers/language.service';
-import { ThemeService } from '../providers/theme.service';
+import { ThemeService } from '../theme/theme.service';
 import { GoogleAnalyticsService } from '../providers/google-analytics.service';
 
 @Component({

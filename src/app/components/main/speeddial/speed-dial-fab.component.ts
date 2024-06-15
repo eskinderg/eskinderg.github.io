@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostListener, Input } from '@angular/core';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/providers/theme.service';
+import { ThemeService } from 'src/app/theme/theme.service';
 import { speedDialFabAnimations } from './speed-dial-fab.animations';
 
 export interface FabButton {

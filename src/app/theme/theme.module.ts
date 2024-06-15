@@ -1,5 +1,5 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { ThemeService } from '../providers/theme.service';
+import { ThemeService } from './theme.service';
 
 @NgModule({
   providers: [

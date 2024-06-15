@@ -9,7 +9,7 @@ import {
   ChangeDetectorRef
 } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/providers/theme.service';
+import { ThemeService } from 'src/app/theme/theme.service';
 
 @Component({
   selector: 'app-outline',
