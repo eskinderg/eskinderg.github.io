@@ -314,7 +314,7 @@
 
     *::-webkit-scrollbar {
       background: mat.m2-get-color-from-palette($primary, 200);;
-      width: 0.85rem;
+      width: 1rem;
     }
 
     *::-webkit-scrollbar-button {
@@ -323,12 +323,15 @@
     }
 
     *::-webkit-scrollbar-thumb {
-      background: mat.m2-get-color-from-palette($primary, 800) !important;
+      // background: mat.m2-get-color-from-palette($primary, 400);
       // border-radius: 0.5rem;
+      background: linear-gradient(to bottom, mat.m2-get-color-from-palette($primary, 400) 0%, mat.m2-get-color-from-palette($primary, 400) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     }
 
     *::-webkit-scrollbar-thumb:hover {
-      background: mat.m2-get-color-from-palette($primary, 700);;
+      background: mat.m2-get-color-from-palette($primary, 800);
+      // background: linear-gradient(to bottom, mat.m2-get-color-from-palette($primary, 800) 0%, mat.m2-get-color-from-palette($primary, 800) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      // background: linear-gadient(to bottom, red 0%, white 100%) ! important;
     }
 
     *::-webkit-scrollbar-track {

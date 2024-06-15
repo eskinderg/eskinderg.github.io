@@ -43,12 +43,7 @@ export class ThemeService {
 
   private setUserPreferenceTheme(): void {
     this.checkPreviousConvention();
-
-    if (this.DarkMode) {
-      this.LoadDarkMode();
-    } else {
-      this.SetTheme(this.Theme, false);
-    }
+    this.SetTheme(this.Theme, this.DarkMode);
   }
 
   public LoadTheme(): Observable<any> {
@@ -68,17 +63,10 @@ export class ThemeService {
   }
 
   public SetTheme(theme: string, isDarkMode: boolean) {
-    if (!isDarkMode) {
-      this.Theme = theme;
-    }
-
     this.setStyle('theme', `${theme}.css`);
     this.DarkMode = isDarkMode;
+    this.Theme = theme;
     this.themeChange.emit();
-  }
-
-  private LoadDarkMode() {
-    this.SetTheme('dark', true);
   }
 
   public get DarkModeBackground1(): string {

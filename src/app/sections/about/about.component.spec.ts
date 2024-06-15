@@ -2,7 +2,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/providers/theme.service';
+import { ThemeService } from 'src/app/theme/theme.service';
 import { AboutSectionComponent } from './about.component';
 import { ComponentsModule } from 'src/app/components/app/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

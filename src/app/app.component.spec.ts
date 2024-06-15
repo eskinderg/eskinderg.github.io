@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { LanguageService } from './providers/language.service';
-import { ThemeService } from './providers/theme.service';
+import { ThemeService } from './theme/theme.service';
 import { FrontModule } from './components/main/front.module';
 import { SectionsModule } from './sections/sections.module';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
