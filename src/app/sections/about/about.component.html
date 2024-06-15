@@ -1,4 +1,7 @@
-<div #about class="about sm:!pt-5 md:!pt-10 lg:!pt-16">
+<div
+  #about
+  class="about sm:!pt-5 md:!pt-10 lg:!pt-16"
+  [style.background]="themeService.DarkMode ? themeService.DarkModeBackground2 : '#FFFFFF'">
   <div class="h2 about-title text-center lg:text-left">
     <app-title
       title="{{ lang.texts.about.title }}"

@@ -52,13 +52,13 @@ export class SpeedDialFabComponent {
 
   public onClickFab(btn: { icon: string; theme: string }) {
     this.hideItems();
-    this.themeService.SetTheme(btn.theme, false);
+    this.themeService.SetTheme(btn.theme, this.themeService.DarkMode);
   }
 
   public onToggleChange(event: MatSlideToggleChange) {
     this.hideItems();
     if (event.checked) {
-      this.themeService.SetTheme('dark', true);
+      this.themeService.SetTheme(this.themeService.Theme, true);
     } else {
       this.themeService.SetTheme(this.themeService.Theme, false);
     }
