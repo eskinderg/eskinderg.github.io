@@ -2,7 +2,7 @@ import { MetaDefinition } from '@angular/platform-browser';
 
 export const appMeta: MetaDefinition[] = [
   { httpEquiv: 'Permissions-Policy', content: 'interest-cohort=()' },
-  { name: 'og:title', content: 'Eskinder | Profile' },
+  { name: 'og:title', content: 'Eskinder Getahun' },
   {
     name: 'og:description',
     content:
