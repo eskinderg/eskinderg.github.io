@@ -33,7 +33,7 @@ export const appMeta: MetaDefinition[] = [
     content:
       'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
   },
-  { itemprop: 'name', content: 'Eskinder | Profile' },
+  { itemprop: 'name', content: 'Eskinder Getahun' },
   {
     itemprop: 'description',
     content:
