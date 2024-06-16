@@ -6,7 +6,7 @@ export const appMeta: MetaDefinition[] = [
   {
     name: 'og:description',
     content:
-      'Hi, my name is Eskinder Getahun. I am a Web Developer ( Web / FE - Angular ) and this is my portfolio page. As confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
+      'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
   },
   { name: 'og:image', content: 'assets/img/social-min.png' },
   { name: 'og:email', content: 'eskinderget@gmail.com' },
@@ -15,7 +15,7 @@ export const appMeta: MetaDefinition[] = [
   {
     name: 'description',
     content:
-      'Hi, my name is Eskinder Getahun. I am a Web Developer ( Web / FE - Angular ) and this is my portfolio page. As confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
+      'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
   },
   { name: 'reply-to', content: 'eskinderget@gmail.com' },
   { name: 'url', content: 'https://eskinderg.github.io' },
@@ -25,13 +25,13 @@ export const appMeta: MetaDefinition[] = [
   {
     name: 'description',
     content:
-      'Hi, my name is Eskinder Getahun. I am a Web Developer ( Web / FE - Angular ) and this is my portfolio page. As confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
+      'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
   },
   { itemprop: 'name', content: 'Eskinder | Profile' },
   {
     itemprop: 'description',
     content:
-      'Hi, my name is Eskinder Getahun. I am a Web Developer ( Web / FE - Angular ) and this is my portfolio page. As confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
+      'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
   },
   { itemprop: 'image', content: 'assets/img/social-min.png' }
 ];
