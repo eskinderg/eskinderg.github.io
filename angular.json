@@ -34,8 +34,8 @@
               "src/favicon.png",
               "src/assets",
               {
-                "glob": "**/*",
-                "input": "src/config/sitemap.xml",
+                "glob": "sitemap.xml",
+                "input": "src/config/",
                 "output": "/"
               }
             ],
