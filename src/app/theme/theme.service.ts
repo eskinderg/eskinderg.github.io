@@ -8,7 +8,7 @@ export class ThemeService {
 
   private defaultTheme: string = 'indigo';
 
-  public static DarkModeDefault: boolean = false;
+  public static DarkModeDefault: boolean = true;
 
   @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
