@@ -33,7 +33,11 @@
             "assets": [
               "src/favicon.png",
               "src/assets",
-              { "input": "src/config/sitemap.xml", "output": "/"}
+              {
+                "glob": "**/*",
+                "input": "src/config/sitemap.xml",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/app/app.component.scss",
