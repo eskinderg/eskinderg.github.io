@@ -16,6 +16,7 @@ export class TitleComponent implements OnInit {
   @Input() stylish: boolean = false;
   @Input() inverse = false;
   @Input() strokeWidth: number = 7;
+  @Input() anchor: string;
 
   public direction = '';
   public data: any;
