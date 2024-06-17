@@ -33,7 +33,7 @@
             "assets": [
               "src/favicon.png",
               "src/assets",
-              "src/sitemap.xml"
+              "src/config/sitemap.xml"
             ],
             "styles": [
               "src/app/app.component.scss",
