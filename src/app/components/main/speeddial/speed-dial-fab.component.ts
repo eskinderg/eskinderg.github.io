@@ -57,15 +57,11 @@ export class SpeedDialFabComponent {
 
   public onToggleChange(event: MatSlideToggleChange) {
     this.hideItems();
-    if (event.checked) {
-      this.themeService.SetTheme(this.themeService.Theme, true);
-    } else {
-      this.themeService.SetTheme(this.themeService.Theme, false);
-    }
+    this.themeService.SetTheme(this.themeService.Theme, event.checked);
   }
 
   @HostListener('window:scroll', ['$event'])
-  onScroll(event) {
+  onScroll(event: any) {
     const scrollTop = event.srcElement.documentElement.scrollTop;
     if (scrollTop === 0) {
       this.atTop = true;

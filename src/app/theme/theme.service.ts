@@ -17,7 +17,11 @@ export class ThemeService {
   constructor(public http: HttpClient) {}
 
   public get DarkMode(): boolean {
-    return localStorage.getItem('darkmode') === 'true' || ThemeService.DarkModeDefault;
+    if (localStorage.getItem('darkmode')) {
+      return localStorage.getItem('darkmode') === 'true';
+    } else {
+      return ThemeService.DarkModeDefault;
+    }
   }
 
   public set DarkMode(value: boolean) {
@@ -62,6 +66,11 @@ export class ThemeService {
     );
   }
 
+  /**
+   * Set the theme for the app
+   * @param {string} theme - name of the theme to be assigned. Eg indigo, yellow, red ....
+   * @param {boolean} isDarkMode - Sets the dark mode setting
+   */
   public SetTheme(theme: string, isDarkMode: boolean) {
     this.setStyle('theme', `${theme}.css`);
     this.DarkMode = isDarkMode;
