@@ -1,19 +1,18 @@
-import { Injectable } from '@angular/core';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { HttpEvent, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { LanguageService } from './language.service';
 
-@Injectable()
-export class LoaderInterceptor implements HttpInterceptor {
-  constructor(private lang: LanguageService) {}
-
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    this.lang.loading = true;
-    return next.handle(req).pipe(
-      finalize(() => {
-        this.lang.loading = false;
-      })
-    );
-  }
-}
+export const LoaderInterceptor: HttpInterceptorFn = (
+  request: HttpRequest<any>,
+  next: HttpHandlerFn
+): Observable<HttpEvent<any>> => {
+  const lang = inject(LanguageService);
+  lang.loading = true;
+  return next(request).pipe(
+    finalize(() => {
+      lang.loading = false;
+    })
+  );
+};
