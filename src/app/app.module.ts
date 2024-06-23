@@ -13,17 +13,17 @@ import { ThemeModule } from './theme/theme.module';
 import { LoaderInterceptor } from './providers/loading.interceptor';
 
 @NgModule({
-  declarations: [AppComponent],
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    ThemeModule,
-    LanguageModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    SectionsModule,
-    FrontModule
-  ],
-  providers: [GoogleAnalyticsService, AppInit, provideHttpClient(withInterceptors([LoaderInterceptor]))]
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        ThemeModule,
+        LanguageModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        SectionsModule,
+        FrontModule
+    ],
+    providers: [GoogleAnalyticsService, AppInit, provideHttpClient(withInterceptors([LoaderInterceptor]))]
 })
 export class AppModule {}

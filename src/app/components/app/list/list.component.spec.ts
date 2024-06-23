@@ -7,24 +7,24 @@ import { ComponentsModule } from '../components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('ListComponent', () => {
-  let component: ListComponent;
-  let fixture: ComponentFixture<ListComponent>;
+    let component: ListComponent;
+    let fixture: ComponentFixture<ListComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ListComponent],
-      imports: [ComponentsModule, BrowserAnimationsModule],
-      providers: [LanguageService, provideHttpClient(withInterceptorsFromDi())]
-    }).compileComponents();
-  });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [ListComponent],
+            imports: [ComponentsModule, BrowserAnimationsModule],
+            providers: [LanguageService, provideHttpClient(withInterceptorsFromDi())]
+        }).compileComponents();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(ListComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

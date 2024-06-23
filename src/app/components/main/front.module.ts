@@ -8,22 +8,22 @@ import { MatModule } from 'src/app/module/material.module';
 import { LoaderComponent } from './loader/loader';
 
 @NgModule({
-  imports: [MatModule],
-  declarations: [
-    LangSelectComponent,
-    MenuComponent,
-    BaBackTopComponent,
-    OutlineComponent,
-    SpeedDialFabComponent,
-    LoaderComponent
-  ],
-  exports: [
-    LangSelectComponent,
-    MenuComponent,
-    BaBackTopComponent,
-    OutlineComponent,
-    SpeedDialFabComponent,
-    LoaderComponent
-  ]
+    imports: [MatModule],
+    declarations: [
+        LangSelectComponent,
+        MenuComponent,
+        BaBackTopComponent,
+        OutlineComponent,
+        SpeedDialFabComponent,
+        LoaderComponent
+    ],
+    exports: [
+        LangSelectComponent,
+        MenuComponent,
+        BaBackTopComponent,
+        OutlineComponent,
+        SpeedDialFabComponent,
+        LoaderComponent
+    ]
 })
 export class FrontModule {}

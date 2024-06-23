@@ -9,32 +9,32 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('AboutSectionComponent', () => {
-  let component: AboutSectionComponent;
-  let fixture: ComponentFixture<AboutSectionComponent>;
+    let component: AboutSectionComponent;
+    let fixture: ComponentFixture<AboutSectionComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AboutSectionComponent],
-      imports: [ComponentsModule, BrowserAnimationsModule],
-      providers: [
-        {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
-        },
-        GoogleAnalyticsService,
-        ThemeService,
-        provideHttpClient(withInterceptorsFromDi())
-      ]
-    }).compileComponents();
-  });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [AboutSectionComponent],
+            imports: [ComponentsModule, BrowserAnimationsModule],
+            providers: [
+                {
+                    provide: LanguageService,
+                    useClass: LanguageServiceMock
+                },
+                GoogleAnalyticsService,
+                ThemeService,
+                provideHttpClient(withInterceptorsFromDi())
+            ]
+        }).compileComponents();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AboutSectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AboutSectionComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

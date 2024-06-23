@@ -1,29 +1,29 @@
 <div id="mainWrapper" #mainWrapper (scroll)="onScroll($event)">
-  <app-langselect style="float: right; z-index: 1; position: absolute; right: 0"></app-langselect>
+    <app-langselect style="float: right; z-index: 1; position: absolute; right: 0"></app-langselect>
 
-  <app-loader [Loading]="lang.loading"></app-loader>
+    <app-loader [Loading]="lang.loading"></app-loader>
 
-  <app-speed-dial-fab> </app-speed-dial-fab>
+    <app-speed-dial-fab> </app-speed-dial-fab>
 
-  <app-menu></app-menu>
+    <app-menu></app-menu>
 
-  <app-outline [onWindowScroll]="appScroll"></app-outline>
+    <app-outline [onWindowScroll]="appScroll"></app-outline>
 
-  <div id="parentDiv" class="viewWrapper">
-    <app-intro id="intro"></app-intro>
+    <div id="parentDiv" class="viewWrapper">
+        <app-intro id="intro"></app-intro>
 
-    <app-about id="about"></app-about>
+        <app-about id="about"></app-about>
 
-    <app-expert-in id="expertin"></app-expert-in>
+        <app-expert-in id="expertin"></app-expert-in>
 
-    <app-accomplishments id="accomplishments"></app-accomplishments>
+        <app-accomplishments id="accomplishments"></app-accomplishments>
 
-    <app-experience id="experience"></app-experience>
+        <app-experience id="experience"></app-experience>
 
-    <app-education-conferences id="education"></app-education-conferences>
+        <app-education-conferences id="education"></app-education-conferences>
 
-    <app-contact id="contact"></app-contact>
-  </div>
+        <app-contact id="contact"></app-contact>
+    </div>
 
-  <app-back-top [onWindowScroll]="appScroll" [position]="200"></app-back-top>
+    <app-back-top [onWindowScroll]="appScroll" [position]="200"></app-back-top>
 </div>

@@ -8,31 +8,31 @@ import { AppModule } from 'src/app/app.module';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('AccomplishmentsSectionComponent', () => {
-  let component: AccomplishmentsSectionComponent;
-  let fixture: ComponentFixture<AccomplishmentsSectionComponent>;
+    let component: AccomplishmentsSectionComponent;
+    let fixture: ComponentFixture<AccomplishmentsSectionComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AccomplishmentsSectionComponent],
-      imports: [AppModule, BrowserAnimationsModule],
-      providers: [
-        {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
-        },
-        ThemeService,
-        provideHttpClient(withInterceptorsFromDi())
-      ]
-    }).compileComponents();
-  });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [AccomplishmentsSectionComponent],
+            imports: [AppModule, BrowserAnimationsModule],
+            providers: [
+                {
+                    provide: LanguageService,
+                    useClass: LanguageServiceMock
+                },
+                ThemeService,
+                provideHttpClient(withInterceptorsFromDi())
+            ]
+        }).compileComponents();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AccomplishmentsSectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AccomplishmentsSectionComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

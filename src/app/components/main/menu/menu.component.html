@@ -1,55 +1,55 @@
 <button
-  [matTooltip]="lang.texts.menu.tooltip"
-  color="primary"
-  mat-fab
-  aria-label="Menu Button"
-  class="MenuButton"
-  (click)="toggleMenu()"
-  (window:scroll)="onScroll($event)"
-  [ngClass]="{ menuBtnNoShadow: atTop || visible, animated: visible }">
-  <svg width="40" height="40" style="padding: 9px 0px 0px 5px">
-    <g>
-      <g transform="matrix(0.76190476,0,0,0.76190476,-145.85034,-295.47324)">
-        <g transform="matrix(1.25,0,0,1.25,203.92857,410.30863)">
-          <path
-            class="icon"
-            id="line3"
-            d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 l 19,0 C 21.5,0 22,0.5 22,1.5 22,2.5 21.5,3 20.5,3 L 1.5,3 C 0.5,3 0,2.5 0,1.5 Z" />
+    [matTooltip]="lang.texts.menu.tooltip"
+    color="primary"
+    mat-fab
+    aria-label="Menu Button"
+    class="MenuButton"
+    (click)="toggleMenu()"
+    (window:scroll)="onScroll($event)"
+    [ngClass]="{ menuBtnNoShadow: atTop || visible, animated: visible }">
+    <svg width="40" height="40" style="padding: 9px 0px 0px 5px">
+        <g>
+            <g transform="matrix(0.76190476,0,0,0.76190476,-145.85034,-295.47324)">
+                <g transform="matrix(1.25,0,0,1.25,203.92857,410.30863)">
+                    <path
+                        class="icon"
+                        id="line3"
+                        d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 l 19,0 C 21.5,0 22,0.5 22,1.5 22,2.5 21.5,3 20.5,3 L 1.5,3 C 0.5,3 0,2.5 0,1.5 Z" />
+                </g>
+                <g transform="matrix(1.25,0,0,1.25,191.42857,387.80863)">
+                    <path
+                        class="icon"
+                        id="line1"
+                        d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 l 29,0 C 31.5,0 32,0.5 32,1.5 32,2.5 31.5,3 30.5,3 L 1.5,3 C 0.5,3 0,2.5 0,1.5 Z" />
+                </g>
+                <g transform="matrix(1.25,0,0,1.25,191.42857,399.05863)">
+                    <path
+                        class="icon"
+                        id="line2"
+                        d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 l 29,0 C 31.5,0 32,0.5 32,1.5 32,2.5 31.5,3 30.5,3 L 1.5,3 C 0.5,3 0,2.5 0,1.5 Z" />
+                </g>
+            </g>
         </g>
-        <g transform="matrix(1.25,0,0,1.25,191.42857,387.80863)">
-          <path
-            class="icon"
-            id="line1"
-            d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 l 29,0 C 31.5,0 32,0.5 32,1.5 32,2.5 31.5,3 30.5,3 L 1.5,3 C 0.5,3 0,2.5 0,1.5 Z" />
-        </g>
-        <g transform="matrix(1.25,0,0,1.25,191.42857,399.05863)">
-          <path
-            class="icon"
-            id="line2"
-            d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 l 29,0 C 31.5,0 32,0.5 32,1.5 32,2.5 31.5,3 30.5,3 L 1.5,3 C 0.5,3 0,2.5 0,1.5 Z" />
-        </g>
-      </g>
-    </g>
-  </svg>
+    </svg>
 </button>
 
 @if (visible) {
-  <div class="MenuFullscreen" [@fadeInOut]>
-    <nav>
-      @for (item of lang.texts?.menu.list; track item) {
-        <div class="wrapper">
-          <a
-            class="link"
-            [ngClass]="{ unhovered: hovered && hovered !== item.link }"
-            [style.font-family]="lang.texts.font.menu"
-            (mousemove)="onHover(item.link)"
-            (mouseout)="onMouseOut()"
-            (click)="scrollTo(item.link)"
-            class="h2"
-            >{{ item.name }}</a
-          >
-        </div>
-      }
-    </nav>
-  </div>
+    <div class="MenuFullscreen" [@fadeInOut]>
+        <nav>
+            @for (item of lang.texts?.menu.list; track item) {
+                <div class="wrapper">
+                    <a
+                        class="link"
+                        [ngClass]="{ unhovered: hovered && hovered !== item.link }"
+                        [style.font-family]="lang.texts.font.menu"
+                        (mousemove)="onHover(item.link)"
+                        (mouseout)="onMouseOut()"
+                        (click)="scrollTo(item.link)"
+                        class="h2"
+                        >{{ item.name }}</a
+                    >
+                </div>
+            }
+        </nav>
+    </div>
 }

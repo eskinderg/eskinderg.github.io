@@ -9,25 +9,25 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatTooltipModule,
-    MatChipsModule,
-    MatDividerModule,
-    MatCardModule,
-    MatSlideToggleModule
-  ],
-  exports: [
-    CommonModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatTooltipModule,
-    MatChipsModule,
-    MatDividerModule,
-    MatCardModule,
-    MatSlideToggleModule
-  ]
+    imports: [
+        CommonModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatTooltipModule,
+        MatChipsModule,
+        MatDividerModule,
+        MatCardModule,
+        MatSlideToggleModule
+    ],
+    exports: [
+        CommonModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatTooltipModule,
+        MatChipsModule,
+        MatDividerModule,
+        MatCardModule,
+        MatSlideToggleModule
+    ]
 })
 export class MatModule {}

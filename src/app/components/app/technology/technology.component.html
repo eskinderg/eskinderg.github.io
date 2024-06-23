@@ -1,13 +1,14 @@
 <div class="mastery p-[5%] xs:p-[15%] sm:p-[15%] md:p-[15%]">
-  @if (item.link) {
-    <a [href]="item.link" target="_blank">
-      <div class="logoMastery" [ngClass]="item.img" alt=""></div>
-      <div class="bold center hidden masterySubtitle xs:block text-xs sm:text-sm md:text-sm lg:text-base">
-        {{ item.title }}
-      </div>
-    </a>
-  } @else {
-    <div class="logoMastery" [ngClass]="item.img" alt=""></div>
-    <div class="bold center masterySubtitle">{{ item.title }}</div>
-  }
+    @if (item.link) {
+        <a [href]="item.link" target="_blank">
+            <div class="logoMastery" [ngClass]="item.img" alt=""></div>
+            <div
+                class="bold center hidden masterySubtitle xs:block text-xs sm:text-sm md:text-sm lg:text-base">
+                {{ item.title }}
+            </div>
+        </a>
+    } @else {
+        <div class="logoMastery" [ngClass]="item.img" alt=""></div>
+        <div class="bold center masterySubtitle">{{ item.title }}</div>
+    }
 </div>
