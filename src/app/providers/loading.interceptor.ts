@@ -5,14 +5,14 @@ import { finalize } from 'rxjs/operators';
 import { LanguageService } from './language.service';
 
 export const LoaderInterceptor: HttpInterceptorFn = (
-  request: HttpRequest<any>,
-  next: HttpHandlerFn
+    request: HttpRequest<any>,
+    next: HttpHandlerFn
 ): Observable<HttpEvent<any>> => {
-  const lang = inject(LanguageService);
-  lang.loading = true;
-  return next(request).pipe(
-    finalize(() => {
-      lang.loading = false;
-    })
-  );
+    const lang = inject(LanguageService);
+    lang.loading = true;
+    return next(request).pipe(
+        finalize(() => {
+            lang.loading = false;
+        })
+    );
 };

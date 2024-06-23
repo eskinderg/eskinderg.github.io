@@ -1,20 +1,20 @@
 <div #outline id="outline">
-  <ul class="timeline hidden lg:block">
-    @for (item of lang.texts.menu.list; track item) {
-      <li>
-        <div class="direction-l">
-          <div class="flag-wrapper">
-            <span
-              (click)="scrollTo(item.link)"
-              [style.font-family]="lang.texts['font'].outlineMenu.fontFamily"
-              [style.font-weight]="lang.texts['font'].outlineMenu.fontWeight"
-              class="flag"
-              [ngClass]="{ active: item.link === currentSection }">
-              {{ item.name }}
-            </span>
-          </div>
-        </div>
-      </li>
-    }
-  </ul>
+    <ul class="timeline hidden lg:block">
+        @for (item of lang.texts.menu.list; track item) {
+            <li>
+                <div class="direction-l">
+                    <div class="flag-wrapper">
+                        <span
+                            (click)="scrollTo(item.link)"
+                            [style.font-family]="lang.texts['font'].outlineMenu.fontFamily"
+                            [style.font-weight]="lang.texts['font'].outlineMenu.fontWeight"
+                            class="flag"
+                            [ngClass]="{ active: item.link === currentSection }">
+                            {{ item.name }}
+                        </span>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
 </div>

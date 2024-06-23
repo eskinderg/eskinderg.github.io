@@ -9,24 +9,24 @@ import { ExpertInSectionComponent } from './expert-in/expert-in.component';
 import { IntroSectionComponent } from './intro/intro.component';
 
 @NgModule({
-  imports: [ComponentsModule],
-  declarations: [
-    IntroSectionComponent,
-    ExperienceSectionComponent,
-    AboutSectionComponent,
-    EducationConferencesSectionComponent,
-    AccomplishmentsSectionComponent,
-    ContactSectionComponent,
-    ExpertInSectionComponent
-  ],
-  exports: [
-    IntroSectionComponent,
-    ExperienceSectionComponent,
-    AboutSectionComponent,
-    EducationConferencesSectionComponent,
-    AccomplishmentsSectionComponent,
-    ContactSectionComponent,
-    ExpertInSectionComponent
-  ]
+    imports: [ComponentsModule],
+    declarations: [
+        IntroSectionComponent,
+        ExperienceSectionComponent,
+        AboutSectionComponent,
+        EducationConferencesSectionComponent,
+        AccomplishmentsSectionComponent,
+        ContactSectionComponent,
+        ExpertInSectionComponent
+    ],
+    exports: [
+        IntroSectionComponent,
+        ExperienceSectionComponent,
+        AboutSectionComponent,
+        EducationConferencesSectionComponent,
+        AccomplishmentsSectionComponent,
+        ContactSectionComponent,
+        ExpertInSectionComponent
+    ]
 })
 export class SectionsModule {}

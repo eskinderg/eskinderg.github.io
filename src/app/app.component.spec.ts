@@ -13,59 +13,59 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from './language/language.mock';
 
 describe('AppComponent', () => {
-  let fixture: ComponentFixture<AppComponent>;
-  let component: AppComponent;
+    let fixture: ComponentFixture<AppComponent>;
+    let component: AppComponent;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [BrowserAnimationsModule, RouterTestingModule, SectionsModule, FrontModule],
-      providers: [
-        {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
-        },
-        ThemeService,
-        GoogleAnalyticsService,
-        provideHttpClient(withInterceptorsFromDi())
-      ]
-    }).compileComponents();
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [AppComponent],
+            imports: [BrowserAnimationsModule, RouterTestingModule, SectionsModule, FrontModule],
+            providers: [
+                {
+                    provide: LanguageService,
+                    useClass: LanguageServiceMock
+                },
+                ThemeService,
+                GoogleAnalyticsService,
+                provideHttpClient(withInterceptorsFromDi())
+            ]
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        fixture = TestBed.createComponent(AppComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create the app', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create the app', () => {
+        expect(component).toBeTruthy();
+    });
 
-  it('renders language select', () => {
-    const langSelect = findComponent(fixture, 'app-langselect');
-    expect(langSelect).toBeTruthy();
-  });
+    it('renders language select', () => {
+        const langSelect = findComponent(fixture, 'app-langselect');
+        expect(langSelect).toBeTruthy();
+    });
 
-  it('renders speed dial button component', () => {
-    const speedDial = findComponent(fixture, 'app-speed-dial-fab');
-    expect(speedDial).toBeTruthy();
-  });
+    it('renders speed dial button component', () => {
+        const speedDial = findComponent(fixture, 'app-speed-dial-fab');
+        expect(speedDial).toBeTruthy();
+    });
 
-  it('renders app menu', () => {
-    const menu = findComponent(fixture, 'app-menu');
-    expect(menu).toBeTruthy();
-  });
+    it('renders app menu', () => {
+        const menu = findComponent(fixture, 'app-menu');
+        expect(menu).toBeTruthy();
+    });
 
-  it('renders outline menu', () => {
-    const outline = findComponent(fixture, 'app-outline');
-    expect(outline).toBeTruthy();
-  });
+    it('renders outline menu', () => {
+        const outline = findComponent(fixture, 'app-outline');
+        expect(outline).toBeTruthy();
+    });
 
-  it('renders intro section', () => {
-    const intro = findComponent(fixture, 'app-intro');
-    expect(intro).toBeTruthy();
-  });
+    it('renders intro section', () => {
+        const intro = findComponent(fixture, 'app-intro');
+        expect(intro).toBeTruthy();
+    });
 });
 
 export function findComponent<T>(fixture: ComponentFixture<T>, selector: string): DebugElement {
-  return fixture.debugElement.query(By.css(selector));
+    return fixture.debugElement.query(By.css(selector));
 }

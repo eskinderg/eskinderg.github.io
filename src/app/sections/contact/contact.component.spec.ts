@@ -7,31 +7,31 @@ import { AppModule } from 'src/app/app.module';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 
 describe('ContactSectionComponent', () => {
-  let component: ContactSectionComponent;
-  let fixture: ComponentFixture<ContactSectionComponent>;
+    let component: ContactSectionComponent;
+    let fixture: ComponentFixture<ContactSectionComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ContactSectionComponent],
-      imports: [AppModule],
-      providers: [
-        {
-          provide: LanguageService,
-          useClass: LanguageServiceMock
-        },
-        ThemeService,
-        provideHttpClient(withInterceptorsFromDi())
-      ]
-    }).compileComponents();
-  });
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [ContactSectionComponent],
+            imports: [AppModule],
+            providers: [
+                {
+                    provide: LanguageService,
+                    useClass: LanguageServiceMock
+                },
+                ThemeService,
+                provideHttpClient(withInterceptorsFromDi())
+            ]
+        }).compileComponents();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ContactSectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(ContactSectionComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

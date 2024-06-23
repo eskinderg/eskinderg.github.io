@@ -59,7 +59,8 @@
     }
   ],
   "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "indent": ["error", 4]
   },
   "plugins": ["prettier"],
   "extends": [
