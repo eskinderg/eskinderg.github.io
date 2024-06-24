@@ -1,0 +1,7 @@
+<mat-slide-toggle
+    matTooltip="Change Dark Mode"
+    class="toggleBtn z-10 p0 sm:py-1 sm:pl-2.5"
+    [ariaHidden]="true"
+    color="primary"
+    [checked]="themeService.DarkMode"
+    (change)="onToggleChange($event)"></mat-slide-toggle>

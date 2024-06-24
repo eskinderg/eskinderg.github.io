@@ -2,7 +2,6 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { LanguageService } from './providers/language.service';
 import { ThemeService } from './theme/theme.service';
@@ -19,7 +18,7 @@ describe('AppComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [AppComponent],
-            imports: [BrowserAnimationsModule, RouterTestingModule, SectionsModule, FrontModule],
+            imports: [BrowserAnimationsModule, SectionsModule, FrontModule],
             providers: [
                 {
                     provide: LanguageService,
