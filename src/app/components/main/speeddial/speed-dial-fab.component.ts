@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, HostListener, Input } from '@angular/core';
-import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { speedDialFabAnimations } from './speed-dial-fab.animations';
@@ -55,10 +54,10 @@ export class SpeedDialFabComponent {
         this.themeService.SetTheme(btn.theme, this.themeService.DarkMode);
     }
 
-    public onToggleChange(event: MatSlideToggleChange) {
-        this.hideItems();
-        this.themeService.SetTheme(this.themeService.Theme, event.checked);
-    }
+    // public onToggleChange(event: MatSlideToggleChange) {
+    //     this.hideItems();
+    //     this.themeService.SetTheme(this.themeService.Theme, event.checked);
+    // }
 
     @HostListener('window:scroll', ['$event'])
     onScroll(event: any) {
