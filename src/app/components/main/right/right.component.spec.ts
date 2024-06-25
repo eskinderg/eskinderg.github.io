@@ -35,12 +35,12 @@ describe('RightComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    it('renders langselect component', () => {
+    it('Should render langselect component', () => {
         const langSelectComponent = findComponent(fixture, 'app-langselect');
         expect(langSelectComponent).toBeTruthy();
     });
 
-    it('renders toggle component', () => {
+    it('Should render toggle component', () => {
         const toggleComponent = findComponent(fixture, 'app-toggle');
         expect(toggleComponent).toBeTruthy();
     });
