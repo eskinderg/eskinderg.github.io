@@ -6,6 +6,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { findComponent } from 'src/app/app.component.spec';
 
 describe('RightComponent', () => {
     let component: RightComponent;
@@ -32,5 +33,15 @@ describe('RightComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('Should render langselect component', () => {
+        const langSelectComponent = findComponent(fixture, 'app-langselect');
+        expect(langSelectComponent).toBeTruthy();
+    });
+
+    it('Should render toggle component', () => {
+        const toggleComponent = findComponent(fixture, 'app-toggle');
+        expect(toggleComponent).toBeTruthy();
     });
 });
