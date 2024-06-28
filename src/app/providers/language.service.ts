@@ -25,7 +25,7 @@ export class LanguageService {
     }
 
     get Language() {
-        return localStorage.getItem('language') || navigator.language;
+        return localStorage.getItem('language') ?? navigator.language;
     }
 
     get LanguageList() {
