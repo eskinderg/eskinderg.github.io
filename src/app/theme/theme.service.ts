@@ -17,11 +17,7 @@ export class ThemeService {
     constructor(public http: HttpClient) {}
 
     public get DarkMode(): boolean {
-        if (localStorage.getItem('darkmode')) {
-            return localStorage.getItem('darkmode') === 'true';
-        } else {
-            return ThemeService.DarkModeDefault;
-        }
+        return JSON.parse(localStorage.getItem('darkmode')) ?? ThemeService.DarkModeDefault;
     }
 
     public set DarkMode(value: boolean) {
