@@ -55,10 +55,9 @@ export class MenuComponent implements OnInit {
     }
 
     scrollTo(element) {
-        // console.log(element);
         this.visible = false;
         const section = this.lang.sections[element];
         // console.log(section);
-        section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        section().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }

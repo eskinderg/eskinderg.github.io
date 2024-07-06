@@ -1,10 +1,10 @@
 import {
-    ViewChild,
     ElementRef,
     Component,
     OnInit,
     ChangeDetectionStrategy,
-    AfterViewInit
+    AfterViewInit,
+    viewChild
 } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BaseComponent } from 'src/app/sections/base.component';
@@ -24,7 +24,7 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
 
     public currentAppVersion: string;
 
-    @ViewChild('contact') section: ElementRef;
+    section = viewChild.required<ElementRef>('contact');
 
     ngAfterViewInit(): void {
         this.lang.sections['contact'] = this.section;

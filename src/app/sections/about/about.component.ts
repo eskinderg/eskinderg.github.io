@@ -1,4 +1,4 @@
-import { ViewChild, Component, ElementRef, ChangeDetectionStrategy, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, viewChild } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
@@ -8,7 +8,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutSectionComponent extends BaseComponent implements AfterViewInit {
-    @ViewChild('about') section: ElementRef;
+    section = viewChild.required<ElementRef>('about');
 
     ngAfterViewInit(): void {
         this.lang.sections['about'] = this.section;

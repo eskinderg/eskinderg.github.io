@@ -1,4 +1,4 @@
-import { Component, ViewChild, HostListener, Input, ElementRef, OnInit, EventEmitter } from '@angular/core';
+import { Component, HostListener, Input, ElementRef, OnInit, EventEmitter, viewChild } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -22,18 +22,18 @@ export class BaBackTopComponent implements OnInit {
     @Input() moveSpeed = 700;
     @Input() public onWindowScroll: EventEmitter<any>;
 
-    @ViewChild('baBackTop') _selector: ElementRef;
+    _selector = viewChild.required<ElementRef>('baBackTop');
 
     constructor(private _parent: AppComponent) {}
 
     @HostListener('click', ['$event.target'])
     _onClick() {
-        this._parent.mainWrapper.nativeElement.scroll({ top: 0, left: 0, behavior: 'smooth' });
+        this._parent.mainWrapper().nativeElement.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
     ngOnInit(): void {
         this.onWindowScroll.subscribe((x: any) => {
-            this._selector.nativeElement.style.display =
+            this._selector().nativeElement.style.display =
                 x.target.scrollTop > this.position ? 'block' : 'none';
         });
     }

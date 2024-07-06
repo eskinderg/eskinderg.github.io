@@ -1,4 +1,4 @@
-<div id="mainWrapper" #mainWrapper (scroll)="onScroll($event)">
+<div id="mainWrapper" #mainWrapper (scroll)="appScroll.emit($event)">
     <app-right></app-right>
 
     <app-loader [Loading]="lang.loading"></app-loader>
@@ -9,21 +9,7 @@
 
     <app-outline [onWindowScroll]="appScroll"></app-outline>
 
-    <div id="parentDiv" class="viewWrapper">
-        <app-intro id="intro"></app-intro>
-
-        <app-about id="about"></app-about>
-
-        <app-expert-in id="expertin"></app-expert-in>
-
-        <app-accomplishments id="accomplishments"></app-accomplishments>
-
-        <app-experience id="experience"></app-experience>
-
-        <app-education-conferences id="education"></app-education-conferences>
-
-        <app-contact id="contact"></app-contact>
-    </div>
+    <div class="viewWrapper" #componentWrapper></div>
 
     <app-back-top [onWindowScroll]="appScroll" [position]="200"></app-back-top>
 </div>
