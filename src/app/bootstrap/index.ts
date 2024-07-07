@@ -6,7 +6,7 @@ export function bootstrapComponentsFactory(
     appRef: ApplicationRef
 ): (appComponentRef: ComponentRef<AppComponent>) => void {
     return (appComponentRef: ComponentRef<AppComponent>) => {
-        Components.forEach(function (component) {
+        Components.forEach((component) => {
             const compRef = createComponent(component, {
                 environmentInjector: appRef.injector
             });
