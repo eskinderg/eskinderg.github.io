@@ -2,6 +2,7 @@
 @use 'src/app/components/app/technology/technology.component' as mastery;
 @use 'src/app/components/app/timeline/timeline.component' as timeline;
 @use 'src/app/components/app/title/title.component' as title;
+@use 'src/app/components/app/toggle/toggle.component' as toggledark;
 @use 'src/app/components/main/babacktop/baBackTop' as babacktop;
 @use 'src/app/components/app/langselect/langselect' as langselect;
 @use 'src/app/components/main/menu/menu.component' as menu;
@@ -17,6 +18,7 @@
 @mixin theme($theme){
   @include app.theme($theme);
   @include intro.theme($theme);
+  @include toggledark.theme($theme);
   @include about.theme($theme);
   @include mastery.theme($theme);
   @include accomplishments.theme($theme);

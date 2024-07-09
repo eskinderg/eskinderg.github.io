@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
-import { MatSlideToggleChange } from '@angular/material/slide-toggle';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeService } from 'src/app/theme/theme.service';
 
 @Component({
     selector: 'app-toggle',
     templateUrl: './toggle.component.html',
-    styleUrl: './toggle.component.scss'
+    styleUrl: './toggle.component.scss',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToggleComponent {
-    constructor(public themeService: ThemeService) {}
-    public onToggleChange(event: MatSlideToggleChange) {
-        this.themeService.SetTheme(this.themeService.Theme, event.checked);
+    toggleValue: boolean;
+
+    constructor(public themeService: ThemeService) {
+        this.toggleValue = themeService.DarkMode;
+    }
+
+    public onClickToggle() {
+        this.toggleValue = !this.toggleValue;
+        this.themeService.SetTheme(this.themeService.Theme, this.toggleValue);
     }
 }

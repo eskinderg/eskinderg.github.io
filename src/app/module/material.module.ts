@@ -5,7 +5,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -16,8 +15,7 @@ import { CommonModule } from '@angular/common';
         MatTooltipModule,
         MatChipsModule,
         MatDividerModule,
-        MatCardModule,
-        MatSlideToggleModule
+        MatCardModule
     ],
     exports: [
         CommonModule,
@@ -26,8 +24,7 @@ import { CommonModule } from '@angular/common';
         MatTooltipModule,
         MatChipsModule,
         MatDividerModule,
-        MatCardModule,
-        MatSlideToggleModule
+        MatCardModule
     ]
 })
 export class MatModule {}

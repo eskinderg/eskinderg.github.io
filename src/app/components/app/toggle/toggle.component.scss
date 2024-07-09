@@ -1,0 +1,43 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+@mixin theme($theme) {
+    $color-config: mat.m2-get-color-config($theme);
+    $primary: map.get($color-config, 'primary');
+    $accent: map.get($color-config, 'accent');
+    $background: map.get($color-config, 'background');
+
+    .toggle {
+        position: relative;
+        height: 0.5rem;
+        width: 3rem;
+        cursor: pointer;
+        border-radius: 25px;
+        background-color: black;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    .toggle::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 50%;
+        background-color: mat.m2-get-color-from-palette($primary) !important;
+        border: 0.25rem solid black;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .toggle.on {
+        background-color: white;
+    }
+
+    .toggle.on::before {
+        left: calc(100% - 1.75rem);
+        background-color: #fff;
+        border-color: white;
+    }
+}
