@@ -1,6 +1,6 @@
 import { animate, keyframes, query, stagger, state, style, transition, trigger } from '@angular/animations';
 
-export const speedDialFabAnimations = [
+export const colorPickerAnimations = [
     trigger('fabToggler', [
         state(
             'inactive',
@@ -16,7 +16,7 @@ export const speedDialFabAnimations = [
         ),
         transition('* <=> *', animate('200ms cubic-bezier(0.4, 0.0, 0.2, 1)'))
     ]),
-    trigger('speedDialStagger', [
+    trigger('colorPickerStagger', [
         transition('* => *', [
             query(':enter', style({ opacity: 0 }), { optional: true }),
 

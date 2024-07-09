@@ -1,14 +1,14 @@
 import { ChangeDetectionStrategy, Component, HostListener, Input } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
-import { speedDialFabAnimations } from './speed-dial-fab.animations';
+import { colorPickerAnimations } from './color-picker.animations';
 
-export interface FabButton {
+export interface ColorPickerButton {
     icon: string;
     tooltip: string;
 }
 
-export enum SpeedDialFabPosition {
+export enum ColorPickerPosition {
     Top = 'top',
     Bottom = 'bottom',
     Left = 'left',
@@ -16,18 +16,18 @@ export enum SpeedDialFabPosition {
 }
 
 @Component({
-    selector: 'app-speed-dial-fab',
-    templateUrl: './speed-dial-fab.component.html',
-    styleUrls: ['./speed-dial-fab.component.scss'],
-    animations: speedDialFabAnimations,
+    selector: 'app-color-picker',
+    templateUrl: './color-picker.component.html',
+    styleUrls: ['./color-picker.component.scss'],
+    animations: colorPickerAnimations,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SpeedDialFabComponent {
+export class ColorPickerComponent {
     @Input() reverseColumnDirection: boolean = false;
-    @Input() fabButtons: FabButton[];
+    @Input() colorButtons: ColorPickerButton[];
 
     public buttons = [];
-    public fabTogglerState = 'inactive';
+    public colorTogglerState = 'inactive';
     public atTop = true;
 
     constructor(
@@ -36,20 +36,20 @@ export class SpeedDialFabComponent {
     ) {}
 
     private showItems() {
-        this.fabTogglerState = 'active';
+        this.colorTogglerState = 'active';
         this.buttons = this.themeService.Colors;
     }
 
     private hideItems() {
-        this.fabTogglerState = 'inactive';
+        this.colorTogglerState = 'inactive';
         this.buttons = [];
     }
 
-    public onToggleFab() {
+    public onToggleButton() {
         this.buttons.length ? this.hideItems() : this.showItems();
     }
 
-    public onClickFab(btn: { icon: string; theme: string }) {
+    public onClickColor(btn: { icon: string; theme: string }) {
         this.hideItems();
         this.themeService.SetTheme(btn.theme, this.themeService.DarkMode);
     }

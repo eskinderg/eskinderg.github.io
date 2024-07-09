@@ -6,7 +6,7 @@
 @use 'src/app/components/app/langselect/langselect' as langselect;
 @use 'src/app/components/main/menu/menu.component' as menu;
 @use 'src/app/components/main/outline/outline' as outline;
-@use 'src/app/components/main/speeddial/speed-dial-fab.component' as speeddial;
+@use 'src/app/components/main/color-picker/color-picker.component' as colorpicker;
 @use 'src/app/components/main/loader/loader' as loader;
 @use 'src/app/sections/about/about.component' as about;
 @use 'src/app/sections/accomplishments/accomplishments.component' as accomplishments;
@@ -26,7 +26,7 @@
   @include babacktop.theme($theme);
   @include outline.theme($theme);
   @include langselect.theme($theme);
-  @include speeddial.theme($theme);
+  @include colorpicker.theme($theme);
   @include loader.theme($theme);
   @include contact.theme($theme);
   @include expertIn.theme($theme);
