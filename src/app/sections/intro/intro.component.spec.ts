@@ -41,10 +41,10 @@ describe('IntroSectionComponent', () => {
         );
     });
 
-    it('Should render subtitle Full-Stack Developer', () => {
+    it('Should render subtitle Full-Stack Developer ', () => {
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('.intro>.titleIntro>.introSubTitle').textContent).toBe(
-            'Full-Stack Developer'
+            ' Full-Stack Developer '
         );
     });
 });
