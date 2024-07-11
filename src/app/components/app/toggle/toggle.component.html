@@ -1,1 +1,5 @@
-<div (click)="onClickToggle()" class="toggle" [ngClass]="{ on: toggleValue }"></div>
+<div
+    [matTooltip]="'Toggle Dark Mode'"
+    (click)="onClickToggle()"
+    class="toggle"
+    [ngClass]="{ on: toggleValue }"></div>
