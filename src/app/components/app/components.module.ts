@@ -7,11 +7,13 @@ import { TitleComponent } from './title/title.component';
 import { MatModule } from '../../module/material.module';
 import { ToggleComponent } from './toggle/toggle.component';
 import { LangSelectComponent } from './langselect/langselect';
+import { ChipComponent } from './chip/chip.component';
 
 @NgModule({
     imports: [MatModule],
     declarations: [
         TitleComponent,
+        ChipComponent,
         ListComponent,
         TimelineComponent,
         TechnologyComponent,
@@ -21,6 +23,7 @@ import { LangSelectComponent } from './langselect/langselect';
     ],
     exports: [
         TitleComponent,
+        ChipComponent,
         ListComponent,
         TimelineComponent,
         TechnologyComponent,

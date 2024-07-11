@@ -1,20 +1,9 @@
-@use 'sass:map';
-@use '@angular/material' as mat;
+$height: 52px;
 
-@mixin theme($theme){
-
-  $color-config     : mat.m2-get-color-config($theme);
-  $primary          : map.get($color-config, 'primary');
-  $accent           : map.get($color-config, 'accent');
-  $background       : map.get($color-config, 'background');
-  $background-color : map.get($color-config, 'background-color');
-
-  $height: 52px;
-
-  .ba-back-top {
+.ba-back-top {
     transition: background-color 1s ease;
     transition: opacity 1s ease;
-    color: #FFF;
+    color: #fff;
     position: fixed;
     width: $height;
     height: $height;
@@ -27,20 +16,19 @@
     font-size: 45px;
     text-align: center;
     opacity: 0.3;
-    background-color: mat.m2-get-color-from-palette($primary);
+    background-color: var(--primary);
     border-radius: 50%;
     line-height: 40px;
     &:hover {
-      opacity: 1;
+        opacity: 1;
     }
     // background-image: url('../../../assets/img/arrow-top.png');
     background-size: contain;
     background-size: cover;
-  }
+}
 
-  #svg-backTo-top {
+#svg-backTo-top {
     margin-top: 8px;
     position: absolute;
     left: 12px;
-  }
 }

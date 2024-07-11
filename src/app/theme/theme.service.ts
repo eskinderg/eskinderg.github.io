@@ -12,8 +12,6 @@ export class ThemeService {
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
-    @Output() themeChange: EventEmitter<any> = new EventEmitter<any>();
-
     constructor(public http: HttpClient) {}
 
     public get DarkMode(): boolean {
@@ -68,10 +66,14 @@ export class ThemeService {
      * @param {boolean} isDarkMode - Sets the dark mode setting
      */
     public SetTheme(theme: string, isDarkMode: boolean) {
-        this.setStyle('theme', `${theme}.css`);
+        document.documentElement.className = theme;
+
+        if (isDarkMode) {
+            const root = document.querySelector(':root');
+            root.classList.toggle('dark');
+        }
         this.DarkMode = isDarkMode;
         this.Theme = theme;
-        this.themeChange.emit();
     }
 
     public get DarkModeBackground1(): string {

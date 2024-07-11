@@ -1,53 +1,40 @@
-@use 'sass:map';
-@use '@angular/material' as mat;
-
 .mdc-list-item__primary-text {
-  color: black ! important; /*Material Override*/
+    color: black !important; /*Material Override*/
 }
 
 .mdc-button {
-  padding:0px ! important;
-  min-width: auto ! important;
+    padding: 0px !important;
+    min-width: auto !important;
 }
 
-@mixin theme($theme) {
+// .lang-menu-wrapper {
+//   margin: 0.5em;
+// }
 
-  $color-config     : mat.m2-get-color-config($theme);
-  $accent           : map.get($color-config, 'accent');
-  $background       : map.get($color-config, 'background');
-  $background-color : map.get($color-config, 'background-color');
-
-  // .lang-menu-wrapper {
-  //   margin: 0.5em;
-  // }
-
-  .lang-menu-dropdown {
+.lang-menu-dropdown {
     background-color: white;
-  }
+}
 
-  .langmenu {
+.langmenu {
     // background: 0 0;
-    border:none;
+    border: none;
     cursor: pointer;
-  }
+}
 
-  .lang-select-icon {
-    width:2rem;
-    height:2rem;
-  }
+.lang-select-icon {
+    width: 2rem;
+    height: 2rem;
+}
 
-  .lang-selection {
+.lang-selection {
     position: relative;
     top: -8px;
-  }
-
-  .small-icons {
-    width:30px;
-  }
-
-  .lang-button {
-    padding-top:8px ! important;
-  }
-
 }
 
+.small-icons {
+    width: 30px;
+}
+
+.lang-button {
+    padding-top: 8px !important;
+}

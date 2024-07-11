@@ -1,22 +1,10 @@
-@use 'sass:map';
-@use '@angular/material' as mat;
-
-@mixin theme($theme) {
-  $color-config : mat.m2-get-color-config($theme);
-  $primary : map.get($color-config, 'primary');
-  $accent : map.get($color-config, 'accent');
-  $background : map.get($color-config, 'background');
-  $background-color : map.get($color-config, 'background-color');
-
-  $text-color: #585858;
-
   .timelineParagraph {
-    color: mat.m2-get-color-from-palette($primary, 400);
+    color: var(--text);
   }
 
   .subTitle {
     margin-top: 8px;
-    color: mat.m2-get-color-from-palette($primary, 700);
+    color: var(--primary);
   }
 
   .lExperienceList:after {
@@ -53,7 +41,7 @@
   }
 
   .experienceListItem {
-    border: 1px solid rgba(mat.m2-get-color-from-palette($primary, 400),0.3);
+    border: 1px solid var(--lighter);
     padding: 8px;
     width: fit-content;
     border-radius: 7px;
@@ -63,7 +51,7 @@
     justify-content: flex-end;
 
     .leftItemFlexLayout {
-      box-shadow: -3px 4px 3px -3px rgba(mat.m2-get-color-from-palette($primary, 400),0.3);
+      box-shadow: -3px 4px 3px -3px var(--lighter);
     }
   }
 
@@ -71,7 +59,7 @@
     justify-content: flex-start;
 
     .rightItemFlexLayout {
-      box-shadow: 3px 4px 3px -3px rgba(mat.m2-get-color-from-palette($primary, 400),0.3);
+      box-shadow: 3px 4px 3px -3px var(--lighter);
     }
   }
 
@@ -84,7 +72,7 @@
     width: 0;
     margin-top: -8px;
     border: solid transparent;
-    border-left-color: rgba(mat.m2-get-color-from-palette($primary, 400),0.3);
+    border-left-color: var(--lighter);
     border-width: 10px;
     pointer-events: none;
   }
@@ -98,7 +86,7 @@
     width: 0;
     margin-top: -8px;
     border: solid transparent;
-    border-right-color: rgba(mat.m2-get-color-from-palette($primary, 400),0.3);
+    border-right-color: var(--lighter);
     border-width: 10px;
     pointer-events: none;
   }
@@ -167,12 +155,12 @@
   .lExperienceList:after {
     // border: 3px solid rgba(mat.get-color-from-palette($primary, 400),0.2);
     // background: mat-color($primary, lighter);
-    background: rgba(mat.m2-get-color-from-palette($primary, 400),0.2);
+    background: rgba(var(--primary),0.2);
   }
 
   .rExperienceList:before {
     // border: 3px solid rgba(mat.get-color-from-palette($primary, 400),0.2);
-    background: rgba(mat.m2-get-color-from-palette($primary, 400),0.2);
+    background: rgba(var(--primary),0.2);
     // background: mat-color($primary, lighter);
     // background: rgba(mat.get-color-from-palette($primary, 400),0.3);
   }
@@ -180,7 +168,7 @@
   .chip {
     // background-color: mat-color($accent) !important;
     transition: all 1s ease;
-    border: 1px solid rgba(mat.m2-get-color-from-palette($primary, 400),0.9) ! important;
+    border: 1px solid var(--primary) ! important;
     // border: none ! important;
     // font-weight: bold;
     font-size: 14px ! important;
@@ -193,20 +181,20 @@
   }
   /* Material color override*/
   .mdc-evolution-chip__text-label {
-    color: rgba(mat.m2-get-color-from-palette($primary, 400), 1) ! important;
+    color: var(--primary) ! important;
   }
 
   .middle .line {
     // background-color: mat-color($primary, lighter);
     // background-color: #eee;
-    background-color: rgba(mat.m2-get-color-from-palette($primary, 400),0.1);
+    background-color: var(--lightest);
     // filter: grayscale(1);
     // opacity: 0.1;
   }
 
   .mainTitle {
     transition: color 1s ease;
-    color: mat.m2-get-color-from-palette($primary, 400);
+    color: var(--light);
   }
 
   .adjust {
@@ -215,7 +203,7 @@
     // fill:none;
     // stroke: mat-color($accent);
     // fill: #ddd;
-    fill: rgba(mat.m2-get-color-from-palette($primary, 400),0.3);
+    fill: var(--lighter);
     // filter: grayscale(1);
     // opacity: 0.3;
     // stroke-width: 14px;
@@ -251,5 +239,3 @@
       display: none;
     }
   }
-
-}

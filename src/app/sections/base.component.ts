@@ -18,9 +18,5 @@ export class BaseComponent {
         this.lang.languageChange.subscribe(() => {
             this.ref.detectChanges();
         });
-
-        this.themeService.themeChange.subscribe(() => {
-            this.ref.detectChanges();
-        });
     }
 }

@@ -1,34 +1,22 @@
-@use 'sass:map';
-@use '@angular/material' as mat;
-
-.title .line{
-  margin-top: 8px;
-  position: absolute;
+.title .line {
+    margin-top: 8px;
+    position: absolute;
 }
 
-@mixin theme($theme) {
-  $color-config     : mat.m2-get-color-config($theme);
-  $primary          : map.get($color-config, 'primary');
-  $accent           : map.get($color-config, 'accent');
-  $background       : map.get($color-config, 'background');
-  // $background-color: mat-color($background, card);
-
-  .title{
+.title {
     // @include mat-elevation(2);
     transition: color 1s ease;
-    color: mat.m2-get-color-from-palette($primary, 700);
+    color: var(--text);
     display: inline-block;
     text-align: left;
-  }
+}
 
-  .main-heading-title {
+.main-heading-title {
     width: min-content;
     text-wrap: nowrap;
-  }
+}
 
-  .styleishTitle {
-    font-weight:100;
+.styleishTitle {
+    font-weight: 100;
     font-size: 55px;
-  }
-
 }

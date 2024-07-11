@@ -1,7 +1,4 @@
-<div
-    #about
-    class="about sm:!pt-5 md:!pt-10 lg:!pt-16"
-    [style.background]="themeService.DarkMode ? themeService.DarkModeBackground2 : '#FFFFFF'">
+<div #about class="about sm:!pt-5 md:!pt-10 lg:!pt-16">
     <div class="h2 about-title text-center lg:text-left">
         <app-title
             title="{{ lang.texts.about.title }}"
@@ -33,7 +30,7 @@
                     [height]="22"
                     alt="Download File" />
             </button>
-            <mat-menu class="download-dropdown-menu" #menu>
+            <mat-menu class="download-dropdown-menu" #menu="matMenu">
                 <a (click)="onPdfDownload()" href="assets/pdf/Eskinder-CV.pdf" target="_blank">
                     <button mat-menu-item>
                         <img class="menu-options" src="assets/img/pdf.webp" [width]="30" />&nbsp;

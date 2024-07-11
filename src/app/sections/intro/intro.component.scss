@@ -1,54 +1,45 @@
-@use 'sass:map';
-@use '@angular/material' as mat;
-
-@mixin theme($theme) {
-
-  $color-config : mat.m2-get-color-config($theme);
-  $primary : map.get($color-config, 'primary');
-  $accent : map.get($color-config, 'accent');
-  $background : map.get($color-config, 'background');
-
-  // $background-color: mat-color($background, card);
-  .titleIntro {
+.titleIntro {
     position: absolute;
     top: 40%;
     left: 10%;
     margin: 0;
     line-height: 1;
     max-width: 80%;
-  }
+}
 
-  .introSubTitle {
+.introSubTitle {
     margin-top: 8px;
     font-weight: bold;
-  }
+}
 
-  .icon_links {
-    margin-top: 64px ! important;
-  }
+.app-divider {
+    transition: background-color 1s ease;
+    background: var(--background2) !important;
 
-  .icon_links a {
-    margin: 8px ! important;
-    text-decoration: none ! important;
+    path {
+        fill: var(--primary);
+    }
+}
+
+.icon_links {
+    margin-top: 64px !important;
+}
+
+.icon_links a {
+    margin: 8px !important;
+    text-decoration: none !important;
     display: block;
     width: 48px;
-  }
+}
 
-  .intro {
+.intro {
     // @include mat-elevation(2);
     transition: background-color 1s ease;
-    background-color: mat.m2-get-color-from-palette($primary);
+    background-color: var(--primary);
     position: relative;
     overflow: visible;
-    width: 100% ! important;
+    width: 100% !important;
     height: 100vh;
     width: 100vw;
     height: calc(70vh - 0px);
-  }
-
-  .separatorPath {
-    transition: fill 1s ease;
-    fill: mat.m2-get-color-from-palette($primary);
-  }
-
 }

@@ -60,7 +60,8 @@
         <div class="">
             <div class="used lg:py-4">
                 @for (technology of job.used; track technology) {
-                    <mat-chip class="chip">{{ technology }}</mat-chip>
+                    <!-- <mat-chip class="chip">{{ technology }}</mat-chip> -->
+                    <app-chip [technology]="technology"></app-chip>
                 }
             </div>
         </div>

@@ -1,42 +1,57 @@
-.educationItem,.conferenceItem{
-  margin-bottom: 48px;
-  position: relative;
-  z-index: 10;
+.app-divider {
+    background-color: var(--background2);
+    path {
+        fill: var(--background1);
+    }
 }
-.education,.conferences,.educationConferencesWrapper{
-  // background-color: #eee;
-  position: relative;
+
+.graduationHat {
+    fill: var(--background2);
 }
-.title.right{
-  text-align: right;
+
+.educationItem,
+.conferenceItem {
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 10;
 }
-.title.left{
-  text-align: left;
+.education,
+.conferences,
+.educationConferencesWrapper {
+    // background-color: #eee;
+
+    position: relative;
 }
-.educationConferencesWrapper{
-  padding-top: 0;
-  padding-bottom: 0;
-  transition: background-color 1s ease;
-  background: #eee;
+.title.right {
+    text-align: right;
+}
+.title.left {
+    text-align: left;
+}
+.educationConferencesWrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    transition: background-color 1s ease;
+    background-color: var(--background1);
 }
 .educationTitle {
-  margin: 7% 0%;
+    margin: 7% 0%;
 }
-.educationSVG{
-  position: absolute;
-  right:0;
-  z-index: 5;
-  margin-top:5%;
+.educationSVG {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    margin-top: 5%;
 }
-.conferencesSVG{
-  position: absolute;
-  margin-top: 280px;
-  left:0;
-  z-index: 5;
+.conferencesSVG {
+    position: absolute;
+    margin-top: 280px;
+    left: 0;
+    z-index: 5;
 }
-.addRightMargin{
-  margin-right: -10%;
+.addRightMargin {
+    margin-right: -10%;
 }
-.addLeftMargin{
-  margin-left: -10%;
+.addLeftMargin {
+    margin-left: -10%;
 }
