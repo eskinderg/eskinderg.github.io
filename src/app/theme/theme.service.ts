@@ -1,6 +1,7 @@
-import { Injectable, EventEmitter, Output } from '@angular/core';
+import { Injectable, EventEmitter, Output, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, throwError } from 'rxjs';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable()
 export class ThemeService {
@@ -12,7 +13,10 @@ export class ThemeService {
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
-    constructor(public http: HttpClient) {}
+    constructor(
+        public http: HttpClient,
+        @Inject(DOCUMENT) private document: Document
+    ) {}
 
     public get DarkMode(): boolean {
         return JSON.parse(localStorage.getItem('darkmode')) ?? ThemeService.DarkModeDefault;
@@ -66,10 +70,11 @@ export class ThemeService {
      * @param {boolean} isDarkMode - Sets the dark mode setting
      */
     public SetTheme(theme: string, isDarkMode: boolean) {
-        document.documentElement.className = theme;
+        this.document.documentElement.className = theme;
+        // document.documentElement.className = theme;
 
         if (isDarkMode) {
-            const root = document.querySelector(':root');
+            const root = this.document.querySelector(':root');
             root.classList.toggle('dark');
         }
         this.DarkMode = isDarkMode;
