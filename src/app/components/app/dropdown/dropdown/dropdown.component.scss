@@ -17,7 +17,12 @@
 }
 
 .menu {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        visibility 0s,
+        opacity 0.25s linear;
+    display: flex;
     position: absolute;
     flex-direction: column;
     width: auto;
@@ -25,7 +30,8 @@
 }
 
 .showDropMenu {
-    display: flex;
+    visibility: visible;
+    opacity: 1;
 }
 
 .menuItem a {
