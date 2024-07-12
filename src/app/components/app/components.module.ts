@@ -8,6 +8,7 @@ import { MatModule } from '../../module/material.module';
 import { ToggleComponent } from './toggle/toggle.component';
 import { LangSelectComponent } from './langselect/langselect';
 import { ChipComponent } from './chip/chip.component';
+import { DropDownMenuComponent } from './dropdown/dropdown/dropdown.component';
 
 @NgModule({
     imports: [MatModule],
@@ -19,7 +20,8 @@ import { ChipComponent } from './chip/chip.component';
         TechnologyComponent,
         SeparatorComponent,
         ToggleComponent,
-        LangSelectComponent
+        LangSelectComponent,
+        DropDownMenuComponent
     ],
     exports: [
         TitleComponent,
@@ -30,7 +32,8 @@ import { ChipComponent } from './chip/chip.component';
         SeparatorComponent,
         MatModule,
         ToggleComponent,
-        LangSelectComponent
+        LangSelectComponent,
+        DropDownMenuComponent
     ]
 })
 export class ComponentsModule {}

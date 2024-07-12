@@ -33,17 +33,6 @@
     margin-bottom: 24px;
 }
 
-.download-dropdown-menu .mat-mdc-menu-item-text {
-    /*Material override*/
-    display: flex;
-    align-items: baseline;
-}
-
-.mat-mdc-menu-panel.mat-mdc-menu-panel {
-    /*Material Override*/
-    max-width: none !important;
-}
-
 .introContent {
     box-sizing: border-box;
 }
@@ -71,9 +60,4 @@
 
 .profile:hover {
     filter: grayscale(0%);
-}
-
-.menu-options {
-    position: relative;
-    top: 8px;
 }

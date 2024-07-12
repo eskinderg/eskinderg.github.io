@@ -1,0 +1,40 @@
+:host {
+    cursor: pointer;
+    a,
+    a:visited,
+    a:hover,
+    a:active {
+        color: inherit;
+    }
+}
+
+.menuBtn {
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--primary) !important;
+}
+
+.menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    background-color: var(--background1);
+}
+
+.menuItem a {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    margin: 0.25rem;
+}
+
+.menuItem > a > * {
+    margin: 0.5rem;
+}
+
+.menuItem :hover {
+    background-color: var(--background2);
+}

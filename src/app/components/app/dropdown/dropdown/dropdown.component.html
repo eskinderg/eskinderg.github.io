@@ -1,0 +1,31 @@
+<div
+    (click)="onClick()"
+    matTooltip="{{ lang.texts.about.button.tooltip }}"
+    class="menuBtn w-[100%] lg:w-[40%]"
+    [style.font-family]="lang.texts.font.menu">
+    {{ lang.texts.about.button.title }}
+    &nbsp;
+    <img
+        src="assets/img/download.webp"
+        style="position: inherit"
+        [width]="30"
+        [height]="22"
+        alt="Download File" />
+</div>
+
+@if (visible) {
+    <div class="menu w-[100%] lg:w-[40%]">
+        <div class="menuItem">
+            <a href="assets/pdf/Eskinder-CV.pdf" target="_blank">
+                <img src="assets/img/pdf.webp" [width]="30" />&nbsp;
+                <div class="text">{{ lang.texts.about.pdf }}</div>
+            </a>
+        </div>
+        <div class="menuItem">
+            <a (click)="onDocxDownload()" href="assets/doc/Eskinder-CV.docx">
+                <img src="assets/img/docx.webp" [width]="30" />&nbsp;
+                <div class="text">{{ lang.texts.about.word }}</div>
+            </a>
+        </div>
+    </div>
+}
