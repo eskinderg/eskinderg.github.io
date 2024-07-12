@@ -17,11 +17,15 @@
 }
 
 .menu {
+    display: none;
     position: absolute;
-    display: flex;
     flex-direction: column;
     width: auto;
     background-color: var(--background1);
+}
+
+.showDropMenu {
+    display: flex;
 }
 
 .menuItem a {

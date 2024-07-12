@@ -13,19 +13,17 @@
         alt="Download File" />
 </div>
 
-@if (visible) {
-    <div class="menu w-[100%] lg:w-[40%]">
-        <div class="menuItem">
-            <a href="assets/pdf/Eskinder-CV.pdf" target="_blank">
-                <img src="assets/img/pdf.webp" [width]="30" />&nbsp;
-                <div class="text">{{ lang.texts.about.pdf }}</div>
-            </a>
-        </div>
-        <div class="menuItem">
-            <a (click)="onDocxDownload()" href="assets/doc/Eskinder-CV.docx">
-                <img src="assets/img/docx.webp" [width]="30" />&nbsp;
-                <div class="text">{{ lang.texts.about.word }}</div>
-            </a>
-        </div>
+<div class="menu w-[100%] lg:w-[40%]" [ngClass]="{ showDropMenu: visible }">
+    <div class="menuItem">
+        <a href="assets/pdf/Eskinder-CV.pdf" target="_blank">
+            <img src="assets/img/pdf.webp" [width]="30" />&nbsp;
+            <div class="text">{{ lang.texts.about.pdf }}</div>
+        </a>
     </div>
-}
+    <div class="menuItem">
+        <a (click)="onDocxDownload()" href="assets/doc/Eskinder-CV.docx">
+            <img src="assets/img/docx.webp" [width]="30" />&nbsp;
+            <div class="text">{{ lang.texts.about.word }}</div>
+        </a>
+    </div>
+</div>
