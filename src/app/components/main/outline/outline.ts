@@ -64,7 +64,7 @@ export class OutlineComponent implements OnInit {
                 const element = children[i];
                 if (this.spiedTags.some((spiedTag) => spiedTag === element.tagName)) {
                     // console.log(element.offsetTop, parentOffsetHeight, scrollTop, element.offsetHeight, element.id)
-                    if (scrollTop >= element.offsetTop) {
+                    if (scrollTop >= element.offsetTop - 250) {
                         currentSec = element.tagName.substring(4).toLowerCase();
                     }
                 }
