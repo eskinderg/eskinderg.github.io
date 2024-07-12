@@ -15,6 +15,7 @@
     position: relative;
     padding-top: 5%;
     padding-bottom: 5%;
+    color: var(--muted);
 }
 .envelope {
     margin: 0 0 0 -140px;
@@ -23,6 +24,7 @@
     box-sizing: border-box;
     width: 100%;
     font-family: sans-serif;
+    color: var(--muted);
 }
 .inputs {
     float: right;
@@ -54,6 +56,7 @@
 .copyrights {
     // padding: 16px;
     text-align: center;
+    color: var(--muted);
 }
 .footer {
     background-color: #263038;
@@ -68,5 +71,6 @@
 
 .phone {
     text-decoration: none;
-    color: lightblue;
+    // color: lightblue;
+    color: var(--muted);
 }
