@@ -1,12 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener } from '@angular/core';
+import { Component, ElementRef, HostListener } from '@angular/core';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
 
 @Component({
     selector: 'app-dropdown',
     templateUrl: './dropdown.component.html',
-    styleUrl: './dropdown.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrl: './dropdown.component.scss'
 })
 export class DropDownMenuComponent {
     visible: boolean = false;
