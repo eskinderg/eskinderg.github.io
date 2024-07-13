@@ -96,31 +96,4 @@ export class ThemeService {
             }
         }
     }
-
-    setStyle(key: string, href: string): void {
-        this.getLinkElementForKey(key).setAttribute('href', href);
-    }
-
-    private getLinkElementForKey(key: string): Element {
-        return this.getExistingLinkElementByKey(key) || this.createLinkElementWithKey(key);
-    }
-
-    private getExistingLinkElementByKey(key: string): Element {
-        return document.head.querySelector(
-            `link[rel="stylesheet"].${this.getClassNameForKey(key)}`
-        ) as Element;
-    }
-
-    createLinkElementWithKey(key: string): Element {
-        const linkEl = document.createElement('link');
-        linkEl.setAttribute('rel', 'stylesheet');
-        linkEl.setAttribute('type', 'text/css');
-        linkEl.classList.add(this.getClassNameForKey(key));
-        document.head.appendChild(linkEl);
-        return linkEl;
-    }
-
-    private getClassNameForKey(key: string): string {
-        return `style-manager-${key}`;
-    }
 }
