@@ -36,7 +36,7 @@ describe('RightComponent', () => {
     });
 
     it('Should render langselect component', () => {
-        const langSelectComponent = findComponent(fixture, 'app-langselect');
+        const langSelectComponent = findComponent(fixture, 'app-lang-dropdown');
         expect(langSelectComponent).toBeTruthy();
     });
 
