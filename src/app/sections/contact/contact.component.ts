@@ -4,8 +4,7 @@ import {
     OnInit,
     ChangeDetectionStrategy,
     AfterViewInit,
-    viewChild,
-    ViewEncapsulation
+    viewChild
 } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BaseComponent } from 'src/app/sections/base.component';
@@ -14,8 +13,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
     selector: 'app-contact',
     templateUrl: './contact.component.html',
     styleUrls: ['./contact.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.ShadowDom
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactSectionComponent extends BaseComponent implements OnInit, AfterViewInit {
     public message = {

@@ -1,8 +1,9 @@
 .app-divider {
-    background: var(--background1);
-    path {
-        fill: var(--background2);
-    }
+    background: #263038;
+}
+
+.separatorPath {
+    fill: var(--background1);
 }
 
 .mat-icon {

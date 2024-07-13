@@ -2,15 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.separatorPath {
-    transition: fill 1s ease;
-    fill: var(--primary);
-}
-
-.app-divider {
-    background: var(--background2);
-}
-
 .loading-screen {
     background-color: var(--primary);
 }

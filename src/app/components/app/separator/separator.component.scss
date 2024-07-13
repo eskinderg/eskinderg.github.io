@@ -1,3 +1,9 @@
 .app-divider {
     width: 100%;
+    background: var(--background2);
+    fill: var(--background1);
+}
+
+.separatorPath {
+    transition: fill 1s ease;
 }

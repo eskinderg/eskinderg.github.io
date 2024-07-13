@@ -17,6 +17,7 @@
     background: var(--background2) !important;
 
     path {
+        transition: fill 1s ease;
         fill: var(--primary);
     }
 }
