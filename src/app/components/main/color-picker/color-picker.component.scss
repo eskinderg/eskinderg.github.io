@@ -18,7 +18,12 @@ button {
 }
 
 .miniColorBtn {
+    cursor: pointer;
+    display:block;
+    height: 2.75rem;
+    width: 2.75rem;
     box-shadow: 1px 1px 9px -2px black !important;
+    border-radius: 50%;
 }
 .main-button {
     background-color: var(--primary);

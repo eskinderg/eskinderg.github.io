@@ -1,6 +1,6 @@
 import { Component, viewChild } from '@angular/core';
 import { ToggleComponent } from '../../app/toggle/toggle.component';
-import { LangSelectComponent } from '../../app/langselect/langselect';
+import { LanguageDropDownComponent } from '../../app/langdropdown/langdropdown.component';
 
 @Component({
     selector: 'app-right',
@@ -9,5 +9,5 @@ import { LangSelectComponent } from '../../app/langselect/langselect';
 })
 export class RightComponent {
     toggleComponent = viewChild.required<ToggleComponent>('toggle');
-    langSelectComponent = viewChild.required<LangSelectComponent>('lang-select');
+    langSelectComponent = viewChild.required<LanguageDropDownComponent>('lang-select');
 }

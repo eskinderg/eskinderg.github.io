@@ -1,0 +1,20 @@
+<div class="lang-menu-wrapper">
+    <div
+        (click)="onClick()"
+        matTooltip="{{ lang.texts.languageSelect }}"
+        [ariaLabel]="'select language'"
+        [matTooltipPosition]="'below'"
+        class="langSelect">
+        <img class="lang-select-icon" src="assets/img/language.webp" alt="Language Selector" />
+    </div>
+
+    <div class="langMenu" [ngClass]="{ showLangDropMenu: visible }">
+        @for (lang of lang.LanguageList; track lang) {
+            <div class="langMenuItem">
+                <div class="langText" (click)="changeLanguage(lang.code)" [style.font-family]="lang.font">
+                    {{ lang.title }}
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,45 @@
+:host {
+    cursor: pointer;
+}
+
+.langSelect {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.langMenu {
+    visibility: hidden;
+    opacity: 0;
+    right: 1.7rem;
+    top: 2.25rem;
+    transition:
+        visibility 0s,
+        opacity 0.25s linear;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    width: 10rem;
+    background-color: var(--background2);
+}
+
+.showLangDropMenu {
+    visibility: visible;
+    opacity: 1;
+    box-shadow: 1px 3px 8px 0px var(--shadow);
+    border-radius: 0.25rem;
+}
+
+.langMenuItem {
+    display: flex;
+    flex-direction: row;
+    padding: 0.25rem;
+}
+
+.langMenuItem :hover {
+    background-color: var(--background1);
+}
+
+.langText {
+    width: 100%;
+    padding: 0.5rem;
+}

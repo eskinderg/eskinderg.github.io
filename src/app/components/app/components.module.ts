@@ -6,9 +6,9 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { TitleComponent } from './title/title.component';
 import { MatModule } from '../../module/material.module';
 import { ToggleComponent } from './toggle/toggle.component';
-import { LangSelectComponent } from './langselect/langselect';
 import { ChipComponent } from './chip/chip.component';
-import { DropDownMenuComponent } from './dropdown/dropdown/dropdown.component';
+import { DropDownMenuComponent } from './dropdown/dropdown.component';
+import { LanguageDropDownComponent } from './langdropdown/langdropdown.component';
 
 @NgModule({
     imports: [MatModule],
@@ -20,8 +20,8 @@ import { DropDownMenuComponent } from './dropdown/dropdown/dropdown.component';
         TechnologyComponent,
         SeparatorComponent,
         ToggleComponent,
-        LangSelectComponent,
-        DropDownMenuComponent
+        DropDownMenuComponent,
+        LanguageDropDownComponent
     ],
     exports: [
         TitleComponent,
@@ -32,8 +32,8 @@ import { DropDownMenuComponent } from './dropdown/dropdown/dropdown.component';
         SeparatorComponent,
         MatModule,
         ToggleComponent,
-        LangSelectComponent,
-        DropDownMenuComponent
+        DropDownMenuComponent,
+        LanguageDropDownComponent
     ]
 })
 export class ComponentsModule {}

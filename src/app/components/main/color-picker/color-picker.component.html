@@ -3,7 +3,6 @@
 }
 <div class="fab-container flex items-center flex-col sm:flex-row">
     <button
-        mat-fab
         class="fab-toggler main-button"
         aria-label="Color Chooser"
         color="primary"
@@ -55,12 +54,11 @@
 
     <div class="flex flex-col sm:flex-row" [@colorPickerStagger]="buttons.length">
         @for (btn of buttons; track btn) {
-            <button
-                mat-mini-fab
+            <div
                 matTooltip="{{ lang.translateColor(btn.theme) }}"
-                class="mat-mini-fab miniColorBtn"
+                class="miniColorBtn"
                 [ngClass]="btn.theme"
-                (click)="onClickColor(btn)"></button>
+                (click)="onClickColor(btn)"></div>
         }
     </div>
 </div>
