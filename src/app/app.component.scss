@@ -25,7 +25,7 @@
 }
 
 .content {
-    color: var(--text);// 700
+    color: var(--text); // 700
 }
 
 .mat-divider {
@@ -335,7 +335,8 @@ mat-tooltip-component {
     // border-radius: 0.5rem;
     background: linear-gradient(
         to bottom,
-        var(--light) 0%, //400
+        var(--light) 0%,
+        //400
         var(--primary) 100%
     ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
@@ -349,4 +350,9 @@ mat-tooltip-component {
 *::-webkit-scrollbar-track {
     // background: transparent;
     background: var(--background1);
+}
+
+* ::selection {
+    color: var(--background1);
+    background-color: var(--light);
 }
