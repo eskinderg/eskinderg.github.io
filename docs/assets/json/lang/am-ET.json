@@ -47,7 +47,7 @@
     },
     "intro": {
         "title": "እስክንድር ጌታሁን",
-        "subtitle": "Full-Stack Developer"
+        "subtitle": "ዊብሳይት ዴቨሎፐር"
     },
     "about": {
         "title": "ስለ እኔ",
@@ -429,20 +429,20 @@
         "title": "ትምህርትና / ስልጠናዎች",
         "content": [
             {
-                "title": "B.Sc in Computer Science & Information Technology",
+                "title": "ባችለር ዲግሪ በኮምፒዉተር ሳይንስ እና ኢንፎርሜሽን ቴክኖሎጂ",
                 "subtitle": "አርባ ምንጭ  ዩኒሸርስቲ, አርባ ምንጭ, ኢትዮጵያ",
                 "img": "bg-graduation",
                 "year": "1996 - 2000 ዓ.ም"
             },
             {
-                "title": "Microsoft Certified Professional",
-                "subtitle": "Microsoft",
+                "title": "ማይክሮሶፍት ሰርቲፋይድ ፕሮፌሽናል",
+                "subtitle": "ማይክሮሶፍት",
                 "img": "bg-microsoft",
                 "year": "2006 ዓ.ም"
             },
             {
-                "title": "Microsoft Certified C# Specialist",
-                "subtitle": "Microsoft",
+                "title": "ማይክሮሶፍት ሰርቲፋይድ C# እስፔሻሊስት",
+                "subtitle": "ማይክሮሶፍት",
                 "img": "bg-microsoft",
                 "year": "2006 ዓ.ም"
             }
