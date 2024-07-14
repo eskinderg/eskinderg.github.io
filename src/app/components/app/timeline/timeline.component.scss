@@ -1,14 +1,18 @@
-  .timelineParagraph {
+.timelineParagraph {
     color: var(--text);
-  }
+}
 
-  .subTitle {
+.content {
+    color: var(--text); // 700
+}
+
+.subTitle {
     margin-top: 8px;
     color: var(--primary);
-  }
+}
 
-  .lExperienceList:after {
-    content: " ";
+.lExperienceList:after {
+    content: ' ';
     // border: 1px solid #eeeff0;
     // background: #eeeff0;
     position: absolute;
@@ -18,10 +22,10 @@
     height: 10px;
     border-radius: 10px;
     top: 40%;
-  }
+}
 
-  .rExperienceList:before {
-    content: " ";
+.rExperienceList:before {
+    content: ' ';
     // border: 1px solid #eeeff0;
     // background: #eeeff0;
     position: absolute;
@@ -30,41 +34,41 @@
     height: 10px;
     border-radius: 10px;
     top: 44%;
-  }
+}
 
-  .experienceList {
+.experienceList {
     position: relative;
     color: #585858;
     font-size: 13px;
     margin: 20px 0px 20px 0;
     line-height: 19px;
-  }
+}
 
-  .experienceListItem {
+.experienceListItem {
     border: 1px solid var(--lighter);
     padding: 8px;
     width: fit-content;
     border-radius: 7px;
-  }
+}
 
-  .leftFlexLayout {
+.leftFlexLayout {
     justify-content: flex-end;
 
     .leftItemFlexLayout {
-      box-shadow: -3px 4px 3px -3px var(--lighter);
+        box-shadow: -3px 4px 3px -3px var(--lighter);
     }
-  }
+}
 
-  .rightFlexLayout {
+.rightFlexLayout {
     justify-content: flex-start;
 
     .rightItemFlexLayout {
-      box-shadow: 3px 4px 3px -3px var(--lighter);
+        box-shadow: 3px 4px 3px -3px var(--lighter);
     }
-  }
+}
 
-  .leftItemFlexLayout:after {
-    content: "";
+.leftItemFlexLayout:after {
+    content: '';
     position: absolute;
     left: 100%;
     top: 46%;
@@ -75,10 +79,10 @@
     border-left-color: var(--lighter);
     border-width: 10px;
     pointer-events: none;
-  }
+}
 
-  .rightItemFlexLayout:before {
-    content: "";
+.rightItemFlexLayout:before {
+    content: '';
     position: absolute;
     right: 100%;
     top: 50%;
@@ -89,115 +93,115 @@
     border-right-color: var(--lighter);
     border-width: 10px;
     pointer-events: none;
-  }
+}
 
-  // .middle {
-    // padding-top: 20px;
-  // }
+// .middle {
+// padding-top: 20px;
+// }
 
-  .middle .line {
+.middle .line {
     // background-color: #e7e7e7;
     width: 3px;
     height: 100%;
     overflow: auto;
     margin: 0 auto;
-  }
+}
 
-  // .middle .line.top {
-    // height: 250px;
-  // }
+// .middle .line.top {
+// height: 250px;
+// }
 
-  .middle .line.bottom {
+.middle .line.bottom {
     margin-top: 20px;
-  }
+}
 
-  .middle .midIcon {
+.middle .midIcon {
     color: rgba(238, 239, 240, 1);
     position: absolute;
     color: #eeeff0;
     margin: 180px 0 0 -11px;
-  }
+}
 
-  .left,
-  .left .mainTitle {
+.left,
+.left .mainTitle {
     text-align: right;
-  }
+}
 
-  .right,
-  .right .mainTitle {
+.right,
+.right .mainTitle {
     text-align: left;
-  }
+}
 
-  .mainTitle.link {
+.mainTitle.link {
     cursor: pointer;
     // margin-bottom: 8px;
-  }
+}
 
-  .used {
+.used {
     word-wrap: break-word;
     word-break: break-word;
-  }
+}
 
-  .chip {
+.chip {
     margin: 4px !important;
     // color:#FFFFFF;
-    background: none ! important;
-  }
+    background: none !important;
+}
 
-  .gapTop {
+.gapTop {
     padding: 15px 0 15px 0;
-  }
+}
 
-  .left .mat-chip-list-wrapper {
+.left .mat-chip-list-wrapper {
     justify-content: flex-end;
-  }
+}
 
-  .lExperienceList:after {
+.lExperienceList:after {
     // border: 3px solid rgba(mat.get-color-from-palette($primary, 400),0.2);
     // background: mat-color($primary, lighter);
-    background: rgba(var(--primary),0.2);
-  }
+    background: rgba(var(--primary), 0.2);
+}
 
-  .rExperienceList:before {
+.rExperienceList:before {
     // border: 3px solid rgba(mat.get-color-from-palette($primary, 400),0.2);
-    background: rgba(var(--primary),0.2);
+    background: rgba(var(--primary), 0.2);
     // background: mat-color($primary, lighter);
     // background: rgba(mat.get-color-from-palette($primary, 400),0.3);
-  }
+}
 
-  .chip {
+.chip {
     // background-color: mat-color($accent) !important;
     transition: all 1s ease;
-    border: 1px solid var(--primary) ! important;
+    border: 1px solid var(--primary) !important;
     // border: none ! important;
     // font-weight: bold;
-    font-size: 14px ! important;
-    font-weight: 500 ! important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
 
     *::before {
-      border-color: none ! important;
-      border:none ! important;
+        border-color: none !important;
+        border: none !important;
     }
-  }
-  /* Material color override*/
-  .mdc-evolution-chip__text-label {
-    color: var(--primary) ! important;
-  }
+}
+/* Material color override*/
+.mdc-evolution-chip__text-label {
+    color: var(--primary) !important;
+}
 
-  .middle .line {
+.middle .line {
     // background-color: mat-color($primary, lighter);
     // background-color: #eee;
     background-color: var(--lightest);
     // filter: grayscale(1);
     // opacity: 0.1;
-  }
+}
 
-  .mainTitle {
+.mainTitle {
     transition: color 1s ease;
     color: var(--light);
-  }
+}
 
-  .adjust {
+.adjust {
     // fill: mat-color($primary, lighter);
     // fill: mat-color($accent);
     // fill:none;
@@ -207,35 +211,34 @@
     // filter: grayscale(1);
     // opacity: 0.3;
     // stroke-width: 14px;
-  }
+}
 
-  @media screen and (max-width: 1279px) {
-
+@media screen and (max-width: 1279px) {
     .left,
     .left .mainTitle {
-      text-align: left;
+        text-align: left;
     }
 
     .left .gapTop .mat-chip-list-wrapper {
-      justify-content: flex-start;
+        justify-content: flex-start;
     }
 
     .right .chipsAlign .mat-chip-list-wrapper {
-      justify-content: flex-start;
+        justify-content: flex-start;
     }
 
     .leftFlexLayout {
-      justify-content: flex-start;
+        justify-content: flex-start;
     }
 
     .experienceList {
-      margin: 15px 0px 15px 0;
+        margin: 15px 0px 15px 0;
     }
 
     .lExperienceList:after,
     .rExperienceList:before,
     .leftItemFlexLayout:after,
     .rightItemFlexLayout:before {
-      display: none;
+        display: none;
     }
-  }
+}

@@ -3,6 +3,10 @@
     transition: fill 1s ease;
 }
 
+.content {
+    color: var(--text); // 700
+}
+
 .ribbon {
     fill: var(--background2);
 }
