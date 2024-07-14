@@ -7,6 +7,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { findComponent } from 'src/app/app.component.spec';
+import { MenuComponent } from '../menu/menu.component';
 
 describe('RightComponent', () => {
     let component: RightComponent;
@@ -14,7 +15,7 @@ describe('RightComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [RightComponent],
+            declarations: [RightComponent, MenuComponent],
             imports: [ComponentsModule],
             providers: [
                 ThemeService,
@@ -42,6 +43,11 @@ describe('RightComponent', () => {
 
     it('Should render toggle component', () => {
         const toggleComponent = findComponent(fixture, 'app-toggle');
+        expect(toggleComponent).toBeTruthy();
+    });
+
+    it('Should render menu component', () => {
+        const toggleComponent = findComponent(fixture, 'app-menu');
         expect(toggleComponent).toBeTruthy();
     });
 });

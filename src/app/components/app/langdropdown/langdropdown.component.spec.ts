@@ -4,6 +4,7 @@ import { LanguageDropDownComponent } from './langdropdown.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { By } from '@angular/platform-browser';
 
 describe('LangdropdownComponent', () => {
     let component: LanguageDropDownComponent;
@@ -28,5 +29,16 @@ describe('LangdropdownComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('should render two languages of English and Amhric', () => {
+        expect(component).toBeTruthy();
+        expect(fixture.debugElement.queryAll(By.css('.langMenuItem')).length).toEqual(2);
+        expect(fixture.debugElement.queryAll(By.css('.langMenuItem'))[0].nativeElement.textContent).toBe(
+            ' English '
+        );
+        expect(fixture.debugElement.queryAll(By.css('.langMenuItem'))[1].nativeElement.textContent).toBe(
+            ' አማርኛ '
+        );
     });
 });

@@ -5,35 +5,15 @@
 }
 
 #outline {
-    // border: 1px solid green;
-    // width:800px;
-    // height:200px;
-    // pointer-events: none;
     position: fixed;
     display: none;
     top: 15%;
     left: calc(100% - 18rem);
-    // top:70px;
-    // opacity: 0.6;
     z-index: 96;
     width: 14rem;
 }
 
-// body {
-//   margin: 0;
-//   padding: 0;
-//   background: rgb(230,230,230);
-//   color: rgb(50,50,50);
-//   font-family: 'Open Sans', sans-serif;
-//   font-size: 112.5%;
-//   line-height: 1.6em;
-// }
-
-/* ================ The Timeline ================ */
-
 .timeline {
-    // position: relative;
-    // width: 660px;
     margin: 0 auto;
     margin-top: 20px;
     // padding: 1em 3em;
@@ -111,8 +91,6 @@
 
 .direction-l {
     position: relative;
-    // width: 300px;
-    // float: left;
     text-align: right;
 }
 
@@ -123,6 +101,7 @@
 }
 
 .flag-wrapper {
+    transition: all 1s ease;
     position: relative;
     display: inline-block;
 
@@ -187,6 +166,7 @@
 }
 
 .direction-l .flag:after {
+    transition: all 1s ease;
     content: '';
     position: absolute;
     left: 100%;
@@ -231,8 +211,6 @@
 .direction-r .desc {
     margin: 1em 0 0 0.75em;
 }
-
-/* ================ Timeline Media Queries ================ */
 
 @media screen and (max-width: 1024px) {
     .timeline {
@@ -332,7 +310,6 @@
 
 .flag:after {
     border-left-color: var(--background2) !important;
-    // box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
 }
 .active:before {
     transition: all 0.5s ease;
@@ -347,29 +324,13 @@
 }
 
 .active {
-    // transition: font-size 0.3s; __<<ngM2ThemingMigrationEscapedComment2>>__
-    // transition: background-color 1s ease;
     transition: all 0.5s ease;
-    // transition: box-sizing 1s ease;
-    // color:#a7a7a7;
     color: white;
     font-size: 20px !important;
     background: var(--primary) !important;
-    // opacity: 1;
 }
 
-// .timeline:before {
-
-// background: rgb(80,80,80) !important;
-// background: mat-color($accent) !important;
-// background: linear-gradient(to bottom, rgba(80, 80, 80, 0) 0%, $outline_theme 8%, $outline_theme 92%, rgba(80, 80, 80, 0) 100%) ! important;
-// display:none;
-// opacity:0.5;
-// z-index: 5;
-// }
-
 .direction-l .flag:before {
-    // display:none;
     position: absolute;
     top: 50%;
     right: -40px;
@@ -379,9 +340,6 @@
     height: 20px;
     margin-top: -10px;
     background: #fff;
-    // background-color: mat-color($accent);
     border-radius: 10px;
-    // border: 4px solid $outline_theme !important;
-    // border: 4px solid lightgray !important;
     z-index: 10;
 }

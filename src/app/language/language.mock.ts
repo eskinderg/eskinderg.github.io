@@ -11,6 +11,23 @@ export class LanguageServiceMock {
 
     @Output() languageChange: EventEmitter<object> = new EventEmitter<object>();
 
+    private langList: any = [
+        {
+            CountryCode: 'GB',
+            title: 'English',
+            code: 'en',
+            icon: '',
+            font: 'Raleway'
+        },
+        {
+            CountryCode: 'ET',
+            title: 'አማርኛ',
+            code: 'am',
+            icon: '',
+            font: 'wookianos'
+        }
+    ];
+
     public texts: any = {
         font: {
             body: 'Raleway',
@@ -482,5 +499,9 @@ export class LanguageServiceMock {
 
     setLanguage(lang: any): Observable<any> {
         return lang;
+    }
+
+    get LanguageList() {
+        return this.langList;
     }
 }
