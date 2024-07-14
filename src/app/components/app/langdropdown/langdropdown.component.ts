@@ -22,7 +22,7 @@ export class LanguageDropDownComponent {
         this.visible = !this.visible;
     }
 
-    @HostListener('document:click', ['$event'])
+    @HostListener('document:mousedown', ['$event'])
     clickout(event: any) {
         if (!this.eRef.nativeElement.contains(event.target)) {
             this.visible = false;
