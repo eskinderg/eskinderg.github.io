@@ -6,9 +6,7 @@ import { DOCUMENT } from '@angular/common';
 @Injectable()
 export class ThemeService {
     private colorList: any;
-
     private defaultTheme: string = 'indigo';
-
     public static DarkModeDefault: boolean = true;
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
@@ -71,7 +69,6 @@ export class ThemeService {
      */
     public SetTheme(theme: string, isDarkMode: boolean) {
         this.document.documentElement.className = theme;
-        // document.documentElement.className = theme;
 
         if (isDarkMode) {
             const root = this.document.querySelector(':root');
@@ -79,14 +76,6 @@ export class ThemeService {
         }
         this.DarkMode = isDarkMode;
         this.Theme = theme;
-    }
-
-    public get DarkModeBackground1(): string {
-        return '#1c2128';
-    }
-
-    public get DarkModeBackground2(): string {
-        return '#22272e';
     }
 
     private checkPreviousConvention() {

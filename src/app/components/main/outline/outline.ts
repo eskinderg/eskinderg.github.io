@@ -2,7 +2,6 @@ import {
     Component,
     ElementRef,
     Input,
-    ChangeDetectionStrategy,
     EventEmitter,
     OnInit,
     ChangeDetectorRef,
@@ -15,8 +14,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 @Component({
     selector: 'app-outline',
     templateUrl: './outline.html',
-    styleUrls: ['./outline.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    styleUrls: ['./outline.scss']
 })
 export class OutlineComponent implements OnInit {
     currentSection: string;

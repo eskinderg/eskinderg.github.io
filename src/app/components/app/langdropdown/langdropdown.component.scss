@@ -2,8 +2,19 @@
     cursor: pointer;
 }
 
+.svg {
+    // stroke: var(--background2);
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.lang-menu-wrapper {
+    // background: var(--primary);
+    border-radius: 50%;
+}
+
 .langSelect {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 6px 5px 0px rgb(0 0 0 / 10%);
     border-radius: 50%;
 }
 
@@ -20,6 +31,7 @@
     flex-direction: column;
     width: 10rem;
     background-color: var(--background2);
+    z-index: 1000;
 }
 
 .showLangDropMenu {

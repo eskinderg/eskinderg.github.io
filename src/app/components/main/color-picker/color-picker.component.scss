@@ -32,7 +32,7 @@ button {
 
 .fab-container {
     position: fixed;
-    z-index: 100;
+    z-index: 99;
     display: flex;
     top: 1rem;
     left: 1rem;
@@ -43,6 +43,11 @@ button {
 .fab-toggler {
     float: right;
     z-index: 100;
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #fab-dismiss {

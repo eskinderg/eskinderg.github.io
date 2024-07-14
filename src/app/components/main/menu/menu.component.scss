@@ -1,19 +1,19 @@
 .MenuButton {
+    position: relative;
+    z-index: 1000;
     border-radius: 50%;
     display: block;
-    position: fixed !important;
     text-align: center;
-    right: 2rem;
-    top: 1rem;
     cursor: pointer;
     font-size: 0;
     padding: 2px 0 0 3px;
-    height: 3rem;
-    width: 3rem;
+    height: 2.5rem;
+    width: 2.5rem;
     z-index: 1000;
     background-color: var(--primary);
     color: #000000;
-    fill: #ffffff;
+    // fill: var(--background2);
+    fill: #fff;
 
     transition: all 0.35s;
 }
@@ -87,13 +87,13 @@
 
 /* Menu button animation */
 .animated #line1 {
-    transform: translateY(7px) translateX(9px) rotate(-45deg);
-    transform-origin: 15px 15px;
+    transform: translateY(9px) translateX(9px) rotate(-45deg);
+    transform-origin: 4px 6px;
     // fill: #252E38;
 }
 .animated #line2 {
-    transform: translateY(-3px) translateX(-9px) rotate(45deg);
-    transform-origin: 15px 15px;
+    transform: translateY(13px) translateX(-3px) rotate(45deg);
+    transform-origin: 36px -5px;
     // fill: #252E38;
 }
 .animated #line3 {
@@ -104,10 +104,6 @@
 #line3 {
     -webkit-transition: all 0.35s; /* Safari */
     transition: all 0.35s;
-}
-
-h2 {
-    color: #ffffff !important;
 }
 
 .MenuFullscreen {

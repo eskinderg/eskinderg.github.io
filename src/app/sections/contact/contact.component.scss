@@ -1,8 +1,17 @@
+.envelope {
+    path {
+        transition: fill 1s ease;
+        fill: var(--background1) !important;
+    }
+}
+
 .app-divider {
-    background: #263038;
+    transition: background-color 1s ease;
+    background: var(--background2);
 }
 
 .separatorPath {
+    transition: fill 1s ease;
     fill: var(--background1);
 }
 
@@ -10,7 +19,8 @@
     width: 40px;
 }
 .contact {
-    background-color: #263038;
+    transition: background-color 1s ease;
+    background-color: var(--background2);
     width: 100%;
     box-sizing: border-box;
     position: relative;
@@ -41,13 +51,9 @@
     margin-top: 24px;
 }
 .horizontal-line {
-    background-color: #263038;
-    padding: 5%;
-    // width: 100%;
-    // padding: 0 10%;
-    // box-sizing: border-box;
-    // position: absolute;
-    // margin-top:80px;
+    transition: background-color 1s ease;
+    background-color: var(--background2);
+    padding: 2%;
 }
 .logo {
     float: left;
@@ -60,7 +66,8 @@
     color: var(--muted);
 }
 .footer {
-    background-color: #263038;
+    transition: background-color 1s ease;
+    background-color: var(--background2);
     width: 100%;
     height: 150px;
 }

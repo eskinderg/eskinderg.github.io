@@ -33,7 +33,7 @@ export class MenuComponent implements OnInit {
         });
     }
 
-    onHover(link) {
+    onHover(link: any) {
         this.hovered = link;
     }
     onMouseOut() {
@@ -44,7 +44,7 @@ export class MenuComponent implements OnInit {
         this.lang.toggleMenu(!this.visible);
     }
 
-    onScroll(event) {
+    onScroll(event: any) {
         const scrollTop = event.srcElement.documentElement.scrollTop;
         // console.log(scrollTop);
         if (scrollTop === 0) {
@@ -54,7 +54,7 @@ export class MenuComponent implements OnInit {
         }
     }
 
-    scrollTo(element) {
+    scrollTo(element: any) {
         this.visible = false;
         const section = this.lang.sections[element];
         // console.log(section);

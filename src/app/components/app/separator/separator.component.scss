@@ -1,4 +1,5 @@
 .app-divider {
+    transition: background-color 1s ease;
     width: 100%;
     background: var(--background2);
     fill: var(--background1);

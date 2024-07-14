@@ -1,7 +1,7 @@
 .toggle {
     position: relative;
-    height: 2rem;
-    width: 3rem;
+    height: 1.5rem;
+    width: 2.5rem;
     cursor: pointer;
     border-radius: 25px;
     background-color: var(--text);
@@ -10,14 +10,15 @@
 .toggle::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 0.1rem;
     top: 50%;
     transform: translateY(-50%);
-    height: 1.75rem;
-    width: 1.75rem;
+    height: 1.25rem;
+    width: 1.25rem;
     border-radius: 50%;
-    background-color: var(--primary) !important;
-    border: 0.25rem solid var(--text);
+    background-color: var(--primary);
+    border: 0.25rem solid var(--primary);
+    filter: brightness(130%);
     transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
@@ -27,7 +28,9 @@
 }
 
 .toggle.on::before {
-    left: calc(100% - 1.75rem);
-    background-color: var(--text);
-    border-color: var(--text);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    left: calc(100% - 1.4rem);
+    background-color: var(--primary);
+    border-color: var(--primary);
+    filter: brightness(130%);
 }

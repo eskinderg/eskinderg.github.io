@@ -1,3 +1,9 @@
+:host * {
+    transition: background-color 1s ease;
+    transition: color 1s ease;
+    transition: fill 1s ease;
+}
+
 #outline {
     // border: 1px solid green;
     // width:800px;
@@ -124,6 +130,7 @@
 }
 
 .flag {
+    transition: background-color 1s ease;
     position: relative;
     display: inline;
     background: var(--background2);

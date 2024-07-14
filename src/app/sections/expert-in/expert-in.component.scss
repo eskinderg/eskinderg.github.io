@@ -1,3 +1,9 @@
+:host * {
+    transition: background-color 1s ease;
+    transition: color 1s ease;
+    transition: fill 1s ease;
+}
+
 .star {
     fill: var(--background2);
 }

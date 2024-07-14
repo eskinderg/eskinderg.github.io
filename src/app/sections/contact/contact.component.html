@@ -146,23 +146,16 @@
                     [ngStyle]="{ 'text-decoration-line': 'none' }"
                     href="mailto:{{ lang.texts.contact.mail }}?Subject=Hello"
                     target="_top">
-                    <mat-card-title
-                        ><img
-                            src="assets/img/mail.webp"
-                            alt="Mail"
-                            [width]="30"
-                            [height]="25"
-                            style="margin-right: 10px; top: 3px; position: relative"
-                    /></mat-card-title>
+                    <img
+                        src="assets/img/mail.webp"
+                        alt="Mail"
+                        [width]="30"
+                        [height]="25"
+                        style="margin-right: 10px; top: 3px; position: relative" />
                     {{ lang.texts.contact.mail }}
                 </a>
                 <br />
                 <br />
-
-                <mat-divider> </mat-divider>
-
-                <br />
-                <mat-card-title></mat-card-title>
                 <a class="phone" href="tel:{{ lang.texts.contact.phone }}">
                     <img
                         src="assets/img/phone.webp"
@@ -173,24 +166,6 @@
                     {{ lang.texts.contact.phone }}
                 </a>
             </div>
-            <!-- <div class="inputs"> -->
-            <!--   <form class="contact-form"> -->
-            <!--     <div>{{(lang.texts)?.contact.input[0]}}</div> -->
-            <!--     <mat-form-field class="input"> -->
-            <!--       <input name="name" [(ngModel)]="message.name" matInput value=""> -->
-            <!--     </mat-form-field> -->
-            <!--     <div>{{(lang.texts)?.contact.input[1]}}</div> -->
-            <!--     <mat-form-field class="input"> -->
-            <!--       <input name="email" [(ngModel)]="message.email" matInput value=""> -->
-            <!--     </mat-form-field> -->
-            <!--     <div>{{(lang.texts)?.contact.input[2]}}</div> -->
-            <!--     <mat-form-field class="input"> -->
-            <!--       <textarea name="message" [(ngModel)]="message.message" matInput placeholder=""></textarea> -->
-            <!--     </mat-form-field> -->
-
-            <!--     <button (click)="send()" class="message" mat-raised-button [ngStyle.sm]="{'width': '100%'}" [ngStyle.xs]="{'width': '100%'}">{{(lang.texts)?.contact.button}}</button> -->
-            <!--   </form> -->
-            <!-- </div> -->
         </div>
 
         <div class="hidden lg:block flex-[1_1_10%]"></div>
