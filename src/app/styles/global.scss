@@ -69,7 +69,6 @@ object {
     display: inherit;
 }
 
-
 body {
     margin: 0;
     font-size: 20px;
@@ -146,15 +145,6 @@ body {
     animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
     -webkit-animation-delay: 1.15s;
     animation-delay: 1.15s;
-}
-
-mat-tooltip-component {
-    /*Material Override*/
-    font-size: 15px !important;
-}
-.mdc-tooltip__surface {
-    background-color: var(--primary) !important;
-    color: white !important;
 }
 
 @-webkit-keyframes indeterminate {
