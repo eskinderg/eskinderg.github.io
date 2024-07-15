@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageDropDownComponent } from './langdropdown.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { By } from '@angular/platform-browser';
+import { TooltipModule } from '../tooltip/tooltip.module';
 
 describe('LangdropdownComponent', () => {
     let component: LanguageDropDownComponent;
@@ -13,7 +13,7 @@ describe('LangdropdownComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [LanguageDropDownComponent],
-            imports: [MatTooltipModule],
+            imports: [TooltipModule],
             providers: [
                 {
                     provide: LanguageService,

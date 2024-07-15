@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { colorPickerAnimations } from './color-picker.animations';
+import { TooltipPosition } from '../../app/tooltip/tooltip.enums';
 
 export interface ColorPickerButton {
     icon: string;
@@ -19,10 +20,10 @@ export enum ColorPickerPosition {
     selector: 'app-color-picker',
     templateUrl: './color-picker.component.html',
     styleUrls: ['./color-picker.component.scss'],
-    animations: colorPickerAnimations,
-    changeDetection: ChangeDetectionStrategy.OnPush
+    animations: colorPickerAnimations
 })
 export class ColorPickerComponent {
+    TooltipPosition: typeof TooltipPosition = TooltipPosition;
     @Input() reverseColumnDirection: boolean = false;
     @Input() colorButtons: ColorPickerButton[];
 

@@ -6,6 +6,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 import { IntroSectionComponent } from './intro.component';
 import { AppModule } from 'src/app/app.module';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { TooltipModule } from 'src/app/components/app/tooltip/tooltip.module';
 
 describe('IntroSectionComponent', () => {
     let component: IntroSectionComponent;
@@ -14,7 +15,7 @@ describe('IntroSectionComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [IntroSectionComponent],
-            imports: [AppModule],
+            imports: [AppModule, TooltipModule],
             providers: [
                 {
                     provide: LanguageService,

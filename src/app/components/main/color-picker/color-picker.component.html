@@ -6,8 +6,8 @@
         class="fab-toggler main-button"
         aria-label="Color Chooser"
         color="primary"
-        matTooltip="{{ lang.texts.colorSelectTooltip }}"
-        [matTooltipPosition]="'below'"
+        appTooltip="{{ lang.texts.colorSelectTooltip }}"
+        [position]="TooltipPosition.RIGHT"
         [ngClass]="{ colorBtnNoBoxShadow: atTop && colorTogglerState !== 'active' }"
         (click)="onToggleButton()">
         <svg
@@ -55,7 +55,8 @@
     <div class="flex flex-col sm:flex-row" [@colorPickerStagger]="buttons.length">
         @for (btn of buttons; track btn) {
             <div
-                matTooltip="{{ lang.translateColor(btn.theme) }}"
+                appTooltip="{{ lang.translateColor(btn.theme) }}"
+                [position]="TooltipPosition.BELOW"
                 class="miniColorBtn"
                 [ngClass]="btn.theme"
                 (click)="onClickColor(btn)"></div>

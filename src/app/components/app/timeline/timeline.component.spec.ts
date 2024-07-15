@@ -5,7 +5,6 @@ import { TimelineComponent } from './timeline.component';
 import { TitleComponent } from '../title/title.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
-import { MatModule } from 'src/app/module/material.module';
 import { ChipComponent } from '../chip/chip.component';
 
 describe('TimelineComponent', () => {
@@ -15,7 +14,7 @@ describe('TimelineComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [TimelineComponent, TitleComponent, ChipComponent],
-            imports: [MatModule, BrowserAnimationsModule],
+            imports: [BrowserAnimationsModule],
             providers: [
                 {
                     provide: LanguageService,

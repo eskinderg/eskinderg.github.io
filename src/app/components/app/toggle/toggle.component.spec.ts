@@ -4,6 +4,7 @@ import { ToggleComponent } from './toggle.component';
 import { ComponentsModule } from '../components.module';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { TooltipModule } from '../tooltip/tooltip.module';
 
 describe('ToggleComponent', () => {
     let component: ToggleComponent;
@@ -11,7 +12,7 @@ describe('ToggleComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [ComponentsModule],
+            imports: [ComponentsModule, TooltipModule],
             declarations: [ToggleComponent],
             providers: [ThemeService, provideHttpClient(withInterceptorsFromDi())]
         }).compileComponents();

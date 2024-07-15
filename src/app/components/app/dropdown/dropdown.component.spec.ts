@@ -5,7 +5,7 @@ import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { ThemeService } from 'src/app/theme/theme.service';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { TooltipModule } from '../tooltip/tooltip.module';
 
 describe('DropdownComponent', () => {
     let component: DropDownMenuComponent;
@@ -14,7 +14,7 @@ describe('DropdownComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [DropDownMenuComponent],
-            imports: [MatTooltipModule],
+            imports: [TooltipModule],
             providers: [
                 {
                     provide: LanguageService,
