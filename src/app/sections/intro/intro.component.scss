@@ -65,7 +65,12 @@
     .introSubTitle {
         font-size: 1.5rem;
     }
+
+    .intro {
+        height: calc(70vh - 0px);
+    }
 }
+
 @include screen-lg {
     .icon_links {
         margin-top: 2.5rem;
@@ -73,10 +78,6 @@
 
     .app-divider {
         height: 6rem;
-    }
-
-    .intro {
-        height: calc(70vh - 0px);
     }
 }
 
