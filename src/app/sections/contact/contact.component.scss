@@ -1,3 +1,5 @@
+@import '../../styles/screen.scss';
+
 .envelope {
     path {
         transition: fill 1s ease;
@@ -6,6 +8,7 @@
 }
 
 .app-divider {
+    height: 5rem;
     transition: background-color 1s ease;
     background: var(--background2);
 }
@@ -16,6 +19,15 @@
 }
 
 .contact {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    gap: 5%;
     transition: background-color 1s ease;
     background-color: var(--background2);
     width: 100%;
@@ -33,6 +45,8 @@
     width: 100%;
     font-family: sans-serif;
     color: var(--muted);
+    font-size: 1.25rem;
+    line-height: 1.75rem;
 }
 .inputs {
     float: right;
@@ -58,6 +72,9 @@
     height: 68px;
 }
 .copyrights {
+    color: white;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     // padding: 16px;
     text-align: center;
     color: var(--muted);
@@ -70,12 +87,75 @@
 }
 
 .contact-title {
-    // font-size: 30px;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     font-weight: 100;
+    text-decoration: none;
+    color: var(--muted);
 }
 
 .phone {
     text-decoration: none;
     // color: lightblue;
     color: var(--muted);
+}
+
+.left {
+    display: none;
+}
+
+.item {
+    flex: 1 1 10%;
+    display: none;
+}
+
+.saying {
+    display: none;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.right-contact-item {
+    flex: 1 1 60%;
+}
+
+@include screen-md {
+    .contact-title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .contactIntro {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .contact {
+        flex-direction: row;
+        flex: 1 1 90%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@include screen-lg {
+    .app-divider {
+        height: 6rem;
+    }
+
+    .left {
+        display: block;
+    }
+    .item {
+        display: block;
+    }
+
+    .copyrights {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .saying {
+        display: block;
+    }
 }

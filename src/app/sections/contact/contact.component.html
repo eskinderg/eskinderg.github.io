@@ -1,5 +1,5 @@
 <a name="contact">
-    <div class="app-divider h-20 lg:h-24">
+    <div class="app-divider">
         <svg
             width="1920"
             viewBox="0 0 507.99999 29.368751"
@@ -22,10 +22,8 @@
         </svg>
     </div>
 
-    <div
-        #contact
-        class="contact gap-[5%] colorWhite px-[5%] md:px-[10%] flex flex-col md:flex-row flex-[1_1_100%] md:flex-[1_1_90%] items-center text-center">
-        <div class="left hidden lg:block">
+    <div #contact class="contact">
+        <div class="left">
             <svg class="envelope" width="764" height="408">
                 <g>
                     <g transform="translate(836.32206,-260.04078)">
@@ -132,9 +130,9 @@
             </svg>
         </div>
 
-        <div class="right-contact-item flex-[1_1_60%]">
+        <div class="right-contact-item">
             <!-- <div class="right flex-[1_1_60%] md:flex-[1_1_100%]" [ngStyle.sm]="{'padding': '0 5%'}" [ngStyle.xs]="{'padding': '0 5%'}"> -->
-            <div class="contactIntro text-xl md:text-2xl" [style.font-family]="lang.texts.font.content">
+            <div class="contactIntro" [style.font-family]="lang.texts.font.content">
                 {{ lang.texts.contact.intro }}
             </div>
 
@@ -142,7 +140,7 @@
 
             <div class="contactIntro">
                 <a
-                    class="contact-title link colorBlue text-xl md:text-2xl"
+                    class="contact-title link"
                     [ngStyle]="{ 'text-decoration-line': 'none' }"
                     href="mailto:{{ lang.texts.contact.mail }}?Subject=Hello"
                     target="_top">
@@ -168,17 +166,15 @@
             </div>
         </div>
 
-        <div class="hidden lg:block flex-[1_1_10%]"></div>
+        <div class="item"></div>
     </div>
 
     <div class="horizontal-line">
-        <div class="copyrights colorWhite text-sm lg:text-xl" [style.font-family]="lang.texts.font.content">
+        <div class="copyrights" [style.font-family]="lang.texts.font.content">
             v{{ currentAppVersion }} <br />
             &copy; {{ Copyright }} <br />
             <br />
-            <span class="text-sm hidden lg:block"
-                >no animals were harmed in the making of this portfolio</span
-            >
+            <span class="saying">no animals were harmed in the making of this portfolio</span>
         </div>
     </div>
 </a>

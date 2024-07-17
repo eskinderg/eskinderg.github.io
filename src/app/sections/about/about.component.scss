@@ -1,3 +1,5 @@
+@import '../../styles//screen.scss';
+
 .about {
     position: relative;
     transition: background-color 1s ease;
@@ -12,6 +14,13 @@
     line-height: 35px;
 }
 
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    column-gap: 5%;
+}
+
 .btn-download {
     padding: 2% 0% !important;
     color: white;
@@ -23,18 +32,31 @@
 
 .profile-picture {
     box-sizing: border-box;
+    display: flex;
+    flex: 1 1 20%;
+    justify-content: center;
+    align-self: stretch;
+}
 
-    .profile {
-        border: 3px solid var(--primary);
-    }
+.profile {
+    border: 3px solid var(--primary);
+    width: 50%;
+    margin-bottom: 5%;
 }
 
 .about-title {
     margin-bottom: 24px;
+    text-align: center;
 }
 
 .introContent {
+    flex: 1 1 80%;
     box-sizing: border-box;
+}
+
+.contentParagraph {
+    font-size: 1.125rem;
+    text-align: center;
 }
 
 .introContent p:first-child {
@@ -49,7 +71,6 @@
 .profile {
     transition: filter 2.5s ease;
     background-image: url('../../../assets/img/expertin-min.webp');
-    // background-position: -43px -674px;
     background-position: 10% 85%;
     background-size: 230%;
     filter: grayscale(100%);
@@ -60,4 +81,46 @@
 
 .profile:hover {
     filter: grayscale(0%);
+}
+
+@include screen-sm {
+    .about {
+        padding-top: 1.25rem;
+    }
+
+    .profile {
+        width:30%;
+    }
+}
+
+@include screen-md {
+    .about {
+        padding-top: 2.5rem;
+    }
+
+    .profile {
+        width:30%;
+    }
+}
+
+@include screen-lg {
+    .about {
+        padding-top: 4rem;
+    }
+    .about-title {
+        text-align: left;
+    }
+
+    .about-content {
+        flex-direction: row;
+    }
+
+    .profile {
+        margin-bottom: 0%;
+        width: auto;
+    }
+
+    .contentParagraph {
+        text-align: left;
+    }
 }

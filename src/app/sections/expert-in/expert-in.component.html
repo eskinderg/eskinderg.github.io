@@ -1,5 +1,5 @@
-<div #expertin class="px-[2%] md:px-[10%] expertin flex flex-row flex-wrap">
-    <div class="h2 titleExpertin flex-[1_1_100%]">
+<div #expertin class="expertin">
+    <div class="h2 titleExpertin">
         <!-- <div class="h2 titleExpertin" fxFlex="100" [ngStyle.sm]="{'text-align': 'center','padding':0}" [ngStyle.xs]="{'text-align': 'center','padding':0}"> -->
         <app-title
             title="{{ lang.texts.technologies.title }}"
@@ -10,15 +10,14 @@
             [lineWidth]="250"
             [inverse]="true"></app-title>
     </div>
-    <div class="expertInContent flex-[1_1_100%] lg:flex-[1_1_70%]">
-        <div
-            class="grid justify-center grid-cols-[repeat(auto-fill,25%)] xs:grid-cols-[repeat(auto-fill,20%)] sm:grid-cols-[repeat(auto-fill,15%)] md:grid-cols-[repeat(auto-fill,15%)] lg:grid-cols-[repeat(auto-fill,15%)]">
+    <div class="expertInContent">
+        <div class="technologyList">
             @for (mastery of lang.texts.technologies.masteries; track mastery) {
                 <app-technology class="tech-list" [item]="mastery"></app-technology>
             }
         </div>
     </div>
-    <div class="expertinSVG flex-[1_1_30%] hidden lg:block">
+    <div class="expertinSVG">
         <svg width="546" height="480">
             <g>
                 <g transform="translate(296.22295,-100.91107)">

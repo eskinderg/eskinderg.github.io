@@ -12,19 +12,16 @@
         [inverse]="true"></app-title>
 </div>
 
-<div class="accomplishments px-[5%] md:px-[10%] flex items-center flex-col xl:flex-row">
-    <div class="accomplishment self-start xl:text-right">
+<div class="accomplishments">
+    <div class="accomplishment leftItem">
         <div class="h3 subtitle">
-            <app-title
-                [fontFamily]="lang.texts.font.title.fontFamily"
-                [strokeWidth]="5"
-                title="{{ lang.texts.accomplishments.content[0].title }}"
-                [lineWidth]="98"
-                color="#d7d7d7"></app-title>
+            <div [style.font-family]="lang.texts.font.title.fontFamily">
+                {{ lang.texts.accomplishments.content[0].title }}
+            </div>
         </div>
         <div class="content">{{ lang.texts.accomplishments.content[0].paragraph }}</div>
     </div>
-    <div class="accomplishmentIcon hidden xl:block">
+    <div class="accomplishmentIcon">
         <svg width="540" height="560">
             <g>
                 <g transform="translate(-175.64289,-228.95433)">
@@ -146,24 +143,14 @@
             </g>
         </svg>
     </div>
-    <div class="accomplishment self-baseline xl:self-center">
+    <div class="accomplishment rightItem">
         <div class="h3 subtitle">
-            <app-title
-                [fontFamily]="lang.texts.font.title.fontFamily"
-                [strokeWidth]="5"
-                title="{{ lang.texts.accomplishments.content[1].title }}"
-                [lineWidth]="45"
-                color="#d7d7d7"
-                [inverse]="true"></app-title>
+            <div [style.font-family]="lang.texts.font.title.fontFamily">
+                {{ lang.texts.accomplishments.content[1].title }}
+            </div>
         </div>
         <div class="content">{{ lang.texts.accomplishments.content[1].paragraph }}</div>
     </div>
 </div>
-
-<!-- <app-separator -->
-<!--     [Inverted]="true" -->
-<!--     [fillColor]="themeService.DarkMode ? themeService.DarkModeBackground1 : '#eee'" -->
-<!--     [backgroundColor]="themeService.DarkMode ? themeService.DarkModeBackground2 : '#FFFFFF'"> -->
-<!-- </app-separator> -->
 
 <app-separator [Inverted]="true"> </app-separator>

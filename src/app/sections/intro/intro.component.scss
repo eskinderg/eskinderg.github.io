@@ -1,5 +1,8 @@
+@import '../../styles/screen.scss';
+
 .titleIntro {
     position: absolute;
+    font-weight: 700;
     top: 40%;
     left: 10%;
     margin: 0;
@@ -13,6 +16,7 @@
 }
 
 .app-divider {
+    height: 5rem;
     transition: background-color 1s ease;
     background: var(--background2) !important;
 
@@ -23,7 +27,8 @@
 }
 
 .icon_links {
-    margin-top: 64px !important;
+    display: flex;
+    flex-direction: row;
 }
 
 .icon_links a {
@@ -34,13 +39,53 @@
 }
 
 .intro {
-    // @include mat-elevation(2);
     transition: background-color 1s ease;
     background-color: var(--primary);
     position: relative;
     overflow: visible;
     width: 100% !important;
-    height: 100vh;
-    width: 100vw;
-    height: calc(70vh - 0px);
+    height: calc(40vh - 0px);
+}
+
+@include screen-xxs {
+    .introTitle {
+        font-size: 2rem;
+    }
+
+    .introSubTitle {
+        font-size: 1.5rem;
+    }
+}
+
+@include screen-md {
+    .introTitle {
+        font-size: 2.5rem;
+    }
+
+    .introSubTitle {
+        font-size: 1.5rem;
+    }
+}
+@include screen-lg {
+    .icon_links {
+        margin-top: 2.5rem;
+    }
+
+    .app-divider {
+        height: 6rem;
+    }
+
+    .intro {
+        height: calc(70vh - 0px);
+    }
+}
+
+@include screen-xl {
+    .introTitle {
+        font-size: 3rem;
+    }
+
+    .introSubTitle {
+        font-size: 2.25rem;
+    }
 }

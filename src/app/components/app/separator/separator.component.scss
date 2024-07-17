@@ -1,4 +1,7 @@
+@import '../../../styles//screen.scss';
+
 .app-divider {
+    height: 5rem;
     transition: background-color 1s ease;
     width: 100%;
     background: var(--background2);
@@ -7,4 +10,10 @@
 
 .separatorPath {
     transition: fill 1s ease;
+}
+
+@include screen-lg {
+    .app-divider {
+        height: 6rem;
+    }
 }

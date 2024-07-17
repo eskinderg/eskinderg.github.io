@@ -1,3 +1,5 @@
+@import '../../../styles/screen.scss';
+
 :host * {
     transition: background-color 1s ease;
     transition: color 1s ease;
@@ -8,15 +10,15 @@
     position: fixed;
     display: none;
     top: 15%;
-    left: calc(100% - 18rem);
+    left: calc(100% - 22rem);
     z-index: 96;
-    width: 14rem;
+    width: 18rem;
 }
 
 .timeline {
+    display: none;
     margin: 0 auto;
     margin-top: 20px;
-    // padding: 1em 3em;
     list-style-type: none;
 }
 
@@ -342,4 +344,10 @@
     background: #fff;
     border-radius: 10px;
     z-index: 10;
+}
+
+@include screen-lg {
+    .timeline {
+        display: block;
+    }
 }

@@ -1,3 +1,5 @@
+@import '../../styles/screen.scss';
+
 :host * {
     transition: background-color 1s ease;
     transition: color 1s ease;
@@ -38,27 +40,76 @@
     height: 100%;
     aspect-ratio: 1;
 }
+
 .expertin {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding-top: 5%;
     padding-bottom: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
     transition: background-color 1s ease;
     background-color: var(--background2);
-    width: 100%;
+    // width: 100%;
 }
+
 .titleExpertin {
-    // padding-left: 70%;
+    flex: 1 1 100%;
     text-align: center;
 }
 .expertinSVG {
+    flex: 1 1 30%;
+    display: none;
     margin-top: 32px;
     box-sizing: border-box;
     overflow: hidden;
 }
 .expertInContent {
+    flex: 1 1 100%;
     margin-top: 5%;
-    // padding: 24px 10%;
     box-sizing: border-box;
 }
 .expertInContent button {
     margin-top: 24px;
+}
+
+.technologyList {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 25%);
+}
+
+@include screen-xs {
+    .technologyList {
+        grid-template-columns: repeat(auto-fill, 20%);
+    }
+}
+
+@include screen-sm {
+    .technologyList {
+        grid-template-columns: repeat(auto-fill, 15%);
+    }
+}
+
+@include screen-md {
+    .technologyList {
+        grid-template-columns: repeat(auto-fill, 15%);
+    }
+    .expertin {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@include screen-lg {
+    .expertinSVG {
+        display: block;
+    }
+    .technologyList {
+        grid-template-columns: repeat(auto-fill, 15%);
+    }
+    .expertInContent {
+        flex: 1 1 70%;
+    }
 }

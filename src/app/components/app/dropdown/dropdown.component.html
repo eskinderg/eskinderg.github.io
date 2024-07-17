@@ -1,10 +1,10 @@
 <div
     (click)="onClick()"
     appTooltip="{{ lang.texts.about.button.tooltip }}"
-    class="menuBtn w-[100%] lg:w-[40%]"
+    class="menuBtn"
     [style.font-family]="lang.texts.font.menu">
-    {{ lang.texts.about.button.title }}
-    &nbsp;
+    <span> {{ lang.texts.about.button.title }} </span>
+    &nbsp; &nbsp;
     <img
         src="assets/img/download.webp"
         style="position: inherit"
@@ -13,7 +13,7 @@
         alt="Download File" />
 </div>
 
-<div class="menu w-[100%] lg:w-[40%]" [ngClass]="{ showDropMenu: visible }">
+<div class="menu" [ngClass]="{ showDropMenu: visible }">
     <div class="menuItem">
         <a href="assets/pdf/Eskinder-CV.pdf" target="_blank">
             <img src="assets/img/pdf.webp" [width]="30" />&nbsp;

@@ -1,3 +1,5 @@
+@import '../../styles/screen.scss';
+
 :host * {
     transition: background-color 1s ease;
     transition: fill 1s ease;
@@ -20,6 +22,7 @@
     position: relative;
     z-index: 10;
 }
+
 .education,
 .conferences,
 .educationConferencesWrapper {
@@ -27,36 +30,56 @@
 
     position: relative;
 }
+
 .title.right {
     text-align: right;
 }
+
 .title.left {
     text-align: left;
 }
+
 .educationConferencesWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 5%;
+    padding-right: 5%;
     padding-top: 0;
     padding-bottom: 0;
     transition: background-color 1s ease;
     background-color: var(--background1);
 }
+
 .educationTitle {
     margin: 7% 0%;
 }
+
 .educationSVG {
     position: absolute;
     right: 0;
     z-index: 5;
     margin-top: 5%;
 }
+
 .conferencesSVG {
     position: absolute;
     margin-top: 280px;
     left: 0;
     z-index: 5;
 }
+
 .addRightMargin {
     margin-right: -10%;
 }
+
 .addLeftMargin {
     margin-left: -10%;
+}
+
+@include screen-sm {
+    .educationConferencesWrapper {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }

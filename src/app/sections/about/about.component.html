@@ -1,5 +1,5 @@
-<div #about class="about sm:!pt-5 md:!pt-10 lg:!pt-16">
-    <div class="h2 about-title text-center lg:text-left">
+<div #about class="about">
+    <div class="h2 about-title">
         <app-title
             title="{{ lang.texts.about.title }}"
             fontWeight="{{ lang.texts.font.title.fontWeight }}"
@@ -8,14 +8,14 @@
             [anchor]="'about'"
             [lineWidth]="250"></app-title>
     </div>
-    <div class="flex items-center flex-col lg:flex-row gap-x-[5%]">
-        <div class="profile-picture flex flex-[1_1_20%] justify-center self-stretch">
-            <div class="profile w-[50%] mb-[5%] lg:mb-[0%] lg:w-auto"></div>
+    <div class="about-content">
+        <div class="profile-picture">
+            <div class="profile"></div>
         </div>
         <!-- <div class="w-[5%] h-[5%]">&nbsp;</div> -->
-        <div class="introContent flex-[1_1_80%]">
+        <div class="introContent">
             @for (paragraph of lang.texts.about.content; track paragraph) {
-                <p class="leading-7 text-lg text-center lg:text-left" [innerHTML]="paragraph"></p>
+                <p class="contentParagraph" [innerHTML]="paragraph"></p>
             }
             <app-dropdown></app-dropdown>
         </div>

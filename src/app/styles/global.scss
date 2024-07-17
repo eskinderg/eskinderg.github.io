@@ -1,3 +1,15 @@
+@import './screen.scss';
+
+html {
+    line-height: 1.5;
+}
+
+*,
+:before,
+:after {
+    box-sizing: border-box;
+}
+
 .loading-screen {
     background-color: var(--primary);
 }
@@ -20,7 +32,7 @@
 .h2 {
     font-size: 36px;
     color: var(--primary);
-    font-weight: bold;
+    font-weight: 700;
     word-wrap: break-word;
 }
 
@@ -44,10 +56,6 @@
 
 .colorWhite {
     color: #ffffff;
-}
-
-a {
-    text-decoration: none;
 }
 
 p {
@@ -88,7 +96,6 @@ body {
     left: 0;
     top: 0;
     z-index: 10000;
-    // background-color: rgba(66,128,247,0.9);
 }
 
 .loading-screen.show {
@@ -102,7 +109,6 @@ body {
     height: 8px;
     display: block;
     width: 100vw;
-    // background-color: rgba(66,128,247,0.9);
     border-radius: 0px;
     background-clip: padding-box;
     margin: 0;
@@ -225,24 +231,18 @@ body {
 
 *::-webkit-scrollbar-thumb {
     transition: background-color 1s ease;
-    // background: mat.m2-get-color-from-palette($primary, 400);
-    // border-radius: 0.5rem;
     background: linear-gradient(
         to bottom,
         var(--light) 0%,
-        //400
         var(--primary) 100%
-    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    );
 }
 
 *::-webkit-scrollbar-thumb:hover {
     background: var(--light); //800
-    // background: linear-gradient(to bottom, mat.m2-get-color-from-palette($primary, 800) 0%, mat.m2-get-color-from-palette($primary, 800) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    // background: linear-gadient(to bottom, red 0%, white 100%) ! important;
 }
 
 *::-webkit-scrollbar-track {
-    // background: transparent;
     transition: background-color 1s ease;
     background-color: var(--background1);
 }

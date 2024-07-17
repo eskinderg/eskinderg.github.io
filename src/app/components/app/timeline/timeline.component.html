@@ -1,25 +1,22 @@
-<div class="flex flex-wrap lg:flex-nowrap pt-0 pb-[5%] lg:pb-[0%]">
-    <div
-        class="order-1"
-        [ngClass]="{ 'left lg:order-1': reverse, 'right lg:order-3': !reverse }"
-        class="flex-[1_1_100%] lg:flex-[1_1_48%] lg:pt-40">
+<div class="outer">
+    <div class="leftSide" [ngClass]="{ 'left order1': reverse, 'right order3': !reverse }">
         <div class="mainTitle h3 link">{{ job.title }}</div>
         <div class="subtitle h4">{{ job.subtitle }}</div>
-        <div class="content mainTitle h4 year lg:hidden">{{ job.year }}</div>
+        <div class="content mainTitle h4 year job-year">{{ job.year }}</div>
         <div class="timelineParagraph">{{ job.intro }}</div>
         <!-- <div *ngFor="let paragraph of job.intro" class="paragraph">{{ paragraph }}</div> -->
         @for (list of job.elements; track list) {
             <div>
-                <h5 class="content text-lg" style="margin: 10px 0px 10px 0">{{ list.header }}</h5>
+                <h5 class="content content-list" style="margin: 10px 0px 10px 0">{{ list.header }}</h5>
                 @for (l of list.list; track l) {
                     <div
-                        class="flex flex-row flex-wrap experienceList"
+                        class="experienceList"
                         [ngClass]="{
                             'lExperienceList leftFlexLayout': reverse,
                             'rExperienceList rightFlexLayout': !reverse
                         }">
                         <div
-                            class="content experienceListItem grow lg:grow-0"
+                            class="content experienceListItem"
                             [ngClass]="{ leftItemFlexLayout: reverse, rightItemFlexLayout: !reverse }">
                             {{ l }}
                         </div>
@@ -28,10 +25,8 @@
             </div>
         }
     </div>
-    <div class="middle order-2 hidden lg:block lg:flex-[1_1_4%]">
+    <div class="middle">
         <div class="line bottom">
-            <!-- <mat-icon class="midIcon">adjust</mat-icon> -->
-            <!-- <img src="assets/img/adjust.png" class="midIcon" /> -->
             <svg id="svg" class="midIcon" width="26" height="26" viewBox="0, 0, 400,399.592252803262">
                 <g id="svgg">
                     <path
@@ -45,12 +40,10 @@
             </svg>
         </div>
     </div>
-    <div
-        class="order-3"
-        [ngClass]="{ 'right lg:order-3': reverse, 'left lg:order-1': !reverse }"
-        class="flex-[1_1_100%] lg:flex-[1_1_48%] lg:pt-40">
-        <div class="content mainTitle h4 year gapTop hidden lg:block">
+    <div class="rightSide" [ngClass]="{ 'right order3': reverse, 'left order1': !reverse }">
+        <div class="content mainTitle h4 year-duration year gapTop">
             <app-title
+                class="title"
                 title="{{ job.year }}"
                 [lineWidth]="150"
                 [strokeWidth]="0"
@@ -58,9 +51,8 @@
             </app-title>
         </div>
         <div class="">
-            <div class="used lg:py-4">
+            <div class="used">
                 @for (technology of job.used; track technology) {
-                    <!-- <mat-chip class="chip">{{ technology }}</mat-chip> -->
                     <app-chip [technology]="technology"></app-chip>
                 }
             </div>

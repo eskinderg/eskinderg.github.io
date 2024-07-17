@@ -1,4 +1,8 @@
+@import '../../styles/screen.scss';
+
 .experience {
+    padding-left: 5%;
+    padding-right: 5%;
     background: var(--background2);
     padding-top: 0px;
     padding-bottom: 0px;
@@ -8,4 +12,11 @@
 }
 .experience .h2 {
     margin: 5% 0% 5% 0%;
+}
+
+@include screen-md {
+    .experience {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
