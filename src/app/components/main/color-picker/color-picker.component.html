@@ -54,6 +54,8 @@
     <div class="btnWrapper" [@colorPickerStagger]="buttons.length">
         @for (btn of buttons; track btn) {
             <div
+                (mouseover)="mouseOver(btn)"
+                (mouseleave)="mouseLeave()"
                 appTooltip="{{ lang.translateColor(btn.theme) }}"
                 [position]="TooltipPosition.BELOW"
                 class="miniColorBtn"

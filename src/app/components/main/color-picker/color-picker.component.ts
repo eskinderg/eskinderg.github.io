@@ -30,11 +30,21 @@ export class ColorPickerComponent {
     public buttons = [];
     public colorTogglerState = 'inactive';
     public atTop = true;
+    public currentTheme: any;
 
     constructor(
         public themeService: ThemeService,
         public lang: LanguageService
     ) {}
+
+    public mouseOver(btn: { icon: string; theme: string }) {
+        this.currentTheme = this.themeService.Theme;
+        this.themeService.SetTheme(btn.theme, this.themeService.DarkMode);
+    }
+
+    public mouseLeave() {
+        this.themeService.SetTheme(this.currentTheme, this.themeService.DarkMode);
+    }
 
     private showItems() {
         this.colorTogglerState = 'active';

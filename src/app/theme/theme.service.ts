@@ -6,7 +6,7 @@ import { DOCUMENT } from '@angular/common';
 @Injectable()
 export class ThemeService {
     private colorList: any;
-    private defaultTheme: string = 'indigo';
+    private defaultTheme: string = 'blue';
     public static DarkModeDefault: boolean = true;
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
