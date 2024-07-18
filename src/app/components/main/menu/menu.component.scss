@@ -1,3 +1,5 @@
+@import '../../../styles/screen.scss';
+
 .MenuButton {
     position: relative;
     z-index: 1000;
@@ -109,13 +111,15 @@
 .MenuFullscreen {
     background-color: var(--primary) !important;
 }
-.icon {
-    // background-color: mat-color($accent);
-    // fill: #FFFFFF;
-    // fill: mat-color($accent);
+
+@include screen-sm {
+    .MenuFullscreen nav a {
+        font-size: 1.5rem;
+    }
 }
-.MenuButton {
-    // fill: mat-color($accent);
-    // fill: mat-color($accent);
-    // fill: #FFFFFF;
+
+@include screen-md {
+    .MenuFullscreen nav a {
+        font-size: 2rem;
+    }
 }
