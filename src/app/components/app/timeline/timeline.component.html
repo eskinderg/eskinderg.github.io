@@ -1,10 +1,9 @@
 <div class="outer">
     <div class="leftSide" [ngClass]="{ 'left order1': reverse, 'right order3': !reverse }">
         <div class="mainTitle h3 link">{{ job.title }}</div>
-        <div class="subtitle h4">{{ job.subtitle }}</div>
+        <div class="subtitle h3">{{ job.subtitle }}</div>
         <div class="content mainTitle h4 year job-year">{{ job.year }}</div>
         <div class="timelineParagraph">{{ job.intro }}</div>
-        <!-- <div *ngFor="let paragraph of job.intro" class="paragraph">{{ paragraph }}</div> -->
         @for (list of job.elements; track list) {
             <div>
                 <h5 class="content content-list" style="margin: 10px 0px 10px 0">{{ list.header }}</h5>
@@ -42,13 +41,9 @@
     </div>
     <div class="rightSide" [ngClass]="{ 'right order3': reverse, 'left order1': !reverse }">
         <div class="content mainTitle h4 year-duration year gapTop">
-            <app-title
-                class="title"
-                title="{{ job.year }}"
-                [lineWidth]="150"
-                [strokeWidth]="0"
-                fontFamily="{{ lang.texts.font.content }}">
-            </app-title>
+            <div [style.font-family]="lang.texts.font.content">
+                {{ job.year }}
+            </div>
         </div>
         <div class="">
             <div class="used">
