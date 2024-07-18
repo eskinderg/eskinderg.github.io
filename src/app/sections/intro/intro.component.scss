@@ -44,7 +44,7 @@
     position: relative;
     overflow: visible;
     width: 100% !important;
-    height: calc(40vh - 0px);
+    height: calc(30vh - 0px);
 }
 
 .introIcons {
@@ -59,6 +59,18 @@
 
     .introSubTitle {
         font-size: 1.5rem;
+    }
+}
+
+@include screen-xs {
+    .intro {
+        height: calc(40vh - 0px);
+    }
+}
+
+@include screen-sm {
+    .intro {
+        height: calc(50vh - 0px);
     }
 }
 
