@@ -1,10 +1,21 @@
-:host{
+@import '../../../styles/screen.scss';
+
+:host {
     position: fixed;
     display: flex;
     z-index: 99;
-    right: 2rem;
-    top: 1rem;
-    column-gap: 1rem;
-    margin: 0.5rem;
+    right: 1.5rem;
+    top: 0.25rem;
+    column-gap: 0.25rem;
+    margin: 0.25rem;
     align-items: center;
+}
+
+@include screen-md {
+    :host {
+        right: 2rem;
+        top: 1rem;
+        column-gap: 1rem;
+        margin: 0.5rem;
+    }
 }

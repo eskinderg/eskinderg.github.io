@@ -9,13 +9,7 @@
         [position]="TooltipPosition.RIGHT"
         [ngClass]="{ colorBtnNoBoxShadow: atTop && colorTogglerState !== 'active' }"
         (click)="onToggleButton()">
-        <svg
-            id="svg"
-            version="1.1"
-            width="3rem"
-            height="3rem"
-            [@fabToggler]="{ value: colorTogglerState }"
-            viewBox="0, 0, 400,400">
+        <svg id="svg" version="1.1" [@fabToggler]="{ value: colorTogglerState }" viewBox="0, 0, 400,400">
             <g id="svgg">
                 <path
                     id="path0"
