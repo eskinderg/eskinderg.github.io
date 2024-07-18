@@ -17,6 +17,7 @@
 }
 
 .miniColorBtn {
+    background: var(--primary);
     cursor: pointer;
     display: block;
     height: 2.5rem;
@@ -68,49 +69,6 @@
     right: 0;
     bottom: 0;
     z-index: 99;
-}
-
-.dark-theme {
-    background-color: #bdbdbd !important;
-}
-.red {
-    background-color: #f44336 !important;
-}
-.green {
-    background-color: #4caf50 !important;
-}
-.blue {
-    background-color: #005cbb !important;
-}
-.orange {
-    background-color: #9d6932 !important;
-}
-.yellow {
-    background-color: #ffea00 !important;
-}
-.pink {
-    background-color: #e91e63 !important;
-}
-.teal {
-    background-color: #009688 !important;
-}
-.deeppurple {
-    background-color: #673ab7 !important;
-}
-.indigo {
-    background-color: #3f51b5 !important;
-}
-.lightblue {
-    background-color: #03a9f4 !important;
-}
-.cyan {
-    background-color: #0b8494 !important;
-}
-.brown {
-    background-color: #795548 !important;
-}
-.bluegrey {
-    background-color: #607d8b !important;
 }
 
 @include screen-md {
