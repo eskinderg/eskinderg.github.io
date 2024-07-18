@@ -29,13 +29,13 @@
 .icon_links {
     display: flex;
     flex-direction: row;
+    margin-top: 1rem;
 }
 
 .icon_links a {
     margin: 8px !important;
     text-decoration: none !important;
     display: block;
-    width: 48px;
 }
 
 .intro {
@@ -45,6 +45,11 @@
     overflow: visible;
     width: 100% !important;
     height: calc(40vh - 0px);
+}
+
+.introIcons {
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 @include screen-xxs {
@@ -58,6 +63,11 @@
 }
 
 @include screen-md {
+    .introIcons {
+        width: 2rem;
+        height: 2rem;
+    }
+
     .introTitle {
         font-size: 2.5rem;
     }
@@ -72,6 +82,11 @@
 }
 
 @include screen-lg {
+    .introIcons {
+        width: 3rem;
+        height: 3rem;
+    }
+
     .icon_links {
         margin-top: 2.5rem;
     }
