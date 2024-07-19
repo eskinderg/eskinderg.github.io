@@ -218,32 +218,34 @@ body {
     }
 }
 
-*::-webkit-scrollbar {
-    transition: background-color 1s ease;
-    background-color: var(--light); //200
-    width: 1rem;
-}
+@include screen-lg {
+    *::-webkit-scrollbar {
+        transition: background-color 1s ease;
+        background-color: var(--light); //200
+        width: 1rem;
+    }
 
-*::-webkit-scrollbar-button {
-    position: absolute;
-    display: none;
-}
+    *::-webkit-scrollbar-button {
+        position: absolute;
+        display: none;
+    }
 
-*::-webkit-scrollbar-thumb {
-    transition: background-color 1s ease;
-    background: linear-gradient(to bottom, var(--light) 0%, var(--primary) 100%);
-}
+    *::-webkit-scrollbar-thumb {
+        transition: background-color 1s ease;
+        background: linear-gradient(to bottom, var(--light) 0%, var(--primary) 100%);
+    }
 
-*::-webkit-scrollbar-thumb:hover {
-    background: var(--light); //800
-}
+    *::-webkit-scrollbar-thumb:hover {
+        background: var(--light); //800
+    }
 
-*::-webkit-scrollbar-track {
-    transition: background-color 1s ease;
-    background-color: var(--background1);
-}
+    *::-webkit-scrollbar-track {
+        transition: background-color 1s ease;
+        background-color: var(--background1);
+    }
 
-* ::selection {
-    color: var(--background1);
-    background-color: var(--light);
+    * ::selection {
+        color: var(--background1);
+        background-color: var(--light);
+    }
 }
