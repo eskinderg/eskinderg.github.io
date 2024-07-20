@@ -79,7 +79,7 @@ export class ColorPickerComponent {
     @HostListener('document:mousedown', ['$event'])
     clickout(event: any) {
         if (!this.eRef.nativeElement.contains(event.target)) {
-            this.onToggleButton();
+            this.hideItems();
         }
     }
 }
