@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, ElementRef, HostListener, Input } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { colorPickerAnimations } from './color-picker.animations';
@@ -34,7 +34,8 @@ export class ColorPickerComponent {
 
     constructor(
         public themeService: ThemeService,
-        public lang: LanguageService
+        public lang: LanguageService,
+        public eRef: ElementRef
     ) {}
 
     public mouseOver(btn: { icon: string; theme: string }) {
@@ -72,6 +73,13 @@ export class ColorPickerComponent {
             this.atTop = true;
         } else {
             this.atTop = false;
+        }
+    }
+
+    @HostListener('document:mousedown', ['$event'])
+    clickout(event: any) {
+        if (!this.eRef.nativeElement.contains(event.target)) {
+            this.onToggleButton();
         }
     }
 }
