@@ -467,8 +467,8 @@
         "stackoverflow": "https://stackoverflow.com/users/2876957/eskinder",
         "linkedin": "https://www.linkedin.com/in/eskinderg"
     },
-    "languageSelect": "ቋንቋ ምረጥ",
-    "colorSelectTooltip": "የዌብሳይቱን ቀለም ቀይር",
+    "languageSelect": "ቋንቋ",
+    "colorSelectTooltip": "ቀለም ",
     "colors": {
         "red": "ቀይ",
         "green": "አረንጓዴ",
