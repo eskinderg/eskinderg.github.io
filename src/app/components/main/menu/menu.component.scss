@@ -12,12 +12,12 @@
     height: 2.5rem;
     width: 2.5rem;
     z-index: 1000;
+    transition: background-color 1s ease;
     background-color: var(--primary);
     color: #000000;
     // fill: var(--background2);
     fill: #fff;
 
-    transition: all 0.35s;
 }
 
 .MenuButton.default {

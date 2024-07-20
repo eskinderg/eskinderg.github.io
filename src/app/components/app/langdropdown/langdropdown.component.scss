@@ -3,9 +3,9 @@
 }
 
 .svg {
-    // stroke: var(--background2);
     background: var(--primary);
     border-radius: 50%;
+    transition: background 1s ease;
 }
 
 .lang-menu-wrapper {

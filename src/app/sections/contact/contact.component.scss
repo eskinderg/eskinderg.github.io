@@ -119,6 +119,10 @@
     flex: 1 1 60%;
 }
 
+.waveSvg {
+    width: 1920px;
+}
+
 @include screen-md {
     .contact-title {
         font-size: 1.5rem;
@@ -157,5 +161,11 @@
 
     .saying {
         display: block;
+    }
+}
+
+@include screen-xl {
+    .waveSvg {
+        width: 100%;
     }
 }

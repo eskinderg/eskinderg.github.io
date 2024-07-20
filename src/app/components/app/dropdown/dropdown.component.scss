@@ -1,5 +1,9 @@
 @import '../../../styles//screen.scss';
 
+:host * {
+    transition: all 1s ease;
+}
+
 :host {
     cursor: pointer;
     a,

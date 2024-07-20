@@ -83,6 +83,9 @@ body {
     font-family: 'Raleway';
     background-color: var(--background1);
     box-sizing: border-box;
+    transition: background-color 1s ease;
+    transition: color 1s ease;
+    transition: fill 1s ease;
 }
 
 /* Progress Bar */

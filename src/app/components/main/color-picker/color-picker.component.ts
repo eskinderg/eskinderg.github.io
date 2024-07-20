@@ -65,11 +65,6 @@ export class ColorPickerComponent {
         this.themeService.SetTheme(btn.theme, this.themeService.DarkMode);
     }
 
-    // public onToggleChange(event: MatSlideToggleChange) {
-    //     this.hideItems();
-    //     this.themeService.SetTheme(this.themeService.Theme, event.checked);
-    // }
-
     @HostListener('window:scroll', ['$event'])
     onScroll(event: any) {
         const scrollTop = event.srcElement.documentElement.scrollTop;

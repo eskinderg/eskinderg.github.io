@@ -15,6 +15,10 @@
     font-weight: bold;
 }
 
+.introSvg {
+    width: 1920px;
+}
+
 .app-divider {
     height: 5rem;
     transition: background-color 1s ease;
@@ -109,6 +113,10 @@
 }
 
 @include screen-xl {
+    .introSvg {
+        width: 100%;
+    }
+
     .introTitle {
         font-size: 3rem;
     }
