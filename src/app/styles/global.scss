@@ -221,7 +221,7 @@ body {
     }
 }
 
-@include screen-lg {
+@include screen-xl {
     *::-webkit-scrollbar {
         transition: background-color 1s ease;
         background-color: var(--light); //200

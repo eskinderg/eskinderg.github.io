@@ -55,7 +55,10 @@
 }
 
 .introContent {
+    display: flex;
     flex: 1 1 80%;
+    flex-direction: column;
+    flex-wrap: nowrap;
     box-sizing: border-box;
 }
 
