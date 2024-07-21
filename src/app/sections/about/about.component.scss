@@ -33,10 +33,14 @@
 
 .profile-picture {
     box-sizing: border-box;
+    // display: flex;
+    // flex: 1 1 20%;
+    // justify-content: center;
+    width: 80%;
     display: flex;
-    flex: 1 1 20%;
-    justify-content: center;
-    align-self: stretch;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 .profile {
@@ -70,6 +74,7 @@
 }
 
 .profile {
+    width: 10rem;
     transition: filter 2.5s ease;
     background-image: url('../../../assets/img/expertin-min.webp');
     background-position: 10% 85%;
@@ -84,14 +89,26 @@
     filter: grayscale(0%);
 }
 
+@include screen-xxs {
+    .profile {
+        width: 10rem;
+    }
+}
+
+@include screen-xs {
+    .profile {
+        width: 12rem;
+    }
+}
+
 @include screen-sm {
     .about {
         padding-top: 1.25rem;
     }
 
-    .profile {
-        width: 30%;
-    }
+    // .profile {
+    //     width: 30%;
+    // }
 }
 
 @include screen-md {
@@ -99,8 +116,8 @@
         padding-top: 2.5rem;
     }
 
-    .profile {
-        width: 30%;
+    .profile-picture {
+        width: 50%;
     }
 }
 
@@ -116,9 +133,14 @@
         flex-direction: row;
     }
 
+    .profile-picture {
+        flex: 1 1 15%;
+        width: 100%;
+    }
+
     .profile {
+        width: 14rem;
         margin-bottom: 0%;
-        width: auto;
     }
 
     .contentParagraph {

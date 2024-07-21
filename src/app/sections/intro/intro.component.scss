@@ -10,11 +10,6 @@
     max-width: 80%;
 }
 
-.introSubTitle {
-    margin-top: 8px;
-    font-weight: bold;
-}
-
 .introSvg {
     width: 1920px;
 }
@@ -56,7 +51,25 @@
     height: 1.25rem;
 }
 
+.introTitle {
+    font-size: 1.75rem;
+}
+
+.introSubTitle {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
 @include screen-xxs {
+    .introTitle {
+        font-size: 2rem;
+    }
+
+    .introSubTitle {
+        font-size: 1.5rem;
+    }
+
     .icon_links {
         margin-top: 0.5rem;
     }
@@ -65,16 +78,18 @@
         width: 1.75rem;
         height: 1.75rem;
     }
+
+}
+
+@include screen-xs {
     .introTitle {
-        font-size: 2rem;
+        font-size: 2.25rem;
     }
 
     .introSubTitle {
         font-size: 1.5rem;
     }
-}
 
-@include screen-xs {
     .icon_links {
         margin-top: 0.75rem;
     }
@@ -89,6 +104,13 @@
 }
 
 @include screen-sm {
+    .introTitle {
+        font-size: 2.5rem;
+    }
+
+    .introSubTitle {
+        font-size: 1.75rem;
+    }
     .icon_links {
         margin-top: 1rem;
     }
@@ -99,6 +121,14 @@
 }
 
 @include screen-md {
+    .introTitle {
+        font-size: 2.75rem;
+    }
+
+    .introSubTitle {
+        font-size: 2rem;
+    }
+
     .icon_links {
         margin-top: 1.5rem;
     }
@@ -108,20 +138,20 @@
         height: 2.5rem;
     }
 
-    .introTitle {
-        font-size: 2.5rem;
-    }
-
-    .introSubTitle {
-        font-size: 1.5rem;
-    }
-
     .intro {
         height: calc(70vh - 0px);
     }
 }
 
 @include screen-lg {
+    .introTitle {
+        font-size: 3rem;
+    }
+
+    .introSubTitle {
+        font-size: 2.25rem;
+    }
+
     .icon_links {
         margin-top: 2.5rem;
     }
