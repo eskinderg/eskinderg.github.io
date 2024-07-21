@@ -1,34 +1,20 @@
 @import '../../styles/screen.scss';
 
-:host * {
-    transition: background-color 1s ease;
-    transition: fill 1s ease;
-}
-
 .content {
     color: var(--text); // 700
 }
 
 .ribbon {
+    transition: fill 1s ease;
     fill: var(--background2);
 }
 
+.ribbonSVG {
+    display: none;
+}
+
 .circle-ornament {
-    transition: fill 1s ease;
     fill: var(--primary);
-}
-
-.divider-accomp {
-    width: 100%;
-    height: 111px;
-    background-color: #ffffff;
-}
-
-.app-divider {
-    transition: background-color 1s ease;
-    path {
-        fill: var(--background1);
-    }
 }
 
 .accomp-background {
@@ -69,12 +55,17 @@
 }
 
 @include screen-lg {
+    .ribbonSVG {
+        display: block;
+    }
+
     .leftItem {
         text-align: right;
     }
 
     .accomplishmentIcon {
         display: block;
+        flex: 1 1 80%;
     }
 
     .accomplishment {
@@ -82,12 +73,9 @@
     }
 
     .accomplishments {
+        flex-direction: row;
         text-align: left;
         padding-left: 10%;
         padding-right: 10%;
-    }
-
-    .accomplishments {
-        flex-direction: row;
     }
 }
