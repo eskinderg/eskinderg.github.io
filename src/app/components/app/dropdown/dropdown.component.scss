@@ -1,9 +1,5 @@
 @import '../../../styles//screen.scss';
 
-:host * {
-    transition: all 1s ease;
-}
-
 :host {
     cursor: pointer;
     a,
@@ -15,6 +11,7 @@
 }
 
 .menuBtn {
+    transition: all 1s ease;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -34,8 +31,8 @@
     visibility: hidden;
     opacity: 0;
     transition:
-        visibility 0s,
-        opacity 0.25s linear;
+        visibility 1s,
+        opacity 1s ease;
     display: flex;
     position: absolute;
     flex-direction: column;
