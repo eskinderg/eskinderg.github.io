@@ -33,7 +33,7 @@
 .icon_links {
     display: flex;
     flex-direction: row;
-    margin-top: 1rem;
+    margin-top: 0.25rem;
 }
 
 .icon_links a {
@@ -52,11 +52,19 @@
 }
 
 .introIcons {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
 }
 
 @include screen-xxs {
+    .icon_links {
+        margin-top: 0.5rem;
+    }
+
+    .introIcons {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
     .introTitle {
         font-size: 2rem;
     }
@@ -67,21 +75,37 @@
 }
 
 @include screen-xs {
+    .icon_links {
+        margin-top: 0.75rem;
+    }
+
+    .introIcons {
+        width: 2rem;
+        height: 2rem;
+    }
     .intro {
         height: calc(40vh - 0px);
     }
 }
 
 @include screen-sm {
+    .icon_links {
+        margin-top: 1rem;
+    }
+
     .intro {
         height: calc(50vh - 0px);
     }
 }
 
 @include screen-md {
+    .icon_links {
+        margin-top: 1.5rem;
+    }
+
     .introIcons {
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
     .introTitle {
@@ -98,13 +122,13 @@
 }
 
 @include screen-lg {
+    .icon_links {
+        margin-top: 2.5rem;
+    }
+
     .introIcons {
         width: 3rem;
         height: 3rem;
-    }
-
-    .icon_links {
-        margin-top: 2.5rem;
     }
 
     .app-divider {
