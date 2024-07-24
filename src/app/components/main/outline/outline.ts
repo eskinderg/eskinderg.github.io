@@ -6,7 +6,9 @@ import {
     OnInit,
     ChangeDetectorRef,
     ApplicationRef,
-    viewChild
+    viewChild,
+    HostListener,
+    Output
 } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
@@ -18,6 +20,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 })
 export class OutlineComponent implements OnInit {
     currentSection: string;
+    @Output() public mouseWheelScroll: EventEmitter<any> = new EventEmitter<any>();
     @Input() public onWindowScroll: EventEmitter<any>;
     _selector = viewChild.required<ElementRef>('outline');
 
@@ -41,6 +44,10 @@ export class OutlineComponent implements OnInit {
     scrollTo(element: any) {
         const section = this.lang.sections[element];
         section().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    @HostListener('mousewheel', ['$event']) onMousewheel(event: WheelEvent) {
+        this.mouseWheelScroll.emit(event);
     }
 
     ngOnInit(): void {
