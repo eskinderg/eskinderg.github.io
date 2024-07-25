@@ -1,7 +1,6 @@
 import { Component, ElementRef, HostListener, Input } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
-import { colorPickerAnimations } from './color-picker.animations';
 import { TooltipPosition } from '../../app/tooltip/tooltip.enums';
 
 export interface ColorPickerButton {
@@ -19,8 +18,7 @@ export enum ColorPickerPosition {
 @Component({
     selector: 'app-color-picker',
     templateUrl: './color-picker.component.html',
-    styleUrls: ['./color-picker.component.scss'],
-    animations: colorPickerAnimations
+    styleUrls: ['./color-picker.component.scss']
 })
 export class ColorPickerComponent {
     TooltipPosition: typeof TooltipPosition = TooltipPosition;

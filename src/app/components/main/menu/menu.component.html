@@ -29,7 +29,7 @@
 </div>
 
 @if (visible) {
-    <div class="MenuFullscreen" [@fadeInOut]>
+    <div class="MenuFullscreen" [ngClass]="{ hide: !visible }">
         <nav>
             @for (item of lang.texts.menu.list; track item) {
                 <div class="wrapper">

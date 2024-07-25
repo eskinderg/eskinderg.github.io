@@ -109,7 +109,19 @@
 }
 
 .MenuFullscreen {
+    visibility: hidden;
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    animation-name: fadein;
     background-color: var(--primary) !important;
+}
+
+.hide {
+    animation-duration: 350ms;
+    animation-fill-mode: forwards;
+    animation-name: fadeout;
+    opacity: 0;
+    visibility: hidden;
 }
 
 @include screen-sm {
@@ -121,5 +133,32 @@
 @include screen-md {
     .MenuFullscreen nav a {
         font-size: 2rem;
+    }
+}
+
+.elementToFadeInAndOut {
+    opacity: 1;
+}
+
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
     }
 }
