@@ -37,15 +37,15 @@ describe('IntroSectionComponent', () => {
 
     it('Should rendere name Eskinder Getahun', () => {
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('.intro>.titleIntro>.introTitle').textContent).toBe(
-            ' Eskinder Getahun '
+        expect(compiled.querySelector('.intro>.titleIntro>.introTitle').textContent.trim()).toBe(
+            'Eskinder Getahun'
         );
     });
 
     it('Should render subtitle Full-Stack Developer ', () => {
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('.intro>.titleIntro>.introSubTitle').textContent).toBe(
-            ' Full-Stack Developer '
+        expect(compiled.querySelector('.intro>.titleIntro>.introSubTitle').textContent.trim()).toBe(
+            'Full-Stack Developer'
         );
     });
 });
