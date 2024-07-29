@@ -1,18 +1,11 @@
-import { Component, ElementRef, HostListener, Input } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { TooltipPosition } from '../../app/tooltip/tooltip.enums';
 
-export interface ColorPickerButton {
-    icon: string;
-    tooltip: string;
-}
-
-export enum ColorPickerPosition {
-    Top = 'top',
-    Bottom = 'bottom',
-    Left = 'left',
-    Right = 'right'
+export enum ButtonState {
+    Opened = 'opened',
+    Closed = 'closed'
 }
 
 @Component({
@@ -20,14 +13,15 @@ export enum ColorPickerPosition {
     templateUrl: './color-picker.component.html',
     styleUrls: ['./color-picker.component.scss']
 })
-export class ColorPickerComponent {
-    TooltipPosition: typeof TooltipPosition = TooltipPosition;
+export class ColorPickerComponent implements OnInit {
     @Input() reverseColumnDirection: boolean = false;
-    @Input() colorButtons: ColorPickerButton[];
+    @Input() public onWindowScroll: EventEmitter<any>;
 
+    public atTop = false;
     public buttons = [];
-    public colorTogglerState = 'inactive';
-    public atTop = true;
+    public colorTogglerState: ButtonState = ButtonState.Closed;
+    public STATE = ButtonState;
+    public TOOLTIP_POSITION = TooltipPosition;
     public currentTheme: any;
 
     constructor(
@@ -35,6 +29,17 @@ export class ColorPickerComponent {
         public lang: LanguageService,
         public eRef: ElementRef
     ) {}
+
+    ngOnInit(): void {
+        this.onWindowScroll.subscribe((e) => {
+            const scrollTop = e.srcElement.scrollTop;
+            if (scrollTop === 0) {
+                this.atTop = false;
+            } else {
+                this.atTop = true;
+            }
+        });
+    }
 
     public mouseOver(btn: { icon: string; theme: string }) {
         this.currentTheme = this.themeService.Theme;
@@ -46,12 +51,12 @@ export class ColorPickerComponent {
     }
 
     private showItems() {
-        this.colorTogglerState = 'active';
+        this.colorTogglerState = ButtonState.Opened;
         this.buttons = this.themeService.Colors;
     }
 
     private hideItems() {
-        this.colorTogglerState = 'inactive';
+        this.colorTogglerState = ButtonState.Closed;
         this.buttons = [];
     }
 
@@ -62,16 +67,6 @@ export class ColorPickerComponent {
     public onClickColor(btn: { icon: string; theme: string }) {
         this.hideItems();
         this.themeService.SetTheme(btn.theme, this.themeService.DarkMode);
-    }
-
-    @HostListener('window:scroll', ['$event'])
-    onScroll(event: any) {
-        const scrollTop = event.srcElement.documentElement.scrollTop;
-        if (scrollTop === 0) {
-            this.atTop = true;
-        } else {
-            this.atTop = false;
-        }
     }
 
     @HostListener('document:mousedown', ['$event'])

@@ -22,8 +22,8 @@ svg {
     border-radius: 100%;
 }
 
-.colorBtnNoBoxShadow {
-    box-shadow: none !important;
+.shadowButton {
+    box-shadow: 1px 1px 9px -2px black;
 }
 
 .main-button {

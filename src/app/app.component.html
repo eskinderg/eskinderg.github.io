@@ -1,13 +1,13 @@
-<div id="mainWrapper" #mainWrapper (scroll)="appScroll.emit($event)">
+<div id="mainWrapper" #mainWrapper (scroll)="appWindowScroll.emit($event)">
     <app-right></app-right>
 
     <app-loader [Loading]="lang.loading"></app-loader>
 
-    <app-color-picker> </app-color-picker>
+    <app-color-picker [onWindowScroll]="appWindowScroll"> </app-color-picker>
 
-    <app-outline [onWindowScroll]="appScroll" (mouseWheelScroll)="onScroll($event)"></app-outline>
+    <app-outline [onWindowScroll]="appWindowScroll" (mouseWheelScroll)="onScroll($event)"></app-outline>
 
     <div class="viewWrapper" #componentWrapper></div>
 
-    <app-back-top [onWindowScroll]="appScroll" [position]="200"></app-back-top>
+    <app-back-top [onWindowScroll]="appWindowScroll" [position]="200"></app-back-top>
 </div>

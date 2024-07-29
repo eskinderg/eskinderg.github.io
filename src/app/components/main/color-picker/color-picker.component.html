@@ -3,9 +3,8 @@
         class="fab-toggler main-button"
         color="primary"
         appTooltip="{{ lang.texts.colorSelectTooltip }}"
-        [position]="TooltipPosition.RIGHT"
-        [ngClass]="{ colorBtnNoBoxShadow: atTop && colorTogglerState !== 'active' }"
-        [ngClass]="{ rotate: colorTogglerState === 'active' }"
+        [position]="TOOLTIP_POSITION.RIGHT"
+        [ngClass]="{ rotate: colorTogglerState === STATE.Opened, shadowButton: atTop }"
         (click)="onToggleButton()">
         <svg id="svg" version="1.1" viewBox="0, 0, 400,400">
             <g id="svgg">
@@ -49,7 +48,7 @@
                 (mouseover)="mouseOver(btn)"
                 (mouseleave)="mouseLeave()"
                 appTooltip="{{ lang.translateColor(btn.theme) }}"
-                [position]="TooltipPosition.BELOW"
+                [position]="TOOLTIP_POSITION.BELOW"
                 class="miniColorBtn"
                 [ngClass]="btn.theme"
                 (click)="onClickColor(btn)"></div>

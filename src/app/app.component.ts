@@ -1,5 +1,6 @@
 import { Component, ElementRef, EventEmitter, Output, viewChild } from '@angular/core';
 import { LanguageService } from './providers/language.service';
+import { ColorPickerComponent } from './components/main/color-picker/color-picker.component';
 
 @Component({
     selector: 'app-root',
@@ -7,9 +8,11 @@ import { LanguageService } from './providers/language.service';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    @Output() public appScroll: EventEmitter<any> = new EventEmitter<any>();
+    @Output() public appWindowScroll: EventEmitter<any> = new EventEmitter<any>();
 
     mainWrapper = viewChild.required<ElementRef>('mainWrapper');
+
+    colorPickerComponent = viewChild.required<ColorPickerComponent>(ColorPickerComponent);
 
     appComponentWrapper = viewChild.required<ElementRef>('componentWrapper');
 
