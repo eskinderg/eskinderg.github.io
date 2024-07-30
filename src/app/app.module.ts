@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,15 +14,7 @@ import { LoaderInterceptor } from './providers/loading.interceptor';
 @NgModule({
     declarations: [AppComponent],
     bootstrap: [AppComponent],
-    imports: [
-        BrowserModule,
-        ThemeModule,
-        LanguageModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        SectionsModule,
-        FrontModule
-    ],
+    imports: [BrowserModule, ThemeModule, LanguageModule, AppRoutingModule, SectionsModule, FrontModule],
     providers: [GoogleAnalyticsService, AppInit, provideHttpClient(withInterceptors([LoaderInterceptor]))]
 })
 export class AppModule {}
