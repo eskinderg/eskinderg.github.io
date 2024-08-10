@@ -4,7 +4,7 @@ $screen-sm: 640px;
 $screen-md: 768px;
 $screen-lg: 1024px;
 $screen-xl: 1281px;
-$screen-2xl: 1536px;
+$screen-2xl: 1920px;
 
 @mixin screen-xxs {
     @media (min-width: $screen-xxs) {
@@ -43,7 +43,7 @@ $screen-2xl: 1536px;
 }
 
 @mixin screen-2xl {
-    @media (min-width: $screen-xl) {
+    @media (min-width: $screen-2xl) {
         @content;
     }
 }

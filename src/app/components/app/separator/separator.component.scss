@@ -17,6 +17,14 @@
 
 @include screen-xl {
     .waveSvg {
+        width: 1920px;
+    }
+}
+
+@include screen-2xl {
+
+    .waveSvg {
         width: 100%;
     }
+
 }

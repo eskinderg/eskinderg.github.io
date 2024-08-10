@@ -48,7 +48,7 @@
     padding-top: 5%;
     padding-bottom: 5%;
     padding-left: 2%;
-    padding-right: 2%;
+    // padding-right: 2%;
     transition: background-color 1s ease;
     background-color: var(--background2);
     // width: 100%;
@@ -93,12 +93,13 @@
 }
 
 @include screen-md {
+
     .technologyList {
         grid-template-columns: repeat(auto-fill, 15%);
     }
+
     .expertin {
         padding-left: 10%;
-        padding-right: 10%;
     }
 }
 
@@ -112,4 +113,12 @@
     .expertInContent {
         flex: 1 1 70%;
     }
+}
+
+@include screen-xl {
+
+    .expertin {
+        padding-right: 10%;
+    }
+
 }
