@@ -10,11 +10,20 @@ import { AppInit } from './app.initializer';
 import { LanguageModule } from './language/language.modue';
 import { ThemeModule } from './theme/theme.module';
 import { LoaderInterceptor } from './providers/loading.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [AppComponent],
     bootstrap: [AppComponent],
-    imports: [BrowserModule, ThemeModule, LanguageModule, AppRoutingModule, SectionsModule, FrontModule],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        ThemeModule,
+        LanguageModule,
+        AppRoutingModule,
+        SectionsModule,
+        FrontModule
+    ],
     providers: [GoogleAnalyticsService, AppInit, provideHttpClient(withInterceptors([LoaderInterceptor]))]
 })
 export class AppModule {}
