@@ -4,7 +4,8 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
     selector: 'app-chip',
     templateUrl: './chip.component.html',
     styleUrls: ['./chip.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true
 })
 export class ChipComponent {
     @Input() technology: string;

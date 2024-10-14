@@ -14,7 +14,8 @@ import { AppComponent } from 'src/app/app.component';
       l11.101-11.101C308.589,221.85,308.589,211.92,302.445,205.788z" />
             </svg>
         </i>
-    `
+    `,
+    standalone: true
 })
 export class BaBackTopComponent implements OnInit {
     @Input() position = 400;

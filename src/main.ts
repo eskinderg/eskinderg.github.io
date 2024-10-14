@@ -1,13 +1,27 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode, importProvidersFrom } from '@angular/core';
 
-import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { GoogleAnalyticsService } from './app/providers/google-analytics.service';
+import { AppInit } from './app/app.initializer';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { LoaderInterceptor } from './app/providers/loading.interceptor';
+import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { ThemeModule } from './app/theme/theme.module';
+import { LanguageModule } from './app/language/language.modue';
+import { AppRoutingModule } from './app/app-routing.module';
+import { AppComponent } from './app/app.component';
 
 if (environment.production) {
     enableProdMode();
 }
 
-platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .catch((err) => console.error(err));
+bootstrapApplication(AppComponent, {
+    providers: [
+        importProvidersFrom(BrowserModule, ThemeModule, LanguageModule, AppRoutingModule),
+        GoogleAnalyticsService,
+        AppInit,
+        provideHttpClient(withInterceptors([LoaderInterceptor])),
+        provideAnimations()
+    ]
+}).catch((err) => console.error(err));

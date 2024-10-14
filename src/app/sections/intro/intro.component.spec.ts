@@ -4,9 +4,8 @@ import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 
 import { IntroSectionComponent } from './intro.component';
-import { AppModule } from 'src/app/app.module';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
-import { TooltipModule } from 'src/app/components/app/tooltip/tooltip.module';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 
 describe('IntroSectionComponent', () => {
     let component: IntroSectionComponent;
@@ -14,13 +13,13 @@ describe('IntroSectionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [IntroSectionComponent],
-            imports: [AppModule, TooltipModule],
+            imports: [IntroSectionComponent],
             providers: [
                 {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
+                GoogleAnalyticsService,
                 ThemeService,
                 provideHttpClient(withInterceptorsFromDi())
             ]

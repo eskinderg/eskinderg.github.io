@@ -9,7 +9,7 @@ describe('ChipComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ChipComponent],
+            imports: [ChipComponent],
             providers: [
                 {
                     provide: LanguageService,
