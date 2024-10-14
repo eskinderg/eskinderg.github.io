@@ -1,11 +1,15 @@
 import { Component, ElementRef, HostListener } from '@angular/core';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { LanguageService } from 'src/app/providers/language.service';
+import { TooltipDirective } from '../tooltip/tooltip.directive';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-dropdown',
     templateUrl: './dropdown.component.html',
-    styleUrl: './dropdown.component.scss'
+    styleUrl: './dropdown.component.scss',
+    standalone: true,
+    imports: [TooltipDirective, NgClass]
 })
 export class DropDownMenuComponent {
     visible: boolean = false;

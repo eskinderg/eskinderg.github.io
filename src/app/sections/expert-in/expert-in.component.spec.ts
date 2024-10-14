@@ -4,8 +4,8 @@ import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { ExpertInSectionComponent } from './expert-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppModule } from 'src/app/app.module';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 
 describe('ExpertInSectionComponent', () => {
     let component: ExpertInSectionComponent;
@@ -13,13 +13,13 @@ describe('ExpertInSectionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ExpertInSectionComponent],
-            imports: [AppModule, BrowserAnimationsModule],
+            imports: [BrowserAnimationsModule, ExpertInSectionComponent],
             providers: [
                 {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
+                GoogleAnalyticsService,
                 ThemeService,
                 provideHttpClient(withInterceptorsFromDi())
             ]

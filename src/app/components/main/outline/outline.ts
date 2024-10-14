@@ -12,11 +12,14 @@ import {
 } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-outline',
     templateUrl: './outline.html',
-    styleUrls: ['./outline.scss']
+    styleUrls: ['./outline.scss'],
+    standalone: true,
+    imports: [NgClass]
 })
 export class OutlineComponent implements OnInit {
     currentSection: string;

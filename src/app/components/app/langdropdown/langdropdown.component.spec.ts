@@ -4,7 +4,6 @@ import { LanguageDropDownComponent } from './langdropdown.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { By } from '@angular/platform-browser';
-import { TooltipModule } from '../tooltip/tooltip.module';
 
 describe('LangdropdownComponent', () => {
     let component: LanguageDropDownComponent;
@@ -12,8 +11,7 @@ describe('LangdropdownComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [LanguageDropDownComponent],
-            imports: [TooltipModule],
+            imports: [LanguageDropDownComponent],
             providers: [
                 {
                     provide: LanguageService,
@@ -40,5 +38,20 @@ describe('LangdropdownComponent', () => {
         expect(
             fixture.debugElement.queryAll(By.css('.langMenuItem')).at(1).nativeElement.textContent.trim()
         ).toBe('አማርኛ');
+    });
+
+    it('should hide the menu after selecting language', () => {
+        component.changeLanguage('am');
+        expect(component.visible).toBe(false);
+    });
+
+    it('should menu after click', () => {
+        component.onClick();
+        expect(component.visible).toBe(true);
+    });
+
+    it('should hide menu after clicking outside', () => {
+        component.clickout({ target: null });
+        expect(component.visible).toBe(false);
     });
 });

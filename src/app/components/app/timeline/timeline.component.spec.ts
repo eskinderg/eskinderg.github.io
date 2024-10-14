@@ -13,8 +13,7 @@ describe('TimelineComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [TimelineComponent, TitleComponent, ChipComponent],
-            imports: [BrowserAnimationsModule],
+            imports: [BrowserAnimationsModule, TimelineComponent, TitleComponent, ChipComponent],
             providers: [
                 {
                     provide: LanguageService,

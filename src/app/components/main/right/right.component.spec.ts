@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RightComponent } from './right.component';
-import { ComponentsModule } from '../../app/components.module';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { LanguageService } from 'src/app/providers/language.service';
@@ -15,8 +14,7 @@ describe('RightComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [RightComponent, MenuComponent],
-            imports: [ComponentsModule],
+            imports: [RightComponent, MenuComponent],
             providers: [
                 ThemeService,
                 {

@@ -5,8 +5,6 @@ import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LanguageService } from './providers/language.service';
 import { ThemeService } from './theme/theme.service';
-import { FrontModule } from './components/main/front.module';
-import { SectionsModule } from './sections/sections.module';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from './language/language.mock';
@@ -17,8 +15,7 @@ describe('AppComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [AppComponent],
-            imports: [BrowserAnimationsModule, SectionsModule, FrontModule],
+            imports: [BrowserAnimationsModule, AppComponent],
             providers: [
                 {
                     provide: LanguageService,

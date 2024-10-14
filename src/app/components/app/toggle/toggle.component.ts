@@ -1,11 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ThemeService } from 'src/app/theme/theme.service';
+import { TooltipDirective } from '../tooltip/tooltip.directive';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-toggle',
     templateUrl: './toggle.component.html',
     styleUrl: './toggle.component.scss',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [TooltipDirective, NgClass]
 })
 export class ToggleComponent {
     toggleValue: boolean;

@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
+import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-menu',
     templateUrl: './menu.component.html',
-    styleUrls: ['./menu.component.scss']
+    styleUrls: ['./menu.component.scss'],
+    standalone: true,
+    imports: [TooltipDirective, NgClass]
 })
 export class MenuComponent implements OnInit {
     public hovered: any;
