@@ -11,7 +11,6 @@ describe('TitleComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [TitleComponent],
             providers: [
                 {
                     provide: LanguageService,
@@ -19,7 +18,7 @@ describe('TitleComponent', () => {
                 },
                 ThemeService
             ],
-            imports: [BrowserAnimationsModule]
+            imports: [BrowserAnimationsModule, TitleComponent]
         }).compileComponents();
     });
 

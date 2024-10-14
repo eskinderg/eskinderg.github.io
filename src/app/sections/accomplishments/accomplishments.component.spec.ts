@@ -4,8 +4,8 @@ import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { AccomplishmentsSectionComponent } from './accomplishments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppModule } from 'src/app/app.module';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 
 describe('AccomplishmentsSectionComponent', () => {
     let component: AccomplishmentsSectionComponent;
@@ -13,14 +13,14 @@ describe('AccomplishmentsSectionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [AccomplishmentsSectionComponent],
-            imports: [AppModule, BrowserAnimationsModule],
+            imports: [BrowserAnimationsModule, AccomplishmentsSectionComponent],
             providers: [
                 {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
                 ThemeService,
+                GoogleAnalyticsService,
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

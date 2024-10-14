@@ -5,7 +5,7 @@ import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { ThemeService } from 'src/app/theme/theme.service';
-import { TooltipModule } from '../tooltip/tooltip.module';
+import { GoogleAnalyticsServiceMock } from 'src/app/providers/google-analytics.mock.service';
 
 describe('DropdownComponent', () => {
     let component: DropDownMenuComponent;
@@ -13,14 +13,16 @@ describe('DropdownComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [DropDownMenuComponent],
-            imports: [TooltipModule],
+            imports: [DropDownMenuComponent],
             providers: [
                 {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
-                GoogleAnalyticsService,
+                {
+                    provide: GoogleAnalyticsService,
+                    useClass: GoogleAnalyticsServiceMock
+                },
                 ThemeService,
                 provideHttpClient(withInterceptorsFromDi())
             ]
@@ -33,5 +35,25 @@ describe('DropdownComponent', () => {
 
     it('should create', () => {
         expect(component).toBeTruthy();
+    });
+
+    it('should toggle menu', () => {
+        component.onClick();
+        expect(component.visible).toBe(true);
+    });
+
+    it('should hide menu after clicking pdf download', () => {
+        component.onPdfDownload();
+        expect(component.visible).toBe(false);
+    });
+
+    it('should hide menu after clicking doc download', () => {
+        component.onDocxDownload();
+        expect(component.visible).toBe(false);
+    });
+
+    it('should hide menu after clicking outside', () => {
+        component.clickout({ target: null });
+        expect(component.visible).toBe(false);
     });
 });

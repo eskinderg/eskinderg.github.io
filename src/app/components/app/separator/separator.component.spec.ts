@@ -7,7 +7,7 @@ describe('SeparatorComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [SeparatorComponent]
+            imports: [SeparatorComponent]
         }).compileComponents();
     });
 

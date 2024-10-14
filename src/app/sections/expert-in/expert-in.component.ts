@@ -1,11 +1,15 @@
 import { ElementRef, Component, ChangeDetectionStrategy, AfterViewInit, viewChild } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
+import { TitleComponent } from '../../components/app/title/title.component';
+import { TechnologyComponent } from '../../components/app/technology/technology.component';
 
 @Component({
     selector: 'app-expertin',
     templateUrl: './expert-in.component.html',
     styleUrls: ['./expert-in.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [TitleComponent, TechnologyComponent]
 })
 export class ExpertInSectionComponent extends BaseComponent implements AfterViewInit {
     section = viewChild.required<ElementRef>('expertin');

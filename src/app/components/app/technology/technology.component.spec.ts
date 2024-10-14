@@ -10,7 +10,7 @@ describe('TechnologyComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [TechnologyComponent],
+            imports: [TechnologyComponent],
             providers: [
                 {
                     provide: LanguageService,

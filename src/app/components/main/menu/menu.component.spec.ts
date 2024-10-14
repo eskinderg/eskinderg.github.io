@@ -4,7 +4,6 @@ import { LanguageService } from 'src/app/providers/language.service';
 
 import { MenuComponent } from './menu.component';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
-import { TooltipModule } from '../../app/tooltip/tooltip.module';
 
 describe('MenuComponent', () => {
     let component: MenuComponent;
@@ -12,8 +11,7 @@ describe('MenuComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [MenuComponent],
-            imports: [TooltipModule],
+            imports: [MenuComponent],
             providers: [
                 {
                     provide: LanguageService,

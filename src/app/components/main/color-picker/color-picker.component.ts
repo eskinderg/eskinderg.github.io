@@ -2,6 +2,8 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit } from
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { TooltipPosition } from '../../app/tooltip/tooltip.enums';
+import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
+import { NgClass } from '@angular/common';
 
 export enum ButtonState {
     Opened = 'opened',
@@ -11,7 +13,9 @@ export enum ButtonState {
 @Component({
     selector: 'app-color-picker',
     templateUrl: './color-picker.component.html',
-    styleUrls: ['./color-picker.component.scss']
+    styleUrls: ['./color-picker.component.scss'],
+    standalone: true,
+    imports: [TooltipDirective, NgClass]
 })
 export class ColorPickerComponent implements OnInit {
     @Input() reverseColumnDirection: boolean = false;

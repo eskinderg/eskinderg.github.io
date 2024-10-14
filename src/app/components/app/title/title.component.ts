@@ -1,10 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PLATFORM_ID, Inject } from '@angular/core';
+import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'app-title',
     templateUrl: 'title.component.html',
-    styleUrls: ['title.component.scss']
+    styleUrls: ['title.component.scss'],
+    standalone: true,
+    imports: [NgClass]
 })
 export class TitleComponent implements OnInit {
     @Input() title: any = '';

@@ -8,12 +8,15 @@ import {
 } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { BaseComponent } from 'src/app/sections/base.component';
+import { NgStyle } from '@angular/common';
 
 @Component({
     selector: 'app-contact',
     templateUrl: './contact.component.html',
     styleUrls: ['./contact.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [NgStyle]
 })
 export class ContactSectionComponent extends BaseComponent implements OnInit, AfterViewInit {
     public message = {

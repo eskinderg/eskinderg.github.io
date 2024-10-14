@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { ContactSectionComponent } from './contact.component';
-import { AppModule } from 'src/app/app.module';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 
 describe('ContactSectionComponent', () => {
     let component: ContactSectionComponent;
@@ -12,14 +12,14 @@ describe('ContactSectionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [ContactSectionComponent],
-            imports: [AppModule],
+            imports: [ContactSectionComponent],
             providers: [
                 {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
                 ThemeService,
+                GoogleAnalyticsService,
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

@@ -1,11 +1,15 @@
 import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, viewChild } from '@angular/core';
 import { BaseComponent } from 'src/app/sections/base.component';
+import { TitleComponent } from '../../components/app/title/title.component';
+import { DropDownMenuComponent } from '../../components/app/dropdown/dropdown.component';
 
 @Component({
     selector: 'app-about',
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [TitleComponent, DropDownMenuComponent]
 })
 export class AboutSectionComponent extends BaseComponent implements AfterViewInit {
     section = viewChild.required<ElementRef>('about');
