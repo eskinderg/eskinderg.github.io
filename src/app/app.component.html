@@ -1,7 +1,7 @@
 <div id="mainWrapper" #mainWrapper (scroll)="appWindowScroll.emit($event)">
     <app-right></app-right>
 
-    <app-loader [Loading]="lang.loading"></app-loader>
+    <app-loader [Loading]="httpStatus"></app-loader>
 
     <app-color-picker [onWindowScroll]="appWindowScroll"> </app-color-picker>
 

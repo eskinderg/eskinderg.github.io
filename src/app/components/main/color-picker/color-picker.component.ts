@@ -1,9 +1,8 @@
-import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit } from '@angular/core';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/theme/theme.service';
+import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, OnInit } from '@angular/core';
 import { TooltipPosition } from '../../app/tooltip/tooltip.enums';
 import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
 import { NgClass } from '@angular/common';
+import { BaseComponent } from 'src/app/sections/base.component';
 
 export enum ButtonState {
     Opened = 'opened',
@@ -11,13 +10,14 @@ export enum ButtonState {
 }
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-color-picker',
     templateUrl: './color-picker.component.html',
     styleUrls: ['./color-picker.component.scss'],
     standalone: true,
     imports: [TooltipDirective, NgClass]
 })
-export class ColorPickerComponent implements OnInit {
+export class ColorPickerComponent extends BaseComponent implements OnInit {
     @Input() reverseColumnDirection: boolean = false;
     @Input() public onWindowScroll: EventEmitter<any>;
 
@@ -27,12 +27,6 @@ export class ColorPickerComponent implements OnInit {
     public STATE = ButtonState;
     public TOOLTIP_POSITION = TooltipPosition;
     public currentTheme: any;
-
-    constructor(
-        public themeService: ThemeService,
-        public lang: LanguageService,
-        public eRef: ElementRef
-    ) {}
 
     ngOnInit(): void {
         this.onWindowScroll.subscribe((e) => {

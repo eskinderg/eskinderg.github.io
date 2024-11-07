@@ -11,6 +11,8 @@ export class LanguageServiceMock {
 
     @Output() languageChange: EventEmitter<object> = new EventEmitter<object>();
 
+    @Output() public httpChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
     private langList: any = [
         {
             CountryCode: 'GB',

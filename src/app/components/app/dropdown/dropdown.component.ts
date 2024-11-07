@@ -1,24 +1,18 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
-import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
-import { LanguageService } from 'src/app/providers/language.service';
+import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import { TooltipDirective } from '../tooltip/tooltip.directive';
 import { NgClass } from '@angular/common';
+import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
     selector: 'app-dropdown',
     templateUrl: './dropdown.component.html',
     styleUrl: './dropdown.component.scss',
     standalone: true,
-    imports: [TooltipDirective, NgClass]
+    imports: [TooltipDirective, NgClass],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DropDownMenuComponent {
+export class DropDownMenuComponent extends BaseComponent {
     visible: boolean = false;
-
-    constructor(
-        private eRef: ElementRef,
-        private googleAnalyticsService: GoogleAnalyticsService,
-        public lang: LanguageService
-    ) {}
 
     onClick() {
         this.visible = !this.visible;

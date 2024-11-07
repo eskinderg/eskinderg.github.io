@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { PLATFORM_ID, Inject } from '@angular/core';
 import { NgClass } from '@angular/common';
 
@@ -7,7 +7,8 @@ import { NgClass } from '@angular/common';
     templateUrl: 'title.component.html',
     styleUrls: ['title.component.scss'],
     standalone: true,
-    imports: [NgClass]
+    imports: [NgClass],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TitleComponent implements OnInit {
     @Input() title: any = '';

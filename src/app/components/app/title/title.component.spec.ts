@@ -4,6 +4,7 @@ import { LanguageService } from 'src/app/providers/language.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { TitleComponent } from './title.component';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('TitleComponent', () => {
     let component: TitleComponent;
@@ -16,6 +17,7 @@ describe('TitleComponent', () => {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
+                provideExperimentalZonelessChangeDetection(),
                 ThemeService
             ],
             imports: [BrowserAnimationsModule, TitleComponent]

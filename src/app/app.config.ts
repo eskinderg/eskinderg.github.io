@@ -1,4 +1,8 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import {
+    ApplicationConfig,
+    importProvidersFrom,
+    provideExperimentalZonelessChangeDetection
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ThemeModule } from './theme/theme.module';
 import { LanguageModule } from './language/language.modue';
@@ -15,6 +19,7 @@ export const appConfig: ApplicationConfig = {
         GoogleAnalyticsService,
         AppInit,
         provideHttpClient(withInterceptors([LoaderInterceptor])),
+        provideExperimentalZonelessChangeDetection(),
         provideAnimations()
     ]
 };

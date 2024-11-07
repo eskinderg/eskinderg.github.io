@@ -4,6 +4,7 @@ import { ListComponent } from './list.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('ListComponent', () => {
     let component: ListComponent;
@@ -12,7 +13,11 @@ describe('ListComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [BrowserAnimationsModule, ListComponent],
-            providers: [LanguageService, provideHttpClient(withInterceptorsFromDi())]
+            providers: [
+                LanguageService,
+                provideHttpClient(withInterceptorsFromDi()),
+                provideExperimentalZonelessChangeDetection()
+            ]
         }).compileComponents();
     });
 

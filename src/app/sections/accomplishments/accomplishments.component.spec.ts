@@ -6,6 +6,7 @@ import { AccomplishmentsSectionComponent } from './accomplishments.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('AccomplishmentsSectionComponent', () => {
     let component: AccomplishmentsSectionComponent;
@@ -21,6 +22,7 @@ describe('AccomplishmentsSectionComponent', () => {
                 },
                 ThemeService,
                 GoogleAnalyticsService,
+                provideExperimentalZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

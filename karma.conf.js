@@ -3,6 +3,7 @@
 
 module.exports = function (config) {
     config.set({
+        files: ['node_modules/zone.js/fesm2015/zone.js'],
         basePath: '',
         frameworks: ['jasmine', '@angular-devkit/build-angular'],
         plugins: [

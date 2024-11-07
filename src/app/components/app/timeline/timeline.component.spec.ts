@@ -6,6 +6,7 @@ import { TitleComponent } from '../title/title.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { ChipComponent } from '../chip/chip.component';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('TimelineComponent', () => {
     let component: TimelineComponent;
@@ -19,6 +20,7 @@ describe('TimelineComponent', () => {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
+                provideExperimentalZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

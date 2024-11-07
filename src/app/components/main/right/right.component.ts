@@ -1,4 +1,4 @@
-import { Component, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, viewChild } from '@angular/core';
 import { ToggleComponent } from '../../app/toggle/toggle.component';
 import { LanguageDropDownComponent } from '../../app/langdropdown/langdropdown.component';
 import { MenuComponent } from '../menu/menu.component';
@@ -8,7 +8,8 @@ import { MenuComponent } from '../menu/menu.component';
     templateUrl: './right.component.html',
     styleUrl: './right.component.scss',
     standalone: true,
-    imports: [ToggleComponent, MenuComponent, LanguageDropDownComponent]
+    imports: [ToggleComponent, MenuComponent, LanguageDropDownComponent],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RightComponent {
     toggleComponent = viewChild.required<ToggleComponent>('toggle');

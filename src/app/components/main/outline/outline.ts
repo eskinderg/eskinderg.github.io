@@ -4,24 +4,23 @@ import {
     Input,
     EventEmitter,
     OnInit,
-    ChangeDetectorRef,
-    ApplicationRef,
     viewChild,
     HostListener,
-    Output
+    Output,
+    ChangeDetectionStrategy
 } from '@angular/core';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/theme/theme.service';
 import { NgClass } from '@angular/common';
+import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
+    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-outline',
     templateUrl: './outline.html',
     styleUrls: ['./outline.scss'],
     standalone: true,
     imports: [NgClass]
 })
-export class OutlineComponent implements OnInit {
+export class OutlineComponent extends BaseComponent implements OnInit {
     currentSection: string;
     @Output() public mouseWheelScroll: EventEmitter<any> = new EventEmitter<any>();
     @Input() public onWindowScroll: EventEmitter<any>;
@@ -36,13 +35,6 @@ export class OutlineComponent implements OnInit {
         'APP-EDUCATION',
         'APP-CONTACT'
     ];
-
-    constructor(
-        public lang: LanguageService,
-        public theme: ThemeService,
-        public ref: ChangeDetectorRef,
-        public appRef: ApplicationRef
-    ) {}
 
     scrollTo(element: any) {
         const section = this.lang.sections[element];

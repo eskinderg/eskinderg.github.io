@@ -4,6 +4,10 @@ import { LanguageDropDownComponent } from './langdropdown.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { By } from '@angular/platform-browser';
+import { ThemeService } from 'src/app/theme/theme.service';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('LangdropdownComponent', () => {
     let component: LanguageDropDownComponent;
@@ -16,7 +20,11 @@ describe('LangdropdownComponent', () => {
                 {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
-                }
+                },
+                ThemeService,
+                GoogleAnalyticsService,
+                provideExperimentalZonelessChangeDetection(),
+                provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();
 

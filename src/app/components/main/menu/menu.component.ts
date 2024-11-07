@@ -1,21 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import { LanguageService } from 'src/app/providers/language.service';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
 import { NgClass } from '@angular/common';
+import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
     selector: 'app-menu',
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.scss'],
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [TooltipDirective, NgClass]
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent extends BaseComponent implements OnInit {
     public hovered: any;
     public visible: boolean;
     public atTop = true;
-
-    constructor(public lang: LanguageService) {}
 
     ngOnInit() {
         this.lang.menu.subscribe((value) => {

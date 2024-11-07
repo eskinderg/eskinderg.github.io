@@ -6,6 +6,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 import { IntroSectionComponent } from './intro.component';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('IntroSectionComponent', () => {
     let component: IntroSectionComponent;
@@ -21,6 +22,7 @@ describe('IntroSectionComponent', () => {
                 },
                 GoogleAnalyticsService,
                 ThemeService,
+                provideExperimentalZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();
@@ -34,7 +36,7 @@ describe('IntroSectionComponent', () => {
         expect(component).toBeDefined();
     });
 
-    it('Should rendere name Eskinder Getahun', () => {
+    it('Should render name Eskinder Getahun', () => {
         const compiled = fixture.debugElement.nativeElement;
         expect(compiled.querySelector('.intro>.titleIntro>.introTitle').textContent.trim()).toBe(
             'Eskinder Getahun'

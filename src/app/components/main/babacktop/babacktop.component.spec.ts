@@ -5,8 +5,9 @@ import { BaBackTopComponent } from './babacktop.component';
 import { AppComponent } from 'src/app/app.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 
 describe('BackTopComponent', () => {
     let component: BaBackTopComponent;
@@ -22,6 +23,8 @@ describe('BackTopComponent', () => {
                 },
                 AppComponent,
                 ThemeService,
+                GoogleAnalyticsService,
+                provideExperimentalZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

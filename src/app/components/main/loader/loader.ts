@@ -1,5 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { NgClass } from '@angular/common';
+import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
     selector: 'app-loader',
@@ -9,8 +10,6 @@ import { NgClass } from '@angular/common';
     standalone: true,
     imports: [NgClass]
 })
-export class LoaderComponent {
+export class LoaderComponent extends BaseComponent {
     @Input() Loading: boolean = false;
-
-    constructor() {}
 }

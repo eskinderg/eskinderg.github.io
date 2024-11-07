@@ -1,21 +1,18 @@
-import { Component, ElementRef, HostListener } from '@angular/core';
-import { LanguageService } from 'src/app/providers/language.service';
+import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import { TooltipDirective } from '../tooltip/tooltip.directive';
 import { NgClass } from '@angular/common';
+import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
     selector: 'app-lang-dropdown',
     templateUrl: './langdropdown.component.html',
     styleUrl: './langdropdown.component.scss',
     standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [TooltipDirective, NgClass]
 })
-export class LanguageDropDownComponent {
+export class LanguageDropDownComponent extends BaseComponent {
     visible: boolean = false;
-    constructor(
-        public lang: LanguageService,
-        public eRef: ElementRef
-    ) {}
 
     changeLanguage(lang: string) {
         this.lang.Language = lang;

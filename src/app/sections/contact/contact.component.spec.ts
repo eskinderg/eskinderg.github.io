@@ -5,6 +5,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 import { ContactSectionComponent } from './contact.component';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('ContactSectionComponent', () => {
     let component: ContactSectionComponent;
@@ -20,6 +21,7 @@ describe('ContactSectionComponent', () => {
                 },
                 ThemeService,
                 GoogleAnalyticsService,
+                provideExperimentalZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

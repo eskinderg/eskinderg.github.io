@@ -1,4 +1,14 @@
-import { Component, HostListener, Input, ElementRef, OnInit, EventEmitter, viewChild } from '@angular/core';
+import {
+    Component,
+    HostListener,
+    Input,
+    ElementRef,
+    OnInit,
+    EventEmitter,
+    viewChild,
+    ChangeDetectionStrategy,
+    inject
+} from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 
 @Component({
@@ -15,7 +25,8 @@ import { AppComponent } from 'src/app/app.component';
             </svg>
         </i>
     `,
-    standalone: true
+    standalone: true,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaBackTopComponent implements OnInit {
     @Input() position = 400;
@@ -25,11 +36,10 @@ export class BaBackTopComponent implements OnInit {
 
     _selector = viewChild.required<ElementRef>('baBackTop');
 
-    constructor(private _parent: AppComponent) {}
-
     @HostListener('click', ['$event.target'])
     _onClick() {
-        this._parent.mainWrapper().nativeElement.scroll({ top: 0, left: 0, behavior: 'smooth' });
+        const _parent = inject(AppComponent);
+        _parent.mainWrapper().nativeElement.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
     ngOnInit(): void {

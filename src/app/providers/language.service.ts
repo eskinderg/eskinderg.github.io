@@ -16,6 +16,8 @@ export class LanguageService {
 
     @Output() languageChange: EventEmitter<object> = new EventEmitter<object>();
 
+    @Output() public httpChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
     constructor(public http: HttpClient) {}
 
     set Language(lang: any) {

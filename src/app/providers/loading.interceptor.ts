@@ -10,9 +10,11 @@ export const LoaderInterceptor: HttpInterceptorFn = (
 ): Observable<HttpEvent<any>> => {
     const lang = inject(LanguageService);
     lang.loading = true;
+    lang.httpChange.emit(lang.loading);
     return next(request).pipe(
         finalize(() => {
             lang.loading = false;
+            lang.httpChange.emit(lang.loading);
         })
     );
 };

@@ -6,6 +6,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 import { AboutSectionComponent } from './about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('AboutSectionComponent', () => {
     let component: AboutSectionComponent;
@@ -21,6 +22,7 @@ describe('AboutSectionComponent', () => {
                 },
                 GoogleAnalyticsService,
                 ThemeService,
+                provideExperimentalZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

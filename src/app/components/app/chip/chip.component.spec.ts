@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChipComponent } from './chip.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('ChipComponent', () => {
     let component: ChipComponent;
@@ -14,7 +15,8 @@ describe('ChipComponent', () => {
                 {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
-                }
+                },
+                provideExperimentalZonelessChangeDetection()
             ]
         }).compileComponents();
     });

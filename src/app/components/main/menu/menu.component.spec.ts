@@ -4,6 +4,9 @@ import { LanguageService } from 'src/app/providers/language.service';
 
 import { MenuComponent } from './menu.component';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { ThemeService } from 'src/app/theme/theme.service';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('MenuComponent', () => {
     let component: MenuComponent;
@@ -17,6 +20,9 @@ describe('MenuComponent', () => {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
+                ThemeService,
+                GoogleAnalyticsService,
+                provideExperimentalZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

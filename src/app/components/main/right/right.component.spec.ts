@@ -7,6 +7,8 @@ import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { findComponent } from 'src/app/app.component.spec';
 import { MenuComponent } from '../menu/menu.component';
+import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
+import { provideExperimentalZonelessChangeDetection } from '@angular/core';
 
 describe('RightComponent', () => {
     let component: RightComponent;
@@ -21,6 +23,8 @@ describe('RightComponent', () => {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
+                GoogleAnalyticsService,
+                provideExperimentalZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();
