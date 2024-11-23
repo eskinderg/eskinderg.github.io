@@ -14,7 +14,6 @@ export enum ButtonState {
     selector: 'app-color-picker',
     templateUrl: './color-picker.component.html',
     styleUrls: ['./color-picker.component.scss'],
-    standalone: true,
     imports: [TooltipDirective, NgClass]
 })
 export class ColorPickerComponent extends BaseComponent implements OnInit {

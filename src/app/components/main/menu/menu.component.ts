@@ -7,7 +7,6 @@ import { BaseComponent } from 'src/app/sections/base.component';
     selector: 'app-menu',
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.scss'],
-    standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [TooltipDirective, NgClass]
 })

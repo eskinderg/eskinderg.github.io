@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { BaBackTopComponent } from './babacktop.component';
-import { AppComponent } from 'src/app/app.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { EventEmitter, provideExperimentalZonelessChangeDetection } from '@angular/core';
@@ -21,7 +20,6 @@ describe('BackTopComponent', () => {
                     provide: LanguageService,
                     useClass: LanguageServiceMock
                 },
-                AppComponent,
                 ThemeService,
                 GoogleAnalyticsService,
                 provideExperimentalZonelessChangeDetection(),

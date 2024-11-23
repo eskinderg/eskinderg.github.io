@@ -17,7 +17,6 @@ import { BaseComponent } from './sections/base.component';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: true,
     imports: [ColorPickerComponent, RightComponent, LoaderComponent, OutlineComponent, BaBackTopComponent],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

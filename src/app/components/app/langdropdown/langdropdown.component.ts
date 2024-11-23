@@ -7,7 +7,6 @@ import { BaseComponent } from 'src/app/sections/base.component';
     selector: 'app-lang-dropdown',
     templateUrl: './langdropdown.component.html',
     styleUrl: './langdropdown.component.scss',
-    standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [TooltipDirective, NgClass]
 })

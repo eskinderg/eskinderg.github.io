@@ -1,4 +1,4 @@
-@import '../../../styles/screen.scss';
+@use '../../../styles/screen.scss' as *;
 
 .title .line {
     margin-top: 8px;

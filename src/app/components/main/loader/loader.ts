@@ -7,7 +7,6 @@ import { BaseComponent } from 'src/app/sections/base.component';
     templateUrl: './loader.html',
     styleUrls: ['./loader.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgClass]
 })
 export class LoaderComponent extends BaseComponent {

@@ -8,7 +8,6 @@ import { NgClass } from '@angular/common';
     templateUrl: './toggle.component.html',
     styleUrl: './toggle.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [TooltipDirective, NgClass]
 })
 export class ToggleComponent {

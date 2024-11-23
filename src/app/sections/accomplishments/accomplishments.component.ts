@@ -8,7 +8,6 @@ import { TitleComponent } from '../../components/app/title/title.component';
     templateUrl: './accomplishments.component.html',
     styleUrls: ['./accomplishments.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [SeparatorComponent, TitleComponent]
 })
 export class AccomplishmentsSectionComponent extends BaseComponent implements AfterViewInit {

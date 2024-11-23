@@ -8,7 +8,6 @@ import { TechnologyComponent } from '../../components/app/technology/technology.
     templateUrl: './expert-in.component.html',
     styleUrls: ['./expert-in.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [TitleComponent, TechnologyComponent]
 })
 export class ExpertInSectionComponent extends BaseComponent implements AfterViewInit {

@@ -17,7 +17,6 @@ import { BaseComponent } from 'src/app/sections/base.component';
     selector: 'app-outline',
     templateUrl: './outline.html',
     styleUrls: ['./outline.scss'],
-    standalone: true,
     imports: [NgClass]
 })
 export class OutlineComponent extends BaseComponent implements OnInit {

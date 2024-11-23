@@ -9,7 +9,6 @@ import { ListComponent } from '../../components/app/list/list.component';
     templateUrl: './education-conferences.component.html',
     styleUrls: ['./education-conferences.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [SeparatorComponent, TitleComponent, ListComponent]
 })
 export class EducationConferencesSectionComponent extends BaseComponent implements AfterViewInit {

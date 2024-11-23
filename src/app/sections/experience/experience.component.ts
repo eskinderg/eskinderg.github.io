@@ -8,7 +8,6 @@ import { TimelineComponent } from '../../components/app/timeline/timeline.compon
     templateUrl: './experience.component.html',
     styleUrls: ['./experience.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [TitleComponent, TimelineComponent]
 })
 export class ExperienceSectionComponent extends BaseComponent implements AfterViewInit {

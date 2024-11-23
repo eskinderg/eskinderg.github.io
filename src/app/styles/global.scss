@@ -1,4 +1,4 @@
-@import './screen.scss';
+@use './screen.scss' as *;
 
 html {
     line-height: 1.5;

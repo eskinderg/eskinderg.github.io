@@ -8,7 +8,6 @@ import { DropDownMenuComponent } from '../../components/app/dropdown/dropdown.co
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [TitleComponent, DropDownMenuComponent]
 })
 export class AboutSectionComponent extends BaseComponent implements AfterViewInit {

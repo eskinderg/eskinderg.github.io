@@ -7,7 +7,6 @@ import { NgClass } from '@angular/common';
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgClass]
 })
 export class ListComponent {

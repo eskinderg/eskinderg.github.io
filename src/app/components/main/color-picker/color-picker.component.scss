@@ -1,4 +1,4 @@
-@import '../../../styles/screen.scss';
+@use '../../../styles/screen.scss' as *;
 
 :host {
     position: relative;

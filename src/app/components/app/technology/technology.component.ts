@@ -6,7 +6,6 @@ import { NgClass } from '@angular/common';
     templateUrl: './technology.component.html',
     styleUrls: ['./technology.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgClass]
 })
 export class TechnologyComponent {

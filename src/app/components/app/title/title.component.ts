@@ -6,7 +6,6 @@ import { NgClass } from '@angular/common';
     selector: 'app-title',
     templateUrl: 'title.component.html',
     styleUrls: ['title.component.scss'],
-    standalone: true,
     imports: [NgClass],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

@@ -8,7 +8,6 @@ import { ChipComponent } from '../chip/chip.component';
     templateUrl: './timeline.component.html',
     styleUrls: ['./timeline.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgClass, ChipComponent]
 })
 export class TimelineComponent {

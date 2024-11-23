@@ -15,7 +15,6 @@ import { NgStyle } from '@angular/common';
     templateUrl: './contact.component.html',
     styleUrls: ['./contact.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [NgStyle]
 })
 export class ContactSectionComponent extends BaseComponent implements OnInit, AfterViewInit {

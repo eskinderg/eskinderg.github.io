@@ -7,7 +7,6 @@ import { TooltipDirective } from '../../components/app/tooltip/tooltip.directive
     templateUrl: './intro.component.html',
     styleUrls: ['./intro.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [TooltipDirective]
 })
 export class IntroSectionComponent extends BaseComponent implements AfterViewInit {

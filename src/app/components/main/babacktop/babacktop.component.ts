@@ -7,7 +7,8 @@ import {
     EventEmitter,
     viewChild,
     ChangeDetectionStrategy,
-    inject
+    inject,
+    ApplicationRef
 } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
 
@@ -25,7 +26,6 @@ import { AppComponent } from 'src/app/app.component';
             </svg>
         </i>
     `,
-    standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaBackTopComponent implements OnInit {
@@ -33,13 +33,20 @@ export class BaBackTopComponent implements OnInit {
     @Input() showSpeed = 500;
     @Input() moveSpeed = 700;
     @Input() public onWindowScroll: EventEmitter<any>;
+    appComponent: AppComponent;
+    appRef: ApplicationRef;
 
     _selector = viewChild.required<ElementRef>('baBackTop');
 
+    constructor() {
+        this.appRef = inject(ApplicationRef);
+    }
+
     @HostListener('click', ['$event.target'])
     _onClick() {
-        const _parent = inject(AppComponent);
-        _parent.mainWrapper().nativeElement.scroll({ top: 0, left: 0, behavior: 'smooth' });
+        (this.appRef.components.at(0).instance as AppComponent)
+            .mainWrapper()
+            .nativeElement.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }
 
     ngOnInit(): void {

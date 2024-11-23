@@ -7,7 +7,6 @@ import { MenuComponent } from '../menu/menu.component';
     selector: 'app-right',
     templateUrl: './right.component.html',
     styleUrl: './right.component.scss',
-    standalone: true,
     imports: [ToggleComponent, MenuComponent, LanguageDropDownComponent],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

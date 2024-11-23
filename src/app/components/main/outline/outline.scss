@@ -1,4 +1,4 @@
-@import '../../../styles/screen.scss';
+@use '../../../styles/screen.scss' as *;
 
 :host * {
     transition: background-color 1s ease;
