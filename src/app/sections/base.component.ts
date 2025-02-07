@@ -13,8 +13,7 @@ import { GoogleAnalyticsService } from '../providers/google-analytics.service';
 @Component({
     selector: 'app-base',
     template: '',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaseComponent {
     protected appRef: ApplicationRef;
