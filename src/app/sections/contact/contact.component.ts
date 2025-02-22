@@ -9,6 +9,7 @@ import {
 import { environment } from 'src/environments/environment';
 import { BaseComponent } from 'src/app/sections/base.component';
 import { NgStyle } from '@angular/common';
+import Geezify from 'geezify-js';
 
 @Component({
     selector: 'app-contact',
@@ -34,6 +35,27 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
 
     ngOnInit() {
         this.currentAppVersion = environment.appVersion;
+    }
+
+    public get Version(): string {
+        if (this.lang.Language === 'am') {
+            const geezify = Geezify.create();
+            const numbers = this.currentAppVersion.split('.', 3);
+            const last = numbers[2].split('-', 2)[0];
+            const env = numbers[2].split('-', 2)[1];
+            return `${geezify.toGeez(+numbers[0])}.${geezify.toGeez(+numbers[1])}.${geezify.toGeez(+last)}-${env}`;
+        }
+
+        return this.currentAppVersion;
+    }
+
+    public get Year(): string {
+        if (this.lang.Language === 'am') {
+            const geezify = Geezify.create();
+            return geezify.toGeez(new Date().getFullYear() - 8).toString();
+        } else {
+            return this.Copyright;
+        }
     }
 
     public get Copyright(): string {
