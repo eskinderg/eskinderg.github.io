@@ -15,7 +15,10 @@
         <!-- <div class="w-[5%] h-[5%]">&nbsp;</div> -->
         <div class="introContent">
             @for (paragraph of lang.texts.about.content; track paragraph) {
-                <p class="contentParagraph" [innerHTML]="paragraph"></p>
+                <p
+                    [style.font-size.rem]="lang.texts.font.about?.description?.fontSize"
+                    class="contentParagraph"
+                    [innerHTML]="paragraph"></p>
             }
             <app-dropdown></app-dropdown>
         </div>
