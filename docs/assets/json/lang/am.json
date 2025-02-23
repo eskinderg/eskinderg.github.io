@@ -9,6 +9,11 @@
             "title": "wookianos",
             "subtitle": "Raleway"
         },
+        "about": {
+            "description": {
+                "fontSize": "1.5"
+            }
+        },
         "menu": "wookianos",
         "outlineMenu": {
             "fontFamily": "wookianos",
@@ -52,7 +57,7 @@
     "about": {
         "title": "ስለ እኔ",
         "content": [
-            "As confirmed by my portfolio content and <a href='https://github.com/eskinderg' target='_blank'>code</a>, I combine my knowledge and experience in order to develop professional web applications. I use the best practice to produce a clean code that is easy to debug and maintain.<br> I have a passion for web development and continue to learn the latest technological advancements."
+            "የእዚህ ዌብሳይት አሰራር እና <a href='https://github.com/eskinderg' target='_blank'>ይዘት</a> እንደሚያሳየው እውቀቴን እና ልምዴን በማጣመር ለጥገና ቀላል እና ምቹ የሆኑ ፕሮፌሽናል ዌብሳይቶችን እሰራለሁ።<br> እንዲሁም የቅርብ ጊዜ ቴክኖሎጂ እድገቶች ጋር እራሴን በማዘመን የዌብሳይት ስራዎችን እሰራለሁ።"
         ],
         "button": {
             "title": "ካሪኩለም ሺቴ",
@@ -238,11 +243,11 @@
         "content": [
             {
                 "title": "2005-2006 ዓ.ም",
-                "paragraph": "Developed websites using WordPress, OpenCart and other opensource technologies"
+                "paragraph": "የተለያዩ ዌብሳይቶችን ኦፐን ሶርስ የሆኑ እንደ  ወርድ ፕሬስ ፣ ኦፐን ካርትን በመጠቀም ዌብ ሳይቶችን ሰርቻለሁ።"
             },
             {
                 "title": "2008 ዓ.ም",
-                "paragraph": "Participated on OAuth implementation for user roles and permissions using JWT (JSON web token)"
+                "paragraph": "JWT (JSON web token) በመጠቀም የተጠቃሚ ሚናዎች እና ፈቃዶች በ OAuth ትግበራ ላይ ተሳትፌያለሁ።"
             },
             {
                 "title": "2008",
