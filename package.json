@@ -24,7 +24,7 @@
     "@angular/core": "^19.1.7",
     "@angular/platform-browser": "^19.1.7",
     "@angular/platform-browser-dynamic": "^19.1.7",
-    "@angular/router": "^19.1.7",
+    "@angular/router": "^19.2.1",
     "gulp": "^5.0.0",
     "gulp-jsonminify": "^1.1.0",
     "gulp-rename": "^2.0.0",
