@@ -127,3 +127,19 @@ svg {
         left: 1rem;
     }
 }
+
+@media (max-height: 540px) {
+    .fab-toggler {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    .btnWrapper {
+        flex-direction: row;
+    }
+
+    .fab-container {
+        flex-direction: row;
+        top: 1rem;
+        left: 1rem;
+    }
+}
