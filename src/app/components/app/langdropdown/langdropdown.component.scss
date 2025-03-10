@@ -1,3 +1,5 @@
+@use '../../../styles/screen.scss' as * ;
+
 :host {
     cursor: pointer;
 }
@@ -6,6 +8,8 @@
     background: var(--primary);
     border-radius: 50%;
     transition: background 1s ease;
+    width:1.5rem;
+    height: 1.5rem;
 }
 
 .lang-menu-wrapper {
@@ -71,3 +75,12 @@
     border: 1px solid #2f2f2f;
     border-top: none;
 }
+
+@include screen-md {
+    .svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+}
+

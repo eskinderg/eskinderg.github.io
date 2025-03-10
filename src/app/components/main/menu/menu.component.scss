@@ -9,8 +9,8 @@
     cursor: pointer;
     font-size: 0;
     padding: 2px 0 0 3px;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2rem;
+    width: 2rem;
     z-index: 1000;
     transition: background-color 1s ease;
     background-color: var(--primary);
@@ -18,6 +18,11 @@
     // fill: var(--background2);
     fill: #fff;
 
+}
+
+svg {
+    width:20px;
+    height:20px;
 }
 
 .MenuButton.default {
@@ -131,8 +136,18 @@
 }
 
 @include screen-md {
+
+    svg {
+        width:25px;
+        height:25px;
+    }
     .MenuFullscreen nav a {
         font-size: 2rem;
+    }
+
+    .MenuButton {
+        height: 2.5rem;
+        width: 2.5rem;
     }
 }
 
@@ -140,25 +155,24 @@
     opacity: 1;
 }
 
-
 @keyframes fadein {
-    from {
-        opacity: 0;
+from {
+    opacity: 0;
     visibility: hidden;
-    }
-    to {
-        opacity: 1;
-        visibility: visible;
-    }
+}
+to {
+    opacity: 1;
+    visibility: visible;
+}
 }
 
 @keyframes fadeout {
-    from {
-        opacity: 1;
-        visibility: visible;
-    }
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+from {
+    opacity: 1;
+    visibility: visible;
+}
+to {
+    opacity: 0;
+    visibility: hidden;
+}
 }

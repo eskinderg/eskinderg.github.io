@@ -1,27 +1,4 @@
-.toggle {
-    position: relative;
-    height: 1.5rem;
-    width: 2.5rem;
-    cursor: pointer;
-    border-radius: 25px;
-    background-color: var(--text);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-.toggle::before {
-    content: '';
-    position: absolute;
-    left: 0.1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 1.25rem;
-    width: 1.25rem;
-    border-radius: 50%;
-    background-color: var(--primary);
-    border: 0.25rem solid var(--primary);
-    filter: brightness(130%);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
+@use '../../../styles//screen.scss' as * ;
 
 .toggle.on {
     background-color: var(--text);
@@ -33,4 +10,43 @@
     background-color: var(--primary);
     border-color: var(--primary);
     filter: brightness(130%);
+}
+
+.toggle {
+    position: relative;
+    height:1.5rem;
+    width: 2rem;
+    cursor: pointer;
+    border-radius: 25px;
+    background-color: var(--text);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggle::before {
+    height: 1rem;
+    width: 1rem;
+    content: '';
+    position: absolute;
+    left: 0.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: var(--primary);
+    border: 0.25rem solid var(--primary);
+    filter: brightness(130%);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+@include screen-md {
+
+    .toggle {
+        height: 1.5rem;
+        width: 2.5rem;
+    }
+    .toggle::before {
+        height: 1.25rem;
+        width: 1.25rem;
+    }
+
 }
