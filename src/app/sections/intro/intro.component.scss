@@ -11,17 +11,19 @@
 }
 
 .introSvg {
-    width: 1920px;
+    width: 100%;
 }
 
 .app-divider {
     height: 5rem;
+    width:100%;
     transition: background-color 1s ease;
     background: var(--background2) !important;
 
     path {
         transition: fill 1s ease;
         fill: var(--primary);
+        stroke: black;
     }
 }
 
@@ -174,7 +176,7 @@
 @include screen-xl {
 
     .introSvg {
-        width: 1920px;
+        width: 100%;
     }
 
     .introTitle {
