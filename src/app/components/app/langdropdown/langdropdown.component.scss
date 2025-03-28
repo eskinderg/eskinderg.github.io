@@ -24,32 +24,30 @@
 .langMenu {
     visibility: hidden;
     opacity: 0;
-    right: 1.7rem;
-    top: 3rem;
-    transition:
-        visibility 0s,
-        opacity 0.25s linear;
+    right: 1rem;
+    top: 2.75rem;
+    transition: visibility 0s, opacity 0.25s linear;
     display: flex;
+    // background-color: var(--background2);
     position: absolute;
     flex-direction: column;
     width: 10rem;
-    // background-color: var(--background2);
     background-color: #1c2128;
     z-index: 1000;
 }
 
-.langMenu::before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-left: 22px solid transparent;
-    border-right: 1px solid transparent;
-    border-bottom: 27px solid #1c2128;
-    position: absolute;
-    left: calc(50% + 3.75rem);
-    top: -24px;
-    transform: rotate(14deg);
-}
+// .langMenu::before {
+//     content: '';
+//     width: 0;
+//     height: 0;
+//     border-left: 22px solid transparent;
+//     border-right: 1px solid transparent;
+//     border-bottom: 27px solid #1c2128;
+//     position: absolute;
+//     left: calc(50% + 3.75rem);
+//     top: -24px;
+//     transform: rotate(14deg);
+// }
 
 .showLangDropMenu {
     visibility: visible;
