@@ -31,7 +31,11 @@
     <div class="langMenu" [ngClass]="{ showLangDropMenu: visible }">
         @for (lang of lang.LanguageList; track lang) {
             <div class="langMenuItem">
-                <div class="langText" (click)="changeLanguage(lang.code)" [style.font-family]="lang.font">
+                <div
+                    class="langText"
+                    [class.selected]="lang.code === this.lang.Language"
+                    (click)="changeLanguage(lang.code)"
+                    [style.font-family]="lang.font">
                     {{ lang.title }}
                 </div>
             </div>

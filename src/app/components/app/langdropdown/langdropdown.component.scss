@@ -65,15 +65,21 @@
 }
 
 .langMenuItem :hover {
-    background-color: #22272e;
+    // background-color: #22272e;
 }
 
 .langText {
-    color: #bbb;
+    color: #9aa0a6;
     width: 100%;
     padding: 0.5rem;
     border: 1px solid #2f2f2f;
     border-top: none;
+}
+
+.selected {
+    color: #cacaca;
+    background: var(--primary);
+    border-radius: 5px;
 }
 
 @include screen-md {
