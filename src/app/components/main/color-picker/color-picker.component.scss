@@ -39,8 +39,8 @@ svg {
     position: fixed;
     z-index: 99;
     display: flex;
-    top: 0.25rem;
-    left: 0.25rem;
+    top: 0.5rem;
+    left: 1rem;
     cursor: pointer;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -95,6 +95,7 @@ svg {
     align-items: center;
     justify-content: center;
     padding: 0.25rem;
+    border: 1px solid #DCDCDD;
 }
 
 .rotate {
@@ -124,7 +125,7 @@ svg {
     .fab-container {
         flex-direction: row;
         top: 1rem;
-        left: 1rem;
+        left: 2rem;
     }
 }
 
@@ -139,7 +140,5 @@ svg {
 
     .fab-container {
         flex-direction: row;
-        top: 1rem;
-        left: 1rem;
     }
 }

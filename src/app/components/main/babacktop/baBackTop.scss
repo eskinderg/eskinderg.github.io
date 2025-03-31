@@ -19,16 +19,38 @@ $height: 52px;
     background-color: var(--primary);
     border-radius: 50%;
     line-height: 40px;
-    &:hover {
-        opacity: 1;
-    }
+    // &:hover {
+    //     opacity: 1;
+    // }
     // background-image: url('../../../assets/img/arrow-top.png');
     background-size: contain;
     background-size: cover;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .ba-back-top:hover {
+        opacity: 1;
+    }
 }
 
 #svg-backTo-top {
     margin-top: 8px;
     position: absolute;
     left: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+    .ba-back-top {
+        width: 36px;
+        height: 36px;
+        right: 1rem;
+        bottom: 1rem !important;
+    }
+
+    #svg-backTo-top {
+        margin-top: 7px;
+        position: absolute;
+        left: 4px;
+        height: 20px;
+    }
 }
