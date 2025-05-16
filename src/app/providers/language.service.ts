@@ -68,6 +68,7 @@ export class LanguageService {
         if (value || value === false) {
             this.menuVisible = value;
         } else {
+            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
             this.menuVisible != this.menuVisible;
         }
 

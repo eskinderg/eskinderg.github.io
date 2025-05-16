@@ -58,6 +58,7 @@ export class ColorPickerComponent extends BaseComponent implements OnInit {
     }
 
     public onToggleButton() {
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         this.buttons.length ? this.hideItems() : this.showItems();
     }
 

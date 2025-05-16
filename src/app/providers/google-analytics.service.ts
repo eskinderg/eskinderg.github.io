@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-types */
 import { Injectable } from '@angular/core';
 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
 declare let gtag: Function;
 
 @Injectable({
