@@ -118,6 +118,11 @@ svg {
         width: 41px;
         height: 41px;
     }
+
+    .menu-toggle {
+        width: 41px !important;
+        height: 41px !important;
+    }
     .MenuFullscreen nav a {
         font-size: 2rem;
     }
@@ -155,41 +160,40 @@ svg {
 }
 
 .menu-toggle {
-    background: none;
+    background: var(--primary);
     border: none;
     padding: 0;
     cursor: pointer;
-    width: 56px;
-    height: 56px;
-    display: inline-flex;
+    width: 30px;
+    height: 30px;
     align-items: center;
     justify-content: center;
+    // box-shadow: 0px 0px 3px 0px black;
 
     .line {
         transition:
             transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
             opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
     .top {
-        transform-origin: 28px 14px;
-    } // 12 + 2 (half height)
+        transform-origin: 28.5px 16.5px;
+    }
     .middle {
-        transform-origin: 28px 27px;
-    } // 25 + 2
+        transform-origin: 28.5px 26.5px;
+    }
     .bottom {
-        transform-origin: 28px 40px;
-    } // 38 + 2
+        transform-origin: 28.5px 36.5px;
+    }
 
     &.open {
         .top {
-            transform: translateY(13px) rotate(45deg); // (27-14)=13
+            transform: translateY(10px) rotate(45deg);
         }
         .middle {
             opacity: 0;
         }
         .bottom {
-            transform: translateY(-13px) rotate(-45deg); // (27-40)=-13
+            transform: translateY(-10px) rotate(-45deg);
         }
     }
 }
