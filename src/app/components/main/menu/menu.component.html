@@ -1,30 +1,15 @@
 <div
     appTooltip="{{ lang.texts.menu.tooltip }}"
     color="primary"
-    class="MenuButton"
+    class="MenuButton menu-toggle"
+    [class.open]="visible"
     (click)="toggleMenu()"
-    (window:scroll)="onScroll($event)"
-    [ngClass]="{ menuBtnNoShadow: atTop || visible, animated: visible }">
-    <svg style="padding: 5px 0px 0px 4px">
-        <g id="g13" transform="matrix(0.59678685,0,0,0.6968162,3.68414,4.6546213)">
-            <g transform="matrix(0.76190476,0,0,0.76190476,-145.85034,-295.47324)" id="g11">
-                <g transform="matrix(1.3289565,0,0,1.9266338,202.61445,411.41043)" id="g3">
-                    <path
-                        id="line3"
-                        d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 h 19 C 21.5,0 22,0.5 22,1.5 22,2.5 21.5,3 20.5,3 H 1.5 C 0.5,3 0,2.5 0,1.5 Z" />
-                </g>
-                <g transform="matrix(1.3289565,0,0,2.0760185,189.32489,386.10136)" id="g6">
-                    <path
-                        id="line1"
-                        d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 h 29 C 31.5,0 32,0.5 32,1.5 32,2.5 31.5,3 30.5,3 H 1.5 C 0.5,3 0,2.5 0,1.5 Z" />
-                </g>
-                <g transform="matrix(1.3289565,0,0,2.0930802,189.32489,398.75589)" id="g9">
-                    <path
-                        id="line2"
-                        d="M 0,1.5 C 0,0.5 0.5,0 1.5,0 h 29 C 31.5,0 32,0.5 32,1.5 32,2.5 31.5,3 30.5,3 H 1.5 C 0.5,3 0,2.5 0,1.5 Z" />
-                </g>
-            </g>
-        </g>
+    aria-label="Toggle menu"
+    (window:scroll)="onScroll($event)">
+    <svg width="56" height="56" viewBox="0 0 56 56">
+        <rect class="line top" x="12" y="12" width="32" height="5" rx="2" />
+        <rect class="line middle" x="12" y="25" width="32" height="5" rx="2" />
+        <rect class="line bottom" x="12" y="38" width="32" height="5" rx="2" />
     </svg>
 </div>
 

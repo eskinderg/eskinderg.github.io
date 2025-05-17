@@ -17,12 +17,11 @@
     color: #000000;
     // fill: var(--background2);
     fill: #fff;
-
 }
 
 svg {
-    width:20px;
-    height:20px;
+    width: 30px;
+    height: 30px;
 }
 
 .MenuButton.default {
@@ -92,27 +91,6 @@ svg {
     text-align: center;
 }
 
-/* Menu button animation */
-.animated #line1 {
-    transform: translateY(9px) translateX(9px) rotate(-45deg);
-    transform-origin: 4px 6px;
-    // fill: #252E38;
-}
-.animated #line2 {
-    transform: translateY(13px) translateX(-3px) rotate(45deg);
-    transform-origin: 36px -5px;
-    // fill: #252E38;
-}
-.animated #line3 {
-    opacity: 0;
-}
-#line1,
-#line2,
-#line3 {
-    -webkit-transition: all 0.35s; /* Safari */
-    transition: all 0.35s;
-}
-
 .MenuFullscreen {
     visibility: hidden;
     animation-duration: 350ms;
@@ -136,10 +114,9 @@ svg {
 }
 
 @include screen-md {
-
     svg {
-        width:25px;
-        height:25px;
+        width: 41px;
+        height: 41px;
     }
     .MenuFullscreen nav a {
         font-size: 2rem;
@@ -156,23 +133,63 @@ svg {
 }
 
 @keyframes fadein {
-from {
-    opacity: 0;
-    visibility: hidden;
-}
-to {
-    opacity: 1;
-    visibility: visible;
-}
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 @keyframes fadeout {
-from {
-    opacity: 1;
-    visibility: visible;
+    from {
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
-to {
-    opacity: 0;
-    visibility: hidden;
-}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 56px;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    .line {
+        transition:
+            transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .top {
+        transform-origin: 28px 14px;
+    } // 12 + 2 (half height)
+    .middle {
+        transform-origin: 28px 27px;
+    } // 25 + 2
+    .bottom {
+        transform-origin: 28px 40px;
+    } // 38 + 2
+
+    &.open {
+        .top {
+            transform: translateY(13px) rotate(45deg); // (27-14)=13
+        }
+        .middle {
+            opacity: 0;
+        }
+        .bottom {
+            transform: translateY(-13px) rotate(-45deg); // (27-40)=-13
+        }
+    }
 }
