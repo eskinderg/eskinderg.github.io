@@ -1,4 +1,4 @@
-@use '../../../styles/screen.scss' as * ;
+@use '../../../styles/screen.scss' as *;
 
 :host {
     cursor: pointer;
@@ -8,7 +8,7 @@
     background: var(--primary);
     border-radius: 50%;
     transition: background 1s ease;
-    width:1.5rem;
+    width: 1.5rem;
     height: 1.5rem;
 }
 
@@ -22,16 +22,19 @@
 }
 
 .langMenu {
+    position: absolute;
     visibility: hidden;
+    padding: 7px;
     opacity: 0;
-    right: 1rem;
-    top: 2.75rem;
-    transition: visibility 0s, opacity 0.25s linear;
+    right: 2.5rem;
+    top: 1.75rem;
+    transition:
+        visibility 0s,
+        opacity 0.25s linear;
     display: flex;
     // background-color: var(--background2);
-    position: absolute;
     flex-direction: column;
-    width: 10rem;
+    width: 8rem;
     background-color: #1c2128;
     z-index: 1000;
 }
@@ -52,9 +55,10 @@
 .showLangDropMenu {
     visibility: visible;
     opacity: 1;
-    box-shadow: 1px 3px 8px 0px black;
-    border-radius: 0.25rem;
-    padding: 0.25rem 0 0.25rem 0;
+    // box-shadow: 1px 3px 8px 0px black;
+    border-radius: 0.5rem;
+    border: 1px solid var(--lighter);
+    // padding: 0.25rem 0 0.25rem 0;
 }
 
 .langMenuItem {
@@ -62,15 +66,12 @@
     flex-direction: row;
 }
 
-.langMenuItem :hover {
-    // background-color: #22272e;
-}
-
 .langText {
     color: #9aa0a6;
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #2f2f2f;
+    text-align: right;
+    // border: 1px solid #2f2f2f;
     border-top: none;
 }
 
@@ -86,5 +87,8 @@
         height: 2.5rem;
     }
 
+    .langMenu {
+        right: 4.5rem;
+        top: 2.75rem;
+    }
 }
-
