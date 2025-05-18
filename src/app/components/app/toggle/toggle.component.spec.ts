@@ -25,6 +25,8 @@ describe('ToggleComponent', () => {
     });
 
     it('should create', () => {
+        component.toggleOpen();
+        component.setMode('system');
         expect(component).toBeTruthy();
     });
 });
