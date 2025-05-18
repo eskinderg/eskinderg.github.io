@@ -87,6 +87,7 @@ svg {
 .fab-toggler {
     transition: transform 0.25s ease;
     float: right;
+    padding: 2px;
     border-radius: 50%;
     z-index: 100;
     height: 2rem;
@@ -94,8 +95,7 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.25rem;
-    box-shadow: 1px 1px 9px -2px black;
+    // box-shadow: 1px 1px 9px -2px black;
     // border: 1px solid #DCDCDD;
 }
 
@@ -118,6 +118,7 @@ svg {
     .fab-toggler {
         width: 3rem;
         height: 3rem;
+        padding: 3px;
     }
     .btnWrapper {
         flex-direction: row;

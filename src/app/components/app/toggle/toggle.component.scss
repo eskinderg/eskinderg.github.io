@@ -41,8 +41,8 @@
 @include screen-md {
     .theme-toggle-main-btn {
         svg {
-            width: 2.75rem !important;
-            height: 2.75rem !important;
+            width: 2.5rem !important;
+            height: 2.5rem !important;
             display: block;
         }
     }
@@ -59,25 +59,13 @@
         padding: 0.4rem 0.7rem !important;
     }
 
-    .toggle.on::before {
-        left: calc(100% - 1.4rem);
-    }
-
-    .toggle {
-        height: 1.5rem;
-        width: 2.5rem;
-    }
-
-    .toggle::before {
-        height: 1.25rem;
-        width: 1.25rem;
-    }
 }
 
 .theme-toggle-group {
     position: relative;
     display: flex;
     // background: var(--background, #222);
+    // background: var(--light);
     background: var(--light);
     border-radius: 2rem;
     overflow: hidden;
@@ -103,8 +91,8 @@
     transition: background 0.2s;
 
     svg {
-        width: 1.75rem;
-        height: 1.75rem;
+        width: 1.5rem;
+        height: 1.5rem;
         display: block;
     }
 }
