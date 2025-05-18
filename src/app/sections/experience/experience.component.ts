@@ -16,4 +16,8 @@ export class ExperienceSectionComponent extends BaseComponent implements AfterVi
     ngAfterViewInit(): void {
         this.lang.sections['experience'] = this.section;
     }
+
+    trackExperience(index: number, job: any): any {
+        return index + job.elements;
+    }
 }

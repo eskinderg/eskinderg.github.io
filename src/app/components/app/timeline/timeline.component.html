@@ -4,7 +4,7 @@
         <div class="subtitle h3">{{ job.subtitle }}</div>
         <div class="content mainTitle h4 year job-year">{{ job.year }}</div>
         <div class="timelineParagraph">{{ job.intro }}</div>
-        @for (list of job.elements; track list) {
+        @for (list of job.elements; track trackList($index, list)) {
             <div>
                 <h5 class="content content-list" style="margin: 10px 0px 10px 0">{{ list.header }}</h5>
                 @for (l of list.list; track l) {

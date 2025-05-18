@@ -14,7 +14,7 @@
         </div>
         <!-- <div class="w-[5%] h-[5%]">&nbsp;</div> -->
         <div class="introContent">
-            @for (paragraph of lang.texts.about.content; track paragraph) {
+            @for (paragraph of lang.texts.about.content; track trackAbout($index, paragraph)) {
                 <p
                     [style.font-size.rem]="lang.texts.font.about?.description?.fontSize"
                     class="contentParagraph"

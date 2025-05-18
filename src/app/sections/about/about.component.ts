@@ -24,4 +24,8 @@ export class AboutSectionComponent extends BaseComponent implements AfterViewIni
     onDocxDownload() {
         this.googleAnalyticsService.eventEmitter('download_docx', 'about', 'download', 'click', 10);
     }
+
+    trackAbout(index: number, paragraph: any): any {
+        return index + paragraph;
+    }
 }

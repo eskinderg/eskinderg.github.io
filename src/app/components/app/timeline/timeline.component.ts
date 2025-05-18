@@ -16,4 +16,8 @@ export class TimelineComponent {
     @Input() reverse: boolean;
 
     constructor(public lang: LanguageService) {}
+
+    trackList(index: number, list: any): any {
+        return index + list.list;
+    }
 }

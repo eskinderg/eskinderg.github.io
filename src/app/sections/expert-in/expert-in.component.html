@@ -12,7 +12,7 @@
     </div>
     <div class="expertInContent">
         <div class="technologyList">
-            @for (mastery of lang.texts.technologies.masteries; track mastery) {
+            @for (mastery of lang.texts.technologies.masteries; track trackExpert($index, mastery)) {
                 <app-technology class="tech-list" [item]="mastery"></app-technology>
             }
         </div>

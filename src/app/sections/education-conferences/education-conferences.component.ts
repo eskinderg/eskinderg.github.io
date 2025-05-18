@@ -17,4 +17,8 @@ export class EducationConferencesSectionComponent extends BaseComponent implemen
     ngAfterViewInit(): void {
         this.lang.sections['education'] = this.section;
     }
+
+    trackEducation(index: number, item: any): any {
+        return index + item.title;
+    }
 }

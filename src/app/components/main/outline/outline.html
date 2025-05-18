@@ -1,6 +1,6 @@
 <div #outline id="outline">
     <ul class="timeline">
-        @for (item of lang.texts.menu.list; track item) {
+        @for (item of lang.texts.menu.list; track trackItem($index, item)) {
             <li>
                 <div class="direction-l">
                     <div class="flag-wrapper">

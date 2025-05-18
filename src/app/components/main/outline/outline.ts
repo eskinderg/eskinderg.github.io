@@ -35,6 +35,10 @@ export class OutlineComponent extends BaseComponent implements OnInit {
         'APP-CONTACT'
     ];
 
+    trackItem(index: number, item: any): any {
+        return index + item.name;
+    }
+
     scrollTo(element: any) {
         const section = this.lang.sections[element];
         section().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });

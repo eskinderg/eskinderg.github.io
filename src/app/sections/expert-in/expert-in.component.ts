@@ -16,4 +16,8 @@ export class ExpertInSectionComponent extends BaseComponent implements AfterView
     ngAfterViewInit(): void {
         this.lang.sections['expertin'] = this.section;
     }
+
+    trackExpert(index: number, expert: any): any {
+        return index + expert.title;
+    }
 }
