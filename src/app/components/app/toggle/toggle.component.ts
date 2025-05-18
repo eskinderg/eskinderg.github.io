@@ -1,24 +1,40 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener } from '@angular/core';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { TooltipDirective } from '../tooltip/tooltip.directive';
-import { NgClass } from '@angular/common';
+
+import { ThemeMode } from 'src/app/theme/theme.mode';
 
 @Component({
     selector: 'app-toggle',
     templateUrl: './toggle.component.html',
     styleUrl: './toggle.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [TooltipDirective, NgClass]
+    imports: [TooltipDirective]
 })
 export class ToggleComponent {
-    toggleValue: boolean;
+    open = false;
 
-    constructor(public themeService: ThemeService) {
-        this.toggleValue = themeService.DarkMode;
+    constructor(
+        public themeService: ThemeService,
+        private el: ElementRef
+    ) {}
+
+    setMode(mode: ThemeMode) {
+        this.themeService.SetAppTheme(this.themeService.Theme, mode);
     }
 
-    public onClickToggle() {
-        this.toggleValue = !this.toggleValue;
-        this.themeService.SetTheme(this.themeService.Theme, this.toggleValue);
+    toggleOpen() {
+        this.open = !this.open;
+    }
+
+    close() {
+        this.open = false;
+    }
+
+    @HostListener('document:click', ['$event'])
+    onDocumentClick(event: MouseEvent) {
+        if (this.open && !this.el.nativeElement.contains(event.target)) {
+            this.close();
+        }
     }
 }

@@ -40,11 +40,11 @@ export class ColorPickerComponent extends BaseComponent implements OnInit {
 
     public mouseOver(btn: { icon: string; theme: string }) {
         this.currentTheme = this.themeService.Theme;
-        this.themeService.SetTheme(btn.theme, this.themeService.DarkMode);
+        this.themeService.SetAppTheme(btn.theme, this.themeService.ThemeMode);
     }
 
     public mouseLeave() {
-        this.themeService.SetTheme(this.currentTheme, this.themeService.DarkMode);
+        this.themeService.SetAppTheme(this.currentTheme, this.themeService.ThemeMode);
     }
 
     private showItems() {
@@ -64,7 +64,7 @@ export class ColorPickerComponent extends BaseComponent implements OnInit {
 
     public onClickColor(btn: { icon: string; theme: string }) {
         this.hideItems();
-        this.themeService.SetTheme(btn.theme, this.themeService.DarkMode);
+        this.themeService.SetAppTheme(btn.theme, this.themeService.ThemeMode);
     }
 
     @HostListener('document:mousedown', ['$event'])

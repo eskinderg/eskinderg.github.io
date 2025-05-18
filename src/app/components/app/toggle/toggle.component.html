@@ -1,5 +1,81 @@
-<div
-    [appTooltip]="'Toggle Dark Mode'"
-    (click)="onClickToggle()"
-    class="toggle"
-    [ngClass]="{ on: toggleValue }"></div>
+<div class="theme-toggle-wrapper" [class.open]="open">
+    <button
+        [appTooltip]="'Dark mode'"
+        class="theme-toggle-main-btn"
+        (click)="toggleOpen()"
+        aria-label="Theme settings">
+        <!-- Settings or palette icon (white) -->
+        <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none"> -->
+        <!--     <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" /> -->
+        <!--     <path -->
+        <!--         d="M12 8v4l3 3" -->
+        <!--         stroke="white" -->
+        <!--         stroke-width="2" -->
+        <!--         stroke-linecap="round" -->
+        <!--         stroke-linejoin="round" /> -->
+        <!-- </svg> -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z" fill="white" />
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+                fill="white" />
+        </svg>
+    </button>
+    <div class="theme-toggle-group icon-only" [class.open]="open">
+        <button
+            [appTooltip]="'system'"
+            class="theme-toggle-btn"
+            [class.active]="themeService.ThemeMode === 'system'"
+            (click)="setMode('system'); close()"
+            aria-label="Use system theme">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="12" rx="2" stroke-width="2" />
+                <rect x="9" y="18" width="6" height="2" rx="1" />
+                <rect x="7" y="20" width="10" height="1.2" rx="0.6" />
+            </svg>
+        </button>
+        <button
+            [appTooltip]="'light'"
+            class="theme-toggle-btn"
+            [class.active]="themeService.ThemeMode === 'light'"
+            (click)="setMode('light'); close()"
+            aria-label="Use light theme">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#a)" stroke="white" stroke-width="1.5" stroke-miterlimit="10">
+                    <path
+                        d="M5 12H1M23 12h-4M7.05 7.05 4.222 4.222M19.778 19.778 16.95 16.95M7.05 16.95l-2.828 2.828M19.778 4.222 16.95 7.05"
+                        stroke-linecap="round" />
+                    <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" />
+                    <path d="M12 19v4M12 1v4" stroke-linecap="round" />
+                </g>
+                <defs>
+                    <clipPath id="a">
+                        <path d="M0 0h24v24H0z" />
+                    </clipPath>
+                </defs>
+            </svg>
+        </button>
+        <button
+            [appTooltip]="'dark'"
+            class="theme-toggle-btn"
+            [class.active]="themeService.ThemeMode === 'dark'"
+            (click)="setMode('dark'); close()"
+            aria-label="Use dark theme">
+            <svg width="24" height="24" viewBox="0 0 48 48" id="b">
+                <defs>
+                    <style>
+                        .c {
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+                        }
+                    </style>
+                </defs>
+                <path
+                    class="c"
+                    d="m32.8,29.3c-8.9-.8-16.2-7.8-17.5-16.6-.3-1.8-.3-3.7,0-5.4.2-1.4-1.4-2.3-2.5-1.6C6.3,9.7,2.1,16.9,2.5,25c.5,10.7,9,19.5,19.7,20.4,10.6.9,19.8-6,22.5-15.6.4-1.4-1-2.6-2.3-2-2.9,1.3-6.1,1.8-9.6,1.5Z" />
+            </svg>
+        </button>
+    </div>
+</div>

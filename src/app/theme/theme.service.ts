@@ -2,35 +2,49 @@ import { Injectable, EventEmitter, Output, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, throwError } from 'rxjs';
 import { DOCUMENT } from '@angular/common';
+import { ThemeMode } from './theme.mode';
 
 @Injectable()
 export class ThemeService {
-    private colorList: any;
-    private defaultTheme: string = 'blue';
-    public static DarkModeDefault: boolean = true;
+    public static defaultTheme: string = 'blue';
+    public static DarkModeDefault: ThemeMode = 'system';
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
+
+    private darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    private colorList: any;
+
+    handleDarkModeChange = (event: any) => {
+        if (this.ThemeMode === 'system') {
+            this.SetTheme(this.Theme, event.matches);
+        }
+    };
 
     constructor(
         public http: HttpClient,
         @Inject(DOCUMENT) private document: Document
-    ) {}
-
-    public get DarkMode(): boolean {
-        return JSON.parse(localStorage.getItem('darkmode')) ?? ThemeService.DarkModeDefault;
+    ) {
+        this.darkModeMediaQuery.addEventListener('change', this.handleDarkModeChange);
     }
 
-    public set DarkMode(value: boolean) {
-        localStorage.setItem('darkmode', value.toString());
+    public get SystemDarkMode(): boolean {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 
-    public ToggleDarkMode(): boolean {
-        this.DarkMode = !this.DarkMode;
-        return this.DarkMode;
+    public get ThemeMode(): ThemeMode {
+        return (localStorage.getItem('thememode') as ThemeMode) ?? ThemeService.DarkModeDefault;
+    }
+
+    public set ThemeMode(value: ThemeMode) {
+        localStorage.setItem('thememode', value.toString());
+    }
+
+    public ToggleDarkMode(): ThemeMode {
+        return this.ThemeMode;
     }
 
     public get Theme(): string {
-        return localStorage.getItem('theme') ?? this.defaultTheme;
+        return localStorage.getItem('theme') ?? ThemeService.defaultTheme;
     }
 
     public set Theme(theme: string) {
@@ -42,8 +56,7 @@ export class ThemeService {
     }
 
     private setUserPreferenceTheme(): void {
-        this.checkPreviousConvention();
-        this.SetTheme(this.Theme, this.DarkMode);
+        this.SetAppTheme(this.Theme, this.ThemeMode);
     }
 
     public LoadTheme(): Observable<any> {
@@ -62,27 +75,33 @@ export class ThemeService {
         );
     }
 
+    public SetAppTheme(theme: string, themeMode: ThemeMode) {
+        switch (themeMode) {
+            case 'system':
+                this.SetTheme(theme, this.SystemDarkMode);
+                break;
+            case 'light':
+                this.SetTheme(theme, false);
+                break;
+            case 'dark':
+                this.SetTheme(theme, true);
+                break;
+        }
+        this.ThemeMode = themeMode;
+    }
+
     /**
      * Set the theme for the app
      * @param {string} theme - name of the theme to be assigned. Eg indigo, yellow, red ....
      * @param {boolean} isDarkMode - Sets the dark mode setting
      */
-    public SetTheme(theme: string, isDarkMode: boolean) {
+    private SetTheme(theme: string, isDarkMode: boolean) {
         this.document.documentElement.className = theme;
 
         if (isDarkMode) {
             const root = this.document.querySelector(':root');
             root.classList.toggle('dark');
         }
-        this.DarkMode = isDarkMode;
         this.Theme = theme;
-    }
-
-    private checkPreviousConvention() {
-        if (localStorage.getItem('theme')) {
-            if (localStorage.getItem('theme').includes('-theme')) {
-                localStorage.setItem('theme', localStorage.getItem('theme').replace('-theme', ''));
-            }
-        }
     }
 }

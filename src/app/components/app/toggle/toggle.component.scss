@@ -1,4 +1,4 @@
-@use '../../../styles//screen.scss' as * ;
+@use '../../../styles//screen.scss' as *;
 
 .toggle.on {
     background-color: #fff;
@@ -14,7 +14,7 @@
 
 .toggle {
     position: relative;
-    height:1.25rem;
+    height: 1.25rem;
     width: 2rem;
     cursor: pointer;
     border-radius: 25px;
@@ -39,6 +39,25 @@
 }
 
 @include screen-md {
+    .theme-toggle-main-btn {
+        svg {
+            width: 2.75rem !important;
+            height: 2.75rem !important;
+            display: block;
+        }
+    }
+
+    .theme-toggle-group.icon-only .theme-toggle-btn .icon,
+    .theme-toggle-group.icon-only .theme-toggle-btn svg {
+        width: 2rem !important;
+        height: 2rem !important;
+        display: block;
+    }
+
+    .theme-toggle-group.icon-only {
+        gap: 0.5rem !important;
+        padding: 0.4rem 0.7rem !important;
+    }
 
     .toggle.on::before {
         left: calc(100% - 1.4rem);
@@ -53,5 +72,153 @@
         height: 1.25rem;
         width: 1.25rem;
     }
+}
 
+.theme-toggle-group {
+    position: relative;
+    display: flex;
+    // background: var(--background, #222);
+    background: var(--light);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    user-select: none;
+}
+
+.theme-toggle-wrapper {
+    position: relative;
+    // display: inline-block;
+}
+
+.theme-toggle-main-btn {
+    // background: var(--background, #222);
+    background: var(--primary);
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+
+    svg {
+        width: 1.75rem;
+        height: 1.75rem;
+        display: block;
+    }
+}
+
+.theme-toggle-group.icon-only {
+    position: absolute;
+    top: 50%;
+    right: 110%;
+    left: auto;
+    display: flex;
+    gap: 0rem;
+    padding: 0;
+    border-radius: 2rem;
+    transform: translateY(-50%) translateX(40px) scaleX(0.7); // Start hidden, right and small
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        opacity 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+        transform 0.45s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 10;
+}
+
+.theme-toggle-group.icon-only.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0) scaleX(1); // Slide to left and scale to normal
+}
+
+.theme-toggle-btn {
+    flex: 1 1 0;
+    padding: 0.7rem 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text, #fff);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 1;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+
+    &.active {
+        color: var(--primary, #0078d4);
+    }
+}
+
+.theme-toggle-group.icon-only .theme-toggle-btn {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    padding: 0.3rem 0.6rem;
+    font-size: 0;
+    transition: background 0.2s;
+}
+
+.theme-toggle-group.icon-only .theme-toggle-btn .icon,
+.theme-toggle-group.icon-only .theme-toggle-btn svg {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+}
+
+.theme-toggle-group.icon-only .theme-toggle-btn svg {
+    filter: none;
+    path,
+    rect,
+    circle,
+    line {
+        fill: #0000007d;
+        stroke: #0000007d;
+    }
+}
+
+// Add glow only to the active button's SVG
+.theme-toggle-group.icon-only .theme-toggle-btn.active svg {
+    // filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 6px #fff);
+    path,
+    rect,
+    circle,
+    line {
+        fill: white;
+        stroke: white;
+    }
+}
+
+.theme-toggle-group.icon-only .theme-toggle-btn.active,
+.theme-toggle-group.icon-only .theme-toggle-btn:focus-visible {
+    // background: rgba(0,0,0,0.08);
+    background: none;
+}
+
+.theme-toggle-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 33.33%;
+    background: var(--primary, #0078d4);
+    border-radius: 2rem;
+    z-index: 0;
+    transition: left 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    left: 0;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+.theme-toggle-group.icon-only .theme-toggle-indicator {
+    display: none;
+}
+
+.theme-toggle-btn .icon {
+    font-size: 1.2em;
+    vertical-align: middle;
 }
