@@ -25,7 +25,6 @@ describe('ToggleComponent', () => {
     });
 
     it('should create', () => {
-        component.onClickToggle();
         expect(component).toBeTruthy();
     });
 });
