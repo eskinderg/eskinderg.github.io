@@ -114,12 +114,13 @@ svg {
 
 @include screen-md {
     nav {
-        height: 100% !important;
+        height: 80% !important;
     }
     nav a {
-        color: var(--light) !important;
+        // color: var(--light) !important;
+        color: #a5a5a5 !important;
         // font-size: 3vw !important;
-        font-size: 8vmin !important;
+        font-size: 5vmin !important;
     }
     nav a:hover {
         color: lightgray !important;

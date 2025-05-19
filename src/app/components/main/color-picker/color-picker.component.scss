@@ -27,7 +27,7 @@ svg {
 }
 
 .main-button {
-    transition: background-color 1s ease;
+    transition: background-color 1s ease ! important;
     background-color: var(--primary);
 }
 
