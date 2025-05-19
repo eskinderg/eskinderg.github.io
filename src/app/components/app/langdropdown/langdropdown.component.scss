@@ -8,8 +8,8 @@
     background: var(--primary);
     border-radius: 50%;
     transition: background 1s ease;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .lang-menu-wrapper {
@@ -27,7 +27,7 @@
     padding: 7px;
     opacity: 0;
     right: 2.5rem;
-    top: 1.75rem;
+    top: 2.75rem;
     transition:
         visibility 0s,
         opacity 0.25s linear;
@@ -83,13 +83,13 @@
 
 @include screen-md {
     .svg {
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
     }
 
     .langMenu {
         right: 4.5rem;
-        top: 2.75rem;
+        top: 3.75rem;
     }
 
     .showLangDropMenu {

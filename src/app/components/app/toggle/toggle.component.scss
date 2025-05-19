@@ -41,8 +41,8 @@
 @include screen-md {
     .theme-toggle-main-btn {
         svg {
-            width: 2.5rem !important;
-            height: 2.5rem !important;
+            width: 3.5rem !important;
+            height: 3.5rem !important;
             display: block;
         }
     }
@@ -91,8 +91,8 @@
     transition: background 0.2s;
 
     svg {
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
         display: block;
     }
 }
