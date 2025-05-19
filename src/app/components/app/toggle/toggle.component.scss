@@ -1,52 +1,6 @@
 @use '../../../styles//screen.scss' as *;
 
-.toggle.on {
-    background-color: #fff;
-}
-
-.toggle.on::before {
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    left: calc(100% - 1.1rem);
-    background-color: var(--primary);
-    border-color: var(--primary);
-    filter: brightness(130%);
-}
-
-.toggle {
-    position: relative;
-    height: 1.25rem;
-    width: 2rem;
-    cursor: pointer;
-    border-radius: 25px;
-    background-color: var(--text);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.toggle::before {
-    height: 1rem;
-    width: 1rem;
-    content: '';
-    position: absolute;
-    left: 0.1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    background-color: var(--primary);
-    border: 0.25rem solid var(--primary);
-    filter: brightness(130%);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
 @include screen-md {
-    .theme-toggle-main-btn {
-        svg {
-            width: 3rem !important;
-            height: 3rem !important;
-            display: block;
-        }
-    }
-
     .theme-toggle-group.icon-only .theme-toggle-btn .icon,
     .theme-toggle-group.icon-only .theme-toggle-btn svg {
         width: 2rem !important;
@@ -58,7 +12,6 @@
         gap: 0.5rem !important;
         padding: 0.4rem 0.7rem !important;
     }
-
 }
 
 .theme-toggle-group {
@@ -73,13 +26,18 @@
     user-select: none;
 }
 
+svg {
+    width: 100%;
+    height: 100%;
+}
+
 .theme-toggle-wrapper {
     position: relative;
-    // display: inline-block;
+    height: 100%;
+    width: 100%;
 }
 
 .theme-toggle-main-btn {
-    // background: var(--background, #222);
     background: var(--primary);
     border: none;
     border-radius: 50%;
@@ -89,12 +47,8 @@
     align-items: center;
     justify-content: center;
     transition: background 1s ease;
-
-    svg {
-        width: 2.5rem;
-        height: 2.5rem;
-        display: block;
-    }
+    height: 100%;
+    width: 100%;
 }
 
 .theme-toggle-group.icon-only {
