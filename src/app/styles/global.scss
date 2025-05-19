@@ -10,6 +10,14 @@ html {
     box-sizing: border-box;
 }
 
+*:focus {
+    outline: none;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 .loading-screen {
     background-color: var(--primary);
 }
