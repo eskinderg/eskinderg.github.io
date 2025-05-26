@@ -27,12 +27,22 @@ export class ThemeService {
         this.darkModeMediaQuery.addEventListener('change', this.handleDarkModeChange);
     }
 
-    public get SystemDarkMode(): boolean {
+    private get SystemDarkMode(): boolean {
         return window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
 
     public get ThemeMode(): ThemeMode {
         return (localStorage.getItem('thememode') as ThemeMode) ?? ThemeService.DarkModeDefault;
+    }
+
+    get IsDarkMode(): boolean {
+        if (this.ThemeMode === 'system') {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        } else if (this.ThemeMode === 'dark') {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public set ThemeMode(value: ThemeMode) {

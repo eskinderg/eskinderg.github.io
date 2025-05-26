@@ -3,13 +3,14 @@ import { ThemeService } from 'src/app/theme/theme.service';
 import { TooltipDirective } from '../tooltip/tooltip.directive';
 
 import { ThemeMode } from 'src/app/theme/theme.mode';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-toggle',
     templateUrl: './toggle.component.html',
     styleUrl: './toggle.component.scss',
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [TooltipDirective]
+    imports: [TooltipDirective, CommonModule]
 })
 export class ToggleComponent {
     open = false;

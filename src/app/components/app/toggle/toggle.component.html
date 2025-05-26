@@ -2,26 +2,27 @@
     <button
         [appTooltip]="'Dark mode'"
         class="theme-toggle-main-btn"
+        [ngClass]="{ rotate: open }"
         (click)="toggleOpen()"
         aria-label="Theme settings">
-        <!-- Settings or palette icon (white) -->
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="11" stroke="white" stroke-width="1" />
-            <path
-                d="M12 8v4l3 3"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round" />
+        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+            <circle class="svgCircle" cx="12" cy="12" r="11" stroke="white" stroke-width="1" />
+            <g id="surface1" transform="matrix(0.64009083,0,0,0.64009083,4.3139894,4.3139894)">
+                <path d="m 11.195312,0.132812 h 1.582032 v 4.160157 h -1.582032 z m 0,0" id="path2" />
+                <path d="m 11.195312,19.679688 h 1.582032 v 4.160156 h -1.582032 z m 0,0" id="path4" />
+                <path d="m 0.132812,11.195312 h 4.160157 v 1.582032 H 0.132812 Z m 0,0" id="path6" />
+                <path d="m 19.679688,11.195312 h 4.160156 v 1.582032 h -4.160156 z m 0,0" id="path8" />
+                <path
+                    d="m 19.808594,3.046875 -4.136719,4.136719 c -1.054687,-0.8125 -2.335937,-1.257813 -3.683594,-1.257813 -3.34375,0 -6.0625,2.71875 -6.0625,6.0625 0,1.351563 0.445313,2.628907 1.257813,3.683594 L 3.046875,19.808594 4.164062,20.925781 20.925781,4.164062 Z m 0,0"
+                    id="path10" />
+                <path
+                    d="M 3.046875,4.164062 4.164062,3.046875 7.105469,5.988281 5.984375,7.105469 Z m 0,0"
+                    id="path12" />
+                <path
+                    d="m 16.867188,17.984375 1.121093,-1.117187 2.941407,2.941406 -1.121094,1.117187 z m 0,0"
+                    id="path14" />
+            </g>
         </svg>
-        <!-- <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> -->
-        <!--     <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z" fill="white" /> -->
-        <!--     <path -->
-        <!--         fill-rule="evenodd" -->
-        <!--         clip-rule="evenodd" -->
-        <!--         d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z" -->
-        <!--         fill="white" /> -->
-        <!-- </svg> -->
     </button>
     <div class="theme-toggle-group icon-only" [class.open]="open">
         <button

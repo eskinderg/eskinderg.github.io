@@ -229,6 +229,16 @@ body {
     }
 }
 
+.svgCircle {
+    display: none;
+}
+
+@include screen-xl {
+    .svgCircle {
+        display: block;
+    }
+}
+
 @include screen-xl {
     *::-webkit-scrollbar {
         transition: background-color 1s ease;
