@@ -1,6 +1,7 @@
 @use '../../../styles//screen.scss' as *;
 
 :host {
+    width: 100%;
     cursor: pointer;
     a,
     a:visited,
@@ -11,6 +12,7 @@
 }
 
 .menuBtn {
+    position: relative;
     transition: all 1s ease;
     display: flex;
     flex-direction: row;
@@ -26,6 +28,11 @@
     border-radius: 0.5rem;
 }
 
+svg {
+    width: 30px;
+    height: 30px;
+}
+
 .menu {
     width: 100%;
     visibility: hidden;
@@ -35,9 +42,14 @@
         opacity 1s ease;
     display: flex;
     position: absolute;
+    top: 63px;
+    border-radius: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    left: 0;
     flex-direction: column;
-    width: auto;
-    background-color: var(--background1);
+    // background-color: var(--background1);
+    background-color: #474747;
 }
 
 .showDropMenu {
@@ -58,11 +70,24 @@
 }
 
 .menuItem :hover {
-    background-color: var(--background2);
+    // background-color: var(--background2);
+    background-color: var(--lighter);
+    border-radius: 10px;
 }
 
-@include screen-lg {
+// @include screen-md {
+//     :host {
+//         // border:3px solid red;
+//         width: 100%;
+//     }
+// }
+
+@include screen-xl {
     .menuBtn {
-        width: 40%;
+        // width: 40%;
+    }
+
+    :host {
+        width: 40% !important ;
     }
 }
