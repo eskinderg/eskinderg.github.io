@@ -1,11 +1,4 @@
-import {
-    ChangeDetectionStrategy,
-    Component,
-    ElementRef,
-    EventEmitter,
-    Output,
-    viewChild
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
 import { ColorPickerComponent } from './components/main/color-picker/color-picker.component';
 import { RightComponent } from './components/main/right/right.component';
 import { LoaderComponent } from './components/main/loader/loader';
@@ -21,7 +14,7 @@ import { BaseComponent } from './sections/base.component';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent extends BaseComponent {
-    @Output() public appWindowScroll: EventEmitter<any> = new EventEmitter<any>();
+    // @Output() public appWindowScroll: EventEmitter<any> = new EventEmitter<any>();
 
     mainWrapper = viewChild.required<ElementRef>('mainWrapper');
 

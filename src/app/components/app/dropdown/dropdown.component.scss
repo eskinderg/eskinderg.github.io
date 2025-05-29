@@ -67,9 +67,10 @@ svg {
 
 .menuItem > a > * {
     margin: 0.5rem;
+    font-size:1rem;
 }
 
-.menuItem :hover {
+.menuItem:hover {
     // background-color: var(--background2);
     background-color: var(--lighter);
     border-radius: 10px;
@@ -83,10 +84,6 @@ svg {
 // }
 
 @include screen-xl {
-    .menuBtn {
-        // width: 40%;
-    }
-
     :host {
         width: 40% !important ;
     }

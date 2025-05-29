@@ -9,6 +9,7 @@ import {
 import { LanguageService } from '../providers/language.service';
 import { ThemeService } from '../theme/theme.service';
 import { GoogleAnalyticsService } from '../providers/google-analytics.service';
+import { ScrollService } from '../providers/scroll.service';
 
 @Component({
     selector: 'app-base',
@@ -24,7 +25,8 @@ export class BaseComponent {
         public lang: LanguageService,
         public themeService: ThemeService,
         public ref: ChangeDetectorRef,
-        public googleAnalyticsService: GoogleAnalyticsService
+        public googleAnalyticsService: GoogleAnalyticsService,
+        public scrollService: ScrollService
     ) {
         this.appRef = inject(ApplicationRef);
         this.eRef = inject(ElementRef);

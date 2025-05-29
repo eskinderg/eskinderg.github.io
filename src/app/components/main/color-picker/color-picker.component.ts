@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, OnInit } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostListener,
+    Input,
+    OnInit,
+    viewChild
+} from '@angular/core';
 import { TooltipPosition } from '../../app/tooltip/tooltip.enums';
 import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
 import { NgClass } from '@angular/common';
@@ -18,9 +26,9 @@ export enum ButtonState {
 })
 export class ColorPickerComponent extends BaseComponent implements OnInit {
     @Input() reverseColumnDirection: boolean = false;
-    @Input() public onWindowScroll: EventEmitter<any>;
 
-    public atTop = false;
+    button = viewChild.required<ElementRef>('button');
+    public atTop = true;
     public buttons = [];
     public colorTogglerState: ButtonState = ButtonState.Closed;
     public STATE = ButtonState;
@@ -28,12 +36,10 @@ export class ColorPickerComponent extends BaseComponent implements OnInit {
     public currentTheme: any;
 
     ngOnInit(): void {
-        this.onWindowScroll.subscribe((e) => {
-            const scrollTop = e.srcElement.scrollTop;
-            if (scrollTop === 0) {
-                this.atTop = false;
-            } else {
-                this.atTop = true;
+        this.scrollService.scroll$.subscribe((e) => {
+            if (e.srcElement) {
+                const scrollTop = e.srcElement.scrollTop;
+                this.button().nativeElement.classList.toggle('shadowButton', scrollTop >= 50);
             }
         });
     }

@@ -4,13 +4,11 @@ import {
     Input,
     ElementRef,
     OnInit,
-    EventEmitter,
     viewChild,
-    ChangeDetectionStrategy,
-    inject,
-    ApplicationRef
+    ChangeDetectionStrategy
 } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
     selector: 'app-back-top',
@@ -28,19 +26,12 @@ import { AppComponent } from 'src/app/app.component';
     `,
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BaBackTopComponent implements OnInit {
+export class BaBackTopComponent extends BaseComponent implements OnInit {
     @Input() position = 400;
     @Input() showSpeed = 500;
     @Input() moveSpeed = 700;
-    @Input() public onWindowScroll: EventEmitter<any>;
-    appComponent: AppComponent;
-    appRef: ApplicationRef;
 
     _selector = viewChild.required<ElementRef>('baBackTop');
-
-    constructor() {
-        this.appRef = inject(ApplicationRef);
-    }
 
     @HostListener('click', ['$event.target'])
     _onClick() {
@@ -50,9 +41,11 @@ export class BaBackTopComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.onWindowScroll.subscribe((x: any) => {
-            this._selector().nativeElement.style.display =
-                x.target.scrollTop > this.position ? 'block' : 'none';
+        this.scrollService.scroll$.subscribe((e) => {
+            if (e.srcElement) {
+                this._selector().nativeElement.style.display =
+                    e.target.scrollTop > this.position ? 'block' : 'none';
+            }
         });
     }
 }
