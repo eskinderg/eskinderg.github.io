@@ -14,8 +14,6 @@ import { BaseComponent } from './sections/base.component';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent extends BaseComponent {
-    // @Output() public appWindowScroll: EventEmitter<any> = new EventEmitter<any>();
-
     mainWrapper = viewChild.required<ElementRef>('mainWrapper');
 
     colorPickerComponent = viewChild.required<ColorPickerComponent>(ColorPickerComponent);
