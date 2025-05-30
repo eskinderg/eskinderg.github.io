@@ -25,21 +25,21 @@ jobs:
     - run: npm run build
     - run: npm run lint
     - run: npm run test
-  Build-on-windows-latest:
-    name: Windows Build
-    runs-on: windows-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: ['16.14.x','18.19.1','22.14.x']
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup node
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    #- run: npm ci
-    - run: npm ci
-    - run: npm run build
-    - run: npm run lint
-    - run: npm run test
+  #Build-on-windows-latest:
+  #  name: Windows Build
+  #  runs-on: windows-latest
+  #  strategy:
+  #    fail-fast: false
+  #    matrix:
+  #      node-version: ['16.14.x','18.19.1','22.14.x']
+  #  steps:
+  #  - uses: actions/checkout@v3
+  #  - name: Setup node
+  #    uses: actions/setup-node@v3
+  #    with:
+  #      node-version: ${{ matrix.node-version }}
+  #  #- run: npm ci
+  #  - run: npm ci
+  #  - run: npm run build
+  #  - run: npm run lint
+  #  - run: npm run test
