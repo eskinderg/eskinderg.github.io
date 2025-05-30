@@ -1,5 +1,5 @@
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { DebugElement, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { DebugElement, provideZonelessChangeDetection } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -23,7 +23,7 @@ describe('AppComponent', () => {
                 },
                 ThemeService,
                 GoogleAnalyticsService,
-                provideExperimentalZonelessChangeDetection(),
+                provideZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

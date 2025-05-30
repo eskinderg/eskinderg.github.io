@@ -4,7 +4,7 @@ import { ListComponent } from './list.component';
 import { LanguageService } from 'src/app/providers/language.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('ListComponent', () => {
     let component: ListComponent;
@@ -16,7 +16,7 @@ describe('ListComponent', () => {
             providers: [
                 LanguageService,
                 provideHttpClient(withInterceptorsFromDi()),
-                provideExperimentalZonelessChangeDetection()
+                provideZonelessChangeDetection()
             ]
         }).compileComponents();
     });

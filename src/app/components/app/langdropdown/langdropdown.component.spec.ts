@@ -7,7 +7,7 @@ import { By } from '@angular/platform-browser';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('LangdropdownComponent', () => {
     let component: LanguageDropDownComponent;
@@ -23,7 +23,7 @@ describe('LangdropdownComponent', () => {
                 },
                 ThemeService,
                 GoogleAnalyticsService,
-                provideExperimentalZonelessChangeDetection(),
+                provideZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

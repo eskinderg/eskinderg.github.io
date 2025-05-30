@@ -6,7 +6,7 @@ import { EducationConferencesSectionComponent } from './education-conferences.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('EducationConferencesSectionComponent', () => {
     let component: EducationConferencesSectionComponent;
@@ -22,7 +22,7 @@ describe('EducationConferencesSectionComponent', () => {
                 },
                 ThemeService,
                 GoogleAnalyticsService,
-                provideExperimentalZonelessChangeDetection(),
+                provideZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

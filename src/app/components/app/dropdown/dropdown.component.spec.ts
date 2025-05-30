@@ -6,7 +6,7 @@ import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { GoogleAnalyticsServiceMock } from 'src/app/providers/google-analytics.mock.service';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('DropdownComponent', () => {
     let component: DropDownMenuComponent;
@@ -25,7 +25,7 @@ describe('DropdownComponent', () => {
                     useClass: GoogleAnalyticsServiceMock
                 },
                 ThemeService,
-                provideExperimentalZonelessChangeDetection(),
+                provideZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();

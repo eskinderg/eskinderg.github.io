@@ -6,7 +6,7 @@ import { ThemeService } from 'src/app/theme/theme.service';
 import { IntroSectionComponent } from './intro.component';
 import { LanguageServiceMock } from 'src/app/language/language.mock';
 import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('IntroSectionComponent', () => {
     let component: IntroSectionComponent;
@@ -22,7 +22,7 @@ describe('IntroSectionComponent', () => {
                 },
                 GoogleAnalyticsService,
                 ThemeService,
-                provideExperimentalZonelessChangeDetection(),
+                provideZonelessChangeDetection(),
                 provideHttpClient(withInterceptorsFromDi())
             ]
         }).compileComponents();
