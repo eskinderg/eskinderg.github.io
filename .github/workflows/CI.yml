@@ -11,6 +11,8 @@ jobs:
     name: Ubuntu Build
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
+    strategy:
       matrix:
         node-version: ['16.14.x','18.19.1','22.14.x']
     steps:
@@ -28,6 +30,8 @@ jobs:
     name: Windows Build
     runs-on: windows-latest
     strategy:
+      fail-fast: false
+    strategy:
       matrix:
         node-version: ['16.14.x','18.19.1','22.14.x']
     steps:
@@ -35,7 +39,7 @@ jobs:
     - name: Setup node
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ matrix.node }}
     #- run: npm ci
     - run: npm ci
     - run: npm run build
