@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build Angular App on ${{ matrix.os }} with Node ${{ matrix.node-version }}
+    name: Build ${{ matrix.os }} with Node ${{ matrix.node-version }}
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -18,7 +18,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it
 
       - name: Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -42,6 +41,6 @@ jobs:
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: angular-app-dist-${{ matrix.os }}-${{ matrix.node-version }} # Name of the artifact, now includes OS and Node version
+          name: angular-app-dist-${{ matrix.os }}-${{ matrix.node-version }}
           path: docs/
           if-no-files-found: error
