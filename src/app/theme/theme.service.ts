@@ -1,7 +1,7 @@
-import { Injectable, EventEmitter, Output, Inject } from '@angular/core';
+import { Injectable, EventEmitter, Output, Inject, DOCUMENT } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, throwError } from 'rxjs';
-import { DOCUMENT } from '@angular/common';
+
 import { ThemeMode } from './theme.mode';
 
 @Injectable()
