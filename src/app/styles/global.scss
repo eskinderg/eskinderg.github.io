@@ -266,7 +266,8 @@ body {
     }
 
     * ::selection {
-        color: var(--background1);
+        // color: var(--background1);
+        color: #fff;
         background-color: var(--light);
     }
 }
