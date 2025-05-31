@@ -137,31 +137,33 @@
 
             <br />
 
-            <div class="contactIntro">
-                <a
-                    class="contact-title link"
-                    [ngStyle]="{ 'text-decoration-line': 'none' }"
-                    href="mailto:{{ lang.texts.contact.mail }}?Subject=Hello"
-                    target="_top">
+            <div class="contact-info">
+                <div class="contactrow">
                     <img
                         src="assets/img/mail.webp"
                         alt="Mail"
                         [width]="30"
                         [height]="21"
                         style="margin-right: 10px; top: 3px; position: relative" />
-                    {{ lang.texts.contact.mail }}
-                </a>
-                <br />
-                <br />
-                <a class="phone" href="tel:{{ lang.texts.contact.phone }}">
+                    <a
+                        class="contact-title link"
+                        [ngStyle]="{ 'text-decoration-line': 'none' }"
+                        href="mailto:{{ lang.texts.contact.mail }}?Subject=Hello"
+                        target="_top">
+                        {{ lang.texts.contact.mail }}
+                    </a>
+                </div>
+                <div class="contactrow">
                     <img
                         src="assets/img/phone.webp"
                         alt="Phone"
                         [width]="30"
                         [height]="30"
                         style="margin-right: 10px; position: relative" />
-                    {{ lang.texts.contact.phone }}
-                </a>
+                    <a class="phone" href="tel:{{ lang.texts.contact.phone }}">
+                        {{ lang.texts.contact.phone }}
+                    </a>
+                </div>
             </div>
         </div>
 
