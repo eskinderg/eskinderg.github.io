@@ -80,6 +80,10 @@
         height: 1.75rem;
     }
 
+    .intro {
+        height: calc(35vh - 0px);
+    }
+
 }
 
 @include screen-xs {
@@ -100,7 +104,7 @@
         height: 2rem;
     }
     .intro {
-        height: calc(35vh - 0px);
+        height: calc(40vh - 0px);
     }
 }
 
@@ -117,7 +121,7 @@
     }
 
     .intro {
-        height: calc(40vh - 0px);
+        height: calc(45vh - 0px);
     }
 }
 
@@ -140,7 +144,7 @@
     }
 
     .intro {
-        height: calc(45vh - 0px);
+        height: calc(50vh - 0px);
     }
 }
 
