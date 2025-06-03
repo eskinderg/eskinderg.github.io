@@ -34,9 +34,6 @@ jobs:
       - name: Lint Code
         run: npm run lint
 
-      - name: No Workers
-        run: $env:NG_BUILD_NO_WORKERS="true"
-
       - name: Run Tests
         run: npm run test
 
