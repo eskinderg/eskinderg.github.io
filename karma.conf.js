@@ -44,6 +44,18 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
         autoWatch: true,
         browsers: ['ChromeHeadless'],
+        customLaunchers: {
+            CustomChromeHeadless: {
+                base: 'ChromeHeadless',
+                flags: [
+                    '--no-sandbox',
+                    '--disable-gpu',
+                    '--disable-dev-shm-usage',
+                    '--disable-software-rasterizer',
+                    '--disable-setuid-sandbox'
+                ]
+            }
+        },
         concurrency: 1,
         singleRun: false,
         restartOnFileChange: true
