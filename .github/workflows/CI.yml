@@ -12,13 +12,8 @@ jobs:
 
     strategy:
       matrix:
-        include:
-          - os: ubuntu-latest
-            node-version: '20.19.x'
-          - os: ubuntu-latest
-            node-version: '22.12.x'
-          - os: windows-latest
-            node-version: '18.x'
+        os: [ubuntu-latest, windows-latest]
+        node-version: ['20.19.x','22.12.x']
 
     steps:
       - name: Checkout repository
@@ -40,7 +35,14 @@ jobs:
         run: npm run lint
 
       - name: Run Tests
-        run: npm run test
+        run: |
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            echo "Running tests on Windows with workers disabled"
+            set NG_BUILD_NO_WORKERS=true && npm run test
+          else
+            npm run test
+          fi
+        shell: bash
 
       #Upload build artifact
       - name: Upload build artifact
