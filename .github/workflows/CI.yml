@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        node-version: ['20.11.x']
+        node-version: ['20.19.x']
 
     steps:
       - name: Checkout repository
