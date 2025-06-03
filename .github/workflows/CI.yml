@@ -35,14 +35,7 @@ jobs:
         run: npm run lint
 
       - name: Run Tests
-        run: |
-          if [[ "$RUNNER_OS" == "Windows" ]]; then
-            echo "Running tests on Windows with workers disabled"
-            set NG_BUILD_NO_WORKERS=true && npm run test
-          else
-            npm run test
-          fi
-        shell: bash
+        run: npm run test
 
       #Upload build artifact
       - name: Upload build artifact
