@@ -1,0 +1,16 @@
+[
+  {
+    "CountryCode":"ET",
+    "title":"አማርኛ",
+    "code":"am",
+    "icon":"",
+    "font":"wookianos"
+  },
+  {
+    "CountryCode":"GB",
+    "title":"English",
+    "code":"en",
+    "icon":"",
+    "font":"Raleway"
+  }
+]
