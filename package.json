@@ -10,7 +10,7 @@
     "preversion": "npm test",
     "version": "npm run lint && npm run build && git add docs",
     "postversion": "git push && git push --tags",
-    "build": "ng build --base-href https://eskinderg.github.io/ && ng build --output-path netlify && npm run lang",
+    "build": "ng build --base-href https://eskinderg.github.io/ && npm run lang",
     "lang": "gulp minify",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --code-coverage",
