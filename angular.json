@@ -39,6 +39,11 @@
                 "glob": "sitemap.xml",
                 "input": "src/config/",
                 "output": "/"
+              },
+              {
+                "glob": "robots.txt",
+                "input": "src/config/",
+                "output": "/"
               }
             ],
             "styles": [

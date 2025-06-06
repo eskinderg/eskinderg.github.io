@@ -1,26 +1,28 @@
-<div #about class="about">
-    <div class="h2 about-title">
-        <app-title
-            title="{{ lang.texts.about.title }}"
-            fontWeight="{{ lang.texts.font.title.fontWeight }}"
-            fontFamily="{{ lang.texts.font.title.fontFamily }}"
-            [stylish]="true"
-            [anchor]="'about'"
-            [lineWidth]="250"></app-title>
-    </div>
-    <div class="about-content">
-        <div class="profile-picture">
-            <div class="profile"></div>
+<section id="about">
+    <div #about class="about">
+        <div class="h2 about-title">
+            <app-title
+                title="{{ lang.texts.about.title }}"
+                fontWeight="{{ lang.texts.font.title.fontWeight }}"
+                fontFamily="{{ lang.texts.font.title.fontFamily }}"
+                [stylish]="true"
+                [anchor]="'about'"
+                [lineWidth]="250"></app-title>
         </div>
-        <!-- <div class="w-[5%] h-[5%]">&nbsp;</div> -->
-        <div class="introContent">
-            @for (paragraph of lang.texts.about.content; track trackAbout($index, paragraph)) {
-                <p
-                    [style.font-size.rem]="lang.texts.font.about?.description?.fontSize"
-                    class="contentParagraph"
-                    [innerHTML]="paragraph"></p>
-            }
-            <app-dropdown></app-dropdown>
+        <div class="about-content">
+            <div class="profile-picture">
+                <div class="profile"></div>
+            </div>
+            <!-- <div class="w-[5%] h-[5%]">&nbsp;</div> -->
+            <div class="introContent">
+                @for (paragraph of lang.texts.about.content; track trackAbout($index, paragraph)) {
+                    <p
+                        [style.font-size.rem]="lang.texts.font.about?.description?.fontSize"
+                        class="contentParagraph"
+                        [innerHTML]="paragraph"></p>
+                }
+                <app-dropdown></app-dropdown>
+            </div>
         </div>
     </div>
-</div>
+</section>
