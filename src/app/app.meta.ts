@@ -8,24 +8,24 @@ export const appMeta: MetaDefinition[] = [
             'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
     },
     { httpEquiv: 'Permissions-Policy', content: 'interest-cohort=()' },
-    { name: 'og:title', content: 'Eskinder Getahun' },
+    { property: 'og:title', content: 'Eskinder Getahun | Web Developer' },
     {
-        name: 'og:description',
+        property: 'og:description',
         content:
             'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
     },
-    { name: 'og:image', content: 'https://eskinderg.github.io/assets/img/eskinder.webp' },
-    { name: 'og:email', content: 'eskinderget@gmail.com' },
-    { name: 'og:url', content: 'https://eskinderg.github.io' },
-    { name: 'og:type', content: 'website' },
+    { property: 'og:image', content: 'https://eskinderg.netlify.app/assets/img/eskinder.jpg' },
+    { property: 'og:email', content: 'eskinderget@gmail.com' },
+    { property: 'og:url', content: 'https://eskinderg.netlify.app' },
+    { property: 'og:type', content: 'website' },
     {
         name: 'description',
         content:
             'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
     },
     { name: 'reply-to', content: 'eskinderget@gmail.com' },
-    { name: 'url', content: 'https://eskinderg.github.io' },
-    { name: 'image', content: 'https://eskinderg.github.io/assets/img/eskinder.webp' },
+    { name: 'url', content: 'https://eskinderg.netlify.app' },
+    { name: 'image', content: 'https://eskinderg.netlify.app/assets/img/eskinder.jpg' },
     { name: 'author', content: 'Eskinder, eskinderget@gmail.com' },
     {
         name: 'keywords',
@@ -42,19 +42,15 @@ export const appMeta: MetaDefinition[] = [
         content:
             'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
     },
-    { itemprop: 'image', content: 'https://eskinderg.github.io/assets/img/eskinder.webp' },
+    { itemprop: 'image', content: 'https://eskinderg.netlify.app/assets/img/eskinder.jpg' },
     {
         name: 'twitter:card',
         content:
             'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge and experience in order to develop professional web applications.'
     },
     {
-        name: 'twitter:url',
-        content: 'https://eskinderg.github.io/'
-    },
-    {
         name: 'twitter:title',
-        content: 'Eskinder Getahun'
+        content: 'Eskinder Getahun | Web Developer'
     },
     {
         name: 'twitter:description',
@@ -63,6 +59,6 @@ export const appMeta: MetaDefinition[] = [
     },
     {
         name: 'twitter:image',
-        content: 'https://eskinderg.github.io/assets/img/eskinder.webp'
+        content: 'https://eskinderg.netlify.app/assets/img/eskinder.jpg'
     }
 ];

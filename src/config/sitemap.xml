@@ -2,32 +2,32 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://eskinderg.github.io/#about</loc>
+    <loc>https://eskinderg.netlify.app/#about</loc>
     <lastmod>2024-06-17T13:26:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     </url>
 
   <url>
-    <loc>https://eskinderg.github.io/#technologies</loc>
+    <loc>https://eskinderg.netlify.app/#technologies</loc>
     <changefreq>weekly</changefreq>
     <lastmod>2024-06-17T13:26:54+00:00</lastmod>
   </url>
 
   <url>
-    <loc>https://eskinderg.github.io/#accomplishments</loc>
+    <loc>https://eskinderg.netlify.app/#accomplishments</loc>
     <lastmod>2024-06-17T13:26:54+00:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
 
   <url>
-    <loc>https://eskinderg.github.io/#experience</loc>
+    <loc>https://eskinderg.netlify.app/#experience</loc>
     <lastmod>2024-06-17T13:26:54+00:00</lastmod>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://eskinderg.github.io/#contact</loc>
+    <loc>https://eskinderg.netlify.app/#contact</loc>
     <lastmod>2024-06-17T13:26:54+00:00</lastmod>
   </url>
   </urlset>
