@@ -13,22 +13,20 @@
     </svg>
 </div>
 
-@if (visible) {
-    <div class="MenuFullscreen" [ngClass]="{ hide: !visible }">
-        <div class="menu-list">
-            <nav>
-                @for (item of lang.texts.menu.list; track item) {
-                    <a
-                        class="link"
-                        [ngClass]="{ unhovered: hovered && hovered !== item.link }"
-                        [style.font-family]="lang.texts.font.menu"
-                        (mousemove)="onHover(item.link)"
-                        (mouseout)="onMouseOut()"
-                        (click)="scrollTo(item.link)"
-                        >{{ item.name }}</a
-                    >
-                }
-            </nav>
-        </div>
+<div class="MenuFullscreen" [class.open]="visible">
+    <div class="menu-list">
+        <nav>
+            @for (item of lang.texts.menu.list; track item) {
+                <a
+                    class="link"
+                    [ngClass]="{ unhovered: hovered && hovered !== item.link }"
+                    [style.font-family]="lang.texts.font.menu"
+                    (mousemove)="onHover(item.link)"
+                    (mouseout)="onMouseOut()"
+                    (click)="scrollTo(item.link)"
+                    >{{ item.name }}</a
+                >
+            }
+        </nav>
     </div>
-}
+</div>

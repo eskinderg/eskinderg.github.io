@@ -34,8 +34,10 @@ export class ColorPickerComponent extends BaseComponent implements OnInit {
     public STATE = ButtonState;
     public TOOLTIP_POSITION = TooltipPosition;
     public currentTheme: any;
+    public open: boolean = false;
 
     ngOnInit(): void {
+        this.buttons = this.themeService.Colors;
         this.scrollService.scroll$.subscribe((e) => {
             if (e.srcElement) {
                 const scrollTop = e.srcElement.scrollTop;
@@ -46,37 +48,33 @@ export class ColorPickerComponent extends BaseComponent implements OnInit {
 
     public mouseOver(btn: { icon: string; theme: string }) {
         this.currentTheme = this.themeService.Theme;
-        this.themeService.SetAppTheme(btn.theme, this.themeService.ThemeMode);
+        if (this.open) {
+            this.themeService.SetAppTheme(btn.theme, this.themeService.ThemeMode);
+        }
     }
 
-    public mouseLeave() {
-        this.themeService.SetAppTheme(this.currentTheme, this.themeService.ThemeMode);
-    }
-
-    private showItems() {
-        this.colorTogglerState = ButtonState.Opened;
-        this.buttons = this.themeService.Colors;
-    }
-
-    private hideItems() {
-        this.colorTogglerState = ButtonState.Closed;
-        this.buttons = [];
+    public mouseLeave(btn: { icon: string; theme: string }) {
+        if (this.open) {
+            this.themeService.SetAppTheme(this.currentTheme, this.themeService.ThemeMode);
+        } else {
+            this.themeService.SetAppTheme(btn.theme, this.themeService.ThemeMode);
+        }
     }
 
     public onToggleButton() {
-        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        this.buttons.length ? this.hideItems() : this.showItems();
+        this.open = !this.open;
     }
 
     public onClickColor(btn: { icon: string; theme: string }) {
-        this.hideItems();
+        this.open = false;
         this.themeService.SetAppTheme(btn.theme, this.themeService.ThemeMode);
     }
 
     @HostListener('document:mousedown', ['$event'])
     clickout(event: any) {
         if (!this.eRef.nativeElement.contains(event.target)) {
-            this.hideItems();
+            // this.hideItems();
+            this.open = false;
         }
     }
 }

@@ -35,11 +35,14 @@
     // background-color: var(--background2);
     flex-direction: column;
     width: auto;
-    background-color: #1c2128;
+    background-color: var(--muted);
     z-index: 1000;
 }
 
 .showLangDropMenu {
+    transition:
+        visibility 1s,
+        opacity 1s ease;
     visibility: visible;
     opacity: 1;
     // box-shadow: 1px 3px 8px 0px black;
@@ -65,10 +68,10 @@
 }
 
 .selected {
-    color: #d8d8d8;
+    // color: #d8d8d8;
     // background: var(--primary);
     border-radius: 5px;
-    position: relative; // Needed for absolute positioning of the checkmark
+    position: relative;
 
     &::after {
         content: '✔';
@@ -88,7 +91,7 @@
     }
 
     .selected {
-        color: #d8d8d8 !important;
+        // color: #d8d8d8 !important;
         border-radius: 5px;
         position: relative;
 
@@ -104,7 +107,7 @@
     }
 
     .langText {
-        color: #9aa0a6;
+        color: #fff;
         width: 100%;
         padding: 0.5rem 2rem 0.5rem 0.75rem;
         // padding: 0.5rem;
@@ -114,6 +117,9 @@
     }
 
     .showLangDropMenu {
+        transition:
+            visibility 1s,
+            opacity 1s ease;
         visibility: visible;
         opacity: 1;
         // box-shadow: 1px 3px 8px 0px black;

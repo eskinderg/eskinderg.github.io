@@ -12,7 +12,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
 })
 export class MenuComponent extends BaseComponent implements OnInit {
     public hovered: any;
-    public visible: boolean;
+    public visible: boolean = false;
     public atTop = true;
 
     ngOnInit() {

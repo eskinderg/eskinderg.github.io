@@ -6,6 +6,7 @@
         appTooltip="{{ lang.texts.colorSelectTooltip }}"
         [position]="TOOLTIP_POSITION.RIGHT"
         [ngClass]="{ rotate: colorTogglerState === STATE.Opened }"
+        [class.rotate]="open"
         (click)="onToggleButton()">
         <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
             <circle class="svgCircle" cx="12" cy="12" r="11" fill="none" stroke="white" stroke-width="1" />
@@ -17,17 +18,18 @@
                 d="M 9.878906 9.878906 C 10.1875 9.878906 10.488281 9.917969 10.777344 9.988281 C 9.609375 10.800781 8.839844 12.152344 8.839844 13.683594 C 8.839844 15.21875 9.609375 16.570312 10.777344 17.382812 C 10.488281 17.453125 10.1875 17.488281 9.878906 17.488281 C 7.777344 17.488281 6.074219 15.785156 6.074219 13.683594 C 6.074219 11.582031 7.777344 9.878906 9.878906 9.878906 Z M 9.878906 9.878906 " />
         </svg>
     </div>
+</div>
 
-    <div class="btnWrapper">
-        @for (btn of buttons; track btn) {
-            <div
-                (mouseover)="mouseOver(btn)"
-                (mouseleave)="mouseLeave()"
-                appTooltip="{{ lang.translateColor(btn.theme) }}"
-                [position]="TOOLTIP_POSITION.BELOW"
-                class="miniColorBtn"
-                [ngClass]="btn.theme"
-                (click)="onClickColor(btn)"></div>
-        }
-    </div>
+<div class="btnWrapper" [class.click]="open">
+    @for (btn of buttons; track btn) {
+        <div
+            (mouseover)="mouseOver(btn)"
+            (mouseleave)="mouseLeave(btn)"
+            appTooltip="{{ lang.translateColor(btn.theme) }}"
+            [position]="TOOLTIP_POSITION.BELOW"
+            class="miniColorBtn"
+            [ngClass]="btn.theme"
+            [class.open]="open"
+            (click)="onClickColor(btn)"></div>
+    }
 </div>

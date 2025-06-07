@@ -37,6 +37,8 @@ svg {
 }
 
 .MenuFullscreen {
+    opacity: 0;
+    // visibility: hidden;
     display: flex;
     justify-content: center;
     position: fixed;
@@ -86,19 +88,18 @@ svg {
 }
 
 .MenuFullscreen {
-    visibility: hidden;
-    animation-duration: 350ms;
-    animation-fill-mode: forwards;
-    animation-name: fadein;
+    opacity: 0;
+    pointer-events: none;
+    // animation-duration: 350ms;
+    // animation-fill-mode: forwards;
+    // animation-name: fadein;
     background-color: var(--primary) !important;
+    transition: opacity 0.5s ease;
 }
 
-.hide {
-    animation-duration: 350ms;
-    animation-fill-mode: forwards;
-    animation-name: fadeout;
-    opacity: 0;
-    visibility: hidden;
+.MenuFullscreen.open {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .menu-list {
@@ -130,7 +131,6 @@ svg {
     .menu-list {
         width: 65%;
     }
-
 }
 
 .elementToFadeInAndOut {
