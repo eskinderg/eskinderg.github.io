@@ -113,13 +113,20 @@ svg {
 @include screen-sm {
 }
 
+.btnShadow {
+    box-shadow: 1px 1px 10px -2px #000;
+    .svgCircle {
+        stroke: none;
+    }
+}
+
 @include screen-md {
     nav {
         height: 80% !important;
     }
     nav a {
         // color: var(--light) !important;
-        color: #a5a5a5 !important;
+        color: #FFF !important;
         // font-size: 3vw !important;
         font-size: 5vmin !important;
     }

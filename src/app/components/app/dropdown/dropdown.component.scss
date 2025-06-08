@@ -49,7 +49,7 @@ svg {
     left: 0;
     flex-direction: column;
     // background-color: var(--background1);
-    background-color: #474747;
+    background-color: #424242;
 }
 
 .showDropMenu {
@@ -72,7 +72,8 @@ svg {
 
 .menuItem:hover {
     // background-color: var(--background2);
-    background-color: var(--lighter);
+    // background-color: var(--lighter);
+    background: #4f4e4e;
     border-radius: 10px;
 }
 

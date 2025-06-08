@@ -3,6 +3,7 @@
     color="primary"
     class="MenuButton menu-toggle"
     [class.open]="visible"
+    [class.btnShadow]="visible"
     (click)="toggleMenu()"
     (window:scroll)="onScroll($event)">
     <svg width="24" height="24" viewBox="0 0 24 24">
