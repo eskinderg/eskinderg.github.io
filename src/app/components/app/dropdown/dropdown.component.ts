@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
-import { TooltipDirective } from '../tooltip/tooltip.directive';
 import { NgClass } from '@angular/common';
 import { BaseComponent } from 'src/app/sections/base.component';
 
@@ -7,7 +6,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
     selector: 'app-dropdown',
     templateUrl: './dropdown.component.html',
     styleUrl: './dropdown.component.scss',
-    imports: [TooltipDirective, NgClass],
+    imports: [NgClass],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropDownMenuComponent extends BaseComponent {
