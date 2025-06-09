@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
-import { NgClass } from '@angular/common';
 import { BaseComponent } from 'src/app/sections/base.component';
 
 @Component({
@@ -8,7 +7,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
     templateUrl: './menu.component.html',
     styleUrls: ['./menu.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [TooltipDirective, NgClass]
+    imports: [TooltipDirective]
 })
 export class MenuComponent extends BaseComponent implements OnInit {
     public hovered: any;

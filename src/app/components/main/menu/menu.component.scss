@@ -64,7 +64,7 @@ svg {
     nav div {
         margin: 16px 0;
     }
-    nav a {
+    nav span {
         // color: #fff;
         color: #fff;
         text-decoration: none;
@@ -73,12 +73,12 @@ svg {
         font-size: 5vh;
         width: 100%;
     }
-    nav a:hover {
+    nav span:hover {
         transition: all 0.5s ease;
         color: lightgray;
         // font-size:40px;
     }
-    nav a.active {
+    nav span.active {
         color: #bababa;
     }
     nav {
@@ -128,7 +128,7 @@ svg {
     nav {
         height: 80% !important;
     }
-    nav a {
+    nav span {
         // color: var(--light) !important;
         color: #FFF !important;
         // font-size: 3vw !important;
