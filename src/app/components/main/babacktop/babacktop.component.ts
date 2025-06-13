@@ -35,7 +35,7 @@ export class BaBackTopComponent extends BaseComponent implements OnInit {
 
     @HostListener('click', ['$event.target'])
     _onClick() {
-        (this.appRef.components.at(0).instance as AppComponent)
+        (this.appRef.components[0].instance as AppComponent)
             .mainWrapper()
             .nativeElement.scroll({ top: 0, left: 0, behavior: 'smooth' });
     }

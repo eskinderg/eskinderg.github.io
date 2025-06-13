@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter, Output, Inject, DOCUMENT } from '@angular/core';
+import { Injectable, EventEmitter, Output, DOCUMENT, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, throwError } from 'rxjs';
 
@@ -6,6 +6,9 @@ import { ThemeMode } from './theme.mode';
 
 @Injectable()
 export class ThemeService {
+    http = inject(HttpClient);
+    private document = inject<Document>(DOCUMENT);
+
     public static defaultTheme: string = 'blue';
     public static DarkModeDefault: ThemeMode = 'system';
 
@@ -20,10 +23,7 @@ export class ThemeService {
         }
     };
 
-    constructor(
-        public http: HttpClient,
-        @Inject(DOCUMENT) private document: Document
-    ) {
+    constructor() {
         this.darkModeMediaQuery.addEventListener('change', this.handleDarkModeChange);
     }
 
