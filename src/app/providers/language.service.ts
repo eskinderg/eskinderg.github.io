@@ -1,10 +1,12 @@
-import { Injectable, EventEmitter, Output } from '@angular/core';
+import { Injectable, EventEmitter, Output, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
 import { Observable, map, catchError, throwError } from 'rxjs';
 
 @Injectable()
 export class LanguageService {
+    http = inject(HttpClient);
+
     public texts: any;
     public colors: any;
     public loading = true;
@@ -17,8 +19,6 @@ export class LanguageService {
     @Output() languageChange: EventEmitter<object> = new EventEmitter<object>();
 
     @Output() public httpChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-    constructor(public http: HttpClient) {}
 
     set Language(lang: any) {
         this.setLanguage(lang).subscribe({

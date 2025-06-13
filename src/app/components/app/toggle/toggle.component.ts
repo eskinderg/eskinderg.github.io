@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, inject } from '@angular/core';
 import { ThemeService } from 'src/app/theme/theme.service';
 import { TooltipDirective } from '../tooltip/tooltip.directive';
 
@@ -13,12 +13,10 @@ import { CommonModule } from '@angular/common';
     imports: [TooltipDirective, CommonModule]
 })
 export class ToggleComponent {
-    open = false;
+    themeService = inject(ThemeService);
+    private el = inject(ElementRef);
 
-    constructor(
-        public themeService: ThemeService,
-        private el: ElementRef
-    ) {}
+    open = false;
 
     setMode(mode: ThemeMode) {
         this.themeService.SetAppTheme(this.themeService.Theme, mode);

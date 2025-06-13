@@ -1,4 +1,4 @@
-import { Input, Component, ChangeDetectionStrategy } from '@angular/core';
+import { Input, Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { LanguageService } from 'src/app/providers/language.service';
 import { NgClass } from '@angular/common';
 
@@ -10,8 +10,8 @@ import { NgClass } from '@angular/common';
     imports: [NgClass]
 })
 export class ListComponent {
+    lang = inject(LanguageService);
+
     @Input() item: any;
     @Input() type: any;
-
-    constructor(public lang: LanguageService) {}
 }
