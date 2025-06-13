@@ -17,17 +17,17 @@ import { ScrollService } from '../providers/scroll.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaseComponent {
+    lang = inject(LanguageService);
+    themeService = inject(ThemeService);
+    ref = inject(ChangeDetectorRef);
+    googleAnalyticsService = inject(GoogleAnalyticsService);
+    scrollService = inject(ScrollService);
+
     protected appRef: ApplicationRef;
     protected eRef: ElementRef;
     protected httpStatus: boolean;
 
-    constructor(
-        public lang: LanguageService,
-        public themeService: ThemeService,
-        public ref: ChangeDetectorRef,
-        public googleAnalyticsService: GoogleAnalyticsService,
-        public scrollService: ScrollService
-    ) {
+    constructor() {
         this.appRef = inject(ApplicationRef);
         this.eRef = inject(ElementRef);
         this.lang.languageChange.subscribe(() => {

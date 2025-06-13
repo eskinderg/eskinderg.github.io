@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { PLATFORM_ID, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, inject } from '@angular/core';
+import { PLATFORM_ID } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -10,6 +10,8 @@ import { NgClass } from '@angular/common';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TitleComponent implements OnInit {
+    platformId = inject(PLATFORM_ID);
+
     @Input() title: any = '';
     @Input() lineWidth = 0;
     @Input() color = '#abe074';
@@ -23,8 +25,6 @@ export class TitleComponent implements OnInit {
 
     public direction = '';
     public data: any;
-
-    constructor(@Inject(PLATFORM_ID) public platformId: any) {}
 
     ngOnInit() {
         this.data = {
