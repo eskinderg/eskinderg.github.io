@@ -41,10 +41,10 @@ describe('LangdropdownComponent', () => {
         expect(component).toBeTruthy();
         expect(fixture.debugElement.queryAll(By.css('.langMenuItem')).length).toEqual(2);
         expect(
-            fixture.debugElement.queryAll(By.css('.langMenuItem')).at(0).nativeElement.textContent.trim()
+            fixture.debugElement.queryAll(By.css('.langMenuItem'))[0].nativeElement.textContent.trim()
         ).toBe('English');
         expect(
-            fixture.debugElement.queryAll(By.css('.langMenuItem')).at(1).nativeElement.textContent.trim()
+            fixture.debugElement.queryAll(By.css('.langMenuItem'))[1].nativeElement.textContent.trim()
         ).toBe('አማርኛ');
     });
 
