@@ -29,7 +29,7 @@ describe('BackTopComponent', () => {
 
         fixture = TestBed.createComponent(BaBackTopComponent);
         component = fixture.componentInstance;
-        component._selector = fixture.debugElement.queryAll(By.css('.ba-back-top')).at(0).nativeElement;
+        component._selector = fixture.debugElement.queryAll(By.css('.ba-back-top'))[0].nativeElement;
         fixture.detectChanges();
     });
 
