@@ -13,7 +13,7 @@
     "build": "ng build --base-href https://eskinderg.github.io/ && npm run lang",
     "lang": "gulp minify",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --watch=false --code-coverage",
+    "test": "ng test --watch=false --code-coverage --no-progress",
     "lint": "ng lint",
     "prepare": "husky"
   },

@@ -42,12 +42,13 @@ module.exports = function (config) {
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
-        autoWatch: true,
+        autoWatch: false,
         browsers: ['ChromeHeadless'],
         customLaunchers: {
             CustomChromeHeadless: {
                 base: 'ChromeHeadless',
                 flags: [
+                    '--headless=new',
                     '--no-sandbox',
                     '--disable-gpu',
                     '--disable-dev-shm-usage',
@@ -57,7 +58,7 @@ module.exports = function (config) {
             }
         },
         concurrency: 1,
-        singleRun: false,
-        restartOnFileChange: true
+        singleRun: true,
+        restartOnFileChange: false
     });
 };
