@@ -30,7 +30,7 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
     section = viewChild.required<ElementRef>('contact');
 
     ngAfterViewInit(): void {
-        this.lang.sections['contact'] = this.section;
+        this.languageService.sections['contact'] = this.section;
     }
 
     ngOnInit() {
@@ -42,7 +42,7 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
     }
 
     public get Year(): string {
-        if (this.lang.Language === 'am') {
+        if (this.languageService.Language === 'am') {
             const geezify = Geezify.create();
             return geezify.toGeez(new Date().getFullYear() - 8).toString();
         } else {
@@ -51,8 +51,8 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
     }
 
     public get Copyright(): string {
-        if (this.lang.texts.footer.content) {
-            return this.lang.texts.footer.content;
+        if (this.languageService.texts.footer.content) {
+            return this.languageService.texts.footer.content;
         } else {
             return new Date().getFullYear().toString();
         }

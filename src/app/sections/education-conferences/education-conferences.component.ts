@@ -15,7 +15,7 @@ export class EducationConferencesSectionComponent extends BaseComponent implemen
     section = viewChild.required<ElementRef>('education');
 
     ngAfterViewInit(): void {
-        this.lang.sections['education'] = this.section;
+        this.languageService.sections['education'] = this.section;
     }
 
     trackEducation(index: number, item: any): any {

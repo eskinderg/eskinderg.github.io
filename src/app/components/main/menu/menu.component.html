@@ -1,5 +1,5 @@
 <div
-    appTooltip="{{ lang.texts.menu.tooltip }}"
+    appTooltip="{{ languageService.texts.menu.tooltip }}"
     color="primary"
     class="MenuButton menu-toggle"
     [class.open]="visible"
@@ -17,10 +17,10 @@
 <div class="MenuFullscreen" [class.open]="visible">
     <div class="menu-list">
         <nav>
-            @for (item of lang.texts.menu.list; track item) {
+            @for (item of languageService.texts.menu.list; track item) {
                 <span
                     class="link"
-                    [style.font-family]="lang.texts.font.menu"
+                    [style.font-family]="languageService.texts.font.menu"
                     (mousemove)="onHover(item.link)"
                     (mouseout)="onMouseOut()"
                     (click)="scrollTo(item.link)"

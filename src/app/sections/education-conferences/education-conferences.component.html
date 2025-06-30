@@ -25,16 +25,19 @@
 
             <div class="educationTitle">
                 <app-title
-                    title="{{ lang.texts.education.title }}"
-                    fontWeight="{{ lang.texts.font.title.fontWeight }}"
-                    fontFamily="{{ lang.texts.font.title.fontFamily }}"
+                    title="{{ languageService.texts.education.title }}"
+                    fontWeight="{{ languageService.texts.font.title.fontWeight }}"
+                    fontFamily="{{ languageService.texts.font.title.fontFamily }}"
                     [stylish]="true"
                     [anchor]="'education'"
                     [lineWidth]="250"
                     [inverse]="true"></app-title>
             </div>
 
-            @for (education of lang.texts.education.content; track trackEducation($index, education)) {
+            @for (
+                education of languageService.texts.education.content;
+                track trackEducation($index, education)
+            ) {
                 <div class="educationItem">
                     <app-list [item]="education" type="education"></app-list>
                 </div>

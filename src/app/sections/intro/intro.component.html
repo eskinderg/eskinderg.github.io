@@ -1,17 +1,19 @@
 <section id="introduction">
     <div #intro class="intro">
         <div class="titleIntro">
-            <div class="introTitle font-bold colorWhite" [style.font-family]="lang.texts.font.intro.title">
-                {{ lang.texts.intro.title }}
+            <div
+                class="introTitle font-bold colorWhite"
+                [style.font-family]="languageService.texts.font.intro.title">
+                {{ languageService.texts.intro.title }}
             </div>
             <div
                 class="introSubTitle font-bold colorWhite"
-                [style.font-family]="lang.texts.font.intro.subtitle">
-                {{ lang.texts.intro.subtitle }}
+                [style.font-family]="languageService.texts.font.intro.subtitle">
+                {{ languageService.texts.intro.subtitle }}
             </div>
             <div class="icon_links">
                 <a
-                    href="{{ lang.texts.social.github }}"
+                    href="{{ languageService.texts.social.github }}"
                     aria-label="Github"
                     appTooltip="Github"
                     target="_blank">
@@ -24,7 +26,7 @@
                     </svg>
                 </a>
                 <a
-                    href="{{ lang.texts.social.stackoverflow }}"
+                    href="{{ languageService.texts.social.stackoverflow }}"
                     aria-label="Stackoverflow"
                     appTooltip="Stackoverflow"
                     target="_blank">
@@ -40,7 +42,7 @@
                     </svg>
                 </a>
                 <a
-                    href="{{ lang.texts.social.linkedin }}"
+                    href="{{ languageService.texts.social.linkedin }}"
                     aria-label="Linkedin"
                     appTooltip="Linkedin"
                     target="_blank">

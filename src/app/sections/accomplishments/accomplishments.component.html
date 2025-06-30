@@ -3,9 +3,9 @@
 
     <div #accomplishments class="h2 center accomp-background">
         <app-title
-            title="{{ lang.texts.accomplishments.title }}"
-            fontWeight="{{ lang.texts.font.title.fontWeight }}"
-            fontFamily="{{ lang.texts.font.title.fontFamily }}"
+            title="{{ languageService.texts.accomplishments.title }}"
+            fontWeight="{{ languageService.texts.font.title.fontWeight }}"
+            fontFamily="{{ languageService.texts.font.title.fontFamily }}"
             [stylish]="true"
             [lineWidth]="250"
             [anchor]="'accomplishments'"
@@ -16,11 +16,11 @@
     <div class="accomplishments">
         <div class="accomplishment leftItem">
             <div class="h3 subtitle">
-                <div [style.font-family]="lang.texts.font.title.fontFamily">
-                    {{ lang.texts.accomplishments.content[0].title }}
+                <div [style.font-family]="languageService.texts.font.title.fontFamily">
+                    {{ languageService.texts.accomplishments.content[0].title }}
                 </div>
             </div>
-            <div class="content">{{ lang.texts.accomplishments.content[0].paragraph }}</div>
+            <div class="content">{{ languageService.texts.accomplishments.content[0].paragraph }}</div>
         </div>
         <div class="accomplishmentIcon">
             <svg class="ribbonSVG" viewBox="0, 0, 540,560">
@@ -146,11 +146,11 @@
         </div>
         <div class="accomplishment rightItem">
             <div class="h3 subtitle">
-                <div [style.font-family]="lang.texts.font.title.fontFamily">
-                    {{ lang.texts.accomplishments.content[1].title }}
+                <div [style.font-family]="languageService.texts.font.title.fontFamily">
+                    {{ languageService.texts.accomplishments.content[1].title }}
                 </div>
             </div>
-            <div class="content">{{ lang.texts.accomplishments.content[1].paragraph }}</div>
+            <div class="content">{{ languageService.texts.accomplishments.content[1].paragraph }}</div>
         </div>
     </div>
 

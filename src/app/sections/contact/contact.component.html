@@ -132,8 +132,8 @@
             </div>
 
             <div class="right-contact-item">
-                <div class="contactIntro" [style.font-family]="lang.texts.font.content">
-                    {{ lang.texts.contact.intro }}
+                <div class="contactIntro" [style.font-family]="languageService.texts.font.content">
+                    {{ languageService.texts.contact.intro }}
                 </div>
 
                 <br />
@@ -149,9 +149,9 @@
                         <a
                             class="contact-title link"
                             [ngStyle]="{ 'text-decoration-line': 'none' }"
-                            href="mailto:{{ lang.texts.contact.mail }}?Subject=Hello"
+                            href="mailto:{{ languageService.texts.contact.mail }}?Subject=Hello"
                             target="_top">
-                            {{ lang.texts.contact.mail }}
+                            {{ languageService.texts.contact.mail }}
                         </a>
                     </div>
                     <div class="contactrow">
@@ -161,8 +161,8 @@
                             [width]="30"
                             [height]="30"
                             style="margin-right: 10px; position: relative" />
-                        <a class="phone" href="tel:{{ lang.texts.contact.phone }}">
-                            {{ lang.texts.contact.phone }}
+                        <a class="phone" href="tel:{{ languageService.texts.contact.phone }}">
+                            {{ languageService.texts.contact.phone }}
                         </a>
                     </div>
                 </div>
@@ -172,7 +172,7 @@
         </div>
 
         <div class="horizontal-line">
-            <div class="copyrights" [style.font-family]="lang.texts.font.content">
+            <div class="copyrights" [style.font-family]="languageService.texts.font.content">
                 v{{ Version }} <br />
                 <span class="year"> &copy; {{ Year }}</span> <br />
                 <br />

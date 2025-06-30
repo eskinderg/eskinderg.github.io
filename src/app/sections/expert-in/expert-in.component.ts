@@ -14,7 +14,7 @@ export class ExpertInSectionComponent extends BaseComponent implements AfterView
     section = viewChild.required<ElementRef>('expertin');
 
     ngAfterViewInit(): void {
-        this.lang.sections['expertin'] = this.section;
+        this.languageService.sections['expertin'] = this.section;
     }
 
     trackExpert(index: number, expert: any): any {

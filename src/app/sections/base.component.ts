@@ -17,7 +17,7 @@ import { ScrollService } from '../providers/scroll.service';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaseComponent {
-    lang = inject(LanguageService);
+    languageService = inject(LanguageService);
     themeService = inject(ThemeService);
     ref = inject(ChangeDetectorRef);
     googleAnalyticsService = inject(GoogleAnalyticsService);
@@ -30,11 +30,11 @@ export class BaseComponent {
     constructor() {
         this.appRef = inject(ApplicationRef);
         this.eRef = inject(ElementRef);
-        this.lang.languageChange.subscribe(() => {
+        this.languageService.languageChange.subscribe(() => {
             this.ref.detectChanges();
         });
 
-        this.lang.httpChange.subscribe((value) => {
+        this.languageService.httpChange.subscribe((value) => {
             this.httpStatus = value;
             this.ref.detectChanges();
         });

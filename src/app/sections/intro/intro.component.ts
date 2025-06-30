@@ -13,6 +13,6 @@ export class IntroSectionComponent extends BaseComponent implements AfterViewIni
     section = viewChild.required<ElementRef>('intro');
 
     ngAfterViewInit(): void {
-        this.lang.sections['intro'] = this.section;
+        this.languageService.sections['intro'] = this.section;
     }
 }

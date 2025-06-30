@@ -15,7 +15,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
     public atTop = true;
 
     ngOnInit() {
-        this.lang.menu.subscribe((value) => {
+        this.languageService.menu.subscribe((value) => {
             this.visible = value;
         });
     }
@@ -28,7 +28,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
     }
 
     toggleMenu() {
-        this.lang.toggleMenu(!this.visible);
+        this.languageService.toggleMenu(!this.visible);
     }
 
     onScroll(event: any) {
@@ -43,7 +43,7 @@ export class MenuComponent extends BaseComponent implements OnInit {
 
     scrollTo(element: any) {
         this.visible = false;
-        const section = this.lang.sections[element];
+        const section = this.languageService.sections[element];
         section().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
