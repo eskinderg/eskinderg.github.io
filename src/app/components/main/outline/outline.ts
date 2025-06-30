@@ -38,7 +38,7 @@ export class OutlineComponent extends BaseComponent implements OnInit {
     }
 
     scrollTo(element: any) {
-        const section = this.lang.sections[element];
+        const section = this.languageService.sections[element];
         section().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 

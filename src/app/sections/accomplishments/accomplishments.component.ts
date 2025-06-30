@@ -14,6 +14,6 @@ export class AccomplishmentsSectionComponent extends BaseComponent implements Af
     section = viewChild.required<ElementRef>('accomplishments');
 
     ngAfterViewInit(): void {
-        this.lang.sections['accomplishments'] = this.section;
+        this.languageService.sections['accomplishments'] = this.section;
     }
 }

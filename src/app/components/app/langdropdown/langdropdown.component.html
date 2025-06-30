@@ -1,5 +1,5 @@
 <div class="lang-menu-wrapper">
-    <div (click)="onClick()" appTooltip="{{ lang.texts.languageSelect }}" class="langSelect">
+    <div (click)="onClick()" appTooltip="{{ languageService.texts.languageSelect }}" class="langSelect">
         <svg width="24" height="24" class="svg" viewBox="0 0 24 24" version="1.1">
             <circle class="svgCircle" cx="12" cy="12" r="11" fill="none" stroke="white" stroke-width="1" />
             <path
@@ -9,11 +9,11 @@
     </div>
 
     <div class="langMenu" [ngClass]="{ showLangDropMenu: visible }">
-        @for (lang of lang.LanguageList; track lang) {
+        @for (lang of languageService.LanguageList; track lang) {
             <div class="langMenuItem">
                 <div
                     class="langText"
-                    [class.selected]="lang.code === this.lang.Language"
+                    [class.selected]="lang.code === this.languageService.Language"
                     (click)="changeLanguage(lang.code)"
                     [style.font-family]="lang.font">
                     {{ lang.title }}

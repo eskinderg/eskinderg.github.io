@@ -2,16 +2,20 @@
     <div #experience class="experience">
         <div class="h2 center">
             <app-title
-                title="{{ lang.texts.experience.title }}"
-                fontWeight="{{ lang.texts.font.title.fontWeight }}"
-                fontFamily="{{ lang.texts.font.title.fontFamily }}"
+                title="{{ languageService.texts.experience.title }}"
+                fontWeight="{{ languageService.texts.font.title.fontWeight }}"
+                fontFamily="{{ languageService.texts.font.title.fontFamily }}"
                 [stylish]="true"
                 [anchor]="'experience'"
                 [lineWidth]="260"></app-title>
         </div>
 
         <div>
-            @for (job of lang.texts.experience.content; track trackExperience($index, job); let i = $index) {
+            @for (
+                job of languageService.texts.experience.content;
+                track trackExperience($index, job);
+                let i = $index
+            ) {
                 <app-timeline [job]="job" [index]="i" [reverse]="i % 2 === 0"></app-timeline>
             }
         </div>

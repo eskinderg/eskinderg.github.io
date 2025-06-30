@@ -3,7 +3,7 @@
         #button
         class="fab-toggler main-button"
         color="primary"
-        appTooltip="{{ lang.texts.colorSelectTooltip }}"
+        appTooltip="{{ languageService.texts.colorSelectTooltip }}"
         [position]="TOOLTIP_POSITION.RIGHT"
         [ngClass]="{ rotate: colorTogglerState === STATE.Opened }"
         [class.rotate]="open"
@@ -25,7 +25,7 @@
         <div
             (mouseover)="mouseOver(btn)"
             (mouseleave)="mouseLeave(btn)"
-            appTooltip="{{ lang.translateColor(btn.theme) }}"
+            appTooltip="{{ languageService.translateColor(btn.theme) }}"
             [position]="TOOLTIP_POSITION.BELOW"
             class="miniColorBtn"
             [ngClass]="btn.theme"

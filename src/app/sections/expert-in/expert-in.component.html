@@ -3,9 +3,9 @@
         <div class="h2 titleExpertin">
             <!-- <div class="h2 titleExpertin" fxFlex="100" [ngStyle.sm]="{'text-align': 'center','padding':0}" [ngStyle.xs]="{'text-align': 'center','padding':0}"> -->
             <app-title
-                title="{{ lang.texts.technologies.title }}"
-                fontWeight="{{ lang.texts.font.title.fontWeight }}"
-                fontFamily="{{ lang.texts.font.title.fontFamily }}"
+                title="{{ languageService.texts.technologies.title }}"
+                fontWeight="{{ languageService.texts.font.title.fontWeight }}"
+                fontFamily="{{ languageService.texts.font.title.fontFamily }}"
                 [stylish]="true"
                 [anchor]="'technologies'"
                 [lineWidth]="250"
@@ -13,7 +13,10 @@
         </div>
         <div class="expertInContent">
             <div class="technologyList">
-                @for (mastery of lang.texts.technologies.masteries; track trackExpert($index, mastery)) {
+                @for (
+                    mastery of languageService.texts.technologies.masteries;
+                    track trackExpert($index, mastery)
+                ) {
                     <app-technology class="tech-list" [item]="mastery"></app-technology>
                 }
             </div>

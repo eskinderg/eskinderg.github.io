@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter, Output, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
-import { Observable, map, catchError, throwError } from 'rxjs';
+import { Observable, map, tap, catchError, throwError, timeout } from 'rxjs';
 
 @Injectable()
 export class LanguageService {
@@ -34,15 +34,20 @@ export class LanguageService {
         return this.langList;
     }
 
+    get DefaultLanguage(): string {
+        return 'en';
+    }
+
     public setLanguage(lang: any): Observable<any> {
         return this.http.get(this.getLangPath(lang)).pipe(
-            map((data) => {
+            timeout(5000),
+            tap((data) => {
                 this.texts = data;
                 this.languageChange.emit(data);
             }),
             catchError((httpError: HttpErrorResponse) => {
                 if (httpError.status === 404) {
-                    return this.setLanguage('en');
+                    return this.setLanguage(this.DefaultLanguage);
                 }
                 alert(`Unable to set language\n${httpError.message}`);
                 return throwError(() => httpError);

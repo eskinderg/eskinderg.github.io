@@ -2,9 +2,9 @@
     <div #about class="about">
         <div class="h2 about-title">
             <app-title
-                title="{{ lang.texts.about.title }}"
-                fontWeight="{{ lang.texts.font.title.fontWeight }}"
-                fontFamily="{{ lang.texts.font.title.fontFamily }}"
+                title="{{ languageService.texts.about.title }}"
+                fontWeight="{{ languageService.texts.font.title.fontWeight }}"
+                fontFamily="{{ languageService.texts.font.title.fontFamily }}"
                 [stylish]="true"
                 [anchor]="'about'"
                 [lineWidth]="250"></app-title>
@@ -15,9 +15,9 @@
             </div>
             <!-- <div class="w-[5%] h-[5%]">&nbsp;</div> -->
             <div class="introContent">
-                @for (paragraph of lang.texts.about.content; track trackAbout($index, paragraph)) {
+                @for (paragraph of languageService.texts.about.content; track trackAbout($index, paragraph)) {
                     <p
-                        [style.font-size.rem]="lang.texts.font.about?.description?.fontSize"
+                        [style.font-size.rem]="languageService.texts.font.about?.description?.fontSize"
                         class="contentParagraph"
                         [innerHTML]="paragraph"></p>
                 }

@@ -14,7 +14,7 @@ export class AboutSectionComponent extends BaseComponent implements AfterViewIni
     section = viewChild.required<ElementRef>('about');
 
     ngAfterViewInit(): void {
-        this.lang.sections['about'] = this.section;
+        this.languageService.sections['about'] = this.section;
     }
 
     onPdfDownload() {

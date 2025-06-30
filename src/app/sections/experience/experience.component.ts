@@ -14,7 +14,7 @@ export class ExperienceSectionComponent extends BaseComponent implements AfterVi
     section = viewChild.required<ElementRef>('experience');
 
     ngAfterViewInit(): void {
-        this.lang.sections['experience'] = this.section;
+        this.languageService.sections['experience'] = this.section;
     }
 
     trackExperience(index: number, job: any): any {
