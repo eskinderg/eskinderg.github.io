@@ -5,7 +5,9 @@
             <h3 class="subtitle h3">{{ job.subtitle }}</h3>
         }
         <div class="content mainTitle h4 year job-year">{{ job.year }}</div>
-        <h3 class="timelineParagraph">{{ job.intro }}</h3>
+        @if (job.intro) {
+            <h3 class="timelineParagraph">{{ job.intro }}</h3>
+        }
         @for (list of job.elements; track trackList($index, list)) {
             <div>
                 <div class="content content-list" style="margin: 10px 0px 10px 0">{{ list.header }}</div>
