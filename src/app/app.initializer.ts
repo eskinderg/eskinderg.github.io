@@ -1,10 +1,10 @@
-import { APP_BOOTSTRAP_LISTENER, ApplicationRef, inject, provideAppInitializer } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
-import { appMeta } from './app.meta';
+import { APP_BOOTSTRAP_LISTENER, ApplicationRef } from '@angular/core';
+// import { Meta } from '@angular/platform-browser';
+// import { appMeta } from './app.meta';
 import { bootstrapComponentsFactory } from './bootstrap';
 
 export const AppInit = [
-    provideAppInitializer(initializeAppMeta()),
+    // provideAppInitializer(initializeAppMeta()),
     {
         provide: APP_BOOTSTRAP_LISTENER,
         useFactory: bootstrapComponentsFactory,
@@ -13,6 +13,6 @@ export const AppInit = [
     }
 ];
 
-function initializeAppMeta(): () => void {
-    return () => inject(Meta).addTags(appMeta);
-}
+// function initializeAppMeta(): () => void {
+//     return () => inject(Meta).addTags(appMeta);
+// }

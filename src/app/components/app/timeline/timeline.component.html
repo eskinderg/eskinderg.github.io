@@ -1,9 +1,9 @@
 <div class="outer">
     <div class="leftSide" [ngClass]="{ 'left order1': reverse, 'right order3': !reverse }">
-        <div class="mainTitle h3 link">{{ job.title }}</div>
-        <div class="subtitle h3">{{ job.subtitle }}</div>
+        <h3 class="mainTitle h3 link">{{ job.title }}</h3>
+        <h3 class="subtitle h3">{{ job.subtitle }}</h3>
         <div class="content mainTitle h4 year job-year">{{ job.year }}</div>
-        <div class="timelineParagraph">{{ job.intro }}</div>
+        <h3 class="timelineParagraph">{{ job.intro }}</h3>
         @for (list of job.elements; track trackList($index, list)) {
             <div>
                 <h5 class="content content-list" style="margin: 10px 0px 10px 0">{{ list.header }}</h5>
@@ -14,11 +14,11 @@
                             'lExperienceList leftFlexLayout': reverse,
                             'rExperienceList rightFlexLayout': !reverse
                         }">
-                        <div
+                        <p
                             class="content experienceListItem"
                             [ngClass]="{ leftItemFlexLayout: reverse, rightItemFlexLayout: !reverse }">
                             {{ l }}
-                        </div>
+                        </p>
                     </div>
                 }
             </div>

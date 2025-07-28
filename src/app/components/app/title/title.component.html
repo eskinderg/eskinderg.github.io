@@ -1,25 +1,25 @@
 @if (anchor) {
     <a name="{{ anchor }}">
         <div class="title">
-            <div
+            <h2
                 #titleText
                 class="main-heading-title"
                 [style.font-family]="fontFamily"
                 [style.font-weight]="fontWeight"
                 [ngClass]="stylish ? 'styleish' : 'normal'">
                 {{ title }}
-            </div>
+            </h2>
         </div>
     </a>
 } @else {
     <div class="title">
-        <div
+        <h2
             #titleText
             class="main-heading-title"
             [style.font-family]="fontFamily"
             [style.font-weight]="fontWeight"
             [ngClass]="stylish ? 'styleish' : 'normal'">
             {{ title }}
-        </div>
+        </h2>
     </div>
 }

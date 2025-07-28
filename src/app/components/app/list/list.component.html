@@ -5,9 +5,9 @@
         </div>
 
         <div [style.font-family]="lang.texts.font.content">
-            <div class="h3 title">
+            <h3 class="h3 title">
                 {{ item.title }}
-            </div>
+            </h3>
             <div class="education-subtitle content">
                 {{ item.subtitle }}
             </div>
@@ -18,9 +18,9 @@
 
         @if (type === 'conference') {
             <div class="conferences">
-                <div class="h3 title">
+                <h3 class="h3 title">
                     {{ item.year }}
-                </div>
+                </h3>
                 @for (conference of item.list; track conference) {
                     <div class="conference">
                         {{ conference }}
