@@ -34,7 +34,7 @@ svg {
 
 .main-button {
     transition:
-        transform 0.25s ease,
+        transform 0.75s ease,
         background-color 1s ease !important;
     background-color: var(--primary);
 }
@@ -156,7 +156,7 @@ svg {
 
 .rotate {
     transition: transform 0.5s ease;
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
     box-shadow: 1px 1px 9px -2px black;
 }
 
