@@ -6,7 +6,7 @@
         <h3 class="timelineParagraph">{{ job.intro }}</h3>
         @for (list of job.elements; track trackList($index, list)) {
             <div>
-                <h5 class="content content-list" style="margin: 10px 0px 10px 0">{{ list.header }}</h5>
+                <div class="content content-list" style="margin: 10px 0px 10px 0">{{ list.header }}</div>
                 @for (l of list.list; track l) {
                     <div
                         class="experienceList"
