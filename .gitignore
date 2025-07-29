@@ -32,6 +32,10 @@ npm-debug.log
 testem.log
 /typings
 
+#Scully
+/.scully
+scully.log
+
 # e2e
 /e2e/*.js
 /e2e/*.map

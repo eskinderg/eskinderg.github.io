@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eskinderg.github.io/sitemap.xml
