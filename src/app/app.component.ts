@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    ViewChild,
+    viewChild,
+    ViewContainerRef
+} from '@angular/core';
 import { ColorPickerComponent } from './components/main/color-picker/color-picker.component';
 import { RightComponent } from './components/main/right/right.component';
 import { LoaderComponent } from './components/main/loader/loader';
@@ -16,9 +23,17 @@ import { BaseComponent } from './sections/base.component';
 export class AppComponent extends BaseComponent {
     mainWrapper = viewChild.required<ElementRef>('mainWrapper');
 
+    @ViewChild('wrapper', { static: true })
+    wrapperElementRef!: ElementRef;
+
     colorPickerComponent = viewChild.required<ColorPickerComponent>(ColorPickerComponent);
 
+    // @ViewChild('componentWrapper', { static: true }) appComponentWrapper!: ElementRef;
+
     appComponentWrapper = viewChild.required<ElementRef>('componentWrapper');
+
+    @ViewChild('componentWrapper', { read: ViewContainerRef, static: true })
+    dynamicComponentsHost!: ViewContainerRef;
 
     onScroll(event: WheelEvent) {
         this.mainWrapper().nativeElement.scrollTop += event.deltaY;

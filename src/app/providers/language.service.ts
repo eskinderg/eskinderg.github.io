@@ -2,6 +2,7 @@ import { Injectable, EventEmitter, Output, inject } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
 import { Observable, map, tap, catchError, throwError, timeout } from 'rxjs';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable()
 export class LanguageService {
@@ -13,6 +14,7 @@ export class LanguageService {
     public sections = {};
     public menuVisible = false;
     private langList: any;
+    private localStorageService = inject(LocalStorageService);
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
@@ -22,12 +24,12 @@ export class LanguageService {
 
     set Language(lang: any) {
         this.setLanguage(lang).subscribe({
-            next: () => localStorage.setItem('language', lang)
+            next: () => this.localStorageService.setItem('language', lang)
         });
     }
 
     get Language() {
-        return localStorage.getItem('language') ?? navigator.language;
+        return this.localStorageService.getItem('language') ?? navigator.language;
     }
 
     get LanguageList() {
