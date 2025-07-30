@@ -3,7 +3,8 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
 import { Observable, map, tap, catchError, throwError, timeout } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
-
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 @Injectable()
 export class LanguageService {
     http = inject(HttpClient);
@@ -15,6 +16,7 @@ export class LanguageService {
     public menuVisible = false;
     private langList: any;
     private localStorageService = inject(LocalStorageService);
+    private platformId: any = inject(PLATFORM_ID);
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
@@ -29,7 +31,11 @@ export class LanguageService {
     }
 
     get Language() {
-        return this.localStorageService.getItem('language') ?? navigator.language;
+        if (isPlatformBrowser(this.platformId)) {
+            return this.localStorageService.getItem('language') ?? navigator.language;
+        }
+
+        return 'en';
     }
 
     get LanguageList() {

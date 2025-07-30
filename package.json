@@ -16,7 +16,7 @@
     "test": "ng test --watch=false --code-coverage --no-progress",
     "lint": "ng lint",
     "prepare": "husky",
-    "serve:ssr:portfolio": "node docs/server/server.mjs"
+    "serve:ssr:portfolio": "node dist/server/server.mjs"
   },
   "private": true,
   "dependencies": {
