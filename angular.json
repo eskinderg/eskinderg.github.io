@@ -87,7 +87,7 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@angular-devkit/build-angular:browser",
           "configurations": {
             "production": {
               "buildTarget": "portfolio:build:production"
