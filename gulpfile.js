@@ -6,5 +6,5 @@ gulp.task('minify', function () {
   return gulp.src(['src/assets/json/**/*.json'])
     .pipe(jsonminify())
     .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('docs/assets/json/'));
+    .pipe(gulp.dest('dist/browser/assets/json/'));
 });
