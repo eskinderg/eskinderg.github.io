@@ -11,7 +11,7 @@ export class ThemeService {
     http = inject(HttpClient);
     private document = inject<Document>(DOCUMENT);
     private localStorageService = inject(LocalStorageService);
-    public static defaultTheme: string = 'blue';
+    public static defaultTheme: string = 'indigo';
     public static DarkModeDefault: ThemeMode = 'system';
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
@@ -27,7 +27,6 @@ export class ThemeService {
     };
 
     constructor() {
-        // debugger;
         if (isPlatformBrowser(this.platformId)) {
             this.darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
             this.darkModeMediaQuery.addEventListener('change', this.handleDarkModeChange);

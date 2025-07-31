@@ -7,7 +7,7 @@
 
     <app-outline (mouseWheelScroll)="onScroll($event)" />
 
-    <div class="viewWrapper" #componentWrapper></div>
+    <app-dynamic-wrapper ngSkipHydration></app-dynamic-wrapper>
 
     <app-back-top [position]="200" />
 </div>

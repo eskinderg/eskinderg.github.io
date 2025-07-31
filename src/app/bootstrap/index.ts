@@ -6,15 +6,16 @@ export function bootstrapComponentsFactory(
     appRef: ApplicationRef
 ): (appComponentRef: ComponentRef<AppComponent>) => void {
     return (appComponentRef: ComponentRef<AppComponent>) => {
-        const hostViewContainer = appComponentRef.instance.dynamicComponentsHost;
+        const viewContainer = appComponentRef.instance.dynamicComponentsWrapper.viewContainerRef;
+        const hostElement = appComponentRef.instance.dynamicComponentsWrapper.wrapperElementRef.nativeElement;
+
         Components.forEach((component) => {
-            hostViewContainer.createComponent(component, {
+            const compRef = viewContainer.createComponent(component, {
                 environmentInjector: appRef.injector
             });
-            // appRef.attachView(compRef.hostView);
-            // appComponentRef.instance
-            //     .appComponentWrapper()
-            //     .nativeElement.append(compRef.location.nativeElement);
+
+            // Append the component's DOM element inside the wrapper div
+            hostElement.appendChild(compRef.location.nativeElement);
         });
     };
 }

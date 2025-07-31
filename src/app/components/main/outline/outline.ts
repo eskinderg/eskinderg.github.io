@@ -2,14 +2,16 @@ import {
     Component,
     ElementRef,
     EventEmitter,
-    OnInit,
     viewChild,
     HostListener,
     Output,
-    ChangeDetectionStrategy
+    ChangeDetectionStrategy,
+    AfterViewInit,
+    inject
 } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { BaseComponent } from 'src/app/sections/base.component';
+import { WrapperRefService } from '../wrapper-ref.service';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -18,7 +20,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
     styleUrls: ['./outline.scss'],
     imports: [NgClass]
 })
-export class OutlineComponent extends BaseComponent implements OnInit {
+export class OutlineComponent extends BaseComponent implements AfterViewInit {
     currentSection: string;
     @Output() public mouseWheelScroll: EventEmitter<any> = new EventEmitter<any>();
     _selector = viewChild.required<ElementRef>('outline');
@@ -46,13 +48,15 @@ export class OutlineComponent extends BaseComponent implements OnInit {
         this.mouseWheelScroll.emit(event);
     }
 
-    ngOnInit(): void {
+    private wrapperRefService = inject(WrapperRefService);
+
+    ngAfterViewInit(): void {
         this.scrollService.scroll$.subscribe((winScrollEvent: any) => {
             if (winScrollEvent.srcElement) {
                 let currentSec: string;
                 // const children = winScrollEvent.target.children['parentDiv'].children;
-                const children =
-                    this.appRef.components[0].instance.appComponentWrapper().nativeElement.children;
+                const children = this.wrapperRefService.wrapperElementRef.nativeElement.children;
+                // this.appRef.components[0].instance.appComponentWrapper().nativeElement.children;
 
                 const scrollTop = winScrollEvent.target.scrollTop;
                 // const parentOffset = winScrollEvent.target.offsetTop;
@@ -64,7 +68,7 @@ export class OutlineComponent extends BaseComponent implements OnInit {
                         : 'none';
 
                 for (let i = 0; i < children.length; i++) {
-                    const element = children[i];
+                    const element = children[i] as HTMLElement;
                     if (this.spiedTags.some((spiedTag) => spiedTag === element.tagName)) {
                         // console.log(element.offsetTop, parentOffsetHeight, scrollTop, element.offsetHeight, element.id)
                         if (scrollTop >= element.offsetTop - 250) {
