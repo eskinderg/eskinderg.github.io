@@ -33,12 +33,12 @@
               "src/favicon.png",
               "src/assets",
               {
-                "glob": "sitemap.xml",
+                "glob": "**/*",
                 "input": "src/config/",
                 "output": "/"
               },
               {
-                "glob": "robots.txt",
+                "glob": "**/.*",
                 "input": "src/config/",
                 "output": "/"
               }

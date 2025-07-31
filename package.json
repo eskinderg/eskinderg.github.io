@@ -10,7 +10,7 @@
     "preversion": "npm test",
     "version": "npm run lint && npm run build && git add docs",
     "postversion": "git push && git push --tags",
-    "build": "ng build --base-href https://eskinderg.github.io/ --configuration production && npm run lang && cd docs && rm -rf * && cd .. && cp dist/browser/* docs -r",
+    "build": "ng build --base-href https://eskinderg.github.io/ --configuration production && npm run lang && cd docs && rm -rf * && cd .. && cp -ra dist/browser/. docs",
     "lang": "gulp minify",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --code-coverage --no-progress",
