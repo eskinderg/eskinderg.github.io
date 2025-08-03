@@ -33,6 +33,10 @@ export class ThemeService {
         }
     }
 
+    public get isBrowser(): boolean {
+        return isPlatformBrowser(this.platformId);
+    }
+
     private get SystemDarkMode(): boolean {
         if (isPlatformBrowser(this.platformId)) {
             return window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -78,12 +82,12 @@ export class ThemeService {
         return this.colorList;
     }
 
-    private setUserPreferenceTheme(): void {
-        this.SetAppTheme(this.Theme, this.ThemeMode);
-    }
+    // private setUserPreferenceTheme(): void {
+    //     this.SetAppTheme(this.Theme, this.ThemeMode);
+    // }
 
     public LoadTheme(): Observable<any> {
-        this.setUserPreferenceTheme();
+        // this.setUserPreferenceTheme();
 
         const colorPath = 'assets/json/colors.json';
 
@@ -118,13 +122,22 @@ export class ThemeService {
      * @param {string} theme - name of the theme to be assigned. Eg indigo, yellow, red ....
      * @param {boolean} isDarkMode - Sets the dark mode setting
      */
-    private SetTheme(theme: string, isDarkMode: boolean) {
-        this.document.documentElement.className = theme;
+    public SetTheme(theme: string, isDarkMode: boolean): Promise<void> {
+        return new Promise((resolve) => {
+            this.document.documentElement.className = theme;
 
-        if (isDarkMode) {
             const root = this.document.querySelector(':root');
-            root.classList.toggle('dark');
-        }
-        this.Theme = theme;
+            if (root) {
+                root.classList.toggle('dark', isDarkMode);
+            }
+
+            this.Theme = theme;
+
+            if (this.isBrowser) {
+                requestAnimationFrame(() => resolve());
+            } else {
+                resolve(); // SSR or non-browser environment
+            }
+        });
     }
 }
