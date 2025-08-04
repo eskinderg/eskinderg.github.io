@@ -47,7 +47,9 @@
               "src/styles.scss",
               "src/app/styles/index.scss"
             ],
-            "scripts": [],
+            "scripts": [
+               "src/assets/js/theme.js"
+            ],
             "browser": "src/main.ts",
             "stylePreprocessorOptions": {
               "includePaths": [

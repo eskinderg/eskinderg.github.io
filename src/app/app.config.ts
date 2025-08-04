@@ -11,7 +11,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
     providers: [
-        importProvidersFrom(BrowserModule, ThemeModule, LanguageModule, AppRoutingModule),
+        importProvidersFrom(BrowserModule, LanguageModule, ThemeModule, AppRoutingModule),
         GoogleAnalyticsService,
         AppInit,
         provideHttpClient(withFetch(), withInterceptors([LoaderInterceptor])),

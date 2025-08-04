@@ -19,16 +19,12 @@ export function bootstrapComponentsFactory(
             // Append the component's DOM element inside the wrapper div
             hostElement.appendChild(compRef.location.nativeElement);
         });
+
         if (themeService.isBrowser) {
             requestAnimationFrame(() => {
-                const body = document.getElementById('app-body');
-                const loading = document.getElementById('loading');
-                if (body) {
-                    setTimeout(() => {
-                        body.style.transition = 'opacity 0.25s ease';
-                        body.style.opacity = '1';
-                        if (loading) loading.remove();
-                    }, 500);
+                const loadingBar = document.getElementById('loading-bar');
+                if (loadingBar) {
+                    setTimeout(() => loadingBar.remove(), 500);
                 }
             });
         }

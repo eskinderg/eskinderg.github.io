@@ -26,8 +26,5 @@ body {
 body {
     margin: 0;
     font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-
-#app-body {
-    opacity: 0;
+    background: var(--primary);
 }
