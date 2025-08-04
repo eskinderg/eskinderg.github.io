@@ -30,14 +30,17 @@
   </head>
   <body>
     <noscript>Your browser does not support JavaScript!</noscript>
+
+    <div id="loading" class="loading-screen show" >
+    <div class="loading-text"></div>
+    <div class="progress">
+        <div class="indeterminate"></div>
+    </div>
+    </div>
+    <div id="app-body">
     <app-root>
-      <div class="loading-screen show" >
-        <div class="loading-text"></div>
-        <div class="progress">
-          <div class="indeterminate"></div>
-        </div>
-      </div>
     </app-root>
+    </div>
         <script type="application/ld+json">
         {
         "@context": "https://schema.org",

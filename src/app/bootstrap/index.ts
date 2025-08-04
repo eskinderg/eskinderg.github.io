@@ -21,11 +21,14 @@ export function bootstrapComponentsFactory(
         });
         if (themeService.isBrowser) {
             requestAnimationFrame(() => {
+                const body = document.getElementById('app-body');
                 const loading = document.getElementById('loading');
-                if (loading) {
-                    loading.style.transition = 'opacity 0.5s ease';
-                    loading.style.opacity = '0';
-                    setTimeout(() => loading.remove(), 500);
+                if (body) {
+                    setTimeout(() => {
+                        body.style.transition = 'opacity 0.25s ease';
+                        body.style.opacity = '1';
+                        if (loading) loading.remove();
+                    }, 500);
                 }
             });
         }

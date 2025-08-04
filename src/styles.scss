@@ -2,22 +2,32 @@
 
 /* Regular */
 @font-face {
-  font-family: 'Raleway';
-  src: url(./assets/fonts/Raleway-Regular.woff2);
-  font-display: swap;
+    font-family: 'Raleway';
+    src: url(./assets/fonts/Raleway-Regular.woff2);
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'Monoton';
-  src: url(./assets/fonts/Pacifico-Regular.woff2);
-  font-display: swap;
+    font-family: 'Monoton';
+    src: url(./assets/fonts/Pacifico-Regular.woff2);
+    font-display: swap;
 }
 
 @font-face {
-  font-family: 'wookianos';
-  src: url(./assets/fonts/NotoSansEthiopic.woff2);
-  font-display: swap;
+    font-family: 'wookianos';
+    src: url(./assets/fonts/NotoSansEthiopic.woff2);
+    font-display: swap;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+#app-body {
+    opacity: 0;
+}
