@@ -11,6 +11,7 @@
     "version": "npm run lint && npm run build && git add docs",
     "postversion": "git push && git push --tags",
     "build": "ng build --base-href https://eskinderg.github.io/ --configuration production && npm run lang && cd docs && rm -rf * && cd .. && cp -ra dist/browser/. docs",
+    "build-local": "ng build",
     "lang": "gulp minify",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --code-coverage --no-progress",
