@@ -63,9 +63,17 @@ export class LanguageService {
         );
     }
 
+    public get isBrowser(): boolean {
+        return isPlatformBrowser(this.platformId);
+    }
+
     private getLangPath(lang: any): string {
         if (!isDevMode()) {
-            return `assets/json/lang/${lang || 'en'}.min.json`;
+            if (this.isBrowser) {
+                return `assets/json/lang/${lang || 'en'}.min.json`;
+            } else {
+                return `assets/json/lang/${lang || 'en'}.json`;
+            }
         } else {
             return `assets/json/lang/${lang || 'en'}.json`;
         }
