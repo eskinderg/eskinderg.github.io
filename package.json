@@ -54,7 +54,7 @@
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.8",
     "@types/node": "^24.2.0",
-    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
     "@typescript-eslint/parser": "^8.39.0",
     "eslint": "^9.33.0",
     "eslint-config-prettier": "^10.1.5",
