@@ -50,7 +50,7 @@
     "@angular/cli": "^20.2.0",
     "@angular/compiler-cli": "^20.1.4",
     "@angular/language-server": "^20.2.0",
-    "@angular/language-service": "^20.1.4",
+    "@angular/language-service": "^20.2.1",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.8",
     "@types/node": "^24.3.0",
