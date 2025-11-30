@@ -59,7 +59,7 @@ describe('AppComponent', () => {
 
     it('should rende with two languages', () => {
         const langdropdown = findComponent(fixture, 'app-lang-dropdown');
-        expect(langdropdown.queryAll(By.css('.langMenuItem')).length).toEqual(2);
+        expect(langdropdown.queryAll(By.css('.lang-menu-item')).length).toEqual(2);
     });
 
     it('should render dark mode toggle component', () => {
