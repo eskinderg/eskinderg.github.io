@@ -7,23 +7,22 @@
     fill: var(--background1);
 }
 
-.separatorPath {
+.separator-path {
     transition: fill 1s ease;
 }
 
-.waveSvg {
+.wave-svg {
     width: 100%;
 }
 
 @include screen-xl {
-    .waveSvg {
+    .wave-svg {
         width: 100%;
     }
 }
 
 @include screen-2xl {
-
-    .waveSvg {
+    .wave-svg {
         width: 100%;
     }
 

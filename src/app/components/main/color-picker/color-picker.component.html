@@ -9,7 +9,7 @@
         [class.rotate]="open"
         (click)="onToggleButton()">
         <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-            <circle class="svgCircle" cx="12" cy="12" r="11" fill="none" stroke="white" stroke-width="1" />
+            <circle class="svg-circle" cx="12" cy="12" r="11" fill="none" stroke="white" stroke-width="1" />
             <path
                 d="M 11.609375 6.421875 C 13.523438 6.421875 15.105469 7.835938 15.371094 9.675781 C 14.761719 9.363281 14.070312 9.1875 13.335938 9.1875 C 12.722656 9.1875 12.140625 9.3125 11.609375 9.535156 C 11.074219 9.3125 10.492188 9.1875 9.878906 9.1875 C 9.144531 9.1875 8.453125 9.363281 7.84375 9.675781 C 8.109375 7.835938 9.695312 6.421875 11.609375 6.421875 Z M 11.609375 6.421875 " />
             <path
@@ -20,14 +20,14 @@
     </div>
 </div>
 
-<div class="btnWrapper" [class.click]="open">
+<div class="btn-wrapper" [class.click]="open">
     @for (btn of buttons; track btn) {
         <div
             (mouseover)="mouseOver(btn)"
             (mouseleave)="mouseLeave(btn)"
             appTooltip="{{ languageService.translateColor(btn.theme) }}"
             [position]="TOOLTIP_POSITION.BELOW"
-            class="miniColorBtn"
+            class="mini-color-btn"
             [ngClass]="btn.theme"
             [class.open]="open"
             (click)="onClickColor(btn)"></div>

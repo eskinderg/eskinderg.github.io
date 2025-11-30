@@ -15,7 +15,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
     styleUrls: ['./baBackTop.scss'],
     template: `
         <i #baBackTop class="ba-back-top" title="Back to Top">
-            <svg id="svg-backTo-top" width="30" viewBox="0 0 307.054 307.054">
+            <svg id="svg-back-to-top" width="30" viewBox="0 0 307.054 307.054">
                 <path
                     style="fill:#FFFFFF"
                     d="M302.445,205.788L164.63,67.959c-6.136-6.13-16.074-6.13-22.203,0L4.597,205.788c-6.129,6.132-6.129,16.069,0,22.201
@@ -33,7 +33,7 @@ export class BaBackTopComponent extends BaseComponent implements OnInit {
 
     _selector = viewChild.required<ElementRef>('baBackTop');
 
-    @HostListener('click', ['$event.target'])
+    @HostListener('click', [])
     _onClick() {
         (this.appRef.components[0].instance as AppComponent)
             .mainWrapper()

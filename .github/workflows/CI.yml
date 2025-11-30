@@ -34,6 +34,9 @@ jobs:
       - name: Lint Code
         run: npm run lint
 
+      - name: Lint Styles (CSS & SCSS)
+        run: npm run lint:css
+
       - name: Run Tests
         run: npm run test
 

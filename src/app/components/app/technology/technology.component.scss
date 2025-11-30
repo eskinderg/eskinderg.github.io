@@ -1,7 +1,6 @@
 @use '../../../styles/screen.scss' as *;
 
-.masterySubtitle {
-    font-weight: bold !important;
+.mastery-subtitle {
     text-align: center;
     display: none;
     font-weight: 700 !important;
@@ -15,13 +14,14 @@
     transition: all 0.35s;
     width: 100%;
     height: 100%;
+
     // margin: 26% 19px 0% 0%;
 }
 
 .mastery a,
 .mastery a:visited {
     display: block;
-    color: var(--text); //400
+    color: var(--text); // 400
     height: 100%;
     width: 100%;
     text-decoration-line: none;
@@ -29,10 +29,11 @@
 
 .mastery *:hover {
     transition: all 0.35s;
+
     // filter: grayscale(0%);
 }
 
-.logoMastery {
+.logo-mastery {
     // mix-blend-mode:multiply;
     width: 100%;
     height: 100%;
@@ -69,12 +70,15 @@
 .bg-tailwind {
     // display: inline-block;
     background: url('../../../../assets/img/expertin-min.webp') no-repeat;
+
     // overflow: hidden;
     // text-indent: -9999px;
     text-align: left;
+
     // width: 100px;
     // height: 100px;
     background-size: 540%;
+
     // filter: grayscale(65%);
 }
 
@@ -89,69 +93,89 @@
 .bg-angular {
     background-position: -0% -0%;
 }
+
 .bg-bootstrap {
     background-position: 23% 0%;
 }
+
 .bg-css {
     background-position: 46% 0%;
 }
+
 .bg-facebook {
     background-position: 69% 0%;
 }
+
 .bg-foundation {
     background-position: 0% 14%;
 }
+
 .bg-git {
     background-position: 23% 13%;
 }
+
 .bg-google {
     background-position: 46% 14%;
 }
+
 .bg-gulp {
     background-position: 69% 13%;
 }
+
 .bg-html {
     background-position: 92% 13%;
 }
+
 .bg-illustrator {
     background-position: 0% 27%;
 }
+
 .bg-javascript {
     background-position: 23% 27%;
 }
+
 .bg-jquery {
     background-position: 46% 27%;
 }
+
 .bg-karma {
     background-position: 69% 27%;
 }
+
 .bg-mongo {
     background-position: 92% 27%;
 }
+
 .bg-mysql {
     background-position: 0% 40%;
 }
+
 .bg-photoshop {
     background-position: 23% 40%;
 }
+
 .bg-php {
     background-position: 46% 40%;
 }
+
 .bg-typescript {
     background-position: 69% 40%;
 }
+
 .bg-webpack {
     background-position: 92% 40%;
 }
+
 .bg-sass {
     background-position: 0% 53%;
 }
+
 .bg-tailwind {
     background-position: 92% 0%;
 }
 
 @include screen-xs {
-    .masterySubtitle {
+    .mastery-subtitle {
         display: block;
     }
 
@@ -161,7 +185,7 @@
 }
 
 @include screen-sm {
-    .masterySubtitle {
+    .mastery-subtitle {
         font-size: 0.875rem;
         line-height: 1.25rem;
     }
@@ -172,7 +196,7 @@
 }
 
 @include screen-md {
-    .masterySubtitle {
+    .mastery-subtitle {
         font-size: 0.875rem;
         line-height: 1.25rem;
     }
@@ -183,14 +207,14 @@
 }
 
 @include screen-lg {
-    .masterySubtitle {
+    .mastery-subtitle {
         font-size: 1rem; /* 16px */
         line-height: 1.5rem; /* 24px */
     }
 }
 
 @include screen-xl {
-    .masterySubtitle {
+    .mastery-subtitle {
         font-size: 1rem;
         line-height: 1.5rem;
     }

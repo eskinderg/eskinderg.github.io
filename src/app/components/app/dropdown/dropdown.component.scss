@@ -1,8 +1,17 @@
 @use '../../../styles//screen.scss' as *;
 
+.menu-item a {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    text-decoration-line: none;
+}
+
 :host {
     width: 100%;
     cursor: pointer;
+
     a,
     a:visited,
     a:hover,
@@ -11,12 +20,11 @@
     }
 }
 
-.menuBtn {
+.menu-btn {
     position: relative;
     transition: all 1s ease;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     justify-content: center;
     align-items: center;
     color: #fff;
@@ -48,29 +56,22 @@ svg {
     border-top-right-radius: 0;
     left: 0;
     flex-direction: column;
+
     // background-color: var(--background1);
     background-color: #424242;
 }
 
-.showDropMenu {
+.show-drop-menu {
     visibility: visible;
     opacity: 1;
 }
 
-.menuItem a {
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem;
-    margin: 0.25rem;
-    text-decoration-line: none;
-}
-
-.menuItem > a > * {
+.menu-item > a > * {
     margin: 0.5rem;
     font-size:1rem;
 }
 
-.menuItem:hover {
+.menu-item:hover {
     // background-color: var(--background2);
     // background-color: var(--lighter);
     background: #4f4e4e;

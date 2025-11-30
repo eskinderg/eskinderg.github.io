@@ -1,13 +1,13 @@
 <div class="mastery">
     @if (item.link) {
         <a [href]="item.link" [ariaLabel]="'Read more'" target="_blank">
-            <div class="logoMastery" [ngClass]="item.img" alt=""></div>
-            <div class="masterySubtitle">
+            <div class="logo-mastery" [ngClass]="item.img" alt=""></div>
+            <div class="mastery-subtitle">
                 {{ item.title }}
             </div>
         </a>
     } @else {
-        <div class="logoMastery" [ngClass]="item.img" alt=""></div>
-        <div class="bold center masterySubtitle">{{ item.title }}</div>
+        <div class="logo-mastery" [ngClass]="item.img" alt=""></div>
+        <div class="bold center mastery-subtitle">{{ item.title }}</div>
     }
 </div>

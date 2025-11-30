@@ -1,12 +1,11 @@
-#mainWrapper {
+#main-wrapper {
     position: fixed;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden auto;
     height: 100%;
     width: 100%;
 }
 
-.viewWrapper {
+.view-wrapper {
     position: relative;
     width: 100%;
     max-width: 100%;

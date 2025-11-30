@@ -11,7 +11,7 @@
     position: absolute;
     left: 0;
     bottom: 0;
-    right: 0px;
+    right: 0;
 }
 
 svg {
@@ -23,12 +23,12 @@ svg {
     }
 }
 
-.colorBtn {
+.color-btn {
     box-shadow: 1px 1px 9px -2px black;
     border-radius: 100%;
 }
 
-.shadowButton {
+.shadow-button {
     box-shadow: 1px 1px 9px -2px black;
 }
 
@@ -40,20 +40,21 @@ svg {
 }
 
 .fab-container {
-    display: flex;
     border-radius: 50%;
     flex-direction: column;
     align-items: center;
+
     // position: fixed;
     z-index: 99;
     display: flex;
+
     // top: 0.5rem;
     // left: 1rem;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
+    // -webkit-box-orient: horizontal;
+    // -webkit-box-direction: normal;
 }
 
-.btnWrapper {
+.btn-wrapper {
     // visibility: hidden;
     position: absolute;
     opacity: 0;
@@ -66,12 +67,12 @@ svg {
     left: auto;
 }
 
-.btnWrapper.click {
+.btn-wrapper.click {
     pointer-events: auto;
     opacity: 1;
 }
 
-.miniColorBtn {
+.mini-color-btn {
     opacity: 0;
     pointer-events: none;
     background: var(--primary);
@@ -85,7 +86,7 @@ svg {
     animation-name: slide-out;
 }
 
-.miniColorBtn.open {
+.mini-color-btn.open {
     // opacity: 0;
     user-select: none;
     pointer-events: auto;
@@ -101,7 +102,7 @@ svg {
 }
 
 @for $i from 1 through 12 {
-    .miniColorBtn:nth-child(#{$i}n) {
+    .mini-color-btn:nth-child(#{$i}n) {
         animation-delay: #{(12 - $i) * 40}ms;
         opacity: 1;
         transform: translateY(0);
@@ -109,7 +110,7 @@ svg {
 }
 
 @for $i from 1 through 12 {
-    .miniColorBtn.open:nth-child(#{$i}n) {
+    .mini-color-btn.open:nth-child(#{$i}n) {
         animation-delay: #{$i * 40}ms;
         opacity: 0;
         transform: translateY(30px);
@@ -121,6 +122,7 @@ svg {
         transform: translateY(30px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
@@ -132,6 +134,7 @@ svg {
         transform: translateY(0);
         opacity: 1;
     }
+
     to {
         transform: translateY(30px);
         opacity: 0;
@@ -141,6 +144,7 @@ svg {
 .fab-toggler {
     transition: transform 0.5s ease;
     float: right;
+
     // padding: 2px;
     border-radius: 50%;
     z-index: 100;
@@ -150,6 +154,7 @@ svg {
     align-items: center;
     cursor: pointer;
     justify-content: center;
+
     // box-shadow: 1px 1px 9px -2px black;
     // border: 1px solid #DCDCDD;
 }
@@ -162,10 +167,7 @@ svg {
 
 #fab-dismiss {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     z-index: 99;
 }
 
@@ -175,7 +177,8 @@ svg {
         height: 3rem;
         padding: 3px;
     }
-    .btnWrapper {
+
+    .btn-wrapper {
         flex-direction: row;
         top: 6%;
         left: 100%;
@@ -191,12 +194,12 @@ svg {
     }
 }
 
-@media (max-height: 540px) {
+@media (height <= 540px) {
     // .fab-toggler {
     //     width: 3.5rem;
     //     height: 3.5rem;
     // }
-    .btnWrapper {
+    .btn-wrapper {
         flex-direction: row;
         top: 6%;
         left: 100%;

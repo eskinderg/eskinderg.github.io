@@ -5,25 +5,34 @@ html {
 }
 
 *,
-:before,
-:after {
+::before,
+::after {
     box-sizing: border-box;
-}
-
-*:focus {
-    outline: none;
 }
 
 * {
     -webkit-tap-highlight-color: transparent;
 }
 
-.loading-screen {
-    background-color: var(--primary);
+*:focus {
+    outline: none;
 }
 
-.progress {
+.loading-screen {
     background-color: var(--primary);
+    display: none;
+    width: 100vw;
+
+    // height: 100vh;
+    height: 8px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+}
+
+.loading-screen.show {
+    display: block;
 }
 
 .center {
@@ -36,43 +45,43 @@ h3,
 h4,
 h5,
 p {
-    margin: 0px;
+    margin: 0;
 }
 
 .h1 {
     font-size: 50px;
-    color: rgb(27, 40, 48);
+    color: rgb(27 40 48);
     font-weight: bold;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .h2 {
     font-size: 36px;
     color: var(--primary);
     font-weight: 700;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .h3 {
     font-size: 20px;
     color: var(--text);
     font-weight: bold;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .h4 {
     font-size: 16px;
     color: var(--text);
     font-weight: bold;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .bold {
     font-weight: bold;
 }
 
-.colorWhite {
-    color: #ffffff;
+.color-white {
+    color: #fff;
 }
 
 p {
@@ -97,7 +106,7 @@ object {
 body {
     margin: 0;
     font-size: 20px;
-    font-family: 'Raleway';
+    font-family: Raleway;
     background-color: var(--background1);
     box-sizing: border-box;
     transition: background-color 1s ease;
@@ -107,21 +116,6 @@ body {
 
 /* Progress Bar */
 
-.loading-screen {
-    display: none;
-    width: 100vw;
-    //height: 100vh;
-    height: 8px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 10000;
-}
-
-.loading-screen.show {
-    display: block;
-}
-
 .progress {
     position: absolute;
     top: 0;
@@ -129,8 +123,9 @@ body {
     height: 8px;
     display: block;
     width: 100vw;
-    border-radius: 0px;
+    border-radius: 0;
     background-clip: padding-box;
+    background-color: var(--primary);
     margin: 0;
     overflow: hidden;
     z-index: 10001;
@@ -138,11 +133,11 @@ body {
 }
 
 .progress .indeterminate {
-    background-color: #ffffff;
+    background-color: #fff;
     z-index: 10100;
 }
 
-.progress .indeterminate:before {
+.progress .indeterminate::before {
     content: '';
     z-index: 1002;
     position: absolute;
@@ -151,11 +146,10 @@ body {
     left: 0;
     bottom: 0;
     will-change: left, right;
-    -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
     animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
 }
 
-.progress .indeterminate:after {
+.progress .indeterminate::after {
     content: '';
     position: absolute;
     z-index: 1002;
@@ -164,13 +158,11 @@ body {
     left: 0;
     bottom: 0;
     will-change: left, right;
-    -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
     animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
-    -webkit-animation-delay: 1.15s;
     animation-delay: 1.15s;
 }
 
-@-webkit-keyframes indeterminate {
+@keyframes indeterminate {
     0% {
         left: -35%;
         right: 100%;
@@ -204,7 +196,7 @@ body {
     }
 }
 
-@-webkit-keyframes indeterminate-short {
+@keyframes indeterminate-short {
     0% {
         left: -200%;
         right: 100%;
@@ -238,12 +230,12 @@ body {
     }
 }
 
-.svgCircle {
+.svg-circle {
     display: none;
 }
 
 @include screen-xl {
-    .svgCircle {
+    .svg-circle {
         display: block;
     }
 }
@@ -251,7 +243,7 @@ body {
 @include screen-xl {
     *::-webkit-scrollbar {
         transition: background-color 1s ease;
-        background-color: var(--light); //200
+        background-color: var(--light); // 200
         width: 1rem;
     }
 
@@ -266,7 +258,7 @@ body {
     }
 
     *::-webkit-scrollbar-thumb:hover {
-        background: var(--light); //800
+        background: var(--light); // 800
     }
 
     *::-webkit-scrollbar-track {

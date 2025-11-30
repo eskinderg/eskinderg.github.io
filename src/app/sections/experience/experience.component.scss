@@ -1,17 +1,15 @@
 @use '../../styles/screen.scss' as *;
 
 .experience {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 0 5%;
     background: var(--background2);
-    padding-top: 0px;
-    padding-bottom: 0px;
     box-sizing: border-box;
     overflow: hidden;
     transition: background-color 1s ease;
 }
+
 .experience .h2 {
-    margin: 5% 0% 5% 0%;
+    margin: 5% 0%;
 }
 
 @include screen-md {

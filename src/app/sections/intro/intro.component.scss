@@ -1,6 +1,6 @@
 @use '../../styles/screen.scss' as *;
 
-.titleIntro {
+.title-intro {
     position: absolute;
     font-weight: 700;
     top: 40%;
@@ -10,7 +10,7 @@
     max-width: 80%;
 }
 
-.introSvg {
+.intro-svg {
     width: 100%;
 }
 
@@ -26,13 +26,13 @@
     }
 }
 
-.icon_links {
+.icon-links {
     display: flex;
     flex-direction: row;
     margin-top: 0.25rem;
 }
 
-.icon_links a {
+.icon-links a {
     margin: 8px !important;
     text-decoration: none !important;
     display: block;
@@ -47,35 +47,35 @@
     height: calc(30vh - 0px);
 }
 
-.introIcons {
+.intro-icons {
     width: 1.25rem;
     height: 1.25rem;
 }
 
-.introTitle {
+.intro-title {
     font-size: 1.75rem;
 }
 
-.introSubTitle {
+.intro-sub-title {
     margin-top: 8px;
     font-weight: bold;
     font-size: 1.25rem;
 }
 
 @include screen-xxs {
-    .introTitle {
+    .intro-title {
         font-size: 2rem;
     }
 
-    .introSubTitle {
+    .intro-sub-title {
         font-size: 1.5rem;
     }
 
-    .icon_links {
+    .icon-links {
         margin-top: 0.5rem;
     }
 
-    .introIcons {
+    .intro-icons {
         width: 1.75rem;
         height: 1.75rem;
     }
@@ -87,36 +87,38 @@
 }
 
 @include screen-xs {
-    .introTitle {
+    .intro-title {
         font-size: 2.25rem;
     }
 
-    .introSubTitle {
+    .intro-sub-title {
         font-size: 1.5rem;
     }
 
-    .icon_links {
+    .icon-links {
         margin-top: 0.75rem;
     }
 
-    .introIcons {
+    .intro-icons {
         width: 2rem;
         height: 2rem;
     }
+
     .intro {
         height: calc(40vh - 0px);
     }
 }
 
 @include screen-sm {
-    .introTitle {
+    .intro-title {
         font-size: 2.5rem;
     }
 
-    .introSubTitle {
+    .intro-sub-title {
         font-size: 1.75rem;
     }
-    .icon_links {
+
+    .icon-links {
         margin-top: 1rem;
     }
 
@@ -126,19 +128,19 @@
 }
 
 @include screen-md {
-    .introTitle {
+    .intro-title {
         font-size: 2.75rem;
     }
 
-    .introSubTitle {
+    .intro-sub-title {
         font-size: 2rem;
     }
 
-    .icon_links {
+    .icon-links {
         margin-top: 1.5rem;
     }
 
-    .introIcons {
+    .intro-icons {
         width: 2.5rem;
         height: 2.5rem;
     }
@@ -149,20 +151,19 @@
 }
 
 @include screen-lg {
-
-    .introTitle {
+    .intro-title {
         font-size: 3rem;
     }
 
-    .introSubTitle {
+    .intro-sub-title {
         font-size: 2.25rem;
     }
 
-    .icon_links {
+    .icon-links {
         margin-top: 2.5rem;
     }
 
-    .introIcons {
+    .intro-icons {
         width: 3rem;
         height: 3rem;
     }
@@ -177,16 +178,15 @@
 }
 
 @include screen-xl {
-
-    .introSvg {
+    .intro-svg {
         width: 100%;
     }
 
-    .introTitle {
+    .intro-title {
         font-size: 3rem;
     }
 
-    .introSubTitle {
+    .intro-sub-title {
         font-size: 2.25rem;
     }
 
@@ -196,8 +196,7 @@
 }
 
 @include screen-2xl {
-
-    .introSvg {
+    .intro-svg {
         width: 100%;
     }
 

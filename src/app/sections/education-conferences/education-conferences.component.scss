@@ -7,17 +7,18 @@
 
 .app-divider {
     background-color: var(--background2);
+
     path {
         fill: var(--background1);
     }
 }
 
-.graduationHat {
+.graduation-hat {
     fill: var(--background2);
 }
 
-.educationItem,
-.conferenceItem {
+.education-item,
+.conference-item {
     margin-bottom: 48px;
     position: relative;
     z-index: 10;
@@ -25,7 +26,7 @@
 
 .education,
 .conferences,
-.educationConferencesWrapper {
+.education-conferences-wrapper {
     // background-color: #eee;
 
     position: relative;
@@ -39,46 +40,42 @@
     text-align: left;
 }
 
-.educationConferencesWrapper {
+.education-conferences-wrapper {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 0;
-    padding-bottom: 0;
+    flex-flow: row wrap;
+    padding: 0 5%;
     transition: background-color 1s ease;
     background-color: var(--background1);
 }
 
-.educationTitle {
+.education-title {
     margin: 7% 0%;
 }
 
-.educationSVG {
+.education-svg {
     position: absolute;
     right: 0;
     z-index: 5;
     margin-top: 5%;
 }
 
-.conferencesSVG {
+.conferences-svg {
     position: absolute;
     margin-top: 280px;
     left: 0;
     z-index: 5;
 }
 
-.addRightMargin {
+.add-right-margin {
     margin-right: -10%;
 }
 
-.addLeftMargin {
+.add-left-margin {
     margin-left: -10%;
 }
 
 @include screen-sm {
-    .educationConferencesWrapper {
+    .education-conferences-wrapper {
         padding-left: 10%;
         padding-right: 10%;
     }

@@ -1,4 +1,5 @@
 @use '../../../styles//screen.scss' as *;
+
 $height: 52px;
 
 .ba-back-top {
@@ -20,6 +21,7 @@ $height: 52px;
     background-color: var(--primary);
     border-radius: 50%;
     line-height: 40px;
+
     // &:hover {
     //     opacity: 1;
     // }
@@ -44,13 +46,13 @@ $height: 52px;
     }
 }
 
-#svg-backTo-top {
+#svg-back-to-top {
     margin-top: 8px;
     position: absolute;
     left: 12px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (width <= 768px) {
     .ba-back-top {
         width: 36px;
         height: 36px;
@@ -58,7 +60,7 @@ $height: 52px;
         bottom: 1rem !important;
     }
 
-    #svg-backTo-top {
+    #svg-back-to-top {
         margin-top: 7px;
         position: absolute;
         left: 4px;

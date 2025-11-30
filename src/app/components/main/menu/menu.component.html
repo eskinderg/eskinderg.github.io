@@ -1,20 +1,20 @@
 <div
     appTooltip="{{ languageService.texts.menu.tooltip }}"
     color="primary"
-    class="MenuButton menu-toggle"
+    class="menu-button menu-toggle"
     [class.open]="visible"
-    [class.btnShadow]="visible"
+    [class.btn-shadow]="visible"
     (click)="toggleMenu()"
     (window:scroll)="onScroll($event)">
     <svg width="24" height="24" viewBox="0 0 24 24">
-        <circle class="svgCircle" cx="12" cy="12" r="11" fill="none" stroke="white" stroke-width="1" />
+        <circle class="svg-circle" cx="12" cy="12" r="11" fill="none" stroke="white" stroke-width="1" />
         <rect class="line top" x="6" y="7" width="12" height="1" rx="1" />
         <rect class="line middle" x="6" y="11" width="12" height="1" rx="1" />
         <rect class="line bottom" x="6" y="15" width="12" height="1" rx="1" />
     </svg>
 </div>
 
-<div class="MenuFullscreen" [class.open]="visible">
+<div class="menu-fullscreen" [class.open]="visible">
     <div class="menu-list">
         <nav>
             @for (item of languageService.texts.menu.list; track item) {

@@ -1,6 +1,8 @@
 @use '../../styles/screen.scss' as *;
 
 .envelope {
+    margin: 0 0 0 -140px;
+
     path {
         transition: fill 1s ease;
         fill: var(--background1) !important;
@@ -13,7 +15,7 @@
     background: var(--background2);
 }
 
-.separatorPath {
+.separator-path {
     transition: fill 1s ease;
     fill: var(--background1);
 }
@@ -24,23 +26,17 @@
     flex: 1 1 100%;
     align-items: center;
     text-align: center;
-    color: white;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding: 5%;
     gap: 5%;
     transition: background-color 1s ease;
     background-color: var(--background2);
     width: 100%;
     box-sizing: border-box;
     position: relative;
-    padding-top: 5%;
-    padding-bottom: 5%;
     color: var(--muted);
 }
-.envelope {
-    margin: 0 0 0 -140px;
-}
-.contactIntro {
+
+.contact-intro {
     box-sizing: border-box;
     width: 100%;
     font-family: sans-serif;
@@ -51,16 +47,14 @@
 
 .contact-info {
     display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
+    flex-flow: column nowrap;
     gap: 1rem;
     align-items: center;
 }
 
 .contactrow {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
     gap: 1rem;
 }
 
@@ -68,29 +62,35 @@
     float: right;
     width: 100%;
 }
+
 .input {
     width: 100%;
 }
+
 .contact-form {
     margin-top: 32px;
 }
+
 .message {
     margin-top: 24px;
 }
+
 .horizontal-line {
     transition: background-color 1s ease;
     background-color: var(--background2);
     padding: 2%;
 }
+
 .logo {
     float: left;
     width: 89px;
     height: 68px;
 }
+
 .copyrights {
-    color: white;
     font-size: 0.875rem;
     line-height: 1.25rem;
+
     // padding: 16px;
     text-align: center;
     color: var(--muted);
@@ -99,6 +99,7 @@
 .year {
     font-size: 1.5rem;
 }
+
 .footer {
     transition: background-color 1s ease;
     background-color: var(--background2);
@@ -116,6 +117,7 @@
 
 .phone {
     text-decoration: none;
+
     // color: lightblue;
     color: var(--muted);
 }
@@ -139,7 +141,7 @@
     flex: 1 1 60%;
 }
 
-.waveSvg {
+.wave-svg {
     width: 100%;
 }
 
@@ -149,7 +151,7 @@
         line-height: 2rem;
     }
 
-    .contactIntro {
+    .contact-intro {
         font-size: 1.5rem;
         line-height: 2rem;
     }
@@ -163,16 +165,14 @@
 
     .contact-info {
         display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
+        flex-flow: column nowrap;
         gap: 1rem;
         align-items: center;
     }
 
     .contactrow {
         display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        flex-flow: row nowrap;
         gap: 1rem;
     }
 }
@@ -185,6 +185,7 @@
     .left {
         display: block;
     }
+
     .item {
         display: block;
     }
@@ -204,16 +205,17 @@
 }
 
 @include screen-xl {
-    .waveSvg {
+    .wave-svg {
         width: 100%;
     }
+
     .contact-info {
         align-items: center;
     }
 }
 
 @include screen-2xl {
-    .waveSvg {
+    .wave-svg {
         width: 100%;
     }
 }

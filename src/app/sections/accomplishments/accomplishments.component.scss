@@ -9,7 +9,7 @@
     fill: var(--background2);
 }
 
-.ribbonSVG {
+.ribbon-svg {
     display: none;
 }
 
@@ -42,28 +42,28 @@
     margin-bottom: 35px;
 }
 
-.accomplishmentIcon {
+.accomplishment-icon {
     display: none;
 }
 
-.leftItem {
+.left-item {
     text-align: left;
 }
 
-.rightItem {
+.right-item {
     text-align: left;
 }
 
 @include screen-lg {
-    .ribbonSVG {
+    .ribbon-svg {
         display: block;
     }
 
-    .leftItem {
+    .left-item {
         text-align: right;
     }
 
-    .accomplishmentIcon {
+    .accomplishment-icon {
         display: block;
         flex: 1 1 80%;
     }

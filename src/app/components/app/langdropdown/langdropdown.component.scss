@@ -16,12 +16,12 @@
     border-radius: 50%;
 }
 
-.langSelect {
+.lang-select {
     // box-shadow: 4px 6px 5px 0px rgb(0 0 0 / 10%);
     border-radius: 50%;
 }
 
-.langMenu {
+.lang-menu {
     position: absolute;
     visibility: hidden;
     padding: 4px;
@@ -32,6 +32,7 @@
         visibility 0s,
         opacity 0.25s linear;
     display: flex;
+
     // background-color: var(--background2);
     flex-direction: column;
     width: auto;
@@ -39,35 +40,39 @@
     z-index: 1000;
 }
 
-.showLangDropMenu {
+.show-lang-drop-menu {
     transition:
         visibility 1s,
         opacity 1s ease;
     visibility: visible;
     opacity: 1;
+
     // box-shadow: 1px 3px 8px 0px black;
     border-radius: 0.5rem;
     border: 1px solid var(--lighter);
+
     // padding: 0.25rem 0 0.25rem 0;
     // padding: 0.5rem;
 }
 
-.langMenuItem {
+.lang-menu-item {
     display: flex;
     flex-direction: row;
     padding: 0.25rem 0.5rem;
 }
 
-.langMenuItem:hover {
+.lang-menu-item:hover {
     background: #4f4e4e;
 }
 
-.langText {
+.lang-text {
     color: #fff;
     width: 100%;
-    padding: 0rem 1.5rem 0rem 0.35rem;
+    padding: 0 1.5rem 0 0.35rem;
+
     // padding: 0.5rem;
     text-align: right;
+
     // border: 1px solid #2f2f2f;
     border-top: none;
 }
@@ -90,7 +95,7 @@
 }
 
 @include screen-md {
-    .langMenu {
+    .lang-menu {
         right: 5rem;
         top: 3.5rem;
     }
@@ -111,24 +116,28 @@
         }
     }
 
-    .langText {
+    .lang-text {
         color: #fff;
         width: 100%;
         padding: 0.5rem 2rem 0.5rem 0.75rem;
+
         // padding: 0.5rem;
         text-align: right;
+
         // border: 1px solid #2f2f2f;
         border-top: none;
     }
 
-    .showLangDropMenu {
+    .show-lang-drop-menu {
         transition:
             visibility 1s,
             opacity 1s ease;
         visibility: visible;
         opacity: 1;
+
         // box-shadow: 1px 3px 8px 0px black;
         border-radius: 0.5rem;
+
         // border: 1px solid var(--light);
         // padding: 0.25rem 0 0.25rem 0;
     }

@@ -1,4 +1,4 @@
-<div (click)="onClick()" class="menuBtn" [style.font-family]="languageService.texts.font.menu">
+<div (click)="onClick()" class="menu-btn" [style.font-family]="languageService.texts.font.menu">
     <span> {{ languageService.texts.about.button.title }} </span>
     &nbsp; &nbsp;
     <img
@@ -7,8 +7,8 @@
         [width]="30"
         [height]="22"
         alt="Download File" />
-    <div class="menu" [ngClass]="{ showDropMenu: visible }">
-        <div class="menuItem">
+    <div class="menu" [ngClass]="{ 'show-drop-menu': visible }">
+        <div class="menu-item">
             <a href="assets/pdf/Eskinder-CV.pdf" target="_blank">
                 <!-- <img src="assets/img/pdf.webp" [width]="30" />&nbsp; -->
 
@@ -21,7 +21,7 @@
                 <div class="text">{{ languageService.texts.about.pdf }}</div>
             </a>
         </div>
-        <div class="menuItem">
+        <div class="menu-item">
             <a (click)="onDocxDownload()" href="assets/doc/Eskinder-CV.docx">
                 <!-- <img src="assets/img/docx.webp" [width]="30" />&nbsp; -->
 

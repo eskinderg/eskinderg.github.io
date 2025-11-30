@@ -10,13 +10,14 @@
     fill: var(--background2);
 }
 
-.mainStar {
+.main-star {
     fill: var(--background1);
 }
 
 .grid-layout {
     display: grid;
     justify-content: center;
+
     // grid-gap: 4% 4%;
     grid-template-columns: repeat(auto-fill, 20%);
     grid-auto-rows: 1fr;
@@ -43,58 +44,61 @@
 
 .expertin {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     padding-top: 5%;
     padding-bottom: 5%;
+
     // padding-left: 2%;
     // padding-right: 2%;
     transition: background-color 1s ease;
     background-color: var(--background2);
+
     // width: 100%;
 }
 
-.titleExpertin {
+.title-expertin {
     flex: 1 1 100%;
     text-align: center;
 }
-.expertinSVG {
+
+.expertin-svg {
     flex: 1 1 30%;
     display: none;
     margin-top: 32px;
     box-sizing: border-box;
     overflow: hidden;
 }
-.expertInContent {
+
+.expert-in-content {
     flex: 1 1 100%;
     margin-top: 5%;
     box-sizing: border-box;
 }
-.expertInContent button {
+
+.expert-in-content button {
     margin-top: 24px;
 }
 
-.technologyList {
+.technology-list {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fill, 25%);
 }
 
 @include screen-xs {
-    .technologyList {
+    .technology-list {
         grid-template-columns: repeat(auto-fill, 20%);
     }
 }
 
 @include screen-sm {
-    .technologyList {
+    .technology-list {
         grid-template-columns: repeat(auto-fill, 15%);
     }
 }
 
 @include screen-md {
-
-    .technologyList {
+    .technology-list {
         grid-template-columns: repeat(auto-fill, 15%);
     }
 
@@ -104,19 +108,20 @@
 }
 
 @include screen-lg {
-    .expertinSVG {
+    .expertin-svg {
         display: block;
     }
-    .technologyList {
+
+    .technology-list {
         grid-template-columns: repeat(auto-fill, 15%);
     }
-    .expertInContent {
+
+    .expert-in-content {
         flex: 1 1 70%;
     }
 }
 
 @include screen-xl {
-
     .expertin {
         padding-right: 10%;
     }
