@@ -44,8 +44,8 @@ export class OutlineComponent extends BaseComponent implements AfterViewInit {
         section().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    @HostListener('mousewheel', ['$event']) onMousewheel(event: WheelEvent) {
-        this.mouseWheelScroll.emit(event);
+    @HostListener('mousewheel', ['$event']) onMousewheel($event: Event) {
+        this.mouseWheelScroll.emit($event);
     }
 
     private wrapperRefService = inject(WrapperRefService);
