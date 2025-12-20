@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 import { BaseComponent } from 'src/app/sections/base.component';
 import { NgStyle } from '@angular/common';
 import Geezify from 'geezify-js';
+import { toEthiopian } from 'ethiopian-calendar-new';
 
 @Component({
     selector: 'app-contact',
@@ -43,8 +44,13 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
 
     public get Year(): string {
         if (this.languageService.Language === 'am') {
+            const ethYear = toEthiopian(
+                new Date().getFullYear(),
+                new Date().getMonth(),
+                new Date().getDate()
+            ).year;
             const geezify = Geezify.create();
-            return geezify.toGeez(new Date().getFullYear() - 8).toString();
+            return geezify.toGeez(ethYear).toString();
         } else {
             return this.Copyright;
         }
