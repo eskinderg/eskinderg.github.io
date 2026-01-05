@@ -105,8 +105,10 @@ object {
 
 body {
     margin: 0;
-    font-size: 20px;
-    font-family: Raleway;
+    font:
+        15px / 1.4 Raleway,
+        Arial,
+        sans-serif;
     background-color: var(--background1);
     box-sizing: border-box;
     transition: background-color 1s ease;

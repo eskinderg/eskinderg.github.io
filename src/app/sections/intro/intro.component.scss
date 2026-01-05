@@ -15,7 +15,7 @@
 }
 
 .app-divider {
-    height: 5rem;
+    height: 2rem;
     width:100%;
     transition: background-color 1s ease;
     background: var(--background2) !important;
@@ -87,6 +87,10 @@
 }
 
 @include screen-xs {
+    .app-divider {
+        height: 3rem;
+    }
+
     .intro-title {
         font-size: 2.25rem;
     }
@@ -110,6 +114,10 @@
 }
 
 @include screen-sm {
+    .app-divider {
+        height: 4rem;
+    }
+
     .intro-title {
         font-size: 2.5rem;
     }
@@ -128,6 +136,10 @@
 }
 
 @include screen-md {
+    .app-divider {
+        height: 5rem;
+    }
+
     .intro-title {
         font-size: 2.75rem;
     }

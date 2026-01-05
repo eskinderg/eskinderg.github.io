@@ -18,7 +18,7 @@
 .timeline {
     display: none;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 1.25rem;
     list-style-type: none;
 }
 
@@ -79,33 +79,17 @@
 }
 
 .timeline li {
-    padding: 1em 0;
-}
-
-.timeline li::after {
-    content: '';
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
-
-.direction-l {
-    position: relative;
-    text-align: right;
+    // padding: 2rem 0;
+    height: 4.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .direction-r {
     position: relative;
     width: 300px;
     float: right;
-}
-
-.flag-wrapper {
-    transition: all 1s ease;
-    position: relative;
-    display: inline-block;
-    text-align: center;
 }
 
 .flag {
@@ -139,14 +123,16 @@
     right: -40px;
     content: ' ';
     display: block;
-    width: 20px;
-    height: 20px;
+
+    // width: 1.25rem;
+    // height: 1.25rem;
     background: #fff;
-    margin-top: -10px;
+    margin-top: -0.6rem;
     border-radius: 10px;
     border: 4px solid lightgray;
     opacity: 0.5;
     z-index: 10;
+    padding: 0.25rem;
 }
 
 .direction-r .flag::before {
@@ -165,7 +151,7 @@
     top: 50%;
     height: 0;
     width: 0;
-    margin-top: -8px;
+    margin-top: -0.6rem;
     border: solid transparent;
     border-left-color: var(--background2);
     border-width: 8px;
@@ -179,7 +165,7 @@
     top: 50%;
     height: 0;
     width: 0;
-    margin-top: -8px;
+    margin-top: -0.6rem;
     border: solid transparent;
     border-right-color: rgb(248 248 248);
     border-width: 8px;
@@ -200,10 +186,6 @@
     background: rgb(248 248 248);
 }
 
-.direction-r .desc {
-    margin: 1em 0 0 0.75em;
-}
-
 .active::before {
     transition: all 0.5s ease;
     background-color: var(--primary) !important;
@@ -219,7 +201,7 @@
 .active {
     transition: all 0.5s ease;
     color: white;
-    font-size: 20px !important;
+    font-size: 1.25rem !important;
     background: var(--primary) !important;
 
     // box-shadow: 0px 4px 55px -4px var(--text) ! important;

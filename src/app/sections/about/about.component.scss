@@ -10,7 +10,8 @@
 }
 
 .about p {
-    line-height: 35px;
+    line-height: 1.75rem;
+    text-align: center;
 }
 
 .about-content {
@@ -63,7 +64,8 @@
 
 .intro-content {
     display: flex;
-    flex: 1 1 80%;
+    flex: 1 1 70%;
+    margin-right: 0%;
     flex-flow: column nowrap;
     box-sizing: border-box;
 }
@@ -98,23 +100,19 @@
     .profile {
         width: 12rem;
     }
+
+    .about p {
+        line-height: 2rem;
+    }
 }
 
 @include screen-sm {
     .about {
-        padding-top: 1.25rem;
+        padding-top: 0;
     }
-
-    // .profile {
-    //     width: 30%;
-    // }
 }
 
 @include screen-md {
-    .about {
-        padding-top: 2.5rem;
-    }
-
     .profile-picture {
         width: 50%;
     }
@@ -122,7 +120,7 @@
 
 @include screen-lg {
     .about {
-        padding-top: 4rem;
+        padding-top: 2rem;
     }
 
     .about-title {
@@ -145,5 +143,15 @@
 
     .content-paragraph {
         text-align: left;
+    }
+
+    .about p {
+        text-align: justify;
+    }
+}
+
+@include screen-xl {
+    .intro-content {
+        margin-right: 10% !important;
     }
 }

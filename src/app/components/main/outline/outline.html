@@ -3,16 +3,14 @@
         @for (item of languageService.texts.menu.list; track trackItem($index, item)) {
             <li>
                 <div class="direction-l">
-                    <div class="flag-wrapper">
-                        <span
-                            (click)="scrollTo(item.link)"
-                            [style.font-family]="languageService.texts['font'].outlineMenu.fontFamily"
-                            [style.font-weight]="languageService.texts['font'].outlineMenu.fontWeight"
-                            class="flag"
-                            [ngClass]="{ active: item.link === currentSection }">
-                            {{ item.name }}
-                        </span>
-                    </div>
+                    <span
+                        (click)="scrollTo(item.link)"
+                        [style.font-family]="languageService.texts['font'].outlineMenu.fontFamily"
+                        [style.font-weight]="languageService.texts['font'].outlineMenu.fontWeight"
+                        class="flag"
+                        [ngClass]="{ active: item.link === currentSection }">
+                        {{ item.name }}
+                    </span>
                 </div>
             </li>
         }
