@@ -62,7 +62,7 @@
     "eslint-plugin-change-detection-strategy": "^0.1.5",
     "eslint-plugin-prettier": "^5.5.0",
     "eslint-plugin-storybook": "^10.2.0",
-    "ethiopian-calendar-new": "^1.0.8",
+    "ethiopian-calendar-new": "^1.1.0",
     "geezify-js": "^1.0.1",
     "husky": "^9.1.7",
     "jasmine-core": "~5.13.0",
