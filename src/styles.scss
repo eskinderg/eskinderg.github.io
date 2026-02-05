@@ -7,15 +7,40 @@
     font-display: swap;
 }
 
+/* Regular */
 @font-face {
-    font-family: Monoton;
-    src: url("./assets/fonts/Pacifico-Regular.woff2");
+    font-family: "EN_US_Font";
+    src: url("./assets/fonts/EN_US/Raleway-Regular.woff2");
     font-display: swap;
 }
 
 @font-face {
-    font-family: wookianos;
-    src: url("./assets/fonts/NotoSansEthiopic.woff2");
+    font-family: "EN_Font";
+    src: url("./assets/fonts/EN/Raleway-Regular.woff2");
+    font-display: swap;
+}
+
+// @font-face {
+//     font-family: ET_Font;
+//     src: url("./assets/fonts/ET/Anbassa.woff2");
+//     font-display: swap;
+// }
+
+// @font-face {
+//     font-family: ET_Font;
+//     src: url("./assets/fonts/ET/Sur_Graphics_Regular.woff2");
+//     font-display: swap;
+// }
+
+@font-face {
+    font-family: "ET_Font_Doxa";
+    src: url("./assets/fonts/ET/habesha_doxa.woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "ET_Font";
+    src: url("./assets/fonts/ET/NotoSansEthiopic.woff2");
     font-display: swap;
 }
 

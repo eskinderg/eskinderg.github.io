@@ -1,20 +1,20 @@
 {
     "font": {
-        "body": "Raleway",
+        "body": "EN_US_Font",
         "title": {
-            "fontFamily": "Raleway",
+            "fontFamily": "EN_US_Font",
             "fontWeight": 400
         },
         "intro": {
-            "title": "Raleway",
-            "subtitle": "Raleway"
+            "title": "EN_US_Font",
+            "subtitle": "EN_US_Font"
         },
-        "menu": "Raleway",
+        "menu": "EN_US_Font",
         "outlineMenu": {
-            "fontFamily": "Raleway",
+            "fontFamily": "EN_US_Font",
             "fontWeight": 600
         },
-        "content": "Raleway"
+        "content": "EN_US_Font"
     },
     "menu": {
         "tooltip": "Main Menu",

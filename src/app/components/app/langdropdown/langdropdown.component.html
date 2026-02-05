@@ -15,7 +15,7 @@
                     class="lang-text"
                     [class.selected]="lang.code === this.languageService.Language"
                     (click)="changeLanguage(lang.code)"
-                    [style.font-family]="lang.font">
+                    [style.font-family]="lang.font.body">
                     {{ lang.title }}
                 </div>
             </div>

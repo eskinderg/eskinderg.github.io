@@ -17,6 +17,7 @@
             <div class="intro-content">
                 @for (paragraph of languageService.texts.about.content; track trackAbout($index, paragraph)) {
                     <p
+                        [style.font-family]="languageService.texts.font.about?.description?.fontFamily"
                         [style.font-size.rem]="languageService.texts.font.about?.description?.fontSize"
                         class="content-paragraph"
                         [innerHTML]="paragraph"></p>
