@@ -3,8 +3,14 @@
 .outer {
     display: flex;
     flex-wrap: wrap;
-    padding-top: 0;
-    padding-bottom: 5%;
+
+    // padding: 5% 0.5rem;
+    // border-bottom: 1px solid var(--text);
+    // margin-bottom: 2%;
+    border-radius: 1rem;
+    margin:5% 2%;
+    padding: 1rem;
+    box-shadow: 0 1px 13px 2px var(--lighter);
 }
 
 .job-year {
@@ -247,7 +253,12 @@
 
     .outer {
         flex-wrap: nowrap;
+        padding: 0 0.5rem;
+        margin:0%;
         padding-bottom: 0%;
+        border: none;
+        margin-bottom: 0;
+        box-shadow: none;
     }
 
     .order1 {

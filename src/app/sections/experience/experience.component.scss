@@ -1,7 +1,7 @@
 @use '../../styles/screen.scss' as *;
 
 .experience {
-    padding: 0 5%;
+    padding: 0 1%;
     background: var(--background2);
     box-sizing: border-box;
     overflow: hidden;
@@ -14,7 +14,7 @@
 
 @include screen-md {
     .experience {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 2%;
+        padding-right: 2%;
     }
 }
