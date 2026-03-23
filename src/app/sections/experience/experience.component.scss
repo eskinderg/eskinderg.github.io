@@ -12,9 +12,23 @@
     margin: 5% 0%;
 }
 
+@include screen-xl {
+    .experience {
+        padding-left: 15% !important;
+        padding-right: 15% !important;
+    }
+}
+
 @include screen-md {
     .experience {
-        padding-left: 2%;
-        padding-right: 2%;
+        padding-left: 13%;
+        padding-right: 13%;
+    }
+}
+
+@include screen-sm {
+    .experience {
+        padding-left: 1%;
+        padding-right: 1%;
     }
 }

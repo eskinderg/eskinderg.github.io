@@ -4,15 +4,13 @@ export const appMeta: MetaDefinition[] = [
     { name: 'title', content: 'Eskinder Getahun' },
     {
         name: 'description',
-        content:
-            'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge'
+        content: 'Hi, my name is Eskinder and I am a Full-Stack Web Developer and this is my portfolio page.'
     },
     { httpEquiv: 'Permissions-Policy', content: 'interest-cohort=()' },
     { property: 'og:title', content: 'Eskinder Getahun | Web Developer' },
     {
         property: 'og:description',
-        content:
-            'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge'
+        content: 'Hi, my name is Eskinder and I am a Full-Stack Web Developer and this is my portfolio page.'
     },
     { property: 'og:image', content: 'https://eskinderg.github.io/assets/img/eskinder.jpg' },
     { property: 'og:email', content: 'eskinderget@gmail.com' },
@@ -20,8 +18,7 @@ export const appMeta: MetaDefinition[] = [
     { property: 'og:type', content: 'website' },
     {
         name: 'description',
-        content:
-            'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge'
+        content: 'Hi, my name is Eskinder and I am a Full-Stack Web Developer and this is my portfolio page.'
     },
     { name: 'reply-to', content: 'eskinderget@gmail.com' },
     { name: 'url', content: 'https://eskinderg.github.io' },
@@ -33,20 +30,17 @@ export const appMeta: MetaDefinition[] = [
     },
     {
         name: 'description',
-        content:
-            'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge'
+        content: 'Hi, my name is Eskinder and I am a Full-Stack Web Developer and this is my portfolio page.'
     },
     { itemprop: 'name', content: 'Eskinder Getahun' },
     {
         itemprop: 'description',
-        content:
-            'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge'
+        content: 'Hi, my name is Eskinder and I am a Full-Stack Web Developer and this is my portfolio page.'
     },
     { itemprop: 'image', content: 'https://eskinderg.github.io/assets/img/eskinder.jpg' },
     {
         name: 'twitter:card',
-        content:
-            'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge'
+        content: 'Hi, my name is Eskinder and I am a Full-Stack Web Developer and this is my portfolio page.'
     },
     {
         name: 'twitter:title',
@@ -54,8 +48,7 @@ export const appMeta: MetaDefinition[] = [
     },
     {
         name: 'twitter:description',
-        content:
-            'Hi, my name is Eskinder Getahun and I am a Web Developer. This is my portfolio page and as confirmed by my portfolio content and code, I combine my knowledge'
+        content: 'Hi, my name is Eskinder and I am a Full-Stack Web Developer and this is my portfolio page.'
     },
     {
         name: 'twitter:image',
