@@ -1,25 +1,26 @@
 {
     "font": {
-        "body": "Raleway",
+        "body": "ET_Font",
         "title": {
-            "fontFamily": "wookianos",
+            "fontFamily": "ET_Font",
             "fontWeight": 500
         },
         "intro": {
-            "title": "wookianos",
-            "subtitle": "Raleway"
+            "title": "ET_Font",
+            "subtitle": "ET_Font"
         },
         "about": {
             "description": {
-                "fontSize": "1.5"
+                "fontSize": "1.25",
+                "fontFamily": "ET_Font"
             }
         },
-        "menu": "wookianos",
+        "menu": "ET_Font",
         "outlineMenu": {
-            "fontFamily": "wookianos",
+            "fontFamily": "ET_Font",
             "fontWeight": 600
         },
-        "content": "wookianos"
+        "content": "ET_Font"
     },
     "menu": {
         "tooltip": "ዋና ማዉጫ",
@@ -266,7 +267,7 @@
                 "elements": [
                     {
                         "type": "list",
-                        "header": "Key responsibilities include but not limited to:",
+                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "Provided support for different websites ",
                             "Created SPA, user interactive (UI) web pages using web technologies like HTML5, SASS, Typescript, Angular2 and Bootstrap.",
@@ -300,7 +301,7 @@
                 "elements": [
                     {
                         "type": "list",
-                        "header": "Key responsibilities include but not limited to:",
+                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "Created programs as per user / design requirements using AngularJS",
                             "Collaborated with cross-functional teams (DEV, UX/UI & BA) to define, design, and deliver creative digital solutions",
@@ -346,7 +347,7 @@
                 "elements": [
                     {
                         "type": "list",
-                        "header": "Key responsibilities include but not limited to:",
+                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "E commerce development using Agile methodologies",
                             "Full Stack web development using ASP .Net MVC, C#, Angularjs and MSSQL.",
@@ -382,7 +383,7 @@
                 "elements": [
                     {
                         "type": "list",
-                        "header": "Key responsibilities include but not limited to:",
+                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "Full Stack development using LAMP stack.",
                             "Maintained website for most up-to date technology, software, and information",
@@ -402,7 +403,7 @@
                 "elements": [
                     {
                         "type": "list",
-                        "header": "Key responsibilities include but not limited to:",
+                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "Designed visual layout of websites.",
                             "Created Stored Procedures using MSSQL.",
@@ -457,7 +458,7 @@
         "content": []
     },
     "contact": {
-        "intro": "ጥያቄ ካላችሁ ከዚህ በታች በሚገኘዉ ስልክ ቁጥር ወይም የኢሜል አድራሻ ያግኙኝ።",
+        "intro": "ለማንኛውም የድህረ ገጽ ስራ ጋር  የተገናኘ ጥያቄ ካልዎት በ ኢሜል ወይም ስልክ በመጠቀም ሊያገኙኝ  ይችላሉ።",
         "input": ["NAME", "EMAIL", "MESSAGE"],
         "mail": "eskinderget@gmail.com",
         "phone": "+251-911-184987",
