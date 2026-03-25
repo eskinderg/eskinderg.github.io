@@ -58,6 +58,36 @@
     gap: 1rem;
 }
 
+.link {
+    color: var(--primary);
+}
+
+.svg-mail {
+    width: 3rem;
+    height: 3rem;
+    fill: var(--primary);
+
+    path {
+        stroke-width: 1;
+        stroke: var(--background2);
+    }
+}
+
+.svg-phone {
+    width: 2.5rem;
+    height: 2.5rem;
+    fill: var(--primary);
+
+    path {
+        stroke-width: 1;
+        stroke: var(--background2);
+    }
+}
+
+.svg-circle {
+    display: flex;
+}
+
 .inputs {
     float: right;
     width: 100%;
@@ -112,14 +142,19 @@
     line-height: 1.75rem;
     font-weight: 100;
     text-decoration: none;
-    color: var(--muted);
+
+    // color: var(--muted);
+    display: flex;
+    align-items: center;
 }
 
 .phone {
     text-decoration: none;
+    font-size: 1.25rem;
 
     // color: lightblue;
-    color: var(--muted);
+    display: flex;
+    align-items: center;
 }
 
 .left {
