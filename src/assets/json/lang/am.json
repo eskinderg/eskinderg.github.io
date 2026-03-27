@@ -64,8 +64,8 @@
             "title": "ካሪኩለም ሺቴ",
             "tooltip": "ካሪኩለም ሺቴ አዉርድ"
         },
-        "pdf": "Adobe Acrobat Version (pdf)",
-        "word": "Word Document Version (docx)"
+        "pdf": "Adobe Acrobat (pdf)",
+        "word": "Word Document (docx)"
     },
     "technologies": {
         "title": "ቴክኖሎጂዎች",
