@@ -173,6 +173,7 @@ p {
     }
 
     background-color: var(--lightest);
+    border: 1px solid var(--lighter);
     width: 100%;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -222,6 +223,7 @@ p {
     .year-duration {
         display: inline-block;
         background-color: var(--lightest);
+        border: 1px solid var(--lighter);
         padding: 0.5rem;
         border-radius: 0.5rem;
     }
