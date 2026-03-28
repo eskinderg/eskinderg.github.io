@@ -1,0 +1,16 @@
+@use '../../../styles/screen.scss' as *;
+
+.tracker {
+    display: block;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    height: 0.5rem;
+    background-color: var(--light);
+}
+
+@include screen-lg {
+    .tracker {
+        display: none;
+    }
+}

@@ -1,6 +1,8 @@
 <div id="main-wrapper" #mainWrapper (scroll)="scrollService.updateScroll($event)">
     <app-right />
 
+    <app-tracker [position]="scrollService.scrollPosition.value" />
+
     <app-loader [Loading]="httpStatus" />
 
     <app-color-picker />

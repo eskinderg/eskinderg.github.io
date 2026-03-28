@@ -6,6 +6,7 @@ import { OutlineComponent } from './components/main/outline/outline';
 import { BaBackTopComponent } from './components/main/babacktop/babacktop.component';
 import { BaseComponent } from './sections/base.component';
 import { DynamicComponentsWrapperComponent } from './components/main/dynamic-components-wrapper.component';
+import { TrackerComponent } from './components/app/tracker/tracker.component';
 
 @Component({
     selector: 'app-root',
@@ -17,7 +18,8 @@ import { DynamicComponentsWrapperComponent } from './components/main/dynamic-com
         RightComponent,
         LoaderComponent,
         OutlineComponent,
-        BaBackTopComponent
+        BaBackTopComponent,
+        TrackerComponent
     ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })

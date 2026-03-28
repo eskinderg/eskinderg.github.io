@@ -21,7 +21,6 @@
 .conference-item {
     margin-bottom: 48px;
     position: relative;
-    z-index: 10;
 }
 
 .education,
@@ -55,7 +54,6 @@
 .education-svg {
     position: absolute;
     right: 0;
-    z-index: 5;
     margin-top: 5%;
 }
 
@@ -63,7 +61,6 @@
     position: absolute;
     margin-top: 280px;
     left: 0;
-    z-index: 5;
 }
 
 .add-right-margin {
