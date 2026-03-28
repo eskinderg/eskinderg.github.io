@@ -8,7 +8,7 @@
     // border-bottom: 1px solid var(--text);
     // margin-bottom: 2%;
     border-radius: 1rem;
-    margin:5% 2%;
+    margin: 5% 2%;
     padding: 1rem;
     box-shadow: 0 0 7px 0 var(--shadow);
 }
@@ -20,12 +20,13 @@
 .timeline-paragraph {
     transition: all 1s ease;
     color: var(--primary);
-    filter: brightness(130%);
+
+    // filter: brightness(130%);
     font-weight: bold;
 }
 
 p {
-    font-size: 0.85rem ! important;
+    font-size: 0.85rem !important;
 }
 
 .content {
@@ -39,7 +40,8 @@ p {
 .subtitle {
     transition: all 1s ease;
     color: var(--primary);
-    filter: brightness(130%);
+
+    // filter: brightness(130%);
 }
 
 .l-experience-list::after {
@@ -121,8 +123,9 @@ p {
 
 .main-title {
     transition: color 1s ease;
-    color: var(--primary);
-    filter: brightness(130%);
+    color: var(--text);
+
+    // filter: brightness(130%);
 }
 
 .left,
@@ -161,6 +164,20 @@ p {
         // border-color: none !important;
         border: none !important;
     }
+}
+
+.tag {
+    h3 {
+        // color: var(--primary) !important;
+        color: var(--text) !important;
+    }
+
+    background-color: var(--lightest);
+    width: 100%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: white !important;
+    display: inline-block;
 }
 
 .gap-top {
@@ -203,7 +220,10 @@ p {
 
 @include screen-lg {
     .year-duration {
-        display: block;
+        display: inline-block;
+        background-color: var(--lightest);
+        padding: 0.5rem;
+        border-radius: 0.5rem;
     }
 
     .experience-list-item {
@@ -258,7 +278,7 @@ p {
     .outer {
         flex-wrap: nowrap;
         padding: 0 0.5rem;
-        margin:0%;
+        margin: 0%;
         padding-bottom: 0%;
         border: none;
         margin-bottom: 0;
@@ -320,5 +340,9 @@ p {
         border-right-color: var(--lighter);
         border-width: 10px;
         pointer-events: none;
+    }
+
+    .tag {
+        width: fit-content;
     }
 }
