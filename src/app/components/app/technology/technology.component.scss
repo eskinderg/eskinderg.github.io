@@ -2,11 +2,13 @@
 
 .mastery-subtitle {
     text-align: center;
-    display: none;
+
+    // display: none;
 
     // font-weight: 700 !important;
-    font-size: 0.85rem;
-    line-height: 1rem;
+    font-size: 0.65rem;
+
+    // line-height: 1rem;
 }
 
 .mastery {
@@ -178,6 +180,7 @@
 @include screen-xs {
     .mastery-subtitle {
         display: block;
+        font-size: 0.75rem;
     }
 
     .mastery {
