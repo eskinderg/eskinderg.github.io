@@ -21,7 +21,9 @@
 
 .job-year {
     display: block;
-    color: var(--light);
+
+    // color: var(--light);
+    color: var(--text);
 
     // font-weight: bold;
     font-size: 1rem;
@@ -29,7 +31,9 @@
 
 .timeline-paragraph {
     transition: all 1s ease;
-    color: var(--primary);
+
+    // color: var(--primary);
+    color: var(--text);
 
     // filter: brightness(130%);
     font-weight: normal;
@@ -49,7 +53,9 @@ p {
 
 .subtitle {
     transition: all 1s ease;
-    color: var(--primary);
+
+    // color: var(--primary);
+    color: var(--text); // 700
     font-weight: normal;
 
     // filter: brightness(130%);
@@ -183,8 +189,9 @@ p {
 .tag {
     h3 {
         // color: var(--primary) !important;
-        // color: var(--text) !important;
-        color: var(--light) !important;
+        color: var(--text) !important;
+
+        // color: var(--light) !important;
     }
 
     background-color: var(--lightest);
@@ -233,7 +240,9 @@ p {
     display: none;
     font-size: 1rem;
     font-weight: normal;
-    color: var(--light);
+
+    // color: var(--light);
+    color: var(--text); // 700
 
 }
 
