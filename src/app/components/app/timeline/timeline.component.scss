@@ -237,7 +237,8 @@ p {
 
 }
 
-@include screen-lg {
+// @include screen-lg {
+@include screen-md {
     .year-duration {
         display: inline-block;
         background-color: var(--lightest);
