@@ -144,6 +144,7 @@
                         class="contact-title link"
                         [ngStyle]="{ 'text-decoration-line': 'none' }"
                         href="mailto:{{ languageService.texts.contact.mail }}?Subject=Hello"
+                        [ariaLabel]="'Send E-Email'"
                         target="_top">
                         <svg
                             width="800px"
@@ -162,7 +163,10 @@
                     </a>
                 </div>
                 <div class="contactrow">
-                    <a class="phone link" href="tel:{{ languageService.texts.contact.phone }}">
+                    <a
+                        class="phone link"
+                        [ariaLabel]="'Phone call'"
+                        href="tel:{{ languageService.texts.contact.phone }}">
                         <svg
                             width="800px"
                             height="800px"
