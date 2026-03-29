@@ -19,6 +19,8 @@
 
 .link {
     cursor: pointer;
+    border-top: 2px solid var(--lighter);
+    padding: 1.25rem;
 }
 
 svg {
@@ -88,7 +90,9 @@ svg {
 
     nav {
         width: 100%;
-        height: 70%;
+
+        // height: 100%;
+        // height: 70%;
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
@@ -104,7 +108,8 @@ svg {
 .menu-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
+    // justify-content: center;
     height: 100%;
     width: 100%;
 }
@@ -122,12 +127,13 @@ svg {
 
 @include screen-md {
     nav {
-        height: 80% !important;
+        height: 100% !important;
     }
 
     nav span {
         // color: var(--light) !important;
         color: #FFF !important;
+        border: none;
 
         // font-size: 3vw !important;
         font-size: 5vmin !important;
@@ -141,6 +147,7 @@ svg {
 
     .menu-list {
         width: 65%;
+        justify-content: center;
     }
 }
 

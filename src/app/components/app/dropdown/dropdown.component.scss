@@ -87,8 +87,16 @@ svg {
 //     }
 // }
 
-@include screen-xl {
+@include screen-md {
     :host {
-        width: 40% !important ;
+        width: 50% !important ;
+        align-self: center;
+    }
+}
+
+@include screen-lg {
+    :host {
+        width: 18rem !important ;
+        align-self: flex-start;
     }
 }
