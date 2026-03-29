@@ -1,5 +1,9 @@
 @use '../../styles/screen.scss' as *;
 
+:host * {
+    scroll-margin-top: 3rem;
+}
+
 .content {
     color: var(--text); // 700
     font-size: 1.25rem;

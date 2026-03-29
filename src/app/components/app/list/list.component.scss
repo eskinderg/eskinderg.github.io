@@ -3,6 +3,9 @@
 .education {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .education,
@@ -41,29 +44,37 @@
 }
 
 .education-logo {
-    width: 90px;
-    height: 90px;
+    width: 6rem;
+    height: 6rem;
 }
 
 .bg-microsoft {
-    background-position: -148px -536px;
-    width: 100px;
-    height: 100px;
+    // background-position: -148px -536px;
+    background-position: 25% 53%;
+
+    // width: 100px;
+    // height: 100px;
+    // background-size: 540%;
 }
 
 .bg-graduation {
-    background-position: -537px -540px;
+    // background-position: -537px -540px;
+    background-position: 90% 54%;
     width: 100px;
     height: 100px;
 }
 
 .logo {
     margin-right: 1.25rem;
-    display: none;
+    order: 2;
 }
 
 @include screen-lg {
     .logo {
-        display: block;
+        order: 0;
+    }
+
+    .education {
+        justify-content: flex-start;
     }
 }

@@ -1,6 +1,7 @@
 @use '../../styles//screen.scss' as *;
 
 .about {
+    scroll-margin-top: 3rem;
     position: relative;
     transition: background-color 1s ease;
     width: 100%;

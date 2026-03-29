@@ -7,14 +7,24 @@
     // padding: 5% 0.5rem;
     // border-bottom: 1px solid var(--text);
     // margin-bottom: 2%;
-    border-radius: 1rem;
+    // border-radius: 1rem;
     margin: 5% 2%;
-    padding: 1rem;
-    box-shadow: 0 0 7px 0 var(--shadow);
+
+    // padding-bottom: 1.5rem;
+    // border-bottom: 1px solid var(--light);
+}
+
+.sub-head {
+    margin-top: 1rem;
+
 }
 
 .job-year {
     display: block;
+    color: var(--light);
+
+    // font-weight: bold;
+    font-size: 1rem;
 }
 
 .timeline-paragraph {
@@ -22,7 +32,7 @@
     color: var(--primary);
 
     // filter: brightness(130%);
-    font-weight: bold;
+    font-weight: normal;
 }
 
 p {
@@ -40,6 +50,7 @@ p {
 .subtitle {
     transition: all 1s ease;
     color: var(--primary);
+    font-weight: normal;
 
     // filter: brightness(130%);
 }
@@ -73,7 +84,7 @@ p {
     position: relative;
     color: #585858;
     font-size: 13px;
-    margin: 20px 0;
+    margin: 1rem 0;
     line-height: 19px;
 }
 
@@ -83,6 +94,8 @@ p {
     padding: 0.5rem;
     width: fit-content;
     border-radius: 7px;
+
+    // background: var(--lightest);
 }
 
 .left-flex-layout {
@@ -122,6 +135,7 @@ p {
 }
 
 .main-title {
+    font-weight: normal;
     transition: color 1s ease;
     color: var(--text);
 
@@ -169,13 +183,14 @@ p {
 .tag {
     h3 {
         // color: var(--primary) !important;
-        color: var(--text) !important;
+        // color: var(--text) !important;
+        color: var(--light) !important;
     }
 
     background-color: var(--lightest);
     border: 1px solid var(--lighter);
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     color: white !important;
     display: inline-block;
@@ -216,7 +231,10 @@ p {
 
 .year-duration {
     display: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--light);
+
 }
 
 @include screen-lg {
@@ -226,6 +244,8 @@ p {
         border: 1px solid var(--lighter);
         padding: 0.5rem;
         border-radius: 0.5rem;
+        font-weight: normal;
+        font-size: 1rem;
     }
 
     .experience-list-item {
@@ -313,7 +333,7 @@ p {
     }
 
     .experience-list {
-        margin: 20px 0;
+        margin: 1rem -0.25rem;
     }
 
     .left-item-flex-layout::after {
