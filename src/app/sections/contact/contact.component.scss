@@ -5,7 +5,7 @@
 }
 
 .envelope {
-    margin: 0 0 0 -140px;
+    margin: 0 0 0 -16rem;
 
     path {
         transition: fill 1s ease;
@@ -51,7 +51,7 @@
 
     // background-color: var(--lightest);
     background: var(--background1);
-    padding: 1rem;
+    padding: 2rem 1rem;
     border-radius: 0.5rem;
 }
 
@@ -66,6 +66,11 @@
     display: flex;
     flex-flow: row nowrap;
     gap: 1rem;
+    padding: 0.25rem 0.5rem;
+    background: var(--primary);
+
+    // background: var(--light);
+    border-radius: 0.5rem;
 }
 
 .link {
@@ -79,18 +84,23 @@
 
     path {
         stroke-width: 1;
-        stroke: var(--background2);
+
+        // stroke: var(--background2);
+        stroke: #fff;
     }
 }
 
 .svg-phone {
+    margin: 0.25rem;
     width: 2.5rem;
     height: 2.5rem;
     fill: var(--primary);
 
     path {
         stroke-width: 1;
-        stroke: var(--background2);
+
+        // stroke: var(--background2);
+        stroke: #fff;
     }
 }
 
@@ -148,22 +158,26 @@
 }
 
 .contact-title {
-    font-size: 1.25rem;
+    font-size: 1rem;
     line-height: 1.75rem;
     font-weight: 100;
     text-decoration: none;
 
     // color: var(--muted);
+    color: #fff;
     display: flex;
+    gap: 0.5rem;
     align-items: center;
 }
 
 .phone {
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
 
     // color: lightblue;
+    color: #fff;
     display: flex;
+    gap: 0.5rem;
     align-items: center;
 }
 
@@ -190,7 +204,10 @@
     width: 100%;
 }
 
-@include screen-md {
+// @include screen-md {
+// }
+
+@include screen-lg {
     .contact-title {
         font-size: 1.5rem;
         line-height: 2rem;
@@ -199,6 +216,11 @@
     .contact-intro {
         font-size: 1.5rem;
         line-height: 2rem;
+    }
+
+    .phone {
+        text-decoration: none;
+        font-size: 1.25rem;
     }
 
     .contact {
@@ -219,10 +241,13 @@
         display: flex;
         flex-flow: row nowrap;
         gap: 1rem;
-    }
-}
 
-@include screen-lg {
+        // background: var(--primary);
+        // background: var(--light);
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
+
     .app-divider {
         height: 6rem;
     }
@@ -242,10 +267,6 @@
 
     .saying {
         display: block;
-    }
-
-    .contact-info {
-        align-items: center;
     }
 }
 
