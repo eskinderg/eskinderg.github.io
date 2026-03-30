@@ -46,6 +46,9 @@ h4,
 h5,
 p {
     margin: 0;
+    transition:
+        background-color,
+        color 1s ease;
 }
 
 .h1 {

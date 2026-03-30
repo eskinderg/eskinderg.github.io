@@ -1,5 +1,9 @@
 @use '../../styles/screen.scss' as *;
 
+* {
+    transition: all 1s ease;
+}
+
 .envelope {
     margin: 0 0 0 -140px;
 
@@ -43,6 +47,12 @@
     color: var(--muted);
     font-size: 1.25rem;
     line-height: 1.75rem;
+    border: 1px solid var(--lightest);
+
+    // background-color: var(--lightest);
+    background: var(--background1);
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
 
 .contact-info {

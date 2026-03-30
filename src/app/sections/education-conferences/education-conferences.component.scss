@@ -1,8 +1,7 @@
 @use '../../styles/screen.scss' as *;
 
-:host * {
-    transition: background-color 1s ease;
-    transition: fill 1s ease;
+* {
+    transition: all 1s ease;
     scroll-margin-top: 3rem;
 }
 
@@ -18,11 +17,11 @@
     fill: var(--background2);
 }
 
-.education-item,
-.conference-item {
-    margin-bottom: 48px;
-    position: relative;
-}
+// .education-item,
+// .conference-item {
+//     margin-bottom: 48px;
+//     position: relative;
+// }
 
 .education,
 .conferences,
@@ -46,6 +45,8 @@
     padding: 0 5%;
     transition: background-color 1s ease;
     background-color: var(--background1);
+    justify-content: center;
+    padding-bottom: 10%;
 }
 
 .education-title {
@@ -53,7 +54,7 @@
 }
 
 .education-svg {
-    position: absolute;
+    // position: absolute;
     right: 0;
     margin-top: 5%;
 }
@@ -72,9 +73,41 @@
     margin-left: -10%;
 }
 
+.education-content {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+}
+
+.education-left {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+}
+
+.education-right {
+    display: none;
+}
+
+@include screen-xl {
+    .education-right {
+        display: block;
+    }
+}
+
+@include screen-md {
+    .education-conferences-wrapper {
+        padding-bottom: 5%;
+    }
+
+    .education-left {
+        gap: 2rem;
+    }
+}
+
 @include screen-sm {
     .education-conferences-wrapper {
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }

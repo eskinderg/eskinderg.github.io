@@ -1,11 +1,22 @@
 @use '../../../styles/screen.scss' as *;
 
+* {
+    transition: all 1s ease;
+}
+
 .education {
     display: flex;
     flex-direction: row;
-    gap: 0.5rem;
-    align-items: flex-start;
+    gap: 0.25rem;
+    align-items: center;
     justify-content: space-between;
+    border: 1px solid var(--lightest);
+
+    // background-color: var(--lightest);
+    background-color: var(--background2);
+    transition: background-color 1s ease;
+    padding: 0.75rem;
+    border-radius: 1rem;
 }
 
 .education,
@@ -69,17 +80,29 @@
 .logo {
     // margin-right: 1.25rem;
     order: 1;
+
+    // border-left: 1px solid var(--lighter);
+    border-left: none;
+    padding: 0.25rem;
+}
+
+.ed-content {
+    padding: 0.25rem;
 }
 
 @include screen-md {
     .logo {
         margin-right: 0 !important;
+        border-right: 1px solid var(--lighter);
+        border-left: none;
         order: 0;
+        padding: 0.5rem;
     }
 
     .education {
         justify-content: flex-start;
         align-items: center;
+        padding: 0.5rem;
     }
 
     .education-logo {
@@ -87,5 +110,9 @@
         align-items: center;
         width: 6rem;
         height: 6rem;
+    }
+
+    .ed-content {
+        padding: 0.5rem;
     }
 }
