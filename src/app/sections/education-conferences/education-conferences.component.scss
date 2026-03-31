@@ -1,7 +1,7 @@
 @use '../../styles/screen.scss' as *;
 
 * {
-    transition: all 1s ease;
+    // transition: all 1s ease;
     scroll-margin-top: 3rem;
 }
 
@@ -15,6 +15,8 @@
 
 .graduation-hat {
     fill: var(--background2);
+
+    // transition: all 1s ease;
 }
 
 // .education-item,
