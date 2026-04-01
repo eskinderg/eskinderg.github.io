@@ -15,12 +15,15 @@
 
     <div class="accomplishments">
         <div class="accomplishment left-item">
-            <div class="h3 subtitle">
-                <div [style.font-family]="languageService.texts.font.title.fontFamily">
-                    {{ languageService.texts.accomplishments.content[0].title }}
+            <div class="tag-left">
+                <div class="h3 subtitle">
+                    <div [style.font-family]="languageService.texts.font.title.fontFamily">
+                        {{ languageService.texts.accomplishments.content[0].title }}
+                    </div>
                 </div>
+                <div class="content">{{ languageService.texts.accomplishments.content[0].paragraph }}</div>
             </div>
-            <div class="content">{{ languageService.texts.accomplishments.content[0].paragraph }}</div>
+            <div class="left-arrow"></div>
         </div>
         <div class="accomplishment-icon">
             <svg class="ribbon-svg" viewBox="0, 0, 540,560" version="1.1" id="svg74">
@@ -147,12 +150,15 @@
             </svg>
         </div>
         <div class="accomplishment right-item">
-            <div class="h3 subtitle">
-                <div [style.font-family]="languageService.texts.font.title.fontFamily">
-                    {{ languageService.texts.accomplishments.content[1].title }}
+            <div class="right-arrow"></div>
+            <div class="tag-right">
+                <div class="h3 subtitle">
+                    <div [style.font-family]="languageService.texts.font.title.fontFamily">
+                        {{ languageService.texts.accomplishments.content[1].title }}
+                    </div>
                 </div>
+                <div class="content">{{ languageService.texts.accomplishments.content[1].paragraph }}</div>
             </div>
-            <div class="content">{{ languageService.texts.accomplishments.content[1].paragraph }}</div>
         </div>
     </div>
 

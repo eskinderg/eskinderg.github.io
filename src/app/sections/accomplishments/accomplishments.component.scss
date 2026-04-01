@@ -6,7 +6,7 @@
 
 .content {
     color: var(--text); // 700
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .ribbon {
@@ -56,8 +56,6 @@
     padding: 1rem;
     border: 1px solid var(--lighter);
     background: var(--background2);
-
-    // border-radius: 1rem;
     border-radius: 1rem;
     transition: all 1s ease;
 }
@@ -74,7 +72,25 @@
     text-align: center;
 }
 
+@include screen-lg {
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .content {
+        font-size: 1.1rem;
+    }
+}
+
 @include screen-xl {
+    .content {
+        font-size: 0.95rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
     .ribbon-svg {
         display: block;
     }
@@ -82,11 +98,15 @@
     .left-item {
         text-align: right;
         align-self: flex-start;
+        display: flex;
+        flex-direction: row;
     }
 
     .right-item {
         text-align: left;
         align-self: center;
+        display: flex;
+        flex-direction: row;
     }
 
     .accomplishment-icon {
@@ -97,11 +117,61 @@
     .accomplishment {
         // padding: 2.5rem;
         // align-self: center;
+        // align-self: baseline;
+        // margin-bottom: 35px;
+        padding: 1rem;
+        border: none;
+        background: none;
+        border-radius: 1rem;
     }
 
     .accomplishments {
         flex-direction: row;
         text-align: left;
         padding: 0% 15% 5%;
+    }
+
+    .tag-left {
+        padding: 1rem;
+        border: 1px solid var(--background2);
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        background: var(--background2);
+        max-height: 10rem;
+    }
+
+    .tag-right {
+        padding: 1rem;
+        border: 1px solid var(--background2);
+        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        background: var(--background2);
+        max-height: 10rem;
+    }
+
+    .left-arrow {
+        width: 0;
+        height: 0;
+        border-top: 5rem solid transparent;
+        border-bottom: 5rem solid transparent;
+        border-left: 5rem solid var(--background2);
+    }
+
+    .right-arrow {
+        width: 0;
+        height: 0;
+        border-top: 5rem solid transparent;
+        border-bottom: 5rem solid transparent;
+        border-right: 5rem solid var(--background2);
+    }
+}
+
+@include screen-2xl {
+    .content {
+        font-size: 1.1rem;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
     }
 }
