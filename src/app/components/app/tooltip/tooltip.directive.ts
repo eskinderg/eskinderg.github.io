@@ -40,10 +40,9 @@ export class TooltipDirective implements OnDestroy {
         this.initializeTooltip();
     }
 
-    @HostListener('mouseleave')
-    onMouseLeave(): void {
-        this.setHideTooltipTimeout();
-    }
+    // onMouseLeave(): void {
+    //     this.setHideTooltipTimeout();
+    // }
 
     @HostListener('mousemove', ['$event'])
     onMouseMove($event: MouseEvent): void {
@@ -62,6 +61,8 @@ export class TooltipDirective implements OnDestroy {
         this.touchTimeout = window.setTimeout(this.initializeTooltip.bind(this), 500);
     }
 
+    @HostListener('mouseleave')
+    @HostListener('touchcancel')
     @HostListener('touchend')
     onTouchEnd(): void {
         window.clearTimeout(this.touchTimeout);
