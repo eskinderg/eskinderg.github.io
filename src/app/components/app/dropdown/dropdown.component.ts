@@ -17,13 +17,13 @@ export class DropDownMenuComponent extends BaseComponent {
     }
 
     onPdfDownload() {
-        this.googleAnalyticsService.eventEmitter('download_pdf', 'about', 'download', 'click', 10);
         this.visible = false;
+        this.googleAnalyticsService.eventEmitter('download_pdf', 'about', 'download', 'click', 10);
     }
 
     onDocxDownload() {
-        this.googleAnalyticsService.eventEmitter('download_docx', 'about', 'download', 'click', 10);
         this.visible = false;
+        this.googleAnalyticsService.eventEmitter('download_docx', 'about', 'download', 'click', 10);
     }
 
     @HostListener('document:mousedown', ['$event'])
