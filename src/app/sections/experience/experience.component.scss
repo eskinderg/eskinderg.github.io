@@ -1,9 +1,5 @@
 @use '../../styles/screen.scss' as *;
 
-* {
-    // transition: all 1s ease;
-}
-
 :host {
     scroll-margin-top: 1000px;
 }

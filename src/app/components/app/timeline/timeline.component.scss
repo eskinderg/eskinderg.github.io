@@ -194,6 +194,7 @@ p {
     }
 
     // background-color: var(--lightest);
+    position: relative;
     background-color: var(--background1);
     border: 1px solid var(--lighter);
     width: 100%;
@@ -379,5 +380,6 @@ p {
 
     .tag {
         width: fit-content;
+        padding: 1rem;
     }
 }

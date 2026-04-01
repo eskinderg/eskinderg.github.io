@@ -6,7 +6,7 @@
 
 .content {
     color: var(--text); // 700
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 }
 
 .ribbon {
@@ -31,20 +31,35 @@
 .accomplishments {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-left: 5%;
-    padding-right: 5%;
+    align-items: flex-start;
+    gap: 1rem;
+
+    // padding-left: 5%;
+    // padding-right: 5%;
+    padding: 0% 5% 10%;
     transition: background-color 1s ease;
     background-color: var(--background1);
 }
 
 .subtitle {
     font-size: 1.5rem;
+
+    // text-align: center;
 }
 
 .accomplishment {
-    align-self: baseline;
-    margin-bottom: 35px;
+    width: 100%;
+    height: 100%;
+
+    // align-self: baseline;
+    // margin-bottom: 35px;
+    padding: 1rem;
+    border: 1px solid var(--lighter);
+    background: var(--background2);
+
+    // border-radius: 1rem;
+    border-radius: 1rem;
+    transition: all 1s ease;
 }
 
 .accomplishment-icon {
@@ -52,20 +67,26 @@
 }
 
 .left-item {
-    text-align: left;
+    text-align: center;
 }
 
 .right-item {
-    text-align: left;
+    text-align: center;
 }
 
-@include screen-lg {
+@include screen-xl {
     .ribbon-svg {
         display: block;
     }
 
     .left-item {
         text-align: right;
+        align-self: flex-start;
+    }
+
+    .right-item {
+        text-align: left;
+        align-self: center;
     }
 
     .accomplishment-icon {
@@ -74,13 +95,13 @@
     }
 
     .accomplishment {
-        align-self: center;
+        // padding: 2.5rem;
+        // align-self: center;
     }
 
     .accomplishments {
         flex-direction: row;
         text-align: left;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding: 0% 15% 5%;
     }
 }
