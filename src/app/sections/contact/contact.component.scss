@@ -10,7 +10,7 @@
 }
 
 .app-divider {
-    height: 5rem;
+    height: 2rem;
     transition: background-color 1s ease;
     background: var(--background2);
 }
@@ -210,8 +210,11 @@
     width: 100%;
 }
 
-// @include screen-md {
-// }
+@include screen-md {
+    .app-divider {
+        height: 5rem;
+    }
+}
 
 @include screen-lg {
     .contact-title {

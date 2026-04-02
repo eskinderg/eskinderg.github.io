@@ -95,7 +95,7 @@ p {
 
 .experience-list-item {
     flex-grow: 1;
-    border: 1px solid var(--lighter);
+    border: 1px solid var(--lightest);
     padding: 0.5rem;
     width: fit-content;
     border-radius: 7px;
@@ -196,9 +196,12 @@ p {
     // background-color: var(--lightest);
     position: relative;
     background-color: var(--background1);
-    border: 1px solid var(--lighter);
+
+    // border: 1px solid var(--lighter);
+    // border: 1px solid var(--lightest);
+    border: none;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0.65rem;
     border-radius: 0.5rem;
     color: white !important;
     display: inline-block;
@@ -264,6 +267,7 @@ p {
 
     .experience-list-item {
         flex-grow: 0;
+        border: 1px solid var(--lighter);
     }
 
     .job-year {
@@ -381,5 +385,6 @@ p {
     .tag {
         width: fit-content;
         padding: 1rem;
+        border: 1px solid var(--lighter);
     }
 }
