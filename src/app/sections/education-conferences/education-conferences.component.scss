@@ -91,13 +91,19 @@
     display: none;
 }
 
-@include screen-xl {
-    .education-right {
-        display: block;
+@include screen-sm {
+    .education-conferences-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 
 @include screen-md {
+    .education-item {
+        border: 1px solid var(--lightest);
+        border-radius: 0.5rem;
+    }
+
     .education-conferences-wrapper {
         padding-bottom: 5%;
     }
@@ -107,9 +113,8 @@
     }
 }
 
-@include screen-sm {
-    .education-conferences-wrapper {
-        padding-left: 5%;
-        padding-right: 5%;
+@include screen-xl {
+    .education-right {
+        display: block;
     }
 }
