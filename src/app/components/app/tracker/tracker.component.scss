@@ -9,7 +9,7 @@
     background-color: var(--primary);
 }
 
-@include screen-lg {
+@include screen-xl {
     .tracker {
         display: none;
     }
