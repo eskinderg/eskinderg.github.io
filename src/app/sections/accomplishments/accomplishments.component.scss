@@ -78,6 +78,25 @@
     text-align: center;
 }
 
+.tag-left,
+.tag-right,
+.left-arrow,
+.right-arrow {
+    transition: all 1s ease;
+}
+
+@include screen-sm {
+    .accomplishments {
+        padding: 0% 10% 5%;
+    }
+}
+
+@include screen-md {
+    .accomplishments {
+        padding: 0% 20% 5%;
+    }
+}
+
 @include screen-lg {
     .subtitle {
         font-size: 1.1rem;
@@ -90,7 +109,7 @@
 
 @include screen-xl {
     .content {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .subtitle {
@@ -138,7 +157,8 @@
     }
 
     .tag-left {
-        padding: 1rem;
+        // padding: 1rem;
+        padding: 1rem 2rem 1rem 1rem;
         border: 1px solid var(--background2);
         border-top-left-radius: 2rem;
         border-bottom-left-radius: 2rem;
@@ -147,12 +167,20 @@
     }
 
     .tag-right {
-        padding: 1rem;
+        // padding: 1rem;
+        padding: 1rem 1rem 1rem 2rem;
         border: 1px solid var(--background2);
         border-top-right-radius: 2rem;
         border-bottom-right-radius: 2rem;
         background: var(--background2);
         max-height: 10rem;
+    }
+
+    .tag-left,
+    .tag-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .left-arrow {

@@ -20,6 +20,12 @@
     }
 }
 
+.text {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
 .menu-btn {
     position: relative;
     transition: all 1s ease;
@@ -70,7 +76,8 @@ svg {
 
 .menu-item > a > * {
     margin: 0.5rem;
-    font-size:1rem;
+
+    // font-size: 1rem;
 }
 
 .menu-item:hover {
@@ -86,6 +93,13 @@ svg {
 //         width: 100%;
 //     }
 // }
+@include screen-sm {
+    .text {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+    }
+}
 
 @include screen-md {
     :host {

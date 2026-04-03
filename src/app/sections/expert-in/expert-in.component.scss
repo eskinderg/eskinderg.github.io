@@ -83,7 +83,7 @@
 .technology-list {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, 25%);
+    grid-template-columns: repeat(auto-fill, 20%);
 }
 
 @include screen-xs {
@@ -94,18 +94,18 @@
 
 @include screen-sm {
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 15%);
+        grid-template-columns: repeat(auto-fill, 12%);
     }
 }
 
 @include screen-md {
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 15%);
+        grid-template-columns: repeat(auto-fill, 10%);
     }
 
-    .expertin {
-        // padding-left: 10%;
-    }
+    // .expertin {
+    //     padding-left: 10%;
+    // }
 }
 
 @include screen-lg {

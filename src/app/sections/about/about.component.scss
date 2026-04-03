@@ -32,6 +32,10 @@
     align-items: center;
 }
 
+app-dropdown {
+    padding: 0 3rem;
+}
+
 .profile-picture {
     box-sizing: border-box;
 
@@ -98,6 +102,10 @@
 }
 
 @include screen-xs {
+    app-dropdown {
+        padding: 0 5rem;
+    }
+
     .profile {
         width: 12rem;
     }
@@ -121,6 +129,10 @@
 
     .profile-picture {
         width: 50%;
+    }
+
+    app-dropdown {
+        padding: 0;
     }
 }
 
