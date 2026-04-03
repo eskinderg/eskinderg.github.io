@@ -5,7 +5,7 @@
     position: relative;
     transition: background-color 1s ease;
     width: 100%;
-    padding: 0% 10%;
+    padding: 0% 5%;
     box-sizing: border-box;
     background-color: var(--background2);
 }
@@ -72,7 +72,7 @@
 }
 
 .content-paragraph {
-    font-size: 1.125rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -109,11 +109,16 @@
 
 @include screen-sm {
     .about {
-        padding-top: 0;
+        // padding-top: 0;
+        padding: 0% 10%;
     }
 }
 
 @include screen-md {
+    .about {
+        padding: 0% 10%;
+    }
+
     .profile-picture {
         width: 50%;
     }
@@ -143,6 +148,7 @@
     }
 
     .content-paragraph {
+        font-size: 1.125rem;
         text-align: left;
     }
 
