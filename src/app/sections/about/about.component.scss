@@ -49,10 +49,10 @@ app-dropdown {
 }
 
 .profile {
-    border: 0.5rem solid var(--primary);
+    border: 0.2rem solid var(--primary);
     margin-bottom: 5%;
     width: 10rem;
-    transition: filter 2.5s ease;
+    transition: filter 1s ease;
     background-image: url('../../../assets/img/expertin-min.webp');
     background-position: 10% 85%;
     background-size: 230%;
@@ -171,6 +171,6 @@ app-dropdown {
 
 @include screen-xl {
     .intro-content {
-        margin-right: 10% !important;
+        margin-right: 20% !important;
     }
 }

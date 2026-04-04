@@ -16,7 +16,7 @@
 
 .app-divider {
     height: 2rem;
-    width:100%;
+    width: 100%;
     transition: background-color 1s ease;
     background: var(--background2) !important;
 
@@ -83,7 +83,6 @@
     .intro {
         height: calc(35vh - 0px);
     }
-
 }
 
 @include screen-xs {
@@ -211,5 +210,39 @@
     .intro-svg {
         width: 100%;
     }
+}
 
+/* ----------------------------------------------------------------------------------
+custom resolutions just for the intro and intro wave
+------------------------------------------------------------------------------------ */
+
+@media (height <= 500px) {
+    .intro {
+        min-height: 18rem;
+    }
+}
+
+@media (width <= 600px) and (height >= 640px) {
+    .intro {
+        max-height: 22rem;
+    }
+}
+
+@media (width >= 450px) and (height >= 1080px) {
+    .intro {
+        min-height: 15rem;
+        max-height: 30rem;
+    }
+}
+
+@media (width >= 2000px) {
+    .app-divider {
+        height: 10rem;
+    }
+}
+
+@media (width >= 3000px) {
+    .app-divider {
+        height: 13rem;
+    }
 }
