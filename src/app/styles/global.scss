@@ -76,6 +76,10 @@ p {
     overflow-wrap: break-word;
 }
 
+.text {
+    color: var(--text);
+}
+
 .bold {
     font-weight: bold;
 }

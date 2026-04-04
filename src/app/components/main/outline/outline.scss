@@ -180,6 +180,10 @@
     float: right;
 }
 
+.direction-l span {
+    color: var(--text);
+}
+
 .time {
     display: inline-block;
     padding: 4px 6px;
@@ -200,7 +204,7 @@
 
 .active {
     transition: all 0.5s ease;
-    color: white;
+    color: white !important;
     font-size: 1.25rem !important;
     background: var(--primary) !important;
 
