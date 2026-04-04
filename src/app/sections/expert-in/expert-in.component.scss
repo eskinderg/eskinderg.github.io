@@ -65,6 +65,8 @@
 .expertin-svg {
     flex: 1 1 30%;
     display: none;
+    flex-direction: column;
+    gap: 3rem;
     margin-top: 32px;
     box-sizing: border-box;
     overflow: hidden;
@@ -110,7 +112,7 @@
 
 @include screen-lg {
     .expertin-svg {
-        display: block;
+        display: flex;
     }
 
     .technology-list {
