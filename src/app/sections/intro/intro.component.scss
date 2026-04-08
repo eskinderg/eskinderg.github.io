@@ -217,6 +217,10 @@ custom resolutions just for the intro and intro wave
 ------------------------------------------------------------------------------------ */
 
 @media (height <= 500px) {
+    .title-intro {
+        top: 20%;
+    }
+
     .intro {
         // min-height: 18rem;
         min-height: 13rem;
@@ -231,7 +235,7 @@ custom resolutions just for the intro and intro wave
 
 @media (width >= 450px) and (height >= 1080px) {
     .intro {
-        min-height: 15rem;
+        // min-height: 15rem;
         max-height: 30rem;
     }
 }

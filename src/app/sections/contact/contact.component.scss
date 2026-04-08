@@ -208,6 +208,10 @@
 
 .wave-svg {
     width: 100%;
+
+    path {
+        transition: all 1s ease;
+    }
 }
 
 @include screen-md {
@@ -258,7 +262,7 @@
     }
 
     .app-divider {
-        height: 6rem;
+        height: 10rem;
     }
 
     .left {

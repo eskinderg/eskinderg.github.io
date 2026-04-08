@@ -8,9 +8,9 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SeparatorComponent {
-    @Input() fillColor: string = '';
+    @Input() fillColor1: string = '';
+    @Input() fillColor2: string = '';
     @Input() backgroundColor: string = '';
-    @Input() Inverted: boolean = false;
 
     constructor() {}
 }

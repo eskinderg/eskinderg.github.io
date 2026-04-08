@@ -1,18 +1,18 @@
 @use '../../../styles//screen.scss' as *;
 
 .app-divider {
-    transition: background-color 1s ease;
+    transition: background 1s ease;
     width: 100%;
-    background: var(--background2);
-    fill: var(--background1);
-}
-
-.separator-path {
-    transition: fill 1s ease;
 }
 
 .wave-svg {
     width: 100%;
+    height: auto;
+    background-color: transparent;
+
+    path {
+        transition: fill 1s ease;
+    }
 }
 
 @include screen-xl {
@@ -25,5 +25,4 @@
     .wave-svg {
         width: 100%;
     }
-
 }
