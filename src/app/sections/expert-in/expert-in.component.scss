@@ -58,8 +58,7 @@
 }
 
 .title-expertin {
-    flex: 1 1 100%;
-    text-align: center;
+    align-self: center;
 }
 
 .expertin-svg {
@@ -74,7 +73,9 @@
 
 .expert-in-content {
     flex: 1 1 100%;
-    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
     box-sizing: border-box;
 }
 
@@ -101,13 +102,13 @@
 }
 
 @include screen-md {
-    .technology-list {
-        grid-template-columns: repeat(auto-fill, 12%);
+    .title-expertin {
+        text-align: left;
     }
 
-    // .expertin {
-    //     padding-left: 10%;
-    // }
+    .technology-list {
+        grid-template-columns: repeat(auto-fill, 14%);
+    }
 }
 
 @include screen-lg {
@@ -116,7 +117,7 @@
     }
 
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 12%);
+        grid-template-columns: repeat(auto-fill, 13%);
     }
 
     .expert-in-content {
@@ -126,7 +127,7 @@
 
 @include screen-xl {
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 10%);
+        grid-template-columns: repeat(auto-fill, 12%);
     }
 
     .expertin {

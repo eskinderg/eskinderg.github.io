@@ -1,17 +1,17 @@
 <section id="technologies">
     <div #expertin class="expertin">
-        <div class="h2 title-expertin">
-            <!-- <div class="h2 titleExpertin" fxFlex="100" [ngStyle.sm]="{'text-align': 'center','padding':0}" [ngStyle.xs]="{'text-align': 'center','padding':0}"> -->
-            <app-title
-                title="{{ languageService.texts.technologies.title }}"
-                fontWeight="{{ languageService.texts.font.title.fontWeight }}"
-                fontFamily="{{ languageService.texts.font.title.fontFamily }}"
-                [stylish]="true"
-                [anchor]="'technologies'"
-                [lineWidth]="250"
-                [inverse]="true"></app-title>
-        </div>
+        <!-- <div class="h2 titleExpertin" fxFlex="100" [ngStyle.sm]="{'text-align': 'center','padding':0}" [ngStyle.xs]="{'text-align': 'center','padding':0}"> -->
         <div class="expert-in-content">
+            <div class="h2 title-expertin">
+                <app-title
+                    title="{{ languageService.texts.technologies.title }}"
+                    fontWeight="{{ languageService.texts.font.title.fontWeight }}"
+                    fontFamily="{{ languageService.texts.font.title.fontFamily }}"
+                    [stylish]="true"
+                    [anchor]="'technologies'"
+                    [lineWidth]="250"
+                    [inverse]="true" />
+            </div>
             <div class="technology-list">
                 @for (
                     mastery of languageService.texts.technologies.masteries;
