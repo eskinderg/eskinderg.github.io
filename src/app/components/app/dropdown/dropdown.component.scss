@@ -3,8 +3,9 @@
 .menu-item a {
     display: flex;
     flex-direction: row;
-    padding: 0.5rem;
+    padding: 0.25rem;
     margin: 0.25rem;
+    gap: 0.5rem;
     text-decoration-line: none;
 }
 
@@ -42,9 +43,10 @@
     border-radius: 0.25rem;
 }
 
-svg {
-    width: 30px;
-    height: 30px;
+.menu-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.25rem;
 }
 
 .menu {
@@ -74,10 +76,11 @@ svg {
     opacity: 1;
 }
 
-.menu-item > a > * {
-    margin: 0.5rem;
-
-    // font-size: 1rem;
+.menu-text {
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    border: none !important;
 }
 
 .menu-item:hover {
@@ -93,7 +96,50 @@ svg {
 //         width: 100%;
 //     }
 // }
+
+@include screen-4xs {
+    .menu-text {
+        font-size: 0.85rem;
+    }
+}
+
+@include screen-3xs {
+    :host {
+        padding: 0 2.5rem;
+    }
+
+    .menu-text {
+        font-size: 0.85rem;
+    }
+}
+
+@include screen-2xs {
+    .menu-text {
+        font-size: 1rem;
+    }
+}
+
+@include screen-xs {
+    :host {
+        padding: 0 20%;
+    }
+
+    .menu-icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin: 0.5rem;
+    }
+
+    .menu-text {
+        font-size: 1rem;
+    }
+}
+
 @include screen-sm {
+    .menu-text {
+        font-size: 1rem;
+    }
+
     .text {
         font-size: 1rem;
         display: flex;
@@ -104,6 +150,7 @@ svg {
 @include screen-md {
     :host {
         width: 50% !important ;
+        padding: 0;
         align-self: center;
     }
 }

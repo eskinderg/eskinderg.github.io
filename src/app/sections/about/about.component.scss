@@ -32,10 +32,6 @@
     align-items: center;
 }
 
-app-dropdown {
-    padding: 0 3rem;
-}
-
 .profile-picture {
     box-sizing: border-box;
 
@@ -95,17 +91,13 @@ app-dropdown {
     filter: grayscale(0%);
 }
 
-@include screen-xxs {
+@include screen-2xs {
     .profile {
         width: 10rem;
     }
 }
 
 @include screen-xs {
-    app-dropdown {
-        padding: 0 5rem;
-    }
-
     .profile {
         width: 12rem;
     }
@@ -129,10 +121,6 @@ app-dropdown {
 
     .profile-picture {
         width: 50%;
-    }
-
-    app-dropdown {
-        padding: 0;
     }
 }
 

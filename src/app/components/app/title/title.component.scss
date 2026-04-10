@@ -23,7 +23,7 @@
 }
 
 .styleish {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
     font-weight: 100;
 }
@@ -31,6 +31,27 @@
 .normal {
     font-size: 1rem;
     line-height: 1.5rem;
+}
+
+@include screen-4xs {
+    .styleish {
+        font-size: 1.75rem;
+        line-height: 1;
+    }
+}
+
+@include screen-3xs {
+    .styleish {
+        font-size: 2rem;
+        line-height: 1;
+    }
+}
+
+@include screen-2xs {
+    .styleish {
+        font-size: 2.25rem;
+        line-height: 1;
+    }
 }
 
 @include screen-xs {

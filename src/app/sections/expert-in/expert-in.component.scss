@@ -90,19 +90,19 @@
 
 @include screen-xs {
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 20%);
+        grid-template-columns: repeat(auto-fill, 18%);
     }
 }
 
 @include screen-sm {
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 12%);
+        grid-template-columns: repeat(auto-fill, 15%);
     }
 }
 
 @include screen-md {
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 10%);
+        grid-template-columns: repeat(auto-fill, 12%);
     }
 
     // .expertin {
@@ -116,7 +116,7 @@
     }
 
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 15%);
+        grid-template-columns: repeat(auto-fill, 12%);
     }
 
     .expert-in-content {
@@ -125,6 +125,10 @@
 }
 
 @include screen-xl {
+    .technology-list {
+        grid-template-columns: repeat(auto-fill, 10%);
+    }
+
     .expertin {
         padding-right: 10%;
     }

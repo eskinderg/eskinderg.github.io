@@ -1,4 +1,6 @@
-$screen-xxs: 400px;
+$screen-4xs: 300px;
+$screen-3xs: 350px;
+$screen-2xs: 400px;
 $screen-xs: 485px;
 $screen-sm: 640px;
 $screen-md: 768px;
@@ -6,8 +8,20 @@ $screen-lg: 1024px;
 $screen-xl: 1281px;
 $screen-2xl: 1920px;
 
-@mixin screen-xxs {
-    @media (min-width: $screen-xxs) {
+@mixin screen-4xs {
+    @media (min-width: $screen-4xs) {
+        @content;
+    }
+}
+
+@mixin screen-3xs {
+    @media (min-width: $screen-3xs) {
+        @content;
+    }
+}
+
+@mixin screen-2xs {
+    @media (min-width: $screen-2xs) {
         @content;
     }
 }
