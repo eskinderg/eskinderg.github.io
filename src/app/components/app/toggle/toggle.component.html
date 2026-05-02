@@ -5,23 +5,19 @@
         [ngClass]="{ rotate: open }"
         (click)="toggleOpen()"
         aria-label="Theme settings">
-        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-            <circle class="svg-circle" cx="12" cy="12" r="11" stroke="white" stroke-width="0.4" />
-            <g id="surface1" transform="matrix(0.64009083,0,0,0.64009083,4.3139894,4.3139894)">
-                <path d="m 11.195312,0.132812 h 1.582032 v 4.160157 h -1.582032 z m 0,0" id="path2" />
-                <path d="m 11.195312,19.679688 h 1.582032 v 4.160156 h -1.582032 z m 0,0" id="path4" />
-                <path d="m 0.132812,11.195312 h 4.160157 v 1.582032 H 0.132812 Z m 0,0" id="path6" />
-                <path d="m 19.679688,11.195312 h 4.160156 v 1.582032 h -4.160156 z m 0,0" id="path8" />
-                <path
-                    d="m 19.808594,3.046875 -4.136719,4.136719 c -1.054687,-0.8125 -2.335937,-1.257813 -3.683594,-1.257813 -3.34375,0 -6.0625,2.71875 -6.0625,6.0625 0,1.351563 0.445313,2.628907 1.257813,3.683594 L 3.046875,19.808594 4.164062,20.925781 20.925781,4.164062 Z m 0,0"
-                    id="path10" />
-                <path
-                    d="M 3.046875,4.164062 4.164062,3.046875 7.105469,5.988281 5.984375,7.105469 Z m 0,0"
-                    id="path12" />
-                <path
-                    d="m 16.867188,17.984375 1.121093,-1.117187 2.941407,2.941406 -1.121094,1.117187 z m 0,0"
-                    id="path14" />
-            </g>
+        <svg width="24px" height="24px" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle class="svg-circle" cx="12" cy="12" r="11" fill="none" stroke="#fff" stroke-width=".4" />
+            <path
+                d="m12 4.0425a7.9573 7.9573 0 00-7.9575 7.9575 7.9573 7.9573 0 007.9575 7.9575z"
+                fill="var(--primary)"
+                stroke="none"
+                stroke-width=".47343" />
+            <path
+                d="m12 4.0425v15.915a7.9573 7.9573 0 007.9575-7.9575 7.9573 7.9573 0 00-7.9575-7.9575z"
+                fill="#fff"
+                stroke="#fff"
+                stroke-width=".47343" />
+            <circle class="circle-menu" cx="12" cy="12" r="7.9575" fill="none" />
         </svg>
     </button>
     <div class="theme-toggle-group icon-only" [class.open]="open">
@@ -31,10 +27,10 @@
             [class.active]="themeService.ThemeMode === 'system'"
             (click)="setMode('system'); close()"
             aria-label="Use system theme">
-            <svg width="24" height="24" viewBox="0 0 24 24">
-                <rect x="3" y="5" width="18" height="12" rx="2" stroke-width="2" />
-                <rect x="9" y="18" width="6" height="2" rx="1" />
-                <rect x="7" y="20" width="10" height="1.2" rx="0.6" />
+            <svg width="24" height="24" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    fill="white"
+                    d="m7.6 20h8.8c.3324 0 .6.2676.6.6s-.2676.6-.6.6h-8.8c-.3324 0-.6-.2676-.6-.6s.2676-.6.6-.6zm2.4-2h4c.554 0 1 .446 1 1s-.446 1-1 1h-4c-.554 0-1-.446-1-1s.446-1 1-1zm-5-13h14c1.108 0 2 .892 2 2v8c0 1.108-.892 2-2 2h-14c-1.108 0-2-.892-2-2v-8c0-1.108.892-2 2-2z" />
             </svg>
         </button>
         <button
@@ -43,37 +39,10 @@
             [class.active]="themeService.ThemeMode === 'light'"
             (click)="setMode('light'); close()"
             aria-label="Use light theme">
-            <!-- <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> -->
-            <!--     <g clip-path="url(#a)" stroke="white" stroke-width="1.5" stroke-miterlimit="10"> -->
-            <!--         <path -->
-            <!--             d="M5 12H1M23 12h-4M7.05 7.05 4.222 4.222M19.778 19.778 16.95 16.95M7.05 16.95l-2.828 2.828M19.778 4.222 16.95 7.05" -->
-            <!--             stroke-linecap="round" /> -->
-            <!--         <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" /> -->
-            <!--         <path d="M12 19v4M12 1v4" stroke-linecap="round" /> -->
-            <!--     </g> -->
-            <!--     <defs> -->
-            <!--         <clipPath id="a"> -->
-            <!--             <path d="M0 0h24v24H0z" /> -->
-            <!--         </clipPath> -->
-            <!--     </defs> -->
-            <!-- </svg> -->
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <g>
-                    <!-- Sun core -->
-                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" fill="none" />
-
-                    <!-- Rays (rectangles rotated around center) -->
-                    <rect x="11.25" y="1" width="1.5" height="3" />
-                    <rect x="11.25" y="20" width="1.5" height="3" />
-
-                    <rect x="11.25" y="1" width="1.5" height="3" transform="rotate(45 12 12)" />
-                    <rect x="11.25" y="1" width="1.5" height="3" transform="rotate(90 12 12)" />
-                    <rect x="11.25" y="1" width="1.5" height="3" transform="rotate(135 12 12)" />
-                    <rect x="11.25" y="1" width="1.5" height="3" transform="rotate(180 12 12)" />
-                    <rect x="11.25" y="1" width="1.5" height="3" transform="rotate(225 12 12)" />
-                    <rect x="11.25" y="1" width="1.5" height="3" transform="rotate(270 12 12)" />
-                    <rect x="11.25" y="1" width="1.5" height="3" transform="rotate(315 12 12)" />
-                </g>
+            <svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    fill="white"
+                    d="m11.949.76367c-.59735 1.6e-7-1.082.48468-1.082 1.082v3.4512h2.2656v-3.4512c2e-6-.59735-.48468-1.082-1.082-1.082h-.10156zm-8.6875 5.0332c-.38357-.0099621-.76146.18536-.9668.54102l-.050781.087891c-.29868.51732-.12084 1.1798.39648 1.4785l2.9883 1.7246 1.1328-1.9609-2.9883-1.7266c-.16166-.093336-.33737-.14-.51172-.14453zm17.477 0c-.17435.0045282-.35006.051195-.51172.14453l-2.9883 1.7266 1.1328 1.9609 2.9883-1.7246c.51732-.29868.69516-.96119.39648-1.4785l-.050781-.087891c-.20534-.35566-.58323-.55098-.9668-.54102zm-8.7383 1.4531c-2.6145 1e-7-4.75 2.1355-4.75 4.75 3e-7 2.6145 2.1355 4.75 4.75 4.75 2.6145 0 4.75-2.1355 4.75-4.75 0-2.6145-2.1355-4.75-4.75-4.75zm-6.3711 7.1211-2.9883 1.7246c-.51732.29868-.69516.9612-.39648 1.4785l.050781.08789c.29868.51732.96119.69516 1.4785.39648l2.9883-1.7266-1.1328-1.9609zm12.742 0-1.1328 1.9609 2.9883 1.7266c.51732.29868 1.1798.12084 1.4785-.39648l.050781-.08789c.29868-.51732.12084-1.1798-.39648-1.4785l-2.9883-1.7246zm-7.5039 4.332v3.4512c-2e-6.59735.48468 1.082 1.082 1.082h.10156c.59735 0 1.082-.48468 1.082-1.082v-3.4512h-2.2656z" />
             </svg>
         </button>
         <button
@@ -92,6 +61,7 @@
                     </style>
                 </defs>
                 <path
+                    fill="white"
                     class="c"
                     d="m32.8,29.3c-8.9-.8-16.2-7.8-17.5-16.6-.3-1.8-.3-3.7,0-5.4.2-1.4-1.4-2.3-2.5-1.6C6.3,9.7,2.1,16.9,2.5,25c.5,10.7,9,19.5,19.7,20.4,10.6.9,19.8-6,22.5-15.6.4-1.4-1-2.6-2.3-2-2.9,1.3-6.1,1.8-9.6,1.5Z" />
             </svg>

@@ -14,6 +14,17 @@
     }
 }
 
+.circle-menu {
+    stroke: white;
+    stroke-width: 0.4;
+}
+
+@include screen-xl {
+    .circle-menu {
+        stroke: var(--primary);
+    }
+}
+
 .theme-toggle-group {
     position: relative;
     display: flex;
@@ -26,19 +37,13 @@
 
 .rotate {
     transition: transform 0.25s ease;
-    transform: rotate(135deg) ! important;
-
-    // box-shadow: 1px 1px 9px -2px black;
+    transform: rotate(-180deg) !important;
 }
 
 svg {
     width: 100%;
     height: 100%;
     fill: none;
-
-    path {
-        fill: white;
-    }
 }
 
 .theme-toggle-wrapper {
@@ -61,7 +66,8 @@ svg {
     justify-content: center;
     height: 100%;
     width: 100%;
-    transform: rotate(45deg);
+
+    // transform: rotate(45deg);
 }
 
 .theme-toggle-group.icon-only {
@@ -131,33 +137,14 @@ svg {
     display: block;
 }
 
-.theme-toggle-group.icon-only .theme-toggle-btn svg {
-    filter: none;
-
-    path,
-    rect,
-    circle,
-    line {
-        fill: #0000007d;
-        stroke: #0000007d;
-    }
-}
-
-// Add glow only to the active button's SVG
 .theme-toggle-group.icon-only .theme-toggle-btn.active svg {
-    // filter: drop-shadow(0 0 2px #fff) drop-shadow(0 0 6px #fff);
-    path,
-    rect,
-    circle,
-    line {
-        fill: white;
-        stroke: white;
+    path {
+        fill: var(--primary);
     }
 }
 
 .theme-toggle-group.icon-only .theme-toggle-btn.active,
 .theme-toggle-group.icon-only .theme-toggle-btn:focus-visible {
-    // background: rgba(0,0,0,0.08);
     background: none;
 }
 
