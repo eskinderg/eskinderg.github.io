@@ -5,19 +5,15 @@
         [ngClass]="{ rotate: open }"
         (click)="toggleOpen()"
         aria-label="Theme settings">
-        <svg width="24px" height="24px" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <circle class="svg-circle" cx="12" cy="12" r="11" fill="none" stroke="#fff" stroke-width=".4" />
+            <circle class="circle-menu" cx="12" cy="12" r="6.4243" fill="none" style="stroke-width: 0.4" />
             <path
-                d="m12 4.0425a7.9573 7.9573 0 00-7.9575 7.9575 7.9573 7.9573 0 007.9575 7.9575z"
-                fill="var(--primary)"
-                stroke="none"
-                stroke-width=".47343" />
+                d="m12 5.5762a6.4243 6.4243 0 00-6.4238 6.4238 6.4243 6.4243 0 006.4238 6.4238z"
+                style="fill: var(--primary); stroke-width: 0.80733" />
             <path
-                d="m12 4.0425v15.915a7.9573 7.9573 0 007.9575-7.9575 7.9573 7.9573 0 00-7.9575-7.9575z"
-                fill="#fff"
-                stroke="#fff"
-                stroke-width=".47343" />
-            <circle class="circle-menu" cx="12" cy="12" r="7.9575" fill="none" />
+                d="m12 5.5762v12.848a6.4243 6.4243 0 006.4238-6.4238 6.4243 6.4243 0 00-6.4238-6.4238z"
+                style="fill: #ffffff; stroke-width: 0.80733" />
         </svg>
     </button>
     <div class="theme-toggle-group icon-only" [class.open]="open">

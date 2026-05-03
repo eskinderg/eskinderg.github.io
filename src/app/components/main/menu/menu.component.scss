@@ -210,6 +210,7 @@ svg {
     &.open {
         .top {
             transform: translateY(11px) rotate(45deg);
+            width: 12px;
         }
 
         .middle {
