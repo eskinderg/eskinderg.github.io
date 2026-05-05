@@ -132,7 +132,7 @@ svg {
 
     nav span {
         // color: var(--light) !important;
-        color: #FFF !important;
+        color: #fff !important;
         border: none;
 
         // font-size: 3vw !important;
@@ -192,6 +192,8 @@ svg {
     .line {
         transition:
             transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 3s cubic-bezier(0.4, 0, 0.2, 1),
+            width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
             opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -215,6 +217,8 @@ svg {
 
         .middle {
             opacity: 0;
+            transform: translateY(7.25px) translateX(-15.25px) rotate(45deg);
+            width: 11px;
         }
 
         .bottom {
