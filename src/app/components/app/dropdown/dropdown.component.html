@@ -4,13 +4,12 @@
     [class.open]="visible"
     [style.font-family]="languageService.texts.font.menu">
     <span> {{ languageService.texts.about.button.title }} </span>
-    &nbsp; &nbsp;
-    <img
-        src="assets/img/download.webp"
-        style="position: inherit"
-        [width]="30"
-        [height]="22"
-        alt="Download File" />
+
+    <svg class="download-svg" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path
+            fill="white"
+            d="m19.283 21.09v1.8179h-14.566v-1.8179zm-7.283-1.8179-7.2826-7.2716h6.0833l-.007482-10.907h2.4394l.00733 10.907h6.0431z" />
+    </svg>
     <div class="menu" [ngClass]="{ 'show-drop-menu': visible }">
         <div class="menu-item">
             <a href="assets/pdf/Eskinder-CV.pdf" target="_blank">
@@ -35,8 +34,6 @@
         </div>
         <div class="menu-item">
             <a (click)="onDocxDownload()" href="assets/doc/Eskinder-CV.docx">
-                <!-- <img src="assets/img/docx.webp" [width]="30" />&nbsp; -->
-
                 <svg
                     width="800px"
                     height="800px"
