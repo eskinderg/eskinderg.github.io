@@ -43,7 +43,7 @@
 svg {
     width: 100%;
     height: 100%;
-    fill: white;
+    fill: var(--primary);
 
     path {
         transition: fill 1s ease;
@@ -143,7 +143,8 @@ svg {
 
 .theme-toggle-group.icon-only .theme-toggle-btn.active svg {
     path {
-        fill: var(--primary);
+        // fill: var(--primary);
+        fill: white;
     }
 }
 
