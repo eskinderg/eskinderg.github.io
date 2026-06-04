@@ -48,7 +48,7 @@ export class LanguageService {
 
     public setLanguage(lang: any): Observable<any> {
         return this.http.get(this.getLangPath(lang)).pipe(
-            timeout(5000),
+            timeout(13000),
             tap((data) => {
                 this.texts = data;
                 this.languageChange.emit(data);
