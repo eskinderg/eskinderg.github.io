@@ -196,6 +196,7 @@
 @include screen-2xl {
     .main {
         padding-top: 10%;
+        padding-bottom: 10%;
     }
 
     .intro-svg {
@@ -206,6 +207,13 @@
 /* ----------------------------------------------------------------------------------
 custom resolutions just for the intro and intro wave
 ------------------------------------------------------------------------------------ */
+
+// @media (aspect-ratio: 16/9) {
+//     .main {
+//         padding-top: 10%;
+//         padding-bottom: 10%;
+//     }
+// }
 
 @media (width >= 500px) and (height <=500px) {
     .main {
