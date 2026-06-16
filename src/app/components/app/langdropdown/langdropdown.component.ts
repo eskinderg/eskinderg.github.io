@@ -11,7 +11,7 @@ import { BaseComponent } from 'src/app/sections/base.component';
     imports: [TooltipDirective, NgClass]
 })
 export class LanguageDropDownComponent extends BaseComponent {
-    visible: boolean = false;
+    public visible: boolean = false;
 
     changeLanguage(lang: string) {
         this.visible = false;

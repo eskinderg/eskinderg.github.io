@@ -20,6 +20,15 @@
 .lang-select {
     // box-shadow: 4px 6px 5px 0px rgb(0 0 0 / 10%);
     border-radius: 50%;
+    transition:
+        transform 0.25s ease,
+        background-color 1s ease !important;
+}
+
+.lang-select svg path {
+    transform: scale(1);
+    transform-origin: center;
+    transition: transform 0.25s ease-in-out;
 }
 
 .lang-menu {
@@ -41,6 +50,11 @@
     // background-color: #424242;
     background-color: var(--primary);
     z-index: 1000;
+}
+
+.scale svg path {
+    transform: scale(0.85);
+    transform-origin: center;
 }
 
 .show-lang-drop-menu {
