@@ -12,7 +12,7 @@
     </svg>
     <div class="menu" [ngClass]="{ 'show-drop-menu': visible }">
         <div class="menu-item">
-            <a href="assets/pdf/Eskinder-CV.pdf" target="_blank">
+            <a href="assets/pdf/Eskinder-CV.pdf" download="Eskinder-CV" target="_blank">
                 <!-- <img src="assets/img/pdf.webp" [width]="30" />&nbsp; -->
 
                 <svg
@@ -54,7 +54,7 @@
             </a>
         </div>
         <div class="menu-item">
-            <a (click)="onDocxDownload()" href="assets/doc/Eskinder-CV.docx">
+            <a (click)="onDocxDownload()" download="Eskinder-CV" href="assets/doc/Eskinder-CV.docx">
                 <svg
                     width="800px"
                     height="800px"
