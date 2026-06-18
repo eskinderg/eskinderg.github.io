@@ -12,7 +12,9 @@
         </div>
         @for (list of job.elements; track trackList($index, list)) {
             <div>
-                <div class="content content-list sub-head">{{ list.header }}</div>
+                <div class="content content-list sub-head" [style.font-family]="lang.texts.font.content">
+                    {{ list.header }}
+                </div>
                 @for (l of list.list; track l) {
                     <div
                         class="experience-list"

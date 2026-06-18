@@ -269,7 +269,7 @@
                         "type": "list",
                         "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
-                            "Provided support for different websites ",
+                            "ለተለያዩ ድህረ ገጾች ሞያዊ ድጋፍ ሰጥቻለሁ።",
                             "Created SPA, user interactive (UI) web pages using web technologies like HTML5, SASS, Typescript, Angular2 and Bootstrap.",
                             "Created and used Reducers that received Actions to modify the store State.",
                             "Created Action dispatch to deploy Actions to add Dynamic Functionalities",
@@ -389,7 +389,7 @@
                             "Maintained website for most up-to date technology, software, and information",
                             "Developed and implemented mobile device responsive UI designs and back-end analytics tracking",
                             "Customized, Implemented WordPress themes and plugins.",
-                            "Provided support for different websites "
+                            "ለተለያዩ ድህረ ገጾች ሞያዊ ድጋፍ ሰጥቻለሁ።"
                         ]
                     }
                 ],

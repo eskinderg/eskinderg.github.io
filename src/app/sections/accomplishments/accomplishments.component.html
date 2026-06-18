@@ -21,7 +21,9 @@
                         {{ languageService.texts.accomplishments.content[0].title }}
                     </div>
                 </div>
-                <div class="content">{{ languageService.texts.accomplishments.content[0].paragraph }}</div>
+                <div class="content" [style.font-family]="languageService.texts.font.content">
+                    {{ languageService.texts.accomplishments.content[0].paragraph }}
+                </div>
             </div>
             <div class="left-arrow"></div>
         </div>
@@ -157,7 +159,9 @@
                         {{ languageService.texts.accomplishments.content[1].title }}
                     </div>
                 </div>
-                <div class="content">{{ languageService.texts.accomplishments.content[1].paragraph }}</div>
+                <div class="content" [style.font-family]="languageService.texts.font.content">
+                    {{ languageService.texts.accomplishments.content[1].paragraph }}
+                </div>
             </div>
         </div>
     </div>
