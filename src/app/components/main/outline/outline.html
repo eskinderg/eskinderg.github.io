@@ -2,7 +2,7 @@
     <ul class="timeline">
         @for (item of languageService.texts.menu.list; track trackItem($index, item)) {
             <li>
-                <div class="direction-l">
+                <div class="tag">
                     <span
                         (click)="scrollTo(item.link)"
                         [style.font-family]="languageService.texts['font'].outlineMenu.fontFamily"
@@ -11,8 +11,63 @@
                         [ngClass]="{ active: item.link === currentSection }">
                         {{ item.name }}
                     </span>
+                    <svg
+                        width="40"
+                        height="40"
+                        class="arrow"
+                        (click)="scrollTo(item.link)"
+                        version="1.1"
+                        viewBox="0 0 10.583 10.583"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m9.1654 5.2917-9.1654 5.2917 1.1e-6-5.2917v-5.2917l4.5827 2.6458z"
+                            style="
+                                fill: transparent;
+                                paint-order: stroke fill markers;
+                                stroke-dashoffset: 1028.4;
+                                stroke-width: 0.26458;
+                            "
+                            [ngClass]="{ active: item.link === currentSection }" />
+                    </svg>
+
+                    <svg
+                        class="dot"
+                        (click)="scrollTo(item.link)"
+                        width="40"
+                        height="40"
+                        version="1.1"
+                        viewBox="0 0 10.583 10.583"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m5.2917.00036996a5.2914 5.2914 0 00-5.2913 5.2913 5.2914 5.2914 0 005.2913 5.2913 5.2914 5.2914 0 005.2913-5.2913 5.2914 5.2914 0 00-5.2913-5.2913zm0 3.117a2.1744 2.1744 0 012.1743 2.1743 2.1744 2.1744 0 01-2.1743 2.1743 2.1744 2.1744 0 01-2.1743-2.1743 2.1744 2.1744 0 012.1743-2.1743z"
+                            style="
+                                fill: var(--lighter);
+                                paint-order: stroke fill markers;
+                                stroke-dashoffset: 1028.4;
+                                stroke-width: 0.26458;
+                            "
+                            [ngClass]="{ active: item.link === currentSection }" />
+                        ;
+                    </svg>
                 </div>
             </li>
+
+            <svg
+                class="line"
+                width="40"
+                height="200"
+                version="1.1"
+                viewBox="0 0 10.583 52.915"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m3.7899 5.0081e-6h3.0033v52.915h-3.0033z"
+                    style="
+                        fill: var(--lighter);
+                        paint-order: stroke fill markers;
+                        stroke-dashoffset: 1028.4;
+                        stroke-width: 0.26458;
+                    " />
+            </svg>
         }
     </ul>
 </div>

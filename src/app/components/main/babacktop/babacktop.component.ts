@@ -15,12 +15,14 @@ import { BaseComponent } from 'src/app/sections/base.component';
     styleUrls: ['./baBackTop.scss'],
     template: `
         <i #baBackTop class="ba-back-top" title="Back to Top">
-            <svg id="svg-back-to-top" width="30" viewBox="0 0 307.054 307.054">
+            <svg
+                id="svg-back-to-top"
+                version="1.1"
+                viewBox="0 0 307.05 17.619"
+                xmlns="http://www.w3.org/2000/svg">
                 <path
-                    style="fill:#FFFFFF"
-                    d="M302.445,205.788L164.63,67.959c-6.136-6.13-16.074-6.13-22.203,0L4.597,205.788c-6.129,6.132-6.129,16.069,0,22.201
-      l11.101,11.101c6.129,6.136,16.076,6.136,22.209,0l115.62-115.626L269.151,239.09c6.128,6.136,16.07,6.136,22.201,0
-      l11.101-11.101C308.589,221.85,308.589,211.92,302.445,205.788z" />
+                    d="m263.76 47.493-102.01-102.02c-4.5418-4.5374-11.898-4.5374-16.435 0l-102.02 102.02c-4.5367 4.5389-4.5367 11.894 0 16.433l8.2169 8.2169c4.5367 4.5418 11.899 4.5418 16.439 0l85.581-85.586 85.584 85.586c4.5359 4.5418 11.895 4.5418 16.433 0l8.2169-8.2169c4.5418-4.5441 4.5418-11.894-.006-16.433z"
+                    style="fill:#ffffff" />
             </svg>
         </i>
     `,
@@ -44,7 +46,7 @@ export class BaBackTopComponent extends BaseComponent implements OnInit {
         this.scrollService.scroll$.subscribe((e) => {
             if (e.srcElement) {
                 this._selector().nativeElement.style.display =
-                    e.target.scrollTop > this.position ? 'block' : 'none';
+                    e.target.scrollTop > this.position ? 'flex' : 'none';
             }
         });
     }
