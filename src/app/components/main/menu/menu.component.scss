@@ -77,6 +77,32 @@ svg {
         width: 100%;
     }
 
+    nav .text {
+        --c: white; /* the border color */
+        --b: 0.2rem; /* the border thickness */
+        --g: 1rem; /* the gap on hover */
+
+        padding: calc(var(--g) + var(--b));
+
+        --ga: #0000 25%, var(--c) 0;
+
+        background:
+            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200%
+                var(--ia, var(--b)) no-repeat,
+            conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
+        transition:
+            0.3s,
+            background-position 0.2s 0.2s;
+    }
+
+    nav .text:hover {
+        --ia: 100%;
+
+        transition:
+            0.2s,
+            background-size 0.2s 0.2s;
+    }
+
     nav span:hover {
         transition: all 0.5s ease;
         color: lightgray;
