@@ -6,6 +6,10 @@
 }
 
 .title {
+    position: relative;
+    cursor: default;
+    text-decoration: none;
+
     // color: var(--text);
     color: var(--light);
     display: inline-block;
@@ -26,6 +30,57 @@
     font-size: 1.5rem;
     line-height: 2.5rem;
     font-weight: 100;
+    background: linear-gradient(
+            90deg,
+            var(--light),
+            var(--light),
+            var(--light),
+            var(--lighter),
+            var(--light),
+            var(--light),
+            var(--light)
+        ) -100% / 200%;
+    background-clip: text;
+    color: transparent;
+    animation: background 4s ease-in-out infinite;
+}
+
+.styleish::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+    bottom: -0.5rem;
+    left: 0;
+    background-color: var(--lighter);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+
+    // transform-origin: top left;
+    animation: underline 4s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+@keyframes background {
+    to {
+        background-position: 100%;
+    }
+}
+
+@keyframes underline {
+    0% {
+        transform: scaleX(0);
+        transform-origin: top left;
+    }
+
+    50% {
+        transform: scaleX(1);
+    }
+
+    100% {
+        transform: scaleX(0);
+        transform-origin: top right;
+    }
 }
 
 .normal {
