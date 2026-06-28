@@ -91,42 +91,42 @@
 @include screen-4xs {
     .styleish {
         font-size: 1.75rem;
-        line-height: 1;
+        line-height: normal;
     }
 }
 
 @include screen-3xs {
     .styleish {
         font-size: 2rem;
-        line-height: 1;
+        line-height: normal;
     }
 }
 
 @include screen-2xs {
     .styleish {
         font-size: 2.25rem;
-        line-height: 1;
+        line-height: normal;
     }
 }
 
 @include screen-xs {
     .styleish {
         font-size: 2.5rem;
-        line-height: 1;
+        line-height: normal;
     }
 }
 
 @include screen-sm {
     .styleish {
         font-size: 3rem;
-        line-height: 1;
+        line-height: normal;
     }
 }
 
 @include screen-md {
     .styleish {
         font-size: 3.5rem;
-        line-height: 1;
+        line-height: normal;
     }
 
     .normal {
