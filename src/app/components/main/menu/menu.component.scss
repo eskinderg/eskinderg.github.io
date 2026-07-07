@@ -87,8 +87,7 @@ svg {
         --ga: #0000 25%, var(--c) 0;
 
         background:
-            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200%
-                var(--ia, var(--b)) no-repeat,
+            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200% var(--ia, var(--b)) no-repeat,
             conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
         transition:
             0.3s,
@@ -224,7 +223,7 @@ svg {
     }
 
     .top {
-        transform-origin: 20px 4.5px;
+        transform-origin: left;
     }
 
     .middle {
@@ -232,13 +231,13 @@ svg {
     }
 
     .bottom {
-        transform-origin: 21px 19.5px;
+        transform-origin: left;
     }
 
     &.open {
         .top {
-            transform: translateY(11px) rotate(45deg);
-            width: 12px;
+            transform: translateY(-6px) translateX(-1px) rotate(45deg);
+            width: 14px;
         }
 
         .middle {
@@ -248,7 +247,10 @@ svg {
         }
 
         .bottom {
-            transform: translateY(-11px) rotate(-45deg);
+            transform: translateY(6px) translateX(-1px) rotate(-45deg);
+            width: 14px;
+
+            // width: 12px;
         }
     }
 }
