@@ -5,9 +5,9 @@
     margin: 0;
     line-height: 1;
     max-width: 80%;
-    padding-top: 15%;
-    padding-left: 10%;
-    padding-bottom: 12%;
+
+    // padding-top: 15%;
+    // padding-bottom: 12%;
 }
 
 .intro-svg {
@@ -39,8 +39,11 @@
 }
 
 .intro {
-    display: inline-table;
+    display: flex;
+    align-items: center;
     transition: background-color 1s ease;
+    height: 75dvh;
+    padding-left: 10%;
 
     // background-color: var(--primary);
     position: relative;
@@ -196,8 +199,12 @@
 
 @include screen-2xl {
     .main {
-        padding-top: 10%;
-        padding-bottom: 10%;
+        // padding-top: 10%;
+        // padding-bottom: 10%;
+    }
+
+    .intro {
+        padding-left: 10%;
     }
 
     .intro-svg {
@@ -216,16 +223,9 @@ custom resolutions just for the intro and intro wave
 //     }
 // }
 
-@media (width >= 500px) and (height <=500px) {
-    .main {
-        padding-top: 5%;
-        padding-bottom: 5%;
-    }
-}
-
-@media (width <= 600px) and (height >= 640px) {
+@media (width <= 768px) and (height >=540px) {
     .intro {
-        max-height: 22rem;
+        height: 35dvh;
     }
 }
 
