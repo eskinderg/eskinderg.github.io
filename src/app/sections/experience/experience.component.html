@@ -16,7 +16,11 @@
                 track trackExperience($index, job);
                 let i = $index
             ) {
-                <app-timeline [job]="job" [index]="i" [reverse]="i % 2 === 0"></app-timeline>
+                <app-timeline
+                    appExperienceFadeIn
+                    [job]="job"
+                    [index]="i"
+                    [reverse]="i % 2 === 0"></app-timeline>
             }
         </div>
     </div>

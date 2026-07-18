@@ -12,6 +12,12 @@ import { DropDownMenuComponent } from '../../components/app/dropdown/dropdown.co
 })
 export class AboutSectionComponent extends BaseComponent implements AfterViewInit {
     section = viewChild.required<ElementRef>('about');
+    constructor() {
+        super();
+        this.hasSeparator = false;
+        this.separator.fillColor1 = 'var(--background2)';
+        this.separator.fillColor2 = 'var(--background1)';
+    }
 
     ngAfterViewInit(): void {
         this.languageService.sections['about'] = this.section;

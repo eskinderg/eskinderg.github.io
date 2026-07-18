@@ -11,14 +11,13 @@ import { BaseComponent } from 'src/app/sections/base.component';
 import { NgStyle } from '@angular/common';
 import Geezify from 'geezify-js';
 import { toEthiopian } from 'ethiopian-calendar-new';
-import { SeparatorComponent } from 'src/app/components/app/separator/separator.component';
 
 @Component({
     selector: 'app-contact',
     templateUrl: './contact.component.html',
     styleUrls: ['./contact.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgStyle, SeparatorComponent]
+    imports: [NgStyle]
 })
 export class ContactSectionComponent extends BaseComponent implements OnInit, AfterViewInit {
     public message = {
@@ -26,6 +25,13 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
         email: '',
         message: ''
     };
+
+    constructor() {
+        super();
+        this.hasSeparator = false;
+        this.separator.fillColor1 = 'var(--background2)';
+        this.separator.fillColor2 = 'var(--background1)';
+    }
 
     public currentAppVersion: string;
 

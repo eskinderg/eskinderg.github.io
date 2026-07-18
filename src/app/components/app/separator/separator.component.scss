@@ -1,5 +1,9 @@
 @use '../../../styles//screen.scss' as *;
 
+// :host * {
+   // transition: all 1s ease;
+// }
+
 .app-divider {
     transition: background 1s ease;
     width: 100%;

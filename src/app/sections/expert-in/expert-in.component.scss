@@ -1,11 +1,11 @@
 @use '../../styles/screen.scss' as *;
 
-:host * {
-    transition:
-        background-color 1s,
-        color 1s,
-        fill 1s ease;
-}
+// :host * {
+// transition:
+//     background-color 1s,
+//     color 1s,
+//     fill 1s ease;
+// }
 
 .star {
     fill: var(--background2);
@@ -52,8 +52,8 @@
 
     // padding-left: 2%;
     // padding-right: 2%;
-    transition: background-color 1s ease;
-    background-color: var(--background2);
+    // transition: background-color 1s ease;
+    // background-color: var(--background2);
 
     // width: 100%;
 }

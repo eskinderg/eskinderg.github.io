@@ -12,6 +12,11 @@ import { TechnologyComponent } from '../../components/app/technology/technology.
 })
 export class ExpertInSectionComponent extends BaseComponent implements AfterViewInit {
     section = viewChild.required<ElementRef>('expertin');
+    constructor() {
+        super();
+        this.separator.fillColor1 = 'var(--background2)';
+        this.separator.fillColor2 = 'var(--background1)';
+    }
 
     ngAfterViewInit(): void {
         this.languageService.sections['expertin'] = this.section;

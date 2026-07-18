@@ -41,7 +41,8 @@
 .intro {
     display: inline-table;
     transition: background-color 1s ease;
-    background-color: var(--primary);
+
+    // background-color: var(--primary);
     position: relative;
     overflow: visible;
     width: 100% !important;

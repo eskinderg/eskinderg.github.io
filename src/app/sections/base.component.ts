@@ -27,6 +27,13 @@ export class BaseComponent {
     protected eRef: ElementRef;
     protected httpStatus: boolean;
 
+    public hasSeparator: boolean = true;
+
+    public separator = {
+        fillColor1: '',
+        fillColor2: ''
+    };
+
     constructor() {
         this.appRef = inject(ApplicationRef);
         this.eRef = inject(ElementRef);
