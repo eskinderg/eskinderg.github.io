@@ -20,7 +20,8 @@
 .link {
     cursor: pointer;
     border-top: 2px solid var(--lighter);
-    padding: 1.25rem;
+
+    // padding: 1.25rem;
 }
 
 svg {
@@ -49,13 +50,14 @@ svg {
     // visibility: hidden;
     display: flex;
     justify-content: center;
+    align-items: center;
     position: fixed;
     z-index: 100;
     background-color: var(--primary) !important;
     left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
     overflow: auto;
     transition: opacity 0.5s ease;
 
@@ -69,11 +71,13 @@ svg {
 
     nav span {
         // color: #fff;
+        display: flex;
+        justify-content: center;
         color: #fff;
         text-decoration: none;
         cursor: pointer;
         text-align: center;
-        font-size: 5vh;
+        font-size: clamp(2rem, 3vmax + 1rem, 4rem);
         width: 100%;
     }
 
@@ -87,7 +91,8 @@ svg {
         --ga: #0000 25%, var(--c) 0;
 
         background:
-            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200% var(--ia, var(--b)) no-repeat,
+            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200%
+                var(--ia, var(--b)) no-repeat,
             conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
         transition:
             0.3s,
@@ -115,11 +120,14 @@ svg {
 
     nav {
         width: 100%;
+        flex-grow: 1;
 
         // height: 100%;
         // height: 70%;
         display: flex;
-        justify-content: space-evenly;
+
+        // justify-content: space-evenly;
+        justify-content: center;
         flex-direction: column;
         align-items: center;
     }
@@ -152,7 +160,7 @@ svg {
 
 @include screen-md {
     nav {
-        height: 100% !important;
+        // height: 100% !important;
     }
 
     nav span {
@@ -161,7 +169,7 @@ svg {
         border: none;
 
         // font-size: 3vw !important;
-        font-size: 5vmin !important;
+        // font-size: 5vmin !important;
     }
 
     nav a:hover {
@@ -171,7 +179,9 @@ svg {
     }
 
     .menu-list {
-        width: 65%;
+        // width: 65%;
+        // justify-content: center;
+        display: flex;
         justify-content: center;
     }
 }
