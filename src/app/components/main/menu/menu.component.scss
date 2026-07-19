@@ -19,9 +19,14 @@
 
 .link {
     cursor: pointer;
-    border-top: 2px solid var(--lighter);
 
+    // border-top: 2px solid var(--lighter);
     // padding: 1.25rem;
+}
+
+hr {
+    width: 100%;
+    border: 2px solid var(--lighter);
 }
 
 svg {
@@ -129,7 +134,7 @@ svg {
         display: flex;
 
         // justify-content: space-evenly;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-direction: column;
         align-items: center;
     }
