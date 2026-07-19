@@ -25,6 +25,7 @@
 }
 
 hr {
+    display: block;
     width: 100%;
     border: 2px solid var(--lighter);
 }
@@ -83,7 +84,7 @@ svg {
         cursor: pointer;
         text-align: center;
         font-size: clamp(2rem, 3vmax + 1rem, 4rem);
-        width: clamp(21rem, 40vmax, 36rem);
+        width: clamp(21rem, 45vmax, 36rem);
 
         // width: 100%;
     }
@@ -166,6 +167,10 @@ svg {
 }
 
 @include screen-md {
+    hr {
+        display: none;
+    }
+
     nav {
         // height: 100% !important;
     }
