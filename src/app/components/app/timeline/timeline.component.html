@@ -1,9 +1,11 @@
 <div class="outer">
-    <div class="left-side" [ngClass]="{ 'left order1': reverse, 'right order3': !reverse }">
+    <div class="timeline" [ngClass]="{ 'left order1': reverse, 'right order3': !reverse }">
         <div class="tag" [ngClass]="{ left: reverse, right: !reverse }">
-            <h3 class="main-title h3 link">{{ job.title }}</h3>
+            <app-title title="{{ job.title }}" [stylish]="false" [lineWidth]="250" />
+            <!-- <h3 class="main-title h3 link">{{ job.title }}</h3> -->
             @if (job.subtitle) {
-                <h3 class="subtitle h3">{{ job.subtitle }}</h3>
+                <app-title title="{{ job.subtitle }}" [stylish]="false" [lineWidth]="250" />
+                <!-- <h3 class="subtitle h3">{{ job.subtitle }}</h3> -->
             }
             <div class="job-year">{{ job.year }}</div>
             @if (job.intro) {
@@ -11,28 +13,26 @@
             }
         </div>
         @for (list of job.elements; track trackList($index, list)) {
-            <div>
-                <div class="content content-list sub-head" [style.font-family]="lang.texts.font.content">
-                    {{ list.header }}
-                </div>
-                @for (l of list.list; track l) {
-                    <div
-                        class="experience-list"
-                        [ngClass]="{
-                            'l-experience-list left-flex-layout': reverse,
-                            'r-experience-list right-flex-layout': !reverse
-                        }">
-                        <p
-                            class="content experience-list-item"
-                            [ngClass]="{
-                                'left-item-flex-layout': reverse,
-                                'right-item-flex-layout': !reverse
-                            }">
-                            {{ l }}
-                        </p>
-                    </div>
-                }
+            <div class="content content-list sub-head" [style.font-family]="lang.texts.font.content">
+                {{ list.header }}
             </div>
+            @for (l of list.list; track l) {
+                <div
+                    class="experience-list"
+                    [ngClass]="{
+                        'left-flex-layout': reverse,
+                        'right-flex-layout': !reverse
+                    }">
+                    <p
+                        class="content experience-list-item"
+                        [ngClass]="{
+                            'left-item-flex-layout': reverse,
+                            'right-item-flex-layout': !reverse
+                        }">
+                        {{ l }}
+                    </p>
+                </div>
+            }
         }
     </div>
     <div class="middle">
@@ -54,18 +54,16 @@
             </svg>
         </div>
     </div>
-    <div class="right-side" [ngClass]="{ 'right order3': reverse, 'left order1': !reverse }">
+    <div class="timeline" [ngClass]="{ 'right order3': reverse, 'left order1': !reverse }">
         <div class="year-duration gap-top">
             <div [style.font-family]="lang.texts.font.content">
                 {{ job.year }}
             </div>
         </div>
-        <div class="">
-            <div class="used">
-                @for (technology of job.used; track technology) {
-                    <app-chip [technology]="technology"></app-chip>
-                }
-            </div>
+        <div class="used" [ngClass]="reverse ? 'right' : 'left'">
+            @for (technology of job.used; track technology) {
+                <app-chip [technology]="technology"></app-chip>
+            }
         </div>
     </div>
 </div>

@@ -29,6 +29,8 @@
 }
 
 .accomp-background {
+    display: flex;
+    justify-content: center;
     transition: background-color 1s ease;
     background-color: var(--background1);
     padding: 3% 10%;
@@ -165,7 +167,7 @@
 
     .tag-left {
         // padding: 1rem;
-        padding: 1rem 2rem 1rem 1rem;
+        padding: 1rem 0 1rem 1rem;
         border: 1px solid var(--background2);
         border-top-left-radius: 2rem;
         border-bottom-left-radius: 2rem;
@@ -175,7 +177,7 @@
 
     .tag-right {
         // padding: 1rem;
-        padding: 1rem 1rem 1rem 2rem;
+        padding: 1rem 1rem 1rem 0;
         border: 1px solid var(--background2);
         border-top-right-radius: 2rem;
         border-bottom-right-radius: 2rem;

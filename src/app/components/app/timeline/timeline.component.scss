@@ -1,5 +1,13 @@
 @use '../../../styles//screen.scss' as *;
 
+.timeline {
+    order: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%;
+    gap: 0.5rem;
+}
+
 .outer {
     display: flex;
     flex-wrap: wrap;
@@ -14,10 +22,6 @@
     // border-bottom: 1px solid var(--light);
 }
 
-.sub-head {
-    margin-top: 1rem;
-}
-
 .job-year {
     display: block;
 
@@ -30,6 +34,7 @@
 
 .timeline-paragraph {
     transition: all 1s ease;
+    width: fit-content;
 
     // color: var(--primary);
     color: var(--text);
@@ -60,37 +65,15 @@ p {
     // filter: brightness(130%);
 }
 
-.l-experience-list::after {
-    content: ' ';
-    position: absolute;
-    right: -4.9%;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    top: 40%;
-    background: rgb(var(--primary), 0.2);
-}
-
-.r-experience-list::before {
-    content: ' ';
-    position: absolute;
-    margin-left: -4.9%;
-    width: 10px;
-    height: 10px;
-    border-radius: 10px;
-    top: 44%;
-    background: rgb(var(--primary), 0.2);
-    display: none;
-}
-
 .experience-list {
     display: flex;
     flex-flow: row wrap;
     position: relative;
     color: #585858;
     font-size: 13px;
-    margin: 0.35rem 0;
-    line-height: 19px;
+
+    // line-height: 19px;
+    width: 100%;
 }
 
 .experience-list-item {
@@ -101,12 +84,16 @@ p {
     border-radius: 7px;
 }
 
-.left-flex-layout {
-    justify-content: flex-start;
+.left-flex-layout,
+.right-flex-layout {
+    // justify-content: flex-end;
+    text-align: left;
 }
 
-.right-flex-layout {
-    justify-content: flex-start;
+.left,
+.right {
+    display: flex;
+    align-items: flex-start;
 }
 
 .middle {
@@ -137,24 +124,10 @@ p {
     // filter: brightness(130%);
 }
 
-.left,
-.left .main-title {
-    text-align: left;
-}
-
-.right,
-.right .main-title {
-    text-align: left;
-}
-
-// .main-title.link {
-//     cursor: pointer;
-
-//     margin-bottom: 8px;
-// }
-
 .used {
     overflow-wrap: break-word;
+    display: flex;
+    flex-wrap: wrap;
 
     // word-break: break-word;
 }
@@ -176,11 +149,11 @@ p {
 }
 
 .tag {
-    h3 {
-        // color: var(--primary) !important;
-        color: var(--text) !important;
+    flex-direction: column;
+    gap: 0.5rem;
 
-        // color: var(--light) !important;
+    h3 {
+        color: var(--text) !important;
     }
 
     // background-color: var(--lightest);
@@ -194,7 +167,8 @@ p {
     padding: 0.65rem;
     border-radius: 0.5rem;
     color: white !important;
-    display: inline-block;
+
+    // display: inline-block;
     transition: all 1s ease;
 }
 
@@ -202,33 +176,8 @@ p {
     padding: 15px 0 0;
 }
 
-.left {
-    justify-content: flex-end;
-}
-
-// .line {
-//     background-color: var(--lightest);
-// }
-
 .adjust {
     fill: var(--lighter);
-}
-
-.order1 {
-    order: 1;
-}
-
-.order3 {
-    order: 3;
-}
-
-.left-side {
-    flex: 1 1 100%;
-}
-
-.right-side {
-    flex: 1 1 100%;
-    order: 3;
 }
 
 .year-duration {
@@ -241,8 +190,24 @@ p {
     color: var(--text); // 700
 }
 
-// @include screen-lg {
 @include screen-md {
+    .timeline {
+        order: 0;
+        flex: 1 1 48%;
+        padding-top: 5rem;
+        gap: 1rem;
+    }
+
+    .left {
+        align-items: flex-end;
+        justify-content: right;
+    }
+
+    .right {
+        align-items: flex-start;
+        justify-content: left;
+    }
+
     .year-duration {
         display: inline-block;
 
@@ -271,17 +236,6 @@ p {
 
     .content-list {
         font-size: 1.125rem;
-        line-height: 1.75rem;
-    }
-
-    .right-side {
-        flex: 1 1 48%;
-        padding-top: 5rem;
-    }
-
-    .left-side {
-        flex: 1 1 48%;
-        padding-top: 5rem;
     }
 
     .middle {
@@ -323,11 +277,6 @@ p {
         order: 3;
     }
 
-    .left,
-    .left .main-title {
-        text-align: right;
-    }
-
     .left .gap-top {
         justify-content: flex-start;
     }
@@ -338,10 +287,12 @@ p {
 
     .left-flex-layout {
         justify-content: flex-end;
+        text-align: right;
     }
 
-    .experience-list {
-        margin: 1rem -0.25rem;
+    .right-flex-layout {
+        justify-content: flex-start;
+        text-align: left;
     }
 
     .left-item-flex-layout::after {

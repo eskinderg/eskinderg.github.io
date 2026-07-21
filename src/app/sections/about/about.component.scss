@@ -2,7 +2,7 @@
 
 #about {
     position: relative;
-    z-index:2;
+    z-index: 2;
 }
 
 .about {
@@ -67,7 +67,8 @@
 
 .about-title {
     margin-bottom: 24px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .intro-content {
@@ -118,12 +119,14 @@
     .about {
         // padding-top: 0;
         padding: 0% 10%;
+        padding-top: 2rem;
     }
 }
 
 @include screen-md {
     .about {
         padding: 0% 10%;
+        padding-top: 2rem;
     }
 
     .profile-picture {
@@ -137,7 +140,8 @@
     }
 
     .about-title {
-        text-align: left;
+        display: flex;
+        justify-content: left;
     }
 
     .about-content {

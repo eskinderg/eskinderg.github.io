@@ -2,13 +2,14 @@ import { Component, Input, ChangeDetectionStrategy, inject } from '@angular/core
 import { LanguageService } from 'src/app/providers/language.service';
 import { NgClass } from '@angular/common';
 import { ChipComponent } from '../chip/chip.component';
+import { TitleComponent } from '../title/title.component';
 
 @Component({
     selector: 'app-timeline',
     templateUrl: './timeline.component.html',
     styleUrls: ['./timeline.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgClass, ChipComponent]
+    imports: [NgClass, ChipComponent, TitleComponent]
 })
 export class TimelineComponent {
     lang = inject(LanguageService);

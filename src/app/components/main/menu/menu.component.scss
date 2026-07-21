@@ -83,10 +83,7 @@ svg {
         text-decoration: none;
         cursor: pointer;
         text-align: center;
-        font-size: clamp(2rem, 3vmin + 1rem, 4rem);
-        width: clamp(21rem, 45vmax, 36rem);
-
-        // width: 100%;
+        font-size: clamp(1.5rem, max(3vw, 4vh), 4rem);
     }
 
     nav .text {

@@ -1,5 +1,9 @@
 @use '../../../styles/screen.scss' as *;
 
+:host {
+    display: flex;
+}
+
 .title .line {
     margin-top: 8px;
     position: absolute;
@@ -9,10 +13,8 @@
     position: relative;
     cursor: default;
     text-decoration: none;
-
-    // color: var(--text);
+    width: max-content;
     color: var(--light);
-    display: inline-block;
     text-align: left;
 }
 
@@ -21,14 +23,7 @@
     text-wrap: nowrap;
 }
 
-.styleish-title {
-    font-weight: 100;
-    font-size: 55px;
-}
-
 .styleish {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
     font-weight: 100;
     background: linear-gradient(
             90deg,
@@ -38,11 +33,11 @@
             var(--lighter),
             var(--light),
             var(--light),
-            var(--light)
-        ) -100% / 200%;
+            var(--light)) -100% / 200%;
     background-clip: text;
     color: transparent;
     animation: background 4s ease-in-out infinite;
+    font-size: clamp(1.75rem, 5dvw + 1rem, 3.5rem);
 }
 
 .styleish::before {
@@ -56,8 +51,6 @@
     background-color: var(--lighter);
     transform: scaleX(0);
     transition: transform 0.3s ease;
-
-    // transform-origin: top left;
     animation: underline 4s cubic-bezier(1, 0, 0, 1) infinite;
 }
 
@@ -84,53 +77,5 @@
 }
 
 .normal {
-    font-size: 1rem;
-    line-height: 1.5rem;
-}
-
-@include screen-4xs {
-    .styleish {
-        font-size: 1.75rem;
-        line-height: normal;
-    }
-}
-
-@include screen-3xs {
-    .styleish {
-        font-size: 2rem;
-        line-height: normal;
-    }
-}
-
-@include screen-2xs {
-    .styleish {
-        font-size: 2.25rem;
-        line-height: normal;
-    }
-}
-
-@include screen-xs {
-    .styleish {
-        font-size: 2.5rem;
-        line-height: normal;
-    }
-}
-
-@include screen-sm {
-    .styleish {
-        font-size: 3rem;
-        line-height: normal;
-    }
-}
-
-@include screen-md {
-    .styleish {
-        font-size: 3.5rem;
-        line-height: normal;
-    }
-
-    .normal {
-        font-size: 1.5rem;
-        line-height: 2rem;
-    }
+    font-size: clamp(1rem, 4vmin + 1rem, 1rem);
 }
