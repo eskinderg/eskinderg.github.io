@@ -7,6 +7,10 @@
 //     fill 1s ease;
 // }
 
+#technologies {
+    width: 100%;
+}
+
 .star {
     fill: var(--background2);
 }
@@ -48,6 +52,7 @@
     flex-flow: row wrap;
     padding-top: 5%;
     padding-bottom: 5%;
+    width: 100%;
     scroll-margin-top: 3rem;
 
     // padding-left: 2%;

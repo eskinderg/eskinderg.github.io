@@ -2,14 +2,13 @@ import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, viewChil
 import { BaseComponent } from 'src/app/sections/base.component';
 import { TitleComponent } from '../../components/app/title/title.component';
 import { TimelineComponent } from '../../components/app/timeline/timeline.component';
-import { ExperienceFadeInDirective } from './experience-fadein-directive';
 
 @Component({
     selector: 'app-experience',
     templateUrl: './experience.component.html',
     styleUrls: ['./experience.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [TitleComponent, TimelineComponent, ExperienceFadeInDirective]
+    imports: [TitleComponent, TimelineComponent]
 })
 export class ExperienceSectionComponent extends BaseComponent implements AfterViewInit {
     section = viewChild.required<ElementRef>('experience');

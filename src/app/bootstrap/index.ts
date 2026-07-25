@@ -2,7 +2,6 @@ import { ApplicationRef, ComponentRef } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { Components } from './components';
 import { ThemeService } from '../theme/theme.service';
-import { FadeInDirective } from '../providers/scroll-fade.directive';
 import { SeparatorComponent } from '../components/app/separator/separator.component';
 
 export function bootstrapComponentsFactory(
@@ -15,11 +14,10 @@ export function bootstrapComponentsFactory(
 
         Components.forEach((component) => {
             const compRef = viewContainer.createComponent(component, {
-                environmentInjector: appRef.injector,
-                directives: [FadeInDirective]
+                environmentInjector: appRef.injector
             });
 
-            compRef.location.nativeElement.style.display = 'block';
+            compRef.location.nativeElement.style.display = 'flex';
             compRef.location.nativeElement.style.transition = 'background 1s ease';
             compRef.location.nativeElement.style.background = compRef.instance.separator.fillColor1;
             hostElement.appendChild(compRef.location.nativeElement);
