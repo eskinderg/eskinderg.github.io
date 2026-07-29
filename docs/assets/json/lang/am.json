@@ -260,14 +260,14 @@
         "title": "የሥራ ልምድ",
         "content": [
             {
-                "title": "Freelance Web Developer (Front End Developer)",
-                "subtitle": "Front End (Angular), Elance",
+                "title": "Freelance Web Developer (Full Stack)",
+                "subtitle": "Elance",
                 "year": "ነሐሴ 2010 - አሁን",
-                "intro": "Freelance",
+                "intro": "",
                 "elements": [
                     {
                         "type": "list",
-                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
+                        "header": "በእነዚህ ኃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "ለተለያዩ ድህረ ገጾች ሞያዊ ድጋፍ ሰጥቻለሁ።",
                             "Created SPA, user interactive (UI) web pages using web technologies like HTML5, SASS, Typescript, Angular2 and Bootstrap.",
@@ -295,13 +295,13 @@
             },
             {
                 "title": "Web Developer (Front End)",
-                "subtitle": "Front End, Nuaxis.",
+                "subtitle": "Front End",
                 "year": "ሐምሌ 2008 - ሰኔ 2010",
-                "intro": "Nuaxis",
+                "intro": "",
                 "elements": [
                     {
                         "type": "list",
-                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
+                        "header": "በእነዚህ ኃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "Created programs as per user / design requirements using AngularJS",
                             "Collaborated with cross-functional teams (DEV, UX/UI & BA) to define, design, and deliver creative digital solutions",
@@ -343,11 +343,11 @@
             {
                 "title": "Software Engineer II",
                 "year": "ጥቅምት 2008 - ሐምሌ 2008",
-                "intro": "Bloomberg BNA",
+                "intro": "",
                 "elements": [
                     {
                         "type": "list",
-                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
+                        "header": "በእነዚህ ኃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "E commerce development using Agile methodologies",
                             "Full Stack web development using ASP .Net MVC, C#, Angularjs and MSSQL.",
@@ -378,12 +378,12 @@
             {
                 "title": "Web Developer & Designer",
                 "subtitle": "Full-Stack Software Developer & Designer",
-                "year": "ታህሳስ 2007 - ጥቅምት2008",
+                "year": "ታኅሳስ 2007 - ጥቅምት2008",
                 "intro": "",
                 "elements": [
                     {
                         "type": "list",
-                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
+                        "header": "በእነዚህ ኃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "Full Stack development using LAMP stack.",
                             "Maintained website for most up-to date technology, software, and information",
@@ -397,13 +397,13 @@
             },
             {
                 "title": "Web Developer (Full Stack Developer)",
-                "subtitle": "Addis Ababa University, Ethiopia",
-                "year": "ነሐሴ 2005 - ታህሳስ 2007",
+                "subtitle": "",
+                "year": "ነሐሴ 2005 - ታኅሳስ 2007",
                 "intro": "",
                 "elements": [
                     {
                         "type": "list",
-                        "header": "በነዚህ ሃላፊነቶች ብቻ ሳይወሰን:-",
+                        "header": "በእነዚህ ኃላፊነቶች ብቻ ሳይወሰን:-",
                         "list": [
                             "Designed visual layout of websites.",
                             "Created Stored Procedures using MSSQL.",
@@ -441,13 +441,13 @@
             },
             {
                 "title": "ማይክሮሶፍት ሰርቲፋይድ ፕሮፌሽናል",
-                "subtitle": "ማይክሮሶፍት",
+                "subtitle": "",
                 "img": "bg-microsoft",
                 "year": "2006 ዓ.ም"
             },
             {
                 "title": "ማይክሮሶፍት ሰርቲፋይድ C# እስፔሻሊስት",
-                "subtitle": "ማይክሮሶፍት",
+                "subtitle": "",
                 "img": "bg-microsoft",
                 "year": "2006 ዓ.ም"
             }
@@ -458,7 +458,7 @@
         "content": []
     },
     "contact": {
-        "intro": "ለማንኛውም የድህረ ገጽ ስራ ጋር  የተገናኘ ጥያቄ ካልዎት በ ኢሜል ወይም ስልክ በመጠቀም ሊያገኙኝ  ይችላሉ።",
+        "intro": "ማንኛውም ከድህረ ገጽ ሥራ ጋር የተገናኘ ጥያቄ ካልዎት በ ኢሜል እድራሻ ወይም በስልክ በመጠቀም ሊያገኙኝ ይችላሉ።",
         "input": ["NAME", "EMAIL", "MESSAGE"],
         "mail": "eskinderget@gmail.com",
         "phone": "+251-911-184987",
