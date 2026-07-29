@@ -3,14 +3,14 @@
         <div class="tag" [ngClass]="{ left: reverse, right: !reverse }">
             <app-title title="{{ job.title }}" [stylish]="false" [lineWidth]="250" />
             <!-- <h3 class="main-title h3 link">{{ job.title }}</h3> -->
-            @if (job.subtitle) {
-                <app-title title="{{ job.subtitle }}" [stylish]="false" [lineWidth]="250" />
+            @if (job.intro) {
+                <app-title title="{{ job.intro }}" [stylish]="false" [lineWidth]="250" />
                 <!-- <h3 class="subtitle h3">{{ job.subtitle }}</h3> -->
             }
             <div class="job-year">{{ job.year }}</div>
-            @if (job.intro) {
-                <h3 class="timeline-paragraph">{{ job.intro }}</h3>
-            }
+            <!-- @if (job.intro) { -->
+            <!--     <h3 class="timeline-paragraph">{{ job.intro }}</h3> -->
+            <!-- } -->
         </div>
         @for (list of job.elements; track trackList($index, list)) {
             <div class="content content-list sub-head" [style.font-family]="lang.texts.font.content">

@@ -258,7 +258,7 @@
                 "title": "Freelance Web Developer (Full Stack)",
                 "subtitle": "Elance",
                 "year": "Sept 2018 - Present",
-                "intro": "Freelance",
+                "intro": "",
                 "elements": [
                     {
                         "type": "list",
@@ -289,9 +289,9 @@
             },
             {
                 "title": "Web Developer (Front-End)",
-                "subtitle": "Front-End, Nuaxis.",
+                "subtitle": "Front-End",
                 "year": "Aug 2016 - Jul 2018",
-                "intro": "Nuaxis",
+                "intro": "",
                 "elements": [
                     {
                         "type": "list",
@@ -337,7 +337,7 @@
             {
                 "title": "Software Engineer II",
                 "year": "Nov 2015 - Aug 2016",
-                "intro": "Bloomberg BNA",
+                "intro": "",
                 "elements": [
                     {
                         "type": "list",
@@ -391,7 +391,7 @@
             },
             {
                 "title": "Web Developer (Full Stack Developer)",
-                "subtitle": "Addis Ababa University, Ethiopia",
+                "subtitle": "",
                 "year": "Sep 2013 - Jan 2015",
                 "intro": "",
                 "elements": [
@@ -435,13 +435,13 @@
             },
             {
                 "title": "Microsoft Certified Professional",
-                "subtitle": "Microsoft",
+                "subtitle": "",
                 "img": "bg-microsoft",
                 "year": "2014"
             },
             {
                 "title": "Microsoft Certified C# Specialist",
-                "subtitle": "Microsoft",
+                "subtitle": "",
                 "img": "bg-microsoft",
                 "year": "2014"
             }
