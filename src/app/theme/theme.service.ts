@@ -5,12 +5,14 @@ import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { ThemeMode } from './theme.mode';
 import { LocalStorageService } from '../providers/local-storage.service';
+import { Meta } from '@angular/platform-browser';
 
 @Injectable()
 export class ThemeService {
     http = inject(HttpClient);
     private document = inject<Document>(DOCUMENT);
     private localStorageService = inject(LocalStorageService);
+    private meta = inject(Meta);
     public static defaultTheme: string = 'indigo';
     public static DarkModeDefault: ThemeMode = 'system';
 
@@ -124,6 +126,7 @@ export class ThemeService {
      */
     public SetTheme(theme: string, isDarkMode: boolean): Promise<void> {
         return new Promise((resolve) => {
+            this.meta.updateTag({ name: 'theme-color', content: this.getHex(theme) }, "name='theme-color'");
             this.document.documentElement.className = theme;
 
             const root = this.document.querySelector(':root');
@@ -139,5 +142,40 @@ export class ThemeService {
                 resolve(); // SSR or non-browser environment
             }
         });
+    }
+
+    public getThemeInHex(): string {
+        return this.getHex(this.Theme);
+    }
+
+    private getHex(theme: string): string {
+        switch (theme) {
+            case 'red':
+                return '#b34949';
+            case 'green':
+                return '#326834';
+            case 'blue':
+                return '#144b84';
+            case 'orange':
+                return '#a56831';
+            case 'teal':
+                return '#24736b';
+            case 'cyan':
+                return '#0b8494';
+            case 'pink':
+                return '#9f2e54';
+            case 'deeppurple':
+                return '#503b77';
+            case 'indigo':
+                return '#3f51b5';
+            case 'lightblue':
+                return '#5087bf';
+            case 'brown':
+                return '#744c3e';
+            case 'bluegrey':
+                return '#607d8b';
+            default:
+                return '#3f51b5';
+        }
     }
 }

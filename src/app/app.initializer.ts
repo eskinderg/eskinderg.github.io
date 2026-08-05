@@ -16,7 +16,12 @@ export const AppInit = [
 ];
 
 function initializeAppMeta(): () => void {
-    return () => inject(Meta).addTags(appMeta);
+    return () => {
+        const meta = inject(Meta);
+        const themeService = inject(ThemeService);
+        meta.addTags(appMeta);
+        meta.updateTag({ name: 'theme-color', content: themeService.getThemeInHex() }, "name='theme-color'");
+    };
 }
 
 // function initTheme(): () => Promise<void> {
