@@ -18,7 +18,6 @@ export class ThemeService {
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
 
-    private darkModeMediaQuery: any;
     private colorList: any;
     private platformId = inject(PLATFORM_ID);
 
@@ -30,8 +29,9 @@ export class ThemeService {
 
     constructor() {
         if (isPlatformBrowser(this.platformId)) {
-            this.darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            this.darkModeMediaQuery.addEventListener('change', this.handleDarkModeChange);
+            window
+                .matchMedia('(prefers-color-scheme: dark)')
+                .addEventListener('change', this.handleDarkModeChange);
         }
     }
 
@@ -48,7 +48,6 @@ export class ThemeService {
 
     public get ThemeMode(): ThemeMode {
         return (this.localStorageService.getItem('thememode') as ThemeMode) ?? ThemeService.DarkModeDefault;
-        // return (localStorage.getItem('thememode') as ThemeMode) ?? ThemeService.DarkModeDefault;
     }
 
     get IsDarkMode(): boolean {
@@ -63,7 +62,6 @@ export class ThemeService {
 
     public set ThemeMode(value: ThemeMode) {
         this.localStorageService.setItem('thememode', value.toString());
-        // localStorage.setItem('thememode', value.toString());
     }
 
     public ToggleDarkMode(): ThemeMode {
@@ -72,25 +70,17 @@ export class ThemeService {
 
     public get Theme(): string {
         return this.localStorageService.getItem('theme') ?? ThemeService.defaultTheme;
-        // return localStorage.getItem('theme') ?? ThemeService.defaultTheme;
     }
 
     public set Theme(theme: string) {
         this.localStorageService.setItem('theme', theme);
-        // localStorage.setItem('theme', theme);
     }
 
     get Colors() {
         return this.colorList;
     }
 
-    // private setUserPreferenceTheme(): void {
-    //     this.SetAppTheme(this.Theme, this.ThemeMode);
-    // }
-
     public LoadTheme(): Observable<any> {
-        // this.setUserPreferenceTheme();
-
         const colorPath = 'assets/json/colors.json';
 
         return this.http.get(colorPath).pipe(
