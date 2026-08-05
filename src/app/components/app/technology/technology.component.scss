@@ -3,13 +3,9 @@
 .mastery-subtitle {
     text-align: center;
 
-    // display: none;
-
-    // font-weight: 700 !important;
-    font-size: 0.65rem;
+    // font-size: 0.65rem;
+    font-size: clamp(0.75rem, 0.5rem + 1vw, 1rem);
     display: none;
-
-    // line-height: 1rem;
 }
 
 .mastery {
@@ -18,8 +14,6 @@
     transition: all 0.35s;
     width: 100%;
     height: 100%;
-
-    // margin: 26% 19px 0% 0%;
 }
 
 .mastery a,
@@ -33,12 +27,9 @@
 
 .mastery *:hover {
     transition: all 0.35s;
-
-    // filter: grayscale(0%);
 }
 
 .logo-mastery {
-    // mix-blend-mode:multiply;
     width: 100%;
     height: 100%;
     outline: var(--primary);
@@ -181,51 +172,5 @@
 @include screen-3xs {
     .mastery-subtitle {
         display: block;
-    }
-}
-
-@include screen-xs {
-    .mastery-subtitle {
-        font-size: 0.75rem;
-    }
-
-    .mastery {
-        padding: 15%;
-    }
-}
-
-@include screen-sm {
-    .mastery-subtitle {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-    }
-
-    .mastery {
-        padding: 15%;
-    }
-}
-
-@include screen-md {
-    .mastery-subtitle {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-    }
-
-    .mastery {
-        padding: 15%;
-    }
-}
-
-@include screen-lg {
-    .mastery-subtitle {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-}
-
-@include screen-xl {
-    .mastery-subtitle {
-        font-size: 1rem;
-        line-height: 1.5rem;
     }
 }

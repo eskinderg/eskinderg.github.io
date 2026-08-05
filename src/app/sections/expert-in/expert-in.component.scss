@@ -1,12 +1,5 @@
 @use '../../styles/screen.scss' as *;
 
-// :host * {
-// transition:
-//     background-color 1s,
-//     color 1s,
-//     fill 1s ease;
-// }
-
 #technologies {
     width: 100%;
 }
@@ -19,28 +12,6 @@
     fill: var(--background1);
 }
 
-.grid-layout {
-    display: grid;
-    justify-content: center;
-
-    // grid-gap: 4% 4%;
-    grid-template-columns: repeat(auto-fill, 20%);
-    grid-auto-rows: 1fr;
-}
-
-.grid-layout::before {
-    content: '';
-    width: 0;
-    padding-bottom: 100%;
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
-}
-
-.grid-layout > *:first-child {
-    grid-row: 1 / 1;
-    grid-column: 1 / 1;
-}
-
 .tech-list {
     width: 100%;
     height: 100%;
@@ -50,17 +21,9 @@
 .expertin {
     display: flex;
     flex-flow: row wrap;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding: 5% 2%;
     width: 100%;
     scroll-margin-top: 3rem;
-
-    // padding-left: 2%;
-    // padding-right: 2%;
-    // transition: background-color 1s ease;
-    // background-color: var(--background2);
-
-    // width: 100%;
 }
 
 .title-expertin {
@@ -92,28 +55,13 @@
 .technology-list {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, 20%);
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 11%));
+    gap: 0;
 }
 
-@include screen-xs {
+@include screen-3xs {
     .technology-list {
-        grid-template-columns: repeat(auto-fill, 18%);
-    }
-}
-
-@include screen-sm {
-    .technology-list {
-        grid-template-columns: repeat(auto-fill, 15%);
-    }
-}
-
-@include screen-md {
-    .title-expertin {
-        text-align: left;
-    }
-
-    .technology-list {
-        grid-template-columns: repeat(auto-fill, 14%);
+        gap: 2rem 0.25rem;
     }
 }
 
@@ -123,20 +71,12 @@
         align-items: center;
     }
 
-    .technology-list {
-        grid-template-columns: repeat(auto-fill, 13%);
-    }
-
     .expert-in-content {
         flex: 1 1 70%;
     }
 }
 
 @include screen-xl {
-    .technology-list {
-        grid-template-columns: repeat(auto-fill, 12%);
-    }
-
     .expertin {
         padding-right: 10%;
     }
