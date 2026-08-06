@@ -7,6 +7,14 @@
     top: 0;
     height: 0.55rem;
     background-color: var(--light);
+    opacity: 0.85;
+
+    // transition: width 0.1s ease-out;
+}
+
+.full {
+    opacity:1;
+    background-color: var(--primary);
 }
 
 @include screen-xl {

@@ -13,16 +13,10 @@ export class ScrollService {
     }
 
     private calcPosition(event: any) {
-        const clientHeight = event.target.clientHeight;
-        const scrollTop = event.target.scrollTop;
-        const scrollHeight = event.target.scrollHeight;
-        let position = 0;
-
-        if (scrollTop < clientHeight) {
-            position = Math.floor((scrollTop * 100) / scrollHeight);
-        } else {
-            position = Math.floor(((clientHeight + scrollTop) * 100) / scrollHeight);
-        }
-        this.scrollPosition.next(position);
+        const element = event.target;
+        const scrollTop = element.scrollTop;
+        const maxScroll = element.scrollHeight - element.clientHeight;
+        const scrollPercent = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+        this.scrollPosition.next(scrollPercent);
     }
 }

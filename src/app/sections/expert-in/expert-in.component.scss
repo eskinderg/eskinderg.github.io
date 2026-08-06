@@ -2,6 +2,7 @@
 
 #technologies {
     width: 100%;
+    padding: 5% 0;
 }
 
 .star {
@@ -62,6 +63,12 @@
 @include screen-3xs {
     .technology-list {
         gap: 2rem 0.25rem;
+    }
+}
+
+@include screen-sm {
+    #technologies {
+        padding: 0;
     }
 }
 

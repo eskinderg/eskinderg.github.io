@@ -46,7 +46,7 @@
     display: flex;
     align-items: center;
     transition: background-color 1s ease;
-    height: 75dvh;
+    height: 65vh;
     padding-left: 10%;
 
     // background-color: var(--primary);
@@ -202,10 +202,10 @@
 }
 
 @include screen-2xl {
-    .main {
-        // padding-top: 10%;
-        // padding-bottom: 10%;
-    }
+    // .main {
+    //     padding-top: 10%;
+    //     padding-bottom: 10%;
+    // }
 
     .intro {
         padding-left: 10%;
@@ -229,7 +229,7 @@ custom resolutions just for the intro and intro wave
 
 @media (width <= 768px) and (height >=540px) {
     .intro {
-        height: 35dvh;
+        height: 30vh;
     }
 }
 
