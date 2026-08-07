@@ -19,6 +19,7 @@
     <div class="theme-toggle-group icon-only" [class.open]="open">
         <button
             [appTooltip]="'system'"
+            [position]="TOOLTIP_POSITION.RIGHT"
             class="theme-toggle-btn"
             [class.active]="themeService.ThemeMode === 'system'"
             (click)="setMode('system'); close()"
@@ -30,6 +31,7 @@
         </button>
         <button
             [appTooltip]="'light'"
+            [position]="TOOLTIP_POSITION.RIGHT"
             class="theme-toggle-btn"
             [class.active]="themeService.ThemeMode === 'light'"
             (click)="setMode('light'); close()"
@@ -41,6 +43,7 @@
         </button>
         <button
             [appTooltip]="'dark'"
+            [position]="TOOLTIP_POSITION.RIGHT"
             class="theme-toggle-btn"
             [class.active]="themeService.ThemeMode === 'dark'"
             (click)="setMode('dark'); close()"

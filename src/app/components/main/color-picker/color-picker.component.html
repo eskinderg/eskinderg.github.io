@@ -4,7 +4,6 @@
         class="fab-toggler main-button"
         color="primary"
         appTooltip="{{ languageService.texts.colorSelectTooltip }}"
-        [position]="TOOLTIP_POSITION.RIGHT"
         [ngClass]="{ rotate: colorTogglerState === STATE.Opened }"
         [class.rotate]="open"
         (click)="onToggleButton()">
