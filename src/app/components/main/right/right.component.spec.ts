@@ -48,8 +48,8 @@ describe('RightComponent', () => {
         expect(toggleComponent).toBeTruthy();
     });
 
-    it('Should render menu component', () => {
-        const toggleComponent = findComponent(fixture, 'app-menu');
+    it('Should render color picker component', () => {
+        const toggleComponent = findComponent(fixture, 'app-color-picker');
         expect(toggleComponent).toBeTruthy();
     });
 });
