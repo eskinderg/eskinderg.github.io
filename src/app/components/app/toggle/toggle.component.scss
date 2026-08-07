@@ -10,7 +10,7 @@
 
     .theme-toggle-group.icon-only {
         gap: 0.5rem !important;
-        padding: 0.4rem 0.7rem !important;
+        padding: 0.4rem 0.25rem !important;
     }
 }
 
@@ -76,14 +76,14 @@ svg {
 
 .theme-toggle-group.icon-only {
     position: absolute;
-    top: 50%;
-    right: 110%;
-    left: auto;
+    top: 0;
+    left: 50%;
     display: flex;
+    flex-direction: column;
     gap: 0;
     padding: 0;
     border-radius: 2rem;
-    transform: translateY(-50%) translateX(40px) scaleX(0.7); // Start hidden, right and small
+    transform: translateY(0) translateX(-50%) scaleY(0.7); // Start hidden, right and small
     opacity: 0;
     pointer-events: none;
     transition:
@@ -95,7 +95,7 @@ svg {
 .theme-toggle-group.icon-only.open {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(-50%) translateX(0) scaleX(1); // Slide to left and scale to normal
+    transform: translateY(45%) translateX(-50%) scaleY(1); // Slide to left and scale to normal
 }
 
 .theme-toggle-btn {

@@ -1,12 +1,5 @@
 @use '../../../styles/screen.scss' as *;
 
-:host {
-    position: fixed;
-    top: 0.75rem;
-    left: 1rem;
-    z-index: 90;
-}
-
 .fa-color-lens {
     position: absolute;
     left: 0;
@@ -63,8 +56,11 @@ svg {
     flex-direction: column;
     border: none;
     transition: opacity 1s ease;
-    top: auto;
-    left: auto;
+
+    // top: 2.5rem;
+    // left: auto;
+    // right: 100%;
+    // width: max-content;
 }
 
 .btn-wrapper.click {
@@ -179,30 +175,23 @@ svg {
     }
 
     .btn-wrapper {
-        flex-direction: row;
+        flex-direction: row-reverse;
         top: 6%;
-        left: 100%;
+        left: auto;
+        right: 100%;
     }
 
     .fab-container {
         flex-direction: row;
     }
-
-    :host {
-        top: 1rem;
-        left: 2rem;
-    }
 }
 
 @media (height <= 540px) {
-    // .fab-toggler {
-    //     width: 3.5rem;
-    //     height: 3.5rem;
-    // }
     .btn-wrapper {
-        flex-direction: row;
+        flex-direction: row-reverse;
         top: 6%;
-        left: 100%;
+        left: auto;
+        right: 100%;
     }
 
     .fab-container {
