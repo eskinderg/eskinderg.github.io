@@ -1,35 +1,62 @@
 @use '../../../styles//screen.scss' as *;
 
 .timeline {
-    order: 0;
+    order: 1;
     display: flex;
     flex-direction: column;
     flex: 1 1 100%;
     gap: 0.5rem;
+
+    // margin-left: 0.5rem;
 }
 
 .outer {
     display: flex;
-    flex-wrap: wrap;
+
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // width: 100%;
 
     // padding: 5% 0.5rem;
     // border-bottom: 1px solid var(--text);
     // margin-bottom: 2%;
     // border-radius: 1rem;
-    margin: 5% 2%;
+    // margin: 0% 2%;
 
     // padding-bottom: 1.5rem;
     // border-bottom: 1px solid var(--light);
 }
 
+.mobile-tag {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    background: var(--lightest);
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
+.line {
+    position: relative;
+    width: 1px;
+    height: 100%;
+    margin: 0 1rem 0 1.5rem;
+    overflow: visible;
+
+    // margin: 0 auto;
+    // background-color: var(--light);
+    background-color: var(--line);
+    transition: background-color 1s ease;
+}
+
 .job-year {
     display: block;
-
-    // color: var(--light);
+    font-weight: normal;
     color: var(--text);
 
     // font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.75rem;
+    align-self: start;
 }
 
 .timeline-paragraph {
@@ -71,14 +98,37 @@ p {
     position: relative;
     color: #585858;
     font-size: 13px;
-
-    // line-height: 19px;
     width: 100%;
 }
 
+.experience-list::before {
+    content: '●';
+    position: absolute;
+    top: 50%;
+
+    // transform: translateX(-50%);
+    transform: translate(-165%, -50%);
+    font-size: 1.5rem;
+    color: var(--line);
+    transition: color 1s ease;
+}
+
+// .experience-list::after {
+//     content: '';
+//     position: absolute;
+//     display: block;
+//     transform: translate(-100%, -50%);
+//     top: 50%;
+//     // border: 2px solid green;
+//     width: 1.5rem;
+//     height: 0.1rem;
+//     background: var(--lighter);
+// }
+
 .experience-list-item {
     flex-grow: 1;
-    border: 1px solid var(--lightest);
+    transition: border 1s ease;
+    border: 1px solid var(--line);
     padding: 0.5rem;
     width: fit-content;
     border-radius: 7px;
@@ -94,22 +144,37 @@ p {
 .right {
     display: flex;
     align-items: flex-start;
+
+    // flex-basis: 80%;
+    // margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+
+    // margin-left: 0.1rem;
+}
+
+.mobile-used {
+    display: block;
 }
 
 .middle {
-    display: none;
-}
+    // display: none;
+    order: 0;
 
-.bottom {
-    margin: 0;
+    // flex: 1 1;
+    // flex-basis:20%;
+    // border: 2px solid red;
 }
 
 .mid-icon {
+    // display: none;
     position: absolute;
-    color: #eeeff0;
-    margin: 5.5rem 0 0 -2.1rem;
-    width: 4.5rem;
-    height: 4.5rem;
+    left: 50%;
+
+    // transform: translateX(-50%);
+    transform: translate(-50%, -1rem);
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
 
     path {
         transition: all 1s ease;
@@ -126,10 +191,14 @@ p {
 
 .used {
     overflow-wrap: break-word;
-    display: flex;
     flex-wrap: wrap;
+    display: none;
 
     // word-break: break-word;
+}
+
+.mobile-hide {
+    display: none;
 }
 
 .chip {
@@ -149,8 +218,10 @@ p {
 }
 
 .tag {
+    display: none;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 0;
 
     h3 {
         color: var(--text) !important;
@@ -158,22 +229,18 @@ p {
 
     // background-color: var(--lightest);
     position: relative;
-    background-color: var(--background1);
+    background: none;
 
     // border: 1px solid var(--lighter);
     // border: 1px solid var(--lightest);
     border: none;
     width: 100%;
-    padding: 0.65rem;
+    margin-top: 1rem;
     border-radius: 0.5rem 0.5rem 0 0;
     color: white !important;
 
     // display: inline-block;
     transition: all 1s ease;
-}
-
-.gap-top {
-    padding: 15px 0 0;
 }
 
 .adjust {
@@ -191,6 +258,34 @@ p {
 }
 
 @include screen-md {
+    .mobile-tag {
+        display: none;
+    }
+
+    .hide-fill {
+        fill: var(--background2);
+    }
+
+    .mobile-hide {
+        display: flex;
+    }
+
+    .mobile-used {
+        display: none;
+    }
+
+    .mid-icon {
+        display: flex;
+        position: absolute;
+
+        // left: auto;
+        width: 4.5rem;
+        height: 4.5rem;
+        transform: translate(-50%, 100%);
+
+        // margin: 5.5rem 0 0 -2.1rem;
+    }
+
     .timeline {
         order: 0;
         flex: 1 1 48%;
@@ -201,9 +296,23 @@ p {
     .left {
         align-items: flex-end;
         justify-content: right;
+
+        // justify-content: flex-start;
+        flex: 1 1 48%;
     }
 
     .right {
+        align-items: flex-start;
+        justify-content: left;
+        flex: 1 1 48%;
+    }
+
+    .chip-left {
+        align-items: flex-end;
+        justify-content: right;
+    }
+
+    .chip-right {
         align-items: flex-start;
         justify-content: left;
     }
@@ -225,11 +334,16 @@ p {
         border: 1px solid var(--lighter);
     }
 
+    .experience-list::before {
+        display: none;
+    }
+
     .job-year {
         display: none;
     }
 
     .used {
+        display: flex;
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
@@ -242,15 +356,14 @@ p {
         display: block;
         flex: 1 1 4%;
         order: 2;
-        width: 3px;
-        margin: 0 auto;
         border: none;
     }
 
     .line {
         width: 3px;
         height: 100%;
-        overflow: auto;
+
+        // overflow: auto;
         margin: 0 auto;
         background-color: var(--lightest);
     }
@@ -260,7 +373,8 @@ p {
     }
 
     .outer {
-        flex-wrap: nowrap;
+        display: flex;
+        flex-flow: row nowrap;
         padding: 0 0.5rem;
         margin: 0%;
         padding-bottom: 0%;
@@ -277,9 +391,9 @@ p {
         order: 3;
     }
 
-    .left .gap-top {
-        justify-content: flex-start;
-    }
+    // .left {
+    //     justify-content: flex-start;
+    // }
 
     .right .chips-align {
         justify-content: flex-start;
@@ -324,6 +438,8 @@ p {
     }
 
     .tag {
+        display: flex;
+        background-color: var(--background1);
         border-radius: 0.5rem;
         width: fit-content;
         padding: 1rem;

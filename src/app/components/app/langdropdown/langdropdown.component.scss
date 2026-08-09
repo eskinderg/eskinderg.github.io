@@ -6,9 +6,12 @@
 }
 
 .svg {
-    background: var(--primary);
-    border-radius: 50%;
-    transition: background 1s ease;
+    path {
+        fill: #fff;
+
+        // fill: var(--primary);
+    }
+
     width: 100%;
     height: 100%;
 }
@@ -23,6 +26,8 @@
     transition:
         transform 0.25s ease,
         background-color 1s ease !important;
+    background-color: rgb(from var(--primary) r g b / 60%);
+    backdrop-filter: blur(1.5px);
 }
 
 .lang-select svg path {
@@ -38,6 +43,10 @@
     opacity: 0;
     right: 0;
     top: 2.75rem;
+
+    // background: var(--primary);
+    background-color: rgb(from var(--primary) r g b / 30%);
+    backdrop-filter: blur(3px);
     transition:
         visibility 0s,
         opacity 0.25s linear;
@@ -46,9 +55,6 @@
     // background-color: var(--background2);
     flex-direction: column;
     width: auto;
-
-    // background-color: #424242;
-    background-color: var(--primary);
     z-index: 1000;
 }
 
@@ -65,8 +71,10 @@
     opacity: 1;
 
     // box-shadow: 1px 3px 8px 0px black;
-    border-radius: 0.5rem;
-    border: 1px solid var(--light);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+
+    // border: 1px solid var(--light);
 
     // padding: 0.25rem 0 0.25rem 0;
     // padding: 0.5rem;
@@ -166,5 +174,18 @@
 
         // border: 1px solid var(--light);
         // padding: 0.25rem 0 0.25rem 0;
+    }
+}
+
+@include screen-lg {
+    .svg {
+        path {
+            fill: #fff;
+        }
+    }
+
+    .lang-select {
+        background-color: var(--primary);
+        backdrop-filter: blur(0);
     }
 }

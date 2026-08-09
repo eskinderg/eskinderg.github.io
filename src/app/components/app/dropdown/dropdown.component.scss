@@ -97,7 +97,9 @@
     // background-color: var(--lighter);
     // background-color: rgb(from var(--lightest) r g b / 100%);
     // background-color: color-mix(in srgb, var(--lighter), var(--background1));
-    background-color: color-mix(in srgb, rgb(from var(--lightest) r g b / 100%), var(--background1));
+    // background-color: color-mix(in srgb, rgb(from var(--lightest) r g b / 100%), var(--background1));
+    background-color: rgb(from var(--primary) r g b / 30%);
+    backdrop-filter: blur(5px);
 }
 
 .show-drop-menu {
@@ -117,13 +119,13 @@
 .menu-item a:hover {
     .menu-text {
         // color: var(--light);
-        color: white;
+        color: var(--primary);
     }
 
     .save-icon {
         path {
-            stroke: white;
-            fill: white;
+            stroke: var(--primary);
+            fill: var(--primary);
         }
     }
 }
@@ -131,7 +133,7 @@
 .menu-item:hover {
     // background-color: var(--background2);
     // background-color: var(--lighter);
-    background: var(--lightest);
+    // background: var(--lightest);
     border-radius: 0;
 }
 

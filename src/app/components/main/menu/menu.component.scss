@@ -18,7 +18,10 @@
     padding: 2px 0 0 3px;
     z-index: 1000;
     transition: background-color 1s ease;
-    background-color: var(--primary);
+
+    // background-color: var(--primary);
+    background-color: rgb(from var(--primary) r g b / 60%);
+    backdrop-filter: blur(1.5px);
     color: #000;
 
     // fill: var(--background2);
@@ -42,6 +45,11 @@ svg {
     width: 100%;
     height: 100%;
     border-radius: 50%;
+
+    rect {
+        // fill: var(--line);
+        fill: #fff;
+    }
 }
 
 .menu-button.default {
@@ -114,8 +122,7 @@ svg {
 
         --ga: #0000 25%, var(--c) 0;
 
-        background:
-            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200% var(--ia, var(--b)) no-repeat, conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
+        background: conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200% var(--ia, var(--b)) no-repeat, conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
         transition:
             0.3s,
             background-position 0.2s 0.2s;
@@ -223,6 +230,17 @@ svg {
     }
 }
 
+@include screen-lg {
+    svg rect {
+        fill: #fff;
+    }
+
+    .menu-button {
+        background-color: var(--primary);
+        backdrop-filter: blur(0);
+    }
+}
+
 .element-to-fade-in-and-out {
     opacity: 1;
 }
@@ -252,7 +270,7 @@ svg {
 }
 
 .menu-toggle {
-    background: var(--primary);
+    // background: var(--primary);
     border: none;
     padding: 0;
     cursor: pointer;
@@ -282,6 +300,10 @@ svg {
     }
 
     &.open {
+        svg rect {
+            fill: #fff;
+        }
+
         .top {
             transform: translateY(-17%) translateX(9%) rotate(45deg);
             width: 14px;

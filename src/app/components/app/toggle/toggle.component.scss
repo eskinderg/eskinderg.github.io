@@ -1,34 +1,10 @@
 @use '../../../styles//screen.scss' as *;
 
-@include screen-md {
-    .theme-toggle-group.icon-only .theme-toggle-btn .icon,
-    .theme-toggle-group.icon-only .theme-toggle-btn svg {
-        width: 2rem !important;
-        height: 2rem !important;
-        display: block;
-    }
-
-    .theme-toggle-group.icon-only {
-        gap: 0.5rem !important;
-        padding: 0.4rem 0.25rem !important;
-    }
-}
-
-.circle-menu {
-    stroke: white;
-    stroke-width: 0.4;
-}
-
-@include screen-xl {
-    .circle-menu {
-        stroke: var(--primary);
-    }
-}
-
 .theme-toggle-group {
     position: relative;
     display: flex;
-    background: var(--light);
+
+    // background: var(--light);
     border-radius: 2rem;
     overflow: hidden;
     box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
@@ -40,10 +16,18 @@
     transform: rotate(-180deg) !important;
 }
 
+.right-btn {
+    fill: var(--primary);
+}
+
+.left-btn {
+    fill: #fff;
+}
+
 svg {
     width: 100%;
     height: 100%;
-    fill: var(--primary);
+    fill: var(--light);
 
     path {
         transition: fill 1s ease;
@@ -60,7 +44,8 @@ svg {
     transition:
         transform 0.25s ease,
         background-color 1s ease !important;
-    background: var(--primary);
+    background-color: rgb(from var(--primary) r g b / 60%);
+    backdrop-filter: blur(1.5px);
     border: none;
     border-radius: 50%;
     padding: 0;
@@ -94,6 +79,10 @@ svg {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(35%) translateX(-50%) scaleY(1); // Slide to left and scale to normal
+    background-color: rgb(from var(--primary) r g b / 30%);
+
+    // background-color: red;
+    backdrop-filter: blur(3px);
 }
 
 .theme-toggle-btn {
@@ -167,4 +156,44 @@ svg {
 
 .theme-toggle-group.icon-only .theme-toggle-indicator {
     display: none;
+}
+
+@include screen-md {
+    .theme-toggle-group.icon-only .theme-toggle-btn .icon,
+    .theme-toggle-group.icon-only .theme-toggle-btn svg {
+        width: 2rem !important;
+        height: 2rem !important;
+        display: block;
+    }
+
+    .theme-toggle-group.icon-only {
+        gap: 0.5rem !important;
+        padding: 0.4rem 0.25rem !important;
+    }
+}
+
+.circle-menu {
+    stroke: white;
+    stroke-width: 0.4;
+}
+
+@include screen-lg {
+    .right-btn {
+        fill: var(--lightest);
+    }
+
+    .left-btn {
+        fill: #fff;
+    }
+
+    .theme-toggle-main-btn {
+        background: var(--primary);
+        backdrop-filter: blur(0);
+    }
+}
+
+@include screen-xl {
+    .circle-menu {
+        stroke: var(--primary);
+    }
 }

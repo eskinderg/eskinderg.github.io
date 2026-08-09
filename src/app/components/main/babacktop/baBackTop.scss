@@ -1,34 +1,42 @@
 @use '../../../styles//screen.scss' as *;
 
-$height: 52px;
+$height: 2.5rem;
 
 .ba-back-top {
     justify-content: center;
     transition: background-color 1s ease;
     transition: opacity 1s ease;
-    color: #fff;
     position: fixed;
     width: $height;
     height: $height;
     cursor: pointer;
     z-index: 80;
-    display: none;
+    display: flex;
     text-decoration: none;
     right: 12%;
     bottom: 4% !important;
     font-size: 45px;
     text-align: center;
-    opacity: 1;
-    background-color: var(--primary);
+
+    // opacity: 0.9;
+    // background-color: rgba(255, 255, 255, 0.25); /* Lower white overlay makes blur stronger */
+    // background-color: rgb(from var(--background2) r g b / 0.4);
+    backdrop-filter: blur(2px);
+
+    // box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+    // background-color: var(--primary);
+    // background-color: white;
     border-radius: 50%;
-    line-height: 40px;
+
+    // line-height: 40px;
+    border: 1px solid var(--line);
 
     // &:hover {
     //     opacity: 1;
     // }
     // background-image: url('../../../assets/img/arrow-top.png');
-    background-size: contain;
-    background-size: cover;
+    // background-size: contain;
+    // background-size: cover;
 }
 
 #svg-back-to-top {
@@ -37,7 +45,7 @@ $height: 52px;
 
 @include screen-md {
     .ba-back-top {
-        opacity: 0.3;
+        opacity: 0.9;
     }
 
     .ba-back-top:hover {
@@ -53,8 +61,8 @@ $height: 52px;
 
 @media only screen and (width <= 768px) {
     .ba-back-top {
-        width: 36px;
-        height: 36px;
+        width: $height;
+        height: $height;
         right: 1rem;
         bottom: 1rem !important;
     }

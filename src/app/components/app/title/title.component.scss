@@ -11,16 +11,23 @@
 
 .title {
     position: relative;
+    width: 100%;
     cursor: default;
     text-decoration: none;
-    width: max-content;
+
+    // width: max-content;
     color: var(--light);
     text-align: left;
 }
 
 .main-heading-title {
-    width: min-content;
-    text-wrap: nowrap;
+    // width: min-content;
+    width: 100%;
+
+    // text-wrap: nowrap;
+    white-space: normal; /* Allows text to wrap to the next line */
+    overflow-wrap: break-word; /* Breaks long words if they exceed width */
+    margin: 0;
 }
 
 .styleish {
