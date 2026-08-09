@@ -181,6 +181,10 @@ p {
     }
 }
 
+.svg-icon {
+    fill: var(--line);
+}
+
 .main-title {
     font-weight: normal;
     transition: color 1s ease;
