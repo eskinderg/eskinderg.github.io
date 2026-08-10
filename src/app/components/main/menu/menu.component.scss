@@ -20,8 +20,9 @@
     transition: background-color 1s ease;
 
     // background-color: var(--primary);
-    background-color: rgb(from var(--primary) r g b / 60%);
-    backdrop-filter: blur(1.5px);
+    background-color: rgb(from var(--primary) r g b / 80%);
+
+    // backdrop-filter: blur(1.5px);
     color: #000;
 
     // fill: var(--background2);

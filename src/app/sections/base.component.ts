@@ -10,6 +10,7 @@ import { LanguageService } from '../providers/language.service';
 import { ThemeService } from '../theme/theme.service';
 import { GoogleAnalyticsService } from '../providers/google-analytics.service';
 import { ScrollService } from '../providers/scroll.service';
+import { PLATFORM_ID } from '@angular/core';
 
 @Component({
     selector: 'app-base',
@@ -22,6 +23,7 @@ export class BaseComponent {
     ref = inject(ChangeDetectorRef);
     googleAnalyticsService = inject(GoogleAnalyticsService);
     scrollService = inject(ScrollService);
+    protected platformId = inject(PLATFORM_ID);
 
     protected appRef: ApplicationRef;
     protected eRef: ElementRef;

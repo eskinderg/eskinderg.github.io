@@ -169,6 +169,7 @@ p {
     // display: none;
     position: absolute;
     left: 50%;
+    top: 0.25%;
 
     // transform: translateX(-50%);
     transform: translate(-50%, -1rem);
@@ -182,7 +183,7 @@ p {
 }
 
 .svg-icon {
-    fill: var(--line);
+    fill: var(--lighter);
 }
 
 .main-title {
@@ -245,10 +246,6 @@ p {
 
     // display: inline-block;
     transition: all 1s ease;
-}
-
-.adjust {
-    fill: var(--lighter);
 }
 
 .year-duration {

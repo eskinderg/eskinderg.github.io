@@ -165,12 +165,61 @@
 }
 
 @include screen-lg {
+    @keyframes typing {
+        0% {
+            width: 0;
+            border-right: 0.5rem solid white;
+        }
+
+        99% {
+            width: 99%;
+            border-right: 0.5rem solid white;
+        }
+
+        100% {
+            width: 100%;
+            border-right: none;
+        }
+    }
+
+    @keyframes blink {
+        // from {
+        //     border-right-color: white;
+        // }
+        to {
+            // border-right: 0.5rem solid red;
+            border-right-color: transparent;
+        }
+    }
+
     .intro-title {
         font-size: 3rem;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0;
+        border-right: 0.5rem solid white;
     }
 
     .intro-sub-title {
         font-size: 2rem;
+        overflow: hidden;
+        width: 0;
+        white-space: nowrap;
+        border-right: 0.5rem solid white;
+    }
+
+    .intro-title-typewriter {
+        animation:
+            typing 3s steps(25, end) forwards,
+            blink 0.5s infinite;
+        animation-delay: 0s;
+    }
+
+    .intro-sub-title-typewriter {
+        animation:
+            typing 3s steps(25, end) forwards,
+            blink 0.5s infinite;
+        animation-delay: 3s;
     }
 
     .icon-links {
