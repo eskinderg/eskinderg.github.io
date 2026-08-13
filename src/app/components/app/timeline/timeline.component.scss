@@ -45,7 +45,7 @@
 
     // margin: 0 auto;
     // background-color: var(--light);
-    background-color: var(--line);
+    background-color: var(--lighter);
     transition: background-color 1s ease;
 }
 
@@ -105,11 +105,12 @@ p {
     content: '●';
     position: absolute;
     top: 50%;
+    z-index: 1;
 
     // transform: translateX(-50%);
     transform: translate(-165%, -50%);
     font-size: 1.5rem;
-    color: var(--line);
+    color: color-mix(in srgb, var(--primary) 30%, var(--background2) 70%);
     transition: color 1s ease;
 }
 
@@ -128,7 +129,7 @@ p {
 .experience-list-item {
     flex-grow: 1;
     transition: border 1s ease;
-    border: 1px solid var(--line);
+    border: 1px solid var(--lighter);
     padding: 0.5rem;
     width: fit-content;
     border-radius: 7px;
@@ -332,7 +333,7 @@ p {
 
     .experience-list-item {
         flex-grow: 0;
-        border: 1px solid var(--lighter);
+        border: 1px solid var(--lightest);
     }
 
     .experience-list::before {

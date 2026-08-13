@@ -165,39 +165,11 @@
 }
 
 @include screen-lg {
-    @keyframes typing {
-        0% {
-            width: 0;
-            border-right: 0.5rem solid white;
-        }
-
-        99% {
-            width: 99%;
-            border-right: 0.5rem solid white;
-        }
-
-        100% {
-            width: 100%;
-            border-right: none;
-        }
-    }
-
-    @keyframes blink {
-        // from {
-        //     border-right-color: white;
-        // }
-        to {
-            // border-right: 0.5rem solid red;
-            border-right-color: transparent;
-        }
-    }
-
     .intro-title {
         font-size: 3rem;
         overflow: hidden;
         white-space: nowrap;
         width: 0;
-        border-right: 0.5rem solid white;
     }
 
     .intro-sub-title {
@@ -205,21 +177,61 @@
         overflow: hidden;
         width: 0;
         white-space: nowrap;
-        border-right: 0.5rem solid white;
+        border-right: none;
     }
 
     .intro-title-typewriter {
+        interpolate-size: allow-keywords;
         animation:
-            typing 3s steps(25, end) forwards,
-            blink 0.5s infinite;
+            typing 2s steps(16, end) forwards,
+            blink 0.5s step-end 5;
         animation-delay: 0s;
     }
 
     .intro-sub-title-typewriter {
+        interpolate-size: allow-keywords;
         animation:
-            typing 3s steps(25, end) forwards,
-            blink 0.5s infinite;
-        animation-delay: 3s;
+            typing 2s steps(20, end) forwards,
+            blink 0.4s step-end 5;
+        animation-delay: 2s;
+    }
+
+    @keyframes typing {
+        0% {
+            width: 0;
+            border-right: 0.5rem solid white;
+        }
+
+        99% {
+            border-right: 0.5rem solid white;
+        }
+
+        100% {
+            width:fit-content;
+            border-right: none;
+
+        }
+    }
+
+    @keyframes blink {
+       to {
+            border-right-color: transparent;
+        }
+
+    }
+
+    @keyframes popout {
+        0% {
+            transform: scale(0);
+        }
+
+        70% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
     }
 
     .icon-links {
@@ -229,6 +241,10 @@
     .intro-icons {
         width: 3rem;
         height: 3rem;
+        transition: transform 1s ease-in-out;
+        transform: scale(0);
+        animation: popout 0.8s ease-in-out forwards;
+        animation-delay: calc(400ms * var(--i) + 3.5s);
     }
 
     .app-divider {
@@ -284,7 +300,6 @@ custom resolutions just for the intro and intro wave
 
 @media (width >= 450px) and (height >= 1080px) {
     .intro {
-        // min-height: 15rem;
         max-height: 30rem;
     }
 }
