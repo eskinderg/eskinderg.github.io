@@ -22,6 +22,19 @@
                     [style.font-family]="lang.font.body">
                     {{ lang.title }}
                 </div>
+                <svg
+                    class="checkmark"
+                    [class.visible]="lang.code === this.languageService.Language"
+                    version="1.1"
+                    viewBox="0 0 32 32"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <g>
+                        <path
+                            d="m28.911 6.2927c.93827.93824.93827 2.4595 0 3.3976l-16.017 16.017c-.93827.93827-2.4592.93827-3.3976 0l-6.4068-6.4068c-.93824-.93827-.93824-2.4592 0-3.3975.93824-.93827 2.4595-.93827 3.3977 0l4.7079 4.7077 14.318-14.318c.93827-.93824 2.4592-.93824 3.3975 0z"
+                            fill="#1c274c"
+                            style="fill: #ffffff; stroke-width: 8.8195" />
+                    </g>
+                </svg>
             </div>
         }
     </div>
