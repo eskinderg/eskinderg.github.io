@@ -14,11 +14,10 @@
 
     <div class="lang-menu" [ngClass]="{ 'show-lang-drop-menu': visible }">
         @for (lang of languageService.LanguageList; track lang) {
-            <div class="lang-menu-item">
+            <div class="lang-menu-item" (click)="changeLanguage(lang.code)">
                 <div
                     class="lang-text"
                     [class.selected]="lang.code === this.languageService.Language"
-                    (click)="changeLanguage(lang.code)"
                     [style.font-family]="lang.font.body">
                     {{ lang.title }}
                 </div>
