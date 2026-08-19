@@ -58,6 +58,9 @@ svg {
     flex-direction: column;
     border: none;
     transition: opacity 1s ease;
+    top: auto;
+    left: auto;
+    right: auto;
 
     // top: 2.5rem;
     // left: auto;
@@ -211,5 +214,12 @@ svg {
 
     .fab-container {
         flex-direction: row;
+    }
+}
+
+@media (width <=700px) and (height <= 540px) {
+    .btn-wrapper {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
