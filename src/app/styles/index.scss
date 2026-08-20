@@ -4,6 +4,7 @@
     --primary: #22272e;
     --background1: #eee;
     --background2: #fff;
+    --light: color-mix(in srgb, var(--primary) 65%, #FFF 35%);
     --lighter: color-mix(in srgb, var(--primary) 20%, #FFF 80%);
     --lightest: color-mix(in srgb, var(--primary) 10%, #FFF 90%);
     --text: #474747;
@@ -15,6 +16,7 @@
 .dark {
     --background1: #1c2128;
     --background2: #22272e;
+    --light: color-mix(in srgb, var(--primary) 65%, #808080 35%);
     --lighter: color-mix(in srgb, var(--primary) 25%, #2c2c2c 75%);
     --lightest: color-mix(in srgb, var(--primary) 10%, #2c2c2c 90%);
     --text: #9aa0a6;
@@ -28,77 +30,66 @@
 
 .red {
     --primary: #b34949;
-    --light: #ce7f7f;
 
     color-scheme: red;
 }
 
 .green {
     --primary: #326834;
-    --light: #62a365;
 
     color-scheme: green;
 }
 
 .blue {
     --primary: #144b84;
-    --light: #7196bd;
 
     color-scheme: blue;
 }
 
 .orange {
     --primary: #a56831;
-    --light: #be9774;
 
     color-scheme: orange;
 }
 
 .teal {
     --primary: #24736b;
-    --light: #76a9a4;
 
     color-scheme: teal;
 }
 
 .cyan {
     --primary: #0b8494;
-    --light: #74a9b0;
 
     color-scheme: cyan;
 }
 
 .pink {
     --primary: #9f2e54;
-    --light: #cd7290;
 
     color-scheme: pink;
 }
 
 .deeppurple {
     --primary: #503b77;
-    --light: #7d68a3;
 
     color-scheme: deeppurple;
 }
 
 .indigo {
     --primary: #3f51b5;
-    --light: #707cc0;
 
     color-scheme: indigo;
 }
 
 .lightblue {
     --primary: #5087bf;
-    --light: #91aac3;
 
     color-scheme: lightblue;
 }
 
 .brown {
     --primary: #744c3e;
-    --light: #b58e80;
 
     color-scheme: brown;
 }
