@@ -180,14 +180,6 @@ svg {
 }
 
 @include screen-lg {
-    .right-btn {
-        fill: var(--lightest);
-    }
-
-    .left-btn {
-        fill: #fff;
-    }
-
     .theme-toggle-main-btn {
         background: var(--primary);
         backdrop-filter: blur(0);

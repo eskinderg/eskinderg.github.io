@@ -32,6 +32,7 @@
     flex-direction: column;
     gap: 0.25rem;
     background: var(--lightest);
+    transition: background 1s ease;
     padding: 0.5rem;
     margin: 1rem 0;
 }
@@ -207,22 +208,6 @@ p {
     display: none;
 }
 
-.chip {
-    margin: 4px !important;
-
-    // color:#FFFFFF;
-    background: none !important;
-    transition: all 1s ease;
-    border: 1px solid var(--primary) !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-
-    *::before {
-        // border-color: none !important;
-        border: none !important;
-    }
-}
-
 .tag {
     display: none;
     flex-direction: column;
@@ -298,6 +283,7 @@ p {
     .left {
         align-items: flex-end;
         justify-content: right;
+        margin-right: 0;
 
         // justify-content: flex-start;
         flex: 1 1 48%;
@@ -323,7 +309,7 @@ p {
         display: inline-block;
 
         // background-color: var(--lightest);
-        background-color: var(--background1);
+        background-color: var(--lightest);
         border: 1px solid var(--lighter);
         padding: 0.5rem;
         border-radius: 0.5rem;
@@ -421,6 +407,7 @@ p {
         margin-top: -8px;
         border: solid transparent;
         border-left-color: var(--lighter);
+        transition: border 1s ease;
         border-width: 10px;
         pointer-events: none;
     }
@@ -435,13 +422,14 @@ p {
         margin-top: -8px;
         border: solid transparent;
         border-right-color: var(--lighter);
+        transition: border 1s ease;
         border-width: 10px;
         pointer-events: none;
     }
 
     .tag {
         display: flex;
-        background-color: var(--background1);
+        background-color: var(--lightest);
         border-radius: 0.5rem;
         width: fit-content;
         padding: 1rem;

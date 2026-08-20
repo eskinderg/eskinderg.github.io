@@ -3,8 +3,9 @@
 .tech {
     display: inline-block;
     color: var(--muted);
-    border: 1px solid var(--lightest);
+    border: 1px solid var(--lighter);
     font-size: 0.5rem;
+    transition: all 1s ease;
 
     // margin: 0.25rem;
     margin: 0.1rem;
