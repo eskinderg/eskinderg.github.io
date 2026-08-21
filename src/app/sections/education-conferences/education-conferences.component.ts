@@ -15,7 +15,7 @@ export class EducationConferencesSectionComponent extends BaseComponent implemen
 
     constructor() {
         super();
-        this.separator.fillColor1 = 'var(--background1)';
+        this.separator.fillColor1 = 'var(--lightest)';
         this.separator.fillColor2 = 'var(--background2)';
     }
 

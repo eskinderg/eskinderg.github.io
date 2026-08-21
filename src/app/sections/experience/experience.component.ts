@@ -16,7 +16,7 @@ export class ExperienceSectionComponent extends BaseComponent implements AfterVi
     constructor() {
         super();
         this.separator.fillColor1 = 'var(--background2)';
-        this.separator.fillColor2 = 'var(--background1)';
+        this.separator.fillColor2 = 'var(--lightest)';
     }
 
     ngAfterViewInit(): void {

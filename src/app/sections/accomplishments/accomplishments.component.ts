@@ -14,7 +14,7 @@ export class AccomplishmentsSectionComponent extends BaseComponent implements Af
 
     constructor() {
         super();
-        this.separator.fillColor1 = 'var(--background1)';
+        this.separator.fillColor1 = 'var(--lightest)';
         this.separator.fillColor2 = 'var(--background2)';
     }
 

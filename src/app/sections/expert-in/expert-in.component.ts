@@ -15,7 +15,7 @@ export class ExpertInSectionComponent extends BaseComponent implements AfterView
     constructor() {
         super();
         this.separator.fillColor1 = 'var(--background2)';
-        this.separator.fillColor2 = 'var(--background1)';
+        this.separator.fillColor2 = 'var(--lightest)';
     }
 
     ngAfterViewInit(): void {

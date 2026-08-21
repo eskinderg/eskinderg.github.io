@@ -33,18 +33,20 @@
 
 .styleish {
     font-weight: 100;
-    background: linear-gradient(
-            90deg,
-            var(--light),
-            var(--light),
-            var(--light),
-            var(--lighter),
-            var(--light),
-            var(--light),
-            var(--light)) -100% / 200%;
+
+    // background: linear-gradient(
+    //         90deg,
+    //         var(--light),
+    //         var(--light),
+    //         var(--light),
+    //         var(--lighter),
+    //         var(--light),
+    //         var(--light),
+    //         var(--light)) -100% / 200%;
     background-clip: text;
-    color: transparent;
-    animation: background 4s ease-in-out infinite;
+    color: var(--light);
+
+    // animation: background 4s ease-in-out infinite;
     font-size: clamp(1.75rem, 4dvw + 1rem, 3.5rem);
 }
 
@@ -57,6 +59,7 @@
 
     // bottom: 1%;
     left: 0;
+    bottom: 0;
     background-color: var(--lighter);
     transform: scaleX(0);
     transition: transform 0.3s ease;
