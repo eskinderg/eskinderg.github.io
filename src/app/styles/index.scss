@@ -4,19 +4,21 @@
     --primary: #22272e;
     --background1: #eee;
     --background2: #fff;
-    --light: color-mix(in srgb, var(--primary) 65%, #FFF 35%);
+    --light: color-mix(in srgb, var(--primary) 70%, #FFF 30%);
     --lighter: color-mix(in srgb, var(--primary) 20%, #FFF 80%);
     --lightest: color-mix(in srgb, var(--primary) 10%, #FFF 90%);
     --text: #474747;
     --muted: #70757a;
     --shadow: grey;
     --line: color-mix(in srgb, var(--light) 90%, #000 10%);
+
+    color-scheme: light;
 }
 
 .dark {
     --background1: #1c2128;
     --background2: #22272e;
-    --light: color-mix(in srgb, var(--primary) 65%, #808080 35%);
+    --light: color-mix(in srgb, var(--primary) 70%, #dadada 30%);
     --lighter: color-mix(in srgb, var(--primary) 25%, #2c2c2c 75%);
     --lightest: color-mix(in srgb, var(--primary) 10%, #2c2c2c 90%);
     --text: #9aa0a6;
