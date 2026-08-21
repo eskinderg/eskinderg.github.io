@@ -1,5 +1,6 @@
 <div class="mobile-tag">
     <app-title title="{{ job.title }}" [stylish]="false" [lineWidth]="250" />
+    <div class="job-year" [style.font-family]="'Arial'">{{ job.year }}</div>
     <!-- <h3 class="main-title h3 link">{{ job.title }}</h3> -->
     @if (job.intro) {
         <app-title title="{{ job.intro }}" [stylish]="false" [lineWidth]="250" />
@@ -13,7 +14,6 @@
             <app-chip [technology]="technology"></app-chip>
         }
     </div>
-    <div class="job-year" [style.font-family]="'Arial'">{{ job.year }}</div>
 </div>
 <div class="outer">
     <div class="timeline" [ngClass]="{ 'left order1': reverse, 'right order3': !reverse }">
@@ -60,7 +60,7 @@
         <div class="line bottom">
             <svg
                 id="svg"
-                class="mid-icon"
+                class="svg-middle-icon"
                 version="1.1"
                 viewBox="0 0 400 399.59"
                 xmlns="http://www.w3.org/2000/svg">
