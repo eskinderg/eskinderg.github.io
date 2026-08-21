@@ -9,6 +9,7 @@
 }
 
 .mastery {
+    position: relative;
     box-sizing: border-box;
     padding: 5%;
     transition: all 0.35s;
@@ -16,8 +17,23 @@
     height: 100%;
 }
 
-.mastery a,
-.mastery a:visited {
+.external-link {
+    display: none;
+}
+
+.svg-link {
+    position: absolute;
+    width: 25%;
+    right: 0;
+    fill: transparent;
+
+    path {
+        stroke: var(--lighter);
+    }
+}
+
+.mastery > a,
+.mastery > a:visited {
     display: block;
     color: var(--text); // 400
     height: 100%;
@@ -27,6 +43,18 @@
 
 .mastery *:hover {
     transition: all 0.35s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .mastery:hover {
+        .external-link {
+            display: block;
+        }
+
+        path {
+            stroke: var(--primary);
+        }
+    }
 }
 
 .logo-mastery {
