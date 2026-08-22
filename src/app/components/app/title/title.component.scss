@@ -60,7 +60,7 @@
     // bottom: 1%;
     left: 0;
     bottom: 0;
-    background-color: var(--lighter);
+    background-color: var(--light);
     transform: scaleX(0);
     transition: transform 0.3s ease;
     animation: underline 4s cubic-bezier(1, 0, 0, 1) infinite;
@@ -89,5 +89,11 @@
 }
 
 .normal {
-    font-size: clamp(1rem, 4vmin + 1rem, 1rem);
+    font-size: clamp(1rem, 4vmin + 1rem, 1.1rem);
+}
+
+@include screen-md {
+    .normal {
+        font-size: clamp(1rem, 4vmin + 1rem, 1rem);
+    }
 }
