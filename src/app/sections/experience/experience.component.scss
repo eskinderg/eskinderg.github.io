@@ -25,25 +25,14 @@
 
 .experience .h2 {
     margin: 0%;
+
+    // padding-left: 1%;
+    padding-right: 1%;
 }
 
 @include screen-xl {
     .experience {
         padding-left: 15% !important;
         padding-right: 15% !important;
-    }
-}
-
-@include screen-md {
-    .experience {
-        padding-left: 13%;
-        padding-right: 13%;
-    }
-}
-
-@include screen-sm {
-    .experience {
-        // padding-left: 1%;
-        padding-right: 1%;
     }
 }
