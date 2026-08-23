@@ -53,7 +53,7 @@
     },
     "intro": {
         "title": "እስክንድር ጌታሁን",
-        "subtitle": "ዌብሳይት ዴቨሎፐር"
+        "subtitle": "የድህረ ገጽ ባለሞያ"
     },
     "about": {
         "title": "ስለ እኔ",
@@ -260,7 +260,7 @@
         "title": "የሥራ ልምድ",
         "content": [
             {
-                "title": "Freelance Web Developer (Full Stack)",
+                "title": "ፍሪላንስ ድህረ ገፅ ባለሞያ",
                 "subtitle": "Front End (Angular), Elance",
                 "year": "ነሐሴ 2010 - አሁን",
                 "intro": "",
@@ -294,7 +294,7 @@
                 ]
             },
             {
-                "title": "Web Developer (Front End)",
+                "title": "ድህረ ገፅ ባለሞያ (የፊት ገጽ)",
                 "subtitle": "Front End",
                 "year": "ሐምሌ 2008 - ሰኔ 2010",
                 "intro": "",
@@ -341,7 +341,7 @@
                 ]
             },
             {
-                "title": "Software Engineer II",
+                "title": "ሶፍትዌር ኢንጅነር ፪",
                 "year": "ጥቅምት 2008 - ሐምሌ 2008",
                 "intro": "",
                 "elements": [
@@ -376,7 +376,7 @@
                 ]
             },
             {
-                "title": "Web Developer & Designer",
+                "title": "ድህረ ገጽ ማበልጸግ እና ዲዛይን ማድረግ",
                 "subtitle": "Full-Stack Software Developer & Designer",
                 "year": "ታኅሳስ 2007 - ጥቅምት2008",
                 "intro": "",
@@ -396,7 +396,7 @@
                 "used": ["PHP", "C#", "WordPress", "OpenCart", "HTML5", "JQuery", "CSS3", "Javascript"]
             },
             {
-                "title": "Web Developer (Full Stack Developer)",
+                "title": "ድህረ ገጽ ማበልጸግ (ፉል ስታክ)",
                 "subtitle": "",
                 "year": "ነሐሴ 2005 - ታኅሳስ 2007",
                 "intro": "",
