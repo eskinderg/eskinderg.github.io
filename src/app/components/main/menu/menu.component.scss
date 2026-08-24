@@ -30,11 +30,11 @@
 }
 
 hr {
-    // display: block;
-    display: none;
-    width: 100%;
+    display: block;
 
-    // border: 0.1rem solid var(--background2);
+    // display: none;
+    width: 100%;
+    border: 1px solid var(--lighter);
 }
 
 svg {
