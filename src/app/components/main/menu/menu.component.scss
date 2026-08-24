@@ -29,17 +29,12 @@
     fill: #fff;
 }
 
-.link {
-    cursor: pointer;
-
-    // border-top: 2px solid var(--lighter);
-    // padding: 1.25rem;
-}
-
 hr {
-    display: block;
+    // display: block;
+    display: none;
     width: 100%;
-    border: 0.1rem solid var(--background2);
+
+    // border: 0.1rem solid var(--background2);
 }
 
 svg {
@@ -77,16 +72,25 @@ svg {
     align-items: center;
     position: fixed;
     z-index: 100;
-    background-color: var(--background1) !important;
+
+    // background-color: var(--background1) !important;
+
+    background-color: rgb(from var(--background1) r g b / 70%);
+    backdrop-filter: blur(9px);
     left: 0;
     top: 0;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     overflow: auto;
     transition: opacity 0.5s ease;
 
     .menu-button {
         color: #252e38;
+    }
+
+    .text-container {
+        cursor: pointer;
+        width: 100%;
     }
 
     nav > span {
@@ -102,6 +106,8 @@ svg {
         width: 100%;
         height: 100%;
 
+        // pointer-events: none;
+
         // text-decoration: none;
         // cursor: pointer;
         // text-align: center;
@@ -113,6 +119,8 @@ svg {
     }
 
     nav .text {
+        display: flex;
+
         --c: var(--text); /* the border color */
         --b: 0.2rem; /* the border thickness */
         --g: 1rem; /* the gap on hover */
@@ -121,20 +129,27 @@ svg {
         font-size: 29cqmin;
         padding: calc(var(--g) + var(--b));
 
+        // width: 100%;
+        justify-self: center;
+
         --ga: #0000 25%, var(--c) 0;
 
-        background: conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200% var(--ia, var(--b)) no-repeat, conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
+        background:
+            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200%
+                var(--ia, var(--b)) no-repeat, conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
         transition:
             0.3s,
             background-position 0.2s 0.2s;
     }
 
-    nav .text:hover {
-        --ia: 100%;
+    @media (hover: hover) and (pointer: fine) { // display box animation only on touch devices
+        nav .text:hover {
+            --ia: 100%;
 
-        transition:
-            0.2s,
-            background-size 0.2s 0.2s;
+            transition:
+                0.2s,
+                background-size 0.2s 0.2s;
+        }
     }
 
     nav > span:hover {
@@ -189,6 +204,10 @@ svg {
 }
 
 @include screen-md {
+    .text-container {
+        width: auto !important;
+    }
+
     :host {
         top: 1rem;
         left: 2rem;

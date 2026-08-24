@@ -43,10 +43,11 @@
                     class="link"
                     [style.font-family]="languageService.texts.font.menu"
                     (mousemove)="onHover(item.link)"
-                    (mouseout)="onMouseOut()"
-                    (click)="scrollTo(item.link)"
-                    ><span class="text"> {{ item.name }}</span></span
-                >
+                    (mouseout)="onMouseOut()">
+                    <span (click)="scrollTo(item.link)" class="text-container">
+                        <span class="text"> {{ item.name }}</span></span
+                    >
+                </span>
                 <hr />
             }
         </nav>
