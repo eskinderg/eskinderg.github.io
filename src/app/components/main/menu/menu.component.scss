@@ -39,7 +39,7 @@
 hr {
     display: block;
     width: 100%;
-    border: 0.1rem solid var(--light);
+    border: 0.1rem solid var(--background2);
 }
 
 svg {
@@ -77,7 +77,7 @@ svg {
     align-items: center;
     position: fixed;
     z-index: 100;
-    background-color: var(--primary) !important;
+    background-color: var(--background1) !important;
     left: 0;
     top: 0;
     width: 100vw;
@@ -113,11 +113,11 @@ svg {
     }
 
     nav .text {
-        --c: white; /* the border color */
+        --c: var(--text); /* the border color */
         --b: 0.2rem; /* the border thickness */
         --g: 1rem; /* the gap on hover */
 
-        color: #fff;
+        color: var(--text);
         font-size: 29cqmin;
         padding: calc(var(--g) + var(--b));
 
@@ -210,7 +210,7 @@ svg {
 
     nav span {
         // color: var(--light) !important;
-        color: #fff !important;
+        // color: #fff !important;
         border: none;
 
         // font-size: 3vw !important;

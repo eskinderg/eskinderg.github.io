@@ -1,6 +1,10 @@
 <div class="mobile-tag">
-    <app-title title="{{ job.title }}" [stylish]="false" [lineWidth]="250" />
-    <div class="job-year" [style.font-family]="'Arial'">{{ job.year }}</div>
+    <app-title
+        title="{{ job.title }}"
+        [stylish]="false"
+        [lineWidth]="250"
+        [style.font-family]="lang.texts.font.content" />
+    <div class="job-year" [style.font-family]="lang.texts.font.content">{{ job.year }}</div>
     <!-- <h3 class="main-title h3 link">{{ job.title }}</h3> -->
     @if (job.intro) {
         <app-title title="{{ job.intro }}" [stylish]="false" [lineWidth]="250" />
@@ -18,7 +22,11 @@
 <div class="outer">
     <div class="timeline" [ngClass]="{ 'left order1': reverse, 'right order3': !reverse }">
         <div class="tag" [ngClass]="{ left: reverse, right: !reverse }">
-            <app-title title="{{ job.title }}" [stylish]="false" [lineWidth]="250" />
+            <app-title
+                title="{{ job.title }}"
+                [stylish]="false"
+                [lineWidth]="250"
+                [style.font-family]="lang.texts.font.content" />
             <!-- <h3 class="main-title h3 link">{{ job.title }}</h3> -->
             @if (job.intro) {
                 <app-title title="{{ job.intro }}" [stylish]="false" [lineWidth]="250" />
