@@ -61,8 +61,15 @@
     z-index: 1000;
 }
 
+.scale {
+    // box-shadow: 1px 1px 9px -2px var(--shadow) !important;
+    box-shadow: 1px 1px 9px -2px black !important;
+    background-color: rgb(from var(--primary) r g b / 100%) !important;
+}
+
 .scale svg path {
-    transform: scale(0.85);
+    border: 7px solid white;
+    transform: scale(1.15);
     transform-origin: center;
 }
 

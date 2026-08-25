@@ -2,6 +2,7 @@
     <button
         [appTooltip]="'Dark mode'"
         class="theme-toggle-main-btn"
+        [class.open-button]="open"
         [ngClass]="{ rotate: open }"
         (click)="toggleOpen()"
         aria-label="Theme settings">

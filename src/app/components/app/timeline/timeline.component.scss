@@ -31,15 +31,17 @@
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
-
-    // background: var(--lightest);
+    background: var(--lightest);
     border-width: 3px 0 0;
     border-style: solid;
-    border-image: linear-gradient(to bottom, var(--primary), var(--lightest));
-    background-image: linear-gradient(var(--lighter), var(--background2));
-    transition: background 1s ease;
+    border-color: var(--lighter);
+
+    // border-image: linear-gradient(to bottom, var(--primary), var(--lightest));
+    // background-image: linear-gradient(var(--lighter), var(--background2));
+    transition: all 1s ease;
     padding: 0.5rem;
-    padding-bottom: 0;
+
+    // padding-bottom: 0;
     margin: 2rem 0 1rem;
 
     // border-top: 3px solid var(--light);
@@ -254,6 +256,7 @@ p {
 }
 
 .hide-fill {
+    transition: all 1s ease;
     transform: scaleY(0.8);
 }
 
