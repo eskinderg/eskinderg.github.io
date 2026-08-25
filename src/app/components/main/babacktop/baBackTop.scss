@@ -13,8 +13,8 @@ $height: 2.5rem;
     z-index: 80;
     display: none;
     text-decoration: none;
-    right: 12%;
-    bottom: 4% !important;
+    right: 1rem;
+    bottom: 1rem;
     font-size: 45px;
     text-align: center;
 
@@ -67,15 +67,15 @@ $height: 2.5rem;
     }
 }
 
-@media (hover: hover) and (pointer: fine) {
-    .ba-back-top:hover {
-        opacity: 1;
+@include screen-xl {
+    .ba-back-top {
+        right: 12%;
+        bottom: 4% !important;
     }
 }
 
-@media only screen and (width <= 768px) {
-    .ba-back-top {
-        right: 1rem;
-        bottom: 1rem !important;
+@media (hover: hover) and (pointer: fine) {
+    .ba-back-top:hover {
+        opacity: 1;
     }
 }
