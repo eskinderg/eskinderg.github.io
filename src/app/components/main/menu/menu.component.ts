@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
-import { BaseComponent } from 'src/app/sections/base.component';
+import { BaseComponent } from '../../../sections/base.component';
 
 @Component({
     selector: 'app-menu',

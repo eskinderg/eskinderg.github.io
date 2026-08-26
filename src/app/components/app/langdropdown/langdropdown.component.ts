@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, HostListener } from '@angular/core';
 import { TooltipDirective } from '../tooltip/tooltip.directive';
 import { NgClass } from '@angular/common';
-import { BaseComponent } from 'src/app/sections/base.component';
+import { BaseComponent } from '../../../sections/base.component';
 
 @Component({
     selector: 'app-lang-dropdown',

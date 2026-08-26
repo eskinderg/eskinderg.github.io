@@ -1,7 +1,7 @@
-import { EventEmitter, Injectable, Output } from '@angular/core';
+import { EventEmitter, Output, Service } from '@angular/core';
 import { Observable } from 'rxjs';
 
-@Injectable()
+@Service({ autoProvided: false })
 export class LanguageServiceMock {
     public sections = {
         intro: null

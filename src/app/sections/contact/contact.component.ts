@@ -6,11 +6,11 @@ import {
     AfterViewInit,
     viewChild
 } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { BaseComponent } from 'src/app/sections/base.component';
 import { NgStyle } from '@angular/common';
 import Geezify from 'geezify-js';
 import { toEthiopian } from 'ethiopian-calendar-new';
+import { BaseComponent } from '../base.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-contact',

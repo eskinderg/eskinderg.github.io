@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class ScrollService {
     private scrollSubject = new BehaviorSubject<any>(0);
     scrollPosition = new BehaviorSubject<any>(0);

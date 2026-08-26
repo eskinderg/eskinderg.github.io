@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { BaseComponent } from 'src/app/sections/base.component';
+import { BaseComponent } from '../../../sections/base.component';
 
 @Component({
     selector: 'app-loader',

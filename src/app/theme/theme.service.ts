@@ -1,4 +1,4 @@
-import { Injectable, EventEmitter, Output, DOCUMENT, inject } from '@angular/core';
+import { EventEmitter, Output, DOCUMENT, inject, Service } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, Observable, throwError } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
@@ -7,7 +7,7 @@ import { ThemeMode } from './theme.mode';
 import { LocalStorageService } from '../providers/local-storage.service';
 import { Meta } from '@angular/platform-browser';
 
-@Injectable()
+@Service({ autoProvided: false })
 export class ThemeService {
     http = inject(HttpClient);
     private document = inject<Document>(DOCUMENT);

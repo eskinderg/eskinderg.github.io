@@ -1,11 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+// @typescript-eslint/no-unsafe-function-type
 declare let gtag: Function;
 
-@Injectable({
-    providedIn: 'root'
-})
+@Service()
 export class GoogleAnalyticsService {
     public eventEmitter(
         eventName: string,

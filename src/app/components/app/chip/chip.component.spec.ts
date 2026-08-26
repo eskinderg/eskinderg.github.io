@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChipComponent } from './chip.component';
-import { LanguageService } from 'src/app/providers/language.service';
-import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { LanguageService } from '../../../providers/language.service';
+import { LanguageServiceMock } from '../../../language/language.mock';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { beforeEach, describe, it, expect } from 'vitest';
 
 describe('ChipComponent', () => {
     let component: ChipComponent;

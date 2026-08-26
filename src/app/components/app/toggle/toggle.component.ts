@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, ElementRef, HostListener, inject } from '@angular/core';
-import { ThemeService } from 'src/app/theme/theme.service';
 import { TooltipDirective } from '../tooltip/tooltip.directive';
 import { TooltipPosition } from '../../app/tooltip/tooltip.enums';
 
-import { ThemeMode } from 'src/app/theme/theme.mode';
 import { CommonModule } from '@angular/common';
+import { ThemeService } from '../../../theme/theme.service';
+import { ThemeMode } from '../../../theme/theme.mode';
 
 @Component({
     selector: 'app-toggle',

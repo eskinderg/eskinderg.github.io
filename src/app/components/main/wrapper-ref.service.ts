@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import { ElementRef } from '@angular/core';
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class WrapperRefService {
     wrapperElementRef?: ElementRef<HTMLElement>;
 

@@ -1,7 +1,7 @@
-import { Injectable, PLATFORM_ID, inject } from '@angular/core';
+import { PLATFORM_ID, inject, Service } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-@Injectable({ providedIn: 'root' })
+@Service()
 export class LocalStorageService {
     private _isBrowser: boolean;
     private platformId = inject(PLATFORM_ID);

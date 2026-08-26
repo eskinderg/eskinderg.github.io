@@ -7,8 +7,8 @@ import {
     viewChild,
     ChangeDetectionStrategy
 } from '@angular/core';
-import { AppComponent } from 'src/app/app.component';
-import { BaseComponent } from 'src/app/sections/base.component';
+import { BaseComponent } from '../../../sections/base.component';
+import { AppComponent } from '../../../app.component';
 
 @Component({
     selector: 'app-back-top',

@@ -1,6 +1,6 @@
 import { Input, Component, ChangeDetectionStrategy, inject } from '@angular/core';
-import { LanguageService } from 'src/app/providers/language.service';
 import { NgClass } from '@angular/common';
+import { LanguageService } from '../../../providers/language.service';
 
 @Component({
     selector: 'app-list',

@@ -1,12 +1,13 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/theme/theme.service';
+import { LanguageService } from '../../providers/language.service';
+import { ThemeService } from '../../theme/theme.service';
 import { ExpertInSectionComponent } from './expert-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LanguageServiceMock } from 'src/app/language/language.mock';
-import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
+import { LanguageServiceMock } from '../../language/language.mock';
+import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { describe, beforeEach, it, expect } from 'vitest';
 
 describe('ExpertInSectionComponent', () => {
     let component: ExpertInSectionComponent;
@@ -23,7 +24,7 @@ describe('ExpertInSectionComponent', () => {
                 GoogleAnalyticsService,
                 ThemeService,
                 provideZonelessChangeDetection(),
-                provideHttpClient(withInterceptorsFromDi())
+                provideHttpClient(withXhr(), withInterceptorsFromDi())
             ]
         }).compileComponents();
     });
@@ -35,6 +36,6 @@ describe('ExpertInSectionComponent', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

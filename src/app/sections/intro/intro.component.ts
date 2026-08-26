@@ -6,8 +6,8 @@ import {
     viewChild,
     signal
 } from '@angular/core';
-import { BaseComponent } from 'src/app/sections/base.component';
 import { isPlatformBrowser } from '@angular/common';
+import { BaseComponent } from '../base.component';
 
 @Component({
     selector: 'app-intro',

@@ -1,10 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/theme/theme.service';
+import { LanguageService } from '../../../providers/language.service';
+import { ThemeService } from '../../../theme/theme.service';
 import { TitleComponent } from './title.component';
-import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { LanguageServiceMock } from '../../../language/language.mock';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 describe('TitleComponent', () => {
     let component: TitleComponent;

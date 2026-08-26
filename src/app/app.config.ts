@@ -1,5 +1,10 @@
 import { ApplicationConfig, importProvidersFrom, provideZonelessChangeDetection } from '@angular/core';
-import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import {
+    BrowserModule,
+    provideClientHydration,
+    withEventReplay,
+    withNoIncrementalHydration
+} from '@angular/platform-browser';
 import { ThemeModule } from './theme/theme.module';
 import { LanguageModule } from './language/language.modue';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +22,6 @@ export const appConfig: ApplicationConfig = {
         provideHttpClient(withFetch(), withInterceptors([LoaderInterceptor])),
         provideZonelessChangeDetection(),
         provideAnimations(),
-        provideClientHydration(withEventReplay())
+        provideClientHydration(withEventReplay(), withNoIncrementalHydration())
     ]
 };

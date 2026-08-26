@@ -1,12 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { DropDownMenuComponent } from './dropdown.component';
-import { LanguageService } from 'src/app/providers/language.service';
-import { LanguageServiceMock } from 'src/app/language/language.mock';
-import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
-import { ThemeService } from 'src/app/theme/theme.service';
-import { GoogleAnalyticsServiceMock } from 'src/app/providers/google-analytics.mock.service';
+import { LanguageService } from '../../../providers/language.service';
+import { LanguageServiceMock } from '../../../language/language.mock';
+import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
+import { ThemeService } from '../../../theme/theme.service';
+import { GoogleAnalyticsServiceMock } from '../../../providers/google-analytics.mock.service';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { describe, expect, it, beforeEach } from 'vitest';
 
 describe('DropdownComponent', () => {
     let component: DropDownMenuComponent;
@@ -26,7 +27,7 @@ describe('DropdownComponent', () => {
                 },
                 ThemeService,
                 provideZonelessChangeDetection(),
-                provideHttpClient(withInterceptorsFromDi())
+                provideHttpClient(withXhr(), withInterceptorsFromDi())
             ]
         }).compileComponents();
 

@@ -1,8 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 import { TechnologyComponent } from './technology.component';
-import { LanguageService } from 'src/app/providers/language.service';
-import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { LanguageService } from '../../../providers/language.service';
+import { LanguageServiceMock } from '../../../language/language.mock';
 import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('TechnologyComponent', () => {
@@ -34,6 +35,6 @@ describe('TechnologyComponent', () => {
     });
 
     it('should create', () => {
-        expect(component).toBeTruthy();
+        expect(component).toBeDefined();
     });
 });

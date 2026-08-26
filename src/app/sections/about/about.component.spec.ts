@@ -1,12 +1,14 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { GoogleAnalyticsService } from 'src/app/providers/google-analytics.service';
-import { LanguageService } from 'src/app/providers/language.service';
-import { ThemeService } from 'src/app/theme/theme.service';
+import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
+import { LanguageService } from '../../providers/language.service';
+import { ThemeService } from '../../theme/theme.service';
 import { AboutSectionComponent } from './about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LanguageServiceMock } from 'src/app/language/language.mock';
+import { LanguageServiceMock } from '../../language/language.mock';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { beforeEach, describe, expect, it } from 'vitest';
+import { TitleComponent } from '../../components/app/title/title.component';
 
 describe('AboutSectionComponent', () => {
     let component: AboutSectionComponent;
@@ -14,7 +16,7 @@ describe('AboutSectionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BrowserAnimationsModule, AboutSectionComponent],
+            imports: [BrowserAnimationsModule, AboutSectionComponent, TitleComponent],
             providers: [
                 {
                     provide: LanguageService,
@@ -23,7 +25,7 @@ describe('AboutSectionComponent', () => {
                 GoogleAnalyticsService,
                 ThemeService,
                 provideZonelessChangeDetection(),
-                provideHttpClient(withInterceptorsFromDi())
+                provideHttpClient(withXhr(), withInterceptorsFromDi())
             ]
         }).compileComponents();
     });

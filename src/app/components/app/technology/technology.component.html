@@ -1,6 +1,6 @@
 <div class="mastery">
     <div class="external-link">
-        <a class="svg-link" [href]="item.link" [ariaLabel]="'Read more'" target="_blank">
+        <a class="svg-link" [href]="item.link" ariaLabel="Read more" target="_blank">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <g>
                     <path
@@ -14,7 +14,7 @@
         </a>
     </div>
     @if (item.link) {
-        <a [href]="item.link" [ariaLabel]="'Read more'" target="_blank">
+        <a [href]="item.link" ariaLabel="Read more" target="_blank">
             <div class="logo-mastery" [ngClass]="item.img" alt=""></div>
             <div class="mastery-subtitle">
                 {{ item.title }}

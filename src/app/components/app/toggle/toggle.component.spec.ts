@@ -1,9 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ToggleComponent } from './toggle.component';
-import { ThemeService } from 'src/app/theme/theme.service';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { ThemeService } from '../../../theme/theme.service';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { provideZonelessChangeDetection } from '@angular/core';
+import { describe, beforeEach, it, expect } from 'vitest';
 
 describe('ToggleComponent', () => {
     let component: ToggleComponent;
@@ -15,7 +16,7 @@ describe('ToggleComponent', () => {
             providers: [
                 ThemeService,
                 provideZonelessChangeDetection(),
-                provideHttpClient(withInterceptorsFromDi())
+                provideHttpClient(withXhr(), withInterceptorsFromDi())
             ]
         }).compileComponents();
 

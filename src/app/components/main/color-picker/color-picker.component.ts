@@ -10,7 +10,7 @@ import {
 import { TooltipPosition } from '../../app/tooltip/tooltip.enums';
 import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
 import { NgClass } from '@angular/common';
-import { BaseComponent } from 'src/app/sections/base.component';
+import { BaseComponent } from '../../../sections/base.component';
 
 export enum ButtonState {
     Opened = 'opened',

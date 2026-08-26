@@ -1,7 +1,7 @@
 import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, viewChild } from '@angular/core';
-import { BaseComponent } from 'src/app/sections/base.component';
 import { TitleComponent } from '../../components/app/title/title.component';
 import { DropDownMenuComponent } from '../../components/app/dropdown/dropdown.component';
+import { BaseComponent } from '../base.component';
 
 @Component({
     selector: 'app-about',

@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { DebugElement, provideZonelessChangeDetection } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
@@ -6,8 +6,8 @@ import { AppComponent } from './app.component';
 import { LanguageService } from './providers/language.service';
 import { ThemeService } from './theme/theme.service';
 import { GoogleAnalyticsService } from './providers/google-analytics.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from './language/language.mock';
+import { beforeEach, describe, expect, it } from 'vitest';
 
 describe('AppComponent', () => {
     let fixture: ComponentFixture<AppComponent>;
@@ -15,7 +15,7 @@ describe('AppComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BrowserAnimationsModule, AppComponent],
+            imports: [AppComponent],
             providers: [
                 {
                     provide: LanguageService,
@@ -24,7 +24,7 @@ describe('AppComponent', () => {
                 ThemeService,
                 GoogleAnalyticsService,
                 provideZonelessChangeDetection(),
-                provideHttpClient(withInterceptorsFromDi())
+                provideHttpClient(withXhr(), withInterceptorsFromDi())
             ]
         }).compileComponents();
 

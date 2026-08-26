@@ -1,11 +1,12 @@
-import { Injectable, EventEmitter, Output, inject } from '@angular/core';
+import { EventEmitter, Output, inject, Service } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
 import { Observable, map, tap, catchError, throwError, timeout } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
-@Injectable()
+
+@Service({ autoProvided: false })
 export class LanguageService {
     http = inject(HttpClient);
 
@@ -89,7 +90,7 @@ export class LanguageService {
         if (value || value === false) {
             this.menuVisible = value;
         } else {
-            // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+            // @typescript-eslint/no-unused-expressions
             this.menuVisible != this.menuVisible;
         }
 
