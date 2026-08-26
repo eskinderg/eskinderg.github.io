@@ -53,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^8.65.0",
     "@typescript-eslint/parser": "^8.65.0",
     "@vitest/coverage-v8": "^4.1.11",
+    "@vitest/ui": "^4.1.11",
     "angular-eslint": "22.1.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsonc": "^2.21.1",

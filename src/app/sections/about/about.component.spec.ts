@@ -7,7 +7,6 @@ import { AboutSectionComponent } from './about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from '../../language/language.mock';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { beforeEach, describe, expect, it } from 'vitest';
 import { TitleComponent } from '../../components/app/title/title.component';
 
 describe('AboutSectionComponent', () => {

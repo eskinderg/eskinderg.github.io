@@ -1,19 +1,26 @@
-import { defineConfig } from "vitest/config";
-import { resolve } from "path";
-import { fileURLToPath } from "node:url";
-
-const __dirname = fileURLToPath(new URL(".", import.meta.url));
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      app: resolve(__dirname, "src/app"),
-    },
-  },
-  test: {
-    include: ["cli/**/*.spec.ts"],
-    passWithNoTests: false,
-    globals: true,
-    environment: "node",
-  },
+    test: {
+        globals: true,
+        setupFiles: ['/src/test.ts'],
+        passWithNoTests: false,
+        environment: 'jsdom',
+        reporters: ['default', 'html', 'junit'],
+        outputFile: {
+            junit: './coverage/reports/junit-report.xml',
+            html: './coverage/reports/html-dashboard/index.html'
+        },
+        coverage: {
+            provider: 'v8', // or 'istanbul'
+            reporter: ['text', 'json', 'html'],
+            reportsDirectory: './coverage/portfolio',
+            thresholds: {
+                statements: 50,
+                branches: 17,
+                functions: 50,
+                lines: 50
+            }
+        }
+    }
 });
