@@ -120,8 +120,9 @@
                 "test": {
                     "builder": "@angular/build:unit-test",
                     "options": {
+                        "runner": "vitest",
+                        "runnerConfig": true,
                         "tsConfig": "tsconfig.spec.json",
-                        "reporters": ["default"],
                         "coverageReporters": ["html", "text-summary"],
                         "coverageThresholds": {
                             "statements": 50,
@@ -131,8 +132,7 @@
                             "perFile": false
                         },
                         "setupFiles": ["src/test.ts"],
-                        "buildTarget": ":build:testing",
-                        "runner": "vitest"
+                        "buildTarget": ":build:testing"
                     }
                 },
                 "lint": {

@@ -1,10 +1,48 @@
-// This file is required by karma.conf.js and loads recursively all the .spec and framework files
+if (!window.matchMedia) {
+    Object.defineProperty(window, 'matchMedia', {
+        writable: true,
+        value: (query: string): MediaQueryList =>
+            ({
+                matches: false,
+                media: query,
+                onchange: null,
+                addListener: () => undefined,
+                removeListener: () => undefined,
+                addEventListener: () => undefined,
+                removeEventListener: () => undefined,
+                dispatchEvent: () => false
+            }) as MediaQueryList
+    });
+}
 
-import { getTestBed } from '@angular/core/testing';
-import {
-    BrowserDynamicTestingModule,
-    platformBrowserDynamicTesting
-} from '@angular/platform-browser-dynamic/testing';
+if (!globalThis.ResizeObserver) {
+    class ResizeObserverMock {
+        observe() {
+            return undefined;
+        }
+        unobserve() {
+            return undefined;
+        }
+        disconnect() {
+            return undefined;
+        }
+    }
 
-// First, initialize the Angular testing environment.
-//getTestBed().initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
+    Object.defineProperty(globalThis, 'ResizeObserver', {
+        writable: true,
+        configurable: true,
+        value: ResizeObserverMock
+    });
+}
+
+if (!Element.prototype.scrollIntoView) {
+    Object.defineProperty(Element.prototype, 'scrollIntoView', {
+        writable: true,
+        configurable: true,
+        value: () => undefined
+    });
+}
+
+globalThis.fail = (message?: string): never => {
+    throw new Error(message ?? 'Test failed');
+};
