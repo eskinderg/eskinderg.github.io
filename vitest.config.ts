@@ -13,7 +13,8 @@ export default defineConfig({
         },
         coverage: {
             provider: 'v8', // or 'istanbul'
-            reporter: ['text', 'json', 'html'],
+            // reporter: ['text', 'json', 'html'],
+            reporter: ['text-summary'],
             reportsDirectory: './coverage/portfolio',
             thresholds: {
                 statements: 50,
