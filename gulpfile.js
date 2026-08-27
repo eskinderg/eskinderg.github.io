@@ -3,8 +3,9 @@ var rename = require('gulp-rename');
 var jsonminify = require('gulp-jsonminify');
 
 gulp.task('minify', function () {
-  return gulp.src(['src/assets/json/**/*.json'])
-    .pipe(jsonminify())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('dist/browser/assets/json/'));
+    return gulp
+        .src(['src/assets/json/**/*.json'])
+        .pipe(jsonminify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/browser/assets/json/'));
 });
