@@ -3,18 +3,20 @@ import { defineConfig } from 'vitest/config';
 export default defineConfig({
     test: {
         globals: true,
-        setupFiles: ['/src/test.ts'],
+        setupFiles: ['src/test.ts'],
         passWithNoTests: false,
         environment: 'jsdom',
         coverage: {
             provider: 'v8', // or 'istanbul'
-            reporter: ['text','text-summary', 'json', 'html'],
+            reporter: ['text', 'text-summary', 'json', 'html'],
+            exclude: ['src/**/*.spec.ts', 'src/test.ts'], // Exclude tests from coverage
             reportsDirectory: './coverage/portfolio',
             thresholds: {
-                statements: 63,
-                branches: 63,
-                functions: 63,
-                lines: 63
+                perFile: false,
+                statements: 84,
+                branches: 74,
+                functions: 65,
+                lines: 85
             }
         }
     }
