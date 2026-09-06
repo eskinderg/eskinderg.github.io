@@ -505,4 +505,10 @@ export class LanguageServiceMock {
     get LanguageList() {
         return this.langList;
     }
+
+    public translateColor(color: string): string {
+        return this.texts.colors && this.texts.colors[`${color.toLowerCase()}`]
+            ? this.texts.colors[`${color.toLowerCase()}`]
+            : color;
+    }
 }

@@ -68,7 +68,7 @@ export class LanguageService {
         return isPlatformBrowser(this.platformId);
     }
 
-    private getLangPath(lang: any): string {
+    public getLangPath(lang: any): string {
         if (!isDevMode()) {
             if (this.isBrowser) {
                 return `assets/json/lang/${lang || 'en'}.min.json`;
@@ -89,9 +89,6 @@ export class LanguageService {
     toggleMenu(value: any) {
         if (value || value === false) {
             this.menuVisible = value;
-        } else {
-            // @typescript-eslint/no-unused-expressions
-            this.menuVisible != this.menuVisible;
         }
 
         this.menu.emit(this.menuVisible);
