@@ -294,7 +294,7 @@ p {
     .timeline {
         order: 0;
         flex: 1 1 48%;
-        padding-top: 3rem;
+        padding-top: 8rem;
         gap: 1rem;
     }
 
@@ -333,6 +333,7 @@ p {
         border-radius: 0.5rem;
         font-weight: normal;
         font-size: 1rem;
+        margin-bottom: -1rem;
     }
 
     .experience-list-item {
@@ -377,7 +378,7 @@ p {
     }
 
     .bottom {
-        margin-top: 20px;
+        margin-top: 65px;
     }
 
     .outer {
