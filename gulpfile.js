@@ -1,11 +1,18 @@
-var gulp = require('gulp');
-var rename = require('gulp-rename');
-var jsonminify = require('gulp-jsonminify');
+import { task, src, dest } from 'gulp';
+import rename from 'gulp-rename';
+import jsonminify from 'gulp-jsonminify';
+import { deleteAsync } from 'del';
 
-gulp.task('minify', function () {
-    return gulp
-        .src(['src/assets/json/**/*.json'])
+task('minify', function () {
+    return src(['src/assets/json/**/*.json'])
         .pipe(jsonminify())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/browser/assets/json/'));
+        .pipe(dest('dist/browser/assets/json/'));
+});
+
+task('copy', async function () {
+    await deleteAsync(['docs/**/*', '!docs']);
+    console.log('docs folder cleaned successfully!');
+    // 2. Copy ALL browser assets (including subfolders for images/fonts)
+    return src('dist/browser/**/*', { encoding: false }).pipe(dest('docs'));
 });
