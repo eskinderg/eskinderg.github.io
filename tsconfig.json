@@ -2,6 +2,7 @@
     "$schema": "https://json.schemastore.org/tsconfig.json",
     "compileOnSave": false,
     "compilerOptions": {
+        "resolveJsonModule": true,
         "outDir": "./dist/out-tsc",
         "forceConsistentCasingInFileNames": true,
         "esModuleInterop": true,

@@ -121,7 +121,8 @@
                     "builder": "@angular/build:unit-test",
                     "options": {
                         "runnerConfig": "vitest.config.ts",
-                        "coverage": true
+                        "coverage": true,
+                        "runner":"vitest"
                     }
                 },
                 "lint": {

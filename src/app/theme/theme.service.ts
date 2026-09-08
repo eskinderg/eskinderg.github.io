@@ -1,6 +1,6 @@
 import { EventEmitter, Output, DOCUMENT, inject, Service } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, Observable, throwError } from 'rxjs';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { ThemeMode } from './theme.mode';
@@ -84,7 +84,7 @@ export class ThemeService {
         const colorPath = 'assets/json/colors.json';
 
         return this.http.get(colorPath).pipe(
-            map((colors) => {
+            tap((colors) => {
                 this.colorList = colors['colors'];
             }),
             catchError((error) => {

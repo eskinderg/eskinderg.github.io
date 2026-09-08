@@ -1,7 +1,7 @@
 import { EventEmitter, Output, inject, Service } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { isDevMode } from '@angular/core';
-import { Observable, map, tap, catchError, throwError, timeout } from 'rxjs';
+import { Observable, tap, catchError, throwError, timeout } from 'rxjs';
 import { LocalStorageService } from './local-storage.service';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
@@ -53,6 +53,7 @@ export class LanguageService {
             tap((data) => {
                 this.texts = data;
                 this.languageChange.emit(data);
+                this.localStorageService.setItem('language', lang);
             }),
             catchError((httpError: HttpErrorResponse) => {
                 if (httpError.status === 404) {
@@ -103,7 +104,7 @@ export class LanguageService {
         const langPath = 'assets/json/lang.json';
 
         return this.http.get(langPath).pipe(
-            map((lang) => {
+            tap((lang) => {
                 this.langList = lang;
             })
         );

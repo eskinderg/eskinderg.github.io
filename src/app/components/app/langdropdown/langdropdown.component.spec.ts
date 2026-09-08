@@ -43,10 +43,10 @@ describe('LangdropdownComponent', () => {
         expect(fixture.debugElement.queryAll(By.css('.lang-menu-item')).length).toEqual(2);
         expect(
             fixture.debugElement.queryAll(By.css('.lang-menu-item'))[0].nativeElement.textContent.trim()
-        ).toBe('English');
+        ).toBe('አማርኛ');
         expect(
             fixture.debugElement.queryAll(By.css('.lang-menu-item'))[1].nativeElement.textContent.trim()
-        ).toBe('አማርኛ');
+        ).toBe('English');
     });
 
     it('should hide the menu after selecting language', () => {

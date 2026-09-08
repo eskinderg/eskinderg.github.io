@@ -7,7 +7,6 @@ import { IntroSectionComponent } from './intro.component';
 import { LanguageServiceMock } from '../../language/language.mock';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { describe, beforeEach, it, expect } from 'vitest';
 
 describe('IntroSectionComponent', () => {
     let component: IntroSectionComponent;

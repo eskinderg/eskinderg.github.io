@@ -8,14 +8,14 @@ export default defineConfig({
         environment: 'jsdom',
         coverage: {
             provider: 'v8', // or 'istanbul'
-            reporter: ['text', 'text-summary', 'json', 'html'],
+            reporter: ['text', 'text-summary', 'json-summary', 'json', 'html'],
             exclude: ['src/**/*.spec.ts', 'src/test.ts'], // Exclude tests from coverage
             reportsDirectory: './coverage/portfolio',
             thresholds: {
                 perFile: false,
-                statements: 84,
-                branches: 74,
-                functions: 65,
+                statements: 85,
+                branches: 75,
+                functions: 70,
                 lines: 85
             }
         }
