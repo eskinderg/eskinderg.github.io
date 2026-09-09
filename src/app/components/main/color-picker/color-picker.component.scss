@@ -57,7 +57,7 @@ svg {
     display: flex;
     flex-direction: column;
     border: none;
-    transition: opacity 1s ease;
+    transition: opacity 1s ease-out;
     top: auto;
     left: auto;
     right: auto;
@@ -74,7 +74,9 @@ svg {
 }
 
 .mini-color-btn {
-    opacity: 0;
+    --duration: 250ms;
+
+    user-select: none;
     pointer-events: none;
     background: var(--primary);
     cursor: pointer;
@@ -82,43 +84,42 @@ svg {
     width: 2.5rem;
     box-shadow: 1px 1px 9px -2px black !important;
     border-radius: 50%;
-    animation-duration: 200ms;
-    animation-fill-mode: forwards;
+    animation-duration: var(--duration);
+    animation-fill-mode: both;
+
+    // animation-timing-function: ease-in-out;
     animation-name: slide-out;
+    animation-delay: calc((sibling-count() - sibling-index()) * (var(--duration) / sibling-count()));
+
+    // &.open {
+    //     visibility: visible;
+    // }
 }
 
 .mini-color-btn.open {
-    // opacity: 0;
-    user-select: none;
     pointer-events: auto;
     background: var(--primary);
-    cursor: pointer;
-    height: 2.5rem;
-    width: 2.5rem;
-    box-shadow: 1px 1px 9px -2px black !important;
-    border-radius: 50%;
-    animation-duration: 200ms;
-    animation-fill-mode: forwards;
-    animation-name: slide;
+    animation-name: slide-in;
+    animation-delay: calc(sibling-index() * (var(--duration) / sibling-count()));
 }
 
-@for $i from 1 through 12 {
-    .mini-color-btn:nth-child(#{$i}n) {
-        animation-delay: #{(12 - $i) * 40}ms;
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+// @for $i from 1 through 12 {
+//     .mini-color-btn:nth-child(#{$i}n) {
+//         animation-delay: #{(12 - $i) * 40}ms;
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+// }
 
-@for $i from 1 through 12 {
-    .mini-color-btn.open:nth-child(#{$i}n) {
-        animation-delay: #{$i * 40}ms;
-        opacity: 0;
-        transform: translateY(30px);
-    }
-}
+// @for $i from 1 through 12 {
+//     .mini-color-btn.open:nth-child(#{$i}n) {
+//         animation-delay: #{$i * 40}ms;
+//         opacity: 0;
+//         transform: translateY(30px);
+//     }
+// }
 
-@keyframes slide {
+@keyframes slide-in {
     from {
         transform: translateY(30px);
         opacity: 0;
