@@ -21,9 +21,10 @@ import { BaseComponent } from '../../../sections/base.component';
     imports: [NgClass]
 })
 export class OutlineComponent extends BaseComponent implements AfterViewInit {
-    currentSection: string;
     @Output() public mouseWheelScroll: EventEmitter<any> = new EventEmitter<any>();
     _selector = viewChild.required<ElementRef>('outline');
+    private wrapperRefService = inject(WrapperRefService);
+    currentSection: string;
 
     public spiedTags = [
         'APP-INTRO',
@@ -45,42 +46,36 @@ export class OutlineComponent extends BaseComponent implements AfterViewInit {
     }
 
     @HostListener('mousewheel', ['$event']) onMousewheel($event: Event) {
+        $event.preventDefault();
         this.mouseWheelScroll.emit($event);
     }
 
-    private wrapperRefService = inject(WrapperRefService);
-
     ngAfterViewInit(): void {
-        this.scrollService.scroll$.subscribe((winScrollEvent: any) => {
-            if (winScrollEvent.srcElement) {
-                let currentSec: string;
-                // const children = winScrollEvent.target.children['parentDiv'].children;
-                const children = this.wrapperRefService.wrapperElementRef.nativeElement.children;
-                // this.appRef.components[0].instance.appComponentWrapper().nativeElement.children;
+        this.scrollService.scroll$.subscribe(({ srcElement, target }: any) => {
+            if (!srcElement) return;
 
-                const scrollTop = winScrollEvent.target.scrollTop;
-                // const parentOffset = winScrollEvent.target.offsetTop;
-                // const parentOffsetHeight = winScrollEvent.target.offsetHeight;
+            // 1. Toggle visibility of the outline
+            const { scrollTop, offsetHeight } = target;
+            const isPastThreshold = scrollTop > offsetHeight - scrollTop;
+            this._selector().nativeElement.style.display = isPastThreshold ? 'inline-block' : 'none';
 
-                this._selector().nativeElement.style.display =
-                    winScrollEvent.target.scrollTop > winScrollEvent.target.offsetHeight - scrollTop
-                        ? 'inline-block'
-                        : 'none';
+            // 2. Identify the current section based on scroll position
+            let currentSec = this.currentSection;
+            const children = this.wrapperRefService.wrapperElementRef.nativeElement.children;
 
-                for (let i = 0; i < children.length; i++) {
-                    const element = children[i] as HTMLElement;
-                    if (this.spiedTags.some((spiedTag) => spiedTag === element.tagName)) {
-                        // console.log(element.offsetTop, parentOffsetHeight, scrollTop, element.offsetHeight, element.id)
-                        if (scrollTop >= element.offsetTop - 250) {
-                            currentSec = element.tagName.substring(4).toLowerCase();
-                        }
-                    }
+            for (const element of children) {
+                if (
+                    this.spiedTags.includes(element.tagName) &&
+                    scrollTop >= (element as HTMLElement).offsetTop - 250
+                ) {
+                    currentSec = element.tagName.substring(4).toLowerCase();
                 }
+            }
 
-                if (currentSec !== this.currentSection) {
-                    this.currentSection = currentSec;
-                    this.ref.detectChanges();
-                }
+            // 3. Update state and trigger change detection if the section changed
+            if (currentSec !== this.currentSection) {
+                this.currentSection = currentSec;
+                this.ref.detectChanges();
             }
         });
     }
