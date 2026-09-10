@@ -4,35 +4,52 @@ import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 
 import { IntroSectionComponent } from './intro.component';
-import { LanguageServiceMock } from '../../language/language.mock';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
-import { provideZonelessChangeDetection } from '@angular/core';
-
+import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
+import en from '../../../assets/json/lang/en.json';
+import languageList from '../../../assets/json/lang.json';
+import { of } from 'rxjs';
 describe('IntroSectionComponent', () => {
     let component: IntroSectionComponent;
     let fixture: ComponentFixture<IntroSectionComponent>;
+    let testLanguageService: Partial<LanguageService>;
+
+    testLanguageService = {
+        httpChange: new EventEmitter<boolean>(),
+        languageChange: new EventEmitter<object>(),
+        sections: {},
+        texts: en,
+        LanguageList: languageList,
+        Language: 'en',
+        loadLanguages: () => of({ en: 'English', es: 'Spanish' })
+        // setLanguage: (lang: string) => of()
+    };
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [IntroSectionComponent],
             providers: [
-                {
-                    provide: LanguageService,
-                    useClass: LanguageServiceMock
-                },
+                { provide: LanguageService, useValue: testLanguageService },
                 GoogleAnalyticsService,
                 ThemeService,
                 provideZonelessChangeDetection(),
-                provideHttpClient(withXhr(), withInterceptorsFromDi())
+                provideHttpClient(),
+                provideHttpClient(withXhr(), withInterceptorsFromDi()),
+                provideHttpClientTesting()
             ]
         }).compileComponents();
 
         fixture = TestBed.createComponent(IntroSectionComponent);
         component = fixture.componentInstance;
+        testLanguageService.sections['intro'] = fixture.componentInstance;
         fixture.detectChanges();
     });
 
     it('Should create IntroSectionComponent', () => {
+        // const spy = vi.spyOn(testLanguageService, 'setLanguage');
+        // testLanguageService.setLanguage('en');
+        // expect(spy).toHaveBeenCalled();
         expect(component).toBeDefined();
     });
 
