@@ -2,7 +2,9 @@
 
 .tech {
     display: inline-block;
-    color: var(--text);
+
+    // color: var(--text);
+    color: var(--light);
     border: 1px solid var(--lighter);
     font-size: 0.5rem;
     transition: all 1s ease;
@@ -17,13 +19,13 @@
     // padding-right: 1rem;
     // padding: 0.35rem 0.65rem;
     padding: 0.25rem 0.45rem;
-    cursor: default;
+    cursor: pointer;
 }
 
 @include screen-md {
     .tech {
         border: 1px solid var(--lighter);
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         margin: 0.25rem;
         padding: 0.35rem 0.65rem;
     }

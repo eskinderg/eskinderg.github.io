@@ -15,7 +15,7 @@
     <!-- } -->
     <div class="mobile-used" [ngClass]="reverse ? 'chip-right' : 'chip-left'">
         @for (technology of job.used; track technology) {
-            <app-chip [technology]="technology"></app-chip>
+            <app-chip [technology]="technology" />
         }
     </div>
 </div>
@@ -37,7 +37,7 @@
             <!-- } -->
             <div class="mobile-used" [ngClass]="reverse ? 'chip-right' : 'chip-left'">
                 @for (technology of job.used; track technology) {
-                    <app-chip [technology]="technology"></app-chip>
+                    <app-chip [technology]="technology" />
                 }
             </div>
         </div>
@@ -52,6 +52,9 @@
                         'left-flex-layout': reverse,
                         'right-flex-layout': !reverse
                     }">
+                    <svg class="dot-svg" viewBox="0 0 16 16" width="1.25rem" height="1.25rem">
+                        <circle cx="8" cy="8" r="0.25rem" />
+                    </svg>
                     <p
                         class="content experience-list-item"
                         [ngClass]="{
