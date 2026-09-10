@@ -81,11 +81,17 @@ svg {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    transition: opacity 0.5s ease;
+    overflow: hidden;
+    transition:
+        opacity 0.5s ease-in-out,
+        backdrop-filter 0.5s ease-in-out;
 
     .menu-button {
         color: #252e38;
+    }
+
+    .text {
+        justify-content: center;
     }
 
     .text-container {
@@ -135,14 +141,13 @@ svg {
         --ga: #0000 25%, var(--c) 0;
 
         background:
-            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200%
-                var(--ia, var(--b)) no-repeat, conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
+            conic-gradient(from 180deg at top var(--b) right var(--b), var(--ga)) var(--ia, 200%) 0 / 200% var(--ia, var(--b)) no-repeat, conic-gradient(at bottom var(--b) left var(--b), var(--ga)) 0 var(--ia, 200%) / var(--ia, var(--b)) 200% no-repeat;
         transition:
             0.3s,
             background-position 0.2s 0.2s;
     }
 
-    @media (hover: hover) and (pointer: fine) { // display box animation only on touch devices
+    @media (hover: hover) and (pointer: fine) {
         nav .text:hover {
             --ia: 100%;
 
@@ -192,8 +197,80 @@ svg {
     width: 100%;
 }
 
-// @include screen-sm {
-// }
+.link {
+    animation-fill-mode: both;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-delay: calc(sibling-index() * 30ms);
+}
+
+.link:nth-of-type(odd) {
+    transform: translateX(-50%);
+    opacity: 0;
+    animation-name: slide-out-to-left;
+}
+
+.link:nth-of-type(even) {
+    transform: translateX(50%);
+    opacity: 0;
+    animation-name: slide-out-to-right;
+}
+
+.visible:nth-of-type(odd) {
+    animation-name: slide-in-from-left;
+}
+
+.visible:nth-of-type(even) {
+    animation-name: slide-in-from-right;
+}
+
+@keyframes slide-in-from-left {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-in-from-right {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-out-to-left {
+    from {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes slide-out-to-right {
+    from {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+}
 
 .btn-shadow {
     box-shadow: 1px 1px 10px -2px #000;

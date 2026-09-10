@@ -41,6 +41,7 @@
             @for (item of languageService.texts.menu.list; track item) {
                 <span
                     class="link"
+                    [class.visible]="visible"
                     [style.font-family]="languageService.texts.font.menu"
                     (mousemove)="onHover(item.link)"
                     (mouseout)="onMouseOut()">
