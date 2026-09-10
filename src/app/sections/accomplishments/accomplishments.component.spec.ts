@@ -4,7 +4,6 @@ import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { AccomplishmentsSectionComponent } from './accomplishments.component';
 import { TitleComponent } from '../../components/app/title/title.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from '../../language/language.mock';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
@@ -16,7 +15,7 @@ describe('AccomplishmentsSectionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BrowserAnimationsModule, AccomplishmentsSectionComponent, TitleComponent],
+            imports: [AccomplishmentsSectionComponent, TitleComponent],
             providers: [
                 {
                     provide: LanguageService,

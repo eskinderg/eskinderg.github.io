@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageService } from '../../../providers/language.service';
 import { ThemeService } from '../../../theme/theme.service';
 import { TitleComponent } from './title.component';
@@ -21,7 +20,7 @@ describe('TitleComponent', () => {
                 provideZonelessChangeDetection(),
                 ThemeService
             ],
-            imports: [BrowserAnimationsModule, TitleComponent]
+            imports: [TitleComponent]
         }).compileComponents();
     });
 

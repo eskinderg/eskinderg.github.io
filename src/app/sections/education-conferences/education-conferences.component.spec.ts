@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { EducationConferencesSectionComponent } from './education-conferences.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LanguageServiceMock } from '../../language/language.mock';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
@@ -15,7 +14,7 @@ describe('EducationConferencesSectionComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [BrowserAnimationsModule, EducationConferencesSectionComponent],
+            imports: [EducationConferencesSectionComponent],
             providers: [
                 {
                     provide: LanguageService,

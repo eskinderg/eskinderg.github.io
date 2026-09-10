@@ -1,9 +1,8 @@
-import { HttpClientModule, provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { ExperienceSectionComponent } from './experience.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { describe, beforeEach, it, expect } from 'vitest';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { LanguageServiceMock } from '../../language/language.mock';
@@ -23,7 +22,7 @@ describe('ExperienceSectionComponent', () => {
                 ThemeService,
                 provideHttpClient(withXhr(), withInterceptorsFromDi())
             ],
-            imports: [HttpClientModule, BrowserAnimationsModule, ExperienceSectionComponent]
+            imports: [ExperienceSectionComponent]
         }).compileComponents();
     });
 
