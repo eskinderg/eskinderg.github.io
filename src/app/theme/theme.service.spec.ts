@@ -8,13 +8,14 @@ import { GoogleAnalyticsService } from '../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import colorList from '../../assets/json/colors.json';
+import { fail } from 'assert';
 
 describe('Theme Service', () => {
     let service: ThemeService;
     let httpController: HttpTestingController;
     const darkMode: ThemeMode = 'dark';
     const lightMode: ThemeMode = 'light';
-    // const systemMode: ThemeMode = 'system';
+    const systemMode: ThemeMode = 'system';
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -60,6 +61,8 @@ describe('Theme Service', () => {
     it('should return is dark mode', () => {
         service.SetAppTheme('red', darkMode);
         expect(service.IsDarkMode).toBe(true);
+        service.SetAppTheme('red', systemMode);
+        expect(service.IsDarkMode).toBe(service.SystemDarkMode);
     });
 
     it('should toggle dark mode', () => {
@@ -96,5 +99,27 @@ describe('Theme Service', () => {
         const req = httpController.expectOne('assets/json/colors.json');
         expect(req.request.method).toBe('GET');
         req.flush(colorList);
+    });
+
+    it('Should handle 404 Error', () => {
+        const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {});
+        const mockError = new ProgressEvent('Network error');
+
+        // 1. Subscribe and listen for the expected error block
+        service.LoadTheme().subscribe({
+            next: () => fail('should have failed with an error'),
+            error: (error) => {
+                expect(error.status).toBe(404);
+                // Verify console.error was triggered inside catchError()
+                expect(consoleError).toHaveBeenCalled();
+            }
+        });
+
+        // 2. Expect and mock a failure response
+        const req = httpController.expectOne('assets/json/colors.json');
+        req.flush(mockError, { status: 404, statusText: 'Not found' });
+
+        // Restore original console behavior
+        consoleError.mockRestore();
     });
 });

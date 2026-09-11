@@ -23,7 +23,7 @@ import { BaseComponent } from '../../../sections/base.component';
 export class OutlineComponent extends BaseComponent implements AfterViewInit {
     @Output() public mouseWheelScroll: EventEmitter<any> = new EventEmitter<any>();
     _selector = viewChild.required<ElementRef>('outline');
-    private wrapperRefService = inject(WrapperRefService);
+    public wrapperRefService = inject(WrapperRefService);
     currentSection: string;
 
     public spiedTags = [

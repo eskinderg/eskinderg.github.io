@@ -39,7 +39,7 @@ export class ThemeService {
         return isPlatformBrowser(this.platformId);
     }
 
-    private get SystemDarkMode(): boolean {
+    public get SystemDarkMode(): boolean {
         if (isPlatformBrowser(this.platformId)) {
             return window.matchMedia('(prefers-color-scheme: dark)').matches;
         }
@@ -62,10 +62,6 @@ export class ThemeService {
 
     public set ThemeMode(value: ThemeMode) {
         this.localStorageService.setItem('thememode', value.toString());
-    }
-
-    public ToggleDarkMode(): ThemeMode {
-        return this.ThemeMode;
     }
 
     public get Theme(): string {
