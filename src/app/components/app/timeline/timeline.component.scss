@@ -119,6 +119,7 @@ p {
     z-index: 1;
 
     circle {
+        transition: fill 1s ease;
         fill: var(--lightest);
     }
 }
