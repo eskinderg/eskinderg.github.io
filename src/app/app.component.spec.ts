@@ -1,6 +1,6 @@
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, ComponentFixtureNoNgZone, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LanguageService } from './providers/language.service';
@@ -9,6 +9,7 @@ import { GoogleAnalyticsService } from './providers/google-analytics.service';
 import en from '../assets/json/lang/en.json';
 import languageList from '../assets/json/lang.json';
 import { of } from 'rxjs';
+import { Components } from './bootstrap/components';
 
 describe('AppComponent', () => {
     let fixture: ComponentFixture<AppComponent>;
@@ -85,20 +86,27 @@ describe('AppComponent', () => {
         expect(outline).toBeTruthy();
     });
 
-    it('should update scrollTop on wheel event', () => {
-        const outlineComponent = fixture.debugElement.query(By.css('app-outline'));
-        const initialScrollTop = component.mainWrapper().nativeElement.scrollTop;
-
-        // Create and dispatch a WheelEvent
-        const wheelEvent = new WheelEvent('mouseWheelScroll', {
-            deltaY: 50
+    it('should display or hide OutlineComponent based on wheel event', () => {
+        Components.forEach((c) => {
+            const sectionCompRef = component.dynamicComponentsWrapper.viewContainerRef.createComponent(c);
+            component.dynamicComponentsWrapper.wrapperElementRef.nativeElement.appendChild(
+                sectionCompRef.location.nativeElement
+            );
         });
 
-        outlineComponent.nativeElement.dispatchEvent(wheelEvent);
+        const outlineComponent = findComponent(fixture, 'app-outline');
+        Object.defineProperty(component.mainWrapper().nativeElement, 'offsetHeight', {
+            value: 500,
+            configurable: true
+        });
         fixture.detectChanges();
+        const element = outlineComponent.nativeElement.querySelector('#outline');
 
-        // Assert that scrollTop increased by deltaY
-        expect(component.mainWrapper().nativeElement.scrollTop).toBe(initialScrollTop + 50);
+        expect(element.style.display).toBe('none');
+        component.mainWrapper().nativeElement.scrollTop = 300;
+        component.mainWrapper().nativeElement.dispatchEvent(new Event('scroll'));
+        fixture.detectChanges();
+        expect(element.style.display).toBe('inline-block');
     });
 });
 
