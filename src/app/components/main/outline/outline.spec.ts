@@ -8,28 +8,28 @@ import { OutlineComponent } from './outline';
 import { By } from '@angular/platform-browser';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
-import { of, Subject } from 'rxjs';
+import { BehaviorSubject, of, Subject } from 'rxjs';
 import { ScrollService } from '../../../providers/scroll.service';
 import { WrapperRefService } from '../wrapper-ref.service';
 import { ThemeService } from '../../../theme/theme.service';
 import { Components } from '../../../bootstrap/components';
-import { DynamicComponentsWrapperComponent } from '../dynamic-components-wrapper.component';
+import { AppComponent } from '../../../app.component';
 
 describe('Outline Component', () => {
     let component: OutlineComponent;
-    let dynamicComponentsWrapperComponent: DynamicComponentsWrapperComponent;
+    let appComponent: AppComponent;
     let fixture: ComponentFixture<OutlineComponent>;
     let testLanguageService: Partial<LanguageService>;
 
     let testScrollService: any;
-    let mockChangeDetectorRef: any;
 
-    let scrollSubject: Subject<any>;
-    scrollSubject = new Subject<any>();
+    let scrollSubject: Subject<any> = new Subject<any>();
+    let scrollPosition = new BehaviorSubject<any>(0);
 
     testLanguageService = {
         httpChange: new EventEmitter<boolean>(),
         languageChange: new EventEmitter<object>(),
+        menu: new EventEmitter<object>(),
         sections: {},
         texts: en,
         LanguageList: languageList,
@@ -38,16 +38,13 @@ describe('Outline Component', () => {
     };
 
     testScrollService = {
-        scroll$: scrollSubject.asObservable()
-    };
-
-    mockChangeDetectorRef = {
-        detectChanges: vi.fn()
+        scroll$: scrollSubject.asObservable(),
+        scrollPosition: scrollPosition
     };
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [OutlineComponent, DynamicComponentsWrapperComponent],
+            imports: [OutlineComponent, AppComponent],
             providers: [
                 {
                     provide: LanguageService,
@@ -56,22 +53,21 @@ describe('Outline Component', () => {
                 ThemeService,
                 WrapperRefService,
                 { provide: ScrollService, useValue: testScrollService },
-                { provide: ChangeDetectorRef, useValue: mockChangeDetectorRef },
                 provideHttpClient(withXhr(), withInterceptorsFromDi()),
                 provideZonelessChangeDetection()
             ]
         }).compileComponents();
 
-        dynamicComponentsWrapperComponent = TestBed.createComponent(
-            DynamicComponentsWrapperComponent
-        ).componentInstance;
+        const appFixture = TestBed.createComponent(AppComponent);
+        appComponent = appFixture.componentInstance;
+        appFixture.detectChanges();
 
         fixture = TestBed.createComponent(OutlineComponent);
         component = fixture.componentInstance;
 
         Components.forEach((c) => {
-            const sectionCompRef = dynamicComponentsWrapperComponent.viewContainerRef.createComponent(c);
-            dynamicComponentsWrapperComponent.wrapperElementRef.nativeElement.appendChild(
+            const sectionCompRef = appComponent.dynamicComponentsWrapper.viewContainerRef.createComponent(c);
+            appComponent.dynamicComponentsWrapper.wrapperElementRef.nativeElement.appendChild(
                 sectionCompRef.location.nativeElement
             );
         });
@@ -103,21 +99,21 @@ describe('Outline Component', () => {
         const emitSpy = vi.spyOn(component.mouseWheelScroll, 'emit');
 
         // 2. Act: Create and dispatch a fake mock wheel event
-        const mockEvent = new WheelEvent('mousewheel', {
+        const mouseScrollEvent = new WheelEvent('mousewheel', {
             bubbles: true,
             cancelable: true // Must be true for preventDefault() to work
         });
 
         // Spy on the preventDefault method of this specific event
-        const preventDefaultSpy = vi.spyOn(mockEvent, 'preventDefault');
+        const preventDefaultSpy = vi.spyOn(mouseScrollEvent, 'preventDefault');
 
         // Dispatch the event to the component's host element
-        fixture.nativeElement.dispatchEvent(mockEvent);
+        fixture.nativeElement.dispatchEvent(mouseScrollEvent);
         fixture.detectChanges();
 
         // 3. Assert: Verify both actions occurred
         expect(preventDefaultSpy).toHaveBeenCalled();
-        expect(emitSpy).toHaveBeenCalledWith(mockEvent);
+        expect(emitSpy).toHaveBeenCalledWith(mouseScrollEvent);
     });
 
     it('should toggle outline display style based on scroll threshold', () => {
