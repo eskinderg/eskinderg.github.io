@@ -8,9 +8,9 @@ import {
 } from '@angular/core';
 import { NgStyle } from '@angular/common';
 import Geezify from 'geezify-js';
-import { toEthiopian } from 'ethiopian-calendar-new';
 import { BaseComponent } from '../base.component';
 import { environment } from '../../../environments/environment';
+import Kenat from 'kenat';
 
 @Component({
     selector: 'app-contact',
@@ -51,12 +51,9 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
 
     public get Year(): string {
         if (this.languageService.Language === 'am') {
-            const ethYear = toEthiopian(
-                new Date().getFullYear(),
-                new Date().getMonth(),
-                new Date().getDate()
-            ).year;
             const geezify = Geezify.create();
+            const today: Kenat = new Kenat();
+            const ethYear = today.getEthiopian().year;
             return geezify.toGeez(ethYear).toString();
         } else {
             return this.Copyright;
