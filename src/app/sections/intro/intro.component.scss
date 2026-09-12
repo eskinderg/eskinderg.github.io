@@ -178,6 +178,7 @@
         width: 0;
         white-space: nowrap;
         border-right: none;
+        max-width: max-content;
     }
 
     .intro-title-typewriter {
@@ -207,7 +208,7 @@
         }
 
         100% {
-            width:fit-content;
+            width:100%;
             border-right: none;
 
         }
