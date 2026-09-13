@@ -22,7 +22,7 @@ describe('IntroSectionComponent', () => {
         texts: en,
         LanguageList: languageList,
         Language: 'en',
-        loadLanguages: () => of({ en: 'English', es: 'Spanish' })
+        loadLanguages: () => of({ en: 'English', am: 'እማ' })
         // setLanguage: (lang: string) => of()
     };
 

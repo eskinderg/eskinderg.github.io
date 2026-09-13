@@ -27,7 +27,7 @@ export class BaseComponent {
 
     protected appRef: ApplicationRef;
     protected eRef: ElementRef;
-    protected httpStatus: boolean;
+    public httpStatus: boolean;
 
     public hasSeparator: boolean = true;
 
