@@ -2,29 +2,15 @@ import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/com
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
-
 import { IntroSectionComponent } from './intro.component';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
-import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
+import { provideZonelessChangeDetection } from '@angular/core';
 import { provideHttpClientTesting } from '@angular/common/http/testing';
-import en from '../../../assets/json/lang/en.json';
-import languageList from '../../../assets/json/lang.json';
-import { of } from 'rxjs';
+import { testLanguageService } from '../../../test';
+
 describe('IntroSectionComponent', () => {
     let component: IntroSectionComponent;
     let fixture: ComponentFixture<IntroSectionComponent>;
-    let testLanguageService: Partial<LanguageService>;
-
-    testLanguageService = {
-        httpChange: new EventEmitter<boolean>(),
-        languageChange: new EventEmitter<object>(),
-        sections: {},
-        texts: en,
-        LanguageList: languageList,
-        Language: 'en',
-        loadLanguages: () => of({ en: 'English', am: 'እማ' })
-        // setLanguage: (lang: string) => of()
-    };
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({

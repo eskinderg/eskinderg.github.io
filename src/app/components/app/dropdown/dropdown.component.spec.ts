@@ -49,6 +49,7 @@ describe('DropdownComponent', () => {
 
     it('should hide menu after clicking pdf download', () => {
         mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
         const downloadBtn: DebugElement = fixture.debugElement.query(By.css('.pdf'));
         downloadBtn.triggerEventHandler('click', null);
         expect(component.visible).toBe(false);
@@ -56,6 +57,7 @@ describe('DropdownComponent', () => {
 
     it('should hide menu after clicking doc download', () => {
         mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
         const downloadBtn: DebugElement = fixture.debugElement.query(By.css('.doc'));
         downloadBtn.triggerEventHandler('click', null);
         expect(component.visible).toBe(false);
