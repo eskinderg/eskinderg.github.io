@@ -2,16 +2,17 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { DropDownMenuComponent } from './dropdown.component';
 import { LanguageService } from '../../../providers/language.service';
-import { LanguageServiceMock } from '../../../language/language.mock';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
 import { ThemeService } from '../../../theme/theme.service';
 import { GoogleAnalyticsServiceMock } from '../../../providers/google-analytics.mock.service';
-import { provideZonelessChangeDetection } from '@angular/core';
-import { describe, expect, it, beforeEach } from 'vitest';
+import { DebugElement, provideZonelessChangeDetection } from '@angular/core';
+import { testLanguageService } from '../../../../test';
+import { By } from '@angular/platform-browser';
 
 describe('DropdownComponent', () => {
     let component: DropDownMenuComponent;
     let fixture: ComponentFixture<DropDownMenuComponent>;
+    let mainButton: DebugElement;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
@@ -19,7 +20,7 @@ describe('DropdownComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 {
                     provide: GoogleAnalyticsService,
@@ -34,6 +35,7 @@ describe('DropdownComponent', () => {
         fixture = TestBed.createComponent(DropDownMenuComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
+        mainButton = fixture.debugElement.query(By.css('.menu-btn'));
     });
 
     it('should create', () => {
@@ -41,17 +43,21 @@ describe('DropdownComponent', () => {
     });
 
     it('should toggle menu', () => {
-        component.onClick();
+        mainButton.triggerEventHandler('click', null);
         expect(component.visible).toBe(true);
     });
 
     it('should hide menu after clicking pdf download', () => {
-        component.onPdfDownload();
+        mainButton.triggerEventHandler('click', null);
+        const downloadBtn: DebugElement = fixture.debugElement.query(By.css('.pdf'));
+        downloadBtn.triggerEventHandler('click', null);
         expect(component.visible).toBe(false);
     });
 
     it('should hide menu after clicking doc download', () => {
-        component.onDocxDownload();
+        mainButton.triggerEventHandler('click', null);
+        const downloadBtn: DebugElement = fixture.debugElement.query(By.css('.doc'));
+        downloadBtn.triggerEventHandler('click', null);
         expect(component.visible).toBe(false);
     });
 

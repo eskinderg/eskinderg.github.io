@@ -1,9 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ChipComponent } from './chip.component';
 import { LanguageService } from '../../../providers/language.service';
-import { LanguageServiceMock } from '../../../language/language.mock';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { beforeEach, describe, it, expect } from 'vitest';
+import { testLanguageService } from '../../../../test';
 
 describe('ChipComponent', () => {
     let component: ChipComponent;
@@ -15,7 +14,7 @@ describe('ChipComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 provideZonelessChangeDetection()
             ]

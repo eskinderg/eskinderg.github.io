@@ -2,9 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../../providers/language.service';
 import { ThemeService } from '../../../theme/theme.service';
 import { TitleComponent } from './title.component';
-import { LanguageServiceMock } from '../../../language/language.mock';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { testLanguageService } from '../../../../test';
 
 describe('TitleComponent', () => {
     let component: TitleComponent;
@@ -15,7 +14,7 @@ describe('TitleComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 provideZonelessChangeDetection(),
                 ThemeService

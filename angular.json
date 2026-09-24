@@ -122,7 +122,7 @@
                     "options": {
                         "runnerConfig": "vitest.config.ts",
                         "coverage": true,
-                        "runner":"vitest"
+                        "runner": "vitest"
                     }
                 },
                 "lint": {
@@ -130,12 +130,23 @@
                     "options": {
                         "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
                     }
+                },
+                "e2e": {
+                    "builder": "playwright-ng-schematics:playwright",
+                    "options": {
+                        "devServerTarget": "portfolio:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "portfolio:serve:production"
+                        }
+                    }
                 }
             }
         }
     },
     "cli": {
-        "schematicCollections": ["@angular-eslint/schematics"],
+        "schematicCollections": ["@angular-eslint/schematics", "playwright-ng-schematics"],
         "analytics": false
     },
     "schematics": {

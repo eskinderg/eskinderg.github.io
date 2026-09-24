@@ -3,10 +3,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { EducationConferencesSectionComponent } from './education-conferences.component';
-import { LanguageServiceMock } from '../../language/language.mock';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { describe, beforeEach, it, expect } from 'vitest';
+import { testLanguageService } from '../../../test';
 
 describe('EducationConferencesSectionComponent', () => {
     let component: EducationConferencesSectionComponent;
@@ -18,7 +18,7 @@ describe('EducationConferencesSectionComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 ThemeService,
                 GoogleAnalyticsService,

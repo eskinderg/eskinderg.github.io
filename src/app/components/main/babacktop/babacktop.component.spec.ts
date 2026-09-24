@@ -3,10 +3,9 @@ import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/com
 import { ThemeService } from '../../../theme/theme.service';
 import { BaBackTopComponent } from './babacktop.component';
 import { LanguageService } from '../../../providers/language.service';
-import { LanguageServiceMock } from '../../../language/language.mock';
 import { By } from '@angular/platform-browser';
-import { provideZonelessChangeDetection } from '@angular/core';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { DebugElement, provideZonelessChangeDetection } from '@angular/core';
+import { testLanguageService } from '../../../../test';
 
 describe('BackTopComponent', () => {
     let component: BaBackTopComponent;
@@ -18,7 +17,7 @@ describe('BackTopComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 ThemeService,
                 provideZonelessChangeDetection(),
@@ -36,5 +35,16 @@ describe('BackTopComponent', () => {
         // component._onClick();
         component.ngOnInit();
         expect(component).toBeTruthy();
+    });
+
+    it('click', () => {
+        let mainButton: DebugElement;
+        mainButton = fixture.debugElement.query(By.css('.ba-back-top'));
+        mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
+        // const colorBtns = fixture.debugElement.queryAll(By.css('.mini-color-btn'));
+        // colorBtns[1].triggerEventHandler('mouseover', null);
+        // colorBtns[1].triggerEventHandler('click', null);
+        // expect(component.open).toBe(false);
     });
 });

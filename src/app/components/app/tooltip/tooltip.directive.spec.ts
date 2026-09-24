@@ -3,13 +3,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../../providers/language.service';
 import { ThemeService } from '../../../theme/theme.service';
 
-// import { IntroSectionComponent } from './intro.component';
-import { LanguageServiceMock } from '../../../language/language.mock';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
 import { Component, DebugElement, provideZonelessChangeDetection } from '@angular/core';
-import { describe, beforeEach, it, expect } from 'vitest';
 import { TooltipDirective } from './tooltip.directive';
 import { By } from '@angular/platform-browser';
+import { testLanguageService } from '../../../../test';
 
 @Component({
     imports: [TooltipDirective],
@@ -17,7 +15,7 @@ import { By } from '@angular/platform-browser';
 })
 class Test {}
 
-describe('IntroSectionComponent', () => {
+describe('tooltip directive test', () => {
     let fixture: ComponentFixture<Test>;
     let buttonDebugElement: DebugElement;
     beforeEach(async () => {
@@ -26,7 +24,7 @@ describe('IntroSectionComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 GoogleAnalyticsService,
                 ThemeService,
@@ -58,6 +56,8 @@ describe('IntroSectionComponent', () => {
         const tooltipEl = document.querySelector('app-tooltip');
         expect(tooltipEl).toBeTruthy();
         expect(tooltipEl?.textContent).toBe(` test\n`);
+        buttonDebugElement.triggerEventHandler('mousemove', null);
+        buttonDebugElement.triggerEventHandler('touchstart', null);
     });
 
     it('should remove tooltip element on mouseleave', () => {

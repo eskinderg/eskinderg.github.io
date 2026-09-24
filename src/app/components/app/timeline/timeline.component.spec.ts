@@ -3,11 +3,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../../providers/language.service';
 import { TimelineComponent } from './timeline.component';
 import { TitleComponent } from '../title/title.component';
-import { LanguageServiceMock } from '../../../language/language.mock';
 import { ChipComponent } from '../chip/chip.component';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { beforeEach, describe, expect, it } from 'vitest';
 import lang from '../../../../assets/json/lang/en.json';
+import { testLanguageService } from '../../../../test';
 
 describe('TimelineComponent', () => {
     let component: TimelineComponent;
@@ -19,7 +18,7 @@ describe('TimelineComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 provideZonelessChangeDetection(),
                 provideHttpClient(withXhr(), withInterceptorsFromDi())

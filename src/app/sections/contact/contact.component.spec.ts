@@ -4,26 +4,12 @@ import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { ContactSectionComponent } from './contact.component';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
-import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
-import am from '../../../assets/json/lang/am.json';
-import languageList from '../../../assets/json/lang.json';
-import { of } from 'rxjs';
+import { provideZonelessChangeDetection } from '@angular/core';
+import { testLanguageService } from '../../../test';
 
 describe('ContactSectionComponent', () => {
     let component: ContactSectionComponent;
     let fixture: ComponentFixture<ContactSectionComponent>;
-    let testLanguageService: Partial<LanguageService>;
-
-    testLanguageService = {
-        httpChange: new EventEmitter<boolean>(),
-        languageChange: new EventEmitter<object>(),
-        sections: {},
-        texts: am,
-        LanguageList: languageList,
-        Language: 'am',
-        loadLanguages: () => of(am)
-        // setLanguage: (lang: string) => of()
-    };
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({

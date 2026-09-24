@@ -3,11 +3,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../..//providers/language.service';
 
 import { MenuComponent } from './menu.component';
-import { LanguageServiceMock } from '../../../language/language.mock';
 import { ThemeService } from '../../../theme/theme.service';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
 import { DebugElement, provideZonelessChangeDetection } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { testLanguageService } from '../../../../test';
 
 describe('MenuComponent', () => {
     let component: MenuComponent;
@@ -20,7 +20,7 @@ describe('MenuComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 ThemeService,
                 GoogleAnalyticsService,
@@ -40,8 +40,10 @@ describe('MenuComponent', () => {
     });
 
     it('should display menu when clicked', () => {
+        const toggleMenuFn = vi.spyOn(component.languageService, 'toggleMenu');
         mainButton.triggerEventHandler('click', null);
-        expect(component.visible).toBe(true);
+        expect(toggleMenuFn).toHaveBeenCalled();
+        // expect(component.visible).toBe(true);
     });
 
     it('mouse move', () => {

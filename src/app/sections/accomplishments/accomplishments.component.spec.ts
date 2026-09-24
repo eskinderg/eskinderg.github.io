@@ -4,10 +4,9 @@ import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { AccomplishmentsSectionComponent } from './accomplishments.component';
 import { TitleComponent } from '../../components/app/title/title.component';
-import { LanguageServiceMock } from '../../language/language.mock';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { describe, beforeEach, it, expect } from 'vitest';
+import { testLanguageService } from '../../../test';
 
 describe('AccomplishmentsSectionComponent', () => {
     let component: AccomplishmentsSectionComponent;
@@ -19,7 +18,7 @@ describe('AccomplishmentsSectionComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 ThemeService,
                 GoogleAnalyticsService,

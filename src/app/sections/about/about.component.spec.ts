@@ -4,9 +4,9 @@ import { GoogleAnalyticsService } from '../../providers/google-analytics.service
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { AboutSectionComponent } from './about.component';
-import { LanguageServiceMock } from '../../language/language.mock';
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TitleComponent } from '../../components/app/title/title.component';
+import { testLanguageService } from '../../../test';
 
 describe('AboutSectionComponent', () => {
     let component: AboutSectionComponent;
@@ -18,7 +18,7 @@ describe('AboutSectionComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 GoogleAnalyticsService,
                 ThemeService,

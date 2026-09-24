@@ -1,15 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { RightComponent } from './right.component';
 import { ThemeService } from '../../../theme/theme.service';
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { LanguageService } from '../../../providers/language.service';
-import { LanguageServiceMock } from '../../../language/language.mock';
 import { findComponent } from '../../../app.component.spec';
 import { MenuComponent } from '../menu/menu.component';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { beforeEach, describe, expect, it } from 'vitest';
+import { testLanguageService } from '../../../../test';
 
 describe('RightComponent', () => {
     let component: RightComponent;
@@ -22,7 +20,7 @@ describe('RightComponent', () => {
                 ThemeService,
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 GoogleAnalyticsService,
                 provideZonelessChangeDetection(),

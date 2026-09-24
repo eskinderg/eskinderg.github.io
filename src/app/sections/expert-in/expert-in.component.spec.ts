@@ -3,10 +3,9 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { ExpertInSectionComponent } from './expert-in.component';
-import { LanguageServiceMock } from '../../language/language.mock';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { describe, beforeEach, it, expect } from 'vitest';
+import { testLanguageService } from '../../../test';
 
 describe('ExpertInSectionComponent', () => {
     let component: ExpertInSectionComponent;
@@ -18,7 +17,7 @@ describe('ExpertInSectionComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 GoogleAnalyticsService,
                 ThemeService,

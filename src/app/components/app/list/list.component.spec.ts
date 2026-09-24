@@ -4,8 +4,7 @@ import { ListComponent } from './list.component';
 import { LanguageService } from '../../../providers/language.service';
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { provideZonelessChangeDetection } from '@angular/core';
-import { beforeEach, describe, expect, it } from 'vitest';
-import { LanguageServiceMock } from '../../../language/language.mock';
+import { testLanguageService } from '../../../../test';
 
 describe('ListComponent', () => {
     let component: ListComponent;
@@ -17,7 +16,7 @@ describe('ListComponent', () => {
             providers: [
                 {
                     provide: LanguageService,
-                    useClass: LanguageServiceMock
+                    useValue: testLanguageService
                 },
                 provideHttpClient(withXhr(), withInterceptorsFromDi()),
                 provideZonelessChangeDetection()
