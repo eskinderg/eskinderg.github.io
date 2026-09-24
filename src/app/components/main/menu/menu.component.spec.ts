@@ -5,14 +5,30 @@ import { LanguageService } from '../../..//providers/language.service';
 import { MenuComponent } from './menu.component';
 import { ThemeService } from '../../../theme/theme.service';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
-import { DebugElement, provideZonelessChangeDetection } from '@angular/core';
+import { DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { testLanguageService } from '../../../../test';
+import en from '../../../../assets/json/lang/en.json';
+import languageList from '../../../../assets/json/lang.json';
+import { of } from 'rxjs';
 
 describe('MenuComponent', () => {
     let component: MenuComponent;
     let fixture: ComponentFixture<MenuComponent>;
     let mainButton: DebugElement;
+    let testLanguageService: Partial<LanguageService>;
+
+    testLanguageService = {
+        httpChange: new EventEmitter<boolean>(),
+        languageChange: new EventEmitter<object>(),
+        menu: new EventEmitter<any>(),
+        sections: {},
+        toggleMenu: vi.fn(),
+        texts: en,
+        LanguageList: languageList,
+        Language: 'en',
+        loadLanguages: () => of(languageList),
+        translateColor: vi.fn()
+    };
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({

@@ -1,10 +1,3 @@
-import { EventEmitter } from '@angular/core';
-
-import en from './assets/json/lang/en.json';
-import languageList from './assets/json/lang.json';
-import { of } from 'rxjs';
-import { LanguageService } from './app/providers/language.service';
-
 if (!window.matchMedia) {
     Object.defineProperty(window, 'matchMedia', {
         writable: true,
@@ -52,17 +45,4 @@ if (!Element.prototype.scrollIntoView) {
 
 globalThis.fail = (message?: string): never => {
     throw new Error(message ?? 'Test failed');
-};
-
-export const testLanguageService: Partial<LanguageService> = {
-    httpChange: new EventEmitter<boolean>(),
-    languageChange: new EventEmitter<object>(),
-    menu: new EventEmitter<any>(),
-    sections: {},
-    toggleMenu: vi.fn(),
-    texts: en,
-    LanguageList: languageList,
-    Language: 'en',
-    loadLanguages: () => of(languageList),
-    translateColor: vi.fn()
 };
