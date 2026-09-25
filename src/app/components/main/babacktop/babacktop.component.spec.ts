@@ -43,13 +43,10 @@ describe('BackTopComponent', () => {
 
         fixture = TestBed.createComponent(BaBackTopComponent);
         component = fixture.componentInstance;
-        component._selector = fixture.debugElement.queryAll(By.css('.ba-back-top'))[0].nativeElement;
         fixture.detectChanges();
     });
 
     it('should create', () => {
-        // component._onClick();
-        component.ngOnInit();
         expect(component).toBeTruthy();
     });
 
