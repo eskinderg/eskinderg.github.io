@@ -1,18 +1,31 @@
 import {
-    ApplicationRef,
-    ComponentRef,
     Directive,
-    ElementRef,
-    EmbeddedViewRef,
-    HostListener,
-    Injector,
     Input,
-    OnDestroy,
+    ElementRef,
+    Renderer2,
+    HostListener,
+    ComponentRef,
     ViewContainerRef,
+    Component,
+    OnDestroy,
     inject
 } from '@angular/core';
-import { TooltipComponent } from './tooltip.component';
-import { TooltipPosition, TooltipTheme } from './tooltip.enums';
+
+export type TooltipPosition = 'auto' | 'top' | 'bottom' | 'left' | 'right';
+
+@Component({
+    selector: 'app-tooltip-content',
+    standalone: true,
+    template: `
+        <div class="tooltip-box">
+            {{ text }}
+        </div>
+    `,
+    styleUrls: ['./tooltip.component.scss']
+})
+export class TooltipContentComponent {
+    text = '';
+}
 
 @Directive({
     selector: '[appTooltip]',
@@ -20,129 +33,121 @@ import { TooltipPosition, TooltipTheme } from './tooltip.enums';
 })
 export class TooltipDirective implements OnDestroy {
     private elementRef = inject(ElementRef);
+    private renderer = inject(Renderer2);
     private viewContainerRef = inject(ViewContainerRef);
-    private appRef = inject(ApplicationRef);
-    private injector = inject(Injector);
 
-    @Input() appTooltip = '';
-    @Input() position: TooltipPosition = TooltipPosition.BELOW;
-    @Input() theme: TooltipTheme = TooltipTheme.DEFAULT;
-    @Input() showDelay = 0;
-    @Input() hideDelay = 0;
+    @Input('appTooltip') tooltipText = '';
+    @Input() position: TooltipPosition = 'auto';
+    @Input() margin = 8;
 
-    private componentRef: ComponentRef<any> | null = null;
-    private showTimeout?: number;
-    hideTimeout: number;
-    private touchTimeout?: number;
+    private componentRef: ComponentRef<TooltipContentComponent> | null = null;
 
     @HostListener('mouseenter')
     onMouseEnter(): void {
-        this.initializeTooltip();
-    }
-
-    // onMouseLeave(): void {
-    //     this.setHideTooltipTimeout();
-    // }
-
-    @HostListener('mousemove', ['$event'])
-    onMouseMove($event: MouseEvent): void {
-        if (this.componentRef !== null && this.position === TooltipPosition.DYNAMIC) {
-            this.componentRef.instance.left = $event.clientX;
-            this.componentRef.instance.top = $event.clientY;
-            this.componentRef.instance.tooltip = this.appTooltip;
-        }
-    }
-
-    @HostListener('touchstart', [])
-    // onTouchStart($event: TouchEvent): void {
-    onTouchStart(): void {
-        // $event.preventDefault();
-        window.clearTimeout(this.touchTimeout);
-        this.touchTimeout = window.setTimeout(this.initializeTooltip.bind(this), 500);
+        if (!this.tooltipText) return;
+        this.show();
     }
 
     @HostListener('mouseleave')
-    @HostListener('touchcancel')
-    @HostListener('touchend')
-    onTouchEnd(): void {
-        window.clearTimeout(this.touchTimeout);
-        this.setHideTooltipTimeout();
-    }
-
-    private initializeTooltip() {
-        if (this.componentRef === null) {
-            window.clearInterval(this.hideDelay);
-
-            this.componentRef = this.viewContainerRef.createComponent<TooltipComponent>(TooltipComponent, {
-                injector: this.injector
-            });
-
-            const [tooltipDOMElement] = (this.componentRef.hostView as EmbeddedViewRef<any>).rootNodes;
-
-            this.setTooltipComponentProperties();
-
-            document.body.appendChild(tooltipDOMElement);
-            this.showTimeout = window.setTimeout(this.showTooltip.bind(this), this.showDelay);
-        }
-    }
-
-    private setTooltipComponentProperties() {
-        if (this.componentRef !== null) {
-            this.componentRef.instance.tooltip = this.appTooltip;
-            this.componentRef.instance.position = this.position;
-            this.componentRef.instance.theme = this.theme;
-
-            const { left, right, top, bottom } = this.elementRef.nativeElement.getBoundingClientRect();
-
-            switch (this.position) {
-                case TooltipPosition.BELOW: {
-                    this.componentRef.instance.left = Math.round((right - left) / 2 + left);
-                    this.componentRef.instance.top = Math.round(bottom);
-                    break;
-                }
-                case TooltipPosition.ABOVE: {
-                    this.componentRef.instance.left = Math.round((right - left) / 2 + left);
-                    this.componentRef.instance.top = Math.round(top);
-                    break;
-                }
-                case TooltipPosition.RIGHT: {
-                    this.componentRef.instance.left = Math.round(right);
-                    this.componentRef.instance.top = Math.round(top + (bottom - top) / 2);
-                    break;
-                }
-                case TooltipPosition.LEFT: {
-                    this.componentRef.instance.left = Math.round(left);
-                    this.componentRef.instance.top = Math.round(top + (bottom - top) / 2);
-                    break;
-                }
-                default: {
-                    break;
-                }
-            }
-        }
-    }
-
-    private showTooltip() {
-        if (this.componentRef !== null) {
-            this.componentRef.instance.visible = true;
-        }
-    }
-
-    private setHideTooltipTimeout() {
-        this.hideTimeout = window.setTimeout(this.destroy.bind(this), this.hideDelay);
+    onMouseLeave(): void {
+        this.hide();
     }
 
     ngOnDestroy(): void {
-        this.destroy();
+        this.hide();
     }
 
-    destroy(): void {
-        if (this.componentRef !== null) {
-            window.clearInterval(this.showTimeout);
-            window.clearInterval(this.hideDelay);
-            this.appRef.detachView(this.componentRef.hostView);
+    private show(): void {
+        // 1. Dynamically instantiate the tooltip component
+        this.componentRef = this.viewContainerRef.createComponent(TooltipContentComponent);
+        this.componentRef.instance.text = this.tooltipText;
+
+        const tooltipElement = this.componentRef.location.nativeElement as HTMLElement;
+
+        // 2. Set base styles & hide initial render to prevent visual flicker
+        this.renderer.setStyle(tooltipElement, 'position', 'fixed');
+        this.renderer.setStyle(tooltipElement, 'z-index', '1060');
+        this.renderer.setStyle(tooltipElement, 'visibility', 'hidden');
+
+        // Attach to DOM (hidden)
+        this.renderer.appendChild(document.body, tooltipElement);
+
+        // 3. Calculate position and make visible in the next macro task once rendered
+        setTimeout(() => {
+            this.calculatePosition(tooltipElement);
+            this.renderer.setStyle(tooltipElement, 'visibility', 'visible');
+        });
+    }
+
+    private hide(): void {
+        if (this.componentRef) {
             this.componentRef.destroy();
             this.componentRef = null;
         }
+    }
+
+    private calculatePosition(tooltip: HTMLElement): void {
+        if (!this.componentRef) return;
+
+        const hostRect = this.elementRef.nativeElement.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
+
+        let targetPosition = this.position;
+
+        // Handle "auto" positioning logic based on viewport constraints
+        if (targetPosition === 'auto') {
+            const spaceTop = hostRect.top - tooltipRect.height - this.margin;
+            const spaceBottom = window.innerHeight - hostRect.bottom - tooltipRect.height - this.margin;
+            const spaceLeft = hostRect.left - tooltipRect.width - this.margin;
+            const spaceRight = window.innerWidth - hostRect.right - tooltipRect.width - this.margin;
+
+            // Prioritize Top -> Bottom -> Right -> Left depending on space availability
+            if (spaceTop > 0) targetPosition = 'top';
+            else if (spaceBottom > 0) targetPosition = 'bottom';
+            else if (spaceRight > 0) targetPosition = 'right';
+            else if (spaceLeft > 0) targetPosition = 'left';
+            else targetPosition = 'top'; // Fallback
+        }
+
+        let top = 0;
+        let left = 0;
+
+        // Calculate absolute coordinates relative to viewport bounds
+        switch (targetPosition) {
+            case 'top':
+                top = hostRect.top - tooltipRect.height - this.margin;
+                left = hostRect.left + (hostRect.width - tooltipRect.width) / 2;
+                break;
+            case 'bottom':
+                top = hostRect.bottom + this.margin;
+                left = hostRect.left + (hostRect.width - tooltipRect.width) / 2;
+                break;
+            case 'left':
+                top = hostRect.top + (hostRect.height - tooltipRect.height) / 2;
+                left = hostRect.left - tooltipRect.width - this.margin;
+                break;
+            case 'right':
+                top = hostRect.top + (hostRect.height - tooltipRect.height) / 2;
+                left = hostRect.right + this.margin;
+                break;
+        }
+
+        // Screen Edge Protection: Prevent tooltip from clipping outside horizontal viewport boundaries
+        if (left < 0) {
+            left = this.margin; // Shift right if clipping left edge
+        } else if (left + tooltipRect.width > window.innerWidth) {
+            left = window.innerWidth - tooltipRect.width - this.margin; // Shift left if clipping right edge
+        }
+
+        // Screen Edge Protection: Prevent tooltip from clipping outside vertical viewport boundaries
+        if (top < 0) {
+            top = this.margin;
+        } else if (top + tooltipRect.height > window.innerHeight) {
+            top = window.innerHeight - tooltipRect.height - this.margin;
+        }
+
+        // Apply calculated coordinates
+        this.renderer.setStyle(tooltip, 'top', `${top}px`);
+        this.renderer.setStyle(tooltip, 'left', `${left}px`);
     }
 }

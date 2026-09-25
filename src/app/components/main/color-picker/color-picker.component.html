@@ -25,7 +25,6 @@
             (mouseover)="mouseOver(btn)"
             (mouseleave)="mouseLeave(btn)"
             appTooltip="{{ languageService.translateColor(btn.theme) }}"
-            [position]="TOOLTIP_POSITION.BELOW"
             class="mini-color-btn"
             [ngClass]="btn.theme"
             [class.open]="open"
