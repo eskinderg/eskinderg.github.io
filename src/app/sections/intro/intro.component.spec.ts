@@ -5,7 +5,6 @@ import { ThemeService } from '../../theme/theme.service';
 import { IntroSectionComponent } from './intro.component';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
-import { provideHttpClientTesting } from '@angular/common/http/testing';
 import en from '../../../assets/json/lang/en.json';
 import languageList from '../../../assets/json/lang.json';
 import { of } from 'rxjs';
@@ -36,9 +35,7 @@ describe('IntroSectionComponent', () => {
                 GoogleAnalyticsService,
                 ThemeService,
                 provideZonelessChangeDetection(),
-                provideHttpClient(),
-                provideHttpClient(withXhr(), withInterceptorsFromDi()),
-                provideHttpClientTesting()
+                provideHttpClient(withXhr(), withInterceptorsFromDi())
             ]
         }).compileComponents();
 
