@@ -29,7 +29,7 @@ describe('BackTopComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [],
+            imports: [BaBackTopComponent],
             providers: [
                 {
                     provide: LanguageService,
