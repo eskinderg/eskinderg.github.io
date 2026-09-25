@@ -4,7 +4,6 @@ import { ThemeService } from '../../../theme/theme.service';
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { LanguageService } from '../../../providers/language.service';
 import { findComponent } from '../../../app.component.spec';
-import { MenuComponent } from '../menu/menu.component';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
 import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
@@ -31,7 +30,7 @@ describe('RightComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [RightComponent, MenuComponent],
+            imports: [RightComponent],
             providers: [
                 ThemeService,
                 {
