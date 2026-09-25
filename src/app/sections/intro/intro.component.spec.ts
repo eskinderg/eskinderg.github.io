@@ -41,7 +41,8 @@ describe('IntroSectionComponent', () => {
 
         fixture = TestBed.createComponent(IntroSectionComponent);
         component = fixture.componentInstance;
-        testLanguageService.sections['intro'] = fixture.componentInstance;
+        // testLanguageService.sections['intro'] = fixture.componentInstance;
+        component.languageService.sections['intro'] = fixture.componentInstance;
         fixture.detectChanges();
     });
 
