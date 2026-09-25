@@ -10,12 +10,14 @@ import { TooltipDirective } from '../../app/tooltip/tooltip.directive';
 import { EventEmitter } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
+import colors from '../../../../assets/json/colors.json';
 import { of } from 'rxjs';
 
 describe('ColorPickerComponent', () => {
     let component: ColorPickerComponent;
     let fixture: ComponentFixture<ColorPickerComponent>;
     let mainButton: DebugElement;
+    let testThemeService: Partial<ThemeService>;
     let testLanguageService: Partial<LanguageService>;
 
     testLanguageService = {
@@ -31,6 +33,14 @@ describe('ColorPickerComponent', () => {
         translateColor: vi.fn()
     };
 
+    testThemeService = {
+        Colors: colors.colors,
+        LoadTheme: () => of(colors.colors),
+        SetAppTheme: vi.fn(),
+        ThemeMode: 'system',
+        Theme: 'indigo'
+    };
+
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [ColorPickerComponent, TooltipDirective],
@@ -40,7 +50,7 @@ describe('ColorPickerComponent', () => {
                     useValue: testLanguageService
                 },
                 GoogleAnalyticsService,
-                ThemeService,
+                { provide: ThemeService, useValue: testThemeService },
                 provideZonelessChangeDetection(),
                 provideHttpClient()
             ]
@@ -57,21 +67,47 @@ describe('ColorPickerComponent', () => {
     });
 
     it('Should show color list', () => {
-        component.buttons = [{ theme: 'red' }, { theme: 'blue' }];
         mainButton.triggerEventHandler('click', null);
         fixture.detectChanges();
         expect(component.open).toBe(true);
         const colorBtns = fixture.debugElement.queryAll(By.css('.mini-color-btn'));
-        expect(colorBtns.length).toEqual(2);
+        expect(colorBtns.length).toEqual(12);
     });
 
     it('should hide when clicking the mini-color-button', () => {
-        component.buttons = [{ theme: 'red' }, { theme: 'blue' }];
         mainButton.triggerEventHandler('click', null);
         fixture.detectChanges();
         const colorBtns = fixture.debugElement.queryAll(By.css('.mini-color-btn'));
         colorBtns[1].triggerEventHandler('mouseover', null);
         colorBtns[1].triggerEventHandler('click', null);
+        expect(component.open).toBe(false);
+    });
+
+    it('should change the theme color to previous color when mouseleave', () => {
+        const setAppTheme = vi.spyOn(component.themeService, 'SetAppTheme');
+        mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
+        const colorBtns = fixture.debugElement.queryAll(By.css('.mini-color-btn'));
+        colorBtns[0].triggerEventHandler('mouseover', null);
+        expect(setAppTheme).toHaveBeenCalledWith('red', 'system');
+        colorBtns[0].triggerEventHandler('mouseleave', null);
+        expect(setAppTheme).toHaveBeenCalledWith('indigo', 'system');
+        colorBtns[0].triggerEventHandler('mouseover', null);
+        component.open = false;
+        colorBtns[0].triggerEventHandler('mouseleave', null);
+        expect(setAppTheme).toHaveBeenCalledWith('indigo', 'system');
+    });
+
+    it('should close (open = false) when clicking outside the component', () => {
+        mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
+        // 2. Act: Dispatch a mousedown event on the document body (outside the component)
+        const event = new MouseEvent('mousedown', {
+            bubbles: true,
+            cancelable: true
+        });
+
+        document.body.dispatchEvent(event);
         expect(component.open).toBe(false);
     });
 });
