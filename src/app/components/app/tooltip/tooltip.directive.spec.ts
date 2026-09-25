@@ -58,6 +58,7 @@ describe('TooltipDirective (Vitest + Zoneless)', () => {
 
     describe('Mouse Events & Lifecycle', () => {
         it('should attach tooltip to body on mouseenter', async () => {
+            fixture.componentInstance.position = 'auto';
             buttonEl.triggerEventHandler('mouseenter', null);
 
             // Fast-forward the setTimeout inside show()
