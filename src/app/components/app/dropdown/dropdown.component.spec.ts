@@ -5,15 +5,17 @@ import { LanguageService } from '../../../providers/language.service';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
 import { ThemeService } from '../../../theme/theme.service';
 import { GoogleAnalyticsServiceMock } from '../../../providers/google-analytics.mock.service';
-import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
+import { DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
 import { of } from 'rxjs';
+import { By } from '@angular/platform-browser';
 
 describe('DropdownComponent', () => {
     let component: DropDownMenuComponent;
     let fixture: ComponentFixture<DropDownMenuComponent>;
     let testLanguageService: Partial<LanguageService>;
+    let mainButton: DebugElement;
 
     testLanguageService = {
         httpChange: new EventEmitter<boolean>(),
@@ -49,6 +51,7 @@ describe('DropdownComponent', () => {
         fixture = TestBed.createComponent(DropDownMenuComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
+        mainButton = fixture.debugElement.query(By.css('.menu-btn'));
     });
 
     it('should create', () => {
@@ -56,17 +59,23 @@ describe('DropdownComponent', () => {
     });
 
     it('should toggle menu', () => {
-        component.onClick();
+        mainButton.triggerEventHandler('click', null);
         expect(component.visible).toBe(true);
     });
 
     it('should hide menu after clicking pdf download', () => {
-        component.onPdfDownload();
+        mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
+        const downloadBtn: DebugElement = fixture.debugElement.query(By.css('.pdf'));
+        downloadBtn.triggerEventHandler('click', null);
         expect(component.visible).toBe(false);
     });
 
     it('should hide menu after clicking doc download', () => {
-        component.onDocxDownload();
+        mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
+        const downloadBtn: DebugElement = fixture.debugElement.query(By.css('.doc'));
+        downloadBtn.triggerEventHandler('click', null);
         expect(component.visible).toBe(false);
     });
 
