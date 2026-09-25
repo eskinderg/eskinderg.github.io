@@ -23,7 +23,7 @@ describe('LangdropdownComponent', () => {
         texts: en,
         LanguageList: languageList,
         Language: 'en',
-        loadLanguages: () => of(languageList)
+        loadLanguages: () => of(en)
         // setLanguage: (lang: string) => of()
     };
 

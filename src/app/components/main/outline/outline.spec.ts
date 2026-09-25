@@ -34,7 +34,7 @@ describe('Outline Component', () => {
         texts: en,
         LanguageList: languageList,
         Language: 'en',
-        loadLanguages: () => of(languageList)
+        loadLanguages: () => of(en)
     };
 
     testScrollService = {
@@ -138,7 +138,7 @@ describe('Outline Component', () => {
     });
 
     it('should update currentSection and trigger change detection when scroll hits a spied element', () => {
-        const detectChangesFunction = vi.spyOn(component.ref, 'detectChanges');
+        const cdSpy = vi.spyOn(component.ref, 'detectChanges');
         fixture.detectChanges();
 
         // scrollTop (200) >= offsetTop (400) - 250 -> 200 >= 150 (True for APP-SECTION-TWO)
@@ -148,7 +148,7 @@ describe('Outline Component', () => {
         });
 
         fixture.detectChanges();
-        expect(detectChangesFunction).toHaveBeenCalledTimes(1);
+        expect(cdSpy).toHaveBeenCalledTimes(1);
         // expect(component.currentSection).toBe('about');
 
         scrollSubject.next({

@@ -5,8 +5,9 @@ import { LanguageService } from '../../..//providers/language.service';
 import { MenuComponent } from './menu.component';
 import { ThemeService } from '../../../theme/theme.service';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
-import { DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
+import { DebugElement, provideZonelessChangeDetection } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { EventEmitter } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
 import { of } from 'rxjs';
@@ -59,7 +60,6 @@ describe('MenuComponent', () => {
         const toggleMenuFn = vi.spyOn(component.languageService, 'toggleMenu');
         mainButton.triggerEventHandler('click', null);
         expect(toggleMenuFn).toHaveBeenCalled();
-        // expect(component.visible).toBe(true);
     });
 
     it('mouse move', () => {

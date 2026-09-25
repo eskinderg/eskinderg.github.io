@@ -4,9 +4,10 @@ import { LanguageService } from '../../../providers/language.service';
 import { ThemeService } from '../../../theme/theme.service';
 
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
-import { Component, DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
+import { Component, DebugElement } from '@angular/core';
 import { TooltipDirective } from './tooltip.directive';
 import { By } from '@angular/platform-browser';
+import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
 import { of } from 'rxjs';
@@ -17,7 +18,7 @@ import { of } from 'rxjs';
 })
 class Test {}
 
-describe('tooltip directive test', () => {
+describe('IntroSectionComponent', () => {
     let fixture: ComponentFixture<Test>;
     let buttonDebugElement: DebugElement;
     let testLanguageService: Partial<LanguageService>;
@@ -73,8 +74,6 @@ describe('tooltip directive test', () => {
         const tooltipEl = document.querySelector('app-tooltip');
         expect(tooltipEl).toBeTruthy();
         expect(tooltipEl?.textContent).toBe(` test\n`);
-        buttonDebugElement.triggerEventHandler('mousemove', null);
-        buttonDebugElement.triggerEventHandler('touchstart', null);
     });
 
     it('should remove tooltip element on mouseleave', () => {

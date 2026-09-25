@@ -3,11 +3,11 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { ExperienceSectionComponent } from './experience.component';
-import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
+import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import en from '../../../assets/json/lang/en.json';
 import languageList from '../../../assets/json/lang.json';
 import { of } from 'rxjs';
-import { EventEmitter } from '@angular/core';
+import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 
 describe('ExperienceSectionComponent', () => {
     let component: ExperienceSectionComponent;
@@ -36,6 +36,7 @@ describe('ExperienceSectionComponent', () => {
                 },
                 GoogleAnalyticsService,
                 ThemeService,
+                provideZonelessChangeDetection(),
                 provideHttpClient(withXhr(), withInterceptorsFromDi())
             ],
             imports: [ExperienceSectionComponent]

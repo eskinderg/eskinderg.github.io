@@ -5,7 +5,7 @@ import { ThemeService } from '../../theme/theme.service';
 import { ContactSectionComponent } from './contact.component';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
-import en from '../../../assets/json/lang/en.json';
+import am from '../../../assets/json/lang/am.json';
 import languageList from '../../../assets/json/lang.json';
 import { of } from 'rxjs';
 
@@ -17,14 +17,12 @@ describe('ContactSectionComponent', () => {
     testLanguageService = {
         httpChange: new EventEmitter<boolean>(),
         languageChange: new EventEmitter<object>(),
-        menu: new EventEmitter<any>(),
         sections: {},
-        toggleMenu: vi.fn(),
-        texts: en,
+        texts: am,
         LanguageList: languageList,
-        Language: 'en',
-        loadLanguages: () => of(languageList),
-        translateColor: vi.fn()
+        Language: 'am',
+        loadLanguages: () => of(am)
+        // setLanguage: (lang: string) => of()
     };
 
     beforeEach(async () => {

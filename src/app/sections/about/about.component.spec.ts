@@ -4,8 +4,8 @@ import { GoogleAnalyticsService } from '../../providers/google-analytics.service
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
 import { AboutSectionComponent } from './about.component';
-import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import { TitleComponent } from '../../components/app/title/title.component';
+import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import en from '../../../assets/json/lang/en.json';
 import languageList from '../../../assets/json/lang.json';
 import { of } from 'rxjs';

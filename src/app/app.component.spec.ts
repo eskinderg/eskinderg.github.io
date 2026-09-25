@@ -1,6 +1,6 @@
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, ComponentFixtureNoNgZone, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LanguageService } from './providers/language.service';
@@ -24,7 +24,7 @@ describe('AppComponent', () => {
         texts: en,
         LanguageList: languageList,
         Language: 'en',
-        loadLanguages: () => of(languageList)
+        loadLanguages: () => of(en)
     };
 
     beforeEach(async () => {

@@ -2,13 +2,14 @@ import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/com
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageService } from '../../providers/language.service';
 import { ThemeService } from '../../theme/theme.service';
+
 import { IntroSectionComponent } from './intro.component';
 import { GoogleAnalyticsService } from '../../providers/google-analytics.service';
 import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import en from '../../../assets/json/lang/en.json';
 import languageList from '../../../assets/json/lang.json';
 import { of } from 'rxjs';
-
 describe('IntroSectionComponent', () => {
     let component: IntroSectionComponent;
     let fixture: ComponentFixture<IntroSectionComponent>;
@@ -17,14 +18,12 @@ describe('IntroSectionComponent', () => {
     testLanguageService = {
         httpChange: new EventEmitter<boolean>(),
         languageChange: new EventEmitter<object>(),
-        menu: new EventEmitter<any>(),
         sections: {},
-        toggleMenu: vi.fn(),
         texts: en,
         LanguageList: languageList,
         Language: 'en',
-        loadLanguages: () => of(languageList),
-        translateColor: vi.fn()
+        loadLanguages: () => of({ en: 'English', am: 'እማ' })
+        // setLanguage: (lang: string) => of()
     };
 
     beforeEach(async () => {
@@ -35,14 +34,15 @@ describe('IntroSectionComponent', () => {
                 GoogleAnalyticsService,
                 ThemeService,
                 provideZonelessChangeDetection(),
-                provideHttpClient(withXhr(), withInterceptorsFromDi())
+                provideHttpClient(),
+                provideHttpClient(withXhr(), withInterceptorsFromDi()),
+                provideHttpClientTesting()
             ]
         }).compileComponents();
 
         fixture = TestBed.createComponent(IntroSectionComponent);
         component = fixture.componentInstance;
-        // testLanguageService.sections['intro'] = fixture.componentInstance;
-        component.languageService.sections['intro'] = fixture.componentInstance;
+        testLanguageService.sections['intro'] = fixture.componentInstance;
         fixture.detectChanges();
     });
 

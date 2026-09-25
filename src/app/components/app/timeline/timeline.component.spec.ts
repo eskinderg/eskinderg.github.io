@@ -5,9 +5,9 @@ import { TimelineComponent } from './timeline.component';
 import { TitleComponent } from '../title/title.component';
 import { ChipComponent } from '../chip/chip.component';
 import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
-import lang from '../../../../assets/json/lang/en.json';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
+import lang from '../../../../assets/json/lang/en.json';
 import { of } from 'rxjs';
 
 describe('TimelineComponent', () => {
