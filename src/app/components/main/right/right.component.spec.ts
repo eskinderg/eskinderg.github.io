@@ -3,13 +3,13 @@ import { RightComponent } from './right.component';
 import { ThemeService } from '../../../theme/theme.service';
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from '@angular/common/http';
 import { LanguageService } from '../../../providers/language.service';
+import { findComponent } from '../../../app.component.spec';
 import { MenuComponent } from '../menu/menu.component';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
-import { DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
+import { EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
 import { of } from 'rxjs';
-import { By } from '@angular/platform-browser';
 
 describe('RightComponent', () => {
     let component: RightComponent;
@@ -67,8 +67,4 @@ describe('RightComponent', () => {
         const toggleComponent = findComponent(fixture, 'app-color-picker');
         expect(toggleComponent).toBeTruthy();
     });
-
-    function findComponent<T>(fixture: ComponentFixture<T>, selector: string): DebugElement {
-        return fixture.debugElement.query(By.css(selector));
-    }
 });

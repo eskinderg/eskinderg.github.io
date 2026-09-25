@@ -34,7 +34,7 @@ describe('Outline Component', () => {
         texts: en,
         LanguageList: languageList,
         Language: 'en',
-        loadLanguages: () => of(en)
+        loadLanguages: () => of(languageList)
     };
 
     testScrollService = {
