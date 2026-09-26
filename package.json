@@ -7,7 +7,7 @@
     "major": "npm version major",
     "minor": "npm version minor",
     "patch": "npm version patch",
-    "preversion": "npm test",
+    "preversion": "npm test && npm e2e",
     "version": "npm run lint && npm run build && git add docs",
     "postversion": "git push && git push --tags",
     "build": "ng build --configuration production && npm run lang && gulp copy",

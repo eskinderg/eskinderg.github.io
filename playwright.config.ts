@@ -1,14 +1,13 @@
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// require('dotenv').config();
+// Determine environment, default to 'dev' if not specified
+const ENV = process.env['ENV'] || 'dev';
 
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
+const environments = {
+    dev: 'http://localhost:4200',
+    prod: 'https://eskinderg.github.io'
+};
+
 export default defineConfig({
     testDir: './e2e',
     /* Run tests in files in parallel */
@@ -20,12 +19,15 @@ export default defineConfig({
     /* Opt out of parallel tests on CI. */
     workers: process.env['CI'] ? 1 : undefined,
     /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-    reporter: 'html',
+    reporter: [
+        ['list'], // Provides a detailed line-by-line real-time list of tests
+        ['html', { open: 'never' }]
+    ],
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         /* Base URL to use in actions like `await page.goto('/')`. */
-        baseURL: process.env['PLAYWRIGHT_TEST_BASE_URL'] ?? 'http://localhost:4200',
-
+        // baseURL: process.env['PLAYWRIGHT_TEST_BASE_URL'] ?? 'http://localhost:4200',
+        baseURL: environments[ENV as keyof typeof environments] || environments.dev,
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry',
         viewport: { width: 1920, height: 1080 }
@@ -39,17 +41,17 @@ export default defineConfig({
                 // ...devices['Desktop Chrome']
                 viewport: { width: 1920, height: 1080 }
             }
-        },
-
-        {
-            name: 'firefox',
-            use: { ...devices['Desktop Firefox'] }
-        },
-
-        {
-            name: 'webkit',
-            use: { ...devices['Desktop Safari'] }
         }
+
+        // {
+        //     name: 'firefox',
+        //     use: { ...devices['Desktop Firefox'] }
+        // },
+
+        // {
+        //     name: 'webkit',
+        //     use: { ...devices['Desktop Safari'] }
+        // }
 
         /* Test against mobile viewports. */
         // {

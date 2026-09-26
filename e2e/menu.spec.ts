@@ -13,12 +13,12 @@ test.describe('Home Page Tests', () => {
     // Runs before each individual test block
     test.beforeEach(async ({ page }) => {
         // Navigates to the base URL configured in your playwright.config.ts
-        await page.goto('http://localhost:4200');
+        await page.goto('/');
         await page.waitForLoadState('networkidle');
     });
 
     test('has title', async ({ page }) => {
-        // await page.goto('http://localhost:4200');
+        // await page.goto('/');
 
         // Expect a title "to contain" a substring.
         await expect(page).toHaveTitle(/Eskinder Getahun - Full Stack Web Developer/);

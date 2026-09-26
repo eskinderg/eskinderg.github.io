@@ -40,6 +40,9 @@ jobs:
       - name: Run Tests
         run: npm run test
 
+      - name: Run End to End Tests
+        run: npm run e2e
+
       #Upload build artifact
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
