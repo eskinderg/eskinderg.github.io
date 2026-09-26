@@ -29,6 +29,27 @@ test.describe('Outline (side menu test)', () => {
         });
 
         await expect(outlineDiv).toBeVisible();
+    });
 
+    test('Should scroll the page to view when outline clicked', async ({ page }) => {
+        const scrollableDiv = page.locator('#main-wrapper');
+        const outlineDivMenu = page.locator('#outline');
+        const educationOutlineBtn = page.locator('#outline > ul > li:nth-child(5 of li) span.flag');
+        const educationSection = page.locator('#education');
+
+        await expect(outlineDivMenu).not.toBeVisible();
+
+        await scrollableDiv.evaluate((element) => {
+            element.scrollTo({
+                top: 541,
+                behavior: 'smooth'
+            });
+        });
+
+        await expect(outlineDivMenu).toBeVisible();
+
+        await educationOutlineBtn.click();
+        await expect(educationSection).toBeInViewport();
+        await expect(educationOutlineBtn).toHaveClass(/active/);
     });
 });
