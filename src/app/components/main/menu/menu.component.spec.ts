@@ -7,53 +7,61 @@ import { ThemeService } from '../../../theme/theme.service';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
 import { DebugElement, provideZonelessChangeDetection } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { EventEmitter } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
-import { of } from 'rxjs';
 import { EducationConferencesSectionComponent } from '../../../sections';
+import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('MenuComponent', () => {
     let component: MenuComponent;
     let fixture: ComponentFixture<MenuComponent>;
     let mainButton: DebugElement;
-    let testLanguageService: Partial<LanguageService>;
-
-    testLanguageService = {
-        httpChange: new EventEmitter<boolean>(),
-        languageChange: new EventEmitter<object>(),
-        menu: new EventEmitter<any>(),
-        sections: {},
-        toggleMenu: vi.fn(),
-        texts: en,
-        LanguageList: languageList,
-        Language: 'en',
-        loadLanguages: () => of(languageList),
-        translateColor: vi.fn()
-    };
+    let languageService: LanguageService;
+    let httpController: HttpTestingController;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [MenuComponent],
             providers: [
-                {
-                    provide: LanguageService,
-                    useValue: testLanguageService
-                },
+                LanguageService,
                 ThemeService,
                 GoogleAnalyticsService,
-                provideZonelessChangeDetection(),
-                provideHttpClient(withXhr(), withInterceptorsFromDi())
+                provideHttpClient(),
+                provideHttpClientTesting(),
+                provideZonelessChangeDetection()
             ]
         }).compileComponents();
 
+        languageService = TestBed.inject(LanguageService);
+        httpController = TestBed.inject(HttpTestingController);
+
         fixture = TestBed.createComponent(MenuComponent);
         component = fixture.componentInstance;
-        testLanguageService.sections['education'] = TestBed.createComponent(
+
+        languageService.sections['education'] = TestBed.createComponent(
             EducationConferencesSectionComponent
         ).componentInstance;
+
+        languageService.loadLanguages().subscribe(() => {
+            languageService.setLanguage('en').subscribe(() => {
+                expect(languageService.Language).toBe('en');
+            });
+        });
+
+        const req1 = httpController.expectOne('assets/json/lang.json');
+        expect(req1.request.method).toBe('GET');
+        req1.flush(languageList);
+
+        const req2 = httpController.expectOne('assets/json/lang/en.json');
+        expect(req2.request.method).toBe('GET');
+        req2.flush(en);
+
         fixture.detectChanges();
         mainButton = fixture.debugElement.query(By.css('.menu-button'));
+    });
+
+    afterEach(() => {
+        httpController.verify();
     });
 
     it('should create', () => {
@@ -61,23 +69,21 @@ describe('MenuComponent', () => {
     });
 
     it('should display menu when clicked', () => {
-        const toggleMenuFn = vi.spyOn(component.languageService, 'toggleMenu');
         mainButton.triggerEventHandler('click', null);
-        component.languageService.menu.emit(true);
+        fixture.detectChanges();
         expect(component.visible).toBe(true);
-        expect(toggleMenuFn).toHaveBeenCalled();
     });
 
-    it('mouse move', () => {
+    it('should display menu and should hide menu when item is clicked', () => {
         let menuItem: DebugElement;
         mainButton.triggerEventHandler('click', null);
-        // expect(component.visible).toBe(true);
+        expect(component.visible).toBe(true);
         menuItem = fixture.debugElement.query(By.css('nav .link:nth-child(5 of .link) .text-container'));
 
         fixture.debugElement.query(By.css('.link')).triggerEventHandler('mousemove', null);
         fixture.debugElement.query(By.css('.link')).triggerEventHandler('mouseout', null);
         menuItem.triggerEventHandler('click', null);
-        // expect(component.visible).toBe(false);
+        expect(component.visible).toBe(false);
     });
 
     it('mouse scroll', async () => {
