@@ -38,7 +38,7 @@
 <div class="menu-fullscreen" [class.open]="visible">
     <div class="menu-list">
         <nav>
-            @for (item of languageService.texts.menu.list; track item) {
+            @for (item of languageService.texts.menu.list; track trackMenu($index, item)) {
                 <span
                     class="link"
                     [class.visible]="visible"

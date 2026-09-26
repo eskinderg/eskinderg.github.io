@@ -31,6 +31,10 @@ export class MenuComponent extends BaseComponent implements OnInit {
         this.languageService.toggleMenu(!this.visible);
     }
 
+    trackMenu(index: number, menu: any): any {
+        return index + menu;
+    }
+
     onScroll(event: any) {
         const scrollTop = event.srcElement.documentElement.scrollTop;
         // console.log(scrollTop);
