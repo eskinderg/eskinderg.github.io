@@ -7,6 +7,7 @@ import { provideZonelessChangeDetection } from '@angular/core';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import en from '../../assets/json/lang/en.json';
 import languageList from '../../assets/json/lang.json';
+import colors from '../../assets/json/colors.json';
 
 describe('Language Service', () => {
     let service: LanguageService;
@@ -106,7 +107,7 @@ describe('Language Service', () => {
     });
 
     it('Should get color list', () => {
-        const response = TestBed.inject(ThemeService).getColors();
+        const response = colors.colors;
         service.getColorList().subscribe((colors) => {
             expect(colors.length).toBe(12);
         });

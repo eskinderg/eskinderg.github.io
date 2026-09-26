@@ -11,6 +11,7 @@ import { EventEmitter } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
 import { of } from 'rxjs';
+import { EducationConferencesSectionComponent } from '../../../sections';
 
 describe('MenuComponent', () => {
     let component: MenuComponent;
@@ -48,6 +49,9 @@ describe('MenuComponent', () => {
 
         fixture = TestBed.createComponent(MenuComponent);
         component = fixture.componentInstance;
+        testLanguageService.sections['education'] = TestBed.createComponent(
+            EducationConferencesSectionComponent
+        ).componentInstance;
         fixture.detectChanges();
         mainButton = fixture.debugElement.query(By.css('.menu-button'));
     });
@@ -59,16 +63,21 @@ describe('MenuComponent', () => {
     it('should display menu when clicked', () => {
         const toggleMenuFn = vi.spyOn(component.languageService, 'toggleMenu');
         mainButton.triggerEventHandler('click', null);
+        component.languageService.menu.emit(true);
+        expect(component.visible).toBe(true);
         expect(toggleMenuFn).toHaveBeenCalled();
     });
 
     it('mouse move', () => {
         let menuItem: DebugElement;
-        menuItem = fixture.debugElement.query(By.css('.link'));
-        menuItem.triggerEventHandler('mousemove', null);
-        menuItem.triggerEventHandler('mouseout', null);
-        menuItem.triggerEventHandler('click', null);
+        mainButton.triggerEventHandler('click', null);
         // expect(component.visible).toBe(true);
+        menuItem = fixture.debugElement.query(By.css('nav .link:nth-child(5 of .link) .text-container'));
+
+        fixture.debugElement.query(By.css('.link')).triggerEventHandler('mousemove', null);
+        fixture.debugElement.query(By.css('.link')).triggerEventHandler('mouseout', null);
+        menuItem.triggerEventHandler('click', null);
+        // expect(component.visible).toBe(false);
     });
 
     it('mouse scroll', async () => {
