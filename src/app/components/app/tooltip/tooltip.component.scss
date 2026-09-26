@@ -1,6 +1,11 @@
+.tooltip-box {
+    display: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
     .tooltip-box {
-        background: var(--light);
+        display: block;
+        background: var(--primary);
         color: white;
         padding: 6px 10px;
         border-radius: 4px;
