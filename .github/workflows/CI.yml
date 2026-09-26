@@ -41,7 +41,7 @@ jobs:
         run: npm run test
 
       - name: Run End to End Tests
-        run: npm run e2e
+        run: npm run playwright
 
       #Upload build artifact
       - name: Upload build artifact
