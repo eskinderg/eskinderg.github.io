@@ -17,9 +17,7 @@ test.describe('Home Page Tests', () => {
         await page.waitForLoadState('networkidle');
     });
 
-    test('has title', async ({ page, baseURL }) => {
-        console.log('====================================================')
-        console.log(baseURL)
+    test('has title', async ({ page }) => {
         // await page.goto('/');
 
         // Expect a title "to contain" a substring.

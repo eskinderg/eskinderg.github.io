@@ -1,7 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 
 // Determine environment, default to 'dev' if not specified
-const ENV = process.env['ENV'] || 'dev';
+
+const ENV = process.env['ENV'] || (process.env['CI'] ? 'prod' : 'dev');
 
 const environments = {
     dev: 'http://localhost:4200',
