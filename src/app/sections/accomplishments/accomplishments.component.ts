@@ -1,4 +1,4 @@
-import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, viewChild } from '@angular/core';
+import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, inject } from '@angular/core';
 import { TitleComponent } from '../../components/app/title/title.component';
 import { BaseComponent } from '../base.component';
 
@@ -10,7 +10,7 @@ import { BaseComponent } from '../base.component';
     imports: [TitleComponent]
 })
 export class AccomplishmentsSectionComponent extends BaseComponent implements AfterViewInit {
-    section = viewChild.required<ElementRef>('accomplishments');
+    section = inject<ElementRef<HTMLElement>>(ElementRef);
 
     constructor() {
         super();

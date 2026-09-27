@@ -14,8 +14,14 @@ export class LanguageDropDownComponent extends BaseComponent {
     public visible: boolean = false;
 
     changeLanguage(lang: string) {
-        this.visible = false;
-        this.languageService.Language = lang;
+        this.languageService.setLanguage(lang).subscribe({
+            next: () => {
+                this.visible = false;
+            },
+            error: (err) => {
+                console.error('Error changing language:', err);
+            }
+        });
     }
 
     onClick() {

@@ -4,14 +4,15 @@ import { DropDownMenuComponent } from './dropdown.component';
 import { LanguageService } from '../../../providers/language.service';
 import { GoogleAnalyticsService } from '../../../providers/google-analytics.service';
 import { ThemeService } from '../../../theme/theme.service';
-import { GoogleAnalyticsServiceMock } from '../../../providers/google-analytics.mock.service';
 import { DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
-describe('DropdownComponent', () => {
+globalThis.gtag = vi.fn();
+
+describe('DropdownMenuComponent', () => {
     let component: DropDownMenuComponent;
     let fixture: ComponentFixture<DropDownMenuComponent>;
     let testLanguageService: Partial<LanguageService>;
@@ -38,10 +39,7 @@ describe('DropdownComponent', () => {
                     provide: LanguageService,
                     useValue: testLanguageService
                 },
-                {
-                    provide: GoogleAnalyticsService,
-                    useClass: GoogleAnalyticsServiceMock
-                },
+                GoogleAnalyticsService,
                 ThemeService,
                 provideZonelessChangeDetection(),
                 provideHttpClient(withXhr(), withInterceptorsFromDi())
@@ -76,6 +74,7 @@ describe('DropdownComponent', () => {
         fixture.detectChanges();
         const downloadBtn: DebugElement = fixture.debugElement.query(By.css('.doc'));
         downloadBtn.triggerEventHandler('click', null);
+        fixture.detectChanges();
         expect(component.visible).toBe(false);
     });
 

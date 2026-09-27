@@ -1,12 +1,4 @@
-import {
-    Component,
-    HostListener,
-    Input,
-    ElementRef,
-    OnInit,
-    viewChild,
-    ChangeDetectionStrategy
-} from '@angular/core';
+import { Component, Input, ElementRef, OnInit, viewChild, ChangeDetectionStrategy } from '@angular/core';
 import { BaseComponent } from '../../../sections/base.component';
 import { AppComponent } from '../../../app.component';
 
@@ -14,7 +6,7 @@ import { AppComponent } from '../../../app.component';
     selector: 'app-back-top',
     styleUrls: ['./baBackTop.scss'],
     template: `
-        <i #baBackTop class="ba-back-top" title="Back to Top">
+        <i (click)="_onClick()" #baBackTop class="ba-back-top" title="Back to Top">
             <svg
                 id="svg-back-to-top"
                 version="1.1"
@@ -34,7 +26,6 @@ export class BaBackTopComponent extends BaseComponent implements OnInit {
 
     _selector = viewChild.required<ElementRef>('baBackTop');
 
-    @HostListener('click', [])
     _onClick() {
         (this.appRef.components[0].instance as AppComponent)
             .mainWrapper()

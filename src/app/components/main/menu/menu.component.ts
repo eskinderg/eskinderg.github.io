@@ -48,6 +48,6 @@ export class MenuComponent extends BaseComponent implements OnInit {
     scrollTo(element: any) {
         this.visible = false;
         const section = this.languageService.sections[element];
-        section().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }

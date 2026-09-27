@@ -1,4 +1,4 @@
-import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, viewChild } from '@angular/core';
+import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, inject } from '@angular/core';
 import { TitleComponent } from '../../components/app/title/title.component';
 import { DropDownMenuComponent } from '../../components/app/dropdown/dropdown.component';
 import { BaseComponent } from '../base.component';
@@ -11,7 +11,8 @@ import { BaseComponent } from '../base.component';
     imports: [TitleComponent, DropDownMenuComponent]
 })
 export class AboutSectionComponent extends BaseComponent implements AfterViewInit {
-    section = viewChild.required<ElementRef>('about');
+    section = inject<ElementRef<HTMLElement>>(ElementRef);
+
     constructor() {
         super();
         this.hasSeparator = false;
@@ -21,14 +22,6 @@ export class AboutSectionComponent extends BaseComponent implements AfterViewIni
 
     ngAfterViewInit(): void {
         this.languageService.sections['about'] = this.section;
-    }
-
-    onPdfDownload() {
-        this.googleAnalyticsService.eventEmitter('download_pdf', 'about', 'download', 'click', 10);
-    }
-
-    onDocxDownload() {
-        this.googleAnalyticsService.eventEmitter('download_docx', 'about', 'download', 'click', 10);
     }
 
     trackAbout(index: number, paragraph: any): any {

@@ -10,6 +10,7 @@ import en from '../assets/json/lang/en.json';
 import languageList from '../assets/json/lang.json';
 import { of } from 'rxjs';
 import { Components } from './bootstrap/components';
+import { DynamicComponentsWrapperComponent } from './components/main/dynamic-components-wrapper.component';
 
 describe('AppComponent', () => {
     let fixture: ComponentFixture<AppComponent>;
@@ -29,7 +30,7 @@ describe('AppComponent', () => {
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [AppComponent],
+            imports: [AppComponent, DynamicComponentsWrapperComponent],
             providers: [
                 {
                     provide: LanguageService,
@@ -47,11 +48,11 @@ describe('AppComponent', () => {
         fixture.detectChanges();
     });
 
-    it('should create the app', () => {
+    it('should create the app component', () => {
         expect(component).toBeTruthy();
     });
 
-    it('should render right', () => {
+    it('should render right component', () => {
         const langSelect = findComponent(fixture, 'app-right');
         expect(langSelect).toBeTruthy();
     });
@@ -61,7 +62,7 @@ describe('AppComponent', () => {
         expect(speedDial).toBeTruthy();
     });
 
-    it('renders app menu', () => {
+    it('renders app menu component', () => {
         const menu = findComponent(fixture, 'app-menu');
         expect(menu).toBeTruthy();
     });
@@ -81,7 +82,7 @@ describe('AppComponent', () => {
         expect(menu).toBeTruthy();
     });
 
-    it('renders outline menu', () => {
+    it('should render the outline menu component', () => {
         const outline = findComponent(fixture, 'app-outline');
         expect(outline).toBeTruthy();
     });
@@ -107,6 +108,18 @@ describe('AppComponent', () => {
         component.mainWrapper().nativeElement.dispatchEvent(new Event('scroll'));
         fixture.detectChanges();
         expect(element.style.display).toBe('inline-block');
+    });
+
+    it('should trigger onScroll via mouseWheelScroll output/event', () => {
+        const spy = vi.spyOn(component, 'onScroll');
+        const outlineEl = fixture.debugElement.query(By.css('app-outline'));
+
+        // Trigger the custom or native event binding
+        const wheelEvent = new WheelEvent('wheel', { deltaY: 100 });
+        outlineEl.triggerEventHandler('mouseWheelScroll', wheelEvent);
+        fixture.detectChanges();
+
+        expect(spy).toHaveBeenCalledWith(wheelEvent);
     });
 });
 

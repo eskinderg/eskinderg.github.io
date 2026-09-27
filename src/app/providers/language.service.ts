@@ -16,7 +16,7 @@ export class LanguageService {
     public sections = {};
     public menuVisible = false;
     private langList: any;
-    private localStorageService = inject(LocalStorageService);
+    public localStorageService = inject(LocalStorageService);
     private platformId: any = inject(PLATFORM_ID);
 
     @Output() menu: EventEmitter<any> = new EventEmitter<any>();
@@ -24,12 +24,6 @@ export class LanguageService {
     @Output() languageChange: EventEmitter<object> = new EventEmitter<object>();
 
     @Output() public httpChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-    set Language(lang: any) {
-        this.setLanguage(lang).subscribe({
-            next: () => this.localStorageService.setItem('language', lang)
-        });
-    }
 
     get Language() {
         if (isPlatformBrowser(this.platformId)) {
@@ -70,7 +64,7 @@ export class LanguageService {
     }
 
     public getLangPath(lang: any): string {
-        if (!isDevMode()) {
+        if (!this.getIsDevMode()) {
             if (this.isBrowser) {
                 return `assets/json/lang/${lang || 'en'}.min.json`;
             } else {
@@ -79,6 +73,10 @@ export class LanguageService {
         } else {
             return `assets/json/lang/${lang || 'en'}.json`;
         }
+    }
+
+    getIsDevMode(): boolean {
+        return isDevMode();
     }
 
     public translateColor(color: string): string {

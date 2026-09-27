@@ -7,7 +7,7 @@
                 fontFamily="{{ languageService.texts.font.title.fontFamily }}"
                 [stylish]="true"
                 [anchor]="'experience'"
-                [lineWidth]="260"></app-title>
+                [lineWidth]="260" />
         </div>
 
         <div>
@@ -16,7 +16,7 @@
                 track trackExperience($index, job);
                 let i = $index
             ) {
-                <app-timeline [job]="job" [index]="i" [reverse]="i % 2 === 0"></app-timeline>
+                <app-timeline [job]="job" [index]="i" [reverse]="i % 2 === 0" />
             }
         </div>
     </div>

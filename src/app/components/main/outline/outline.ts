@@ -42,7 +42,7 @@ export class OutlineComponent extends BaseComponent implements AfterViewInit {
 
     scrollTo(element: any) {
         const section = this.languageService.sections[element];
-        section().nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     @HostListener('mousewheel', ['$event']) onMousewheel($event: Event) {

@@ -46,6 +46,7 @@ describe('TimelineComponent', () => {
         fixture = TestBed.createComponent(TimelineComponent);
         component = fixture.componentInstance;
         component.job = lang.experience.content;
+        component.job.intro = 'sample';
         fixture.detectChanges();
     });
 

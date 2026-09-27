@@ -1,11 +1,4 @@
-import {
-    ElementRef,
-    Component,
-    OnInit,
-    ChangeDetectionStrategy,
-    AfterViewInit,
-    viewChild
-} from '@angular/core';
+import { ElementRef, Component, OnInit, ChangeDetectionStrategy, AfterViewInit, inject } from '@angular/core';
 import { NgStyle } from '@angular/common';
 import Geezify from 'geezify-js';
 import { BaseComponent } from '../base.component';
@@ -35,7 +28,7 @@ export class ContactSectionComponent extends BaseComponent implements OnInit, Af
 
     public currentAppVersion: string;
 
-    section = viewChild.required<ElementRef>('contact');
+    section = inject<ElementRef<HTMLElement>>(ElementRef);
 
     ngAfterViewInit(): void {
         this.languageService.sections['contact'] = this.section;

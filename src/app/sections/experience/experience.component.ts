@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, inject } from '@angular/core';
 import { TitleComponent } from '../../components/app/title/title.component';
 import { TimelineComponent } from '../../components/app/timeline/timeline.component';
 import { BaseComponent } from '../base.component';
@@ -11,7 +11,7 @@ import { BaseComponent } from '../base.component';
     imports: [TitleComponent, TimelineComponent]
 })
 export class ExperienceSectionComponent extends BaseComponent implements AfterViewInit {
-    section = viewChild.required<ElementRef>('experience');
+    section = inject<ElementRef<HTMLElement>>(ElementRef);
 
     constructor() {
         super();

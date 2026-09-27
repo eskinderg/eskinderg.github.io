@@ -1,3 +1,4 @@
+import { Type } from '@angular/core';
 import {
     AboutSectionComponent,
     AccomplishmentsSectionComponent,
@@ -8,7 +9,7 @@ import {
     IntroSectionComponent
 } from '../sections';
 
-export const Components = [
+export const Components: Type<any>[] = [
     IntroSectionComponent,
     AboutSectionComponent,
     ExpertInSectionComponent,

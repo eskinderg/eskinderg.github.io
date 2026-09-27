@@ -75,11 +75,11 @@ describe('Outline Component', () => {
         fixture.detectChanges();
     });
 
-    it('should create', () => {
+    it('should create outline component', () => {
         expect(component).toBeTruthy();
     });
 
-    it('click', () => {
+    it('should scroll upon click', () => {
         const scrollTo = vi.spyOn(component, 'scrollTo');
         let flag: DebugElement;
         let arrow: DebugElement;
@@ -94,7 +94,7 @@ describe('Outline Component', () => {
         expect(scrollTo).toHaveBeenCalledTimes(3);
     });
 
-    it('scroll', () => {
+    it('should call default method upon scroll', () => {
         // Create a Vitest spy on the EventEmitter's emit method
         const emitSpy = vi.spyOn(component.mouseWheelScroll, 'emit');
 

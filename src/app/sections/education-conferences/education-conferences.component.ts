@@ -1,4 +1,4 @@
-import { ElementRef, Component, ChangeDetectionStrategy, AfterViewInit, viewChild } from '@angular/core';
+import { ElementRef, Component, ChangeDetectionStrategy, AfterViewInit, inject } from '@angular/core';
 import { TitleComponent } from '../../components/app/title/title.component';
 import { ListComponent } from '../../components/app/list/list.component';
 import { BaseComponent } from '../base.component';
@@ -11,7 +11,7 @@ import { BaseComponent } from '../base.component';
     imports: [TitleComponent, ListComponent]
 })
 export class EducationConferencesSectionComponent extends BaseComponent implements AfterViewInit {
-    section = viewChild.required<ElementRef>('education');
+    section = inject<ElementRef<HTMLElement>>(ElementRef);
 
     constructor() {
         super();

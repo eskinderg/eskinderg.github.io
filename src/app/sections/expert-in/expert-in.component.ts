@@ -1,4 +1,4 @@
-import { ElementRef, Component, ChangeDetectionStrategy, AfterViewInit, viewChild } from '@angular/core';
+import { ElementRef, Component, ChangeDetectionStrategy, AfterViewInit, inject } from '@angular/core';
 import { TitleComponent } from '../../components/app/title/title.component';
 import { TechnologyComponent } from '../../components/app/technology/technology.component';
 import { BaseComponent } from '../base.component';
@@ -11,7 +11,7 @@ import { BaseComponent } from '../base.component';
     imports: [TitleComponent, TechnologyComponent]
 })
 export class ExpertInSectionComponent extends BaseComponent implements AfterViewInit {
-    section = viewChild.required<ElementRef>('expertin');
+    section = inject<ElementRef<HTMLElement>>(ElementRef);
     constructor() {
         super();
         this.separator.fillColor1 = 'var(--background2)';

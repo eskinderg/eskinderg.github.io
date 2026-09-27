@@ -1,11 +1,4 @@
-import {
-    Component,
-    ElementRef,
-    ChangeDetectionStrategy,
-    AfterViewInit,
-    viewChild,
-    signal
-} from '@angular/core';
+import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, signal, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { BaseComponent } from '../base.component';
 
@@ -21,7 +14,7 @@ export class IntroSectionComponent extends BaseComponent implements AfterViewIni
         this.separator.fillColor1 = 'var(--primary)';
         this.separator.fillColor2 = 'var(--background2)';
     }
-    section = viewChild.required<ElementRef>('intro');
+    section = inject<ElementRef<HTMLElement>>(ElementRef);
     isAppLoaded = signal(false);
 
     ngAfterViewInit(): void {

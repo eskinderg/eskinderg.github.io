@@ -5,7 +5,7 @@ import { ThemeService } from '../theme/theme.service';
 import { ThemeMode } from './theme.mode';
 
 import { GoogleAnalyticsService } from '../providers/google-analytics.service';
-import { provideZonelessChangeDetection } from '@angular/core';
+import { PLATFORM_ID, provideZonelessChangeDetection } from '@angular/core';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 import colorList from '../../assets/json/colors.json';
 import { fail } from 'assert';
@@ -25,7 +25,8 @@ describe('Theme Service', () => {
                 ThemeService,
                 provideZonelessChangeDetection(),
                 provideHttpClient(),
-                provideHttpClientTesting()
+                provideHttpClientTesting(),
+                { provide: PLATFORM_ID, useValue: 'browser' }
             ]
         }).compileComponents();
 
@@ -89,6 +90,8 @@ describe('Theme Service', () => {
         expect(service.getThemeInHex()).toBe('#744c3e');
         service.SetAppTheme('bluegrey', darkMode);
         expect(service.getThemeInHex()).toBe('#607d8b');
+        service.SetAppTheme('null', darkMode);
+        expect(service.getThemeInHex()).toBe('#3f51b5');
     });
 
     it('Should load color list', () => {
@@ -121,5 +124,43 @@ describe('Theme Service', () => {
 
         // Restore original console behavior
         consoleError.mockRestore();
+    });
+});
+
+describe('Theme Service', () => {
+    let service: ThemeService;
+    let httpController: HttpTestingController;
+    const darkMode: ThemeMode = 'dark';
+
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            providers: [
+                LanguageService,
+                GoogleAnalyticsService,
+                ThemeService,
+                provideZonelessChangeDetection(),
+                provideHttpClient(),
+                provideHttpClientTesting(),
+                { provide: PLATFORM_ID, useValue: 'server' }
+            ]
+        }).compileComponents();
+
+        service = TestBed.inject(ThemeService);
+        httpController = TestBed.inject(HttpTestingController);
+
+        service.handleDarkModeChange({ matches: true });
+
+        service.LoadTheme().subscribe(() => {
+            expect(service.Colors.length).toBe(12);
+        });
+
+        const req = httpController.expectOne('assets/json/colors.json');
+        expect(req.request.method).toBe('GET');
+        req.flush(colorList);
+    });
+
+    it('should work when (provide: PLATFORM_ID, useValue: server)', () => {
+        service.SetAppTheme('green', darkMode);
+        expect(service.SystemDarkMode).toBe(false);
     });
 });

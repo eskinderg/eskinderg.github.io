@@ -9,7 +9,7 @@ import { GoogleAnalyticsService } from '../../../providers/google-analytics.serv
 import { DebugElement, EventEmitter, provideZonelessChangeDetection } from '@angular/core';
 import en from '../../../../assets/json/lang/en.json';
 import languageList from '../../../../assets/json/lang.json';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 describe('LangdropdownComponent', () => {
     let component: LanguageDropDownComponent;
@@ -23,8 +23,8 @@ describe('LangdropdownComponent', () => {
         texts: en,
         LanguageList: languageList,
         Language: 'en',
-        loadLanguages: () => of(en)
-        // setLanguage: (lang: string) => of()
+        loadLanguages: () => of(en),
+        setLanguage: vi.fn()
     };
 
     beforeEach(async () => {
@@ -47,7 +47,7 @@ describe('LangdropdownComponent', () => {
         fixture.detectChanges();
     });
 
-    it('should create', () => {
+    it('should create LangdropdownComponent', () => {
         expect(component).toBeTruthy();
     });
 
@@ -62,14 +62,57 @@ describe('LangdropdownComponent', () => {
         ).toBe('English');
     });
 
-    it('should hide the menu after selecting language', () => {
+    it('should hide the menu after selecting the am language', () => {
         let amButton: DebugElement;
-        const changeLanguage = vi.spyOn(component, 'changeLanguage');
-        amButton = fixture.debugElement.query(By.css('.lang-menu-item:first-child'));
+        let mainButton: DebugElement;
+        let langMenu: DebugElement;
+        const onClick = vi.spyOn(component, 'onClick');
+        mainButton = fixture.debugElement.query(By.css('.lang-select'));
+        langMenu = fixture.debugElement.query(By.css('.lang-menu'));
+        vi.spyOn(testLanguageService, 'setLanguage').mockReturnValue(of(null));
+
+        mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
+
+        expect(langMenu.nativeElement.classList.contains('show-lang-drop-menu')).toBe(true);
+        expect(onClick).toHaveBeenCalled();
+        expect(component.visible).toBe(true);
+
+        amButton = fixture.debugElement.query(By.css('.lang-menu .lang-menu-item:nth-child(1)'));
         amButton.triggerEventHandler('click', null);
-        expect(changeLanguage).toHaveBeenCalledWith('am');
-        // component.changeLanguage('am');
+
+        expect(testLanguageService.setLanguage).toHaveBeenCalledWith('am');
         expect(component.visible).toBe(false);
+    });
+
+    it('should log an error and keep visible as true when setLanguage fails', async () => {
+        let amButton: DebugElement;
+        let mainButton: DebugElement;
+        let langMenu: DebugElement;
+        const onClick = vi.spyOn(component, 'onClick');
+        mainButton = fixture.debugElement.query(By.css('.lang-select'));
+        langMenu = fixture.debugElement.query(By.css('.lang-menu'));
+        const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+        const error = new Error('Network error');
+        vi.spyOn(testLanguageService, 'setLanguage').mockReturnValue(throwError(() => error));
+
+        mainButton.triggerEventHandler('click', null);
+        fixture.detectChanges();
+
+        expect(langMenu.nativeElement.classList.contains('show-lang-drop-menu')).toBe(true);
+        expect(onClick).toHaveBeenCalled();
+        expect(component.visible).toBe(true);
+
+        amButton = fixture.debugElement.query(By.css('.lang-menu .lang-menu-item:nth-child(1)'));
+        amButton.triggerEventHandler('click', null);
+
+        // Assert: Verify state remains unchanged and console.error was triggered
+        expect(testLanguageService.setLanguage).toHaveBeenCalledWith('am');
+        expect(component.visible).toBe(true);
+        expect(consoleSpy).toHaveBeenCalledWith('Error changing language:', error);
+
+        // Cleanup spy
+        consoleSpy.mockRestore();
     });
 
     it('should display menu after clicking the main button', () => {
