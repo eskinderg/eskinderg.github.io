@@ -53,6 +53,11 @@ export class TooltipDirective implements OnDestroy {
         this.hide();
     }
 
+    @HostListener('click')
+    onMouseClick(): void {
+        this.hide();
+    }
+
     ngOnDestroy(): void {
         this.hide();
     }
