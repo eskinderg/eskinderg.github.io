@@ -40,7 +40,7 @@ export class TooltipDirective implements OnDestroy {
     @Input() position: TooltipPosition = 'auto';
     @Input() margin = 8;
 
-    private componentRef: ComponentRef<TooltipContentComponent> | null = null;
+    private tooltipComponentRef: ComponentRef<TooltipContentComponent> | null = null;
 
     @HostListener('mouseenter')
     onMouseEnter(): void {
@@ -64,10 +64,10 @@ export class TooltipDirective implements OnDestroy {
 
     private show(): void {
         // 1. Dynamically instantiate the tooltip component
-        this.componentRef = this.viewContainerRef.createComponent(TooltipContentComponent);
-        this.componentRef.instance.text = this.tooltipText;
+        this.tooltipComponentRef = this.viewContainerRef.createComponent(TooltipContentComponent);
+        this.tooltipComponentRef.instance.text = this.tooltipText;
 
-        const tooltipElement = this.componentRef.location.nativeElement as HTMLElement;
+        const tooltipElement = this.tooltipComponentRef.location.nativeElement as HTMLElement;
 
         // 2. Set base styles & hide initial render to prevent visual flicker
         this.renderer.setStyle(tooltipElement, 'position', 'fixed');
@@ -85,14 +85,14 @@ export class TooltipDirective implements OnDestroy {
     }
 
     private hide(): void {
-        if (this.componentRef) {
-            this.componentRef.destroy();
-            this.componentRef = null;
+        if (this.tooltipComponentRef) {
+            this.tooltipComponentRef.destroy();
+            this.tooltipComponentRef = null;
         }
     }
 
     private calculatePosition(tooltip: HTMLElement): void {
-        if (!this.componentRef) return;
+        if (!this.tooltipComponentRef) return;
 
         const hostRect = this.elementRef.nativeElement.getBoundingClientRect();
         const tooltipRect = tooltip.getBoundingClientRect();
@@ -111,7 +111,6 @@ export class TooltipDirective implements OnDestroy {
             else if (spaceBottom > 0) targetPosition = 'bottom';
             else if (spaceRight > 0) targetPosition = 'right';
             else if (spaceLeft > 0) targetPosition = 'left';
-            else targetPosition = 'top'; // Fallback
         }
 
         let top = 0;
