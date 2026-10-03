@@ -79,7 +79,9 @@ describe('DropdownMenuComponent', () => {
     });
 
     it('should hide menu after clicking outside', () => {
-        component.clickout({ target: null });
+        mainButton.triggerEventHandler('click', null);
+        document.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+        fixture.detectChanges();
         expect(component.visible).toBe(false);
     });
 });
