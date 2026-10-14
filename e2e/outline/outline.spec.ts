@@ -34,7 +34,10 @@ test.describe('Outline (side menu test)', () => {
     test('Should scroll the page to view when outline clicked', async ({ page }) => {
         const scrollableDiv = page.locator('#main-wrapper');
         const outlineDivMenu = page.locator('#outline');
-        const educationOutlineBtn = page.locator('#outline > ul > li:nth-child(5 of li) span.flag');
+        const outlineLists = page.locator('#outline > ul > li');
+
+        // const educationOutlineBtn = page.locator('#outline > ul > li:nth-child(5 of li) span.flag');
+        const educationOutlineBtn = outlineLists.nth(4).locator('span.flag')
         const educationSection = page.locator('#education');
 
         await expect(outlineDivMenu).not.toBeVisible();
