@@ -1,12 +1,14 @@
 import { Component, ElementRef, ChangeDetectionStrategy, AfterViewInit, signal, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { BaseComponent } from '../base.component';
+import { TooltipDirective } from '../../components/app/tooltip/tooltip.directive';
 
 @Component({
     selector: 'app-intro',
     templateUrl: './intro.component.html',
     styleUrls: ['./intro.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [TooltipDirective]
 })
 export class IntroSectionComponent extends BaseComponent implements AfterViewInit {
     constructor() {

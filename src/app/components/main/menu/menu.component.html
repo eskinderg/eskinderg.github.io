@@ -1,5 +1,6 @@
 <div
-    appTooltip="{{ languageService.texts.menu.tooltip }}"
+    [appTooltip]="languageService.texts.menu.tooltip"
+    [position]="'right'"
     color="primary"
     class="menu-button menu-toggle"
     [class.open]="visible"
