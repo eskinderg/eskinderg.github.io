@@ -26,9 +26,10 @@ test.describe('Main menu test', () => {
         await expect(menu).not.toHaveCSS('pointer-events', 'auto');
     });
 
-    test('should display menu and click menu', async ({ page }) => {
+    test('should be able to select menu', async ({ page }) => {
         const button = page.locator('.menu-button');
         const menu = page.locator('.menu-fullscreen');
+        const menus = page.locator('nav .link');
 
         await button.click();
 
@@ -37,7 +38,8 @@ test.describe('Main menu test', () => {
         await expect(menu).toHaveCSS('opacity', '1');
         await expect(menu).toHaveCSS('pointer-events', 'auto');
 
-        const thirdMenu = page.locator('nav .link:nth-child(1 of .link) .text-container');
+        // const thirdMenu = page.locator('nav .link:nth-child(1 of .link) .text-container');
+        const thirdMenu = menus.nth(3).locator('.text-container')
 
         await thirdMenu.click();
         await expect(menu).not.toHaveClass(/open/);
