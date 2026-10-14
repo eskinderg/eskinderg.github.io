@@ -166,21 +166,6 @@ describe('TooltipDirective', () => {
             return tooltipWrapper;
         }
 
-        // it('should position auto correctly', async () => {
-        //     fixture.componentInstance.position = 'auto';
-        //     fixture.detectChanges();
-        //     hostEl.triggerEventHandler('mouseenter', null);
-        //     vi.advanceTimersByTime(0);
-
-        //     const tooltipWrapper = triggerHoverAndGetTooltip();
-
-        //     const directive = hostEl.injector.get(TooltipDirective);
-
-        //     expect(directive.position).toBe('auto');
-        //     expect(tooltipWrapper.style.top).toBe('72px');
-        //     expect(tooltipWrapper.style.left).toBe('120px');
-        // });
-
         it('should position right correctly', async () => {
             fixture.componentInstance.position = 'right';
             fixture.detectChanges();
@@ -191,7 +176,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('right');
+            expect(directive.TargetPosition).toBe('right');
             expect(tooltipWrapper.style.top).toBe('115px');
             expect(tooltipWrapper.style.left).toBe('208px');
         });
@@ -206,7 +191,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('left');
+            expect(directive.TargetPosition).toBe('left');
             expect(tooltipWrapper.style.top).toBe('115px');
             expect(tooltipWrapper.style.left).toBe('32px');
         });
@@ -221,7 +206,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('top');
+            expect(directive.TargetPosition).toBe('top');
             expect(tooltipWrapper.style.top).toBe('72px');
             expect(tooltipWrapper.style.left).toBe('120px');
         });
@@ -235,7 +220,7 @@ describe('TooltipDirective', () => {
             const tooltipWrapper = triggerHoverAndGetTooltip();
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('bottom');
+            expect(directive.TargetPosition).toBe('bottom');
 
             expect(tooltipWrapper.style.top).toBe('158px');
             expect(tooltipWrapper.style.left).toBe('120px');
@@ -284,7 +269,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('auto');
+            expect(directive.TargetPosition).toBe('bottom');
             expect(tooltipWrapper.style.top).toBe('108px');
             expect(tooltipWrapper.style.left).toBe('350px');
         });
@@ -311,10 +296,11 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('auto');
+            expect(directive.TargetPosition).toBe('top');
             expect(tooltipWrapper.style.top).toBe('992px');
             expect(tooltipWrapper.style.left).toBe('350px');
         });
+
         it('should auto position to the left correctly', async () => {
             vi.spyOn(window, 'innerWidth', 'get').mockReturnValue(1920);
             vi.spyOn(window, 'innerHeight', 'get').mockReturnValue(150);
@@ -339,7 +325,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('auto');
+            expect(directive.TargetPosition).toBe('left');
             expect(tooltipWrapper.style.top).toBe('102px');
             expect(tooltipWrapper.style.left).toBe('1850px');
         });
@@ -368,7 +354,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('auto');
+            expect(directive.TargetPosition).toBe('right');
             expect(tooltipWrapper.style.top).toBe('102px');
             expect(tooltipWrapper.style.left).toBe('158px');
         });
@@ -397,7 +383,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('auto');
+            expect(directive.TargetPosition).toBe('top');
             expect(tooltipWrapper.style.top).toBe('8px');
             expect(tooltipWrapper.style.left).toBe('648px');
         });
@@ -426,7 +412,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('left');
+            expect(directive.TargetPosition).toBe('left');
             expect(tooltipWrapper.style.top).toBe('142px');
             expect(tooltipWrapper.style.left).toBe('8px');
         });
@@ -455,7 +441,7 @@ describe('TooltipDirective', () => {
 
             const directive = hostEl.injector.get(TooltipDirective);
 
-            expect(directive.position).toBe('left');
+            expect(directive.TargetPosition).toBe('left');
             expect(tooltipWrapper.style.top).toBe('142px');
             expect(tooltipWrapper.style.left).toBe('816px');
         });

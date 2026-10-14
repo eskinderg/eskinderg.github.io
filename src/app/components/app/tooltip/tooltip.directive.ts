@@ -35,9 +35,14 @@ export class TooltipDirective implements OnDestroy {
     private elementRef = inject(ElementRef);
     private renderer = inject(Renderer2);
     private viewContainerRef = inject(ViewContainerRef);
+    private targetPosition: TooltipPosition = 'auto';
 
     @Input('appTooltip') tooltipText = '';
-    @Input() position: TooltipPosition = 'auto';
+
+    @Input() set position(value: TooltipPosition) {
+        this.targetPosition = value;
+    }
+
     @Input() margin = 8;
 
     private tooltipComponentRef: ComponentRef<TooltipContentComponent> | null = null;
@@ -60,6 +65,10 @@ export class TooltipDirective implements OnDestroy {
 
     ngOnDestroy(): void {
         this.hide();
+    }
+
+    get TargetPosition(): TooltipPosition {
+        return this.targetPosition;
     }
 
     private show(): void {
@@ -97,27 +106,25 @@ export class TooltipDirective implements OnDestroy {
         const hostRect = this.elementRef.nativeElement.getBoundingClientRect();
         const tooltipRect = tooltip.getBoundingClientRect();
 
-        let targetPosition = this.position;
-
         // Handle "auto" positioning logic based on viewport constraints
-        if (targetPosition === 'auto') {
+        if (this.targetPosition === 'auto') {
             const spaceTop = hostRect.top - tooltipRect.height - this.margin;
             const spaceBottom = window.innerHeight - hostRect.bottom - tooltipRect.height - this.margin;
             const spaceLeft = hostRect.left - tooltipRect.width - this.margin;
             const spaceRight = window.innerWidth - hostRect.right - tooltipRect.width - this.margin;
 
             // Prioritize Top -> Bottom -> Right -> Left depending on space availability
-            if (spaceTop > 0) targetPosition = 'top';
-            else if (spaceBottom > 0) targetPosition = 'bottom';
-            else if (spaceRight > 0) targetPosition = 'right';
-            else if (spaceLeft > 0) targetPosition = 'left';
+            if (spaceTop > 0) this.targetPosition = 'top';
+            else if (spaceBottom > 0) this.targetPosition = 'bottom';
+            else if (spaceRight > 0) this.targetPosition = 'right';
+            else if (spaceLeft > 0) this.targetPosition = 'left';
         }
 
         let top = 0;
         let left = 0;
 
         // Calculate absolute coordinates relative to viewport bounds
-        switch (targetPosition) {
+        switch (this.targetPosition) {
             case 'top':
                 top = hostRect.top - tooltipRect.height - this.margin;
                 left = hostRect.left + (hostRect.width - tooltipRect.width) / 2;
