@@ -99,7 +99,7 @@ describe('Outline Component', () => {
         const emitSpy = vi.spyOn(component.mouseWheelScroll, 'emit');
 
         // 2. Act: Create and dispatch a fake mock wheel event
-        const mouseScrollEvent = new WheelEvent('mousewheel', {
+        const mouseScrollEvent = new WheelEvent('wheel', {
             bubbles: true,
             cancelable: true // Must be true for preventDefault() to work
         });
