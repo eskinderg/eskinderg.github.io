@@ -56,8 +56,9 @@ test.describe('Outline (side menu test)', () => {
         await expect(educationOutlineBtn).toHaveClass(/active/);
     });
 
-    test('Should scroll page when mouse hovered and scroll over outline menu item', async ({ page, browserName }) => {
-        test.skip(browserName === 'firefox', 'Works on chrome but not on firefox');
+    test('Should scroll page when mouse hovered and scroll over outline menu item', async ({ page }) => {
+
+        // test.skip(browserName === 'firefox', 'Works on chrome but not on firefox');
 
         const scrollableDiv = page.locator('#main-wrapper');
         const outlineDivMenu = page.locator('#outline');

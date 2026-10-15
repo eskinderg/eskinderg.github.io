@@ -45,7 +45,7 @@ export class OutlineComponent extends BaseComponent implements AfterViewInit {
         section.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    @HostListener('mousewheel', ['$event']) onMousewheel($event: Event) {
+    @HostListener('wheel', ['$event']) onMousewheel($event: Event) {
         $event.preventDefault();
         this.mouseWheelScroll.emit($event);
     }
