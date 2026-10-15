@@ -37,7 +37,7 @@ test.describe('Outline (side menu test)', () => {
         const outlineLists = page.locator('#outline > ul > li');
 
         // const educationOutlineBtn = page.locator('#outline > ul > li:nth-child(5 of li) span.flag');
-        const educationOutlineBtn = outlineLists.nth(4).locator('span.flag')
+        const educationOutlineBtn = outlineLists.nth(4).locator('span.flag');
         const educationSection = page.locator('#education');
 
         await expect(outlineDivMenu).not.toBeVisible();
@@ -54,5 +54,37 @@ test.describe('Outline (side menu test)', () => {
         await educationOutlineBtn.click();
         await expect(educationSection).toBeInViewport();
         await expect(educationOutlineBtn).toHaveClass(/active/);
+    });
+
+    test('Should scroll page when mouse if focus is on outline menu', async ({ page, browserName }) => {
+        test.skip(browserName === 'firefox', 'Works on chrome but not firefox');
+
+        const scrollableDiv = page.locator('#main-wrapper');
+        const outlineDivMenu = page.locator('#outline');
+        const outlineLists = page.locator('#outline > ul > li');
+        const educationOutlineBtn = outlineLists.nth(4).locator('span.flag');
+
+        await expect(outlineDivMenu).not.toBeVisible();
+
+        await scrollableDiv.evaluate((element) => {
+            element.scrollTo({
+                top: 541,
+                behavior: 'smooth'
+            });
+        });
+
+        await expect(outlineDivMenu).toBeVisible();
+
+        const initialScrollTop = await scrollableDiv.evaluate((el) => el.scrollTop);
+
+        await educationOutlineBtn.hover();
+        await page.mouse.wheel(0, 300);
+
+        await expect(async () => {
+            const currentScrollTop = await scrollableDiv.evaluate((el) => el.scrollTop);
+            expect(currentScrollTop).toBeGreaterThan(initialScrollTop);
+        }).toPass({
+            timeout: 3000 // Give it a moment if the scroll has smooth animations
+        });
     });
 });
