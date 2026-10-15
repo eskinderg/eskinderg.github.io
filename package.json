@@ -16,7 +16,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --coverage --no-progress",
     "playwright-serve": "ng serve --port 4201",
-    "playwright": "playwright test --project=chromium --reporter=list",
+    "playwright": "npx playwright test",
     "lint": "ng lint",
     "lint:css": "stylelint \"src/**/*.{css,scss}\"",
     "lint:css:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
