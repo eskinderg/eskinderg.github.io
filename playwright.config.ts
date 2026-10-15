@@ -26,10 +26,17 @@ export default defineConfig({
     /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
     use: {
         /* Base URL to use in actions like `await page.goto('')`. */
-        baseURL: 'http://localhost:4200',
+        baseURL: process.env.BASE_URL || 'http://localhost:4201',
 
         /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
         trace: 'on-first-retry'
+    },
+    webServer: {
+        command: 'npm run playwright-serve',
+        url: 'http://localhost:4201',
+        reuseExistingServer: !process.env.CI,
+        stdout: 'ignore',
+        stderr: 'pipe'
     },
 
     /* Configure projects for major browsers */
@@ -40,7 +47,7 @@ export default defineConfig({
                 ...devices['Desktop Chrome'],
                 viewport: { width: 1920, height: 1080 }
             }
-        },
+        }
 
         // {
         //     name: 'firefox',

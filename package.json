@@ -15,6 +15,7 @@
     "lang": "gulp minify",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --watch=false --coverage --no-progress",
+    "playwright-serve": "ng serve --port 4201",
     "playwright": "playwright test --project=chromium --reporter=list",
     "lint": "ng lint",
     "lint:css": "stylelint \"src/**/*.{css,scss}\"",
