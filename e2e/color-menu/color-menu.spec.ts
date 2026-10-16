@@ -39,7 +39,7 @@ test.describe('Color menu test', () => {
         await expect(htmlDoc).toHaveClass(/red/);
     });
 
-    test('should preview red theme', async ({ page }) => {
+    test('should preview red theme on mouse hover', async ({ page }) => {
         const button = page.locator('.main-button');
         const menu = page.locator('.btn-wrapper');
         const htmlDoc = page.locator('html');

@@ -24,6 +24,9 @@ test.describe('Tests for back to top button', () => {
         await backTopBtn.click();
 
         await expect(backTopBtn).not.toBeVisible();
-    });
 
+        await mainWrapper.waitForFunction((el) => el.scrollTop === 0);
+
+        expect(await mainWrapper.evaluate((el) => el.scrollTop)).toBe(0);
+    });
 });

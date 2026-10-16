@@ -16,6 +16,7 @@ test.describe('Main menu test', () => {
         // 3. Assert that the element now has the expected class
         // Note: toHaveClass expects the exact string or a Regular Expression
         await expect(menu).toHaveClass(/open/);
+        await expect(button).toHaveClass(/open/);
         // await expect(menu).toBeVisible();
         await expect(menu).toHaveCSS('opacity', '1');
         await expect(menu).toHaveCSS('pointer-events', 'auto');
@@ -35,6 +36,7 @@ test.describe('Main menu test', () => {
 
         // await expect(menu).toBeVisible();
         await expect(menu).toHaveClass(/open/);
+        await expect(button).toHaveClass(/open/);
         await expect(menu).toHaveCSS('opacity', '1');
         await expect(menu).toHaveCSS('pointer-events', 'auto');
 

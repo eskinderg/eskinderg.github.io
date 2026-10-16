@@ -6,7 +6,7 @@ test.describe('Tooltip tests', () => {
         await page.waitForLoadState('networkidle');
     });
 
-    test('should display and hide tooltip on mouse hover and mouse leave', async ({ page }) => {
+    test('should display and hide tooltip on mouse hover and mouse leave on menu button', async ({ page }) => {
         const button = page.locator('.menu-button');
         const tooltip = page.locator('.tooltip-box');
 

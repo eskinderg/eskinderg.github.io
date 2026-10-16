@@ -36,7 +36,6 @@ test.describe('Outline (side menu test)', () => {
         const outlineDivMenu = page.locator('#outline');
         const outlineLists = page.locator('#outline > ul > li');
 
-        // const educationOutlineBtn = page.locator('#outline > ul > li:nth-child(5 of li) span.flag');
         const educationOutlineBtn = outlineLists.nth(4).locator('span.flag');
         const educationSection = page.locator('#education');
 
@@ -57,7 +56,6 @@ test.describe('Outline (side menu test)', () => {
     });
 
     test('Should scroll page when mouse hovered and scroll over outline menu item', async ({ page }) => {
-
         // test.skip(browserName === 'firefox', 'Works on chrome but not on firefox');
 
         const scrollableDiv = page.locator('#main-wrapper');
@@ -81,11 +79,35 @@ test.describe('Outline (side menu test)', () => {
         await educationOutlineBtn.hover();
         await page.mouse.wheel(0, 300);
 
-        await expect(async () => {
-            const currentScrollTop = await scrollableDiv.evaluate((el) => el.scrollTop);
-            expect(currentScrollTop).toBeGreaterThan(initialScrollTop);
-        }).toPass({
-            timeout: 3000 // Give it a moment if the scroll has smooth animations
-        });
+        const currentScrollTop = await scrollableDiv.evaluate((el) => el.scrollTop);
+
+        expect(currentScrollTop).toBe(initialScrollTop + 300);
+    });
+
+    test('Should change outline active section based on page mouse scroll', async ({ page }) => {
+        const outlineDivMenu = page.locator('#outline');
+        const outlineLists = outlineDivMenu.locator('ul > li');
+
+        await expect(outlineDivMenu).not.toBeVisible();
+
+        await page.mouse.wheel(0, 541);
+
+        await expect(outlineDivMenu).toBeVisible();
+
+        const aboutBtn = outlineLists.nth(0).locator('span.flag');
+
+        await expect(aboutBtn).toHaveClass(/active/);
+
+        await page.mouse.wheel(0, 250);
+
+        const technologiesBtn = outlineLists.nth(1).locator('span.flag');
+
+        await expect(technologiesBtn).toHaveClass(/active/);
+
+        await page.mouse.wheel(0, 800);
+
+        const accompBtn = outlineLists.nth(2).locator('span.flag');
+
+        await expect(accompBtn).toHaveClass(/active/);
     });
 });
