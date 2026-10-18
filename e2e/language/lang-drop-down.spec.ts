@@ -6,10 +6,13 @@ test.describe('Language change test', () => {
         await page.waitForLoadState('networkidle');
     });
 
-    test('Should change language', async ({ page }) => {
+    test('Should change language to am', async ({ page }) => {
         const button = page.locator('.lang-select');
         const menu = page.locator('.lang-menu');
         const menuItems = page.locator('.lang-menu-item');
+        const text = page.locator('h1.intro-title');
+
+        await expect(text).toHaveText('Eskinder Getahun');
 
         await button.click();
 
@@ -18,6 +21,8 @@ test.describe('Language change test', () => {
         const amLangButton = menuItems.first();
 
         await amLangButton.click();
+
+        await expect(text).toHaveText('እስክንድር ጌታሁን');
 
         await expect(menu).not.toHaveClass(/show-lang-drop-menu/);
 

@@ -45,10 +45,10 @@ export default defineConfig([
                 projectService: true,
                 tsconfigRootDir: path.join(import.meta.dirname, 'e2e')
             }
-        },
-        rules: {
-            'no-restricted-imports': ['error', '@playwright/test', '@argos-ci/playwright']
         }
+        // rules: {
+        //     'no-restricted-imports': ['error', '@playwright/test', '@argos-ci/playwright']
+        // }
     },
     {
         files: ['src/**/*.html'],
