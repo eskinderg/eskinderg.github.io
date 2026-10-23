@@ -88,26 +88,26 @@ test.describe('Outline (side menu test)', () => {
         const outlineDivMenu = page.locator('#outline');
         const outlineLists = outlineDivMenu.locator('ul > li');
 
-        await expect(outlineDivMenu).not.toBeVisible();
+        await expect(outlineDivMenu, 'outline menu should not be visible').not.toBeVisible();
 
         await page.mouse.wheel(0, 541);
 
-        await expect(outlineDivMenu).toBeVisible();
+        await expect(outlineDivMenu, 'outline menu should be visible').toBeVisible();
 
         const aboutBtn = outlineLists.nth(0).locator('span.flag');
 
-        await expect(aboutBtn).toHaveClass(/active/);
+        await expect(aboutBtn, 'about section should be active').toHaveClass(/active/);
 
         await page.mouse.wheel(0, 250);
 
         const technologiesBtn = outlineLists.nth(1).locator('span.flag');
 
-        await expect(technologiesBtn).toHaveClass(/active/);
+        await expect(technologiesBtn, 'technologies section should be active').toHaveClass(/active/);
 
         await page.mouse.wheel(0, 800);
 
         const accompBtn = outlineLists.nth(2).locator('span.flag');
 
-        await expect(accompBtn).toHaveClass(/active/);
+        await expect(accompBtn, 'accomplishments section should be active').toHaveClass(/active/);
     });
 });
