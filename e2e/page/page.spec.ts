@@ -7,6 +7,9 @@ test.describe('Page title test', () => {
     });
 
     test('Should have a title', async ({ page }) => {
-        await expect(page).toHaveTitle(/Eskinder Getahun - Full Stack Web Developer/);
+        await expect(
+            page,
+            'page should have a title (Eskinder Getahun - Full Stack Web Developer) '
+        ).toHaveTitle(/Eskinder Getahun - Full Stack Web Developer/);
     });
 });

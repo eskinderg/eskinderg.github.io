@@ -12,13 +12,13 @@ test.describe('Color menu test', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/click/);
-        await expect(menu).toHaveCSS('pointer-events', 'auto');
+        await expect(menu, 'should have class click').toHaveClass(/click/);
+        await expect(menu, 'should have css pointer-events: auto').toHaveCSS('pointer-events', 'auto');
 
         await button.click();
 
-        await expect(menu).not.toHaveClass(/click/);
-        await expect(menu).toHaveCSS('pointer-events', 'none');
+        await expect(menu, 'should not have class click').not.toHaveClass(/click/);
+        await expect(menu, 'should have css pointer-events: none').toHaveCSS('pointer-events', 'none');
     });
 
     test('should change theme to red', async ({ page }) => {
@@ -29,14 +29,14 @@ test.describe('Color menu test', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/click/);
-        await expect(menu).toHaveCSS('pointer-events', 'auto');
+        await expect(menu, 'should have class click').toHaveClass(/click/);
+        await expect(menu, 'should have css pointer-event: auto').toHaveCSS('pointer-events', 'auto');
 
         await themeBtns.first().click(); // red theme button
 
-        await expect(menu).not.toHaveClass(/click/);
-        await expect(menu).toHaveCSS('pointer-events', 'none');
-        await expect(htmlDoc).toHaveClass(/red/);
+        await expect(menu, 'should not have class click').not.toHaveClass(/click/);
+        await expect(menu, 'should have css pointer-events: none').toHaveCSS('pointer-events', 'none');
+        await expect(htmlDoc, 'HTML document should have class red').toHaveClass(/red/);
     });
 
     test('should preview red theme on mouse hover', async ({ page }) => {
@@ -47,12 +47,12 @@ test.describe('Color menu test', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/click/);
-        await expect(menu).toHaveCSS('pointer-events', 'auto');
+        await expect(menu, 'should have class click').toHaveClass(/click/);
+        await expect(menu, 'should have css pointer-events: auto').toHaveCSS('pointer-events', 'auto');
 
         await themeBtns.first().hover(); // red theme button
 
-        await expect(htmlDoc).toHaveClass(/red/);
+        await expect(htmlDoc, 'HTML document should have class red').toHaveClass(/red/);
     });
 
     test('should have 12 colors buttons count', async ({ page }) => {
@@ -62,8 +62,8 @@ test.describe('Color menu test', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/click/);
-        await expect(menu).toHaveCSS('pointer-events', 'auto');
-        await expect(themeBtns).toHaveCount(12);
+        await expect(menu, 'should have class click').toHaveClass(/click/);
+        await expect(menu, 'should have css pointer-event: auto').toHaveCSS('pointer-events', 'auto');
+        await expect(themeBtns, 'there must be 12 different themes available').toHaveCount(12);
     });
 });

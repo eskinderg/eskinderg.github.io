@@ -12,11 +12,11 @@ test.describe('Download File Test', () => {
 
         await downloadBtn.click();
 
-        await expect(downloadBtn).toHaveClass(/open/);
-        await expect(menu).toHaveClass(/show-drop-menu/);
+        await expect(downloadBtn, 'download button background should change').toHaveClass(/open/);
+        await expect(menu, 'download menu should be visible').toHaveClass(/show-drop-menu/);
 
         await downloadBtn.click();
-        await expect(menu).not.toHaveClass(/show-drop-menu/);
+        await expect(menu, 'download menu should not be visible').not.toHaveClass(/show-drop-menu/);
     });
 
     test('should download pdf file', async ({ page }) => {
@@ -27,14 +27,13 @@ test.describe('Download File Test', () => {
 
         await downloadBtn.click();
 
-        await expect(menu).toHaveClass(/show-drop-menu/);
+        await expect(menu, 'download menu should be visible').toHaveClass(/show-drop-menu/);
 
         await pdfMenu.click();
         const download = await downloadPromise;
 
         const filename = download.suggestedFilename();
-        expect(filename).toMatch(/Eskinder-CV.pdf/);
-
+        expect(filename, 'downloaded file should have filename Eskinder-CV.pdf').toMatch(/Eskinder-CV.pdf/);
     });
 
     test('should download docx file', async ({ page }) => {
@@ -45,13 +44,12 @@ test.describe('Download File Test', () => {
 
         await downloadBtn.click();
 
-        await expect(menu).toHaveClass(/show-drop-menu/);
+        await expect(menu, 'download menu should be visible').toHaveClass(/show-drop-menu/);
 
         await docxMenu.click();
         const download = await downloadPromise;
 
         const filename = download.suggestedFilename();
-        expect(filename).toMatch(/Eskinder-CV.docx/);
-
+        expect(filename, 'downloaded file should have filename Eskinder-CV.docx').toMatch(/Eskinder-CV.docx/);
     });
 });

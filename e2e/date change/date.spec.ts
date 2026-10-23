@@ -15,17 +15,22 @@ test.describe('Date tests', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/show-lang-drop-menu/);
+        await expect(menu, 'menu should have class show-lang-drop-menu').toHaveClass(/show-lang-drop-menu/);
 
         const amLangButton = menuItems.first();
 
         await amLangButton.click();
 
-        await expect(menu).not.toHaveClass(/show-lang-drop-menu/);
+        await expect(menu, 'menu should not have class show-lang-drop-menu').not.toHaveClass(
+            /show-lang-drop-menu/
+        );
 
-        await expect(amLangButton.locator('.lang-text')).toHaveClass(/selected/);
+        await expect(
+            amLangButton.locator('.lang-text'),
+            'am language button should have a checkmark'
+        ).toHaveClass(/selected/);
 
-        await expect(yearDiv).toHaveText('© ፳፻፲፰');
+        await expect(yearDiv, 'year div should be in past date').toHaveText('© ፳፻፲፰');
     });
 
     test('Should render future dates in am correctly', async ({ page }) => {
@@ -37,16 +42,23 @@ test.describe('Date tests', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/show-lang-drop-menu/);
+        await expect(menu, 'menu should have the class show-lang-drop-menu').toHaveClass(
+            /show-lang-drop-menu/
+        );
 
         const amLangButton = menuItems.first();
 
         await amLangButton.click();
 
-        await expect(menu).not.toHaveClass(/show-lang-drop-menu/);
+        await expect(menu, 'menu should not have class show-lang-drop-menu').not.toHaveClass(
+            /show-lang-drop-menu/
+        );
 
-        await expect(amLangButton.locator('.lang-text')).toHaveClass(/selected/);
+        await expect(
+            amLangButton.locator('.lang-text'),
+            'am language button should have a checkmark'
+        ).toHaveClass(/selected/);
 
-        await expect(yearDiv).toHaveText('© ፳፻፳');
+        await expect(yearDiv, 'text in year div should in future date').toHaveText('© ፳፻፳');
     });
 });

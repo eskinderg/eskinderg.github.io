@@ -10,7 +10,7 @@ test.describe('Tests for back to top button', () => {
         const mainWrapper = page.locator('#main-wrapper');
         const backTopBtn = page.locator('.ba-back-top');
 
-        await expect(backTopBtn).not.toBeVisible();
+        await expect(backTopBtn, 'backTopBtn should not be visible').not.toBeVisible();
 
         await mainWrapper.evaluate((element) => {
             element.scrollTo({
@@ -19,14 +19,17 @@ test.describe('Tests for back to top button', () => {
             });
         });
 
-        await expect(backTopBtn).toBeVisible();
+        await expect(backTopBtn, 'backTopBtn should be visible').toBeVisible();
 
         await backTopBtn.click();
 
-        await expect(backTopBtn).not.toBeVisible();
+        await expect(backTopBtn, 'backTopBtn should not be visible').not.toBeVisible();
 
         await mainWrapper.waitForFunction((el) => el.scrollTop === 0);
 
-        expect(await mainWrapper.evaluate((el) => el.scrollTop)).toBe(0);
+        expect(
+            await mainWrapper.evaluate((el) => el.scrollTop),
+            'scroll top of mainWrapper should be 0'
+        ).toBe(0);
     });
 });

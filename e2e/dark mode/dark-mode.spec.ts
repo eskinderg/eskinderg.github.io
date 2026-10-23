@@ -12,12 +12,12 @@ test.describe('Dark mode menu test', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/open/);
-        await expect(menu).toHaveCSS('pointer-events', 'auto');
+        await expect(menu, 'menu should have class open').toHaveClass(/open/);
+        await expect(menu, 'menu should have css pointer-events: auto').toHaveCSS('pointer-events', 'auto');
 
         await button.click();
-        await expect(menu).not.toHaveClass(/open/);
-        await expect(menu).toHaveCSS('pointer-events', 'none');
+        await expect(menu, 'menu should not have class open').not.toHaveClass(/open/);
+        await expect(menu, 'menu should have css pointer-events: none').toHaveCSS('pointer-events', 'none');
     });
 
     test('should display menu and should change dark mode to dark', async ({ page }) => {
@@ -28,17 +28,16 @@ test.describe('Dark mode menu test', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/open/);
-        await expect(menu).toHaveCSS('pointer-events', 'auto');
+        await expect(menu, 'menu should have class open').toHaveClass(/open/);
+        await expect(menu, 'menu should have css pointer-events: auto').toHaveCSS('pointer-events', 'auto');
 
         const darkThemeBtn = menuList.nth(2);
 
         await darkThemeBtn.click();
-        await expect(menu).not.toHaveClass(/open/);
-        await expect(menu).toHaveCSS('pointer-events', 'none');
+        await expect(menu, 'menu should not have class open').not.toHaveClass(/open/);
+        await expect(menu, 'menu should have css pointer-events: none').toHaveCSS('pointer-events', 'none');
 
-        await expect(htmlDoc).toHaveClass(/dark/);
-
+        await expect(htmlDoc, 'HTML document should have class dark').toHaveClass(/dark/);
     });
 
     test('should display menu and should change dark mode to light', async ({ page }) => {
@@ -49,16 +48,15 @@ test.describe('Dark mode menu test', () => {
 
         await button.click();
 
-        await expect(menu).toHaveClass(/open/);
-        await expect(menu).toHaveCSS('pointer-events', 'auto');
+        await expect(menu, 'menu should have class open').toHaveClass(/open/);
+        await expect(menu, 'menu should have css pointer-events: auto').toHaveCSS('pointer-events', 'auto');
 
         const lightThemeBtn = menuList.nth(1);
 
         await lightThemeBtn.click();
-        await expect(menu).not.toHaveClass(/open/);
-        await expect(menu).toHaveCSS('pointer-events', 'none');
+        await expect(menu, 'menu should not have class open').not.toHaveClass(/open/);
+        await expect(menu, 'menu should have css pointer-events: none').toHaveCSS('pointer-events', 'none');
 
-        await expect(htmlDoc).not.toHaveClass(/dark/);
-
+        await expect(htmlDoc, 'HTML document should not have class dark').not.toHaveClass(/dark/);
     });
 });
