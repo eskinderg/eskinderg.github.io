@@ -113,11 +113,6 @@
             },
             {
                 "title": "",
-                "img": "bg-karma",
-                "link": "https://karma-runner.github.io"
-            },
-            {
-                "title": "",
                 "img": "bg-facebook",
                 "link": "https://developers.facebook.com/"
             },
@@ -125,11 +120,6 @@
                 "title": "",
                 "img": "bg-google",
                 "link": "https://developers.google.com"
-            },
-            {
-                "title": "",
-                "img": "bg-bootstrap",
-                "link": "https://getbootstrap.com"
             },
             {
                 "title": "",
@@ -170,21 +160,6 @@
                 "title": "",
                 "img": "bg-illustrator",
                 "link": "https://learn.microsoft.com/en-us/sql/"
-            },
-            {
-                "title": "",
-                "img": "bg-webpack",
-                "link": "https://webpack.js.org/"
-            },
-            {
-                "title": "",
-                "img": "bg-sass",
-                "link": "https://sass-lang.com/"
-            },
-            {
-                "title": "",
-                "img": "bg-tailwind",
-                "link": "https://tailwindcss.com/"
             }
         ]
     },

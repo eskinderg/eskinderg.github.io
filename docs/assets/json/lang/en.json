@@ -111,11 +111,6 @@
                 "link": "https://gulpjs.com"
             },
             {
-                "title": "Karma",
-                "img": "bg-karma",
-                "link": "https://karma-runner.github.io"
-            },
-            {
                 "title": "Facebook SDK",
                 "img": "bg-facebook",
                 "link": "https://developers.facebook.com/"
@@ -129,11 +124,6 @@
                 "title": "Bootstrap",
                 "img": "bg-bootstrap",
                 "link": "https://getbootstrap.com"
-            },
-            {
-                "title": "Angular Material",
-                "img": "bg-angularmat",
-                "link": "https://material.angular.io/"
             },
             {
                 "title": "Node JS",
@@ -152,7 +142,7 @@
             },
             {
                 "title": "C#",
-                "img": "bg-mongo",
+                "img": "csharp",
                 "link": "https://learn.microsoft.com/en-us/dotnet/csharp/"
             },
             {
@@ -169,21 +159,6 @@
                 "title": "MS SQL",
                 "img": "bg-illustrator",
                 "link": "https://learn.microsoft.com/en-us/sql/"
-            },
-            {
-                "title": "Webpack",
-                "img": "bg-webpack",
-                "link": "https://webpack.js.org/"
-            },
-            {
-                "title": "Sass",
-                "img": "bg-sass",
-                "link": "https://sass-lang.com/"
-            },
-            {
-                "title": "Tailwind CSS",
-                "img": "bg-tailwind",
-                "link": "https://tailwindcss.com/"
             }
         ]
     },
