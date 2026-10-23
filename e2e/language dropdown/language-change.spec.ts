@@ -22,10 +22,17 @@ test.describe('Language change test', () => {
 
         await amLangButton.click();
 
-        expect(
-            await page.localStorage.getItem('language'),
-            'LocalStorage item (languge) should be set to am'
-        ).toBe('am');
+        await expect
+            .poll(
+                async () => {
+                    return await page.localStorage.getItem('language');
+                },
+                {
+                    message: 'LocalStorage item (language) should be set to am',
+                    timeout: 5000 // Optional: defaults to 5 seconds
+                }
+            )
+            .toBe('am');
 
         await expect(text, 'Should have the text እስክንድር ጌታሁን').toHaveText('እስክንድር ጌታሁን');
 
