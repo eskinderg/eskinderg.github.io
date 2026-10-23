@@ -1,5 +1,7 @@
 <div
     (click)="onClick()"
+    [appTooltip]="languageService.texts.about.button.tooltip"
+    [position]="'right'"
     class="menu-btn"
     [class.open]="visible"
     [style.font-family]="languageService.texts.font.menu">
