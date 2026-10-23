@@ -32,7 +32,8 @@ test.describe('Color menu test', () => {
         await expect(menu, 'should have class click').toHaveClass(/click/);
         await expect(menu, 'should have css pointer-event: auto').toHaveCSS('pointer-events', 'auto');
 
-        await themeBtns.first().click(); // red theme button
+        const redThemeBtn = themeBtns.first();
+        await redThemeBtn.click();
 
         await expect(menu, 'should not have class click').not.toHaveClass(/click/);
         await expect(menu, 'should have css pointer-events: none').toHaveCSS('pointer-events', 'none');
